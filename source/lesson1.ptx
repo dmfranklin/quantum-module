@@ -35,10 +35,9 @@
 
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
-        createWidget({
-          kind: WidgetKind.IDENTICAL_CIRCUIT,
+        identicalCircuitWidget({
           circuit: "Phi+",
-          autograde: true,
+          instantFeedback: true,
           allowedGates: "HX*"
         });
       </script>
@@ -82,8 +81,7 @@
 
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
-        createWidget({
-          kind: WidgetKind.VISUALIZE_PROBABILITIES,
+        visualizeProbabilitiesWidget({
           circuit: "Phi+",
         });
       </script>

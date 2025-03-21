@@ -117,7 +117,7 @@ const createGrader = (
   goalCircuit,
   studentCircuit,
   gradingFunction,
-  autograde
+  instantFeedback
 ) => {
   const checkWork = () => {
     grader.classList.remove("dirty");
@@ -140,7 +140,7 @@ const createGrader = (
   feedback.className = "feedback";
   grader.append(feedback);
 
-  if (!autograde) {
+  if (!instantFeedback) {
     grader.classList.add("dirty");
     const button = document.createElement("button");
     button.textContent = "Check work";
@@ -154,7 +154,7 @@ const createGrader = (
       event.detail.circuit == goalCircuit ||
       event.detail.circuit == studentCircuit
     ) {
-      if (autograde) {
+      if (instantFeedback) {
         checkWork();
       } else {
         grader.classList.add("dirty");
@@ -178,152 +178,19 @@ const createPalette = (gateSymbols = defaultGateSymbols) => {
   return palette;
 };
 
-// MARK: - function to create the widget
-
-const WidgetKind = Object.freeze({
-  IDENTICAL_CIRCUIT: Symbol(),
-  EQUIVALENT_CIRCUIT: Symbol(),
-  MATCH_OUTPUT: Symbol(),
-  SPECIFIC_OUTPUT: Symbol(),
-  VISUALIZE_PROBABILITIES: Symbol(),
-});
-
-const createWidget = ({
-  kind,
-  circuit,
-  autograde = false,
-  allowedGates = defaultGateSymbols,
-}) => {
-  if (!Object.values(WidgetKind).includes(kind)) {
-    throw new Error("invalid widget kind");
-  }
-
-  if (typeof circuit == "string") {
+const processCircuitInput = (circuit) => {
+  if (typeof circuit === "string") {
     if (circuitDiagrams.has(circuit)) {
       circuit = circuitDiagrams.get(circuit);
     }
     circuit = Q(circuit);
   }
   circuit.evaluate$();
+  return circuit;
+};
 
-  // whether input state should be arbitrary qubits or all |0⟩
-  const arbitraryInputs = [
-    WidgetKind.IDENTICAL_CIRCUIT,
-    WidgetKind.EQUIVALENT_CIRCUIT,
-  ].includes(kind);
-
-  const widget = document.createElement("div");
-  widget.className = "widget";
-
-  const topInstructions = document.createElement("div");
-  topInstructions.className = "instructions";
-
-  if (kind == WidgetKind.SPECIFIC_OUTPUT) {
-    topInstructions.textContent = `Given the input state ${stateToText(
-      circuit.inputState
-    )}, create a circuit that produces the output state ${stateToText(
-      circuit.outputState
-    )}.`;
-    widget.append(topInstructions);
-  } else {
-    const goalCircuitEditor = createCircuitEditor(
-      circuit,
-      false,
-      arbitraryInputs
-    );
-    const middleInstructions = document.createElement("div");
-    middleInstructions.className = "instructions";
-    if (kind == WidgetKind.IDENTICAL_CIRCUIT) {
-      topInstructions.textContent = "Given the following circuit...";
-      middleInstructions.textContent =
-        "...create the exact same circuit below:";
-      widget.append(topInstructions, goalCircuitEditor, middleInstructions);
-    } else if (kind == WidgetKind.EQUIVALENT_CIRCUIT) {
-      topInstructions.textContent = "Given the following circuit...";
-      middleInstructions.textContent =
-        "...create an equivalent circuit using fewer gates:";
-      widget.append(topInstructions, goalCircuitEditor, middleInstructions);
-    } else if (kind == WidgetKind.MATCH_OUTPUT) {
-      topInstructions.textContent = `Given the following circuit and the input state ${stateToText(
-        goalCircuitEditor.circuit.inputState
-      )}...`;
-      middleInstructions.textContent =
-        "...produce the same output state using fewer gates:";
-      widget.append(topInstructions, goalCircuitEditor, middleInstructions);
-    }
-  }
-
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createCircuitEditor(
-    kind == WidgetKind.VISUALIZE_PROBABILITIES
-      ? circuit
-      : Q(circuit.bandwidth, circuit.timewidth),
-    true,
-    arbitraryInputs
-  );
-  widget.append(palette, studentCircuitEditor);
-
-  if (kind == WidgetKind.VISUALIZE_PROBABILITIES) {
-    const pre = document.createElement("pre");
-    const probDisplay = document.createElement("samp");
-    probDisplay.innerText = studentCircuitEditor.circuit.report$();
-    probDisplay.className = "prob-display";
-    pre.append(probDisplay);
-    widget.append(pre);
-    window.addEventListener("Q gui altered circuit", (event) => {
-      if (event.detail.circuit == studentCircuitEditor.circuit) {
-        studentCircuitEditor.circuit.evaluate$();
-        probDisplay.innerText = studentCircuitEditor.circuit.report$();
-      }
-    });
-  } else {
-    const grader = createGrader(
-      circuit,
-      studentCircuitEditor.circuit,
-      {
-        [WidgetKind.IDENTICAL_CIRCUIT]: (goalCircuit, studentCircuit) =>
-          goalCircuit.toText() == studentCircuit.toText()
-            ? [true, "Great job! The circuits are identical."]
-            : [false, "The circuits look different. Keep trying!"],
-        [WidgetKind.EQUIVALENT_CIRCUIT]: (goalCircuit, studentCircuit) =>
-          goalCircuit.matrix.isEqualTo(studentCircuit.matrix)
-            ? studentCircuit.operations.length < goalCircuit.operations.length
-              ? [
-                  true,
-                  "Great job! You created an equivalent circuit with fewer gates.",
-                ]
-              : [
-                  false,
-                  "The circuits are equivalent, but you used too many gates.",
-                ]
-            : [false, "The circuits are not equivalent. Keep trying!"],
-        [WidgetKind.MATCH_OUTPUT]: (goalCircuit, studentCircuit) =>
-          goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
-            ? studentCircuit.operations.length < goalCircuit.operations.length
-              ? [true, "Great job! The output states match."]
-              : [false, "The output states match, but you used too many gates."]
-            : [false, "The output states do not match. Keep trying!"],
-        [WidgetKind.SPECIFIC_OUTPUT]: (goalCircuit, studentCircuit) => {
-          return goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
-            ? [
-                true,
-                "Great job! Your circuit produces the correct output state.",
-              ]
-            : [
-                false,
-                `Your circuit produces the output state ${stateToText(
-                  studentCircuit.outputState
-                )}. Keep trying!`,
-              ];
-        },
-      }[kind],
-      autograde
-    );
-    widget.append(grader);
-  }
-
+const finalizeWidget = (widget, studentCircuitEditor) => {
   document.body.append(widget);
-
   window.frameElement.removeAttribute("width");
   window.frameElement.removeAttribute("height");
   window.frameElement.style.height = `${document.documentElement.scrollHeight}px`;
@@ -331,8 +198,241 @@ const createWidget = ({
     ".Q-circuit-board-container"
   ).scrollWidth;
   window.frameElement.style.width = `calc(min(100%, ${widgetWidth}px)`;
+};
 
-  return widget;
+const createStudentEditor = (circuit, arbitraryInputs, useOriginal = false) => {
+  return createCircuitEditor(
+    useOriginal ? circuit : Q(circuit.bandwidth, circuit.timewidth),
+    true,
+    arbitraryInputs
+  );
+};
+
+// MARK: - widget creation functions
+
+const identicalCircuitWidget = ({
+  circuit,
+  instantFeedback = false,
+  allowedGates = defaultGateSymbols,
+}) => {
+  circuit = processCircuitInput(circuit);
+  const arbitraryInputs = true;
+
+  const widget = document.createElement("div");
+  widget.className = "widget";
+
+  const topInstructions = document.createElement("div");
+  topInstructions.className = "instructions";
+  topInstructions.textContent = "Given the following circuit...";
+
+  const goalCircuitEditor = createCircuitEditor(
+    circuit,
+    false,
+    arbitraryInputs
+  );
+
+  const middleInstructions = document.createElement("div");
+  middleInstructions.className = "instructions";
+  middleInstructions.textContent = "...create the exact same circuit below:";
+
+  widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+
+  const palette = createPalette(allowedGates);
+  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
+  widget.append(palette, studentCircuitEditor);
+
+  const grader = createGrader(
+    circuit,
+    studentCircuitEditor.circuit,
+    (goalCircuit, studentCircuit) =>
+      goalCircuit.toText() === studentCircuit.toText()
+        ? [true, "Great job! The circuits look identical."]
+        : [false, "The circuits look different. Keep at it!"],
+    instantFeedback
+  );
+  widget.append(grader);
+
+  finalizeWidget(widget, studentCircuitEditor);
+};
+
+const equivalentCircuitWidget = ({
+  circuit,
+  instantFeedback = false,
+  allowedGates = defaultGateSymbols,
+}) => {
+  circuit = processCircuitInput(circuit);
+  const arbitraryInputs = true;
+
+  const widget = document.createElement("div");
+  widget.className = "widget";
+
+  const topInstructions = document.createElement("div");
+  topInstructions.className = "instructions";
+  topInstructions.textContent = "Given the following circuit...";
+
+  const goalCircuitEditor = createCircuitEditor(
+    circuit,
+    false,
+    arbitraryInputs
+  );
+
+  const middleInstructions = document.createElement("div");
+  middleInstructions.className = "instructions";
+  middleInstructions.textContent =
+    "...create an equivalent circuit using fewer gates:";
+
+  widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+
+  const palette = createPalette(allowedGates);
+  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
+  widget.append(palette, studentCircuitEditor);
+
+  const grader = createGrader(
+    circuit,
+    studentCircuitEditor.circuit,
+    (goalCircuit, studentCircuit) =>
+      goalCircuit.matrix.isEqualTo(studentCircuit.matrix)
+        ? studentCircuit.operations.length < goalCircuit.operations.length
+          ? [
+              true,
+              "Great job! You created an equivalent circuit with fewer gates.",
+            ]
+          : [false, "The circuits are equivalent, but you used too many gates."]
+        : [false, "The circuits are not equivalent. Keep at it!"],
+    instantFeedback
+  );
+  widget.append(grader);
+
+  finalizeWidget(widget, studentCircuitEditor);
+};
+
+const matchOutputWidget = ({
+  circuit,
+  instantFeedback = false,
+  allowedGates = defaultGateSymbols,
+}) => {
+  circuit = processCircuitInput(circuit);
+  const arbitraryInputs = false;
+
+  const widget = document.createElement("div");
+  widget.className = "widget";
+
+  const goalCircuitEditor = createCircuitEditor(
+    circuit,
+    false,
+    arbitraryInputs
+  );
+
+  const topInstructions = document.createElement("div");
+  topInstructions.className = "instructions";
+  topInstructions.textContent = `Given the following circuit and the input state ${stateToText(
+    goalCircuitEditor.circuit.inputState
+  )}...`;
+
+  const middleInstructions = document.createElement("div");
+  middleInstructions.className = "instructions";
+  middleInstructions.textContent =
+    "...produce the same output state using fewer gates:";
+
+  widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+
+  const palette = createPalette(allowedGates);
+  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
+  widget.append(palette, studentCircuitEditor);
+
+  const grader = createGrader(
+    circuit,
+    studentCircuitEditor.circuit,
+    (goalCircuit, studentCircuit) =>
+      goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
+        ? studentCircuit.operations.length < goalCircuit.operations.length
+          ? [true, "Great job! The output states match."]
+          : [false, "The output states match, but you used too many gates."]
+        : [false, "The output states do not match. Keep at it!"],
+    instantFeedback
+  );
+  widget.append(grader);
+
+  finalizeWidget(widget, studentCircuitEditor);
+};
+
+const specificOutputWidget = ({
+  circuit,
+  instantFeedback = false,
+  allowedGates = defaultGateSymbols,
+}) => {
+  circuit = processCircuitInput(circuit);
+  const arbitraryInputs = false;
+
+  const widget = document.createElement("div");
+  widget.className = "widget";
+
+  const instructions = document.createElement("div");
+  instructions.className = "instructions";
+  instructions.textContent = `Given the input state ${stateToText(
+    circuit.inputState
+  )}, create a circuit that produces the output state ${stateToText(
+    circuit.outputState
+  )}.`;
+
+  widget.append(instructions);
+
+  const palette = createPalette(allowedGates);
+  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
+  widget.append(palette, studentCircuitEditor);
+
+  const grader = createGrader(
+    circuit,
+    studentCircuitEditor.circuit,
+    (goalCircuit, studentCircuit) =>
+      goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
+        ? [true, "Great job! Your circuit produces the correct output state."]
+        : [
+            false,
+            `Your circuit produces the output state ${stateToText(
+              studentCircuit.outputState
+            )}. Keep at it!`,
+          ],
+    instantFeedback
+  );
+  widget.append(grader);
+
+  finalizeWidget(widget, studentCircuitEditor);
+};
+
+const visualizeProbabilitiesWidget = ({
+  circuit,
+  allowedGates = defaultGateSymbols,
+}) => {
+  circuit = processCircuitInput(circuit);
+  const arbitraryInputs = false;
+
+  const widget = document.createElement("div");
+  widget.className = "widget";
+
+  const palette = createPalette(allowedGates);
+  const studentCircuitEditor = createStudentEditor(
+    circuit,
+    arbitraryInputs,
+    true
+  );
+  widget.append(palette, studentCircuitEditor);
+
+  const pre = document.createElement("pre");
+  const probDisplay = document.createElement("samp");
+  probDisplay.innerText = studentCircuitEditor.circuit.report$();
+  probDisplay.className = "prob-display";
+  pre.append(probDisplay);
+  widget.append(pre);
+
+  window.addEventListener("Q gui altered circuit", (event) => {
+    if (event.detail.circuit == studentCircuitEditor.circuit) {
+      studentCircuitEditor.circuit.evaluate$();
+      probDisplay.innerText = studentCircuitEditor.circuit.report$();
+    }
+  });
+
+  finalizeWidget(widget, studentCircuitEditor);
 };
 
 // MARK: - circuit texts
