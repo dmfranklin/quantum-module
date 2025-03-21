@@ -1,0 +1,45 @@
+.Q-circuit-board-container {
+  max-height: unset;
+}
+
+.widget {
+  --Q-operation-color-main: hsl(210, 10%, 35%);
+
+  .instructions,
+  .feedback {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1rem 0 2rem 0;
+    color: var(--primary-color);
+  }
+
+  .grader {
+    &.dirty .feedback {
+      display: none;
+    }
+    &:not(.dirty) .check-work {
+      display: none;
+    }
+    .feedback.correct {
+      color: #4CAF50;
+    }
+    .feedback.wrong {
+      color: #F44336;
+    }
+    .check-work {
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1.3em;
+      font-weight: bold;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .Q-circuit-board-container {
+    overflow: auto;
+  }
+}

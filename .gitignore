@@ -1,0 +1,6 @@
+/logs
+/output
+/.cache
+/.vscode
+/.error_schema.log
+.DS_Store
