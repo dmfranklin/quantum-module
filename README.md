@@ -1,15 +1,15 @@
-# Quantum Book
+# Introduction to Quantum Computing and Qiskit
 
-This repository contains a work-in-progress interactive quantum computing textbook. The textbook itself is written in PreTeXt and the interactive widgets embedded within its lessons are written in JavaScript. The widgets integrate the Q.js quantum circuit editor, allowing students to build and analyze quantum circuits interactively.
+Introduction to Quantum Computing and Qiskit is a 2-week module for high school computer science students for learning the basics of quantum computing. Students will work through a series of interactive lessons that will teach them how to program in Qiskit, a popular language for building quantum circuits. The module itself is written in PreTeXt and the interactive widgets embedded within its lessons are written in JavaScript. The widgets integrate the Q.js quantum circuit editor, allowing students to build and analyze quantum circuits interactively.
 
-## Building and Viewing the Textbook
+## Building and Viewing the Module
 
-To build and view the textbook locally, follow these steps:
+To build and view the module locally, follow these steps:
 
 1. Clone or download the repository and navigate to the project directory:
    ```bash
-   git clone https://github.com/AlexBuz/quantum-book.git
-   cd quantum-book
+   git clone https://github.com/AlexBuz/quantum-module.git
+   cd quantum-module
    ```
 
 2. Create and activate a Python virtual environment:
@@ -23,12 +23,12 @@ To build and view the textbook locally, follow these steps:
    pip install pretext
    ```
 
-4. Build the textbook for the web:
+4. Build the module for the web:
    ```bash
    pretext build web
    ```
 
-5. View the textbook in a browser:
+5. View the module in a browser:
    ```bash
    pretext view web
    ```
@@ -36,7 +36,7 @@ To build and view the textbook locally, follow these steps:
    ```bash
    pretext view web --no-launch
    ```
-   to start the server without automatically launching a browser. The textbook will be available at [http://localhost:8128/output/web](http://localhost:8128/output/web).
+   to start the server without automatically launching a browser. The module will be available at [http://localhost:8128/output/web](http://localhost:8128/output/web).
 
 ## Adding New Lessons
 
@@ -51,15 +51,15 @@ To add a new lesson:
   <xi:include href="lesson2.ptx" />
   ```
 
-After making changes, rebuild the textbook using `pretext build web` and reload the page in your browser to see the updated content.
+After making changes, rebuild the module using `pretext build web` and reload the page in your browser to see the updated content.
 
-Alternatively, you may use a tool like `watchexec` to automatically rebuild the textbook as you make changes. This way, you'll only need to refresh the page in your browser to see the updated content. To install `watchexec` using Homebrew, run:
+Alternatively, you may use a tool like `watchexec` to automatically rebuild the module as you make changes. This way, you'll only need to refresh the page in your browser to see the updated content. To install `watchexec` using Homebrew, run:
 
 ```bash
 brew install watchexec
 ```
 
-Then, run the following command in the project directory to watch for changes in the `source` directory and rebuild the textbook automatically:
+Then, run the following command in the project directory to watch for changes in the `source` directory and rebuild the modulle automatically:
 
 ```bash
 watchexec -w source -- pretext build web
@@ -67,7 +67,7 @@ watchexec -w source -- pretext build web
 
 ## Integrating Interactive Widgets
 
-Each interactive widget in the textbook is created by embedding a JavaScript function call within a `<script>` block inside a PreTeXt `<interactive>` element. These functions render different types of exercises, allowing students to construct, modify, and analyze quantum circuits. See [below](#template-for-including-widgets) for a concrete example of how to include a widget in a lesson.
+Each interactive widget in the module is created by embedding a JavaScript function call within a `<script>` block inside a PreTeXt `<interactive>` element. These functions render different types of exercises, allowing students to construct, modify, and analyze quantum circuits. See [below](#template-for-including-widgets) for a concrete example of how to include a widget in a lesson.
 
 ### Available Widgets
 
