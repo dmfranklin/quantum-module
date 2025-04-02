@@ -31,6 +31,7 @@ const loadEverything = async () => {
 
   // scripts
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`)
+  await loadJS("https://cssplice.org/slcp/splice-iframe.js");
   await loadJS("../../../source/widget.js");
 };
 
