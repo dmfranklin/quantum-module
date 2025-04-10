@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="lesson1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Exploring the Circuit Editor</title>
 
-  <introduction>
+
+<section xml:id="lesson1_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+
+  
+    <title>Building Circuits</title>
+
+    <introduction>
     <p>In this lesson, we will learn how to use the <c>Q.js</c> quantum circuit editor to
       graphically build quantum circuits.</p>
     <p><c>Q.js</c> doesn't require any coding!</p>
@@ -11,6 +17,7 @@
       the circuit and the qubit states created by the circuit.</p>
     <p>The goal of this lesson is to explore the features of the <c>Q.js</c> quantum circuit editor.</p>
   </introduction>
+
 
   <section>
     <title>Build a Quantum Circuit</title>
