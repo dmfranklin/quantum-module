@@ -1,0 +1,8 @@
+/logs
+/output
+/published
+/.cache
+/.vscode
+/.error_schema.log
+/.venv
+.DS_Store

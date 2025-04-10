@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson1" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>
+    Reading Circuits
+  </title>
+  <p>
+    Quantum operations are visualized in what they call "circuits." Circuits are a visualization
+    that depict the order of operations. Let's first see what some some familiar operations might look
+    like if visualized like a circuit! 
+   
+  </p>
+<section xml:id="sec-cookiecircuits">
+  <title>Cookie Circuits</title>
+  
+   (insert cookie circuit diagram with labels for start and end state, arrow from left to right
+   saying order of operations)
+
+   
+      <image source="./assets/CookieCircuitOneOp.png" width="100%"/>
+   
+
+  <p>
+    In this picture, we begin with a plate of 3 cookies (the <em>input</em>). We have one operation, 
+    "eat one cookie". After the operation is applied, we are left with two cookies. There is only
+    one operation depicted, so that is the end of the program. Therefore, the plate with two cookies
+    is the <em>output</em>. Likewise, if give the same circuit an input of a plate of 2 cookies and applied that operation
+    once, we would end up with an output of a plate with 1 cookie. 
+  </p>
+
+  <p> Multiple-choice question here. (picture with two eat operations) 
+    Consider this circuit with two "eat one cookie" operations. What will 
+    the plate of cookies look like after these operations?
+    (picture choices - 0 cookies, 1 cookie, 2 cookies, 3 cookies)
+  </p>
+
+  <exercise label="Cookie-Circuit-One-Plate">
+    <title>Calculating a Cookie Circuit</title>
+    <idx>cookie circuit 1</idx>
+    <statement>
+        <p>How many cookies will be left after this Cookie Circuit runs?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>0 cookies</p></statement>
+        <feedback><p>There were only two "eat cookie" operations.</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>1 cookie</p></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>2 cookies</p></statement>
+        <feedback><p>There were two "eat cookie" operations.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>3 cookies</p></statement>
+        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Operations are read left to right</p></hint>
+  </exercise>
+
+(insert a picture with two plates of cookies, 5 on one, 3 on the other,
+then operations that apply to both of them (2 on the top, 1 on the bottom).
+Depict and label start states and end states)
+
+  <p> We can also draw a circuit that starts out with multiple plates of cookies
+    and applies the operations to each plate. In this case, we start with two plates
+    of cookies - one that has 5 cookies and the other that has 3. We then apply 
+    operations to each of the plates. There are two operations applied to the plate
+    with 5 cookies, and one operation applied to the plate with 3 cookies. We then 
+    end up with plates of 3 and 2 cookies, respectively.
+    </p>
+    <p>
+    Pick the circuit that has the 
+    correct end state given the start state. (four circuit diagrams with 
+    two starting plates of cookies (1-3 cookies) and one or two operations each time, only 
+    one has a correct output given the starting input)
+  </p>
+  <exercise label="Cookie-Circuit-Multiple-Plates">
+    <title>Multiple Plates of Cookies</title>
+    <idx>cookie circuit 2</idx>
+    <statement>
+        <p>Pick the circuits whose start and end states match the quantum circuit depicted.</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>0 cookies</p></statement>
+        <feedback><p>There were only two "eat cookie" operations.</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>1 cookie</p></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>2 cookies</p></statement>
+        <feedback><p>There were two "eat cookie" operations.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>3 cookies</p></statement>
+        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Operations are read left to right</p></hint>
+  </exercise>
+
+
+
+
+
+
+</section>
+<section xml:id="sec-mathcircuits">
+  <title>Math Circuits</title>
+  <introduction>
+    <p>
+      Now let's consider how we would depict mathematical operations. 
+    </p>
+  </introduction>
+  <p>
+    We will use the following operations: 
+    <ul>
+    <li><p>Increment - add one to a number</p></li>
+   <li><p> Decrement - subtract one from a number</p></li>
+    <li><p>Negate - negate a number</p></li>
+    <li><p>Add - add two numbers</p></li>
+    </ul>
+    
+
+  </p>
+  <p>
+  (Subtraction is negation and addition)
+  </p>
+</section>
+
+<p> Summary:
+  <ul>
+    <li><p>Circuits depict the order of operations. </p></li>
+    <li><p>The order goes from left to right.</p></li>
+
+    <li><p>Left to right depicts <em> order of operations, not physical movement</em>.</p></li>
+    <li><p>Multiple items may be depicted in the same circuit.</p></li>
+    <li><p>A single operation can involve multiple items.</p></li>
+  </ul>
+</p>
+</section>
