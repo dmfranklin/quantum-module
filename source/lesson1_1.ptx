@@ -19,9 +19,12 @@
    (insert cookie circuit diagram with labels for start and end state, arrow from left to right
    saying order of operations)
 
+        <datafile label="CookieCircuitOneOp" filename="CookieCircuitOneOp.png" include-source="yes">
+            <image source="CookieCircuitOneOp.png" width="66%"/>
+        </datafile>
    
-      <image source="./assets/CookieCircuitOneOp.png" width="100%"/>
-   
+      <p><image source="./images/CookieCircuitOneOp.png" width="50%"/></p>
+    <p><image source="images/CookieCircuitTwoOps.png" width="50%"/></p>
 
   <p>
     In this picture, we begin with a plate of 3 cookies (the <em>input</em>). We have one operation, 
@@ -31,11 +34,7 @@
     once, we would end up with an output of a plate with 1 cookie. 
   </p>
 
-  <p> Multiple-choice question here. (picture with two eat operations) 
-    Consider this circuit with two "eat one cookie" operations. What will 
-    the plate of cookies look like after these operations?
-    (picture choices - 0 cookies, 1 cookie, 2 cookies, 3 cookies)
-  </p>
+
 
   <exercise label="Cookie-Circuit-One-Plate">
     <title>Calculating a Cookie Circuit</title>
@@ -68,9 +67,9 @@
     <hint><p>Operations are read left to right</p></hint>
   </exercise>
 
-(insert a picture with two plates of cookies, 5 on one, 3 on the other,
-then operations that apply to both of them (2 on the top, 1 on the bottom).
-Depict and label start states and end states)
+        <datafile label="CookieCircuitTwoOps" filename="CookieCircuitTwoOps.png" include-source="yes">
+            <image source="CookieCircuitTwoOps.png" width="66%"/>
+        </datafile>
 
   <p> We can also draw a circuit that starts out with multiple plates of cookies
     and applies the operations to each plate. In this case, we start with two plates
