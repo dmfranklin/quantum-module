@@ -86,9 +86,37 @@ Each interactive widget in the module is created by embedding a JavaScript funct
 5. **`visualizeProbabilitiesWidget(options)`**
    Displays a quantum circuit and dynamically updates a probability distribution based on the current circuit configuration. Students can modify the circuit and immediately see how the probabilities of different measurement outcomes change.
 
+### Specifying a Circuit
+All widgets need the ability to specify a circuit.
+The gate abbreviations are:
+- I: Identity (wire with no gate to line up timing)
+- X: NOT / X
+- Y: Y
+- S: SWAP
+
+To specify a two-qubit gate:
+- Use #0 and #1 to indicate the two inputs
+- Some gates are symmetric (S) but others are asymmetric (CNOT)
+- Using #0 and #1 on a one-qubit gate turns it into a C-Gate, where
+   #0 is the control and #1 is the target. (e.g., X#0 and X#1 is a CNOT)
+
+Gates must be given a name and defined in the circuitDiagrams variable
+
+To define the circuit "Phi+", consisting of an X gate on the top line followed
+by a CNOT (top line is control, bottom line is target), do the following:
+
+[
+    "Phi+",
+    `
+      H X#0 I I I I
+      I X#1 I I I I
+    `,
+  ],
+
 ### Widget Parameters
 
 Each widget function accepts an `options` object. The parameters vary slightly depending on the function being used.
+
 
 ### Parameters for `identicalCircuitWidget`, `equivalentCircuitWidget`, `matchOutputWidget`, `specificOutputWidget`
 

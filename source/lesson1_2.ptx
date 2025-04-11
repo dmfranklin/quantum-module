@@ -7,40 +7,188 @@
 
 
   
-    <title>Building Circuits</title>
+    <title>Building Quantum Circuits</title>
 
     <introduction>
-    <p>In this lesson, we will learn how to use the <c>Q.js</c> quantum circuit editor to
-      graphically build quantum circuits.</p>
-    <p><c>Q.js</c> doesn't require any coding!</p>
-    <p>You can build quantum circuits by using a drag-and-drop method that allows you to visualize
-      the circuit and the qubit states created by the circuit.</p>
-    <p>The goal of this lesson is to explore the features of the <c>Q.js</c> quantum circuit editor.</p>
+    <p>Quantum computing operations harness quantum properties to have outputs that 
+    are not possible with classical computers. For this reason, we represent quantum
+    programs and quantum state differently than in classical computing.</p>
+    
+    <p>In this part of the lesson, we will learn some basic quantum operations that can 
+    be implented by classical computers and introduce
+    a drag-and-drop tool (Q.js) you can use to build build quantum circuits. In future lessons,
+    you will use this tool to explore the behavior of quantum operations that cause properties 
+    not possible with classical computers. </p>
+    
   </introduction>
+<section xml:id="sec-qubit">
+    <title>Qubit: A quantum bit</title>
+    <p> Grace Hopper invented the compiler, which allowed programmers to often ignore the 1's 
+    and 0's in the machine and use higher level languages. Unfortunately, the unique features
+    of quantum computing reveal themselves on single bits, and algorithms are still designed
+    at the bit level. Therefore, we will operate on single bits, not integers or larger numbers. 
+    </p>
+    <p> A quantum bit, or qubit, holds a 0 or 1, just like a classical bit. However, a single
+    qubit also holds other interesting information that we will explore throughout this course. 
+    Today, we will only use the 0 and 1. To go along with the more complex state, the representation
+    uses slightly different syntax. We will begin that now - instead of just writing 0 or 1, we will
+    write |0> and |1>. Later, we will learn more about what those symbols mean. 
+    </p>
+    <p> To make it easier to visualize, we will use a white ball for |0> and a black ball for |1>. </p>
 
+    <datafile label="WhiteBlackBalls" filename="WhiteBlackBalls.png" include-source="yes">
+            <image source="WhiteBlackBalls.png" width="66%"/>
+        </datafile>
+</section>
+
+
+<section xml:id="sec-not">
+    <title>Q Gate #1: NOT</title>
+    <p> Quantum operations are called <em>gates</em>. The simplest operation is the 
+    NOT, or X, gate. From a classical perspective, it toggles the value between 0 and 1.
+    That is, if the input is 0, the output is 1, and vice versa.</p>
+
+     <datafile label="NOTgate" filename="NOTgate.png" include-source="yes">
+            <image source="NOTgate.png" width="66%"/>
+        </datafile>
+
+  <exercise label="Not-Q1">
+    <title>NOT Gate Check #1</title>
+    <idx>not gate 1</idx>
+    <statement>
+        <p>What is the output of this circuit?</p>
+         <datafile label="NOT_Q1" filename="NOT_Q1.png" include-source="yes">
+            <image source="NOT_Q1.png" width="66%"/>
+        </datafile>   
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><datafile label="WhiteBall" filename="WhiteBall.png" include-source="yes">
+            <image source="WhiteBall.png" width="66%"/>
+        </datafile></statement>
+        <feedback><p>There were only two "eat cookie" operations.</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><datafile label="BlackBall" filename="BlackBall.png" include-source="yes">
+            <image source="BlackBall.png" width="66%"/>
+        </datafile></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Apply the NOT gate twice</p></hint>
+  </exercise>
+ <exercise label="Not-Q2">
+    <title>NOT Gate Check #2</title>
+    <idx>not gate 2</idx>
+    <statement>
+        <p>What is the output of this circuit?</p>
+         <datafile label="Not_Q2" filename="Not_Q2.png" include-source="yes">
+            <image source="Not_Q2.png" width="66%"/>
+        </datafile>   
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><datafile label="WhiteBall" filename="WhiteBall.png" include-source="yes">
+            <image source="WhiteBall.png" width="66%"/>
+        </datafile></statement>
+        <feedback><p>There were only two "eat cookie" operations.</p>
+         </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><datafile label="BlackBall" filename="BlackBall.png" include-source="yes">
+            <image source="BlackBall.png" width="66%"/>
+        </datafile></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Apply the NOT gate twice</p></hint>
+  </exercise>
+ <exercise label="Not-Q3">
+    <title>NOT Gate Check #3</title>
+    <idx>not gate 3</idx>
+    <statement>
+        <p>What is the output of this circuit?</p>
+         <datafile label="NOT_Q3" filename="NOT_Q3.png" include-source="yes">
+            <image source="NOT_Q3.png" width="66%"/>
+        </datafile>   
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><datafile label="WhiteBall" filename="WhiteBall.png" include-source="yes">
+            <image source="WhiteBall.png" width="66%"/>
+        </datafile></statement>
+        <feedback><p>There were only two "eat cookie" operations.</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><datafile label="BlackBall" filename="BlackBall.png" include-source="yes">
+            <image source="BlackBall.png" width="66%"/>
+        </datafile></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Apply the NOT gate three times</p></hint>
+  </exercise>
+</section>
 
   <section>
     <title>Build a Quantum Circuit</title>
 
-    <note>
-      <p>In a circuit diagram, the operations progress from left to right.</p>
-    </note>
+   <p> In this section, we introduce the interactive quantum circuit builder.</p>
+
 
     <p>
-      In this section, we will start by building a simple quantum circuit that is used for creating
-      quantum entanglement.
+      There are three operations that operate well on qubits in simple states |0> and |1>:
+      (picture of NOT, SWAP, CNot gates)
     </p>
 
-    <p>
-      To create this circuit, we need to add two quantum operations:
-    </p>
-
-    <ul>
-      <li>An H gate</li>
-      <li>A CNOT gate</li>
-    </ul>
+<p>
+    Below is your first circuit to build using the circuit builder's explore mode. 
+    Drag and drop the pictures of the gates onto the 
+    circuit. In explore mode, every time you make a change, it provides
+    feedback. You can ignore the feedback until you think you are done!!
+</p>
+<p>
+    The SWAP gate is a two-qubit gate, which will be two diamonds in this widget.
+    Place the two diamonds on the two wires in the same column. Click on them so   
+    they are both highlighted, then click on the "S" button to connect them.
+</p>
 
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+      <script>
+        identicalCircuitWidget({
+          circuit: "L1_2_1",
+          instantFeedback: true,
+          allowedGates: "XS"
+        });
+      </script>
+    </interactive>
+
+<p>
+    Now let's try building a circuit with a controlled gate - just like the controlled
+    increment we saw in the math example. Put a spot on one the control wire and the gate on the 
+    target wire. Click on them to make sure they are both highlighted, then click the "C" button 
+    to connect them.
+</p>
+
+  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+      <script>
+        identicalCircuitWidget({
+          circuit: "L1_2_2",
+          instantFeedback: true,
+          allowedGates: "X*"
+        });
+      </script>
+    </interactive>
+  <p>
+    I am leaving in this last one because it had a bug when I tried it - it always
+    said I was not correct, even when I completed the circuit.
+  </p>
+   <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
         identicalCircuitWidget({
           circuit: "Phi+",
@@ -49,49 +197,6 @@
         });
       </script>
     </interactive>
-
-    <p>
-      Quantum gates act on qubits:
-    </p>
-
-    <ul>
-      <li>
-        The H gate only touches the first qubit, so it only affects the first qubit, not the second
-        qubit.
-      </li>
-      <li>
-        The CNOT gate touches the wires for both qubits, so it operates on both of these qubits.
-      </li>
-    </ul>
-
   </section>
-
-
-  <section>
-    <title>Outcomes and Probabilities</title>
-    <p>
-      A single qubit, when measured, can be in one of two states: <m>|0\rangle</m> or <m>|1\rangle</m>. Similarly, a pair of qubits can be in one of four states: <m>|00\rangle</m>, <m>|01\rangle</m>, <m>|10\rangle</m>, or <m>|11\rangle</m>.
-    </p>
-    <p>
-      The qubits in a quantum circuit typically each begin in the state <m>|0\rangle</m>. As the circuit runs, the qubits are transformed by the quantum gates. When we measure the qubits at the end, the probability of measuring each of the outcomes depends on what the gates did to the qubits.
-    </p>
-    <p>
-      Below is the 2-qubit circuit we just built. Notice how the
-      probabilities of measuring <m>|00\rangle</m> and <m>|11\rangle</m> are both 50%, while the probabilities of measuring <m>|01\rangle</m> and <m>|10\rangle</m> are both 0%.
-    </p>
-    <p>
-      This is because the gates in this circuit <term>entangle</term> the two qubits, forming a so-called <term>superposition</term> of the two states <m>|00\rangle</m> and <m>|11\rangle</m>.
-    </p>
-    <p>
-      Try modifying the circuit to see how the probabilities change. You can add or remove gates, or change the order of the gates.
-    </p>
-
-    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
-      <script>
-        visualizeProbabilitiesWidget({
-          circuit: "Phi+",
-        });
-      </script>
-    </interactive>
-  </section>
+  
 </section>
