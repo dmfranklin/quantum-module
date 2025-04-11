@@ -462,6 +462,13 @@ const circuitDiagrams = new Map([
     `,
   ],
   [
+    "L2_1_1",
+    `
+      S#0
+      S#1
+    `,
+  ],
+  [
     "Lab 7 - Exercise 1",
     `
       X-I-I-X#1-S#0-X#1

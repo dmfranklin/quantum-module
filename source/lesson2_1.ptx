@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>
+    Learning Through Exploration: SWAP and CNOT
+  </title>
+  <p>
+    In this chapter, we are going to learn some new quantum operations - by 
+    using the circuit builder.
+  
+  </p>
+<section>
+  <title>Using the Circuit Builder to learn SWAP </title>
+  <p> 
+The circuit builder allows us to see the behavior of a simple gate
+by trying all of the combinations of inputs. We are going to use it 
+two discover the functionality of the two other gates you used last 
+time - SWAP and CNOT. 
+  </p><p> 
+  When qubits are in their simplest states, |0> and |1>, there are four 
+combinations of inputs and four combinations of outputs: 
+00, 01, 10, and 11. To see how a gate works on these simple states, 
+we try each on in the circuit builder.
+  </p>    
+<p> The circuit builder will be set to a starting state of |0> and |0>.
+  We can also write this state in a more compact form: |00>. So, first you 
+  will see how the SWAP gate acts when given the input |00>. Using the circuit 
+  builder below, construct a circuit that matches this picture:
+</p> 
+
+
+
+<datafile label="Swap00" filename="Swap00.png" include-source="yes">
+  <image source="Swap00.png" width="66%"/>
+</datafile>
+
+
+
+<interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+  <script>
+    visualizeProbabilitiesWidget({
+      circuit: "Blank 2x6",
+      allowedGates: "XS"
+    });
+  </script>
+</interactive>
+
+<p>
+Notice that there is a bar graph that shows the probability of each outcome. Because
+we are using the simple state, there will be a 100% probability of one of the four
+choices of outcomes. The qubits shown top to bottom are expressed left to right.
+That is, the state |01> means the top qubit is |0> and the bottom qubit is |1>.
+</p>
+
+
+
+  <exercise label="Swap_00_Output">
+    <title>Swap Output with 00</title>
+    <idx>swap output 00</idx>
+    <statement>
+        <p>What is the output of the SWAP gate with |00> as the input?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>|00> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+          <image source="Balls00.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! The swap had no effect!</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>|01> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+          <image source="Balls01.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>|10> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+          <image source="Balls10.png" width="66%"/>
+        </datafile></p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>|11> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+          <image source="Balls11.png" width="66%"/>
+        </datafile></p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      The answer is the choice on the bar graph at 100%</p></hint>
+  </exercise>
+
+  <p>
+    Now we are going to vary the input. We do this by putting a NOT gate on the 
+    input that we want to be a |1> So now construct the gate that will give us the 
+    output when the input is |01>. 
+  </p>
+
+  <p> In other words, if we want to determine the output to this circuit: 
+  </p>
+  <datafile label="Swap01" filename="Swap01.png" include-source="yes">
+    <image source="Swap01.png" width="66%"/>
+  </datafile>
+  <p> Then we construct this circuit:
+  </p>
+
+  <datafile label="NotSwap00" filename="NotSwap00.png" include-source="yes">
+    <image source="NotSwap00.png" width="66%"/>
+  </datafile>
+  
+  
+  
+  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XS"
+      });
+    </script>
+  </interactive>
+
+  <exercise label="Swap_01_Output">
+    <title>Swap Output with 01</title>
+    <idx>swap output 01</idx>
+    <statement>
+        <p>What is the output of the SWAP gate with |01> as the input?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>|00> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+          <image source="Balls00.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>|01> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+          <image source="Balls01.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>|10> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+          <image source="Balls10.png" width="66%"/>
+        </datafile></p></statement>
+        <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>|11> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+          <image source="Balls11.png" width="66%"/>
+        </datafile></p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      The answer is the choice on the bar graph at 100%</p></hint>
+  </exercise>
+
+  <p>
+    Now use the circuit builder to figure out the output when you give a SWAP gate 
+    |10> and |11>. 
+  </p>
+
+  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XS"
+      });
+    </script>
+  </interactive>
+
+  <exercise label="Swap_truth_table">
+    <title>Swap Truth Table</title>
+    <idx>Swap_truth_table</idx>
+    <statement>
+        <p>Which picture depicts the proper relationship between the four possible input and 
+          output combinations?
+        </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p><datafile label="SWAPgate" filename="SWAPgate.png" include-source="yes">
+          <image source="SWAPgate.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! It always trades the two input values <em> but it does not trade their 
+          locations</em>!</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p><datafile label="SWAPgateWrong1" filename="SWAPgateWrong1.png" include-source="yes">
+          <image source="SWAPgateWrong1.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice >
+        <statement><p><datafile label="SWAPgateWrong2" filename="SWAPgateWrong2.png" include-source="yes">
+          <image source="SWAPgateWrong2.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p><datafile label="SWAPgateWrong3" filename="SWAPgateWrong3.png" include-source="yes">
+          <image source="SWAPgateWrong3.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      Try it with |10> and |11> using not gates, then record the answers.</p></hint>
+  </exercise>
+
+<p> 
+Now that you have the full truth table for SWAP, I suggest writing it on a page of 
+notes for future reference.
+</p>
+
+</section>
+<section xml:id="sec-cnot">
+  <title>Exploring the CNOT Gate</title>
+  <p>
+    Now let's explore how the CNOT gate works. Using the same method, try all four 
+  input combinations (|00>, |01>, |10>, and |11>) to determine the relationship 
+  between inputs and outputs for the CNOT gate. Make the top qubit the control 
+  (the spot) and the bottom qubit the target (NOt gate).
+  </p>
+  
+  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "X*"
+      });
+    </script>
+  </interactive>
+
+  <exercise label="CNOT_truth_table">
+    <title>CNOT Truth Table</title>
+    <idx>CNOT_truth_table</idx>
+    <statement>
+        <p>Which picture depicts the proper relationship between the four possible input and 
+          output combinations?
+        </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p><datafile label="CNOTgate" filename="CNOTgate.png" include-source="yes">
+          <image source="CNOTgate.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! It always trades the two input values <em> but it does not trade their 
+          locations</em>!</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p><datafile label="SWAPgateWrong1" filename="SWAPgateWrong1.png" include-source="yes">
+          <image source="SWAPgateWrong1.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice >
+        <statement><p><datafile label="SWAPgateWrong2" filename="SWAPgateWrong2.png" include-source="yes">
+          <image source="SWAPgateWrong2.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p><datafile label="SWAPgateWrong3" filename="SWAPgateWrong3.png" include-source="yes">
+          <image source="SWAPgateWrong3.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      Construct all for input combinations using not gates,  recording the answers 
+      each time.</p></hint>
+  </exercise>
+  <p> 
+    Now that you have the full truth table for CNOT, I suggest adding it onto your page of 
+    notes for future reference.
+    </p>
+</section>
+</section>
