@@ -4,12 +4,13 @@
   <title>Exploring Quantum Operations</title>
 
   <introduction>
-    <p>In this lesson, we will learn how quantum operations visualized,
-  then play with a quantum "circuit" builder.</p>
+    <p>In this chapter, we are going to learn some new quantum operations - by 
+      using the circuit builder..</p>
   </introduction>
 
   <!-- include sections -->
   <xi:include href="lesson2_1.ptx" />
-  
+  <xi:include href="lesson2_2.ptx" />
+  <xi:include href="lesson2_3.ptx" />
 
 </chapter>
