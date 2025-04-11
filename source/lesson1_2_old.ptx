@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson1_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+
+  
+    <title>Building Circuits</title>
+
+    <introduction>
+    <p>In this lesson, we will learn how to use the <c>Q.js</c> quantum circuit editor to
+      graphically build quantum circuits.</p>
+    <p><c>Q.js</c> doesn't require any coding!</p>
+    <p>You can build quantum circuits by using a drag-and-drop method that allows you to visualize
+      the circuit and the qubit states created by the circuit.</p>
+    <p>The goal of this lesson is to explore the features of the <c>Q.js</c> quantum circuit editor.</p>
+  </introduction>
+
+
+  <section>
+    <title>Build a Quantum Circuit</title>
+
+    <note>
+      <p>In a circuit diagram, the operations progress from left to right.</p>
+    </note>
+
+    <p>
+      In this section, we will start by building a simple quantum circuit that is used for creating
+      quantum entanglement.
+    </p>
+
+    <p>
+      To create this circuit, we need to add two quantum operations:
+    </p>
+
+    <ul>
+      <li>An H gate</li>
+      <li>A CNOT gate</li>
+    </ul>
+
+    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+      <script>
+        identicalCircuitWidget({
+          circuit: "Phi+",
+          instantFeedback: true,
+          allowedGates: "HX*"
+        });
+      </script>
+    </interactive>
+
+    <p>
+      Quantum gates act on qubits:
+    </p>
+
+    <ul>
+      <li>
+        The H gate only touches the first qubit, so it only affects the first qubit, not the second
+        qubit.
+      </li>
+      <li>
+        The CNOT gate touches the wires for both qubits, so it operates on both of these qubits.
+      </li>
+    </ul>
+
+  </section>
+
+
+  <section>
+    <title>Outcomes and Probabilities</title>
+    <p>
+      A single qubit, when measured, can be in one of two states: <m>|0\rangle</m> or <m>|1\rangle</m>. Similarly, a pair of qubits can be in one of four states: <m>|00\rangle</m>, <m>|01\rangle</m>, <m>|10\rangle</m>, or <m>|11\rangle</m>.
+    </p>
+    <p>
+      The qubits in a quantum circuit typically each begin in the state <m>|0\rangle</m>. As the circuit runs, the qubits are transformed by the quantum gates. When we measure the qubits at the end, the probability of measuring each of the outcomes depends on what the gates did to the qubits.
+    </p>
+    <p>
+      Below is the 2-qubit circuit we just built. Notice how the
+      probabilities of measuring <m>|00\rangle</m> and <m>|11\rangle</m> are both 50%, while the probabilities of measuring <m>|01\rangle</m> and <m>|10\rangle</m> are both 0%.
+    </p>
+    <p>
+      This is because the gates in this circuit <term>entangle</term> the two qubits, forming a so-called <term>superposition</term> of the two states <m>|00\rangle</m> and <m>|11\rangle</m>.
+    </p>
+    <p>
+      Try modifying the circuit to see how the probabilities change. You can add or remove gates, or change the order of the gates.
+    </p>
+
+    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+      <script>
+        visualizeProbabilitiesWidget({
+          circuit: "Phi+",
+        });
+      </script>
+    </interactive>
+  </section>
+</section>

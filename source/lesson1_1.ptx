@@ -16,15 +16,12 @@
 <section xml:id="sec-cookiecircuits">
   <title>Cookie Circuits</title>
   
-   (insert cookie circuit diagram with labels for start and end state, arrow from left to right
-   saying order of operations)
 
         <datafile label="CookieCircuitOneOp" filename="CookieCircuitOneOp.png" include-source="yes">
             <image source="CookieCircuitOneOp.png" width="66%"/>
         </datafile>
    
-      <p><image source="./images/CookieCircuitOneOp.png" width="50%"/></p>
-    <p><image source="images/CookieCircuitTwoOps.png" width="50%"/></p>
+
 
   <p>
     In this picture, we begin with a plate of 3 cookies (the <em>input</em>). We have one operation, 
@@ -134,14 +131,153 @@
     <li><p>Increment - add one to a number</p></li>
    <li><p> Decrement - subtract one from a number</p></li>
     <li><p>Negate - negate a number</p></li>
-    <li><p>Add - add two numbers</p></li>
+    <li><p>Add - add two numbers. The result is placed in the output with an * </p></li>
     </ul>
     
 
   </p>
-  <p>
-  (Subtraction is negation and addition)
+
+(insert multiple-choice questions here that use only one operation at a time.)
+
+<p> We can also define two-variable gates:
+
+    
+    <ul>
+    <li><p>Add - add two numbers. Add two numbers and place result in the target, indicated
+    by *. Other
+    input is unchanged. </p></li>
+    <li><p>Controlled increment - increment the target if and only if the control is odd.
+    Target is indicated by *, control remains unchanged. </p></li> 
+    </ul>
   </p>
+
+<p>
+  These two-variable gates bring up a few details that cannot be ignored. First - <em> where does the 
+  result go? </em> There are two inputs. In mathematics, there is only one result - in programming, 
+  we specify where the result goes by writing "variable = expression". We don't have this functionality 
+  in quantum operations. In quantum computing, if there are two inputs, 
+  there are two outputs - and we need to define what 
+  both of those outputs are. In both of the gates defined above, we will place the result in the 
+  target, leaving the other output to match its input.
+</p>
+
+(insert multiple-choice questions here that use only one operation at a time.)
+
+  <p>
+ Consider two starting variables, x and y. We will start with an input of x=5 and y=3.
+ Now consider the following sequence of operations:
+ x = x+1
+ y = y-1 
+ x = x + y 
+ y = x - y  
+
+ The following circuit would depict that sequence of operations:
+  </p>
+
+(insert the picture here)
+
+
+
+(now we have a few longer circuits with multiple operations, one for each question.
+The first question has all one-variable gates, the second question integrates an add,
+and the third and fourth questions have both an add and a controlled increment (the 
+if goes a different way in each one))
+ <exercise label="Math-Circuit">
+    <title>Solving a Math Circuit</title>
+    <idx>math circuit 1</idx>
+    <statement>
+        <p>What are the values of x and y after the following math circuit runs?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>Look at where the * says to place the addition result</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>There were two "eat cookie" operations.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Look at where the * says to place the addition result.</p></hint>
+      <hint><p>Operations go from left to right.</p></hint>
+  </exercise>
+
+<exercise label="Math-Circuit-2">
+    <title>Solving a Math Circuit</title>
+    <idx>math circuit 2</idx>
+    <statement>
+        <p>What does the circuit look like for this sequence of operations?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>Look at where the * says to place the addition result</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>There were two "eat cookie" operations.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Look at where the * says to place the addition result.</p></hint>
+      <hint><p>Operations go from left to right.</p></hint>
+  </exercise>
+
+
+<exercise label="Math-Circuit-3">
+    <title>Solving a Math Circuit</title>
+    <idx>math circuit 3</idx>
+    <statement>
+        <p>What sequence of operations matches this circuit?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>Look at where the * says to place the addition result</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>There were two "eat cookie" operations.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = , y =   </p></statement>
+        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Look at where the * says to place the addition result.</p></hint>
+      <hint><p>Operations go from left to right.</p></hint>
+  </exercise>
 </section>
 
 <p> Summary:
