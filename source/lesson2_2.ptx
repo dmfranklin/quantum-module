@@ -11,7 +11,7 @@
     In the previous section, you learned how to use the circuit builder to determine 
     the output from a particular set of inputs.
     Now use the circuit builder to figure out the output when you give a SWAP gate 
-    |10> and |11> so you can build the complete functionality for simple two-qubit 
+    <m>|10\rangle</m> and <m>|11\rangle</m> so you can build the complete functionality for simple two-qubit 
     combinations. 
   </p>
 
@@ -19,7 +19,7 @@
     <script>
       visualizeProbabilitiesWidget({
         circuit: "Blank 2x6",
-        allowedGates: "X*"
+        allowedGates: "XS"
       });
     </script>
   </interactive>
@@ -68,7 +68,7 @@
       </choice>
     </choices>
     <hint><p>Make the circuit and look at the bar graph below the circuit. 
-      Try it with |10> and |11> using not gates, then record the answers.</p></hint>
+      Try it with <m>|10\rangle</m> and <m>|11\rangle</m> using not gates, then record the answers.</p></hint>
   </exercise>
 
 <p> 
@@ -89,7 +89,7 @@ the results of circuits involving NOT and SWAP gates.
   </statement>
   <choices randomize="no">
     <choice>
-      <statement><p>|00> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+      <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
         <image source="Balls00.png" width="66%"/>
       </datafile>
     </p></statement>
@@ -97,7 +97,7 @@ the results of circuits involving NOT and SWAP gates.
        </feedback>
     </choice>
     <choice>
-      <statement><p>|01> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+      <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
         <image source="Balls01.png" width="66%"/>
       </datafile>
     </p></statement>
@@ -105,14 +105,14 @@ the results of circuits involving NOT and SWAP gates.
       </feedback>
     </choice>
     <choice correct="yes">
-      <statement><p>|10> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+      <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
         <image source="Balls10.png" width="66%"/>
       </datafile></p></statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p>
       </feedback>
     </choice>
     <choice>
-      <statement><p>|11> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+      <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
         <image source="Balls11.png" width="66%"/>
       </datafile></p></statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p>
@@ -134,7 +134,7 @@ the results of circuits involving NOT and SWAP gates.
   </statement>
   <choices randomize="no">
     <choice>
-      <statement><p>|00> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+      <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
         <image source="Balls00.png" width="66%"/>
       </datafile>
     </p></statement>
@@ -142,7 +142,7 @@ the results of circuits involving NOT and SWAP gates.
        </feedback>
     </choice>
     <choice correct="yes">
-      <statement><p>|01> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+      <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
         <image source="Balls01.png" width="66%"/>
       </datafile>
     </p></statement>
@@ -150,14 +150,14 @@ the results of circuits involving NOT and SWAP gates.
       </feedback>
     </choice>
     <choice>
-      <statement><p>|10> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+      <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
         <image source="Balls10.png" width="66%"/>
       </datafile></p></statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p>
       </feedback>
     </choice>
     <choice>
-      <statement><p>|11> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+      <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
         <image source="Balls11.png" width="66%"/>
       </datafile></p></statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p>
@@ -167,5 +167,15 @@ the results of circuits involving NOT and SWAP gates.
   <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
 </exercise>
 
-
+<!-- 
+<interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+  <script>
+    specificOutputWidget({
+      circuit: "Phi+",
+      instantFeedback: false,
+      allowedGates: "XS"
+    });
+  </script>
+</interactive>
+-->
 </section>

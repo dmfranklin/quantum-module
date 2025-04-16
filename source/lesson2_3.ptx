@@ -8,7 +8,7 @@
   <title>Exploring the CNOT Gate</title>
   <p>
     Now let's explore how the CNOT gate works. Using the same method, try all four 
-  input combinations (|00>, |01>, |10>, and |11>) to determine the relationship 
+  input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>, <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship 
   between inputs and outputs for the CNOT gate. Make the top qubit the control 
   (the spot) and the bottom qubit the target (NOt gate).
   </p>
@@ -87,7 +87,7 @@
       </statement>
       <choices randomize="no">
         <choice>
-          <statement><p>|00> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+          <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
             <image source="Balls00.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -95,7 +95,7 @@
            </feedback>
         </choice>
         <choice correct="yes">
-          <statement><p>|01> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+          <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
             <image source="Balls01.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -103,14 +103,14 @@
           </feedback>
         </choice>
         <choice>
-          <statement><p>|10> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+          <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
             <image source="Balls10.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p>|11> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+          <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
             <image source="Balls11.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
@@ -132,7 +132,7 @@
       </statement>
       <choices randomize="no">
         <choice>
-          <statement><p>|00> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+          <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
             <image source="Balls00.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -140,7 +140,7 @@
            </feedback>
         </choice>
         <choice>
-          <statement><p>|01> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+          <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
             <image source="Balls01.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -148,14 +148,14 @@
           </feedback>
         </choice>
         <choice>
-          <statement><p>|10> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+          <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
             <image source="Balls10.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice correct="yes">
-          <statement><p>|11> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+          <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
             <image source="Balls11.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
