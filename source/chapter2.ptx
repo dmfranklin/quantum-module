@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exploring Quantum Operations</title>
+
+  <introduction>
+    <p>In this chapter, we are going to learn some new quantum operations - by 
+      using the circuit builder..</p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="lesson2_1.ptx" />
+  <xi:include href="lesson2_2.ptx" />
+  <xi:include href="lesson2_3.ptx" />
+
+</chapter>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson2_3" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+  <title>Exploring the CNOT Gate</title>
+  <p>
+    Now let's explore how the CNOT gate works. Using the same method, try all four 
+  input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>, <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship 
+  between inputs and outputs for the CNOT gate. Make the top qubit the control 
+  (the spot) and the bottom qubit the target (NOt gate).
+  </p>
+  
+  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "X*"
+      });
+    </script>
+  </interactive>
+
+  <exercise label="CNOT_truth_table">
+    <title>CNOT Truth Table</title>
+    <idx>CNOT_truth_table</idx>
+    <statement>
+        <p>Which picture depicts the proper relationship between the four possible input and 
+          output combinations?
+        </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p><datafile label="CNOTgate" filename="CNOTgate.png" include-source="yes">
+          <image source="CNOTgate.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! It always trades the two input values <em> but it does not trade their 
+          locations</em>!</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement><p><datafile label="SWAPgateWrong1" filename="SWAPgateWrong1.png" include-source="yes">
+          <image source="SWAPgateWrong1.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice >
+        <statement><p><datafile label="SWAPgateWrong2" filename="SWAPgateWrong2.png" include-source="yes">
+          <image source="SWAPgateWrong2.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p><datafile label="SWAPgateWrong3" filename="SWAPgateWrong3.png" include-source="yes">
+          <image source="SWAPgateWrong3.png" width="66%"/>
+        </datafile>
+      </p></statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      Construct all for input combinations using not gates,  recording the answers 
+      each time.</p></hint>
+  </exercise>
+  <p> 
+    Now that you have the full truth table for CNOT, I suggest adding it onto your page of 
+    notes for future reference. In the following questions, you will be asked to calculate 
+    the results of circuits involving NOT, SWAP, and/or CNOT gates.
+    </p>
+
+    <exercise label="CNOT_Q1">
+      <title>CNOT Q1</title>
+      <idx>cnot Q1</idx>
+      <statement>
+          <p>What is the output of the following circuit?
+            <datafile label="CNOT_Q1-image" filename="CNOT_Q1.png" include-source="yes">
+              <image source="CNOT_Q1.png" width="66%"/>
+            </datafile> 
+          </p>
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+            <image source="Balls00.png" width="66%"/>
+          </datafile>
+        </p></statement>
+          <feedback><p>Yes! The swap had no effect!</p>
+           </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+            <image source="Balls01.png" width="66%"/>
+          </datafile>
+        </p></statement>
+          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+            <image source="Balls10.png" width="66%"/>
+          </datafile></p></statement>
+          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+            <image source="Balls11.png" width="66%"/>
+          </datafile></p></statement>
+          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
+    </exercise>
+
+    <exercise label="CNOT_Q2">
+      <title>CNOT Q2</title>
+      <idx>cnot Q2</idx>
+      <statement>
+          <p>What is the output of the following circuit?
+            <datafile label="CNOT_Q2-image" filename="CNOT_Q2.png" include-source="yes">
+              <image source="CNOT_Q2.png" width="66%"/>
+            </datafile> 
+          </p>
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+            <image source="Balls00.png" width="66%"/>
+          </datafile>
+        </p></statement>
+          <feedback><p>Yes! The swap had no effect!</p>
+           </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+            <image source="Balls01.png" width="66%"/>
+          </datafile>
+        </p></statement>
+          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+            <image source="Balls10.png" width="66%"/>
+          </datafile></p></statement>
+          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+            <image source="Balls11.png" width="66%"/>
+          </datafile></p></statement>
+          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
+    </exercise>
+    
+   
+
+</section>
