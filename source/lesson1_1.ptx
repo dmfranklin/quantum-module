@@ -21,23 +21,24 @@
             <image source="CookieCircuitOneOp.png" width="66%"/>
         </datafile>
    
-
-
   <p>
-    In this picture, we begin with a plate of 3 cookies (the <em>input</em>). We have one operation, 
-    "eat one cookie". After the operation is applied, we are left with two cookies. There is only
-    one operation depicted, so that is the end of the program. Therefore, the plate with two cookies
-    is the <em>output</em>. Likewise, if give the same circuit an input of a plate of 2 cookies and applied that operation
-    once, we would end up with an output of a plate with 1 cookie. 
+    In this picture, we begin with a plate of 4 cookies (the <em>input</em>). We have one operation, 
+    "eat one cookie". After the operation is applied, we are left with 3 cookies. There is only
+    one operation depicted, so that is the end of the program. Therefore, the plate with 3 cookies
+    is the <em>output</em>. Likewise, if give the same circuit an input of a plate of 3 cookies and applied that operation
+    once, we would end up with an output of a plate with 2 cookies. 
   </p>
 
 
 
-  <exercise label="Cookie-Circuit-One-Plate">
+  <exercise label="Checkpoint1_1-Cookie-Circuit-One-Plate">
     <title>Calculating a Cookie Circuit</title>
     <idx>cookie circuit 1</idx>
     <statement>
         <p>How many cookies will be left after this Cookie Circuit runs?</p>
+        <datafile label="Checkpoint1_1-Cookie-Circuit-One-Plate" filename="Checkpoint1_1-Cookie-Circuit-One-Place.png" include-source="yes">
+            <image source="Checkpoint1_1-Cookie-Circuit-One-Plate.png" width="450px"/>
+        </datafile>
     </statement>
     <choices randomize="no">
       <choice>
@@ -47,7 +48,7 @@
       </choice>
       <choice>
         <statement><p>1 cookie</p></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
+        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with 1 cookie.</p>
         </feedback>
       </choice>
       <choice correct="yes">
@@ -64,11 +65,10 @@
     <hint><p>Operations are read left to right</p></hint>
   </exercise>
 
-        <datafile label="CookieCircuitTwoOps" filename="CookieCircuitTwoOps.png" include-source="yes">
-            <image source="CookieCircuitTwoOps.png" width="66%"/>
-        </datafile>
-
-  <p> We can also draw a circuit that starts out with multiple plates of cookies
+    <datafile label="CookieCircuitTwoOps" filename="CookieCircuitTwoOps.png" include-source="yes">
+      <image source="CookieCircuitTwoOps.png" width="66%"/>
+    </datafile>
+  <p>We can also draw a circuit that starts out with multiple plates of cookies
     and applies the operations to each plate. In this case, we start with two plates
     of cookies - one that has 5 cookies and the other that has 3. We then apply 
     operations to each of the plates. There are two operations applied to the plate
@@ -81,32 +81,49 @@
     two starting plates of cookies (1-3 cookies) and one or two operations each time, only 
     one has a correct output given the starting input)
   </p>
-  <exercise label="Cookie-Circuit-Multiple-Plates">
+
+  <exercise label="Checkpoint1_2-Cookie-Circuit-Two-Plates">
     <title>Multiple Plates of Cookies</title>
     <idx>cookie circuit 2</idx>
     <statement>
-        <p>Pick the circuits whose start and end states match the quantum circuit depicted.</p>
+        <p>Pick the circuit that has the correct end state given the start state.</p>
     </statement>
     <choices randomize="yes">
-      <choice>
-        <statement><p>0 cookies</p></statement>
-        <feedback><p>There were only two "eat cookie" operations.</p>
+      <choice correct="yes">
+        <statement><p>OUTPUT: Top: 2 cookies / Bottom: 0 cookies</p>
+          <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_A" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_A.png" include-source="yes">
+            <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_A.png" width="450px"/>
+          </datafile>
+        </statement>
+        <feedback><p>Yes! The top begins with 3 cookies, and you are left with 2 cookies after one "eat cookie" operation. And, the bottom circuit begins with two cookies. After two "eat cookie" operations, there are 0 cookies left.</p>
          </feedback>
       </choice>
       <choice>
-        <statement><p>1 cookie</p></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
-        </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>2 cookies</p></statement>
-        <feedback><p>There were two "eat cookie" operations.</p>
-        </feedback>
+//        <statement><p>OUTPUT: Top: 2 cookies / Bottom: 1 cookie</p></statement>
+          <statement>
+            <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_B" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" include-source="yes">
+              <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" width="450px"/>
+            </datafile>
+          </statement>
+        <feedback><p>There were two "eat cookie" operations for each plate.</p></feedback>
       </choice>
       <choice>
-        <statement><p>3 cookies</p></statement>
-        <feedback><p>You need to apply the "eat cookies" operations.</p>
-        </feedback>
+//        <statement><p>OUTPUT: Top: 1 cookie / Bottom: 2 cookies</p></statement>
+          <statement>
+            <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_C" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" include-source="yes">
+              <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" width="450px"/>
+            </datafile>
+          </statement>
+        <feedback><p>There are two "eat cookie" operations for the top plate, and one "eat cookie" operation for the bottom plate.</p></feedback>
+      </choice>
+      <choice>
+//        <statement><p>OUTPUT: Top: 1 cookie / Bottom: 1 cookie</p></statement>
+          <statement>
+            <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_D" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" include-source="yes">
+              <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" width="450px"/>
+            </datafile>
+          </statement>
+        <feedback><p>There are two "eat cookie" operations for both plates.</p></feedback>
       </choice>
     </choices>
     <hint><p>Operations are read left to right</p></hint>
@@ -128,26 +145,45 @@
   <p>
     We will use the following operations: 
     <ul>
-    <li><p>Increment - add one to a number</p></li>
-   <li><p> Decrement - subtract one from a number</p></li>
-    <li><p>Negate - negate a number</p></li>
-    <li><p>Add - add two numbers. The result is placed in the output with an * </p></li>
+    <li>
+      <p>Increment - add one to a number</p>
+      <datafile label="1-1-2_MathCircuitsINC" filename="1-1-2_MathCircuitsINC.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsINC.png" width="450px"/>
+      </datafile>
+    </li>
+   <li>
+      <p> Decrement - subtract one from a number</p>
+      <datafile label="1-1-2_MathCircuitsDEC" filename="1-1-2_MathCircuitsDEC.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsDEC.png" width="450px"/>
+      </datafile>
+    </li>
+    <li>
+      <p>Negate - negate a number</p>
+      <datafile label="1-1-2_MathCircuitsNEGATE" filename="1-1-2_MathCircuitsNEGATE.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsNEGATE.png" width="450px"/>
+      </datafile>
+    </li>
     </ul>
-    
-
   </p>
 
 (insert multiple-choice questions here that use only one operation at a time.)
 
 <p> We can also define two-variable gates:
-
-    
     <ul>
-    <li><p>Add - add two numbers. Add two numbers and place result in the target, indicated
-    by *. Other
-    input is unchanged. </p></li>
-    <li><p>Controlled increment - increment the target if and only if the control is odd.
-    Target is indicated by *, control remains unchanged. </p></li> 
+    <li>
+      <p>Add - add two numbers. Add two numbers and place result in the target, indicated by *. 
+      Other input is unchanged.</p>
+      <datafile label="1-1-2_MathCircuitsADD" filename="1-1-2_MathCircuitsADD.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsADD.png" width="450px"/>
+      </datafile>
+    </li>
+    <li>
+      <p>Controlled increment - increment the target if and only if the control is odd.
+      Target is indicated by *, control remains unchanged.</p>
+      <datafile label="1-1-2_MathCircuitsC-INC" filename="1-1-2_MathCircuitsC-INC.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsC-INC.png" width="450px"/>
+      </datafile>
+    </li> 
     </ul>
   </p>
 
