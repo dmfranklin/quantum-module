@@ -317,11 +317,27 @@ const identicalCircuitWidget = ({
   const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
   widget.append(palette, studentCircuitEditor);
 
+  const getNonEmptyColumns = (circuit) => {
+    const rows = circuit
+      .toText()
+      .trim()
+      .split("\n")
+      .map((line) => line.split("-"));
+    const columns = [];
+    for (let i = 0; i < rows[0].length; i++) {
+      const column = rows.map((row) => row[i]);
+      if (column.some((gate) => gate != "I")) {
+        columns.push(column);
+      }
+    }
+    return columns.map((column) => column.join("-")).join("\n");
+  };
+
   const grader = createGrader(
     circuit,
     studentCircuitEditor.circuit,
     (goalCircuit, studentCircuit) =>
-      goalCircuit.toText() === studentCircuit.toText()
+      getNonEmptyColumns(goalCircuit) == getNonEmptyColumns(studentCircuit)
         ? [true, "Great job! The circuits look identical."]
         : [false, "The circuits look different. Keep at it!"],
     instantFeedback
