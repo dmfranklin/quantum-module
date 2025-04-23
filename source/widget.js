@@ -273,10 +273,7 @@ const finalizeWidget = (widget, studentCircuitEditor) => {
   window.frameElement.removeAttribute("width");
   window.frameElement.removeAttribute("height");
   window.frameElement.style.height = `${document.documentElement.scrollHeight}px`;
-  const widgetWidth = studentCircuitEditor.querySelector(
-    ".Q-circuit-board-container"
-  ).scrollWidth;
-  window.frameElement.style.width = `calc(min(100%, ${widgetWidth}px)`;
+  window.frameElement.style.width = "100%";
 };
 
 const createStudentEditor = (circuit, arbitraryInputs, useOriginal = false) => {
