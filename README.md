@@ -128,7 +128,7 @@ Each widget function accepts an `options` object. The parameters vary slightly d
 - **`instantFeedback`** (optional, default: `false`):
   If `true`, the widget automatically checks the student's work after every change. If `false`, a manual "Check Answer" button is provided.
 
-- **`allowedGates`** (optional, default: `"HXYZPT*"`):
+- **`allowedGates`** (optional, default: `"HXYZPTS*"`):
   A string specifying which gate symbols students are allowed to use when constructing their circuit.
 
 ### Parameters for `visualizeProbabilitiesWidget`
@@ -136,7 +136,7 @@ Each widget function accepts an `options` object. The parameters vary slightly d
 - **`circuit`** (required):
   Defines the initial quantum circuit displayed in the widget. It can be a predefined identifier, an inline diagram, or a circuit object.
 
-- **`allowedGates`** (optional, default: `"HXYZPT*"`):
+- **`allowedGates`** (optional, default: `"HXYZPTS*"`):
   Specifies which gates can be used when modifying the circuit.
 
 ### Template for Including Widgets

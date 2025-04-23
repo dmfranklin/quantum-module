@@ -244,7 +244,7 @@ const createGrader = (
   return grader;
 };
 
-const defaultGateSymbols = "HXYZPT*";
+const defaultGateSymbols = "HXYZPTS*";
 const createPalette = (gateSymbols = defaultGateSymbols) => {
   const origCreatePalette = Q.Circuit.Editor.createPalette.toString();
   const origGateSymbols = origCreatePalette.match(/'([^']*)'\s*\.split/)[1];
