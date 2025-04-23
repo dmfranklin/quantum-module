@@ -32,7 +32,7 @@
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
-        <statement><p><datafile label="CNOTgate" filename="CNOTgate.png" include-source="yes">
+        <statement><p><datafile label="CNOT_truth_table_CNOTgate" filename="CNOTgate.png" include-source="yes">
           <image source="CNOTgate.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -41,7 +41,7 @@
          </feedback>
       </choice>
       <choice>
-        <statement><p><datafile label="SWAPgateWrong1" filename="SWAPgateWrong1.png" include-source="yes">
+        <statement><p><datafile label="CNOT_truth_table_SWAPgateWrong1" filename="SWAPgateWrong1.png" include-source="yes">
           <image source="SWAPgateWrong1.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -49,7 +49,7 @@
         </feedback>
       </choice>
       <choice >
-        <statement><p><datafile label="SWAPgateWrong2" filename="SWAPgateWrong2.png" include-source="yes">
+        <statement><p><datafile label="CNOT_truth_table_SWAPgateWrong2" filename="SWAPgateWrong2.png" include-source="yes">
           <image source="SWAPgateWrong2.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -57,7 +57,7 @@
         </feedback>
       </choice>
       <choice>
-        <statement><p><datafile label="SWAPgateWrong3" filename="SWAPgateWrong3.png" include-source="yes">
+        <statement><p><datafile label="CNOT_truth_table_SWAPgateWrong3" filename="SWAPgateWrong3.png" include-source="yes">
           <image source="SWAPgateWrong3.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -87,7 +87,7 @@
       </statement>
       <choices randomize="no">
         <choice>
-          <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+          <statement><p><m>|00\rangle</m> or <datafile label="CNOT_Q1_Balls00" filename="Balls00.png" include-source="yes">
             <image source="Balls00.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -95,7 +95,7 @@
            </feedback>
         </choice>
         <choice correct="yes">
-          <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+          <statement><p><m>|01\rangle</m> or <datafile label="CNOT_Q1_Balls01" filename="Balls01.png" include-source="yes">
             <image source="Balls01.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -103,14 +103,14 @@
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+          <statement><p><m>|10\rangle</m> or <datafile label="CNOT_Q1_Balls10" filename="Balls10.png" include-source="yes">
             <image source="Balls10.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+          <statement><p><m>|11\rangle</m> or <datafile label="CNOT_Q1_Balls11" filename="Balls11.png" include-source="yes">
             <image source="Balls11.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
@@ -132,7 +132,7 @@
       </statement>
       <choices randomize="no">
         <choice>
-          <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+          <statement><p><m>|00\rangle</m> or <datafile label="CNOT_Q2_Balls00" filename="Balls00.png" include-source="yes">
             <image source="Balls00.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -140,7 +140,7 @@
            </feedback>
         </choice>
         <choice>
-          <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+          <statement><p><m>|01\rangle</m> or <datafile label="CNOT_Q2_Balls01" filename="Balls01.png" include-source="yes">
             <image source="Balls01.png" width="66%"/>
           </datafile>
         </p></statement>
@@ -148,14 +148,14 @@
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+          <statement><p><m>|10\rangle</m> or <datafile label="CNOT_Q2_Balls10" filename="Balls10.png" include-source="yes">
             <image source="Balls10.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice correct="yes">
-          <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+          <statement><p><m>|11\rangle</m> or <datafile label="CNOT_Q2_Balls11" filename="Balls11.png" include-source="yes">
             <image source="Balls11.png" width="66%"/>
           </datafile></p></statement>
           <feedback><p>Make sure you hooked up your circuit correctly!</p>
