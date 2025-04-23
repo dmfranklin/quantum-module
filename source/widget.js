@@ -3,12 +3,17 @@ window.parent.Q = Q;
 // MARK: - patch Q.js to fix bugs and add features
 
 const patchMethod = (object, methodName, replacements) => {
-  object[methodName] = eval(
+  const newMethod = eval(
     `(${replacements.reduce(
       (source, [regex, replacement]) => source.replace(regex, replacement),
       object[methodName].toString()
     )})`
   );
+  Object.defineProperties(
+    newMethod,
+    Object.getOwnPropertyDescriptors(object[methodName])
+  );
+  object[methodName] = newMethod;
 };
 
 patchMethod(Q.Matrix, "multiplyTensor", [
@@ -46,6 +51,80 @@ patchMethod(Q.Circuit, "evaluate", [
     "(circuit.outputState = matrix.multiply( state ))",
   ],
 ]);
+
+// combine control and swap buttons into one button
+patchMethod(Q.Circuit, "Editor", [
+  [
+    /controlButton.classList.add\( (.*) \)/,
+    "controlButton.classList.add( $1, 'Q-circuit-toggle-swap' )",
+  ],
+  [
+    /controlButton.setAttribute\( 'title', .* \)/,
+    "controlButton.setAttribute( 'title', 'Create controlled or swap operation' )",
+  ],
+  [/controlButton\.innerText = .*/, "controlButton.innerText = 'C/S'"],
+  ["toolbarEl.appendChild( swapButton )", ""],
+]);
+patchMethod(Q.Circuit.Editor, "isValidSwapCandidate", [
+  [
+    "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.CURSOR.symbol",
+    "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.SWAP.symbol",
+  ],
+]);
+Q.Circuit.Editor.onSelectionChanged = function (circuitEl) {
+  const controlButtonEl = circuitEl.querySelector(".Q-circuit-toggle-control");
+  controlButtonEl.toggleAttribute(
+    "Q-disabled",
+    !Q.Circuit.Editor.isValidControlCandidate(circuitEl) &&
+      !Q.Circuit.Editor.isValidSwapCandidate(circuitEl)
+  );
+};
+
+patchMethod(Q.Circuit.Editor, "createPalette", [
+  // show custom gate symbols in the palette
+  [
+    "if( symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = symbol",
+    "if( symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = gate.unicode ?? symbol",
+  ],
+]);
+
+patchMethod(Q.Circuit.Editor, "set", [
+  // show custom gate symbols in the circuit editor
+  [
+    "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.symbol",
+    "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.unicode ?? operation.gate.symbol",
+  ],
+]);
+
+Q.Gate.createConstants(
+  "IDENTITY",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.IDENTITY, {
+      nameCss: "undefined",
+    })
+  ),
+  "CURSOR",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.CURSOR, {
+      name: "Control",
+      nameCss: "control",
+    })
+  ),
+  "PAULI_X",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.PAULI_X, {
+      name: "Not",
+      unicode: "⨁",
+    })
+  ),
+  "SWAP",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.SWAP, {
+      nameCss: undefined,
+      unicode: "𓏵",
+    })
+  )
+);
 
 // MARK: - functions to set up the widget
 
