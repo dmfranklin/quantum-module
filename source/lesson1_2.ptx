@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
 <section xml:id="lesson1_2" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-
-
-  
     <title>Building Quantum Circuits</title>
-
     <introduction>
     <p>Quantum computing operations harness quantum properties to have outputs that 
     are not possible with classical computers. For this reason, we represent quantum
@@ -18,9 +12,9 @@
     be implented by classical computers and introduce
     a drag-and-drop tool (Q.js) you can use to build build quantum circuits. In future lessons,
     you will use this tool to explore the behavior of quantum operations that cause properties 
-    not possible with classical computers. </p>
-    
-  </introduction>
+    not possible with classical computers.</p>
+    </introduction>
+
 <section xml:id="sec-qubit">
     <title>Qubit: A quantum bit</title>
     <p> Grace Hopper invented the compiler, which allowed programmers to often ignore the 1's 
@@ -32,9 +26,9 @@
     qubit also holds other interesting information that we will explore throughout this course. 
     Today, we will only use the 0 and 1. To go along with the more complex state, the representation
     uses slightly different syntax. We will begin that now - instead of just writing 0 or 1, we will
-    write |0> and |1>. Later, we will learn more about what those symbols mean. 
+    write |0⟩ and |1⟩. Later, we will learn more about what those symbols mean. 
     </p>
-    <p> To make it easier to visualize, we will use a white ball for |0> and a black ball for |1>. </p>
+    <p> To make it easier to visualize, we will use a white ball for |0⟩ and a black ball for |1⟩.</p>
 
     <datafile label="WhiteBlackBalls" filename="WhiteBlackBalls.png" include-source="yes">
             <image source="WhiteBlackBalls.png" width="66%"/>
@@ -63,22 +57,17 @@
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><datafile label="NOT_Q1_WhiteBall" filename="WhiteBall.png" include-source="yes">
-            <image source="WhiteBall.png" width="66%"/>
-        </datafile></statement>
-        <feedback><p>There were only two "eat cookie" operations.</p>
-         </feedback>
+        <statement><p>◯ |0⟩</p></statement>
+        <feedback><p>Yes! Starting with: ◯ |0⟩; apply the first NOT operation: ⬤ |1⟩; and apply the second NOT operation: ◯ |0⟩</p></feedback>
       </choice>
       <choice>
-        <statement><datafile label="NOT_Q1_BlackBall" filename="BlackBall.png" include-source="yes">
-            <image source="BlackBall.png" width="66%"/>
-        </datafile></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
-        </feedback>
+        <statement><p>⬤ |1⟩</p></statement>
+        <feedback><p>Did you apply the NOT operation two times?</p></feedback>
       </choice>
     </choices>
-    <hint><p>Apply the NOT gate twice</p></hint>
+    <hint><p>Apply the NOT gate twice.</p></hint>
   </exercise>
+
  <exercise label="Not-Q2">
     <title>NOT Gate Check #2</title>
     <idx>not gate 2</idx>
@@ -90,73 +79,62 @@
     </statement>
     <choices randomize="no">
       <choice>
-        <statement><datafile label="NOT_Q2_WhiteBall" filename="WhiteBall.png" include-source="yes">
-            <image source="WhiteBall.png" width="66%"/>
-        </datafile></statement>
+        <statement><p>◯ |0⟩</p></statement>
         <feedback><p>There were only two "eat cookie" operations.</p>
          </feedback>
       </choice>
       <choice correct="yes">
-        <statement><datafile label="NOT_Q2_BlackBall" filename="BlackBall.png" include-source="yes">
-            <image source="BlackBall.png" width="66%"/>
-        </datafile></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
-        </feedback>
+        <statement><p>⬤ |1⟩</p></statement>
+        <feedback><p>Yes! Starting with: ⬤ |1⟩; apply the first NOT operation: ◯ |0⟩; and apply the second NOT operation: ⬤ |1⟩</p></feedback>
       </choice>
     </choices>
-    <hint><p>Apply the NOT gate twice</p></hint>
+    <hint><p>Apply the NOT gate twice.</p></hint>
   </exercise>
+
  <exercise label="Not-Q3">
     <title>NOT Gate Check #3</title>
     <idx>not gate 3</idx>
-    <statement>
-        <p>What is the output of this circuit?</p>
-         <datafile label="NOT_Q3" filename="NOT_Q3.png" include-source="yes">
-            <image source="NOT_Q3.png" width="66%"/>
-        </datafile>   
+    <statement><p>What is the output of this circuit?</p>
+      <datafile label="NOT_Q3" filename="NOT_Q3.png" include-source="yes">
+        <image source="NOT_Q3.png" width="66%"/>
+      </datafile>   
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><datafile label="NOT_Q3_WhiteBall" filename="WhiteBall.png" include-source="yes">
-            <image source="WhiteBall.png" width="66%"/>
-        </datafile></statement>
-        <feedback><p>There were only two "eat cookie" operations.</p>
-         </feedback>
+        <statement><p>◯ |0⟩</p></statement>
+        <feedback><p>Yes! Starting with: ⬤ |1⟩; apply the first NOT operation: ◯ |0⟩; apply the second NOT operation: ⬤ |1⟩; and apply the third NOT operation: ◯ |0⟩</p></feedback>
       </choice>
       <choice>
-        <statement><datafile label="NOT_Q3_BlackBall" filename="BlackBall.png" include-source="yes">
-            <image source="BlackBall.png" width="66%"/>
-        </datafile></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
-        </feedback>
+        <statement><p>⬤ |1⟩</p></statement>
+        <feedback><p>Did you apply the NOT operation three times?</p></feedback>
       </choice>
     </choices>
-    <hint><p>Apply the NOT gate three times</p></hint>
+    <hint><p>Apply the NOT gate three times.</p></hint>
   </exercise>
 </section>
 
   <section>
     <title>Build a Quantum Circuit</title>
+    <p> In this section, we introduce the interactive quantum circuit builder.</p>
+    <p>There are three operations that operate well on qubits in simple states |0⟩ and |1⟩:NOT, SWAP, and CNOT</p>
 
-   <p> In this section, we introduce the interactive quantum circuit builder.</p>
-
+    <statement>
+        <datafile label="NOT-SWAP-CNOT" filename="NOT-SWAP-CNOT.png" include-source="yes">
+            <image source="NOT-SWAP-CNOT.png" width="66%"/>
+        </datafile>
+    </statement>
 
     <p>
-      There are three operations that operate well on qubits in simple states |0> and |1>:
-      (picture of NOT, SWAP, CNot gates)
-    </p>
-
-<p>
     Below is your first circuit to build using the circuit builder's explore mode. 
     Drag and drop the pictures of the gates onto the 
     circuit. In explore mode, every time you make a change, it provides
     feedback. You can ignore the feedback until you think you are done!!
-</p>
-<p>
+    </p>
+    <p>
     The SWAP gate is a two-qubit gate, which will be two diamonds in this widget.
     Place the two diamonds on the two wires in the same column. Click on them so   
     they are both highlighted, then click on the "S" button to connect them.
-</p>
+    </p>
 
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
@@ -185,8 +163,8 @@
       </script>
     </interactive>
   <p>
-    I am leaving in this last one because it had a bug when I tried it - it always
-    said I was not correct, even when I completed the circuit.
+  <insert>  I am leaving in this last one because it had a bug when I tried it - it always
+    said I was not correct, even when I completed the circuit.</insert>
   </p>
    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
