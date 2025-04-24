@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
 <section xml:id="lesson1" xmlns:xi="http://www.w3.org/2001/XInclude">
-
   <title>
     Reading Circuits
   </title>
@@ -11,8 +8,8 @@
     Quantum operations are visualized in what they call "circuits." Circuits are a visualization
     that depict the order of operations. Let's first see what some some familiar operations might look
     like if visualized like a circuit! 
-   
   </p>
+
 <section xml:id="sec-cookiecircuits">
   <title>Cookie Circuits</title>
   
@@ -28,8 +25,6 @@
     is the <em>output</em>. Likewise, if give the same circuit an input of a plate of 3 cookies and applied that operation
     once, we would end up with an output of a plate with 2 cookies. 
   </p>
-
-
 
   <exercise label="Checkpoint1_1-Cookie-Circuit-One-Plate">
     <title>Calculating a Cookie Circuit</title>
@@ -99,7 +94,7 @@
          </feedback>
       </choice>
       <choice>
-//        <statement><p>OUTPUT: Top: 2 cookies / Bottom: 1 cookie</p></statement>
+          <statement><p>OUTPUT: Top: 2 cookies / Bottom: 1 cookie</p></statement>
           <statement>
             <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_B" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" include-source="yes">
               <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" width="450px"/>
@@ -108,7 +103,7 @@
         <feedback><p>There were two "eat cookie" operations for each plate.</p></feedback>
       </choice>
       <choice>
-//        <statement><p>OUTPUT: Top: 1 cookie / Bottom: 2 cookies</p></statement>
+          <statement><p>OUTPUT: Top: 1 cookie / Bottom: 2 cookies</p></statement>
           <statement>
             <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_C" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" include-source="yes">
               <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" width="450px"/>
@@ -117,7 +112,7 @@
         <feedback><p>There are two "eat cookie" operations for the top plate, and one "eat cookie" operation for the bottom plate.</p></feedback>
       </choice>
       <choice>
-//        <statement><p>OUTPUT: Top: 1 cookie / Bottom: 1 cookie</p></statement>
+          <statement><p>OUTPUT: Top: 1 cookie / Bottom: 1 cookie</p></statement>
           <statement>
             <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_D" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" include-source="yes">
               <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" width="450px"/>
@@ -128,60 +123,138 @@
     </choices>
     <hint><p>Operations are read left to right</p></hint>
   </exercise>
-
-
-
-
-
-
 </section>
+
 <section xml:id="sec-mathcircuits">
   <title>Math Circuits</title>
   <introduction>
-    <p>
-      Now let's consider how we would depict mathematical operations. 
-    </p>
+    <p>Now let's consider how we would depict mathematical operations.</p>
   </introduction>
-  <p>
-    We will use the following operations: 
+  <p>We will use the following operations: 
     <ul>
     <li>
-      <p>Increment - add one to a number</p>
-      <datafile label="1-1-2_MathCircuitsINC" filename="1-1-2_MathCircuitsINC.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsINC.png" width="450px"/>
-      </datafile>
-    </li>
-   <li>
-      <p> Decrement - subtract one from a number</p>
-      <datafile label="1-1-2_MathCircuitsDEC" filename="1-1-2_MathCircuitsDEC.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsDEC.png" width="450px"/>
+      <p><em>Increment</em> - add one to a number</p>
+      <datafile label="1-1-2_MathCircuitsINC" filename="1-1-2_MathCircuitsINC.png">
+        <image source="1-1-2_MathCircuitsINC.png"/>
       </datafile>
     </li>
     <li>
-      <p>Negate - negate a number</p>
+      <p><em>Decrement</em> - subtract one from a number</p>
+      <datafile label="1-1-2_MathCircuitsDEC" filename="1-1-2_MathCircuitsDEC.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsDEC.png"/>
+      </datafile>
+    </li>
+    <li>
+      <p><em>Negate</em> - negate a number</p>
       <datafile label="1-1-2_MathCircuitsNEGATE" filename="1-1-2_MathCircuitsNEGATE.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsNEGATE.png" width="450px"/>
+        <image source="1-1-2_MathCircuitsNEGATE.png"/>
       </datafile>
     </li>
     </ul>
   </p>
 
-(insert multiple-choice questions here that use only one operation at a time.)
+<exercise label="Math Operations 1">
+    <title>Applying a Math Operation 1</title>
+    <idx>math operation 1</idx>
+    <statement><p>Pick the circuit that has the correct end state given the start state.</p>
+      <datafile label="MathCircuit1" filename="MathCircuit1.png" include-source="yes">
+      	<image source="MathCircuit1.png"/>
+    	</datafile>
+    </statement>
+    <choices randomize="yes">
+    	<choice correct="yes">
+		    <statement><p>8</p></statement>
+        <feedback><p>Yes! If you increment the input by 1, then the output is 8.</p></feedback>
+      </choice>
+      <choice>
+		    <statement><p>6</p></statement>
+        	<feedback><p>There is one “Increment” operation, but it looks like you applied the “Decrement” operation.</p></feedback>
+      </choice>
+      <choice>
+		    <statement> <p>-7</p></statement>
+        	<feedback><p>There is one “Increment” operation, but it looks like you applied the “Negate” operation.</p></feedback>
+      </choice>
+      <choice>
+		    <statement><p>11</p></statement>
+        	<feedback><p>Did you apply the “Increment” operation?</p></feedback>
+      </choice>
+    </choices>
+    <hint><p>The increment operation adds 1 to the input value.</p></hint>
+</exercise>
 
+<exercise label="Math Operations 2">
+    <title>Applying a Math Operation 2</title>
+    <idx>math operation 2</idx>
+    <statement><p>Pick the circuit that has the correct end state given the start state.</p>
+      <datafile label="MathCircuit2" filename="MathCircuit2.png" include-source="yes">
+        <image source="MathCircuit2.png"/>
+      </datafile>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p>2</p></statement>
+        <feedback><p>Yes! If you decrement the input by 1, then the output is 2.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>4</p></statement>
+          <feedback><p>There is one “Decrement” operation, but it looks like you applied the “Increment” operation.</p></feedback>
+      </choice>
+      <choice>
+        <statement> <p>-3</p></statement>
+          <feedback><p>There is one “Decrement” operation, but it looks like you applied the “Negate” operation.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>6</p></statement>
+          <feedback><p>Did you apply the “Decrement” operation?</p></feedback>
+      </choice>
+    </choices>
+    <hint><p>The decrement operation subtracts 1 from the input value.</p></hint>
+</exercise>
+
+<exercise label="Math Operations 3">
+    <title>Applying a Math Operation 3</title>
+    <idx>math operation 3</idx>
+    <statement><p>Pick the circuit that has the correct end state given the start state.</p>
+      <datafile label="MathCircuit3" filename="MathCircuit3.png" include-source="yes">
+        <image source="MathCircuit3.png"/>
+      </datafile>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p>-11</p></statement>
+        <feedback><p>Yes! If you negate the input, then the output is -11.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>12</p></statement>
+          <feedback><p>There is one “Negate” operation, but it looks like you applied the “Increment” operation.</p></feedback>
+      </choice>
+      <choice>
+        <statement> <p>10</p></statement>
+          <feedback><p>There is one “Negate” operation, but it looks like you applied the “Decrement” operation.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0</p></statement>
+          <feedback><p>Did you apply the “Negate” operation?</p></feedback>
+      </choice>
+    </choices>
+    <hint><p>The negate operation changes a positive number into it’s negative counter part - and vice versa (e.g. 3 becomes -3; -7 becomes 7).</p></hint>
+</exercise>
+<p>
+</p>
 <p> We can also define two-variable gates:
     <ul>
     <li>
-      <p>Add - add two numbers. Add two numbers and place result in the target, indicated by *. 
+      <p><em>Add</em> - add two numbers. Add two numbers and place result in the target, indicated by *. 
       Other input is unchanged.</p>
       <datafile label="1-1-2_MathCircuitsADD" filename="1-1-2_MathCircuitsADD.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsADD.png" width="450px"/>
+        <image source="1-1-2_MathCircuitsADD.png"/>
       </datafile>
     </li>
     <li>
-      <p>Controlled increment - increment the target if and only if the control is odd.
+      <p><em>Controlled increment</em> - increment the target if and only if the control is odd.
       Target is indicated by *, control remains unchanged.</p>
       <datafile label="1-1-2_MathCircuitsC-INC" filename="1-1-2_MathCircuitsC-INC.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsC-INC.png" width="450px"/>
+        <image source="1-1-2_MathCircuitsC-INC.png"/>
       </datafile>
     </li> 
     </ul>
@@ -197,133 +270,292 @@
   target, leaving the other output to match its input.
 </p>
 
-(insert multiple-choice questions here that use only one operation at a time.)
+<exercise label="Math Operations 4">
+    <title>Applying a two-variable Math Operation 1</title>
+    <idx>math operation 4</idx>
+    <statement><p>Pick the circuit that has the correct end state given the start state.</p>
+      <datafile label="MathCircuit4" filename="MathCircuit4.png" include-source="yes">
+        <image source="MathCircuit4.png"/>
+      </datafile>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p>x = 7; y = 2</p></statement>
+        <feedback><p>Yes! If you add 5 and 2, the total is 7. The total replaces the original value in x, and the y value remains the same.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>7</p></statement>
+          <feedback><p>The "Add" operation should have two outputs.</p></feedback>
+      </choice>
+      <choice>
+        <statement> <p>x = 5; y = 2</p></statement>
+          <feedback><p>The circuit has one "Add" operation. The sum of x and y should replace the original x value, and the y value should remain unchanged.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>x = 5; y = 7</p></statement>
+        <feedback><p>Did you correctly store the calculated total in the Target?</p></feedback>
+      </choice>
+    </choices>
+    <hint><p>The Add operation calculates the sum of x and y. The calculated total is stored in x (replacing the its value) and the y value remains the same.</p></hint>
+</exercise>
 
-  <p>
- Consider two starting variables, x and y. We will start with an input of x=5 and y=3.
- Now consider the following sequence of operations:
- x = x+1
- y = y-1 
- x = x + y 
- y = x - y  
+<exercise label="Math Operations 5">
+    <title>Applying a two-variable Math Operation 2</title>
+    <idx>math operation 5</idx>
+    <statement><p>Pick the circuit that has the correct end state given the start state.</p>
+      <datafile label="MathCircuit5" filename="MathCircuit5.png" include-source="yes">
+        <image source="MathCircuit5.png"/>
+      </datafile>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p>x = 9; y = 6</p></statement>
+        <feedback><p>Yes! There is no change to the Target value, because the Control value is even.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>x = 10; y = 6</p></statement>
+          <feedback><p>Looks like you incremented the Target. The "Controlled Increment" operation only increments the Target value if the Control is odd.</p></feedback>
+      </choice>
+      <choice>
+        <statement> <p>x = 9; y = 7</p></statement>
+          <feedback><p>Looks like you incremented the Control. The "Controlled Increment" operation increments the Target value if the Control is odd.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>x = 15; y = 6</p></statement>
+        <feedback><p>Did you apply the correct operation? There is one "Controlled Increment" operation in the circuit.</p></feedback>
+      </choice>
+    </choices>
+    <hint><p>The "Controlled Increment" operation adds 1 to the value of the Target, if the Control value is odd. 
+      If the Control is even, then the Target is unchanged.</p></hint>
+</exercise>
 
- The following circuit would depict that sequence of operations:
-  </p>
+<p>Now, consider two starting variables, x and y. We will start with an input of x=5 and y=3. Consider the following sequence of operations:</p>
+  <ul>
+    <li>x = x + 1</li> 
+    <li>y = y - 1</li>
+    <li>x = x + y</li>
+    <li>y = x - y</li>
+  </ul>
+<p>The following circuit would depict that sequence of operations:</p>
+      <datafile label="1-1-2_MathCircuitsSEQ" filename="1-1-2_MathCircuitsSEQ.png" include-source="yes">
+        <image source="1-1-2_MathCircuitsSEQ.png" width="750px"/>
+      </datafile>
 
-(insert the picture here)
-
-
-
-(now we have a few longer circuits with multiple operations, one for each question.
-The first question has all one-variable gates, the second question integrates an add,
-and the third and fourth questions have both an add and a controlled increment (the 
-if goes a different way in each one))
- <exercise label="Math-Circuit">
-    <title>Solving a Math Circuit</title>
-    <idx>math circuit 1</idx>
+ <exercise label="Math Circuit 1">
+    <title>Solving a Math Circuit with two inputs 1</title>
+    <idx>math circuit 6</idx>
     <statement>
         <p>What are the values of x and y after the following math circuit runs?</p>
+        <datafile label="MathCircuit6" filename="MathCircuit6.png" include-source="yes">
+          <image source="MathCircuit6.png" width="75%"/>
+        </datafile>
     </statement>
     <choices randomize="yes">
-      <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>Look at where the * says to place the addition result</p>
+      <choice correct="yes">
+        <statement><p>x = -5; y = 0</p></statement>
+        <feedback><p>Yes! There are two operations applied to each input:</p>
+        <ul>
+          <li>The input (x = 4) is incremented by one (x = 5), and then the value is negated (x = -5).</li>
+          <li>The input (y = 2) is decremented by one (y = 1), and then it is decremented again (y = 0).</li> 
+        </ul>
+        <p>The resulting outputs are: x = -5 and y = 0.</p>
          </feedback>
       </choice>
       <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
-        </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>There were two "eat cookie" operations.</p>
+        <statement><p>x = -5; y = 4</p></statement>
+        <feedback><p>Not quite. Double check that you applied the correct operations. 
+        Did you apply them in the correct order - left to right?</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        <statement><p>x = 0; y = 4</p></statement>
+        <feedback><p>Not quite. Double check that you applied the correct operations. 
+        Did you apply them in the correct order - left to right?</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>x = 5; y = 0</p></statement>
+        <feedback><p>Not quite. Double check that you applied the correct operations. 
+        Did you apply them in the correct order - left to right?</p>
         </feedback>
       </choice>
     </choices>
-    <hint><p>Look at where the * says to place the addition result.</p></hint>
-      <hint><p>Operations go from left to right.</p></hint>
+    <hint>
+      <p>There are two operations applied to each input: x and y</p>
+        <ul>
+          <li>For the x-input: Increment x, and then negate it.</li>
+          <li>For the y-input: Decrement y two times.</li>
+        </ul>
+    </hint>
   </exercise>
 
-<exercise label="Math-Circuit-2">
-    <title>Solving a Math Circuit</title>
-    <idx>math circuit 2</idx>
+ <exercise label="Math Circuit 2">
+    <title>Solving a Math Circuit with two inputs 2</title>
+    <idx>math circuit 7</idx>
     <statement>
-        <p>What does the circuit look like for this sequence of operations?</p>
+      <p>What does the circuit look like for this sequence of operations?</p>
+      <p>Start with an input of x = 1 and y = 5 and apply the following sequence of operations:</p>
+      <ul>
+        <li>x = x - 1</li> 
+        <li>y = y + 1</li>
+        <li>x = x + y</li>
+        <li>y = - y</li>
+      </ul>
     </statement>
     <choices randomize="yes">
-      <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>Look at where the * says to place the addition result</p>
+      <choice correct="yes">
+        <statement>
+          <datafile label="MathCircuit7a" filename="MathCircuit7a.png" include-source="yes">
+          <image source="MathCircuit7a.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Yes!! First, the x variable is decremented. Then, the y-variable is incremented.
+        Next, the sum of x and y is stored in the x varaible. Finally, the y variable is negated. 
+        The final outputs are: x = 6 and y = -6.
+        </p>
          </feedback>
       </choice>
       <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
-        </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>There were two "eat cookie" operations.</p>
+        <statement>
+          <datafile label="MathCircuit7b" filename="MathCircuit7b.png" include-source="yes">
+          <image source="MathCircuit7b.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite. Double check that you applied the correct operations. 
+        Did you apply them in the correct order - left to right?
+        Did you apply them to the correct variable - x or y?</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        <statement>
+          <datafile label="MathCircuit7c" filename="MathCircuit7c.png" include-source="yes">
+          <image source="MathCircuit7c.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite. Double check that you applied the correct operations. 
+        Did you apply them in the correct order - left to right?
+        Did you apply them to the correct variable - x or y?</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <datafile label="MathCircuit7d" filename="MathCircuit7d.png" include-source="yes">
+          <image source="MathCircuit7d.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite. Double check that you applied the correct operations. 
+        Did you apply them in the correct order - left to right?
+        Did you apply them to the correct variable - x or y?</p>
         </feedback>
       </choice>
     </choices>
-    <hint><p>Look at where the * says to place the addition result.</p></hint>
-      <hint><p>Operations go from left to right.</p></hint>
+    <hint><p>Double check that you applied the correct operations to the correct variables.</p></hint>
+      <hint><p>Did you apply the operations in the correct order - left to right?</p></hint>
   </exercise>
-
 
 <exercise label="Math-Circuit-3">
-    <title>Solving a Math Circuit</title>
-    <idx>math circuit 3</idx>
-    <statement>
-        <p>What sequence of operations matches this circuit?</p>
+    <title>Solving a Math Circuit with two inputs 3</title>
+    <idx>math circuit 8</idx>
+    <statement><p>Select the circuit that would produce the following values: x = 5; y = 2.</p>
     </statement>
     <choices randomize="yes">
-      <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>Look at where the * says to place the addition result</p>
+      <choice correct="yes">
+        <statement>
+        <datafile label="MathCircuit8a" filename="MathCircuit8a.png" include-source="yes">
+          <image source="MathCircuit8a.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Yes! Start with x = 3 and y = 2; the Controlled Increment has no effect, because the control is even; 
+        and finally the sum of x and y is stored in x (y remains unchanged). The result is x = 5 and y = 2.</p>
          </feedback>
       </choice>
       <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, you are left with one cookie.</p>
-        </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>There were two "eat cookie" operations.</p>
+        <statement>
+        <datafile label="MathCircuit8b" filename="MathCircuit8b.png" include-source="yes">
+          <image source="MathCircuit8b.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p>x = , y =   </p></statement>
-        <feedback><p>You need to apply the "eat cookies" operations.</p>
+        <statement>
+        <datafile label="MathCircuit8c" filename="MathCircuit8c.png" include-source="yes">
+          <image source="MathCircuit8c.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+        <datafile label="MathCircuit8d" filename="MathCircuit8d.png" include-source="yes">
+          <image source="MathCircuit8d.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite.</p>
         </feedback>
       </choice>
     </choices>
-    <hint><p>Look at where the * says to place the addition result.</p></hint>
-      <hint><p>Operations go from left to right.</p></hint>
+    <hint><p>Look at where the (target) says to place the addition result.</p></hint>
+      <hint><p>Remember that the Controlled Increment operation, increments the target if - and only if - the control is ODD.</p></hint>
+  </exercise>
+
+<exercise label="Math-Circuit-4">
+    <title>Solving a Math Circuit with two inputs 4</title>
+    <idx>math circuit 9</idx>
+    <statement><p>Select the circuit that would produce the following values: x = 8; y = 1.</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+        <datafile label="MathCircuit8a" filename="MathCircuit8a.png" include-source="yes">
+          <image source="MathCircuit8a.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite.</p>
+         </feedback>
+      </choice>
+      <choice>
+        <statement>
+        <datafile label="MathCircuit8b" filename="MathCircuit8b.png" include-source="yes">
+          <image source="MathCircuit8b.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+        <datafile label="MathCircuit8c" filename="MathCircuit8c.png" include-source="yes">
+          <image source="MathCircuit8c.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Not quite.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+        <datafile label="MathCircuit8d" filename="MathCircuit8d.png" include-source="yes">
+          <image source="MathCircuit8d.png"/>
+        </datafile>
+        </statement>
+        <feedback><p>Yes! Start with x = 6 and y = 1; the Add operation stores the sum of x and y in x (y remains unchanged); 
+        and finally the Controlled Increment adds 1 to x, because the control is odd.</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint><p>Look at where the (target) says to place the addition result.</p></hint>
+      <hint><p>Remember that the Controlled Increment operation, increments the target if - and only if - the control is ODD.</p></hint>
   </exercise>
 </section>
 
-<p> Summary:
+<p> Summary:</p>
   <ul>
-    <li><p>Circuits depict the order of operations. </p></li>
-    <li><p>The order goes from left to right.</p></li>
-
-    <li><p>Left to right depicts <em> order of operations, not physical movement</em>.</p></li>
-    <li><p>Multiple items may be depicted in the same circuit.</p></li>
     <li><p>A single operation can involve multiple items.</p></li>
+    <li><p>Circuits depict the order of operations.</p></li>
+    <li><p>The order of operations goes from left to right.</p></li>
+    <li><p>The left to right convention depicts the <em> order operation are applied, not physical movement</em>.</p></li>
+    <li><p>Multiple operations may be depicted in the same circuit.</p></li>
   </ul>
-</p>
 </section>
