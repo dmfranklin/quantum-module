@@ -56,7 +56,7 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+        <statement><p><m>|00\rangle</m> or <datafile label="Swap_00_Balls00" filename="Balls00.png" include-source="yes">
           <image source="Balls00.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -64,7 +64,7 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
          </feedback>
       </choice>
       <choice>
-        <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+        <statement><p><m>|01\rangle</m> or <datafile label="Swap_00_Balls01" filename="Balls01.png" include-source="yes">
           <image source="Balls01.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -72,14 +72,14 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
         </feedback>
       </choice>
       <choice>
-        <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+        <statement><p><m>|10\rangle</m> or <datafile label="Swap_00_Balls10" filename="Balls10.png" include-source="yes">
           <image source="Balls10.png" width="66%"/>
         </datafile></p></statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+        <statement><p><m>|11\rangle</m> or <datafile label="Swap_00_Balls11" filename="Balls11.png" include-source="yes">
           <image source="Balls11.png" width="66%"/>
         </datafile></p></statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>
@@ -127,7 +127,7 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
     </statement>
     <choices randomize="no">
       <choice>
-        <statement><p><m>|00\rangle</m> or <datafile label="Balls00" filename="Balls00.png" include-source="yes">
+        <statement><p><m>|00\rangle</m> or <datafile label="Swap_01_Balls00" filename="Balls00.png" include-source="yes">
           <image source="Balls00.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -135,7 +135,7 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
          </feedback>
       </choice>
       <choice>
-        <statement><p><m>|01\rangle</m> or <datafile label="Balls01" filename="Balls01.png" include-source="yes">
+        <statement><p><m>|01\rangle</m> or <datafile label="Swap_01_Balls01" filename="Balls01.png" include-source="yes">
           <image source="Balls01.png" width="66%"/>
         </datafile>
       </p></statement>
@@ -143,14 +143,14 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
         </feedback>
       </choice>
       <choice correct="yes">
-        <statement><p><m>|10\rangle</m> or <datafile label="Balls10" filename="Balls10.png" include-source="yes">
+        <statement><p><m>|10\rangle</m> or <datafile label="Swap_01_Balls10" filename="Balls10.png" include-source="yes">
           <image source="Balls10.png" width="66%"/>
         </datafile></p></statement>
         <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p><m>|11\rangle</m> or <datafile label="Balls11" filename="Balls11.png" include-source="yes">
+        <statement><p><m>|11\rangle</m> or <datafile label="Swap_01_Balls11" filename="Balls11.png" include-source="yes">
           <image source="Balls11.png" width="66%"/>
         </datafile></p></statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>

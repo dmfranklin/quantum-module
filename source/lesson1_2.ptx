@@ -63,14 +63,14 @@
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><datafile label="WhiteBall" filename="WhiteBall.png" include-source="yes">
+        <statement><datafile label="NOT_Q1_WhiteBall" filename="WhiteBall.png" include-source="yes">
             <image source="WhiteBall.png" width="66%"/>
         </datafile></statement>
         <feedback><p>There were only two "eat cookie" operations.</p>
          </feedback>
       </choice>
       <choice>
-        <statement><datafile label="BlackBall" filename="BlackBall.png" include-source="yes">
+        <statement><datafile label="NOT_Q1_BlackBall" filename="BlackBall.png" include-source="yes">
             <image source="BlackBall.png" width="66%"/>
         </datafile></statement>
         <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
@@ -90,14 +90,14 @@
     </statement>
     <choices randomize="no">
       <choice>
-        <statement><datafile label="WhiteBall" filename="WhiteBall.png" include-source="yes">
+        <statement><datafile label="NOT_Q2_WhiteBall" filename="WhiteBall.png" include-source="yes">
             <image source="WhiteBall.png" width="66%"/>
         </datafile></statement>
         <feedback><p>There were only two "eat cookie" operations.</p>
          </feedback>
       </choice>
       <choice correct="yes">
-        <statement><datafile label="BlackBall" filename="BlackBall.png" include-source="yes">
+        <statement><datafile label="NOT_Q2_BlackBall" filename="BlackBall.png" include-source="yes">
             <image source="BlackBall.png" width="66%"/>
         </datafile></statement>
         <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>
@@ -117,14 +117,14 @@
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><datafile label="WhiteBall" filename="WhiteBall.png" include-source="yes">
+        <statement><datafile label="NOT_Q3_WhiteBall" filename="WhiteBall.png" include-source="yes">
             <image source="WhiteBall.png" width="66%"/>
         </datafile></statement>
         <feedback><p>There were only two "eat cookie" operations.</p>
          </feedback>
       </choice>
       <choice>
-        <statement><datafile label="BlackBall" filename="BlackBall.png" include-source="yes">
+        <statement><datafile label="NOT_Q3_BlackBall" filename="BlackBall.png" include-source="yes">
             <image source="BlackBall.png" width="66%"/>
         </datafile></statement>
         <feedback><p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with one cookie.</p>

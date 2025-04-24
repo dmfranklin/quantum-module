@@ -1,6 +1,3 @@
-# This file was automatically generated with PreTeXt 2.17.0.
-# If you modify this file, PreTeXt will no longer automatically update it.
-#
 # Boilerplate list of files in a PreTeXt project for git to ignore
 # ensure this file is tracked
 !.gitignore
@@ -8,6 +5,12 @@
 # don't track unpublished builds or stage (note: Runestone uses `published`)
 output
 published
+
+# don't track python virtual environments
+.venv
+
+# don't track cache files
+.cache
 
 # don't track assets generated from source
 generated-assets

@@ -3,12 +3,17 @@ window.parent.Q = Q;
 // MARK: - patch Q.js to fix bugs and add features
 
 const patchMethod = (object, methodName, replacements) => {
-  object[methodName] = eval(
+  const newMethod = eval(
     `(${replacements.reduce(
       (source, [regex, replacement]) => source.replace(regex, replacement),
       object[methodName].toString()
     )})`
   );
+  Object.defineProperties(
+    newMethod,
+    Object.getOwnPropertyDescriptors(object[methodName])
+  );
+  object[methodName] = newMethod;
 };
 
 patchMethod(Q.Matrix, "multiplyTensor", [
@@ -46,6 +51,80 @@ patchMethod(Q.Circuit, "evaluate", [
     "(circuit.outputState = matrix.multiply( state ))",
   ],
 ]);
+
+// combine control and swap buttons into one button
+patchMethod(Q.Circuit, "Editor", [
+  [
+    /controlButton.classList.add\( (.*) \)/,
+    "controlButton.classList.add( $1, 'Q-circuit-toggle-swap' )",
+  ],
+  [
+    /controlButton.setAttribute\( 'title', .* \)/,
+    "controlButton.setAttribute( 'title', 'Create controlled or swap operation' )",
+  ],
+  [/controlButton\.innerText = .*/, "controlButton.innerText = 'C/S'"],
+  ["toolbarEl.appendChild( swapButton )", ""],
+]);
+patchMethod(Q.Circuit.Editor, "isValidSwapCandidate", [
+  [
+    "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.CURSOR.symbol",
+    "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.SWAP.symbol",
+  ],
+]);
+Q.Circuit.Editor.onSelectionChanged = function (circuitEl) {
+  const controlButtonEl = circuitEl.querySelector(".Q-circuit-toggle-control");
+  controlButtonEl.toggleAttribute(
+    "Q-disabled",
+    !Q.Circuit.Editor.isValidControlCandidate(circuitEl) &&
+      !Q.Circuit.Editor.isValidSwapCandidate(circuitEl)
+  );
+};
+
+patchMethod(Q.Circuit.Editor, "createPalette", [
+  // show custom gate symbols in the palette
+  [
+    "if( symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = symbol",
+    "if( symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = gate.unicode ?? symbol",
+  ],
+]);
+
+patchMethod(Q.Circuit.Editor, "set", [
+  // show custom gate symbols in the circuit editor
+  [
+    "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.symbol",
+    "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.unicode ?? operation.gate.symbol",
+  ],
+]);
+
+Q.Gate.createConstants(
+  "IDENTITY",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.IDENTITY, {
+      nameCss: "undefined",
+    })
+  ),
+  "CURSOR",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.CURSOR, {
+      name: "Control",
+      nameCss: "control",
+    })
+  ),
+  "PAULI_X",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.PAULI_X, {
+      name: "Not",
+      unicode: "⨁",
+    })
+  ),
+  "SWAP",
+  new Q.Gate(
+    Object.assign({}, Q.Gate.SWAP, {
+      nameCss: undefined,
+      unicode: "𓏵",
+    })
+  )
+);
 
 // MARK: - functions to set up the widget
 
@@ -165,7 +244,7 @@ const createGrader = (
   return grader;
 };
 
-const defaultGateSymbols = "HXYZPT*";
+const defaultGateSymbols = "HXYZPTS*";
 const createPalette = (gateSymbols = defaultGateSymbols) => {
   const origCreatePalette = Q.Circuit.Editor.createPalette.toString();
   const origGateSymbols = origCreatePalette.match(/'([^']*)'\s*\.split/)[1];
@@ -180,8 +259,8 @@ const createPalette = (gateSymbols = defaultGateSymbols) => {
 
 const processCircuitInput = (circuit) => {
   if (typeof circuit === "string") {
-    if (circuitDiagrams.has(circuit)) {
-      circuit = circuitDiagrams.get(circuit);
+    if (circuits.has(circuit)) {
+      circuit = circuits.get(circuit);
     }
     circuit = Q(circuit);
   }
@@ -194,10 +273,7 @@ const finalizeWidget = (widget, studentCircuitEditor) => {
   window.frameElement.removeAttribute("width");
   window.frameElement.removeAttribute("height");
   window.frameElement.style.height = `${document.documentElement.scrollHeight}px`;
-  const widgetWidth = studentCircuitEditor.querySelector(
-    ".Q-circuit-board-container"
-  ).scrollWidth;
-  window.frameElement.style.width = `calc(min(100%, ${widgetWidth}px)`;
+  window.frameElement.style.width = "100%";
 };
 
 const createStudentEditor = (circuit, arbitraryInputs, useOriginal = false) => {
@@ -241,11 +317,27 @@ const identicalCircuitWidget = ({
   const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
   widget.append(palette, studentCircuitEditor);
 
+  const getNonEmptyColumns = (circuit) => {
+    const rows = circuit
+      .toText()
+      .trim()
+      .split("\n")
+      .map((line) => line.split("-"));
+    const columns = [];
+    for (let i = 0; i < rows[0].length; i++) {
+      const column = rows.map((row) => row[i]);
+      if (column.some((gate) => gate != "I")) {
+        columns.push(column);
+      }
+    }
+    return columns.map((column) => column.join("-")).join("\n");
+  };
+
   const grader = createGrader(
     circuit,
     studentCircuitEditor.circuit,
     (goalCircuit, studentCircuit) =>
-      goalCircuit.toText() === studentCircuit.toText()
+      getNonEmptyColumns(goalCircuit) == getNonEmptyColumns(studentCircuit)
         ? [true, "Great job! The circuits look identical."]
         : [false, "The circuits look different. Keep at it!"],
     instantFeedback
@@ -434,66 +526,3 @@ const visualizeProbabilitiesWidget = ({
 
   finalizeWidget(widget, studentCircuitEditor);
 };
-
-// MARK: - circuit texts
-
-const circuitDiagrams = new Map([
-  [
-    "Q.js Example",
-    `
-      I I I   I I I
-      I X X#0 I I I
-      I I X#1 I I I
-      I I I   I I I
-    `,
-  ],
-  [
-    "L1_2_1",
-    `
-      I S#0
-      X S#1
-    `,
-  ],
-  [
-    "L1_2_2",
-    `
-      I X#0
-      X X#1
-    `,
-  ],
-  [
-    "L2_1_1",
-    `
-      S#0
-      S#1
-    `,
-  ],
-  [
-    "Lab 7 - Exercise 1",
-    `
-      X-I-I-X#1-S#0-X#1
-      H-X-H-X#0-S#1-X#0
-    `,
-  ],
-  [
-    "X SWAP",
-    `
-      I I X S#0 I I
-      I I I S#1 I I
-    `,
-  ],
-  [
-    "Blank 2x6",
-    `
-      I I I I I I
-      I I I I I I
-    `,
-  ],
-  [
-    "Phi+",
-    `
-      H X#0 I I I I
-      I X#1 I I I I
-    `,
-  ],
-]);
