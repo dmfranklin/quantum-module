@@ -13,10 +13,7 @@
 <section xml:id="sec-cookiecircuits">
   <title>Cookie Circuits</title>
   
-
-        <datafile label="CookieCircuitOneOp" filename="CookieCircuitOneOp.png" include-source="yes">
-            <image source="CookieCircuitOneOp.png" width="66%"/>
-        </datafile>
+    <image source="CookieCircuitOneOp.png" width="60%"/>
    
   <p>
     In this picture, we begin with a plate of 4 cookies (the <em>input</em>). We have one operation, 
@@ -31,9 +28,7 @@
     <idx>cookie circuit 1</idx>
     <statement>
         <p>How many cookies will be left after this Cookie Circuit runs?</p>
-        <datafile label="Checkpoint1_1-Cookie-Circuit-One-Plate" filename="Checkpoint1_1-Cookie-Circuit-One-Place.png" include-source="yes">
-            <image source="Checkpoint1_1-Cookie-Circuit-One-Plate.png" width="450px"/>
-        </datafile>
+        <image source="Checkpoint1_1-Cookie-Circuit-One-Plate.png" width="60%"/>
     </statement>
     <choices randomize="no">
       <choice>
@@ -59,10 +54,9 @@
     </choices>
     <hint><p>Operations are read left to right</p></hint>
   </exercise>
+  
+  <image source="CookieCircuitTwoOps.png" width="60%"/>
 
-    <datafile label="CookieCircuitTwoOps" filename="CookieCircuitTwoOps.png" include-source="yes">
-      <image source="CookieCircuitTwoOps.png" width="66%"/>
-    </datafile>
   <p>We can also draw a circuit that starts out with multiple plates of cookies
     and applies the operations to each plate. In this case, we start with two plates
     of cookies - one that has 5 cookies and the other that has 3. We then apply 
@@ -86,9 +80,7 @@
     <choices randomize="yes">
       <choice correct="yes">
         <statement><p>OUTPUT: Top: 2 cookies / Bottom: 0 cookies</p>
-          <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_A" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_A.png" include-source="yes">
-            <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_A.png" width="450px"/>
-          </datafile>
+          <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_A.png" width="100%"/>
         </statement>
         <feedback><p>Yes! The top begins with 3 cookies, and you are left with 2 cookies after one "eat cookie" operation. And, the bottom circuit begins with two cookies. After two "eat cookie" operations, there are 0 cookies left.</p>
          </feedback>
@@ -96,27 +88,21 @@
       <choice>
           <statement><p>OUTPUT: Top: 2 cookies / Bottom: 1 cookie</p></statement>
           <statement>
-            <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_B" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" include-source="yes">
-              <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" width="450px"/>
-            </datafile>
+            <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_B.png" width="100%"/>
           </statement>
         <feedback><p>There were two "eat cookie" operations for each plate.</p></feedback>
       </choice>
       <choice>
           <statement><p>OUTPUT: Top: 1 cookie / Bottom: 2 cookies</p></statement>
           <statement>
-            <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_C" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" include-source="yes">
-              <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" width="450px"/>
-            </datafile>
+            <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_C.png" width="100%"/>
           </statement>
         <feedback><p>There are two "eat cookie" operations for the top plate, and one "eat cookie" operation for the bottom plate.</p></feedback>
       </choice>
       <choice>
           <statement><p>OUTPUT: Top: 1 cookie / Bottom: 1 cookie</p></statement>
           <statement>
-            <datafile label="Checkpoint1_2-Cookie-Circuit-Two-Plates_D" filename="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" include-source="yes">
-              <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" width="450px"/>
-            </datafile>
+            <image source="Checkpoint1_2-Cookie-Circuit-Two-Plates_D.png" width="100%"/>
           </statement>
         <feedback><p>There are two "eat cookie" operations for both plates.</p></feedback>
       </choice>
@@ -134,21 +120,15 @@
     <ul>
     <li>
       <p><em>Increment</em> - add one to a number</p>
-      <datafile label="1-1-2_MathCircuitsINC" filename="1-1-2_MathCircuitsINC.png">
-        <image source="1-1-2_MathCircuitsINC.png"/>
-      </datafile>
+      <image source="1-1-2_MathCircuitsINC.png" width="100%"/>
     </li>
     <li>
       <p><em>Decrement</em> - subtract one from a number</p>
-      <datafile label="1-1-2_MathCircuitsDEC" filename="1-1-2_MathCircuitsDEC.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsDEC.png"/>
-      </datafile>
+      <image source="1-1-2_MathCircuitsDEC.png" width="100%"/>
     </li>
     <li>
       <p><em>Negate</em> - negate a number</p>
-      <datafile label="1-1-2_MathCircuitsNEGATE" filename="1-1-2_MathCircuitsNEGATE.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsNEGATE.png"/>
-      </datafile>
+      <image source="1-1-2_MathCircuitsNEGATE.png" width="100%"/>
     </li>
     </ul>
   </p>
@@ -157,9 +137,7 @@
     <title>Applying a Math Operation 1</title>
     <idx>math operation 1</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <datafile label="MathCircuit1" filename="MathCircuit1.png" include-source="yes">
-      	<image source="MathCircuit1.png"/>
-    	</datafile>
+      <image source="MathCircuit1.png" width="100%"/>
     </statement>
     <choices randomize="yes">
     	<choice correct="yes">
@@ -186,9 +164,7 @@
     <title>Applying a Math Operation 2</title>
     <idx>math operation 2</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <datafile label="MathCircuit2" filename="MathCircuit2.png" include-source="yes">
-        <image source="MathCircuit2.png"/>
-      </datafile>
+      <image source="MathCircuit2.png" width="100%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -215,9 +191,7 @@
     <title>Applying a Math Operation 3</title>
     <idx>math operation 3</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <datafile label="MathCircuit3" filename="MathCircuit3.png" include-source="yes">
-        <image source="MathCircuit3.png"/>
-      </datafile>
+      <image source="MathCircuit3.png" width="100%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -246,16 +220,12 @@
     <li>
       <p><em>Add</em> - add two numbers. Add two numbers and place result in the target, indicated by *. 
       Other input is unchanged.</p>
-      <datafile label="1-1-2_MathCircuitsADD" filename="1-1-2_MathCircuitsADD.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsADD.png"/>
-      </datafile>
+      <image source="1-1-2_MathCircuitsADD.png" width="100%"/>
     </li>
     <li>
       <p><em>Controlled increment</em> - increment the target if and only if the control is odd.
       Target is indicated by *, control remains unchanged.</p>
-      <datafile label="1-1-2_MathCircuitsC-INC" filename="1-1-2_MathCircuitsC-INC.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsC-INC.png"/>
-      </datafile>
+      <image source="1-1-2_MathCircuitsC-INC.png" width="100%"/>
     </li> 
     </ul>
   </p>
@@ -274,9 +244,7 @@
     <title>Applying a two-variable Math Operation 1</title>
     <idx>math operation 4</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <datafile label="MathCircuit4" filename="MathCircuit4.png" include-source="yes">
-        <image source="MathCircuit4.png"/>
-      </datafile>
+      <image source="MathCircuit4.png" width="100%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -303,9 +271,7 @@
     <title>Applying a two-variable Math Operation 2</title>
     <idx>math operation 5</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <datafile label="MathCircuit5" filename="MathCircuit5.png" include-source="yes">
-        <image source="MathCircuit5.png"/>
-      </datafile>
+      <image source="MathCircuit5.png" width="100%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -337,18 +303,15 @@
     <li>y = x - y</li>
   </ul>
 <p>The following circuit would depict that sequence of operations:</p>
-      <datafile label="1-1-2_MathCircuitsSEQ" filename="1-1-2_MathCircuitsSEQ.png" include-source="yes">
-        <image source="1-1-2_MathCircuitsSEQ.png" width="750px"/>
-      </datafile>
+      <image source="1-1-2_MathCircuitsSEQ.png" width="100%"/>
 
  <exercise label="Math Circuit 1">
     <title>Solving a Math Circuit with two inputs 1</title>
     <idx>math circuit 6</idx>
     <statement>
         <p>What are the values of x and y after the following math circuit runs?</p>
-        <datafile label="MathCircuit6" filename="MathCircuit6.png" include-source="yes">
-          <image source="MathCircuit6.png" width="75%"/>
-        </datafile>
+      <image source="MathCircuit6.png" width="100%"/>
+
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -405,9 +368,7 @@
     <choices randomize="yes">
       <choice correct="yes">
         <statement>
-          <datafile label="MathCircuit7a" filename="MathCircuit7a.png" include-source="yes">
-          <image source="MathCircuit7a.png"/>
-        </datafile>
+          <image source="MathCircuit7a.png" width="100%"/>
         </statement>
         <feedback><p>Yes!! First, the x variable is decremented. Then, the y-variable is incremented.
         Next, the sum of x and y is stored in the x varaible. Finally, the y variable is negated. 
@@ -417,9 +378,7 @@
       </choice>
       <choice>
         <statement>
-          <datafile label="MathCircuit7b" filename="MathCircuit7b.png" include-source="yes">
-          <image source="MathCircuit7b.png"/>
-        </datafile>
+          <image source="MathCircuit7b.png" width="100%"/>
         </statement>
         <feedback><p>Not quite. Double check that you applied the correct operations. 
         Did you apply them in the correct order - left to right?
@@ -428,9 +387,7 @@
       </choice>
       <choice>
         <statement>
-          <datafile label="MathCircuit7c" filename="MathCircuit7c.png" include-source="yes">
-          <image source="MathCircuit7c.png"/>
-        </datafile>
+          <image source="MathCircuit7c.png" width="100%"/>
         </statement>
         <feedback><p>Not quite. Double check that you applied the correct operations. 
         Did you apply them in the correct order - left to right?
@@ -439,9 +396,7 @@
       </choice>
       <choice>
         <statement>
-          <datafile label="MathCircuit7d" filename="MathCircuit7d.png" include-source="yes">
-          <image source="MathCircuit7d.png"/>
-        </datafile>
+          <image source="MathCircuit7d.png" width="100%"/>
         </statement>
         <feedback><p>Not quite. Double check that you applied the correct operations. 
         Did you apply them in the correct order - left to right?
@@ -461,9 +416,7 @@
     <choices randomize="yes">
       <choice correct="yes">
         <statement>
-        <datafile label="MathCircuit8a" filename="MathCircuit8a.png" include-source="yes">
-          <image source="MathCircuit8a.png"/>
-        </datafile>
+       <image source="MathCircuit8a.png" width="100%"/>
         </statement>
         <feedback><p>Yes! Start with x = 3 and y = 2; the Controlled Increment has no effect, because the control is even; 
         and finally the sum of x and y is stored in x (y remains unchanged). The result is x = 5 and y = 2.</p>
@@ -471,27 +424,21 @@
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8b" filename="MathCircuit8b.png" include-source="yes">
-          <image source="MathCircuit8b.png"/>
-        </datafile>
+        <image source="MathCircuit8b.png" width="100%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8c" filename="MathCircuit8c.png" include-source="yes">
-          <image source="MathCircuit8c.png"/>
-        </datafile>
+       <image source="MathCircuit8c.png" width="100%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8d" filename="MathCircuit8d.png" include-source="yes">
-          <image source="MathCircuit8d.png"/>
-        </datafile>
+        <image source="MathCircuit8d.png" width="100%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
@@ -509,7 +456,7 @@
     <choices randomize="yes">
       <choice>
         <statement>
-        <datafile label="MathCircuit8a" filename="MathCircuit8a.png" include-source="yes">
+        <datafile label="MathCircuit8a" filename="MathCircuit8a.png" include-source="no">
           <image source="MathCircuit8a.png"/>
         </datafile>
         </statement>
@@ -518,7 +465,7 @@
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8b" filename="MathCircuit8b.png" include-source="yes">
+        <datafile label="MathCircuit8b" filename="MathCircuit8b.png" include-source="no">
           <image source="MathCircuit8b.png"/>
         </datafile>
         </statement>
@@ -527,7 +474,7 @@
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8c" filename="MathCircuit8c.png" include-source="yes">
+        <datafile label="MathCircuit8c" filename="MathCircuit8c.png" include-source="no">
           <image source="MathCircuit8c.png"/>
         </datafile>
         </statement>
@@ -536,7 +483,7 @@
       </choice>
       <choice correct="yes">
         <statement>
-        <datafile label="MathCircuit8d" filename="MathCircuit8d.png" include-source="yes">
+        <datafile label="MathCircuit8d" filename="MathCircuit8d.png" include-source="no">
           <image source="MathCircuit8d.png"/>
         </datafile>
         </statement>

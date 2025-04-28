@@ -29,10 +29,7 @@
     write |0⟩ and |1⟩. Later, we will learn more about what those symbols mean. 
     </p>
     <p> To make it easier to visualize, we will use a white ball for |0⟩ and a black ball for |1⟩.</p>
-
-    <datafile label="WhiteBlackBalls" filename="WhiteBlackBalls.png" include-source="yes">
-            <image source="WhiteBlackBalls.png" width="66%"/>
-        </datafile>
+    <image source="WhiteBlackBalls.png" width="35%"/>
 </section>
 
 
@@ -41,19 +38,14 @@
     <p> Quantum operations are called <em>gates</em>. The simplest operation is the 
     NOT, or X, gate. From a classical perspective, it toggles the value between 0 and 1.
     That is, if the input is 0, the output is 1, and vice versa.</p>
-
-     <datafile label="NOTgate" filename="NOTgate.png" include-source="yes">
-            <image source="NOTgate.png" width="66%"/>
-        </datafile>
-
+    <image source="NOTgate.png" width="50%"/>
+    
   <exercise label="Not-Q1">
     <title>NOT Gate Check #1</title>
     <idx>not gate 1</idx>
     <statement>
         <p>What is the output of this circuit?</p>
-         <datafile label="NOT_Q1" filename="NOT_Q1.png" include-source="yes">
-            <image source="NOT_Q1.png" width="66%"/>
-        </datafile>   
+        <image source="NOT_Q1.png" width="50%"/>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -73,7 +65,7 @@
     <idx>not gate 2</idx>
     <statement>
         <p>What is the output of this circuit?</p>
-         <datafile label="Not_Q2" filename="Not_Q2.png" include-source="yes">
+         <datafile label="Not_Q2" filename="Not_Q2.png" include-source="no">
             <image source="Not_Q2.png" width="66%"/>
         </datafile>   
     </statement>
@@ -95,7 +87,7 @@
     <title>NOT Gate Check #3</title>
     <idx>not gate 3</idx>
     <statement><p>What is the output of this circuit?</p>
-      <datafile label="NOT_Q3" filename="NOT_Q3.png" include-source="yes">
+      <datafile label="NOT_Q3" filename="NOT_Q3.png" include-source="no">
         <image source="NOT_Q3.png" width="66%"/>
       </datafile>   
     </statement>
@@ -117,12 +109,7 @@
     <title>Build a Quantum Circuit</title>
     <p> In this section, we introduce the interactive quantum circuit builder.</p>
     <p>There are three operations that operate well on qubits in simple states |0⟩ and |1⟩:NOT, SWAP, and CNOT</p>
-
-    <statement>
-        <datafile label="NOT-SWAP-CNOT" filename="NOT-SWAP-CNOT.png" include-source="yes">
-            <image source="NOT-SWAP-CNOT.png" width="66%"/>
-        </datafile>
-    </statement>
+    <image source="NOT-SWAP-CNOT.png" width="60%"/>
 
     <p>
     Below is your first circuit to build using the circuit builder's explore mode. 
