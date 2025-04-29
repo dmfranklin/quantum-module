@@ -120,15 +120,15 @@
     <ul>
     <li>
       <p><em>Increment</em> - add one to a number</p>
-      <image source="1-1-2_MathCircuitsINC.png" width="100%"/>
+      <image source="1-1-2_MathCircuitsINC.png" width="75%"/>
     </li>
     <li>
       <p><em>Decrement</em> - subtract one from a number</p>
-      <image source="1-1-2_MathCircuitsDEC.png" width="100%"/>
+      <image source="1-1-2_MathCircuitsDEC.png" width="75%"/>
     </li>
     <li>
       <p><em>Negate</em> - negate a number</p>
-      <image source="1-1-2_MathCircuitsNEGATE.png" width="100%"/>
+      <image source="1-1-2_MathCircuitsNEGATE.png" width="75%"/>
     </li>
     </ul>
   </p>
@@ -137,7 +137,7 @@
     <title>Applying a Math Operation 1</title>
     <idx>math operation 1</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <image source="MathCircuit1.png" width="100%"/>
+      <image source="MathCircuit1.png" width="75%"/>
     </statement>
     <choices randomize="yes">
     	<choice correct="yes">
@@ -164,7 +164,7 @@
     <title>Applying a Math Operation 2</title>
     <idx>math operation 2</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <image source="MathCircuit2.png" width="100%"/>
+      <image source="MathCircuit2.png" width="75%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -191,7 +191,7 @@
     <title>Applying a Math Operation 3</title>
     <idx>math operation 3</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <image source="MathCircuit3.png" width="100%"/>
+      <image source="MathCircuit3.png" width="75%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -220,12 +220,12 @@
     <li>
       <p><em>Add</em> - add two numbers. Add two numbers and place result in the target, indicated by *. 
       Other input is unchanged.</p>
-      <image source="1-1-2_MathCircuitsADD.png" width="100%"/>
+      <image source="1-1-2_MathCircuitsADD.png" width="75%"/>
     </li>
     <li>
       <p><em>Controlled increment</em> - increment the target if and only if the control is odd.
       Target is indicated by *, control remains unchanged.</p>
-      <image source="1-1-2_MathCircuitsC-INC.png" width="100%"/>
+      <image source="1-1-2_MathCircuitsC-INC.png" width="75%"/>
     </li> 
     </ul>
   </p>
@@ -244,7 +244,7 @@
     <title>Applying a two-variable Math Operation 1</title>
     <idx>math operation 4</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <image source="MathCircuit4.png" width="100%"/>
+      <image source="MathCircuit4.png" width="75%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -271,7 +271,7 @@
     <title>Applying a two-variable Math Operation 2</title>
     <idx>math operation 5</idx>
     <statement><p>Pick the circuit that has the correct end state given the start state.</p>
-      <image source="MathCircuit5.png" width="100%"/>
+      <image source="MathCircuit5.png" width="75%"/>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
@@ -310,7 +310,7 @@
     <idx>math circuit 6</idx>
     <statement>
         <p>What are the values of x and y after the following math circuit runs?</p>
-      <image source="MathCircuit6.png" width="100%"/>
+      <image source="MathCircuit6.png" width="75%"/>
 
     </statement>
     <choices randomize="yes">
@@ -368,7 +368,7 @@
     <choices randomize="yes">
       <choice correct="yes">
         <statement>
-          <image source="MathCircuit7a.png" width="100%"/>
+          <image source="MathCircuit7a.png" width="75%"/>
         </statement>
         <feedback><p>Yes!! First, the x variable is decremented. Then, the y-variable is incremented.
         Next, the sum of x and y is stored in the x varaible. Finally, the y variable is negated. 
@@ -378,7 +378,7 @@
       </choice>
       <choice>
         <statement>
-          <image source="MathCircuit7b.png" width="100%"/>
+          <image source="MathCircuit7b.png" width="75%"/>
         </statement>
         <feedback><p>Not quite. Double check that you applied the correct operations. 
         Did you apply them in the correct order - left to right?
@@ -387,7 +387,7 @@
       </choice>
       <choice>
         <statement>
-          <image source="MathCircuit7c.png" width="100%"/>
+          <image source="MathCircuit7c.png" width="75%"/>
         </statement>
         <feedback><p>Not quite. Double check that you applied the correct operations. 
         Did you apply them in the correct order - left to right?
@@ -396,7 +396,7 @@
       </choice>
       <choice>
         <statement>
-          <image source="MathCircuit7d.png" width="100%"/>
+          <image source="MathCircuit7d.png" width="75%"/>
         </statement>
         <feedback><p>Not quite. Double check that you applied the correct operations. 
         Did you apply them in the correct order - left to right?
@@ -416,7 +416,7 @@
     <choices randomize="yes">
       <choice correct="yes">
         <statement>
-       <image source="MathCircuit8a.png" width="100%"/>
+       <image source="MathCircuit8a.png" width="75%"/>
         </statement>
         <feedback><p>Yes! Start with x = 3 and y = 2; the Controlled Increment has no effect, because the control is even; 
         and finally the sum of x and y is stored in x (y remains unchanged). The result is x = 5 and y = 2.</p>
@@ -424,21 +424,21 @@
       </choice>
       <choice>
         <statement>
-        <image source="MathCircuit8b.png" width="100%"/>
+        <image source="MathCircuit8b.png" width="75%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-       <image source="MathCircuit8c.png" width="100%"/>
+       <image source="MathCircuit8c.png" width="75%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-        <image source="MathCircuit8d.png" width="100%"/>
+        <image source="MathCircuit8d.png" width="75%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
@@ -456,36 +456,28 @@
     <choices randomize="yes">
       <choice>
         <statement>
-        <datafile label="MathCircuit8a" filename="MathCircuit8a.png" include-source="no">
-          <image source="MathCircuit8a.png"/>
-        </datafile>
+          <image source="MathCircuit8a.png" width="75%"/>
         </statement>
         <feedback><p>Not quite.</p>
          </feedback>
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8b" filename="MathCircuit8b.png" include-source="no">
-          <image source="MathCircuit8b.png"/>
-        </datafile>
+          <image source="MathCircuit8b.png" width="75%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice>
         <statement>
-        <datafile label="MathCircuit8c" filename="MathCircuit8c.png" include-source="no">
-          <image source="MathCircuit8c.png"/>
-        </datafile>
+          <image source="MathCircuit8c.png" width="75%"/>
         </statement>
         <feedback><p>Not quite.</p>
         </feedback>
       </choice>
       <choice correct="yes">
         <statement>
-        <datafile label="MathCircuit8d" filename="MathCircuit8d.png" include-source="no">
-          <image source="MathCircuit8d.png"/>
-        </datafile>
+          <image source="MathCircuit8d.png" width="75%"/>
         </statement>
         <feedback><p>Yes! Start with x = 6 and y = 1; the Add operation stores the sum of x and y in x (y remains unchanged); 
         and finally the Controlled Increment adds 1 to x, because the control is odd.</p>

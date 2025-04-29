@@ -29,7 +29,7 @@
     write |0⟩ and |1⟩. Later, we will learn more about what those symbols mean. 
     </p>
     <p> To make it easier to visualize, we will use a white ball for |0⟩ and a black ball for |1⟩.</p>
-    <image source="WhiteBlackBalls.png" width="35%"/>
+    <image source="WhiteBlackBalls.png" width="30%"/>
 </section>
 
 
@@ -38,14 +38,14 @@
     <p> Quantum operations are called <em>gates</em>. The simplest operation is the 
     NOT, or X, gate. From a classical perspective, it toggles the value between 0 and 1.
     That is, if the input is 0, the output is 1, and vice versa.</p>
-    <image source="NOTgate.png" width="50%"/>
+    <image source="NOTgate.png" width="40%"/>
     
   <exercise label="Not-Q1">
     <title>NOT Gate Check #1</title>
     <idx>not gate 1</idx>
     <statement>
         <p>What is the output of this circuit?</p>
-        <image source="NOT_Q1.png" width="50%"/>
+        <image source="NOT_Q1.png" width="66%"/>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -65,9 +65,7 @@
     <idx>not gate 2</idx>
     <statement>
         <p>What is the output of this circuit?</p>
-         <datafile label="Not_Q2" filename="Not_Q2.png" include-source="no">
-            <image source="Not_Q2.png" width="66%"/>
-        </datafile>   
+        <image source="NOT_Q2.png" width="66%"/>
     </statement>
     <choices randomize="no">
       <choice>
@@ -86,10 +84,9 @@
  <exercise label="Not-Q3">
     <title>NOT Gate Check #3</title>
     <idx>not gate 3</idx>
-    <statement><p>What is the output of this circuit?</p>
-      <datafile label="NOT_Q3" filename="NOT_Q3.png" include-source="no">
-        <image source="NOT_Q3.png" width="66%"/>
-      </datafile>   
+    <statement>
+      <p>What is the output of this circuit?</p>
+      <image source="NOT_Q3.png" width="66%"/>  
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -108,27 +105,29 @@
   <section>
     <title>Build a Quantum Circuit</title>
     <p> In this section, we introduce the interactive quantum circuit builder.</p>
-    <p>There are three operations that operate well on qubits in simple states |0⟩ and |1⟩:NOT, SWAP, and CNOT</p>
+    <p>There are three operations that operate well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT</p>
     <image source="NOT-SWAP-CNOT.png" width="60%"/>
 
     <p>
     Below is your first circuit to build using the circuit builder's explore mode. 
-    Drag and drop the pictures of the gates onto the 
-    circuit. In explore mode, every time you make a change, it provides
+    Drag and drop the pictures of the gates onto the circuit. 
+    In explore mode, every time you make a change, it provides
     feedback. You can ignore the feedback until you think you are done!!
     </p>
+
     <p>
-    The SWAP gate is a two-qubit gate, which will be two diamonds in this widget.
+    The SWAP gate is a two-qubit gate. Create the SWAP gate by dragging , which will be two diamonds in this widget.
     Place the two diamonds on the two wires in the same column. Click on them so   
     they are both highlighted, then click on the "S" button to connect them.
     </p>
-
+    <image source="L1.2-CREATING MULTI-QUBIT GATES.png" width="100%"/>
+    
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
         identicalCircuitWidget({
           circuit: "L1_2_1",
           instantFeedback: true,
-          allowedGates: "XS"
+          allowedGates: "XS*"
         });
       </script>
     </interactive>
@@ -150,7 +149,7 @@
       </script>
     </interactive>
   <p>
-  <insert>  I am leaving in this last one because it had a bug when I tried it - it always
+  <insert> I am leaving in this last one because it had a bug when I tried it - it always
     said I was not correct, even when I completed the circuit.</insert>
   </p>
    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
