@@ -51,6 +51,21 @@ patchMethod(Q.Circuit, "evaluate", [
     "(circuit.outputState = matrix.multiply( state ))",
   ],
 ]);
+Q.Circuit.evaluate = ((origEvaluate) =>
+  function (circuit) {
+    for (const operation of circuit.operations) {
+      if (operation.gate.symbol == Q.Gate.CURSOR.symbol) {
+        throw new Error("Control must be connected to a target.");
+      }
+      const expectedLength = Math.log2(operation.gate.matrix.columns.length);
+      if (operation.registerIndices.length < expectedLength) {
+        throw new Error(
+          `${operation.gate.name} gate must connect ${expectedLength} qubits.`
+        );
+      }
+    }
+    origEvaluate(circuit);
+  })(Q.Circuit.evaluate);
 
 // combine control and swap buttons into one button
 patchMethod(Q.Circuit, "Editor", [
@@ -201,7 +216,13 @@ const createGrader = (
   const checkWork = () => {
     grader.classList.remove("dirty");
     goalCircuit.evaluate$();
-    studentCircuit.evaluate$();
+    try {
+      studentCircuit.evaluate$();
+    } catch (error) {
+      feedback.classList.add("wrong");
+      feedback.textContent = `Error: ${error.message}`;
+      return;
+    }
     const [isCorrect, feedbackText] = gradingFunction(
       goalCircuit,
       studentCircuit
@@ -519,7 +540,14 @@ const visualizeProbabilitiesWidget = ({
 
   window.addEventListener("Q gui altered circuit", (event) => {
     if (event.detail.circuit == studentCircuitEditor.circuit) {
-      studentCircuitEditor.circuit.evaluate$();
+      try {
+        studentCircuitEditor.circuit.evaluate$();
+      } catch (error) {
+        probDisplay.innerText =
+          `\nError: ${error.message}` +
+          "\n".repeat(probDisplay.innerText.split("\n").length - 2);
+        return;
+      }
       probDisplay.innerText = studentCircuitEditor.circuit.report$();
     }
   });
