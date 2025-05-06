@@ -67,6 +67,14 @@ Q.Circuit.evaluate = ((origEvaluate) =>
     origEvaluate(circuit);
   })(Q.Circuit.evaluate);
 
+// fix swap gate appearance
+patchMethod(Q.Circuit, "fromTableTransposed", [
+  [
+    "circuit.operations[ operationsIndex ].isControlled = operation.gateSymbol != '*'",
+    "circuit.operations[ operationsIndex ].isControlled = operation.gateSymbol != Q.Gate.SWAP.symbol",
+  ],
+]);
+
 // combine control and swap buttons into one button
 patchMethod(Q.Circuit, "Editor", [
   [
@@ -80,11 +88,21 @@ patchMethod(Q.Circuit, "Editor", [
   [/controlButton\.innerText = .*/, "controlButton.innerText = 'C/S'"],
   ["toolbarEl.appendChild( swapButton )", ""],
 ]);
+patchMethod(Q.Circuit.Editor, "isValidControlCandidate", [
+  [
+    "if( !registerIndicesString ) return status",
+    "if( !registerIndicesString ) return status && Math.log2(Q.Gate.findBySymbol(operationEl.getAttribute('gate-symbol')).matrix.columns.length) === 1",
+  ],
+]);
 patchMethod(Q.Circuit.Editor, "isValidSwapCandidate", [
   [
     "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.CURSOR.symbol",
     "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.SWAP.symbol",
   ],
+]);
+patchMethod(Q.Circuit.Editor, "createSwap", [
+  // sort swap qubit indices to enforce consistent ordering
+  ["//  Create the swap operation.", "registerIndices.sort()"],
 ]);
 Q.Circuit.Editor.onSelectionChanged = function (circuitEl) {
   const controlButtonEl = circuitEl.querySelector(".Q-circuit-toggle-control");
@@ -109,13 +127,18 @@ patchMethod(Q.Circuit.Editor, "set", [
     "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.symbol",
     "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.unicode ?? operation.gate.symbol",
   ],
+  // keep swap gate square-shaped
+  [
+    "else operationEl.classList.add( 'Q-circuit-operation-target' )",
+    "else if( operation.isControlled ) operationEl.classList.add( 'Q-circuit-operation-target' )",
+  ],
 ]);
 
 Q.Gate.createConstants(
   "IDENTITY",
   new Q.Gate(
     Object.assign({}, Q.Gate.IDENTITY, {
-      nameCss: "undefined",
+      nameCss: undefined,
     })
   ),
   "CURSOR",

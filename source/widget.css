@@ -1,10 +1,4 @@
-.Q-circuit-board-container {
-  max-height: unset;
-}
-
 .widget {
-  --Q-operation-color-main: hsl(210, 10%, 35%);
-
   .instructions,
   .feedback {
     font-size: 1.2em;
@@ -21,10 +15,10 @@
       display: none;
     }
     .feedback.correct {
-      color: #4CAF50;
+      color: #4caf50;
     }
     .feedback.wrong {
-      color: #F44336;
+      color: #f44336;
     }
     .check-work {
       margin-bottom: 1.5rem;
@@ -38,8 +32,27 @@
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     }
   }
+}
 
-  .Q-circuit-board-container {
-    overflow: auto;
-  }
+.Q-circuit-board-container {
+  max-height: unset;
+  overflow: auto;
+}
+
+.Q-circuit-operation {
+  --Q-operation-color-main: #0c5394;
+  --Q-operation-color-dark: #c9daf8;
+}
+
+.Q-circuit-operation-hadamard {
+  --Q-operation-color-main: #f54343;
+  --Q-operation-color-dark: #f5cbcc;
+}
+
+.Q-circuit-operation-control {
+  --Q-operation-color-main: black;
+}
+
+.Q-circuit-operation-link {
+  border-color: black;
 }
