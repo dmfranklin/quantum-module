@@ -9,6 +9,12 @@ const circuits = new Map([
       `,
   ],
   [
+    "L1_2_0",
+    `
+        X X
+      `,
+  ],
+  [
     "L1_2_1",
     `
         I S#0

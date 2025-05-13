@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
-
 <section xml:id="lesson2_1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Using the Circuit Builder to learn gates </title>
-  <p> 
-The circuit builder allows us to see the behavior of a simple gate
-by trying all of the combinations of inputs. We are going to use it 
-two discover the functionality of the two other gates you used last 
-time - SWAP and CNOT. 
-  </p><p> 
-  When qubits are in their simplest states, <m>|0\rangle</m> and <m>|1\rangle</m>, there are four 
-combinations of inputs and four combinations of outputs: 
-00, 01, 10, and 11. To see how a gate works on these simple states, 
-we try each on in the circuit builder.
-  </p>    
-<p> The circuit builder will be set to a starting state of <m>|0\rangle</m> and <m>|0\rangle</m>.
-  We can also write this state in a more compact form: <m>|00\rangle</m>. So, first you 
-  will see how the SWAP gate acts when given the input <m>|00\rangle</m>. Using the circuit 
-  builder below, construct a circuit that matches this picture:
-</p> 
+  <title>Using the Circuit Builder to Learn Gates </title>
 
+  <insert>
+    UPDATE TEXT TO REFLECT REVISED ORDER OF USING CIRCUIT BUIDLER TO LEARN GATES.
+  </insert>
 
+  <p>
+    The circuit builder allows us to learn about the behavior of a simple gate by trying 
+    all of the combinations of inputs. We are going to use the circuit builder to 
+    discover the functionality of the two gates you used last time - SWAP and CNOT.
+  </p>
 
-<datafile label="Swap00" filename="Swap00.png" include-source="yes">
+  <p>
+    When qubits are in their simplest states, <m>|0\rangle</m> and <m>|1\rangle</m>, 
+    there are four combinations of inputs and four combinations of outputs: 
+    00, 01, 10, and 11. To see how a gate works on these simple states, 
+    we try each on in the circuit builder.
+  </p>  
+
+  <p>
+    The circuit builder will be set to a starting state of <m>|0\rangle</m> and <m>|0\rangle</m>.
+    We can also write this state in a more compact form: <m>|00\rangle</m>. 
+    So, first you will see how the SWAP gate acts when given the input <m>|00\rangle</m>. Using the circuit 
+    builder below, construct a circuit that matches this picture:
+  </p> 
+
   <image source="Swap00.png" width="66%"/>
-</datafile>
-
-
 
 <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
   <script>
@@ -47,41 +46,37 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
 </p>
 
 
-
   <exercise label="Swap_00_Output">
     <title>Swap Output with 00</title>
     <idx>swap output 00</idx>
     <statement>
-        <p>What is the output of the SWAP gate with <m>|00\rangle</m> as the input?</p>
+        <p>What is the output of the SWAP gate with <m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m> as the input?</p>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><p><m>|00\rangle</m> or <datafile label="Swap_00_Balls00" filename="Balls00.png" include-source="yes">
-          <image source="Balls00.png" width="66%"/>
-        </datafile>
-      </p></statement>
+        <statement>
+          <p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p>
+        </statement>
         <feedback><p>Yes! The swap had no effect!</p>
          </feedback>
       </choice>
       <choice>
-        <statement><p><m>|01\rangle</m> or <datafile label="Swap_00_Balls01" filename="Balls01.png" include-source="yes">
-          <image source="Balls01.png" width="66%"/>
-        </datafile>
-      </p></statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p>
-        </feedback>
+        <statement>
+          <p><m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m></p>
+        </statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
       </choice>
       <choice>
-        <statement><p><m>|10\rangle</m> or <datafile label="Swap_00_Balls10" filename="Balls10.png" include-source="yes">
-          <image source="Balls10.png" width="66%"/>
-        </datafile></p></statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p>
-        </feedback>
+        <statement>
+          <p><m>|10\rangle</m> or <m>|</m>⬤◯<m>\rangle</m></p>
+        </statement>
+        <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
       </choice>
+
       <choice>
-        <statement><p><m>|11\rangle</m> or <datafile label="Swap_00_Balls11" filename="Balls11.png" include-source="yes">
-          <image source="Balls11.png" width="66%"/>
-        </datafile></p></statement>
+        <statement>
+          <p><m>|11\rangle</m> or <m>|</m>⬤⬤<m>\rangle</m></p>
+        </statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>
         </feedback>
       </choice>
@@ -98,18 +93,14 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
 
   <p> In other words, if we want to determine the output to this circuit: 
   </p>
-  <datafile label="Swap01" filename="Swap01.png" include-source="yes">
-    <image source="Swap01.png" width="66%"/>
-  </datafile>
+
+  <image source="Swap01.png" width="66%"/>
+
   <p> Then we construct this circuit:
   </p>
 
-  <datafile label="NotSwap00" filename="NotSwap00.png" include-source="yes">
-    <image source="NotSwap00.png" width="66%"/>
-  </datafile>
-  
-  
-  
+  <image source="NotSwap00.png" width="66%"/>
+
   <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
     <script>
       visualizeProbabilitiesWidget({
@@ -123,36 +114,34 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
     <title>Swap Output with 01</title>
     <idx>swap output 01</idx>
     <statement>
-        <p>What is the output of the SWAP gate with <m>|01\rangle</m> as the input?</p>
+        <p>What is the output of the SWAP gate with <m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m> as the input?</p>
     </statement>
     <choices randomize="no">
       <choice>
-        <statement><p><m>|00\rangle</m> or <datafile label="Swap_01_Balls00" filename="Balls00.png" include-source="yes">
-          <image source="Balls00.png" width="66%"/>
-        </datafile>
-      </p></statement>
+        <statement>
+          <p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p>
+        </statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>
          </feedback>
       </choice>
       <choice>
-        <statement><p><m>|01\rangle</m> or <datafile label="Swap_01_Balls01" filename="Balls01.png" include-source="yes">
-          <image source="Balls01.png" width="66%"/>
-        </datafile>
-      </p></statement>
+        <statement>
+          <p><m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m></p>
+        </statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>
         </feedback>
       </choice>
       <choice correct="yes">
-        <statement><p><m>|10\rangle</m> or <datafile label="Swap_01_Balls10" filename="Balls10.png" include-source="yes">
-          <image source="Balls10.png" width="66%"/>
-        </datafile></p></statement>
+        <statement>
+          <p><m>|10\rangle</m> or <m>|</m>⬤◯<m>\rangle</m></p>
+        </statement>
         <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p><m>|11\rangle</m> or <datafile label="Swap_01_Balls11" filename="Balls11.png" include-source="yes">
-          <image source="Balls11.png" width="66%"/>
-        </datafile></p></statement>
+        <statement>
+          <p><m>|11\rangle</m> or <m>|</m>⬤⬤<m>\rangle</m></p>
+        </statement>
         <feedback><p>Make sure you hooked up your circuit correctly!</p>
         </feedback>
       </choice>

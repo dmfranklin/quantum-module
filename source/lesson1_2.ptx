@@ -108,18 +108,43 @@
     <p>There are three operations that operate well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT</p>
     <image source="NOT-SWAP-CNOT.png" width="60%"/>
 
+    <p>Below is your first circuit to build using the circuit builder.
+    To use the circuit builder, drag and drop the <em>gate tiles</em> from the 
+    <em>gates palette</em> and place them onto the circuit, matching the given circuit.
+    </p>
+
+    <image source="L1.2-CIRCUIT BUILDER.png" width="100%"/>
+
+    <p>  
+    For this circuit, you will use the circuit builder's <em>Explore</em> mode.
+    In <em>Explore</em> mode, you receive feedback every time you make a change. 
+    You can ignore the feedback until you think you are done!!
+    </p>
+
+    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+      <script>
+        identicalCircuitWidget({
+          circuit: "L1_2_0",
+          instantFeedback: true,
+          allowedGates: "X"
+        });
+      </script>
+    </interactive>
+
     <p>
-    Below is your first circuit to build using the circuit builder's explore mode. 
-    Drag and drop the pictures of the gates onto the circuit. 
-    In explore mode, every time you make a change, it provides
-    feedback. You can ignore the feedback until you think you are done!!
+    Now, you are going to use the circuit builder to create a two-qubit gate, the SWAP gate.
+    To do this, you will need to place two <em>Swap</em> gate tiles on the circuit and then connect them. 
     </p>
 
     <p>
-    The SWAP gate is a two-qubit gate. Create the SWAP gate by dragging , which will be two diamonds in this widget.
-    Place the two diamonds on the two wires in the same column. Click on them so   
-    they are both highlighted, then click on the "S" button to connect them.
+    To create a SWAP gate: 
     </p>
+    <ol>
+      <li>Drag and drop two <em>Swap</em> gate tiles onto the circuit, placing them in the same column.</li>
+      <li>Select the gate tiles as a group: Click on the number at the top of the column.</li>
+      <li>Connect the gate tiles: Click the "C/S" button.</li>
+    </ol>
+    
     <image source="L1.2-CREATING MULTI-QUBIT GATES.png" width="100%"/>
     
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
@@ -127,17 +152,16 @@
         identicalCircuitWidget({
           circuit: "L1_2_1",
           instantFeedback: true,
-          allowedGates: "XS*"
+          allowedGates: "XS"
         });
       </script>
     </interactive>
 
-<p>
+    <p>
     Now let's try building a circuit with a controlled gate - just like the controlled
-    increment we saw in the math example. Put a spot on one the control wire and the gate on the 
-    target wire. Click on them to make sure they are both highlighted, then click the "C" button 
-    to connect them.
-</p>
+    increment we saw in the math example. 
+    To do this, connect a <em>Control</em> tile (shaped like a circle) and a <em>Not</em> tile. 
+    </p>
 
   <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
