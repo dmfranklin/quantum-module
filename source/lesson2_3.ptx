@@ -13,7 +13,7 @@
   (the spot) and the bottom qubit the target (NOt gate).
   </p>
   
-  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
     <script>
       visualizeProbabilitiesWidget({
         circuit: "Blank 2x6",

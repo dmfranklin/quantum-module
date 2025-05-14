@@ -30,7 +30,7 @@ we try each on in the circuit builder.
 
 
 
-<interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+<interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
   <script>
     visualizeProbabilitiesWidget({
       circuit: "Blank 2x6",
@@ -110,7 +110,7 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
   
   
   
-  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
     <script>
       visualizeProbabilitiesWidget({
         circuit: "Blank 2x6",

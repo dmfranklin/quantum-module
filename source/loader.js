@@ -27,13 +27,13 @@ const loadEverything = async () => {
   // styles
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.css`)
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/assets/documentation.css`)
-  await loadCSS("../../../source/widget.css");
+  await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
 
   // scripts
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`)
   await loadJS("https://cssplice.org/slcp/splice-iframe.js");
-  await loadJS("../../../source/widget.js");
-  await loadJS("../../../source/circuits.js");
+  await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
+  await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
 };
 
 const widgetReady = loadEverything();
