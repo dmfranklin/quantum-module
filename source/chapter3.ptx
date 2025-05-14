@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exploring Quantum Operations</title>
+
+  <introduction>
+    <p>In this chapter, we are going to learn about superposition, which introduces <i>probabilistic gates</i>. Specifically, we have the following learning goals:
+
+What is going on with these probabilistic gates?
+How do we represent the probabilistic output visually?
+How do we represent the probabilistic output mathematically?
+How can we calculate these probabilities as they pass through other gates?
+
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="lesson3_1.ptx" />
+
+
+</chapter>
