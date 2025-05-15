@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="chapter3" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Exploring Quantum Operations</title>
+  <title>Superposition</title>
 
   <introduction>
     <p>In this chapter, we are going to learn about superposition, which introduces <i>probabilistic gates</i>. Specifically, we have the following learning goals:
@@ -16,6 +16,7 @@ How can we calculate these probabilities as they pass through other gates?
 
   <!-- include sections -->
   <xi:include href="lesson3_1.ptx" />
-
+<xi:include href="lesson3_2.ptx" />
+<xi:include href="lesson3_3.ptx" />
 
 </chapter>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Probability</title>
+<p> We have now introduced superposition and phase, but we don't have a way of precisely 
+    calculating the effects. You know that starting with <m>|0\rangle</m> and applying an H gate 
+    places the qubit in positive phase. Likewise, starting with <m>|1\rangle</m> and applying an H gate 
+    places the qubit in negative phase. You also know that the Z gate flips the phase. While this is a start, 
+    it is not sufficient for calculating the effect of the H and 
+    Z gates on more complex states. We first need to have a better understanding of how to calculate 
+    probabilities, then use those skills with a mathematical representation to calculate the effects of gates 
+    on qubits in states of superposition and 
+    phase. </p>
+
+</section>

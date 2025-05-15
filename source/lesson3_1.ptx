@@ -74,84 +74,86 @@
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|00\rangle</m> or <datafile label="CNOT_Q1_Balls00" filename="Balls00.png" include-source="yes">
+          <statement><p><m>|00\rangle</m> or 
             <image source="Balls00.png" width="66%"/>
-          </datafile>
+          
         </p></statement>
           <feedback><p>There should be probabilities involved!</p>
            </feedback>
         </choice>
         <choice >
-          <statement><p><m>|01\rangle</m> or <datafile label="CNOT_Q1_Balls01" filename="Balls01.png" include-source="yes">
+          <statement><p><m>|01\rangle</m> or 
             <image source="Balls01.png" width="66%"/>
-          </datafile>
+          
         </p></statement>
           <feedback><p>There should be probabilities involved!</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|10\rangle</m> or <datafile label="CNOT_Q1_Balls10" filename="Balls10.png" include-source="yes">
+          <statement><p><m>|10\rangle</m> or 
             <image source="Balls10.png" width="66%"/>
-          </datafile></p></statement>
+          </p></statement>
           <feedback><p>There should be probabilities involved!</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|11\rangle</m> or <datafile label="CNOT_Q1_Balls11" filename="Balls11.png" include-source="yes">
+          <statement><p><m>|11\rangle</m> or 
             <image source="Balls11.png" width="66%"/>
-          </datafile></p></statement>
+          </p></statement>
           <feedback><p>There should be probabilities involved!</p>
           </feedback>
         </choice>
       </choices>
-      <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
+      <hint><p>Think about what the output would be after each gate.</p></hint>
     </exercise>
-************************************* Diana is here ********************************
-    <exercise label="CNOT_Q2">
-      <title>CNOT Q2</title>
-      <idx>cnot Q2</idx>
-      <statement>
-          <p>What is the output of the following circuit?
-            <datafile label="CNOT_Q2-image" filename="CNOT_Q2.png" include-source="yes">
-              <image source="CNOT_Q2.png" width="66%"/>
-            </datafile> 
-          </p>
-      </statement>
-      <choices randomize="no">
-        <choice>
-          <statement><p><m>|00\rangle</m> or <datafile label="CNOT_Q2_Balls00" filename="Balls00.png" include-source="yes">
-            <image source="Balls00.png" width="66%"/>
-          </datafile>
-        </p></statement>
-          <feedback><p>Yes! The swap had no effect!</p>
-           </feedback>
-        </choice>
-        <choice>
-          <statement><p><m>|01\rangle</m> or <datafile label="CNOT_Q2_Balls01" filename="Balls01.png" include-source="yes">
-            <image source="Balls01.png" width="66%"/>
-          </datafile>
-        </p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
-          </feedback>
-        </choice>
-        <choice>
-          <statement><p><m>|10\rangle</m> or <datafile label="CNOT_Q2_Balls10" filename="Balls10.png" include-source="yes">
-            <image source="Balls10.png" width="66%"/>
-          </datafile></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
-          </feedback>
-        </choice>
-        <choice correct="yes">
-          <statement><p><m>|11\rangle</m> or <datafile label="CNOT_Q2_Balls11" filename="Balls11.png" include-source="yes">
-            <image source="Balls11.png" width="66%"/>
-          </datafile></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
-          </feedback>
-        </choice>
-      </choices>
-      <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
-    </exercise>
-    
-   
 
+Now let's look at what happens with an H gate! Use the widget below to check what happens when you start with <m>|0\rangle</m> or <m>|1\rangle</m> 
+and you put two H gates in a row.
+
+ <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XH"
+      });
+    </script>
+  </interactive>     
+   
+ <exercise label="Two_H_gates">
+    <title>Two H gates</title>
+    <idx>Two_H_gates</idx>
+    <statement>
+        <p>Which answer best describes what you observed from the H gate?
+        </p>
+    </statement>
+    <choices randomize="yes">
+     <choice correct="yes">
+        <statement><p>It does not have an observable effect - they go back to their original values.</p></statement>
+        <feedback><p>Look more closely at the bar graphs of the output.</p>
+        </feedback>
+      </choice>
+      <choice correct="no">
+        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
+            of measuring 0 or 1.
+        </p></statement>
+        <feedback><p>Make sure you put two H gates right next to each other.</p>
+        </feedback>
+      </choice>
+          <choice correct="no">
+        <statement><p>It has the same effect as a NOT gate</p></statement>
+        <feedback><p>Make sure you put the H gates right next to each other.</p>
+        </feedback>
+      </choice>
+
+    </choices>
+    <hint><p>Use a NOT gate to make the second input 1, then put two H gates on each wire.</p></hint>
+  </exercise>
+
+  <p> By this point, I hope you have a big question in your mind - how is it that they are the same 
+    value after the first H gate (that is, 50/50 probability of measuring 0 vs 1), yet the second gate 
+    makes them go back to their original value? How can it distinguish between the 50/50 coming from 0 and 
+    the 50/50 coming from 1? 
+  </p>
+  <p> What this means is that our current model is incomplete - there is some other element of quantum state that 
+    we are not yet modeling! It is more complex than merely probability of measuring 0 vs 1. </p>
 </section>

@@ -4,11 +4,5 @@
   <targets>
     <target name="web" format="html" />
     <target name="print" format="pdf" />
-    <target
-       name="runestone"
-       format="html"
-       platform="runestone"
-       publication="runestone.ptx"
-     />
   </targets>
 </project>
