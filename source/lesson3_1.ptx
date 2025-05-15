@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson3_1" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+  <title>Exploring Superposition using the H Gate</title>
+  <p>
+    We now introduce a new gate - the Hadamard gate, or H gate. This is a single qubit gate that places a qubit in <i>superposition</i>.
+    We will learn more about superposition as we observe how the H gate operates. Use the widget below to see what the H gate does to  
+    a qubit that starts in the <m>|0\rangle</m> or <m>|1\rangle</m> state.
+  </p>
+  
+  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XH"
+      });
+    </script>
+  </interactive>
+
+  <exercise label="H_truth_table">
+    <title>H Truth Table</title>
+    <idx>H_truth_table</idx>
+    <statement>
+        <p>Which answer best describes what you observed from the H gate?
+        </p>
+    </statement>
+    <choices randomize="yes">
+     <choice correct="no">
+        <statement><p>It does not have an observable effect.</p></statement>
+        <feedback><p>Look more closely at the bar graphs of the output.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
+            of measuring 0 or 1.
+        </p></statement>
+        <feedback><p></p>
+        </feedback>
+      </choice>
+      
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      Construct both input combinations using not gates,  recording the answers 
+      each time.</p></hint>
+  </exercise>
+  <p> 
+    Now that you have the full truth table for H, I suggest adding it onto your page of 
+    notes for future reference. 
+    </p>
+    <p> Now let's explore what you observed - the H gate's output has an equal probability of measuring 0 or 1.
+        This means that it appears to act like a <i>random</i> gate, producing random output. Imagine a random
+        gate that did exactly that, then answer the next question. </p>
+
+    <exercise label="Expected_Random">
+      <title>Random Gate Expected Output</title>
+      <idx>randomExpected</idx>
+      <statement>
+          <p>What should the output be of the following circuit, assuming R is a random gate?
+            (make a new picture - have it be of two random gates on the widget)
+            <datafile label="RandomGateExpectedOutput-image" filename="RandomGateExpectedOutput.png" include-source="yes">
+              <image source="RandomGateExpectedOutput.png" width="66%"/>
+            </datafile> 
+          </p>
+      </statement>
+      <choices randomize="yes">
+                <choice correct="yes">
+          <statement><p>equal chance 
+            of measuring 0 or 1.</p></statement>
+          <feedback><p>Yes!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|00\rangle</m> or 
+            <image source="Balls00.png" width="66%"/>
+          
+        </p></statement>
+          <feedback><p>There should be probabilities involved!</p>
+           </feedback>
+        </choice>
+        <choice >
+          <statement><p><m>|01\rangle</m> or 
+            <image source="Balls01.png" width="66%"/>
+          
+        </p></statement>
+          <feedback><p>There should be probabilities involved!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|10\rangle</m> or 
+            <image source="Balls10.png" width="66%"/>
+          </p></statement>
+          <feedback><p>There should be probabilities involved!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>|11\rangle</m> or 
+            <image source="Balls11.png" width="66%"/>
+          </p></statement>
+          <feedback><p>There should be probabilities involved!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint><p>Think about what the output would be after each gate.</p></hint>
+    </exercise>
+
+Now let's look at what happens with an H gate! Use the widget below to check what happens when you start with <m>|0\rangle</m> or <m>|1\rangle</m> 
+and you put two H gates in a row.
+
+ <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XH"
+      });
+    </script>
+  </interactive>     
+   
+ <exercise label="Two_H_gates">
+    <title>Two H gates</title>
+    <idx>Two_H_gates</idx>
+    <statement>
+        <p>Which answer best describes what you observed from the H gate?
+        </p>
+    </statement>
+    <choices randomize="yes">
+     <choice correct="yes">
+        <statement><p>It does not have an observable effect - they go back to their original values.</p></statement>
+        <feedback><p>Look more closely at the bar graphs of the output.</p>
+        </feedback>
+      </choice>
+      <choice correct="no">
+        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
+            of measuring 0 or 1.
+        </p></statement>
+        <feedback><p>Make sure you put two H gates right next to each other.</p>
+        </feedback>
+      </choice>
+          <choice correct="no">
+        <statement><p>It has the same effect as a NOT gate</p></statement>
+        <feedback><p>Make sure you put the H gates right next to each other.</p>
+        </feedback>
+      </choice>
+
+    </choices>
+    <hint><p>Use a NOT gate to make the second input 1, then put two H gates on each wire.</p></hint>
+  </exercise>
+
+  <p> By this point, I hope you have a big question in your mind - how is it that they are the same 
+    value after the first H gate (that is, 50/50 probability of measuring 0 vs 1), yet the second gate 
+    makes them go back to their original value? How can it distinguish between the 50/50 coming from 0 and 
+    the 50/50 coming from 1? 
+  </p>
+  <p> What this means is that our current model is incomplete - there is some other element of quantum state that 
+    we are not yet modeling! It is more complex than merely probability of measuring 0 vs 1. </p>
+</section>
