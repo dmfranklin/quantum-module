@@ -75,6 +75,18 @@ patchMethod(Q.Circuit, "fromTableTransposed", [
   ],
 ]);
 
+// make row and column labels 0-indexed
+patchMethod(Q.Circuit, "Editor", [
+  [
+    "momentsymbolEl.innerText = momentIndex",
+    "momentsymbolEl.innerText = momentIndex - 1",
+  ],
+  [
+    "registersymbolEl.innerText = registerIndex",
+    "registersymbolEl.innerText = registerIndex - 1",
+  ],
+]);
+
 // combine control and swap buttons into one button
 patchMethod(Q.Circuit, "Editor", [
   [
@@ -172,8 +184,7 @@ patchMethod(Q.Circuit.prototype, "set$", [
     `function( gate, ...args ){
       let momentIndex, registerIndices;
       if (args.length == 2 && args[1] instanceof Array) {
-        momentIndex = args[0];
-        registerIndices = args[1];
+        [momentIndex, registerIndices] = args;
       } else {
         registerIndices = args;
       }
@@ -201,8 +212,18 @@ patchMethod(Q.Circuit.prototype, "set$", [
 Object.entries(Q.Gate.constants).forEach(function (entry) {
   const gateConstantName = entry[0],
     gate = entry[1],
+    offsetIndices = (args) =>
+      args.map((arg) => {
+        if (typeof arg === "number") {
+          return arg + 1;
+        }
+        if (arg instanceof Array) {
+          return offsetIndices(arg);
+        }
+        return arg;
+      }),
     set$ = function (...args) {
-      this.set$(gate, ...args);
+      this.set$(gate, ...offsetIndices(args));
       return this;
     };
   Q.Circuit.prototype[gateConstantName] = set$;
@@ -227,11 +248,15 @@ const createCircuitEditor = (
     .querySelector(editable ? ".Q-circuit-toggle-lock" : ".Q-circuit-toolbar")
     .remove();
 
+  const circuitInputs = editor.querySelectorAll(".Q-circuit-input");
   if (arbitraryInputs) {
-    const circuitInputs = editor.querySelectorAll(".Q-circuit-input");
     const greekAlphabet = "αβγδεζηθικλμνξοπρστυφχψω";
     circuitInputs.forEach((input, i) => {
       input.textContent = `|${greekAlphabet[i]}⟩`;
+    });
+  } else {
+    circuitInputs.forEach((input) => {
+      input.textContent = "|0⟩";
     });
   }
 
@@ -359,24 +384,29 @@ const createCodeEditor = (circuitEditor) => {
   codeEditor.setAttribute(
     "placeholder",
     `// Write your circuit code here... for example:
-circuit.x(1); // applies a NOT to qubit 1
-circuit.swap(1, 2); // applies a SWAP to qubits 1 and 2
-circuit.h(1); // applies an H to qubit 1
-circuit.x(1, 2); // applies a CNOT to qubits 1 and 2`
+circuit.x(0); // applies a NOT to qubit 0
+circuit.swap(0, 1); // applies a SWAP to qubits 0 and 1
+circuit.h(0); // applies an H to qubit 0
+circuit.x(0, 1); // applies a CNOT to qubits 0 and 1`
   );
   codeEditor.addEventListener("input", () => {
+    let opacity = 1;
     try {
       const newCircuit = Q(
         circuitEditor.circuit.bandwidth,
         circuitEditor.circuit.timewidth
       );
       new Function("circuit", codeEditor.value)(newCircuit);
-      const container = new Q.Circuit.Editor(
-        newCircuit
-      ).domElement.querySelector(".Q-circuit-board-container");
       circuitEditor
-        .querySelector(".Q-circuit-board-container")
-        .replaceWith(container);
+        .querySelectorAll(
+          ".Q-circuit-operation, .Q-circuit-operation-link-container"
+        )
+        .forEach((operation) => {
+          operation.remove();
+        });
+      newCircuit.operations.forEach((operation) =>
+        Q.Circuit.Editor.set(circuitEditor, operation)
+      );
       circuitEditor.circuit = newCircuit;
       window.dispatchEvent(
         new CustomEvent("Q gui altered circuit", {
@@ -384,10 +414,10 @@ circuit.x(1, 2); // applies a CNOT to qubits 1 and 2`
         })
       );
     } catch (error) {
-      circuitEditor.querySelector(
-        ".Q-circuit-board-container"
-      ).style.opacity = 0.5;
+      opacity = 0.5;
     }
+    circuitEditor.querySelector(".Q-circuit-board-container").style.opacity =
+      opacity;
   });
   return codeEditor;
 };
