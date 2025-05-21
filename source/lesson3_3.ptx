@@ -2,7 +2,7 @@
 
 
 
-<section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="lesson3_3" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability</title>
 <p> We have now introduced superposition and phase, but we don't have a way of precisely 
     calculating the effects. You know that starting with <m>|0\rangle</m> and applying an H gate 
