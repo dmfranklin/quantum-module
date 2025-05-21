@@ -197,6 +197,7 @@ Object.entries(Q.Gate.constants).forEach(function (entry) {
       return this;
     };
   Q.Circuit.prototype[gateConstantName] = set$;
+  Q.Circuit.prototype[gateConstantName.toLowerCase()] = set$;
   Q.Circuit.prototype[gate.symbol] = set$;
   Q.Circuit.prototype[gate.symbol.toLowerCase()] = set$;
 });
