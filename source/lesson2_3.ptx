@@ -10,7 +10,7 @@
     Now let's explore how the CNOT gate works. Using the same method, try all four 
   input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>, <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship 
   between inputs and outputs for the CNOT gate. Make the top qubit the control 
-  (the spot) and the bottom qubit the target (NOt gate).
+  (the spot) and the bottom qubit the target (NOT gate).
   </p>
   
   <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
