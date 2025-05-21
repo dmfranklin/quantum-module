@@ -350,8 +350,9 @@ const createCodeEditor = (circuitEditor) => {
   codeEditor.setAttribute(
     "placeholder",
     `// Write your circuit code here... for example:
+circuit.x(1); // applies a NOT to qubit 1
+circuit.swap(1, 2); // applies a SWAP to qubits 1 and 2
 circuit.h(1); // applies an H to qubit 1
-circuit.x(2); // applies an NOT to qubit 2
 circuit.x(1, 2); // applies a CNOT to qubits 1 and 2`
   );
   codeEditor.addEventListener("input", () => {
