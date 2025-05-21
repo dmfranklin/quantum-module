@@ -134,6 +134,7 @@ patchMethod(Q.Circuit.Editor, "set", [
   ],
 ]);
 
+// set custom gate appearances
 Q.Gate.createConstants(
   "IDENTITY",
   new Q.Gate(
@@ -163,6 +164,42 @@ Q.Gate.createConstants(
     })
   )
 );
+
+// compute moment index automatically, mirroring the behavior of Qiskit
+patchMethod(Q.Circuit.prototype, "set$", [
+  [
+    "function( gate, momentIndex, registerIndices ){",
+    `function( gate, ...registerIndices ){
+      if (registerIndices.some(index => index > this.bandwidth || index < 1 || !Number.isInteger(index))) {
+        throw new Error(\`Invalid register index: \${index}\`);
+      }
+      if (new Set(registerIndices).size != registerIndices.length) {
+        throw new Error("Duplicate register indices are not allowed.");
+      }
+      let momentIndex = 1;
+      for (const operation of this.operations) {
+        if (Math.min(...registerIndices) <= Math.max(...operation.registerIndices) && Math.min(...operation.registerIndices) <= Math.max(...registerIndices)) {
+          // avoid overlap with existing operation
+          momentIndex = Math.max(momentIndex, operation.momentIndex + 1);
+        }
+      }
+      if (momentIndex > this.timewidth || momentIndex < 1 || !Number.isInteger(momentIndex)) {
+        throw new Error(\`Invalid moment index: \${momentIndex}\`);
+      }
+    `,
+  ],
+]);
+Object.entries(Q.Gate.constants).forEach(function (entry) {
+  const gateConstantName = entry[0],
+    gate = entry[1],
+    set$ = function (...args) {
+      this.set$(gate, ...args);
+      return this;
+    };
+  Q.Circuit.prototype[gateConstantName] = set$;
+  Q.Circuit.prototype[gate.symbol] = set$;
+  Q.Circuit.prototype[gate.symbol.toLowerCase()] = set$;
+});
 
 // MARK: - functions to set up the widget
 
@@ -232,7 +269,7 @@ const stateToText = (state, roundToDecimal) => {
 
 const createGrader = (
   goalCircuit,
-  studentCircuit,
+  studentCircuitEditor,
   gradingFunction,
   instantFeedback
 ) => {
@@ -240,7 +277,7 @@ const createGrader = (
     grader.classList.remove("dirty");
     goalCircuit.evaluate$();
     try {
-      studentCircuit.evaluate$();
+      studentCircuitEditor.circuit.evaluate$();
     } catch (error) {
       feedback.classList.add("wrong");
       feedback.textContent = `Error: ${error.message}`;
@@ -248,7 +285,7 @@ const createGrader = (
     }
     const [isCorrect, feedbackText] = gradingFunction(
       goalCircuit,
-      studentCircuit
+      studentCircuitEditor.circuit
     );
     feedback.classList.toggle("correct", isCorrect);
     feedback.classList.toggle("wrong", !isCorrect);
@@ -275,7 +312,7 @@ const createGrader = (
   window.addEventListener("Q gui altered circuit", (event) => {
     if (
       event.detail.circuit == goalCircuit ||
-      event.detail.circuit == studentCircuit
+      event.detail.circuit == studentCircuitEditor.circuit
     ) {
       if (instantFeedback) {
         checkWork();
@@ -301,6 +338,49 @@ const createPalette = (gateSymbols = defaultGateSymbols) => {
   return palette;
 };
 
+const createCodeEditor = (circuitEditor) => {
+  const codeEditor = document.createElement("code-input");
+  codeInput.registerTemplate(
+    "syntax-highlighted",
+    codeInput.templates.hljs(hljs, [])
+  );
+  codeEditor.setAttribute("language", "js");
+  codeEditor.className = "widget-code";
+  codeEditor.setAttribute(
+    "placeholder",
+    `// Write your circuit code here... for example:
+circuit.h(1); // applies an H to qubit 1
+circuit.x(2); // applies an NOT to qubit 2
+circuit.x(1, 2); // applies a CNOT to qubits 1 and 2`
+  );
+  codeEditor.addEventListener("input", () => {
+    try {
+      const newCircuit = Q(
+        circuitEditor.circuit.bandwidth,
+        circuitEditor.circuit.timewidth
+      );
+      new Function("circuit", codeEditor.value)(newCircuit);
+      const container = new Q.Circuit.Editor(
+        newCircuit
+      ).domElement.querySelector(".Q-circuit-board-container");
+      circuitEditor
+        .querySelector(".Q-circuit-board-container")
+        .replaceWith(container);
+      circuitEditor.circuit = newCircuit;
+      window.dispatchEvent(
+        new CustomEvent("Q gui altered circuit", {
+          detail: { circuit: newCircuit },
+        })
+      );
+    } catch (error) {
+      circuitEditor.querySelector(
+        ".Q-circuit-board-container"
+      ).style.opacity = 0.5;
+    }
+  });
+  return codeEditor;
+};
+
 const processCircuitInput = (circuit) => {
   if (typeof circuit === "string") {
     if (circuits.has(circuit)) {
@@ -320,12 +400,24 @@ const finalizeWidget = (widget, studentCircuitEditor) => {
   window.frameElement.style.width = "100%";
 };
 
-const createStudentEditor = (circuit, arbitraryInputs, useOriginal = false) => {
-  return createCircuitEditor(
-    useOriginal ? circuit : Q(circuit.bandwidth, circuit.timewidth),
-    true,
+const createStudentEditor = ({
+  widget,
+  circuit,
+  keepGates = false,
+  arbitraryInputs,
+  allowedGates = defaultGateSymbols,
+  code = false,
+}) => {
+  const circuitEditor = createCircuitEditor(
+    keepGates ? circuit : Q(circuit.bandwidth, circuit.timewidth),
+    !code,
     arbitraryInputs
   );
+  widget.append(
+    code ? createCodeEditor(circuitEditor) : createPalette(allowedGates)
+  );
+  widget.append(circuitEditor);
+  return circuitEditor;
 };
 
 // MARK: - widget creation functions
@@ -334,6 +426,7 @@ const identicalCircuitWidget = ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = true;
@@ -357,9 +450,13 @@ const identicalCircuitWidget = ({
 
   widget.append(topInstructions, goalCircuitEditor, middleInstructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    arbitraryInputs,
+    allowedGates,
+    code,
+  });
 
   const getNonEmptyColumns = (circuit) => {
     const rows = circuit
@@ -379,7 +476,7 @@ const identicalCircuitWidget = ({
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       getNonEmptyColumns(goalCircuit) == getNonEmptyColumns(studentCircuit)
         ? [true, "Great job! The circuits look identical."]
@@ -395,6 +492,7 @@ const equivalentCircuitWidget = ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = true;
@@ -419,13 +517,17 @@ const equivalentCircuitWidget = ({
 
   widget.append(topInstructions, goalCircuitEditor, middleInstructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    arbitraryInputs,
+    allowedGates,
+    code,
+  });
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       goalCircuit.matrix.isEqualTo(studentCircuit.matrix)
         ? studentCircuit.operations.length < goalCircuit.operations.length
@@ -446,6 +548,7 @@ const matchOutputWidget = ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false;
@@ -472,13 +575,17 @@ const matchOutputWidget = ({
 
   widget.append(topInstructions, goalCircuitEditor, middleInstructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    arbitraryInputs,
+    allowedGates,
+    code,
+  });
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
         ? studentCircuit.operations.length < goalCircuit.operations.length
@@ -496,6 +603,7 @@ const specificOutputWidget = ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false;
@@ -513,13 +621,17 @@ const specificOutputWidget = ({
 
   widget.append(instructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    arbitraryInputs,
+    allowedGates,
+    code,
+  });
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
         ? [true, "Great job! Your circuit produces the correct output state."]
@@ -539,6 +651,7 @@ const specificOutputWidget = ({
 const visualizeProbabilitiesWidget = ({
   circuit,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false;
@@ -546,13 +659,14 @@ const visualizeProbabilitiesWidget = ({
   const widget = document.createElement("div");
   widget.className = "widget";
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(
+  const studentCircuitEditor = createStudentEditor({
+    widget,
     circuit,
+    keepGates: true,
     arbitraryInputs,
-    true
-  );
-  widget.append(palette, studentCircuitEditor);
+    allowedGates,
+    code,
+  });
 
   const pre = document.createElement("pre");
   const probDisplay = document.createElement("samp");
