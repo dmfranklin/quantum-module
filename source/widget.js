@@ -169,18 +169,27 @@ Q.Gate.createConstants(
 patchMethod(Q.Circuit.prototype, "set$", [
   [
     "function( gate, momentIndex, registerIndices ){",
-    `function( gate, ...registerIndices ){
+    `function( gate, ...args ){
+      let momentIndex, registerIndices;
+      if (args.length == 2 && args[1] instanceof Array) {
+        momentIndex = args[0];
+        registerIndices = args[1];
+      } else {
+        registerIndices = args;
+      }
       if (registerIndices.some(index => index > this.bandwidth || index < 1 || !Number.isInteger(index))) {
         throw new Error(\`Invalid register index: \${index}\`);
       }
       if (new Set(registerIndices).size != registerIndices.length) {
         throw new Error("Duplicate register indices are not allowed.");
       }
-      let momentIndex = 1;
-      for (const operation of this.operations) {
-        if (Math.min(...registerIndices) <= Math.max(...operation.registerIndices) && Math.min(...operation.registerIndices) <= Math.max(...registerIndices)) {
-          // avoid overlap with existing operation
-          momentIndex = Math.max(momentIndex, operation.momentIndex + 1);
+      if (momentIndex == undefined) {
+        momentIndex = 1;
+        for (const operation of this.operations) {
+          if (Math.min(...registerIndices) <= Math.max(...operation.registerIndices) && Math.min(...operation.registerIndices) <= Math.max(...registerIndices)) {
+            // avoid overlap with existing operation
+            momentIndex = Math.max(momentIndex, operation.momentIndex + 1);
+          }
         }
       }
       if (momentIndex > this.timewidth || momentIndex < 1 || !Number.isInteger(momentIndex)) {
