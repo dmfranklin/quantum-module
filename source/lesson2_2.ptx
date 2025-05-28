@@ -7,6 +7,7 @@
  
 
   <title>Exploring the SWAP Gate</title>
+
   <p>
     In the previous section, you learned how to use the circuit builder to determine 
     the output from a particular set of inputs.
@@ -25,11 +26,12 @@
   </interactive>
 
   <exercise label="Swap_truth_table">
-    <title>Swap Truth Table</title>
+    <title>SWAP Truth Table</title>
     <idx>Swap_truth_table</idx>
     <statement>
-        <p>Which picture depicts the proper relationship between the four possible input and 
-          output combinations?
+        <p>Select the picture that depicts the correct truth table for the SWAP gate. 
+        It should show the proper relationship between the four possible input and output 
+        combinations.
         </p>
     </statement>
     <choices randomize="yes">
@@ -71,47 +73,40 @@
   </exercise>
 
 <p> 
-Now that you have the full truth table for SWAP, I suggest writing it on a page of 
-notes for future reference. In the following questions, you will be asked to calculate 
-the results of circuits involving NOT and SWAP gates.
+Now that you have the full truth table for SWAP, you may want to write it on a page of 
+notes or take a screenshot for future reference. In the following questions, you will be 
+asked to calculate the results of circuits involving NOT and SWAP gates.
 </p>
 
 <exercise label="SWAP_Q1">
-  <title>Swap Q1</title>
+  <title>SWAP Question #1</title>
   <idx>swap Q1</idx>
   <statement>
-      <p>What is the output of the following circuit?
-        <datafile label="SWAP_Q1_image" filename="SWAP_Q1.png" include-source="yes">
-          <image source="SWAP_Q1.png" width="66%"/>
-        </datafile> 
-      </p>
+      <p>What is the output of the following circuit?</p>
+      <image source="SWAP_Q1.png" width="66%"/>
   </statement>
   <choices randomize="no">
     <choice>
       <statement>
         <p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p>
-        <image source="Balls00.png" width="66%"/>
       </statement>
-      <feedback><p>Yes! The swap had no effect!</p></feedback>
+      <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
     </choice>
     <choice>
       <statement>
         <p><m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m></p>
-        <image source="Balls01.png" width="66%"/>
       </statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
     </choice>
     <choice correct="yes">
       <statement>
         <p><m>|10\rangle</m> or <m>|</m>⬤◯<m>\rangle</m></p>
-        <image source="Balls10.png" width="66%"/>
       </statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
+      <feedback><p>Correct!</p></feedback>
     </choice>
     <choice>
       <statement>
         <p><m>|11\rangle</m> or <m>|</m>⬤⬤<m>\rangle</m></p>
-        <image source="Balls11.png" width="66%"/>
       </statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
     </choice>
@@ -120,43 +115,39 @@ the results of circuits involving NOT and SWAP gates.
 </exercise>
 
 <exercise label="SWAP_Q2">
-  <title>Swap Q2</title>
+  <title>SWAP Question #2</title>
   <idx>swap Q2</idx>
   <statement>
       <p>What is the output of the following circuit?
-        <datafile label="SWAP_Q2_image" filename="SWAP_Q2.png" include-source="yes">
-          <image source="SWAP_Q2.png" width="66%"/>
-        </datafile> 
+        <image source="SWAP_Q2.png" width="66%"/>
       </p>
   </statement>
   <choices randomize="no">
     <choice>
-      <statement><p><m>|00\rangle</m> or <datafile label="SWAP_Q2_Balls00" filename="Balls00.png" include-source="yes">
-        <image source="Balls00.png" width="66%"/>
-      </datafile>
-    </p></statement>
-      <feedback><p>Yes! The swap had no effect!</p>
+      <statement>
+        <p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p>
+      </statement>
+      <feedback><p>Make sure you hooked up your circuit correctly!</p>
        </feedback>
     </choice>
     <choice correct="yes">
-      <statement><p><m>|01\rangle</m> or <datafile label="SWAP_Q2_Balls01" filename="Balls01.png" include-source="yes">
-        <image source="Balls01.png" width="66%"/>
-      </datafile>
-    </p></statement>
+      <statement>
+        <p><m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m></p>
+      </statement>
+      <feedback><p>Correct!</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p><m>|10\rangle</m> or <m>|</m>⬤◯<m>\rangle</m></p>
+      </statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p>
       </feedback>
     </choice>
     <choice>
-      <statement><p><m>|10\rangle</m> or <datafile label="SWAP_Q2_Balls10" filename="Balls10.png" include-source="yes">
-        <image source="Balls10.png" width="66%"/>
-      </datafile></p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-    <choice>
-      <statement><p><m>|11\rangle</m> or <datafile label="SWAP_Q2_Balls11" filename="Balls11.png" include-source="yes">
-        <image source="Balls11.png" width="66%"/>
-      </datafile></p></statement>
+      <statement>
+        <p><m>|11\rangle</m> or <m>|</m>⬤⬤<m>\rangle</m></p>
+      </statement>
       <feedback><p>Make sure you hooked up your circuit correctly!</p>
       </feedback>
     </choice>

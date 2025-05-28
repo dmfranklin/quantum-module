@@ -3,61 +3,92 @@
 <section xml:id="lesson2_1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Using the Circuit Builder to Learn Gates </title>
 
-  <insert>
-    UPDATE TEXT TO REFLECT REVISED ORDER OF USING CIRCUIT BUIDLER TO LEARN GATES.
-  </insert>
-
   <p>
     The circuit builder allows us to learn about the behavior of a simple gate by trying 
-    all of the combinations of inputs. We are going to use the circuit builder to 
-    discover the functionality of the two gates you used last time - SWAP and CNOT.
+    all of the combinations of inputs. We will use the circuit builder to discover the 
+    functionality of a new gate, the SWAP gate, which operates on two qubits, but first 
+    we will learn how to create multi-qubit gates by connecting gate tiles.
   </p>
 
-  <p>
-    When qubits are in their simplest states, <m>|0\rangle</m> and <m>|1\rangle</m>, 
-    there are four combinations of inputs and four combinations of outputs: 
-    00, 01, 10, and 11. To see how a gate works on these simple states, 
-    we try each on in the circuit builder.
-  </p>  
+  <section xml:id="sec-building-2-qubit-gates">
+    <title>Creating a SWAP Gate</title>
 
+    <sidebyside widths="75% 25%" valign="middle"> 
+      <p>
+        Use the circuit builder below to make a SWAP gate. 
+        To create a SWAP gate, you will need to:  
+        (1) Drag two <em>Swap</em> gate tiles onto the circuit, aligning them vertically, 
+        (2) Click the number at the top of the column to select them as a group, and 
+        (3) Click the "C/S" button to connect the tiles. 
+        When you are finished, you should see a line connecting the two tiles, 
+        indicating that you have created a SWAP gate.
+      </p>
+      <image source="L2.1_SWAP.png" width="40%"/>
+    </sidebyside>
+
+    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+      <script>
+        identicalCircuitWidget({
+          circuit: "L2_1_0",
+          instantFeedback: true,
+          allowedGates: "S"
+        });
+      </script>
+    </interactive>
+
+  </section>
+  <section xml:id="sec-exploring-SWAP">
+    <title>Exploring the SWAP Gate</title>
   <p>
-    The circuit builder will be set to a starting state of <m>|0\rangle</m> and <m>|0\rangle</m>.
-    We can also write this state in a more compact form: <m>|00\rangle</m>. 
-    So, first you will see how the SWAP gate acts when given the input <m>|00\rangle</m>. Using the circuit 
-    builder below, construct a circuit that matches this picture:
+    Given two qubits in their simplest states, <m>|0\rangle</m> and <m>|1\rangle</m>, 
+    there are four combinations of inputs and four combinations of outputs:
+    <m>|00\rangle</m>, <m>|01\rangle</m>, <m>|10\rangle</m>, and <m>|11\rangle</m>.
+    To see how a gate works on these simple states, we can try each in the circuit builder.
   </p> 
-
-  <image source="Swap00.png" width="66%"/>
-
+  <p> 
+    Notice the compact form that can be used to describe these states.  
+    Qubits shown top-to-bottom in a circuit are expressed left-to-right. 
+    That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and 
+    the bottom qubit is <m>|1\rangle</m>. 
+  </p>
+  
+  <sidebyside widths="75% 25%" valign="top"> 
+    <p>
+      Now, let's see how the SWAP gate acts when given the input <m>|00\rangle</m>.
+      The circuit builder will be set to a starting state of <m>|0\rangle</m> and <m>|0\rangle</m>, 
+      or <m>|00\rangle</m> in the compact form. Use the circuit builder to create a circuit that 
+      matches the one pictured on the right.
+    </p>
+    <image source="Swap00.png" width="66%"/>
+  </sidebyside>
+  
 <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
   <script>
     visualizeProbabilitiesWidget({
       circuit: "Blank 2x6",
-      allowedGates: "*XS"
+      allowedGates: "S"
     });
   </script>
 </interactive>
 
 <p>
 Notice that there is a bar graph that shows the probability of each outcome. Because
-we are using the simple state, there will be a 100% probability of one of the four
-choices of outcomes. The qubits shown top to bottom are expressed left to right.
-That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and the bottom qubit is <m>|1\rangle</m>.
+we are using a simple state, there will be a 100% probability of one of the four
+choices of outcomes. 
 </p>
 
-
   <exercise label="Swap_00_Output">
-    <title>Swap Output with 00</title>
+    <title>Record output for SWAP with 00</title>
     <idx>swap output 00</idx>
     <statement>
-        <p>What is the output of the SWAP gate with <m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m> as the input?</p>
+        <p>What was the output of your SWAP gate with an input of: <m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m>?</p>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
         <statement>
           <p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p>
         </statement>
-        <feedback><p>Yes! The swap had no effect!</p>
+        <feedback><p>Yes! That is correct. The SWAP had no effect!</p>
          </feedback>
       </choice>
       <choice>
@@ -86,20 +117,27 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
   </exercise>
 
   <p>
-    Now we are going to vary the input. We do this by putting a NOT gate on the 
-    input that we want to be a <m>|1\rangle</m> So now construct the gate that will give us the 
-    output when the input is <m>|01\rangle</m>. 
+    Now, we are going to try vary the input to the circuit.
+    Let's see how the SWAP gate acts when given the input <m>|01\rangle</m>. 
+    To change the input from <m>|00\rangle</m> to <m>|01\rangle</m>, 
+    you will place a NOT gate on the bottom qubit before the SWAP gate in the circuit. 
   </p>
-
-  <p> In other words, if we want to determine the output to this circuit: 
-  </p>
-
-  <image source="Swap01.png" width="66%"/>
-
-  <p> Then we construct this circuit:
-  </p>
-
-  <image source="NotSwap00.png" width="66%"/>
+ 
+  <sbsgroup>
+    <sidebyside widths="45% 10% 45%" valign="top">
+      <p>
+        Use the circuit builder to construct the circuit that will 
+        give us the output when the input is <m>|01\rangle</m>, as shown below:
+      </p>
+      <p></p>
+      <p>To do this, construct the circuit pictured below:</p>
+    </sidebyside>
+    <sidebyside widths="30% 25% 45%" valign="top">
+      <image source="Swap01.png"/>
+      <p></p>
+      <image source="NotSwap00.png"/>
+    </sidebyside>
+  </sbsgroup>
 
   <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
     <script>
@@ -111,7 +149,7 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
   </interactive>
 
   <exercise label="Swap_01_Output">
-    <title>Swap Output with 01</title>
+    <title>Record output for SWAP with 01</title>
     <idx>swap output 01</idx>
     <statement>
         <p>What is the output of the SWAP gate with <m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m> as the input?</p>
@@ -151,5 +189,5 @@ That is, the state <m>|01\rangle</m> means the top qubit is <m>|0\rangle</m> and
   </exercise>
 
 
-
+  </section>
 </section>

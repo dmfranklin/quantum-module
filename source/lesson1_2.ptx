@@ -8,38 +8,39 @@
     are not possible with classical computers. For this reason, we represent quantum
     programs and quantum state differently than in classical computing.</p>
     
-    <p>In this part of the lesson, we will learn some basic quantum operations that can 
-    be implented by classical computers and introduce
-    a drag-and-drop tool (Q.js) you can use to build build quantum circuits. In future lessons,
-    you will use this tool to explore the behavior of quantum operations that cause properties 
-    not possible with classical computers.</p>
+    <p>In this part of the lesson, we will learn some basic quantum operations that can be 
+    implemented by classical computers and introduce a drag-and-drop tool (Q.js) you can use 
+    to build build quantum circuits. In future lessons, you will use this tool to explore the 
+    behavior of quantum operations that cause properties not possible with classical computers.</p>
     </introduction>
 
 <section xml:id="sec-qubit">
-    <title>Qubit: A quantum bit</title>
-    <p> Grace Hopper invented the compiler, which allowed programmers to often ignore the 1's 
-    and 0's in the machine and use higher level languages. Unfortunately, the unique features
-    of quantum computing reveal themselves on single bits, and algorithms are still designed
-    at the bit level. Therefore, we will operate on single bits, not integers or larger numbers. 
+    <title>Qubit: A Quantum Bit</title>
+    <p>When Grace Hopper invented the compiler, it allowed programmers to often ignore the 1's and 0's 
+    of machine code and instead use higher level programming languages. Unfortunately, the unique features
+    of quantum computing are revealed at the level of a single bit, and algorithms are still designed
+    at the bit level. For this reason, we will operate on single bits, not integers or larger numbers. 
     </p>
     <p> A quantum bit, or qubit, holds a 0 or 1, just like a classical bit. However, a single
     qubit also holds other interesting information that we will explore throughout this course. 
-    Today, we will only use the 0 and 1. To go along with the more complex state, the representation
-    uses slightly different syntax. We will begin that now - instead of just writing 0 or 1, we will
-    write |0⟩ and |1⟩. Later, we will learn more about what those symbols mean. 
+    In this lesson, we will only use the values of 0 and 1. To represent the more complex state that is 
+    possible for a qubit, we use a slightly different syntax. Instead of just writing 0 or 1, we will 
+    write <m>|0\rangle</m> or <m>|1\rangle</m>. Later, we will learn more about this syntax and what it means. 
     </p>
-    <p> To make it easier to visualize, we will use a white ball for |0⟩ and a black ball for |1⟩.</p>
-    <image source="WhiteBlackBalls.png" width="30%"/>
+    <p> To visualize these states, we will use a white ball: ◯ for <m>|0\rangle</m> and a black ball: ⬤ for <m>|1\rangle</m>.</p>
+    <image source="WhiteBlackBalls.png" width="25%"/>
 </section>
 
 
 <section xml:id="sec-not">
-    <title>Q Gate #1: NOT</title>
+    <title>Quantum Operation #1: NOT Gate</title>
     <p> Quantum operations are called <em>gates</em>. The simplest operation is the 
-    NOT, or X, gate. From a classical perspective, it toggles the value between 0 and 1.
-    That is, if the input is 0, the output is 1, and vice versa.</p>
-    <image source="NOTgate.png" width="40%"/>
+    NOT gate (also known as the X gate). From a classical perspective, it toggles the value 
+    between 0 and 1. That is, if the input is <m>|0\rangle</m>, the output is <m>|1\rangle</m>, 
+    and vice versa.</p>
     
+    <image source="NOTgate.png" width="40%"/>
+
   <exercise label="Not-Q1">
     <title>NOT Gate Check #1</title>
     <idx>not gate 1</idx>
@@ -49,11 +50,11 @@
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><p>◯ |0⟩</p></statement>
-        <feedback><p>Yes! Starting with: ◯ |0⟩; apply the first NOT operation: ⬤ |1⟩; and apply the second NOT operation: ◯ |0⟩</p></feedback>
+        <statement><p>◯ <m>|0\rangle</m></p></statement>
+        <feedback><p>Yes! Starting with: ◯ <m>|0\rangle</m>; apply the first NOT operation: ⬤ <m>|1\rangle</m>; and apply the second NOT operation: ◯ <m>|0\rangle</m></p></feedback>
       </choice>
       <choice>
-        <statement><p>⬤ |1⟩</p></statement>
+        <statement><p>⬤ <m>|1\rangle</m></p></statement>
         <feedback><p>Did you apply the NOT operation two times?</p></feedback>
       </choice>
     </choices>
@@ -69,13 +70,13 @@
     </statement>
     <choices randomize="no">
       <choice>
-        <statement><p>◯ |0⟩</p></statement>
-        <feedback><p>There were only two "eat cookie" operations.</p>
+        <statement><p>◯ <m>|0\rangle</m></p></statement>
+        <feedback><p>Did you apply the NOT operation two times?</p>
          </feedback>
       </choice>
       <choice correct="yes">
-        <statement><p>⬤ |1⟩</p></statement>
-        <feedback><p>Yes! Starting with: ⬤ |1⟩; apply the first NOT operation: ◯ |0⟩; and apply the second NOT operation: ⬤ |1⟩</p></feedback>
+        <statement><p>⬤ <m>|1\rangle</m></p></statement>
+        <feedback><p>Yes! Starting with: ⬤ <m>|1\rangle</m>; apply the first NOT operation: ◯ <m>|0\rangle</m>; and apply the second NOT operation: ⬤ <m>|1\rangle</m></p></feedback>
       </choice>
     </choices>
     <hint><p>Apply the NOT gate twice.</p></hint>
@@ -90,11 +91,11 @@
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><p>◯ |0⟩</p></statement>
-        <feedback><p>Yes! Starting with: ⬤ |1⟩; apply the first NOT operation: ◯ |0⟩; apply the second NOT operation: ⬤ |1⟩; and apply the third NOT operation: ◯ |0⟩</p></feedback>
+        <statement><p>◯ <m>|0\rangle</m></p></statement>
+        <feedback><p>Yes! Starting with: ⬤ <m>|1\rangle</m>; apply the first NOT operation: ◯ <m>|0\rangle</m>; apply the second NOT operation: ⬤ <m>|1\rangle</m>; and apply the third NOT operation: ◯ <m>|0\rangle</m></p></feedback>
       </choice>
       <choice>
-        <statement><p>⬤ |1⟩</p></statement>
+        <statement><p>⬤ <m>|1\rangle</m></p></statement>
         <feedback><p>Did you apply the NOT operation three times?</p></feedback>
       </choice>
     </choices>
@@ -103,23 +104,16 @@
 </section>
 
   <section>
-    <title>Build a Quantum Circuit</title>
-    <p> In this section, we introduce the interactive quantum circuit builder.</p>
-    <p>There are three operations that operate well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT</p>
-    <image source="NOT-SWAP-CNOT.png" width="60%"/>
+    <title>Building Quantum Circuits</title>
+    <p>In this section, we introduce the interactive quantum circuit builder. 
+    To use the circuit builder, drag the <em>gate tiles</em> from the <em>palette</em> 
+    and place them onto the circuit to match the given circuit.</p>
 
-    <p>Below is your first circuit to build using the circuit builder.
-    To use the circuit builder, drag and drop the <em>gate tiles</em> from the 
-    <em>gates palette</em> and place them onto the circuit, matching the given circuit.
-    </p>
+    <image source="L1.2-CIRCUIT BUILDER.png" width="75%"/>
 
-    <image source="L1.2-CIRCUIT BUILDER.png" width="100%"/>
-
-    <p>  
-    For this circuit, you will use the circuit builder's <em>Explore</em> mode.
+    <p>For your first circuit, you will use the circuit builder's <em>Explore</em> mode.
     In <em>Explore</em> mode, you receive feedback every time you make a change. 
-    You can ignore the feedback until you think you are done!!
-    </p>
+    You can ignore the feedback until you think that you are done building the circuit.</p>
 
     <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
@@ -127,61 +121,6 @@
           circuit: "L1_2_0",
           instantFeedback: true,
           allowedGates: "X"
-        });
-      </script>
-    </interactive>
-
-    <p>
-    Now, you are going to use the circuit builder to create a two-qubit gate, the SWAP gate.
-    To do this, you will need to place two <em>Swap</em> gate tiles on the circuit and then connect them. 
-    </p>
-
-    <p>
-    To create a SWAP gate: 
-    </p>
-    <ol>
-      <li>Drag and drop two <em>Swap</em> gate tiles onto the circuit, placing them in the same column.</li>
-      <li>Select the gate tiles as a group: Click on the number at the top of the column.</li>
-      <li>Connect the gate tiles: Click the "C/S" button.</li>
-    </ol>
-    
-    <image source="L1.2-CREATING MULTI-QUBIT GATES.png" width="100%"/>
-    
-    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
-      <script>
-        identicalCircuitWidget({
-          circuit: "L1_2_1",
-          instantFeedback: true,
-          allowedGates: "XS"
-        });
-      </script>
-    </interactive>
-
-    <p>
-    Now let's try building a circuit with a controlled gate - just like the controlled
-    increment we saw in the math example. 
-    To do this, connect a <em>Control</em> tile (shaped like a circle) and a <em>Not</em> tile. 
-    </p>
-
-  <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
-      <script>
-        identicalCircuitWidget({
-          circuit: "L1_2_2",
-          instantFeedback: true,
-          allowedGates: "X*"
-        });
-      </script>
-    </interactive>
-  <p>
-  <insert> I am leaving in this last one because it had a bug when I tried it - it always
-    said I was not correct, even when I completed the circuit.</insert>
-  </p>
-   <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
-      <script>
-        identicalCircuitWidget({
-          circuit: "Phi+",
-          instantFeedback: true,
-          allowedGates: "HX*"
         });
       </script>
     </interactive>
