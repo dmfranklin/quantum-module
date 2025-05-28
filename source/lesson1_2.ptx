@@ -115,7 +115,6 @@
     In <em>Explore</em> mode, you receive feedback every time you make a change. 
     You can ignore the feedback until you think that you are done building the circuit.</p>
 
-    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
       <script>
         identicalCircuitWidget({
           circuit: "L1_2_0",
@@ -123,7 +122,7 @@
           allowedGates: "X"
         });
       </script>
-    </interactive>
+  </interactive>
   </section>
   
 </section>

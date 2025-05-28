@@ -29,7 +29,8 @@
     <title>SWAP Truth Table</title>
     <idx>Swap_truth_table</idx>
     <statement>
-        <p>Select the picture that depicts the correct truth table for the SWAP gate. 
+        <p>
+        Select the picture that depicts the correct truth table for the SWAP gate. 
         It should show the proper relationship between the four possible input and output 
         combinations.
         </p>
