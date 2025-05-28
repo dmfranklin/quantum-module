@@ -131,6 +131,9 @@ Each widget function accepts an `options` object. The parameters vary slightly d
 - **`allowedGates`** (optional, default: `"HXYZPTS*"`):
   A string specifying which gate symbols students are allowed to use when constructing their circuit.
 
+- **`code`** (optional, default: `false`):
+  If `true`, a code editor is displayed instead of a gate palette. This makes it so that students must specify the circuit using Qiskit-like syntax instead of dragging and dropping gates.
+
 ### Parameters for `visualizeProbabilitiesWidget`
 
 - **`circuit`** (required):
@@ -144,7 +147,7 @@ Each widget function accepts an `options` object. The parameters vary slightly d
 To include an interactive circuit exercise in a lesson, follow the template below, replacing `identicalCircuitWidget` with the desired widget function and parameters.
 
 ```xml
-<interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+<interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
   <script>
     identicalCircuitWidget({
       circuit: "Phi+",

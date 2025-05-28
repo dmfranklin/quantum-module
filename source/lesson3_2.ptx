@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+  <title>Phase</title>
+  <p>
+    Phase is an additional attribute that is relevant when a qubit is in superposition. 
+    In the last section, you saw that if you have a circuit with two H gates, then the 
+    qubit goes into superposition in the middle, but then it goes back to its original 
+    state after the second H gate. When in superposition, the two qubits have opposite
+    phase.
+  </p>
+  <p>
+    Now we are going to explore a gate that affects the phase of the qubit.
+  </p>
+
+ Use the following circuit to determine how the Z gate affects a qubit that is in the 
+ state <m>|0\rangle</m> or <m>|1\rangle</m>.
+  
+  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XHZ"
+      });
+    </script>
+  </interactive>
+
+  <exercise label="H_truth_table_lesson3_2">
+    <title>Z Truth Table</title>
+    <idx>Z_truth_table</idx>
+    <statement>
+        <p>Which answer best describes what you observed from the Z gate?
+        </p>
+    </statement>
+    <choices randomize="yes">
+     <choice correct="yes">
+        <statement><p>It does not have an observable effect.</p></statement>
+        <feedback><p>Look more closely at the bar graphs of the output.</p>
+        </feedback>
+      </choice>
+      <choice correct="no">
+        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
+            of measuring 0 or 1.
+        </p></statement>
+        <feedback><p></p>
+        </feedback>
+      </choice>
+      
+    </choices>
+    <hint><p>Make the circuit and look at the bar graph below the circuit. 
+      Construct both input combinations using not gates,  recording the answers 
+      each time.</p></hint>
+  </exercise>
+  <p> 
+    You might have been surprised by the answer! Because quantum state is more complex than merely
+    the probability of measuring 0 or 1, this method for determining and expressing an operation's  
+    functionality is insufficient. 
+    </p>
+    <p> Now create the following circuit and observe the outcomes. This will reveal the functionality 
+        of the Z gate on a qubit in superposition.
+    </p>
+    <p> Insert a picture that shows two qubits - one with H-Z-H and one with NOT-H-Z-H </p>
+
+    <exercise label="Superposition Z">
+      <title>Z Gate Behavior with Superposition</title>
+      <idx>superpositionZ</idx>
+      <statement>
+          <p>What is the effect of the sequence H-Z-H on qubits beginning in <m>|0\rangle</m> or <m>|1\rangle</m>? 
+          </p>
+      </statement>
+      <choices randomize="yes">
+                <choice correct="no">
+          <statement><p>equal chance 
+            of measuring 0 or 1.</p></statement>
+          
+        </choice>
+        <choice>
+          <statement><p>No observable effect. </p></statement>
+          
+        
+          
+        </choice>
+        <choice correct = "yes">
+          <statement><p>The same as a NOT gate</p></statement>
+          
+        </choice>
+        
+      </choices>
+      <hint><p>Think about what the output would be after each gate.</p></hint>
+    </exercise>
+
+    <p>Now  we see that Z does have a major effect on the system, but only when the 
+        qubit is in superposition. We need a mathematical representation of phase that 
+        will allow us to perform operations to calculate results. We will express phase as 
+        positive ('+') or negative ('-'). The truth table for the Z gate is below. I suggest 
+        adding this to your page of notes. Putting a qubit starting in <m>|0\rangle</m> results 
+        in positive phase, and starting in <m>|1\rangle</m> results in negative phase. Likewise, 
+        if the qubit is already in the superposition 50/50 state, if it is in positive phase, applying 
+        an H gate will result in <m>|0\rangle</m>. An H gate applied to a qubit in the superposition 50/50 state 
+        in negative phase will result in <m>|1\rangle</m>.
+    </p>
+
+    <p> insert image of the Z gate truth table </p>
+
+    <p> Insert two circuits for them to calculate the output. Don't do the entanglement gate - just 
+        some interesting versions of NOT, SWAP, H, and Z to play with going to the 50/50 state and returning to 0,1, 
+        or the Z gate making it flip. </p> 
+    
+    
+
+</section>

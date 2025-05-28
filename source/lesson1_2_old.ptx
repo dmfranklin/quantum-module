@@ -40,7 +40,7 @@
       <li>A CNOT gate</li>
     </ul>
 
-    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
       <script>
         identicalCircuitWidget({
           circuit: "Phi+",
@@ -86,7 +86,7 @@
       Try modifying the circuit to see how the probabilities change. You can add or remove gates, or change the order of the gates.
     </p>
 
-    <interactive aspect="9:9" platform="javascript" source="../../../source/loader.js">
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
       <script>
         visualizeProbabilitiesWidget({
           circuit: "Phi+",

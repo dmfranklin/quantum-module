@@ -21,19 +21,37 @@ const loadCSS = (href) => {
   });
 };
 
-const qCommitHash = "f7ef0f8cc92f91344c1c5aba6bfe2c8d106d83f8";
-
 const loadEverything = async () => {
-  // styles
+  // syntax highlighting for code input
+  await loadCSS("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/default.min.css");
+  await loadCSS("https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css");
+  await loadJS("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js");
+
+  // code input
+  await loadCSS("https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.css");
+  await loadJS("https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.js");
+
+  // Q.js
+  const qCommitHash = "f7ef0f8cc92f91344c1c5aba6bfe2c8d106d83f8";
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.css`)
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/assets/documentation.css`)
-  await loadCSS("../../../source/widget.css");
-
-  // scripts
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`)
+
+  // SPLICE protocol
   await loadJS("https://cssplice.org/slcp/splice-iframe.js");
-  await loadJS("../../../source/widget.js");
-  await loadJS("../../../source/circuits.js");
+
+  // quantum widget
+  if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+    // local
+    await loadCSS("../../../source/widget.css");
+    await loadJS("../../../source/widget.js");
+    await loadJS("../../../source/circuits.js");
+  } else {
+    // online
+    await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
+  }
 };
 
 const widgetReady = loadEverything();
