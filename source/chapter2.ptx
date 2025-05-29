@@ -4,12 +4,16 @@
   <title>Exploring Quantum Operations</title>
 
   <introduction>
-    <p>In this chapter, we are going to use the circuit builder to learn some new quantum operations.</p>
-
-    <p>There are three operations that operate well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT</p>
+    <p>
+      In this chapter, we are going to use the circuit builder to learn some new quantum operations. 
+    </p>
+    <p>
+      Specifically, we will use the circuit builder to learn about three operations that operate 
+      well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT.
+    </p>
     <image source="NOT-SWAP-CNOT.png" width="60%"/>
-
   </introduction>
+
 
   <!-- include sections -->
   <xi:include href="lesson2_1.ptx" />

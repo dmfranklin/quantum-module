@@ -4,8 +4,10 @@
   <title>Visualizing Quantum Operations</title>
 
   <introduction>
-    <p>In this chapter, we will learn how quantum operations visualized,
-  then play with a quantum "circuit" builder.</p>
+    <p>
+    In this chapter, we will introduce quantum operations and how they can be visualized. 
+    Then, we will introduce the quantum "circuit" builder.
+    </p>
   </introduction>
 
   <!-- include sections -->
