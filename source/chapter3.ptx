@@ -10,8 +10,8 @@
     </p>
     <ul>
       <li>What is going on with these probabilistic gates?</li>
-      <li>How do we represent the probabilistic output visually?</li>
-      <li>How do we represent the probabilistic output mathematically?</li>
+      <li>How do we represent the probabilistic output <em>visually</em>?</li>
+      <li>How do we represent the probabilistic output <em>mathematically</em>?</li>
       <li>How can we calculate these probabilities as they pass through other gates?</li>
     </ul>
   </introduction>

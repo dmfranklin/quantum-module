@@ -71,6 +71,11 @@ const circuits = new Map([
       `,
   ],
   [
+    "Blank 1x6",
+    `
+        I I I I I I
+      `,
+  ],  [
     "Phi+",
     `
         H X#0 I I I I
