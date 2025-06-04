@@ -100,18 +100,21 @@ To specify a two-qubit gate:
 - Using #0 and #1 on a one-qubit gate turns it into a C-Gate, where
    #0 is the control and #1 is the target. (e.g., X#0 and X#1 is a CNOT)
 
-Gates must be given a name and defined in the circuitDiagrams variable
+Gates must be given a name and defined in the `circuits` variable in `source/circuits.js`.
 
 To define the circuit "Phi+", consisting of an X gate on the top line followed
-by a CNOT (top line is control, bottom line is target), do the following:
+by a CNOT (top line is control, bottom line is target), with 4 empty columns
+to the right, you would write:
 
+```js
 [
-    "Phi+",
-    `
-      H X#0 I I I I
-      I X#1 I I I I
-    `,
-  ],
+  "Phi+",
+  `
+    H X#0 I I I I
+    I X#1 I I I I
+  `,
+],
+```
 
 ### Widget Parameters
 
@@ -161,3 +164,19 @@ To include an interactive circuit exercise in a lesson, follow the template belo
 This example loads the circuit named `"Phi+"` (which is defined in `source/widget.js`), requires students to recreate it exactly, and provides instant feedback on their progress.
 
 Note that it is important to leave the `source` attribute of the `<interactive>` element unchanged, as it loads the necessary JavaScript code for the widget. Similarly, the `platform` attribute should always be set to `"javascript"`. . The `aspect` attribute specifies the initial size of the widget frame, and it is automatically adjusted to fit the content once the widget is rendered, so setting it only affects the initial layout of the page.
+
+## Code Structure
+
+The following files power the interactive widgets in this module, and they are all located in the `source` directory:
+
+* **`loader.js`**
+  This is the entry point for all widgets. It runs inside each PreTeXt `<interactive>` element and dynamically loads everything needed into the iframe (i.e., Q.js, the widget code, CSS, and any other dependencies). It then evaluates the `<script>` block embedded in the lesson source, which is expected to call one of the widget creation functions (like `identicalCircuitWidget`).
+
+* **`widget.js`**
+  This file defines all of the custom widget types, like identical circuit matching, output matching, probability visualizations, etc. It also patches Q.js at runtime to fix some bugs and add new behavior (like control/SWAP toggles, better error handling, Unicode gate symbols, etc.). The patching is done non-destructively: instead of modifying Q.js directly, `widget.js` replaces specific methods on Q.js classes as needed.
+
+* **`circuits.js`**
+  A registry of reusable named circuits. Each entry maps a string (like `"Phi+"`) to a Q.js-compatible circuit definition. This makes it easy to refer to circuits from within widget calls in the PreTeXt source without duplicating circuit data.
+
+* **`widget.css`**
+  Styles for the widgets, including feedback messages, buttons, and circuit colors.

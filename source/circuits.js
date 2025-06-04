@@ -1,3 +1,26 @@
+/**
+ * circuits.js
+ *
+ * This file defines a Map of named circuits that can be referenced by string
+ * identifiers when creating widgets in PreTeXt source files. Each key is a
+ * descriptive name, and each value is either:
+ *
+ *   - a multiline ASCII diagram string (parsed by Q.js), or
+ *   - a Q.Circuit instance
+ *
+ * These entries enable reusing circuit definitions across multiple exercises
+ * by referring to their names in widget calls. For example:
+ *
+ * <interactive source="..." platform="javascript" aspect="9:9">
+ *   <script>
+ *     identicalCircuitWidget({ circuit: "Phi+", instantFeedback: true });
+ *   </script>
+ * </interactive>
+ *
+ * The widget loader will resolve the string "Phi+" by looking it up in this Map
+ * and using its associated circuit definition when rendering the widget.
+ */
+
 const circuits = new Map([
   [
     "Q.js Example",

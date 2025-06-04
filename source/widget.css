@@ -1,3 +1,4 @@
+/* Styles for the main widget container, including instructions and feedback text */
 .widget {
   .instructions,
   .feedback {
@@ -7,6 +8,7 @@
     color: var(--primary-color);
   }
 
+  /* Grader area: controls visibility of feedback and "Check work" button */
   .grader {
     &.dirty .feedback {
       display: none;
@@ -34,29 +36,35 @@
   }
 }
 
+/* Allow the circuit board to scroll when its content grows beyond its container */
 .Q-circuit-board-container {
   max-height: unset;
   overflow: auto;
 }
 
+/* Default styling for all circuit operation blocks */
 .Q-circuit-operation {
   --Q-operation-color-main: #0c5394;
   --Q-operation-color-dark: #c9daf8;
 }
 
+/* Specific styling for Hadamard gate operation blocks */
 .Q-circuit-operation-hadamard {
   --Q-operation-color-main: #f54343;
   --Q-operation-color-dark: #f5cbcc;
 }
 
+/* Styling for control gate operation blocks */
 .Q-circuit-operation-control {
   --Q-operation-color-main: black;
 }
 
+/* Connector line style between control and target qubits */
 .Q-circuit-operation-link {
   border-color: black;
 }
 
+/* Styling for the code-input component used in code-based widgets */
 code-input {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   height: 200px;
