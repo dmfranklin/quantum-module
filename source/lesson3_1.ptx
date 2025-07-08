@@ -130,6 +130,7 @@
           Which answer best describes what you observed from the circuit with two H gates 
           when you start with an input of <m>|0\rangle</m> or <m>|1\rangle</m>?
         </p>
+        <image source="Checkpoint3_1_2-Behavior-of-Two-H-gates.png" width="66%"/>
     </statement>
     <choices randomize="yes">
      <choice correct="yes">
