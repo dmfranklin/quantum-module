@@ -3,8 +3,8 @@ bodyEl.style.background = "blue";
 
 console.log("Hello from Sarang's widget JS");
 
-// TODO is this the `label` on the interactive or the `xml:id`?
-const id = "sarang-exercise-interactive";
+// This is the `label` of the parent exercise
+const id = "sarang-exercise-interactive-2-1";
 
 console.log("Activity id:", id);
 
@@ -29,7 +29,6 @@ textField.id = textFieldId;
 textField.style = "color:white";
 setTextFieldScore("N/A");
 document.currentScript.parentElement.appendChild(textField);
-
 
 /**
  * Grow button
@@ -57,21 +56,24 @@ let score = 0;
 /**
  * Reporting score to backend
  */
-reportScoreButton.addEventListener("click", () => {
+function reportScoreAndState() {
   console.log("About to report score");
 
   window.parent.postMessage({
     subject: "SPLICE.reportScoreAndState",
     activity_id: id,
-    score: 8,
+    score: 1,
     state: {
       field: "sample value sent by reportScoreAndState",
-      score: 8,
+      score: 1,
     },
   });
-});
+}
 
-getStateButton.addEventListener("click", () => {
+/**
+ * Get state from backend. This will be returned via the message event listener
+ */
+function requestState() {
   console.log("About to get state");
 
   window.parent.postMessage({
@@ -79,19 +81,29 @@ getStateButton.addEventListener("click", () => {
     activity_id: id,
     // state: {},
   });
-});
+}
 
-window.addEventListener("message", async (event) => {
+async function handleMessage(event) {
   console.log("Received message!");
 
   const messageType = event?.data?.subject;
   if (messageType === "SPLICE.getState.response") {
-    console.log("Got response to getState:"); 
-    console.log("event", event?.data);
+    console.log("Got response to getState:");
+    console.log("event data", event?.data);
 
     const state = event?.data?.state;
     score = state.score;
-  
+
     setTextFieldScore(score);
   }
-});
+}
+
+async function main(event) {
+  requestState();
+}
+
+// Hooking in the handlers and listeners
+reportScoreButton.addEventListener("click", reportScoreAndState);
+getStateButton.addEventListener("click", requestState);
+window.addEventListener("message", handleMessage);
+window.addEventListener("load", main);

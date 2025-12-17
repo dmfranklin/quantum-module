@@ -7,44 +7,48 @@
 
     <p>Testing out interactive exercises below:</p>
 
-    <exercise>
-        <title>Sarang's Exercise</title>
+    <exercise label="sarang-exercise-interactive">
+        <title>Interactive Exercise</title>
         <dynamic>
             <statement>
-                <interactive label="sarang-exercise-interactive"
-                    xml:id="sarang-exercise-interactive" aspect="2:1" width="45%"
+                <interactive
+                    aspect="1:1" width="50%"
                     platform="javascript"
                     source="http://localhost:9999/source/sarang-widget.js" />
             </statement>
         </dynamic>
         <static>
             <statement>
-                Please complete the exercise above!
+                <p>Please complete the exercise above!</p>
             </statement>
         </static>
-        <!-- <static>
-            <statement>
-                <p>What is my name?</p>
-            </statement>
-            <choices randomize="no">
-                <choice correct="yes">
-                    <statement>
-                        <p>Heisenberg</p>
-                    </statement>
-                    <feedback>
-                        You're goddamn right.
-                    </feedback>
-                </choice>
-                <choice>
-                    <statement>
-                        <p>Schrodinger.</p>
-                    </statement>
-                    <feedback>
-                        You're goddamn wrong.
-                    </feedback>
-                </choice>
-            </choices>
-        </static> -->
+        <hint><p>This should be easy.</p></hint>
+    </exercise>
+
+    <exercise label="sarang-exercise-regular">
+        <title>Regular Exercise</title>
+        <statement>
+            <p>What is my name?</p>
+        </statement>
+        <choices randomize="no">
+            <choice correct="yes">
+                <statement>
+                    <p>Heisenberg</p>
+                </statement>
+                <feedback>
+                    You're goddamn right.
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Schrodinger.</p>
+                </statement>
+                <feedback>
+                    You're goddamn wrong.
+                </feedback>
+            </choice>
+        </choices>
+        <hint><p>I suggest you tread lightly.</p></hint>
     </exercise>
 
     <!-- 
