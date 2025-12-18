@@ -92,9 +92,11 @@ async function handleMessage(event) {
     console.log("event data", event?.data);
 
     const state = event?.data?.state;
-    score = state.score;
+    if (state) {
+      score = state.score;
 
-    setTextFieldScore(score);
+      setTextFieldScore(score);
+    }
   }
 }
 

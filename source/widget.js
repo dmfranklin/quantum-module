@@ -427,6 +427,12 @@ const createGrader = (
     feedback.classList.toggle("correct", isCorrect);
     feedback.classList.toggle("wrong", !isCorrect);
     feedback.textContent = feedbackText;
+
+    if (isCorrect) {
+      console.log("About to save score");
+      SPLICE.saveScore(1);
+      console.log("Score saved");
+    }
   };
 
   const grader = document.createElement("div");

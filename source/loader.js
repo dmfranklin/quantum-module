@@ -44,12 +44,11 @@ const loadEverything = async () => {
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/assets/documentation.css`);
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`);
 
-  // Load SPLICE protocol for submitting scores to Runestone
-  await loadJS("https://cssplice.org/slcp/splice-iframe.js");
-
   // Load the custom quantum widget code and styles
   // Use local paths for development, CDN for production
   if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+    await loadJS("http://localhost:9999/source/splice.js");
+
     // Local development
     await loadCSS("http://localhost:9999/source/widget.css");
     await loadJS("http://localhost:9999/source/widget.js");

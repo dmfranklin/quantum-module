@@ -11,18 +11,21 @@
         <title>Interactive Exercise</title>
         <dynamic>
             <statement>
+                <p>Please complete the exercise below.</p>
                 <interactive
                     aspect="1:1" width="50%"
                     platform="javascript"
                     source="http://localhost:9999/source/sarang-widget.js" />
             </statement>
+            <hint>
+                <p>This should be easy.</p>
+            </hint>
         </dynamic>
         <static>
             <statement>
-                <p>Please complete the exercise above!</p>
+                <p>A sample interactive exercise goes here.</p>
             </statement>
         </static>
-        <hint><p>This should be easy.</p></hint>
     </exercise>
 
     <exercise label="sarang-exercise-regular">
@@ -48,19 +51,31 @@
                 </feedback>
             </choice>
         </choices>
-        <hint><p>I suggest you tread lightly.</p></hint>
+        <hint>
+            <p>I suggest you tread lightly.</p>
+        </hint>
     </exercise>
 
-    <!-- 
-    <exercise label="Sample-Widget-Exercise">
-        <title>Sample Widget Title</title>
-        <idx>sample widget</idx>
-        <statement>Sample Widget Exercise</statement>
-
-        <interactive xml:id="my_activity_id" aspect="2:1" width="45%"
-            platform="javascript"
-            source="http://localhost:9999/source/sarang-widget.js" />
-
-        <statement>After interactive</statement>
-    </exercise> -->
+    <exercise label="sarang-exercise-circuit">
+        <title>Circuit Exercise</title>
+        <dynamic>
+            <statement>
+                <interactive aspect="9:9" platform="javascript"
+                    source="http://localhost:9999/source/loader.js">
+                    <script>
+                        identicalCircuitWidget({
+                            circuit: "L1_2_0",
+                            instantFeedback: true,
+                            allowedGates: "X"
+                        });
+                    </script>
+                </interactive>
+            </statement>
+        </dynamic>
+        <static>
+            <statement>
+                <p>Match circuits.</p>
+            </statement>
+        </static>
+    </exercise>
 </section>
