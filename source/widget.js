@@ -430,7 +430,8 @@ const createGrader = (
 
     if (isCorrect) {
       console.log("About to save score");
-      SPLICE.saveScore(1);
+      // TODO: the widget should know the name of the activity
+      SPLICE.reportScoreAndState("my-activity", 1);
       console.log("Score saved");
     }
   };

@@ -1,5 +1,5 @@
 const bodyEl = document.body;
-bodyEl.style.background = "blue";
+bodyEl.style.background = "#06b6d4";
 
 console.log("Hello from Sarang's widget JS");
 
