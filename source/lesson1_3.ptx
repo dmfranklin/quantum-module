@@ -7,6 +7,7 @@
 
     <p>Testing out interactive exercises below:</p>
 
+    <!--
     <exercise label="sarang-exercise-interactive">
         <title>Interactive Exercise</title>
         <dynamic>
@@ -15,7 +16,7 @@
                 <interactive
                     aspect="1:1" width="50%"
                     platform="javascript"
-                    source="http://localhost:9999/source/sarang-widget.js" />
+                    source="http://bean.cs.uchicago.edu:9999/source/sarang-widget.js" />
             </statement>
             <hint>
                 <p>This should be easy.</p>
@@ -27,6 +28,7 @@
             </statement>
         </static>
     </exercise>
+    -->
 
     <exercise label="sarang-exercise-regular">
         <title>Regular Exercise</title>
@@ -61,7 +63,7 @@
         <dynamic>
             <statement>
                 <interactive aspect="9:9" platform="javascript"
-                    source="http://localhost:9999/source/loader.js">
+                    source="http://bean.cs.uchicago.edu:9999/source/loader.js">
                     <script>
                         identicalCircuitWidget({
                             circuit: "L1_2_0",

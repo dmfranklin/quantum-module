@@ -409,7 +409,7 @@ const createGrader = (
   instantFeedback
 ) => {
   // Internal function to compare circuits and display feedback
-  const checkWork = () => {
+  const checkWork = (report = true) => {
     grader.classList.remove("dirty"); // remove "needs-check" state
     goalCircuit.evaluate$(); // compute goalCircuit.outputState or other properties
     try {
@@ -428,11 +428,9 @@ const createGrader = (
     feedback.classList.toggle("wrong", !isCorrect);
     feedback.textContent = feedbackText;
 
-    if (isCorrect) {
-      console.log("About to save score");
-      // TODO: the widget should know the name of the activity
-      SPLICE.reportScoreAndState("my-activity", 1);
-      console.log("Score saved");
+    if (report) {
+      // Report score via SPLICE to Runestone database
+      SPLICE.reportScoreAndState(isCorrect ? 1 : 0, { circuit: studentCircuitEditor.circuit.toText() });
     }
   };
 
@@ -452,6 +450,12 @@ const createGrader = (
     button.className = "check-work";
     button.addEventListener("click", checkWork);
     grader.append(button);
+  }
+
+  // If restoring state, we should check work immediately.
+  if (studentCircuitEditor.circuit.operations.length > 0) {
+    console.log("Student circuit is not empty, checking work immediately");
+    checkWork(false);
   }
 
   // Listen for any circuit change events triggered by the editor
@@ -613,6 +617,7 @@ const finalizeWidget = (widget) => {
  * arbitraryInputs: boolean for initial qubit labels
  * allowedGates:    string of gate symbols for filtering palette
  * code:            boolean; if true, use code editor instead of visual palette
+ * previousState:   string; if present, start student circuit with this state. keepGates takes precedence
  */
 const createStudentEditor = ({
   widget,
@@ -621,10 +626,11 @@ const createStudentEditor = ({
   arbitraryInputs,
   allowedGates = defaultGateSymbols,
   code = false,
+  previousState,
 }) => {
   // If keepGates=false, create an empty circuit of same dimensions; else clone the original circuit
   const circuitEditor = createCircuitEditor(
-    keepGates ? circuit : Q(circuit.bandwidth, circuit.timewidth),
+    keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth),
     !code,
     arbitraryInputs
   );
@@ -690,6 +696,7 @@ const identicalCircuitWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState: SPLICE.getStateResult ? SPLICE.getStateResult.circuit : undefined,
   });
 
   // Helper to extract only non-empty columns (ignore identity columns)

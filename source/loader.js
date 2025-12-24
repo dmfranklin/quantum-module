@@ -23,6 +23,11 @@ const loadCSS = (href) => {
   });
 };
 
+// Function to load SPLICE state from the Runestone database
+const loadSpliceState = async () => {
+  await SPLICE.getState();
+};
+
 // Load all required scripts and styles for the interactive widget
 const loadEverything = async () => {
   // Load syntax highlighting libraries for optional code input widgets
@@ -45,21 +50,24 @@ const loadEverything = async () => {
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`);
 
   // Load SPLICE protocol for submitting scores to Runestone
-  await loadJS("https://cssplice.org/slcp/splice-iframe.js");
+  await loadJS("http://bean.cs.uchicago.edu:9999/source/splice.js");
 
   // Load the custom quantum widget code and styles
   // Use local paths for development, CDN for production
-  if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
-    // Local development
-    await loadCSS("http://localhost:9999/source/widget.css");
-    await loadJS("http://localhost:9999/source/widget.js");
-    await loadJS("http://localhost:9999/source/circuits.js");
-  } else {
-    // Deployed module (e.g., hosted on Runestone)
-    await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
-    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
-    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
-  }
+  // if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+  // Local development
+  await loadCSS("http://bean.cs.uchicago.edu:9999/source/widget.css");
+  await loadJS("http://bean.cs.uchicago.edu:9999/source/widget.js");
+  await loadJS("http://bean.cs.uchicago.edu:9999/source/circuits.js");
+  // } else {
+  //   // Deployed module (e.g., hosted on Runestone)
+  //   await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
+  //   await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
+  //   await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
+  // }
+
+  // Load any existing state the student may have in progress
+  await loadSpliceState();
 };
 
 // Start script/style loading and store the resulting Promise
