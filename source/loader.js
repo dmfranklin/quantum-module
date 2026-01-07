@@ -26,9 +26,13 @@ const loadCSS = (href) => {
 // Load all required scripts and styles for the interactive widget
 const loadEverything = async () => {
   // Load syntax highlighting libraries for optional code input widgets
-  await loadCSS("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/default.min.css");
+  await loadCSS(
+    "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/default.min.css"
+  );
   await loadCSS("https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css");
-  await loadJS("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js");
+  await loadJS(
+    "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"
+  );
 
   // Load the code-input component used to allow Qiskit-style circuit entry
   await loadCSS("https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.css");
@@ -40,22 +44,22 @@ const loadEverything = async () => {
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/assets/documentation.css`);
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`);
 
-  // Load SPLICE protocol for submitting scores to Runestone
-  await loadJS("https://cssplice.org/slcp/splice-iframe.js");
-
-  // Load the custom quantum widget code and styles
+  // Load the custom quantum widget code, styles, and SPLICE protocol implementation
   // Use local paths for development, CDN for production
   if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
     // Local development
+    await loadJS("../../../source/splice.js");
     await loadCSS("../../../source/widget.css");
     await loadJS("../../../source/widget.js");
     await loadJS("../../../source/circuits.js");
   } else {
     // Deployed module (e.g., hosted on Runestone)
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/splice.js");
     await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
     await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
     await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
   }
+
 };
 
 // Start script/style loading and store the resulting Promise

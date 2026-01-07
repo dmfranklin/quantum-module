@@ -163,7 +163,7 @@ Q.Circuit.Editor.onSelectionChanged = function (circuitEl) {
   controlButtonEl.toggleAttribute(
     "Q-disabled",
     !Q.Circuit.Editor.isValidControlCandidate(circuitEl) &&
-      !Q.Circuit.Editor.isValidSwapCandidate(circuitEl)
+    !Q.Circuit.Editor.isValidSwapCandidate(circuitEl)
   );
 };
 
@@ -409,7 +409,7 @@ const createGrader = (
   instantFeedback
 ) => {
   // Internal function to compare circuits and display feedback
-  const checkWork = () => {
+  const checkWork = (report = true) => {
     grader.classList.remove("dirty"); // remove "needs-check" state
     goalCircuit.evaluate$(); // compute goalCircuit.outputState or other properties
     try {
@@ -427,6 +427,11 @@ const createGrader = (
     feedback.classList.toggle("correct", isCorrect);
     feedback.classList.toggle("wrong", !isCorrect);
     feedback.textContent = feedbackText;
+
+    if (report) {
+      // Report score via SPLICE to Runestone database
+      SPLICE.reportScoreAndState(isCorrect ? 1 : 0, { circuit: studentCircuitEditor.circuit.toText() });
+    }
   };
 
   const grader = document.createElement("div");
@@ -445,6 +450,11 @@ const createGrader = (
     button.className = "check-work";
     button.addEventListener("click", checkWork);
     grader.append(button);
+  }
+
+  // If restoring state, we should check work immediately.
+  if (studentCircuitEditor.circuit.operations.length > 0) {
+    checkWork(false);
   }
 
   // Listen for any circuit change events triggered by the editor
@@ -606,6 +616,7 @@ const finalizeWidget = (widget) => {
  * arbitraryInputs: boolean for initial qubit labels
  * allowedGates:    string of gate symbols for filtering palette
  * code:            boolean; if true, use code editor instead of visual palette
+ * previousState:   string; if present, start student circuit with this state. keepGates takes precedence
  */
 const createStudentEditor = ({
   widget,
@@ -614,10 +625,11 @@ const createStudentEditor = ({
   arbitraryInputs,
   allowedGates = defaultGateSymbols,
   code = false,
+  previousState,
 }) => {
   // If keepGates=false, create an empty circuit of same dimensions; else clone the original circuit
   const circuitEditor = createCircuitEditor(
-    keepGates ? circuit : Q(circuit.bandwidth, circuit.timewidth),
+    keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth),
     !code,
     arbitraryInputs
   );
@@ -628,6 +640,19 @@ const createStudentEditor = ({
   widget.append(circuitEditor);
   return circuitEditor;
 };
+
+/**
+ * Fetches the saved state for this widget from the Runestone database.
+ * @returns circuit in string form, else undefined
+ */
+const getSavedCircuitState = async () => {
+  let previousState = await SPLICE.getState();
+  console.log("Restoring saved circuit state.");
+  if (previousState) {
+    previousState = previousState.circuit;
+  }
+  return previousState;
+}
 
 // MARK: - widget creation functions
 
@@ -645,7 +670,7 @@ const createStudentEditor = ({
  *   code: boolean for code editor
  * }
  */
-const identicalCircuitWidget = ({
+const identicalCircuitWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -653,6 +678,8 @@ const identicalCircuitWidget = ({
 }) => {
   circuit = processCircuitInput(circuit); // ensure evaluated circuit
   const arbitraryInputs = true; // use Greek letters for input state labels
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -683,6 +710,7 @@ const identicalCircuitWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState,
   });
 
   // Helper to extract only non-empty columns (ignore identity columns)
@@ -725,7 +753,7 @@ const identicalCircuitWidget = ({
  *
  * options: same shape as identicalCircuitWidget
  */
-const equivalentCircuitWidget = ({
+const equivalentCircuitWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -733,6 +761,8 @@ const equivalentCircuitWidget = ({
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = true;
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -760,6 +790,7 @@ const equivalentCircuitWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState
   });
 
   const grader = createGrader(
@@ -770,9 +801,9 @@ const equivalentCircuitWidget = ({
       goalCircuit.matrix.isEqualTo(studentCircuit.matrix)
         ? studentCircuit.operations.length < goalCircuit.operations.length
           ? [
-              true,
-              "Great job! You created an equivalent circuit with fewer gates.",
-            ]
+            true,
+            "Great job! You created an equivalent circuit with fewer gates.",
+          ]
           : [false, "The circuits are equivalent, but you used too many gates."]
         : [false, "The circuits are not equivalent. Keep at it!"],
     instantFeedback
@@ -790,7 +821,7 @@ const equivalentCircuitWidget = ({
  *
  * options: same as above
  */
-const matchOutputWidget = ({
+const matchOutputWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -798,6 +829,8 @@ const matchOutputWidget = ({
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false; // inputs fixed to |0⟩ for goal and student
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -827,6 +860,7 @@ const matchOutputWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState
   });
 
   const grader = createGrader(
@@ -853,7 +887,7 @@ const matchOutputWidget = ({
  *
  * options: same as above
  */
-const specificOutputWidget = ({
+const specificOutputWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -861,6 +895,8 @@ const specificOutputWidget = ({
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false;
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -882,6 +918,7 @@ const specificOutputWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState,
   });
 
   const grader = createGrader(
@@ -891,11 +928,11 @@ const specificOutputWidget = ({
       goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
         ? [true, "Great job! Your circuit produces the correct output state."]
         : [
-            false,
-            `Your circuit produces the output state ${stateToText(
-              studentCircuit.outputState
-            )}. Keep at it!`,
-          ],
+          false,
+          `Your circuit produces the output state ${stateToText(
+            studentCircuit.outputState
+          )}. Keep at it!`,
+        ],
     instantFeedback
   );
   widget.append(grader);
