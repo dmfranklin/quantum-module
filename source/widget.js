@@ -754,7 +754,7 @@ const identicalCircuitWidget = async ({
  *
  * options: same shape as identicalCircuitWidget
  */
-const equivalentCircuitWidget = ({
+const equivalentCircuitWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -762,6 +762,8 @@ const equivalentCircuitWidget = ({
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = true;
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -789,6 +791,7 @@ const equivalentCircuitWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState
   });
 
   const grader = createGrader(
@@ -819,7 +822,7 @@ const equivalentCircuitWidget = ({
  *
  * options: same as above
  */
-const matchOutputWidget = ({
+const matchOutputWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -827,6 +830,8 @@ const matchOutputWidget = ({
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false; // inputs fixed to |0⟩ for goal and student
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -856,6 +861,7 @@ const matchOutputWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState
   });
 
   const grader = createGrader(
@@ -882,7 +888,7 @@ const matchOutputWidget = ({
  *
  * options: same as above
  */
-const specificOutputWidget = ({
+const specificOutputWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
@@ -890,6 +896,8 @@ const specificOutputWidget = ({
 }) => {
   circuit = processCircuitInput(circuit);
   const arbitraryInputs = false;
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -911,6 +919,7 @@ const specificOutputWidget = ({
     arbitraryInputs,
     allowedGates,
     code,
+    previousState,
   });
 
   const grader = createGrader(
