@@ -454,7 +454,6 @@ const createGrader = (
 
   // If restoring state, we should check work immediately.
   if (studentCircuitEditor.circuit.operations.length > 0) {
-    console.log("Student circuit is not empty, checking work immediately");
     checkWork(false);
   }
 
@@ -648,7 +647,7 @@ const createStudentEditor = ({
  */
 const getSavedCircuitState = async () => {
   let previousState = await SPLICE.getState();
-  console.log("Previous state:", previousState);
+  console.log("Restoring saved circuit state.");
   if (previousState) {
     previousState = previousState.circuit;
   }

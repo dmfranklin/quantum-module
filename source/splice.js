@@ -51,15 +51,12 @@ if (!("SPLICE" in window)) {
 }
 
 function handleMessage(event) {
-  console.log("Received message!");
-
   const messageType = event?.data?.subject;
   if (messageType === "SPLICE.getState.response") {
     const message_id = event?.data?.message_id;
-    console.log(`Got response to getState with message_id ${message_id}!`);
 
     if (message_id && SPLICE.callbacks[message_id]) {
-      console.log(`callback being called for message_id ${message_id} with state:`, event?.data?.state);
+      console.log(`getState returning with message_id ${message_id} and state:`, event?.data?.state);
       SPLICE.callbacks[message_id](event?.data?.state);
       delete SPLICE.callbacks[message_id];
     }
