@@ -49,22 +49,21 @@ const loadEverything = async () => {
   await loadCSS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/assets/documentation.css`);
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`);
 
-  // Load SPLICE protocol for submitting scores to Runestone
-  await loadJS("http://bean.cs.uchicago.edu:9999/source/splice.js");
-
-  // Load the custom quantum widget code and styles
+  // Load the custom quantum widget code, styles, and SPLICE protocol implementation
   // Use local paths for development, CDN for production
-  // if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
-  // Local development
-  await loadCSS("http://bean.cs.uchicago.edu:9999/source/widget.css");
-  await loadJS("http://bean.cs.uchicago.edu:9999/source/widget.js");
-  await loadJS("http://bean.cs.uchicago.edu:9999/source/circuits.js");
-  // } else {
-  //   // Deployed module (e.g., hosted on Runestone)
-  //   await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
-  //   await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
-  //   await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
-  // }
+  if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+    // Local development
+    await loadJS("../../../source/splice.js");
+    await loadCSS("../../../source/widget.css");
+    await loadJS("../../../source/widget.js");
+    await loadJS("../../../source/circuits.js");
+  } else {
+    // Deployed module (e.g., hosted on Runestone)
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/splice.js");
+    await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
+  }
 
   // Load any existing state the student may have in progress
   await loadSpliceState();
