@@ -23,11 +23,6 @@ const loadCSS = (href) => {
   });
 };
 
-// Function to load SPLICE state from the Runestone database
-const loadSpliceState = async () => {
-  await SPLICE.getState();
-};
-
 // Load all required scripts and styles for the interactive widget
 const loadEverything = async () => {
   // Load syntax highlighting libraries for optional code input widgets
@@ -65,8 +60,6 @@ const loadEverything = async () => {
     await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
   }
 
-  // Load any existing state the student may have in progress
-  await loadSpliceState();
 };
 
 // Start script/style loading and store the resulting Promise
