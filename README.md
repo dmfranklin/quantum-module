@@ -8,7 +8,7 @@ To build and view the module locally, follow these steps:
 
 1. Clone or download the repository and navigate to the project directory:
    ```bash
-   git clone https://github.com/AlexBuz/quantum-module.git
+   git clone https://github.com/dmfranklin/quantum-module.git
    cd quantum-module
    ```
 
