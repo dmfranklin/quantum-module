@@ -646,12 +646,17 @@ const createStudentEditor = ({
  * @returns circuit in string form, else undefined
  */
 const getSavedCircuitState = async () => {
-  let previousState = await SPLICE.getState();
-  console.log("Restoring saved circuit state.");
-  if (previousState) {
-    previousState = previousState.circuit;
+  try {
+    let previousState = await SPLICE.getState();
+    console.log("Restoring saved circuit state.");
+    if (previousState) {
+      previousState = previousState.circuit;
+    }
+    return previousState;
+  } catch (err) {
+    console.log("Could not get saved circuit state:", err);
+    return undefined;
   }
-  return previousState;
 }
 
 // MARK: - widget creation functions

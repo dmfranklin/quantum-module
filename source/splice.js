@@ -21,6 +21,11 @@ function generateUUID() { // Public Domain/MIT
   });
 }
 
+// Constant that controls how long we wait before timing out on requests made to the SPLICE backend.
+// This is important to adjust when working on the textbook locally without an actual Runestone
+// SPLICE backend.
+const DEFAULT_TIMEOUT = 1500;
+
 if (!("SPLICE" in window)) {
   window.SPLICE = {
     callbacks: {},
@@ -36,8 +41,20 @@ if (!("SPLICE" in window)) {
       // This converts the disparate `postMessage`/`handleMessage` architecture into a Promise
       // approach. We save the `resolve` function in our `callbacks` dictionary so that when we
       // eventually get a response, that resolve function can be appropriately called.
-      return new Promise((resolve) => {
+      return new Promise((resolve, reject) => {
         SPLICE.callbacks[message_id] = resolve;
+
+        // Our only indicator of failure is a timeout; if the SPLICE backend doesn't exist, we have
+        // no way of knowing with the completely separate postMessage/handleMessage system.
+        setTimeout(() => {
+          // Check if resolve() was called, in which case this callback would be deleted from the
+          // callbacks map
+          if (SPLICE.callbacks[message_id]) {
+            delete SPLICE.callbacks[message_id];
+
+            reject("getState timed out");
+          }
+        }, 5000);
       });
     },
     reportScoreAndState: (score, state) => {
