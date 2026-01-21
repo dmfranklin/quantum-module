@@ -8,7 +8,7 @@
     In the previous section, you learned how to use the circuit builder to determine
     the output from a particular set of inputs.
     Now use the circuit builder to figure out the output when you give a <c>SWAP</c> gate
-    <m>|10\rangle</m> and <m>|11\rangle</m> so you can build the complete functionality for simple two-qubit
+    <m>\ket{10}</m> and <m>\ket{11}</m> so you can build the complete functionality for simple two-qubit
     combinations.
   </p>
 
@@ -72,8 +72,8 @@
     <hint>
       <p>Use the circuit builder above to make the circuit.
         The bar graph below the circuit can help you to determine the outputs for different inputs.</p>
-      <p>Try it with <m>|10\rangle</m> and <m>|11\rangle</m>.
-        To do this, you need to use a <c>NOT</c> gates to change the input value <m>|0\rangle</m> to <m>|1\rangle</m>.
+      <p>Try it with <m>\ket{10}</m> and <m>\ket{11}</m>.
+        To do this, you need to use a <c>NOT</c> gates to change the input value <m>\ket{0}</m> to <m>\ket{1}</m>.
         Then, record the answers.</p>
     </hint>
   </exercise>
@@ -97,7 +97,7 @@
       <choice>
         <statement>
           <p>
-            <m>|00\rangle</m> or <m>|</m>⚪⚪<m>\rangle</m>
+            <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
           </p>
         </statement>
         <feedback>
@@ -107,7 +107,7 @@
       <choice>
         <statement>
           <p>
-            <m>|01\rangle</m> or <m>|</m>⚪⚫<m>\rangle</m>
+            <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
           </p>
         </statement>
         <feedback>
@@ -117,7 +117,7 @@
       <choice correct="yes">
         <statement>
           <p>
-            <m>|10\rangle</m> or <m>|</m>⚫⚪<m>\rangle</m>
+            <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
           </p>
         </statement>
         <feedback>
@@ -127,7 +127,7 @@
       <choice>
         <statement>
           <p>
-            <m>|11\rangle</m> or <m>|</m>⚫⚫<m>\rangle</m>
+            <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
           </p>
         </statement>
         <feedback>
@@ -154,7 +154,7 @@
       <choice>
         <statement>
           <p>
-            <m>|00\rangle</m> or <m>|</m>⚪⚪<m>\rangle</m>
+            <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
           </p>
         </statement>
         <feedback>
@@ -164,7 +164,7 @@
       <choice correct="yes">
         <statement>
           <p>
-            <m>|01\rangle</m> or <m>|</m>⚪⚫<m>\rangle</m>
+            <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
           </p>
         </statement>
         <feedback>
@@ -174,7 +174,7 @@
       <choice>
         <statement>
           <p>
-            <m>|10\rangle</m> or <m>|</m>⚫⚪<m>\rangle</m>
+            <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
           </p>
         </statement>
         <feedback>
@@ -184,7 +184,7 @@
       <choice>
         <statement>
           <p>
-            <m>|11\rangle</m> or <m>|</m>⚫⚫<m>\rangle</m>
+            <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
           </p>
         </statement>
         <feedback>

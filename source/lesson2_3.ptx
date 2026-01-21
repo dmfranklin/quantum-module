@@ -4,8 +4,8 @@
   <title>Exploring the <c>CNOT</c> Gate</title>
   <p>
     Now we are going to use the same method to explore how the <c>CNOT</c> gate works.
-    You will try all four input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>,
-    <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship between
+    You will try all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>,
+    <m>\ket{10}</m>, and <m>\ket{11}</m>) to determine the relationship between
     inputs and outputs for the <c>CNOT</c> gate.
   </p>
   <section xml:id="lesson2_3_1">
@@ -46,8 +46,8 @@
     <title>Exploring the <c>CNOT</c> Gate</title>
     <p>
       Now let's explore how the <c>CNOT</c> gate works using the same method that you used to explore
-      the <c>SWAP</c> gate. Try all four input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>,
-      <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship between inputs
+      the <c>SWAP</c> gate. Try all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>,
+      <m>\ket{10}</m>, and <m>\ket{11}</m>) to determine the relationship between inputs
       and outputs for the <c>CNOT</c> gate.
     </p>
     <p>
@@ -83,7 +83,7 @@
           </statement>
           <feedback>
             <p>Yes! The target qubit, the bottom qubit, toggles if and only if the control, the top qubit, is <m>
-                |1\rangle</m>.</p>
+                \ket{1}</m>.</p>
           </feedback>
         </choice>
         <choice>
@@ -114,8 +114,8 @@
       <hint>
         <p>Use the circuit builder above to make the circuit.
           The bar graph below the circuit can help you to determine the outputs for different inputs.</p>
-        <p>Try it with <m>|10\rangle</m> and <m>|11\rangle</m>.
-          To do this, you need to use a <c>NOT</c> gates to change the input value <m>|0\rangle</m> to <m>|1\rangle</m>.
+        <p>Try it with <m>\ket{10}</m> and <m>\ket{11}</m>.
+          To do this, you need to use a <c>NOT</c> gates to change the input value <m>\ket{0}</m> to <m>\ket{1}</m>.
           Then, record the answers.</p>
       </hint>
     </exercise>
@@ -137,7 +137,7 @@
         <choice>
           <statement>
             <p>
-              <m>|00\rangle</m> or <m>|</m>⚪⚪<m>\rangle</m>
+              <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
             </p>
           </statement>
           <feedback>
@@ -147,7 +147,7 @@
         <choice correct="yes">
           <statement>
             <p>
-              <m>|01\rangle</m> or <m>|</m>⚪⚫<m>\rangle</m>
+              <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
             </p>
           </statement>
           <feedback>
@@ -157,7 +157,7 @@
         <choice>
           <statement>
             <p>
-              <m>|10\rangle</m> or <m>|</m>⚫⚪<m>\rangle</m>
+              <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
             </p>
           </statement>
           <feedback>
@@ -167,7 +167,7 @@
         <choice>
           <statement>
             <p>
-              <m>|11\rangle</m> or <m>|</m>⚫⚫<m>\rangle</m>
+              <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
             </p>
           </statement>
           <feedback>
@@ -193,7 +193,7 @@
         <choice>
           <statement>
             <p>
-              <m>|00\rangle</m> or <m>|</m>⚪⚪<m>\rangle</m>
+              <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
             </p>
           </statement>
           <feedback>
@@ -203,7 +203,7 @@
         <choice>
           <statement>
             <p>
-              <m>|01\rangle</m> or <m>|</m>⚪⚫<m>\rangle</m>
+              <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
             </p>
           </statement>
           <feedback>
@@ -213,7 +213,7 @@
         <choice>
           <statement>
             <p>
-              <m>|10\rangle</m> or <m>|</m>⚫⚪<m>\rangle</m>
+              <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
             </p>
           </statement>
           <feedback>
@@ -223,7 +223,7 @@
         <choice correct="yes">
           <statement>
             <p>
-              <m>|11\rangle</m> or <m>|</m>⚫⚫<m>\rangle</m>
+              <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
             </p>
           </statement>
           <feedback>

@@ -30,10 +30,10 @@
       single qubit also holds other interesting information that we will explore throughout this
       course. In this lesson, we will only use the values of 0 and 1. To represent the more complex
       state that is possible for a qubit, we use a slightly different syntax. Instead of just
-      writing 0 or 1, we will write <m>|0\rangle</m> or <m>|1\rangle</m>. Later, we will learn more
+      writing 0 or 1, we will write <m>\ket{0}</m> or <m>\ket{1}</m>. Later, we will learn more
       about this syntax and what it means. </p>
-    <p> To visualize these states, we will use a white ball: ⚪ for <m>|0\rangle</m> and a black
-      ball: ⚫ for <m>|1\rangle</m>.</p>
+    <p> To visualize these states, we will use a white ball: ⚪ for <m>\ket{0}</m> and a black
+      ball: ⚫ for <m>\ket{1}</m>.</p>
     <image source="WhiteBlackBalls.png" width="25%" />
   </section>
 
@@ -42,7 +42,7 @@
     <title>Quantum Operation #1: <c>NOT</c> Gate</title>
     <p> Quantum operations are called <term>gates</term>. The simplest operation is the <c>NOT</c>
       gate (also known as the <c>X</c> gate). From a classical perspective, it toggles the value
-      between 0 and 1. That is, if the input is <m>|0\rangle</m>, the output is <m>|1\rangle</m>,
+      between 0 and 1. That is, if the input is <m>\ket{0}</m>, the output is <m>\ket{1}</m>,
       and vice versa.</p>
 
     <image source="NOTgate.png" width="40%" />
@@ -59,18 +59,18 @@
       <choices randomize="no">
         <choice correct="yes">
           <statement>
-            <p>⚪ <m>|0\rangle</m>
+            <p>⚪ <m>\ket{0}</m>
             </p>
           </statement>
           <feedback>
-            <p>Yes! Starting with: ⚪ <m>|0\rangle</m>; apply the first <c>NOT</c> operation: ⚫ <m>
-                |1\rangle</m>; and apply the second <c>NOT</c> operation: ⚪ <m>|0\rangle</m>
+            <p>Yes! Starting with: ⚪ <m>\ket{0}</m>; apply the first <c>NOT</c> operation: ⚫ <m>
+                \ket{1}</m>; and apply the second <c>NOT</c> operation: ⚪ <m>\ket{0}</m>
             </p>
           </feedback>
         </choice>
         <choice>
           <statement>
-            <p>⚫ <m>|1\rangle</m>
+            <p>⚫ <m>\ket{1}</m>
             </p>
           </statement>
           <feedback>
@@ -95,7 +95,7 @@
       <choices randomize="no">
         <choice>
           <statement>
-            <p>⚫ <m>|0\rangle</m>
+            <p>⚫ <m>\ket{0}</m>
             </p>
           </statement>
           <feedback>
@@ -104,12 +104,12 @@
         </choice>
         <choice correct="yes">
           <statement>
-            <p>⚪ <m>|1\rangle</m>
+            <p>⚪ <m>\ket{1}</m>
             </p>
           </statement>
           <feedback>
-            <p>Yes! Starting with: ⚫ <m>|1\rangle</m>; apply the first <c>NOT</c> operation: ⚪ <m>
-                |0\rangle</m>; and apply the second <c>NOT</c> operation: ⚫ <m>|1\rangle</m>
+            <p>Yes! Starting with: ⚫ <m>\ket{1}</m>; apply the first <c>NOT</c> operation: ⚪ <m>
+                \ket{0}</m>; and apply the second <c>NOT</c> operation: ⚫ <m>\ket{1}</m>
             </p>
           </feedback>
         </choice>
@@ -131,19 +131,19 @@
       <choices randomize="no">
         <choice correct="yes">
           <statement>
-            <p>⚪ <m>|0\rangle</m>
+            <p>⚪ <m>\ket{0}</m>
             </p>
           </statement>
           <feedback>
-            <p>Yes! Starting with: ⚫ <m>|1\rangle</m>; apply the first <c>NOT</c> operation: ⚪ <m>
-                |0\rangle</m>; apply the second <c>NOT</c> operation: ⚫ <m>|1\rangle</m>; and apply
-              the third <c>NOT</c> operation: ⚪ <m>|0\rangle</m>
+            <p>Yes! Starting with: ⚫ <m>\ket{1}</m>; apply the first <c>NOT</c> operation: ⚪ <m>
+                \ket{0}</m>; apply the second <c>NOT</c> operation: ⚫ <m>\ket{1}</m>; and apply
+              the third <c>NOT</c> operation: ⚪ <m>\ket{0}</m>
             </p>
           </feedback>
         </choice>
         <choice>
           <statement>
-            <p>⚫ <m>|1\rangle</m>
+            <p>⚫ <m>\ket{1}</m>
             </p>
           </statement>
           <feedback>

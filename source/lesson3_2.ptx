@@ -5,26 +5,29 @@
 <section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
 
 
-<title>Phase</title>
-<p>
-  Phase is an additional attribute that is relevant when a qubit is in superposition. 
-  In the last section, you saw that if you have a circuit with two consecutive H gates, 
-  then the qubit goes into a superposition state after the <em>first</em> H gate, but then 
-  it goes back to its original state after the <em>second</em> H gate. 
-  When in a superposition state, the two qubits have opposite phase.
-</p>
-
-<sidebyside widths="75% 25%" valign="top"> 
+  <title>Phase</title>
   <p>
-    Now we are going to explore a gate that affects the phase of the qubit.
-    Use the following circuit to determine how the Z gate affects a qubit 
-    that is in the state <m>|0\rangle</m> or <m>|1\rangle</m>.
+    <term>Phase</term> is an additional attribute that is relevant when a qubit is in superposition.
+    In the last section, you saw that if you have a circuit with two consecutive <c>H</c> gates,
+    then the qubit goes into a superposition state after the <em>first</em>
+    <c>H</c> gate, but then
+    it goes back to its original state after the <em>second</em>
+    <c>H</c> gate.
+    When in a superposition state, the two qubits have opposite phase.
   </p>
-  <image source="L3.2-Z-gate.png" width="66%"/>
-</sidebyside>
 
- 
-  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+  <sidebyside widths="75% 25%" valign="top">
+    <p>
+      Now we are going to explore a gate that affects the phase of the qubit.
+      Use the following circuit to determine how the <c>Z</c> gate affects a qubit
+      that is in the state <m>\ket{0}</m> or <m>\ket{1}</m>.
+    </p>
+    <image source="L3.2-Z-gate.png" width="66%" />
+  </sidebyside>
+
+
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
     <script>
       visualizeProbabilitiesWidget({
         circuit: "Blank 1x6",
@@ -33,102 +36,142 @@
     </script>
   </interactive>
 
-<!--MAKE IMAGES FOR THIS? -JEN -->
+  <!--MAKE IMAGES FOR THIS? -JEN -->
   <exercise label="H_truth_table_lesson3_2">
-    <title>Z Truth Table</title>
+    <title>
+      <c>Z</c> Truth Table
+    </title>
     <idx>Z_truth_table</idx>
     <statement>
-        <p>Which answer best describes what you observed from the Z gate?
-        </p>
+      <p>Which answer best describes what you observed from the <c>Z</c> gate?
+      </p>
     </statement>
     <choices randomize="yes">
-     <choice correct="yes">
-        <statement><p>It does not have an observable effect.</p></statement>
-        <feedback><p>Correct!</p></feedback>
+      <choice correct="yes">
+        <statement>
+          <p>It does not have an observable effect.</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
       </choice>
       <choice correct="no">
-        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
+        <statement>
+          <p>If the input is <m>\ket{0}</m> or <m>\ket{1}</m>, the result will have an equal chance
             of measuring 0 or 1.
-        </p></statement>
-        <feedback><p>Look more closely at the bar graphs of the output.</p>
+          </p>
+        </statement>
+        <feedback>
+          <p>Look more closely at the bar graphs of the output.</p>
         </feedback>
       </choice>
     </choices>
-    <hint><p>Make the circuit and look at the bar graph below the circuit. 
-      Construct both input combinations using not gates,  recording the answers 
-      each time.</p></hint>
+    <hint>
+      <p>Make the circuit and look at the bar graph below the circuit.
+        Construct both input combinations using <c>NOT</c> gates, recording the answers
+        each time.</p>
+    </hint>
   </exercise>
 
-  <p> 
+  <p>
     You might have been surprised by the answer! Because quantum state is more complex than merely
-    the probability of measuring 0 or 1, this method for determining and expressing an operation's  
-    functionality is insufficient. 
+    the probability of measuring 0 or 1, this method for determining and expressing an operation's
+    functionality is insufficient.
   </p>
-  <p> Now, use the circuit builder above to create the following circuits and observe the outcomes. 
-      This will reveal the functionality of the Z gate on a qubit in superposition.
+  <p> Now, use the circuit builder above to create the following circuits and observe the outcomes.
+    This will reveal the functionality of the <c>Z</c> gate on a qubit in superposition.
   </p>
-  <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="85%"/>
+  <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="85%" />
 
-    <exercise label="Superposition Z">
-      <title>Z Gate Behavior with Superposition</title>
-      <idx>superpositionZ</idx>
-      <statement>
-          <p>What is the effect of the sequence H-Z-H on qubits beginning in <m>|0\rangle</m> or <m>|1\rangle</m>?</p>
-          <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="66%"/>
-      </statement>
-      <choices randomize="yes">
-        <choice correct="no">
-          <statement><p>equal chance of measuring 0 or 1.</p></statement>
-          <feedback><p>   </p></feedback>
-        </choice>
-        <choice>
-          <statement><p>No observable effect. </p></statement>
-          <feedback><p>   </p></feedback>      
-        </choice>
-        <choice correct = "yes">
-          <statement><p>The same as a NOT gate</p></statement>
-          <feedback><p>Correct!</p></feedback>
-        </choice>
-      </choices>
-      <hint><p>Think about what the output would be after each gate.</p></hint>
-    </exercise>
+  <exercise label="Superposition Z">
+    <title>
+      <c>Z</c> Gate Behavior with Superposition
+    </title>
+    <idx>superpositionZ</idx>
+    <statement>
+      <p>What is the effect of the sequence <c>H</c>-<c>Z</c>-<c>H</c> on qubits beginning in <m>\ket{0}</m> or <m>
+          \ket{1}
+        </m>?</p>
+      <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="66%" />
+    </statement>
+    <choices randomize="yes">
+      <choice correct="no">
+        <statement>
+          <p>equal chance of measuring 0 or 1.</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>No observable effect. </p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>The same as a <c>NOT</c> gate</p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Think about what the output would be after each gate.</p>
+    </hint>
+  </exercise>
+  <p>
+    Now we see that <c>Z</c> does have a major effect on the system, but <em>only</em> when the
+    qubit is in superposition.
+  </p>
+  <p>
+    We need a mathematical representation of phase that will allow us to perform operations
+    to calculate results. We will express phase as positive (+) or negative (-).
+    Starting with a qubit in the <m>\ket{0}</m> state results in positive (+) phase, and
+    starting in <m>\ket{1}</m> state results in negative (-) phase.
+  </p>
+  <p>
+    Likewise, if the qubit is already in the superposition 50/50 state, if it is in positive phase,
+    applying an <c>H</c> gate will result in <m>\ket{0}</m>. An <c>H</c> gate applied to a qubit in the
+    superposition 50/50 state in negative phase will result in <m>\ket{1}</m>.
+    The truth table for the <c>Z</c> gate is below. I suggest adding this to your page of notes.
+  </p>
+  <insert>
+    <p></p>
     <p>
-        Now we see that Z does have a major effect on the system, but <em>only</em> when the 
-        qubit is in superposition. 
-    </p>
-    <p>    
-        We need a mathematical representation of phase that will allow us to perform operations 
-        to calculate results. We will express phase as positive (+) or negative (-). 
-        Starting with a qubit in the <m>|0\rangle</m> state results in positive (+) phase, and 
-        starting in <m>|1\rangle</m> state results in negative (-) phase. 
-    </p>
-    <p>
-        Likewise, if the qubit is already in the superposition 50/50 state, if it is in positive phase, 
-        applying an H gate will result in <m>|0\rangle</m>. An H gate applied to a qubit in the 
-        superposition 50/50 state in negative phase will result in <m>|1\rangle</m>.
-        The truth table for the Z gate is below. I suggest adding this to your page of notes.
-    </p>
-    <insert>
-      <p></p>
-      <p>
-        ISN'T THIS LAST SET OF STATEMENTS ONLY TRUE - AFTER MEASUREMENT? 
-        I thought applying a Z gate to a 50/50 w/ + phase would result in the <m>|-\rangle</m> 
-        state and a 50/50 qubit w/ - phase would result in the <m>|+\rangle</m> state. -jen</p>
-    </insert>
+      ISN'T THIS LAST SET OF STATEMENTS ONLY TRUE - AFTER MEASUREMENT?
+      I thought applying a <c>Z</c> gate to a 50/50 w/ + phase would result in the <m>\ket{-}</m>
+      state and a 50/50 qubit w/ - phase would result in the <m>\ket{+}</m> state. -jen</p>
+  </insert>
 
-    <p><insert>INSERT IMAGE OF THE Z GATE TRUTH TABLE </insert></p>
+  <p>
+    <insert>INSERT IMAGE OF THE <c>Z</c> GATE TRUTH TABLE </insert>
+  </p>
 
-    <p><insert>Did we decide on a representation for superposition states for this book? -jen</insert></p>
-    <image source="L3.2-Z-gate-truth-table.png" width="80%"/>
+  <p>
+    <insert>Did we decide on a representation for superposition states for this book? -jen</insert>
+  </p>
+  <image source="L3.2-Z-gate-truth-table.png" width="80%" />
 
-    <p><insert>I made two versions of the truth table to choose from.  
-        Let me know if you need me to fix anything or make new version. -jen</insert></p>
-    <image source="L3.2-Z-gate-truth-table-alternate.png" width="80%"/>
+  <p>
+    <insert>I made two versions of the truth table to choose from.
+      Let me know if you need me to fix anything or make new version. -jen</insert>
+  </p>
+  <image source="L3.2-Z-gate-truth-table-alternate.png" width="80%" />
 
-    <p> Insert two circuits for them to calculate the output. Don't do the entanglement gate - just 
-        some interesting versions of NOT, SWAP, H, and Z to play with going to the 50/50 state and returning to 0,1, 
-        or the Z gate making it flip. </p> 
-    
-    
+  <p>
+    <insert>Insert two circuits for them to calculate the output. Don't do the entanglement gate - just
+      some interesting versions of <c>NOT</c>, <c>SWAP</c>, <c>H</c>, and <c>Z</c> to play with going to the 50/50 state
+      and
+      returning
+      to 0,1,
+      or the <c>Z</c> gate making it flip. -Diana</insert>
+  </p>
+
+
 
 </section>

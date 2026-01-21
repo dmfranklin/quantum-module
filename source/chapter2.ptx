@@ -9,7 +9,7 @@
     </p>
     <p>
       Specifically, we will use the circuit builder to learn about three operations that operate
-      well on qubits in the simple states of <m>|0\rangle</m> and <m>|1\rangle</m>: <c>NOT</c>, <c>SWAP</c>, and <c>CNOT
+      well on qubits in the simple states of <m>\ket{0}</m> and <m>\ket{1}</m>: <c>NOT</c>, <c>SWAP</c>, and <c>CNOT
       </c>.
     </p>
     <image source="NOT-SWAP-CNOT.png" width="60%" />

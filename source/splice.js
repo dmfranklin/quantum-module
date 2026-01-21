@@ -24,7 +24,7 @@ function generateUUID() { // Public Domain/MIT
 // Constant that controls how long we wait before timing out on requests made to the SPLICE backend.
 // This is important to adjust when working on the textbook locally without an actual Runestone
 // SPLICE backend.
-const DEFAULT_TIMEOUT = 1500;
+const DEFAULT_TIMEOUT = 100;
 
 if (!("SPLICE" in window)) {
   window.SPLICE = {

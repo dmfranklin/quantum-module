@@ -15,7 +15,7 @@
     <p>
       We will use the circuit builder to learn more about superposition as we observe
       how the <c>H</c> gate operates. Use the circuit builder below to see what the <c>H</c> gate
-      does to a qubit that starts in the <m>|0\rangle</m> or <m>|1\rangle</m> state.
+      does to a qubit that starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state.
     </p>
 
     <interactive aspect="9:9" platform="javascript"
@@ -33,7 +33,7 @@
       <idx>H_behavior</idx>
       <statement>
         <p>Select the statement that describes the behavior of the <c>H</c> gate when
-          applied to an input of <m>|0\rangle</m> or <m>|1\rangle</m>.</p>
+          applied to an input of <m>\ket{0}</m> or <m>\ket{1}</m>.</p>
       </statement>
       <choices randomize="yes">
         <choice correct="no">
@@ -51,7 +51,7 @@
             <image source="L3.1 H gate_equally-likely.png" width="66%" />
           </statement>
           <feedback>
-            <p>Correct! For an input of <m>|0\rangle</m> or <m>|1\rangle</m>, the output of
+            <p>Correct! For an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the output of
               an <c>H</c> gate will have an equal chance of measuring 0 or 1.</p>
           </feedback>
         </choice>
@@ -76,7 +76,7 @@
       <p>
         Let's explore what you observed: the <c>H</c> gate's output has an equal probability of
         measuring 0 or 1. This means that it appears to act like a <em>random</em> gate—one that given an input of <m>
-          |0\rangle</m> or <m>|1\rangle</m> would yield a
+          \ket{0}</m> or <m>\ket{1}</m> would yield a
         random output.
       </p>
       <p></p>
@@ -106,7 +106,7 @@
         <choice>
           <statement>
             <p>
-              <m>|0\rangle</m> or <m>|</m>⚪<m>\rangle</m>
+              <m>\ket{0}</m> or <m>\ket{</m>⚪<m>}</m>
             </p>
           </statement>
           <feedback>
@@ -116,7 +116,7 @@
         <choice>
           <statement>
             <p>
-              <m>|1\rangle</m> or <m>|</m>⚫<m>\rangle</m>
+              <m>\ket{1}</m> or <m>\ket{</m>⚫<m>}</m>
             </p>
           </statement>
           <feedback>
@@ -131,7 +131,7 @@
 
     <p>
       Now let's look at what happens with an <c>H</c> gate! Use the circuit builder to check
-      what happens when you start with <m>|0\rangle</m> or <m>|1\rangle</m> in a
+      what happens when you start with <m>\ket{0}</m> or <m>\ket{1}</m> in a
       circuit with two <c>H</c> gates.
     </p>
 
@@ -151,7 +151,7 @@
       <statement>
         <p>
           Which answer best describes what you observed from the circuit with two <c>H</c> gates
-          when you start with an input of <m>|0\rangle</m> or <m>|1\rangle</m>?
+          when you start with an input of <m>\ket{0}</m> or <m>\ket{1}</m>?
         </p>
         <image source="Checkpoint3_1_2-Behavior-of-Two-H-gates.png" width="66%" />
       </statement>
@@ -183,7 +183,7 @@
 
       </choices>
       <hint>
-        <p>Use a <c>NOT</c> gate to make the second input <m>|1\rangle</m>, then put two <c>H</c> gates on each wire.
+        <p>Use a <c>NOT</c> gate to make the second input <m>\ket{1}</m>, then put two <c>H</c> gates on each wire.
         </p>
       </hint>
     </exercise>
@@ -201,8 +201,8 @@
         then how is the original input value ALWAYS returned after the second <c>H</c> gate?
       </li>
       <li>
-        How is a 50/50 probability coming from an input of <m>|0\rangle</m> distinguished
-        from a 50/50 probability coming from an input of <m>|1\rangle</m>?
+        How is a 50/50 probability coming from an input of <m>\ket{0}</m> distinguished
+        from a 50/50 probability coming from an input of <m>\ket{1}</m>?
       </li>
       <!--
     <li>
