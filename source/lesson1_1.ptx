@@ -153,15 +153,21 @@
     </introduction>
     <ul>
       <li>
-        <p><c>INCREMENT</c>: Add one to a number.</p>
+        <p>
+          <c>INCREMENT</c>: Add one to a number.
+        </p>
         <image source="1-1-2_MathCircuitsINC.png" width="75%" />
       </li>
       <li>
-        <p><c>DECREMENT</c>: Subtract one from a number.</p>
+        <p>
+          <c>DECREMENT</c>: Subtract one from a number.
+        </p>
         <image source="1-1-2_MathCircuitsDEC.png" width="75%" />
       </li>
       <li>
-        <p><c>NEGATE</c>: Negate a number.</p>
+        <p>
+          <c>NEGATE</c>: Negate a number.
+        </p>
         <image source="1-1-2_MathCircuitsNEGATE.png" width="75%" />
       </li>
     </ul>
@@ -188,7 +194,7 @@
           </statement>
           <feedback>
             <p>There is one <c>INCREMENT</c> operation, but it looks like you applied the <c>
-              DECREMENT</c> operation.</p>
+                DECREMENT</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -236,7 +242,7 @@
           </statement>
           <feedback>
             <p>There is one <c>DECREMENT</c> operation, but it looks like you applied the <c>
-              INCREMENT</c> operation.</p>
+                INCREMENT</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -311,18 +317,23 @@
       </hint>
     </exercise>
 
-    <p> We can also define two-variable gates: <ul>
-        <li>
-          <p><c>ADD</c>: Add two numbers and place the result in the target, indicated by <c>*</c>.
-      The other input is unchanged.</p>
-          <image source="1-1-2_MathCircuitsADD.png" width="75%" />
-        </li>
-        <li>
-          <p><c>CONTROLLED INCREMENT</c>: Increment the target if and only if the control is odd.
-      The target is indicated by <c>*</c>, the control remains unchanged.</p>
-          <image source="1-1-2_MathCircuitsC-INC.png" width="75%" />
-        </li>
-      </ul>
+    <p> We can also define two-variable gates:
+    <ul>
+      <li>
+        <p>
+          <c>ADD</c>: Add two numbers and place the result in the target, indicated by <c>*</c>.
+          The other input is unchanged.
+        </p>
+        <image source="1-1-2_MathCircuitsADD.png" width="75%" />
+      </li>
+      <li>
+        <p>
+          <c>CONTROLLED INCREMENT</c>: Increment the target if and only if the control is odd.
+          The target is indicated by <c>*</c>, the control remains unchanged.
+        </p>
+        <image source="1-1-2_MathCircuitsC-INC.png" width="75%" />
+      </li>
+    </ul>
     </p>
 
     <p> These two-variable gates bring up a few details that cannot be ignored. First: <em>where
@@ -344,11 +355,13 @@
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><m>x = 7</m>; <m>y = 2</m></p>
+            <p>
+              <m>x = 7</m>; <m>y = 2</m>
+            </p>
           </statement>
           <feedback>
             <p>Yes! If you add 5 and 2, the total is 7. The total replaces the original value in <m>
-              x</m>, and the <m>y</m> value remains the same.</p>
+                x</m>, and the <m>y</m> value remains the same.</p>
           </feedback>
         </choice>
         <choice>
@@ -361,7 +374,9 @@
         </choice>
         <choice>
           <statement>
-            <p><m>x = 5</m>; <m>y = 2</m></p>
+            <p>
+              <m>x = 5</m>; <m>y = 2</m>
+            </p>
           </statement>
           <feedback>
             <p>The circuit has one <c>ADD</c> operation. The sum of <m>x</m> and <m>y</m> should
@@ -370,7 +385,9 @@
         </choice>
         <choice>
           <statement>
-            <p><m>x = 5</m>; <m>y = 7</m></p>
+            <p>
+              <m>x = 5</m>; <m>y = 7</m>
+            </p>
           </statement>
           <feedback>
             <p>Did you correctly store the calculated total in the Target?</p>
@@ -393,7 +410,9 @@
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><m>x = 9</m>; <m>y = 6</m></p>
+            <p>
+              <m>x = 9</m>; <m>y = 6</m>
+            </p>
           </statement>
           <feedback>
             <p>Yes! There is no change to the Target value, because the Control value is even.</p>
@@ -434,7 +453,7 @@
     </exercise>
 
     <p>Now, consider two starting variables, <m>x</m> and <m>y</m>. We will start with an input of <m>
-      x=5</m> and <m>y=3</m>. Consider the following sequence of operations:</p>
+        x=5</m> and <m>y=3</m>. Consider the following sequence of operations:</p>
     <ul>
       <li>
         <m>x = x + 1</m>
@@ -463,7 +482,9 @@
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <p><m>x = -5</m>; <m>y = 0</m></p>
+            <p>
+              <m>x = -5</m>; <m>y = 0</m>
+            </p>
           </statement>
           <feedback>
             <p>Yes! There are two operations applied to each input:</p>
@@ -478,7 +499,9 @@
         </choice>
         <choice>
           <statement>
-            <p><m>x = -5</m>; <m>y = 4</m></p>
+            <p>
+              <m>x = -5</m>; <m>y = 4</m>
+            </p>
           </statement>
           <feedback>
             <p>Not quite. Double check that you applied the correct operations.
@@ -487,7 +510,9 @@
         </choice>
         <choice>
           <statement>
-            <p><m>x = 0</m>; <m>y = 4</m></p>
+            <p>
+              <m>x = 0</m>; <m>y = 4</m>
+            </p>
           </statement>
           <feedback>
             <p>Not quite. Double check that you applied the correct operations.
@@ -496,7 +521,9 @@
         </choice>
         <choice>
           <statement>
-            <p><m>x = 5</m>; <m>y = 0</m></p>
+            <p>
+              <m>x = 5</m>; <m>y = 0</m>
+            </p>
           </statement>
           <feedback>
             <p>Not quite. Double check that you applied the correct operations.
@@ -505,7 +532,8 @@
         </choice>
       </choices>
       <hint>
-        <p>There are two operations applied to each input: <m>x</m> and <m>y</m></p>
+        <p>There are two operations applied to each input: <m>x</m> and <m>y</m>
+        </p>
         <ul>
           <li>For the <m>x</m>-input: Increment <m>x</m>, and then negate it.</li>
           <li>For the <m>y</m>-input: Decrement <m>y</m> two times.</li>
@@ -677,7 +705,7 @@
             <p>Yes! Start with <m>x = 6</m> and <m>y = 1</m>; the <c>ADD</c> operation stores the
               sum of <m>x</m> and <m>
                 y</m> in <m>x</m> (<m>y</m> remains unchanged); and finally the <c>CONTROLLED
-              INCREMENT</c> adds 1 to <m>x</m>, because the control is odd.</p>
+                INCREMENT</c> adds 1 to <m>x</m>, because the control is odd.</p>
           </feedback>
         </choice>
       </choices>
@@ -704,7 +732,7 @@
     </li>
     <li>
       <p>The left to right convention depicts the <em>order operations are applied, not physical
-        movement</em>.</p>
+          movement</em>.</p>
     </li>
     <li>
       <p>Multiple operations may be depicted in the same circuit.</p>
