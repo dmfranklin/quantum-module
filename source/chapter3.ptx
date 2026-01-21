@@ -5,8 +5,8 @@
 
   <introduction>
     <p>
-    In this chapter, we are going to learn about superposition, which introduces <i>probabilistic gates</i>. 
-    Specifically, we have the following learning goals:
+      In this chapter, we are going to learn about superposition, which introduces <term>probabilistic gates</term>.
+      Specifically, we have the following learning goals:
     </p>
     <ul>
       <li>What is going on with these probabilistic gates?</li>
@@ -16,9 +16,9 @@
     </ul>
   </introduction>
 
-<!-- include sections -->
-<xi:include href="lesson3_1.ptx" />
-<xi:include href="lesson3_2.ptx" />
-<xi:include href="lesson3_3.ptx" />
+  <!-- include sections -->
+  <xi:include href="lesson3_1.ptx" />
+  <xi:include href="lesson3_2.ptx" />
+  <xi:include href="lesson3_3.ptx" />
 
 </chapter>
