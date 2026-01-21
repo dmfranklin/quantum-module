@@ -5,13 +5,14 @@
 
   <introduction>
     <p>
-      In this chapter, we are going to use the circuit builder to learn some new quantum operations. 
+      In this chapter, we are going to use the circuit builder to learn some new quantum operations.
     </p>
     <p>
-      Specifically, we will use the circuit builder to learn about three operations that operate 
-      well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT.
+      Specifically, we will use the circuit builder to learn about three operations that operate
+      well on qubits in the simple states of <m>|0\rangle</m> and <m>|1\rangle</m>: <c>NOT</c>, <c>SWAP</c>, and <c>CNOT
+      </c>.
     </p>
-    <image source="NOT-SWAP-CNOT.png" width="60%"/>
+    <image source="NOT-SWAP-CNOT.png" width="60%" />
   </introduction>
 
 
