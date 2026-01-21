@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="lesson2_3" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Exploring the CNOT Gate</title>
+  <title>Exploring the <c>CNOT</c> Gate</title>
   <p>
-    Now we are going to use the same method to explore how the CNOT gate works. 
-    You will try all four input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>, 
-    <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship between 
-    inputs and outputs for the CNOT gate. 
+    Now we are going to use the same method to explore how the <c>CNOT</c> gate works.
+    You will try all four input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>,
+    <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship between
+    inputs and outputs for the <c>CNOT</c> gate.
   </p>
   <section xml:id="lesson2_3_1">
-    <title>Creating a CNOT gate</title>
-    <sidebyside widths="75% 25%" valign="top"> 
+    <title>Creating a <c>CNOT</c> gate</title>
+    <sidebyside widths="75% 25%" valign="top">
 
       <p>
-        To create a CNOT gate, you will need to:  
-        (1) Drag a spot (⬤) onto the top qubit,
-        (2) Drag a <em>NOT</em> gate tile onto the bottom qubit, aligning it vertically with the spot, 
-        (2) Click the number at the top of the column to select them as a group, and 
-        (3) Click the "C/S" button to connect the tiles. 
-        When you are finished, you should see a line connecting the two tiles, 
-        indicating that you have created a CNOT gate.
+        To create a <c>CNOT</c> gate, you will need to:
+      <ol>
+        <li>Drag a spot (⚫) onto the top qubit,</li>
+        <li>Drag a <em>NOT</em> gate tile onto the bottom qubit, aligning it vertically with the spot,</li>
+        <li>Click the number at the top of the column to select them as a group, and</li>
+        <li>Click the "C/S" button to connect the tiles.</li>
+      </ol>
+      When you are finished, you should see a line connecting the two tiles,
+      indicating that you have created a <c>CNOT</c> gate.
       </p>
-      <image source="CNOT.png" width="40%"/>
+      <image source="CNOT.png" width="40%" />
     </sidebyside>
-      
+
     <p>
-      Use the circuit builder below to make a CNOT gate.
+      Use the circuit builder below to make a <c>CNOT</c> gate.
     </p>
 
-  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
       <script>
         identicalCircuitWidget({
           circuit: "L2_3_2",
@@ -40,137 +43,197 @@
   </section>
 
   <section xml:id="lesson2_3_2">
-    <title>Exploring the CNOT Gate</title>
+    <title>Exploring the <c>CNOT</c> Gate</title>
     <p>
-      Now let's explore how the CNOT gate works using the same method that you used to explore 
-      the SWAP gate. Try all four input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>, 
-      <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship between inputs 
-      and outputs for the CNOT gate. 
+      Now let's explore how the <c>CNOT</c> gate works using the same method that you used to explore
+      the <c>SWAP</c> gate. Try all four input combinations (<m>|00\rangle</m>, <m>|01\rangle</m>,
+      <m>|10\rangle</m>, and <m>|11\rangle</m>) to determine the relationship between inputs
+      and outputs for the <c>CNOT</c> gate.
     </p>
-    <p>  
-      Place the spot (⬤) on the top qubit and the NOT on the bottom qubit.
+    <p>
+      Place the spot (⚫) on the top qubit and the <c>NOT</c> on the bottom qubit.
     </p>
-  
-  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-    <script>
-      visualizeProbabilitiesWidget({
-        circuit: "Blank 2x6",
-        allowedGates: "X*"
-      });
-    </script>
-  </interactive>
 
-  <exercise label="CNOT_truth_table">
-    <title>CNOT Truth Table</title>
-    <idx>CNOT_truth_table</idx>
-    <statement>
-        <p>
-        Select the picture that depicts the correct truth table for the CNOT gate. 
-        It should show the proper relationship between the four possible input and output 
-        combinations.
-        </p>
-    </statement>
-    <choices randomize="yes">
-      <choice correct="yes">
-        <statement>
-          <image source="CNOTgate.png" width="100%"/>
-        </statement>
-        <feedback><p>Yes! The target qubit, the bottom qubit, toggles if and only if the control, the top qubit, is <m>|1\rangle</m>.</p></feedback>
-      </choice>
-      <choice>
-        <statement>
-          <image source="CNOTgateWrong1.png" width="100%"/>
-        </statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
-      </choice>
-      <choice >
-        <statement>
-          <image source="CNOTgateWrong2.png" width="100%"/>
-        </statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
-      </choice>
-      <choice>
-        <statement>
-          <image source="CNOTgateWrong3.png" width="100%"/>
-        </statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p>
-        </feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p>Use the circuit builder above to make the circuit. 
-      The bar graph below the circuit can help you to determine the outputs for different inputs.</p>
-      <p>Try it with <m>|10\rangle</m> and <m>|11\rangle</m>. 
-      To do this, you need to use a NOT gates to change the input value <m>|0\rangle</m> to <m>|1\rangle</m>. 
-      Then, record the answers.</p>
-    </hint>
-  </exercise>
-  <p> 
-    Now that you have the full truth table for CNOT, you may want to write it on a page of 
-    notes or take a screenshot for future reference. In the following questions, you will be 
-    asked to calculate the results of circuits involving NOT, SWAP, and/or CNOT gates.
-  </p>
-    <exercise label="CNOT_Q1">
-      <title>CNOT Question #1</title>
-      <idx>cnot Q1</idx>
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        visualizeProbabilitiesWidget({
+          circuit: "Blank 2x6",
+          allowedGates: "X*"
+        });
+      </script>
+    </interactive>
+
+    <exercise label="CNOT_truth_table">
+      <title>
+        <c>CNOT</c> Truth Table
+      </title>
+      <idx>CNOT_truth_table</idx>
       <statement>
-          <p>What is the output of the following circuit?</p>
-          <image source="CNOT_Q1.png" width="66%"/>
+        <p>
+          Select the picture that depicts the correct truth table for the <c>CNOT</c> gate.
+          It should show the proper relationship between the four possible input and output
+          combinations.
+        </p>
       </statement>
-      <choices randomize="no">
-        <choice>
-          <statement><p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p></feedback>
-        </choice>
+      <choices randomize="yes">
         <choice correct="yes">
-          <statement><p><m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m></p></statement>
-          <feedback><p>Correct!</p>
+          <statement>
+            <image source="CNOTgate.png" width="100%" />
+          </statement>
+          <feedback>
+            <p>Yes! The target qubit, the bottom qubit, toggles if and only if the control, the top qubit, is <m>
+                |1\rangle</m>.</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|10\rangle</m> or <m>|</m>⬤◯<m>\rangle</m></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          <statement>
+            <image source="CNOTgateWrong1.png" width="100%" />
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|11\rangle</m> or <m>|</m>⬤⬤<m>\rangle</m></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          <statement>
+            <image source="CNOTgateWrong2.png" width="100%" />
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <image source="CNOTgateWrong3.png" width="100%" />
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
       </choices>
-      <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
+      <hint>
+        <p>Use the circuit builder above to make the circuit.
+          The bar graph below the circuit can help you to determine the outputs for different inputs.</p>
+        <p>Try it with <m>|10\rangle</m> and <m>|11\rangle</m>.
+          To do this, you need to use a <c>NOT</c> gates to change the input value <m>|0\rangle</m> to <m>|1\rangle</m>.
+          Then, record the answers.</p>
+      </hint>
+    </exercise>
+    <p>
+      Now that you have the full truth table for <c>CNOT</c>, you may want to write it on a page of
+      notes or take a screenshot for future reference. In the following questions, you will be
+      asked to calculate the results of circuits involving <c>NOT</c>, <c>SWAP</c>, and/or <c>CNOT</c> gates.
+    </p>
+    <exercise label="CNOT_Q1">
+      <title>
+        <c>CNOT</c> Question #1
+      </title>
+      <idx>cnot Q1</idx>
+      <statement>
+        <p>What is the output of the following circuit?</p>
+        <image source="CNOT_Q1.png" width="66%" />
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement>
+            <p>
+              <m>|00\rangle</m> or <m>|</m>⚪⚪<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>|01\rangle</m> or <m>|</m>⚪⚫<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|10\rangle</m> or <m>|</m>⚫⚪<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|11\rangle</m> or <m>|</m>⚫⚫<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Write down the circuit and write the state of each qubit after each gate.</p>
+      </hint>
     </exercise>
 
     <exercise label="CNOT_Q2">
-      <title>CNOT Question #2</title>
+      <title>
+        <c>CNOT</c> Question #2
+      </title>
       <idx>cnot Q2</idx>
       <statement>
         <p>What is the output of the following circuit?</p>
-        <image source="CNOT_Q2.png" width="66%"/>
+        <image source="CNOT_Q2.png" width="66%" />
       </statement>
       <choices randomize="no">
         <choice>
-          <statement><p><m>|00\rangle</m> or <m>|</m>◯◯<m>\rangle</m></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
-           </feedback>
-        </choice>
-        <choice>
-          <statement><p><m>|01\rangle</m> or <m>|</m>◯⬤<m>\rangle</m></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          <statement>
+            <p>
+              <m>|00\rangle</m> or <m>|</m>⚪⚪<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>|10\rangle</m> or <m>|</m>⬤◯<m>\rangle</m></p></statement>
-          <feedback><p>Make sure you hooked up your circuit correctly!</p>
+          <statement>
+            <p>
+              <m>|01\rangle</m> or <m>|</m>⚪⚫<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|10\rangle</m> or <m>|</m>⚫⚪<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Make sure you hooked up your circuit correctly!</p>
           </feedback>
         </choice>
         <choice correct="yes">
-          <statement><p><m>|11\rangle</m> or <m>|</m>⬤⬤<m>\rangle</m></p></statement>
-          <feedback><p>Correct!</p>
+          <statement>
+            <p>
+              <m>|11\rangle</m> or <m>|</m>⚫⚫<m>\rangle</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
           </feedback>
         </choice>
       </choices>
-      <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
+      <hint>
+        <p>Write down the circuit and write the state of each qubit after each gate.</p>
+      </hint>
     </exercise>
-    </section>
+  </section>
 </section>
