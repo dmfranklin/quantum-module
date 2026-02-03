@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="lesson3_1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Exploring Superposition with the <c>H</c> Gate</title>
+  <title>Superposition</title>
   <sidebyside widths="75% 25%" valign="top">
     <p>
       We now introduce a new gate: the Hadamard gate (also called the <c>H</c> gate).
@@ -15,8 +15,10 @@
     <p>
       We will use the circuit builder to learn more about superposition as we observe
       how the <c>H</c> gate operates. Use the circuit builder below to see what the <c>H</c> gate
-      does to a qubit that starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state.
+      does to a qubit that starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state. That is, 
+      make the following two circuits and observe the outputs:
     </p>
+<image source="H_Explore.png" width="45%" />
 
     <interactive aspect="9:9" platform="javascript"
       source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
@@ -63,161 +65,51 @@
       </hint>
     </exercise>
 
+<p> 
+The key point is that when a qubit is in <b>superposition</b>, it does not have a definite value of 0 or 1. In fact,
+it holds <i>both values simultaneously</i>
+Instead, it has probabilities of being measured as 0 or 1. The <c>H</c> gate creates this superposition by 
+transforming the basis states <m>\ket{0}</m> and <m>\ket{1}</m> into equal superpositions of both states.
+</p>
     <p>
       Now that you have observed the behavior of the <c>H</c> gate, you may want to write
       it on a page of notes or take a screenshot for future reference.
     </p>
   </section>
 
-  <section xml:id="sec-randomExpected">
-    <title>A Closer Look at the <c>H</c> Gate</title>
 
-    <sidebyside widths="75% 10% 15%" valign="top">
-      <p>
-        Let's explore what you observed: the <c>H</c> gate's output has an equal probability of
-        measuring 0 or 1. This means that it appears to act like a <em>random</em> gate—one that given an input of <m>
-          \ket{0}</m> or <m>\ket{1}</m> would yield a
-        random output.
-      </p>
-      <p></p>
-      <image source="L3.1.2-RandomGate.png" width="66%" />
-    </sidebyside>
 
+
+
+<section xml:id="superposition-analogies">
+  <title>Superposition Analogies</title>
+ 
+  <sidebyside widths="75% 25%" valign="top">
     <p>
-      Imagine a <em>random</em> gate that does exactly that, then answer the next question.
+      Optical illusions are a great example of being two things at once. In the image below, some people see
+      an old woman, and some see a young woman. The same person can see both images by shifting their perspective, 
+      but never both at the same time. 
     </p>
+    <image source="OldYoungWomanIllusion.png" width="66%" />
+  </sidebyside>
 
-    <exercise label="Expected_Random">
-      <title>Random Gate Expected Output</title>
-      <idx>randomExpected</idx>
-      <statement>
-        <p>What should the output be of the following circuit, assuming <c>R</c> is a <em>random</em> gate?</p>
-        <image source="L3.1.2-RandomGate-ExpectedOutput.png" width="66%" />
-      </statement>
-      <choices randomize="yes">
-        <choice correct="yes">
-          <statement>
-            <p>There is an equal chance of measuring 0 or 1.</p>
-          </statement>
-          <feedback>
-            <p>Yes!</p>
-          </feedback>
-        </choice>
-        <choice>
-          <statement>
-            <p>
-              <m>\ket{0}</m> or <m>\ket{</m>⚪<m>}</m>
-            </p>
-          </statement>
-          <feedback>
-            <p>There should be probabilities involved!</p>
-          </feedback>
-        </choice>
-        <choice>
-          <statement>
-            <p>
-              <m>\ket{1}</m> or <m>\ket{</m>⚫<m>}</m>
-            </p>
-          </statement>
-          <feedback>
-            <p>There should be probabilities involved!</p>
-          </feedback>
-        </choice>
-      </choices>
-      <hint>
-        <p>Think about what the output would be after each gate.</p>
-      </hint>
-    </exercise>
 
-    <p>
-      Now let's look at what happens with an <c>H</c> gate! Use the circuit builder to check
-      what happens when you start with <m>\ket{0}</m> or <m>\ket{1}</m> in a
-      circuit with two <c>H</c> gates.
-    </p>
+ <p>
+The phrase "wears many hats" is a good example of an analogy to superposition in our daily lives.
+I hold many roles - I am a professor, colleague, researcher, advisor, mother, sister, friend, etc. At 
+different times, even within the same day, I play different roles when I interact with different people.
+</p>
 
-    <interactive aspect="9:9" platform="javascript"
-      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
-        visualizeProbabilitiesWidget({
-          circuit: "Blank 1x6",
-          allowedGates: "XH"
-        });
-      </script>
-    </interactive>
+Jen: Make a new picture that is a single person, and they have different roles - professor, mother, friend, etc.
+Me in the middle, a picture with each person around me. The other person has their label as to what they are 
+compared to me (UG student, grad student, professor, mother, daughter, friend) and the arrow from me to them
+is labeled with what I am to them.
 
-    <exercise label="Two_H_gates">
-      <title>Behavior of Two <c>H</c> gates</title>
-      <idx>Two_H_gates</idx>
-      <statement>
-        <p>
-          Which answer best describes what you observed from the circuit with two <c>H</c> gates
-          when you start with an input of <m>\ket{0}</m> or <m>\ket{1}</m>?
-        </p>
-        <image source="Checkpoint3_1_2-Behavior-of-Two-H-gates.png" width="66%" />
-      </statement>
-      <choices randomize="yes">
-        <choice correct="yes">
-          <statement>
-            <p>There is no observable effect - the input and output values will be the same.</p>
-          </statement>
-          <feedback>
-            <p>Correct!</p>
-          </feedback>
-        </choice>
-        <choice correct="no">
-          <statement>
-            <p>There will be an equal chance of measuring 0 or 1 - the same as a single <c>H</c> gate.</p>
-          </statement>
-          <feedback>
-            <p>Hmmm.. Make sure you put two <c>H</c> gates right next to each other.</p>
-          </feedback>
-        </choice>
-        <choice correct="no">
-          <statement>
-            <p>The effect is the same as a <c>NOT</c> gate - the value is toggled.</p>
-          </statement>
-          <feedback>
-            <p>Hmmm.. Make sure you put the <c>H</c> gates right next to each other.</p>
-          </feedback>
-        </choice>
+<p>Both of these analogies have some similarities to quantum superposition - they hold multiple values, and 
+the value observed depends on the context of the observation. However, they are not perfect analogies. Over the 
+next two chapters, you will gain a much better understanding of the details of superposition in quantum systems.
+</p>
 
-      </choices>
-      <hint>
-        <p>Use a <c>NOT</c> gate to make the second input <m>\ket{1}</m>, then put two <c>H</c> gates on each wire.
-        </p>
-      </hint>
-    </exercise>
 
-    <p>By this point, I hope you have a few big questions on your mind:</p>
-    <ul>
-      <!--
-    <li>
-      How is it that there is a 50/50 probability of measuring 0 vs 1 after the first <c>H</c> gate,
-      yet a second <c>H</c> gate outputs the original value?
-    </li>
--->
-      <li>
-        If there is a 50/50 chance of measuring 0 or 1 after the first <c>H</c> gate,
-        then how is the original input value ALWAYS returned after the second <c>H</c> gate?
-      </li>
-      <li>
-        How is a 50/50 probability coming from an input of <m>\ket{0}</m> distinguished
-        from a 50/50 probability coming from an input of <m>\ket{1}</m>?
-      </li>
-      <!--
-    <li>
-      How is it that they are the same value after the first <c>H</c> gate (that is, 50/50 probability
-      of measuring 0 vs 1), yet the second gate makes them go back to their original value?
-    </li>
-    <li>
-      How can it distinguish between the 50/50 coming from 0 and the 50/50 coming from 1?
-    </li>
--->
-    </ul>
-    <p>
-      This means that our current model of <c>H</c> gate behavior is incomplete—there is some other
-      element of quantum state that we are not yet modeling! It is more complex and holds
-      more information than merely the probabilities of measuring 0 vs 1.
-    </p>
-  </section>
+</section>
 </section>

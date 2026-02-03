@@ -3,175 +3,185 @@
 
 
 <section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Randomness</title>
+
+Before delving into the behavior we observed from the H gate, we need to 
+clarify what we mean by "randomness" in the context of quantum mechanics.
+
+In everyday language, "random" often implies a lack of pattern or predictability. 
+We might use the word random in a few ways, with slightly different meanings:
+
+<p><b>That was such a random comment!</b> <i> I found that comment completely unexpected!</i></p>
+
+<p><b>The number was drawn at random!</b> <i> Each number was equally likely to be drawn!</i></p>
+
+<p><b>Quantum measurements have random outcomes!</b> <i> The specific outcome is  unpredictable</i>
+However, it does <b>not</b> mean that each outcome is equally likely. In quantum systems, we can 
+have different probabilities for different outcomes, and those probabilities can be known. Random
+merely specifies that the outcome of one specific measurement cannot be known - even if the 
+probabilities are 99.9999999% for the first and 0.0000001% for the other.</p>
 
 
-  <title>Phase</title>
-  <p>
-    <term>Phase</term> is an additional attribute that is relevant when a qubit is in superposition.
-    In the last section, you saw that if you have a circuit with two consecutive <c>H</c> gates,
-    then the qubit goes into a superposition state after the <em>first</em>
-    <c>H</c> gate, but then
-    it goes back to its original state after the <em>second</em>
-    <c>H</c> gate.
-    When in a superposition state, the two qubits have opposite phase.
-  </p>
-
-  <sidebyside widths="75% 25%" valign="top">
-    <p>
-      Now we are going to explore a gate that affects the phase of the qubit.
-      Use the following circuit to determine how the <c>Z</c> gate affects a qubit
-      that is in the state <m>\ket{0}</m> or <m>\ket{1}</m>.
-    </p>
-    <image source="L3.2-Z-gate.png" width="66%" />
-  </sidebyside>
 
 
-  <interactive aspect="9:9" platform="javascript"
-    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-    <script>
-      visualizeProbabilitiesWidget({
-        circuit: "Blank 1x6",
-        allowedGates: "XHZ"
-      });
-    </script>
-  </interactive>
+<section xml:id="sec-randomExpected">
+    <title><c>H</c> Gates vs Random Gate</title>
 
-  <!--MAKE IMAGES FOR THIS? -JEN -->
-  <exercise label="H_truth_table_lesson3_2">
-    <title>
-      <c>Z</c> Truth Table
-    </title>
-    <idx>Z_truth_table</idx>
-    <statement>
-      <p>Which answer best describes what you observed from the <c>Z</c> gate?
+    <sidebyside widths="75% 10% 15%" valign="top">
+      <p>
+        Let's explore what you observed: the <c>H</c> gate's output has an equal probability of
+        measuring 0 or 1. From only this information, you might make a few deductions:
+        <ul>
+          <li>
+          Given an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the outcome is entirely unpredictable.
+          </li><li>
+          It does not matter whether you input <m> \ket{0}</m> or <m>\ket{1}</m> - the end 
+          state is the same either way.
+          </li>   
+        </ul>
+
       </p>
-    </statement>
-    <choices randomize="yes">
-      <choice correct="yes">
-        <statement>
-          <p>It does not have an observable effect.</p>
-        </statement>
-        <feedback>
-          <p>Correct!</p>
-        </feedback>
-      </choice>
-      <choice correct="no">
-        <statement>
-          <p>If the input is <m>\ket{0}</m> or <m>\ket{1}</m>, the result will have an equal chance
-            of measuring 0 or 1.
-          </p>
-        </statement>
-        <feedback>
-          <p>Look more closely at the bar graphs of the output.</p>
-        </feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p>Make the circuit and look at the bar graph below the circuit.
-        Construct both input combinations using <c>NOT</c> gates, recording the answers
-        each time.</p>
-    </hint>
-  </exercise>
+      <p></p>
+      <image source="L3.1.2-RandomGate.png" width="66%" />
+    </sidebyside>
 
-  <p>
-    You might have been surprised by the answer! Because quantum state is more complex than merely
-    the probability of measuring 0 or 1, this method for determining and expressing an operation's
-    functionality is insufficient.
-  </p>
-  <p> Now, use the circuit builder above to create the following circuits and observe the outcomes.
-    This will reveal the functionality of the <c>Z</c> gate on a qubit in superposition.
-  </p>
-  <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="85%" />
-
-  <exercise label="Superposition Z">
-    <title>
-      <c>Z</c> Gate Behavior with Superposition
-    </title>
-    <idx>superpositionZ</idx>
-    <statement>
-      <p>What is the effect of the sequence <c>H</c>-<c>Z</c>-<c>H</c> on qubits beginning in <m>\ket{0}</m> or <m>
-          \ket{1}
-        </m>?</p>
-      <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="66%" />
-    </statement>
-    <choices randomize="yes">
-      <choice correct="no">
-        <statement>
-          <p>equal chance of measuring 0 or 1.</p>
-        </statement>
-        <feedback>
-          <p> </p>
-        </feedback>
-      </choice>
-      <choice>
-        <statement>
-          <p>No observable effect. </p>
-        </statement>
-        <feedback>
-          <p> </p>
-        </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement>
-          <p>The same as a <c>NOT</c> gate</p>
-        </statement>
-        <feedback>
-          <p>Correct!</p>
-        </feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p>Think about what the output would be after each gate.</p>
-    </hint>
-  </exercise>
-  <p>
-    Now we see that <c>Z</c> does have a major effect on the system, but <em>only</em> when the
-    qubit is in superposition.
-  </p>
-  <p>
-    We need a mathematical representation of phase that will allow us to perform operations
-    to calculate results. We will express phase as positive (+) or negative (-).
-    Starting with a qubit in the <m>\ket{0}</m> state results in positive (+) phase, and
-    starting in <m>\ket{1}</m> state results in negative (-) phase.
-  </p>
-  <p>
-    Likewise, if the qubit is already in the superposition 50/50 state, if it is in positive phase,
-    applying an <c>H</c> gate will result in <m>\ket{0}</m>. An <c>H</c> gate applied to a qubit in the
-    superposition 50/50 state in negative phase will result in <m>\ket{1}</m>.
-    The truth table for the <c>Z</c> gate is below. I suggest adding this to your page of notes.
-  </p>
-  <insert>
-    <p></p>
     <p>
-      ISN'T THIS LAST SET OF STATEMENTS ONLY TRUE - AFTER MEASUREMENT?
-      I thought applying a <c>Z</c> gate to a 50/50 w/ + phase would result in the <m>\ket{-}</m>
-      state and a 50/50 qubit w/ - phase would result in the <m>\ket{+}</m> state. -jen</p>
-  </insert>
+      Imagine a <em>random</em> gate that does exactly that, then answer the next question.
+    </p>
 
-  <p>
-    <insert>INSERT IMAGE OF THE <c>Z</c> GATE TRUTH TABLE </insert>
-  </p>
+    <exercise label="Expected_Random">
+      <title>Random Gate Expected Output</title>
+      <idx>randomExpected</idx>
+      <statement>
+        <p>What should the output be of the following circuit, assuming <c>R</c> is a <em>random</em> gate?</p>
+        <image source="L3.1.2-RandomGate-ExpectedOutput.png" width="66%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>There is an equal chance of measuring 0 or 1.</p>
+          </statement>
+          <feedback>
+            <p>Yes!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{0}</m> or <m>\ket{</m>⚪<m>}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>There should be probabilities involved!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{1}</m> or <m>\ket{</m>⚫<m>}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>There should be probabilities involved!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.</p>
+      </hint>
+    </exercise>
 
-  <p>
-    <insert>Did we decide on a representation for superposition states for this book? -jen</insert>
-  </p>
-  <image source="L3.2-Z-gate-truth-table.png" width="80%" />
+    <p>
+      Now let's look at what happens with an <c>H</c> gate! Use the circuit builder to check
+      what happens when you start with <m>\ket{0}</m> or <m>\ket{1}</m> in a
+      circuit with two <c>H</c> gates.
+    </p>
 
-  <p>
-    <insert>I made two versions of the truth table to choose from.
-      Let me know if you need me to fix anything or make new version. -jen</insert>
-  </p>
-  <image source="L3.2-Z-gate-truth-table-alternate.png" width="80%" />
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        visualizeProbabilitiesWidget({
+          circuit: "Blank 1x6",
+          allowedGates: "XH"
+        });
+      </script>
+    </interactive>
 
-  <p>
-    <insert>Insert two circuits for them to calculate the output. Don't do the entanglement gate - just
-      some interesting versions of <c>NOT</c>, <c>SWAP</c>, <c>H</c>, and <c>Z</c> to play with going to the 50/50 state
-      and
-      returning
-      to 0,1,
-      or the <c>Z</c> gate making it flip. -Diana</insert>
-  </p>
+    <exercise label="Two_H_gates">
+      <title>Behavior of Two <c>H</c> gates</title>
+      <idx>Two_H_gates</idx>
+      <statement>
+        <p>
+          Which answer best describes what you observed from the circuit with two <c>H</c> gates
+          when you start with an input of <m>\ket{0}</m> or <m>\ket{1}</m>?
+        </p>
+        <image source="Checkpoint3_1_2-Behavior-of-Two-H-gates.png" width="66%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>There is no observable effect - the input and output values will be the same.</p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>There will be an equal chance of measuring 0 or 1 - the same as a single <c>H</c> gate.</p>
+          </statement>
+          <feedback>
+            <p>Hmmm.. Make sure you put two <c>H</c> gates right next to each other.</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>The effect is the same as a <c>NOT</c> gate - the value is toggled.</p>
+          </statement>
+          <feedback>
+            <p>Hmmm.. Make sure you put the <c>H</c> gates right next to each other.</p>
+          </feedback>
+        </choice>
 
+      </choices>
+      <hint>
+        <p>Use a <c>NOT</c> gate to make the second input <m>\ket{1}</m>, then put two <c>H</c> gates on each wire.
+        </p>
+      </hint>
+    </exercise>
+
+    <p>By this point, I hope you have a few big questions on your mind:</p>
+    <ul>
+      <!--
+    <li>
+      How is it that there is a 50/50 probability of measuring 0 vs 1 after the first <c>H</c> gate,
+      yet a second <c>H</c> gate outputs the original value?
+    </li>
+-->
+      <li>
+        If there is a 50/50 chance of measuring 0 or 1 after the first <c>H</c> gate,
+        then how is the original input value ALWAYS returned after the second <c>H</c> gate?
+      </li>
+      <li>
+        How is a 50/50 probability coming from an input of <m>\ket{0}</m> distinguished
+        from a 50/50 probability coming from an input of <m>\ket{1}</m>?
+      </li>
+      <!--
+    <li>
+      How is it that they are the same value after the first <c>H</c> gate (that is, 50/50 probability
+      of measuring 0 vs 1), yet the second gate makes them go back to their original value?
+    </li>
+    <li>
+      How can it distinguish between the 50/50 coming from 0 and the 50/50 coming from 1?
+    </li>
+-->
+    </ul>
+    <p>
+      This means that our current model of <c>H</c> gate behavior is incomplete—there is some other
+      element of quantum state that we are not yet modeling! It is more complex and holds
+      more information than merely the probabilities of measuring 0 vs 1.
+    </p>
+  </section>
 
 
 </section>
