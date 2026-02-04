@@ -13,5 +13,6 @@
   <!-- include sections -->
   <xi:include href="lesson1_1.ptx" />
   <xi:include href="lesson1_2.ptx" />
+  <xi:include href="lesson1_3.ptx" />
 
 </chapter>

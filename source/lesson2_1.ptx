@@ -18,7 +18,7 @@
         Use the circuit builder below to make a <c>SWAP</c> gate.
         To create a <c>SWAP</c> gate, you will need to:
       <ol>
-        <li>Drag two <em>Swap</em> gate tiles onto the circuit, aligning them vertically.</li>
+        <li>Drag two <c>SWAP</c> gate tiles onto the circuit, aligning them vertically.</li>
         <li>Click the number at the top of the column to select them as a group.</li>
         <li>Click the "C/S" button to connect the tiles.</li>
       </ol>

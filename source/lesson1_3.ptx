@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="32" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Problem Set</title>
+<!--
+  <section xml:id="sec-hw1">
+    <title>Multiple Choice</title>
+-->
+    <exercise label="HW1-Q1"> 
+      <title>Question 1</title>
+      <idx>question 1</idx>
+      <statement>
+        <p>Select all of the TRUE statements about quantum circuits.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>The order of operations goes from left to right.</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>A quantum circuit may contain one or more operations.</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>A quantum circuit depicts the physical movement of a qubit.</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Each quantum operation has one input and one output.</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW1-Q2">
+      <title>Question 2</title>
+      <idx>question 2</idx>
+      <statement>
+        <p>What is the output of this circuit?</p>
+        <image source="HW1_Q2.png" width="66%" />
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>⚪ <m>\ket{0}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>⚫ <m>\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW1-Q3">
+      <title>Question 3</title>
+      <idx>question 3</idx>
+      <statement>
+        <p>What is the output of this circuit?</p>
+        <image source="HW1_Q3.png" width="66%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>x = 4 and y = -2</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>x = 4 and y = -1</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>x = 5 and y = 3</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>x = 6 and y = 0</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW1-Q4">
+      <title>Question 4</title>
+      <idx>question 4</idx>
+      <statement>
+        <p>Pick the circuit that has the correct end state given the start state.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <image source="HW1_Q4a.png" width="75%" />
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <image source="HW1_Q4b.png" width="75%" />
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <image source="HW1_Q4c.png" width="75%" />
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <image source="HW1_Q4d.png" width="75%" />
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW1-Q5">
+      <title>Question 5</title>
+      <idx>question 5</idx>
+      <statement>
+        <p>What is the output of this circuit?</p>
+        <image source="HW1_Q5.png" width="66%" />
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>x = ⚪ <m>\ket{0}</m>  and  y = ⚫ <m>\ket{1}</m></p></statement>
+        </choice>
+        <choice>
+          <statement><p>x = ⚫ <m>\ket{1}</m>  and  y = ⚪ <m>\ket{0}</m></p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>x = ⚪ <m>\ket{0}</m>  and  y = ⚪ <m>\ket{0}</m></p></statement>
+        </choice>
+        <choice>
+          <statement><p>x = ⚫ <m>\ket{1}</m>  and  y = ⚫ <m>\ket{1}</m></p></statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW1-Q6">
+      <title>Question 6</title>
+      <idx>question 6</idx>
+      <statement>
+        <p>Quantum operations harness quantum properties to have outputs 
+        that are not possible with classical computers.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement><p>True</p></statement>
+        </choice>
+        <choice>
+          <statement><p>False</p></statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise>
+      <title>Question 7</title>
+      <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+        <script>
+          identicalCircuitWidget({
+            circuit: "L1_3_HW7",
+            instantFeedback: false,
+            allowedGates: "XZH"
+          });
+        </script>
+      </interactive>
+    </exercise>
+
+    <exercise>
+      <title>Question 8</title>
+      <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+        <script>
+          equivalentCircuitWidget({
+            circuit: "L1_3_HW8",
+            instantFeedback: false,
+            allowedGates: "X"
+          });
+        </script>
+      </interactive>
+    </exercise>
+
+</section>
