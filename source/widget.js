@@ -570,23 +570,14 @@ circuit.x(0, 1); // applies a CNOT to qubits 0 and 1`
 };
 
 /**
- * processCircuitInput:
- *   Normalizes a "circuit" parameter which may be either:
- *   - A string key referring to a predefined circuit from circuits.js
- *   - A Q.Circuit object or circuit data directly accepted by Q constructor
+ * updateCircuitInputs:
+ *   Given a circuit and an inputs parameter, updates the circuit's qubits' starting state to the
+ *   given inputs. As of now, there is no clean way to initialize a Q.js circuit with the qubit
+ *   input state.
  *
- * After resolution, it ensures the circuit is evaluated before returning.
- *
- * inputs:    string, sets all qubit inputs to the given value
+ * Note: does NOT re-evaluate before returning.
  */
-const processCircuitInput = (circuit, inputs = "0") => {
-  if (typeof circuit === "string") {
-    if (circuits.has(circuit)) {
-      circuit = circuits.get(circuit); // Look up from circuits.js Map
-    }
-    circuit = Q(circuit); // Convert raw data to a Q.Circuit object
-  }
-
+const updateCircuitInputs = (circuit, inputs = "0") => {
   const strToQubit = (s) => {
     // Set all qubits to initialize to inputs
     switch (s) {
@@ -601,13 +592,35 @@ const processCircuitInput = (circuit, inputs = "0") => {
     }
   }
 
-  // At this point the circuit is a Q.Circuit. So we can update the initial qubits before we
-  // evaluate$().
   if (typeof inputs === "string") {
     circuit.qubits = circuit.qubits.map((_, i) => strToQubit(inputs.length === 1 ? inputs[0] : i < inputs.length ? inputs[i] : "0"));
   }
+};
 
-  circuit.evaluate$(); // Pre-compute outputState for grading/visualization
+/**
+ * normalizeCircuit:
+ *   Normalizes a "circuit" parameter which may be either:
+ *   - A string key referring to a predefined circuit from circuits.js
+ *   - A Q.Circuit object or circuit data directly accepted by Q constructor
+ *
+ *   After normalizing the circuit, this function updates the circuit inputs to match the specified
+ *   inputs. The circuit is evaluated before being returned.
+ *
+ * @returns a Q.js circuit
+ */
+const normalizeCircuit = (circuit, inputs = "0") => {
+  if (typeof circuit === "string") {
+    if (circuits.has(circuit)) {
+      circuit = circuits.get(circuit); // Look up from circuits.js Map
+    }
+    circuit = Q(circuit); // Convert raw data to a Q.Circuit object
+  }
+
+  // Update the inputs to match what's requested
+  updateCircuitInputs(circuit, inputs)
+
+  // Pre-compute outputState for grading/visualization
+  circuit.evaluate$();
   return circuit;
 };
 
@@ -650,9 +663,13 @@ const createStudentEditor = ({
   code = false,
   previousState,
 }) => {
-  // If keepGates=false, create an empty circuit of same dimensions; else clone the original circuit
+  // If keepGates=false, create an empty circuit of same dimensions; else if we have previous state,
+  // create a circuit from that state; else clone the original circuit
+  const studentCircuit = keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth);
+  updateCircuitInputs(studentCircuit, inputs);
+
   const circuitEditor = createCircuitEditor(
-    keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth),
+    studentCircuit,
     !code,
     inputs
   );
@@ -666,7 +683,8 @@ const createStudentEditor = ({
 
 /**
  * Fetches the saved state for this widget from the Runestone database.
- * @returns circuit in string form, else undefined
+ *
+ * @returns circuit in string form if progress was saved, else undefined
  */
 const getSavedCircuitState = async () => {
   try {
@@ -704,7 +722,7 @@ const identicalCircuitWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
 }) => {
-  circuit = processCircuitInput(circuit); // ensure evaluated circuit
+  circuit = normalizeCircuit(circuit); // ensure evaluated circuit
 
   const previousState = await getSavedCircuitState();
 
@@ -784,7 +802,7 @@ const equivalentCircuitWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
 }) => {
-  circuit = processCircuitInput(circuit);
+  circuit = normalizeCircuit(circuit);
 
   const previousState = await getSavedCircuitState();
 
@@ -850,7 +868,7 @@ const matchOutputWidget = async ({
   code = false,
   inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit, inputs);
+  circuit = normalizeCircuit(circuit, inputs);
 
   const previousState = await getSavedCircuitState();
 
@@ -860,7 +878,7 @@ const matchOutputWidget = async ({
   const goalCircuitEditor = createCircuitEditor(
     circuit,
     false,
-    inputs
+    inputs,
   );
 
   const topInstructions = document.createElement("div");
@@ -916,7 +934,7 @@ const specificOutputWidget = async ({
   code = false,
   inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit, inputs);
+  circuit = normalizeCircuit(circuit, inputs);
 
   const previousState = await getSavedCircuitState();
 
@@ -984,7 +1002,7 @@ const visualizeProbabilitiesWidget = ({
   code = false,
   inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit, inputs);
+  circuit = normalizeCircuit(circuit, inputs);
 
   const widget = document.createElement("div");
   widget.className = "widget";
