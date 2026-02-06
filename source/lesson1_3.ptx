@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="32" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="lesson1_3" xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <title>Problem Set</title>
   <!--
@@ -181,9 +181,9 @@
           source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
           <script>
             identicalCircuitWidget({
-              circuit: "L1_3_HW7",
-              instantFeedback: false,
-              allowedGates: "XZH"
+            circuit: "L1_3_HW7",
+            instantFeedback: false,
+            allowedGates: "XZH"
             });
           </script>
         </interactive>
@@ -204,9 +204,9 @@
           source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
           <script>
             equivalentCircuitWidget({
-              circuit: "L1_3_HW8",
-              instantFeedback: false,
-              allowedGates: "X"
+            circuit: "L1_3_HW8",
+            instantFeedback: false,
+            allowedGates: "X"
             });
           </script>
         </interactive>
