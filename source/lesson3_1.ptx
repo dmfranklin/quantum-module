@@ -67,9 +67,9 @@
 
 <p> 
 The key point is that when a qubit is in <b>superposition</b>, it does not have a definite value of 0 or 1. In fact,
-it holds <i>both values simultaneously</i>
-Instead, it has probabilities of being measured as 0 or 1. The <c>H</c> gate creates this superposition by 
-transforming the basis states <m>\ket{0}</m> and <m>\ket{1}</m> into equal superpositions of both states.
+it holds <i>both values simultaneously.</i>
+In addition, it has probabilities of being measured as 0 or 1. The <c>H</c> gate creates this superposition by 
+transforming the "basis" states <m>\ket{0}</m> and <m>\ket{1}</m> into equal superpositions of both states.
 </p>
     <p>
       Now that you have observed the behavior of the <c>H</c> gate, you may want to write
@@ -96,8 +96,9 @@ transforming the basis states <m>\ket{0}</m> and <m>\ket{1}</m> into equal super
 
  <p>
 The phrase "wears many hats" is a good example of an analogy to superposition in our daily lives.
-I hold many roles - I am a professor, colleague, researcher, advisor, mother, sister, friend, etc. At 
-different times, even within the same day, I play different roles when I interact with different people.
+I hold many roles - I am a professor, colleague, researcher, advisor, mother, sister, friend, musician, etc. At 
+different times, even within the same day, I play different roles when I interact with different people. However,
+I am also simultaneously all of those things.
 </p>
 
 Jen: Make a new picture that is a single person, and they have different roles - professor, mother, friend, etc.
@@ -110,6 +111,91 @@ the value observed depends on the context of the observation. However, they are 
 next two chapters, you will gain a much better understanding of the details of superposition in quantum systems.
 </p>
 
+</section>
+
+
+<section xml:id="superposition-onebit-visual-rep">
+  <title>Superposition Details</title>
+
+<p> Before exploring superposition and the H gate further, we need to understand how to represent a 
+state that is in superposition (and therefore has a probability of being measured as 0 or 1). We will start with the visual representation, 
+and then in a later chapter, we will explore the mathematical representation.
+</p>
+ <sidebyside widths="75% 25%" valign="top">
+    <p>
+      First, it is important to understand that the 50/50 outcome of the H gate (when starting with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state)
+       is not the only possible superposition state. A qubit can be in a superposition state with any probabilities of measuring 0 or 1, 
+       as long as the probabilities add up to 100%. For example, a qubit could be in a superposition state where there is a 75% chance of 
+       measuring 0 and a 25% chance of measuring 1, or vice versa.
+
+    </p>
+    <image source="Any_prob_gate.png" width="66%" />
+  </sidebyside>
+
+  <p> So, how do we represent the state of a qubit that is in superposition? The interactive circuit widget uses a bar graph to visually represent the 
+  probabilities of measuring 0 or 1. In order to more easily perform operations, we will represent the state as shown in the image below.
+  <ul><li>
+  There is a line in between each possible outcome.
+  </li><li>
+  The number of instances of the same color represents the probability of that outcome. For example, in the left image below, there is one white and one 
+  black ball, so there is an equal probability of measuring 0 or 1. In the right image, there are three black and one white ball, so there is a 
+  75% chance of measuring 1 (black) and a 25% chance of measuring 0 (white).
+  </li></ul>
+  <image source="VisualSuperposition.png" width="66%" />
+  </p>
+
+<exercise label="Visual_rep_superposition_lesson3_1">
+      <title>Superposition Visual Representation</title>
+      <idx>Visual_superposition_rep</idx>
+      <statement>
+        <p>Select the statement that states the probability of measuring <m>\ket{0}</m> (white)  
+        in the following visual representation.</p>
+        <image source="Visual_rep_75_white.png" width="10%" />
+
+      </statement>
+      <choices randomize="no">
+        <choice correct="no">
+          <statement>
+            <p>0%</p>
+            
+          </statement>
+          <feedback>
+            <p>There are white balls in the state, so it can't be 0%.</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>25%</p>
+          </statement>
+          <feedback>
+            <p>There are more white balls than black balls in the visual representation, 
+            so the probability of measuring 0 (white) is greater than 50%.</p>
+          </feedback>
+        </choice>
+                <choice correct="yes">
+          <statement>
+            <p>75%</p>
+          </statement>
+          <feedback>
+            <p>Yes! There are 3 white balls and 1 black ball, so 3/4 are white, 
+            so the probability of measuring 0 (white) is 75%.</p>
+          </feedback>
+        </choice>
+                <choice correct="no">
+          <statement>
+            <p>100%</p>
+          </statement>
+          <feedback>
+            <p>There are black balls in the state, so the probability of measuring black is non-zero, 
+            therefore the probability of measuring white cannot be 100%.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Look at the ratio of white balls to black balls in the visual representation.</p>
+      </hint>
+    </exercise>
 
 </section>
+
 </section>

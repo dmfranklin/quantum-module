@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson4_1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Exploring Measurement</title>
+
+<sidebyside widths="75% 25%" valign="top">
+    <p>
+     You might be thinking that we should have been able to easily tell the 
+    difference between the random gate and the H gate by performing more 
+    precise measurement after an H gate. That is, instead of just checking for 
+    <m>\ket{0}</m> or <m>\ket{1}</m>, let's measure the probability and phase at the 
+    same time! 
+    </p>
+    <image source="H_Explore.png" width="66%" />
+  </sidebyside>
+
+<p> To better understand the situation, let's explore measurement in your daily life.</p>
+
+<p> Measurement consists of a <insert>question</insert>, <insert>device</insert>, and <insert>method</insert>.</p>
+
+<sidebyside widths="75% 25%" valign="top">
+    <p>
+     Consider measuring the length of a table.  
+     <ul><li><b>Question:</b> How long is the table?</li>
+     <li><b>Device:</b> A tape measure</li>
+        <li><b>Method:</b> Place the tape measure along the length of the table and read the value.</li></ul>
+    </p>
+    <image source="Measure_table.png" width="66%" />
+  </sidebyside>
+
+<p> This is a very straightforward measurement. The question is clear, the device is designed for this specific measurement, 
+and the method is simple. Quantum processes are much more difficult to measure. </p>
+
+<p><insert> Let's insert a question or two here having students identify the question, device, and method for a measurement scenario.
+You can grab from the zines for fun examples. </insert></p>
+
+
+
+</section>
+

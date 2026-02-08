@@ -5,21 +5,24 @@
 <section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Randomness</title>
 
-Before delving into the behavior we observed from the H gate, we need to 
+<p>Before delving into the behavior we observed from the H gate, we need to 
 clarify what we mean by "randomness" in the context of quantum mechanics.
-
+</p>
+<p>
 In everyday language, "random" often implies a lack of pattern or predictability. 
 We might use the word random in a few ways, with slightly different meanings:
-
-<p><b>That was such a random comment!</b> <i> I found that comment completely unexpected!</i></p>
-
-<p><b>The number was drawn at random!</b> <i> Each number was equally likely to be drawn!</i></p>
-
-<p><b>Quantum measurements have random outcomes!</b> <i> The specific outcome is  unpredictable</i>
+</p>
+<p>
+<ul><li><b>That was such a random comment!</b> <i> I found that comment completely unexpected!</i></li>
+<li><b>The number was drawn at random!</b> <i> Each number was equally likely to be drawn!</i></li>
+<li><b>Quantum measurements have random outcomes!</b> <i> The specific outcome is  unpredictable</i>
 However, it does <b>not</b> mean that each outcome is equally likely. In quantum systems, we can 
 have different probabilities for different outcomes, and those probabilities can be known. Random
 merely specifies that the outcome of one specific measurement cannot be known - even if the 
-probabilities are 99.9999999% for the first and 0.0000001% for the other.</p>
+probabilities are 99.9999999% for the first and 0.0000001% for the other.
+</li></ul>
+</p>  
+
 
 
 

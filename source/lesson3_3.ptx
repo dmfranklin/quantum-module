@@ -15,13 +15,41 @@
     When in a superposition state, the two qubits have opposite phase.
   </p>
 
+ <sidebyside widths="75% 25%" valign="top">
+    <p>
+      Phase is indicated with a positive or negative sign.   
+      If the state <m>\ket{0}</m> goes through an H gate, it has positive phase.
+      If the state <m>\ket{1}</m> goes through an H gate, on the other hand, it has negative phase. 
+      The <c>H</c> gate creates this superposition by transforming the "basis" states <m>\ket{0}</m> and <m>\ket{1}</m> 
+      into equal superpositions of both states, but with opposite phase. We depict this by placing a negative sign in 
+      front of the black ball (or <m>\ket{1}</m> state).
+    </p>
+    <image source="NegativePhase.png" width="66%" />
+  </sidebyside>
+  <p> Why were positive and negative signs used to indicate phase? It turns out that to calculate the effect of different
+  gates, or operations, using the positive and negative signs with existing algebraic rules results in the same answers
+  that physicists observe in the real world. Since you already know algebra, then you don't have to learn a whole new set of 
+  mathematical operations and symbols to be able to calculate the behavior of quantum systems.  </p>
+
+<p> Now that we have a visual representation of phase, we can have a more complete picture of what the <c>H</c> gate does to a qubit. 
+The <c>H</c> gate creates a superposition of the input state, but it also creates a difference in phase between the two states. 
+This is why the second <c>H</c> gate can reverse the effect of the first <c>H</c> gate - because it flips the phase back to its original state.
+</p>
+<p>
+<image source="Z_Explore_2.png" width="66%" />
+</p>
+
+<section xml:id="sec-z-gate">
+    <title><c>Z</c> Gate</title>
+
   <sidebyside widths="75% 25%" valign="top">
     <p>
       Now we are going to explore a gate that affects the phase of the qubit.
       Use the following circuit to determine how the <c>Z</c> gate affects a qubit
-      that is in the state <m>\ket{0}</m> or <m>\ket{1}</m>.
+      that is in the state <m>\ket{0}</m> or <m>\ket{1}</m>. Construct the following two circuits and observe the outputs.
+      Remember that to create an input of <m>\ket{1}</m>, you will need to use a <c>NOT</c> gate.
     </p>
-    <image source="L3.2-Z-gate.png" width="66%" />
+    <image source="Z_Explore.png" width="66%" />
   </sidebyside>
 
 
@@ -125,42 +153,21 @@
   </exercise>
   <p>
     Now we see that <c>Z</c> does have a major effect on the system, but <em>only</em> when the
-    qubit is in superposition.
+    qubit is in superposition.  The truth table for the <c>Z</c> gate is below. I suggest adding this to your page of notes.
+     </p><p>
+     <image source="L3.2-Z-gate-truth-table.png" width="25%" />
   </p>
-  <p>
-    We need a mathematical representation of phase that will allow us to perform operations
-    to calculate results. We will express phase as positive (+) or negative (-).
-    Starting with a qubit in the <m>\ket{0}</m> state results in positive (+) phase, and
-    starting in <m>\ket{1}</m> state results in negative (-) phase.
-  </p>
-  <p>
-    Likewise, if the qubit is already in the superposition 50/50 state, if it is in positive phase,
-    applying an <c>H</c> gate will result in <m>\ket{0}</m>. An <c>H</c> gate applied to a qubit in the
-    superposition 50/50 state in negative phase will result in <m>\ket{1}</m>.
-    The truth table for the <c>Z</c> gate is below. I suggest adding this to your page of notes.
-  </p>
-  <insert>
-    <p></p>
-    <p>
-      ISN'T THIS LAST SET OF STATEMENTS ONLY TRUE - AFTER MEASUREMENT?
-      I thought applying a <c>Z</c> gate to a 50/50 w/ + phase would result in the <m>\ket{-}</m>
-      state and a 50/50 qubit w/ - phase would result in the <m>\ket{+}</m> state. -jen</p>
-  </insert>
+ <p> This truth table does not seem right - you already observed that there is no observable effect
+ when a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state. So why is the truth table
+ expressed this way? We have to remember that the truth table is describing the effect of the Z gate on the full quantum state,
+ including phase, not just the measurement outcomes. When a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state,
+ there is no change in phase, so the effect is not observable. However, when a Z gate is applied to a qubit in superposition, 
+ it flips the phase of the states, and the negative sign is always applied to the probability of the <m>\ket{1}</m> state.
+ </p><p>
+ <image source="Z_Gate_Effect_1.png" width="75%" />
+ </p>
 
-  <p>
-    <insert>INSERT IMAGE OF THE <c>Z</c> GATE TRUTH TABLE </insert>
-  </p>
 
-  <p>
-    <insert>Did we decide on a representation for superposition states for this book? -jen</insert>
-  </p>
-  <image source="L3.2-Z-gate-truth-table.png" width="80%" />
-
-  <p>
-    <insert>I made two versions of the truth table to choose from.
-      Let me know if you need me to fix anything or make new version. -jen</insert>
-  </p>
-  <image source="L3.2-Z-gate-truth-table-alternate.png" width="80%" />
 
   <p>
     <insert>Insert two circuits for them to calculate the output. Don't do the entanglement gate - just
@@ -170,6 +177,8 @@
       to 0,1,
       or the <c>Z</c> gate making it flip. -Diana</insert>
   </p>
+
+</section>
 
 
 </section>
