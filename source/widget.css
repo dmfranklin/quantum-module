@@ -1,27 +1,34 @@
 /* Styles for the main widget container, including instructions and feedback text */
 .widget {
+
   .instructions,
   .feedback {
     font-size: 1.2em;
     font-weight: bold;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem .5rem 2rem .5rem;
     color: var(--primary-color);
   }
 
   /* Grader area: controls visibility of feedback and "Check work" button */
   .grader {
+    margin: 0 .5rem;
+
     &.dirty .feedback {
       display: none;
     }
+
     &:not(.dirty) .check-work {
       display: none;
     }
+
     .feedback.correct {
       color: #4caf50;
     }
+
     .feedback.wrong {
       color: #f44336;
     }
+
     .check-work {
       margin-bottom: 1.5rem;
       padding: 0.5rem 1rem;

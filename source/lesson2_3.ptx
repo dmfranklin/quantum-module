@@ -16,7 +16,7 @@
         To create a <c>CNOT</c> gate, you will need to:
       <ol>
         <li>Drag a spot (⚫) onto the top qubit,</li>
-        <li>Drag a <em>NOT</em> gate tile onto the bottom qubit, aligning it vertically with the spot,</li>
+        <li>Drag a <c>NOT</c> gate tile onto the bottom qubit, aligning it vertically with the spot,</li>
         <li>Click the number at the top of the column to select them as a group, and</li>
         <li>Click the "C/S" button to connect the tiles.</li>
       </ol>

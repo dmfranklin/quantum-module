@@ -297,14 +297,14 @@ Object.entries(Q.Gate.constants).forEach(function (entry) {
  *
  * circuit:         a Q.Circuit instance
  * editable:        boolean, whether students can modify the circuit
- * arbitraryInputs: boolean, if true, assign Greek letters |α⟩, |β⟩, ... to inputs; else use |0⟩
+ * inputs:          string, if provided, then sets qubit starting values; else assign Greek letters |α⟩, |β⟩, ... to inputs
  *
  * Returns: the <div> element containing the rendered circuit editor.
  */
 const createCircuitEditor = (
   circuit,
   editable = true,
-  arbitraryInputs = true
+  inputs = undefined,
 ) => {
   const editor = document.createElement("div");
   // Render the circuit into this <div>, giving it an HTML id="circuit"
@@ -321,16 +321,16 @@ const createCircuitEditor = (
 
   // Assign initial input states to each qubit header
   const circuitInputs = editor.querySelectorAll(".Q-circuit-input");
-  if (arbitraryInputs) {
+  if (inputs && typeof inputs === "string") {
+    // Setup inputs
+    circuitInputs.forEach((input, i) => {
+      input.textContent = `|${inputs.length > 1 ? inputs[i] : inputs[0]}⟩`;
+    });
+  } else {
     // Use Greek letters α, β, γ, ... for each qubit input label
     const greekAlphabet = "αβγδεζηθικλμνξοπρστυφχψω";
     circuitInputs.forEach((input, i) => {
       input.textContent = `|${greekAlphabet[i]}⟩`;
-    });
-  } else {
-    // Default all inputs to |0⟩
-    circuitInputs.forEach((input) => {
-      input.textContent = "|0⟩";
     });
   }
 
@@ -570,21 +570,57 @@ circuit.x(0, 1); // applies a CNOT to qubits 0 and 1`
 };
 
 /**
- * processCircuitInput:
+ * updateCircuitInputs:
+ *   Given a circuit and an inputs parameter, updates the circuit's qubits' starting state to the
+ *   given inputs. As of now, there is no clean way to initialize a Q.js circuit with the qubit
+ *   input state.
+ *
+ * Note: does NOT re-evaluate before returning.
+ */
+const updateCircuitInputs = (circuit, inputs = "0") => {
+  const strToQubit = (s) => {
+    // Set all qubits to initialize to inputs
+    switch (s) {
+      case "1":
+        return Q.Qubit.VERTICAL;
+      case "+":
+        return Q.Qubit.DIAGONAL;
+      case "-":
+        return Q.Qubit.ANTI_DIAGONAL;
+      default:
+        return Q.Qubit.HORIZONTAL;
+    }
+  }
+
+  if (typeof inputs === "string") {
+    circuit.qubits = circuit.qubits.map((_, i) => strToQubit(inputs.length === 1 ? inputs[0] : i < inputs.length ? inputs[i] : "0"));
+  }
+};
+
+/**
+ * normalizeCircuit:
  *   Normalizes a "circuit" parameter which may be either:
  *   - A string key referring to a predefined circuit from circuits.js
  *   - A Q.Circuit object or circuit data directly accepted by Q constructor
  *
- * After resolution, it ensures the circuit is evaluated before returning.
+ *   After normalizing the circuit, this function updates the circuit inputs to match the specified
+ *   inputs. The circuit is evaluated before being returned.
+ *
+ * @returns a Q.js circuit
  */
-const processCircuitInput = (circuit) => {
+const normalizeCircuit = (circuit, inputs = "0") => {
   if (typeof circuit === "string") {
     if (circuits.has(circuit)) {
       circuit = circuits.get(circuit); // Look up from circuits.js Map
     }
     circuit = Q(circuit); // Convert raw data to a Q.Circuit object
   }
-  circuit.evaluate$(); // Pre-compute outputState for grading/visualization
+
+  // Update the inputs to match what's requested
+  updateCircuitInputs(circuit, inputs)
+
+  // Pre-compute outputState for grading/visualization
+  circuit.evaluate$();
   return circuit;
 };
 
@@ -613,7 +649,7 @@ const finalizeWidget = (widget) => {
  * widget:          <div> container for the entire widget
  * circuit:         Q.Circuit instance (goal or initial circuit)
  * keepGates:       boolean; if false, start student circuit as blank; if true, copy goal gates
- * arbitraryInputs: boolean for initial qubit labels
+ * inputs:          string; if undefined, arbitrary inputs, else initial qubit states
  * allowedGates:    string of gate symbols for filtering palette
  * code:            boolean; if true, use code editor instead of visual palette
  * previousState:   string; if present, start student circuit with this state. keepGates takes precedence
@@ -622,16 +658,20 @@ const createStudentEditor = ({
   widget,
   circuit,
   keepGates = false,
-  arbitraryInputs,
+  inputs = undefined,
   allowedGates = defaultGateSymbols,
   code = false,
   previousState,
 }) => {
-  // If keepGates=false, create an empty circuit of same dimensions; else clone the original circuit
+  // If keepGates=false, create an empty circuit of same dimensions; else if we have previous state,
+  // create a circuit from that state; else clone the original circuit
+  const studentCircuit = keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth);
+  updateCircuitInputs(studentCircuit, inputs);
+
   const circuitEditor = createCircuitEditor(
-    keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth),
+    studentCircuit,
     !code,
-    arbitraryInputs
+    inputs
   );
   // Append either code editor or palette for gate entry
   widget.append(
@@ -643,7 +683,8 @@ const createStudentEditor = ({
 
 /**
  * Fetches the saved state for this widget from the Runestone database.
- * @returns circuit in string form, else undefined
+ *
+ * @returns circuit in string form if progress was saved, else undefined
  */
 const getSavedCircuitState = async () => {
   try {
@@ -659,7 +700,7 @@ const getSavedCircuitState = async () => {
   }
 }
 
-// MARK: - widget creation functions
+// MARK: - exercise-style widget creation functions
 
 /**
  * identicalCircuitWidget:
@@ -681,8 +722,7 @@ const identicalCircuitWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
 }) => {
-  circuit = processCircuitInput(circuit); // ensure evaluated circuit
-  const arbitraryInputs = true; // use Greek letters for input state labels
+  circuit = normalizeCircuit(circuit); // ensure evaluated circuit
 
   const previousState = await getSavedCircuitState();
 
@@ -697,8 +737,7 @@ const identicalCircuitWidget = async ({
   // Render the goalCircuitEditor as read-only
   const goalCircuitEditor = createCircuitEditor(
     circuit,
-    false,
-    arbitraryInputs
+    false
   );
 
   // "Create the exact same circuit below:" instructions
@@ -712,7 +751,6 @@ const identicalCircuitWidget = async ({
   const studentCircuitEditor = createStudentEditor({
     widget,
     circuit,
-    arbitraryInputs,
     allowedGates,
     code,
     previousState,
@@ -764,8 +802,7 @@ const equivalentCircuitWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = true;
+  circuit = normalizeCircuit(circuit);
 
   const previousState = await getSavedCircuitState();
 
@@ -779,7 +816,6 @@ const equivalentCircuitWidget = async ({
   const goalCircuitEditor = createCircuitEditor(
     circuit,
     false,
-    arbitraryInputs
   );
 
   const middleInstructions = document.createElement("div");
@@ -792,7 +828,6 @@ const equivalentCircuitWidget = async ({
   const studentCircuitEditor = createStudentEditor({
     widget,
     circuit,
-    arbitraryInputs,
     allowedGates,
     code,
     previousState
@@ -821,8 +856,8 @@ const equivalentCircuitWidget = async ({
 /**
  * matchOutputWidget:
  *   Given a goal circuit and its input state, ask students to reproduce the
- *   same output state with fewer gates. The goalCircuitEditor is read-only,
- *   and arbitraryInputs=false means the student's inputs are fixed to |0⟩.
+ *   same output state with fewer gates. The goalCircuitEditor is read-only, and
+ *   the default input for all qubits is |0⟩ unless specified with inputs.
  *
  * options: same as above
  */
@@ -831,9 +866,9 @@ const matchOutputWidget = async ({
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
   code = false,
+  inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = false; // inputs fixed to |0⟩ for goal and student
+  circuit = normalizeCircuit(circuit, inputs);
 
   const previousState = await getSavedCircuitState();
 
@@ -843,7 +878,7 @@ const matchOutputWidget = async ({
   const goalCircuitEditor = createCircuitEditor(
     circuit,
     false,
-    arbitraryInputs
+    inputs,
   );
 
   const topInstructions = document.createElement("div");
@@ -862,7 +897,7 @@ const matchOutputWidget = async ({
   const studentCircuitEditor = createStudentEditor({
     widget,
     circuit,
-    arbitraryInputs,
+    inputs,
     allowedGates,
     code,
     previousState
@@ -897,9 +932,9 @@ const specificOutputWidget = async ({
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
   code = false,
+  inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = false;
+  circuit = normalizeCircuit(circuit, inputs);
 
   const previousState = await getSavedCircuitState();
 
@@ -920,7 +955,7 @@ const specificOutputWidget = async ({
   const studentCircuitEditor = createStudentEditor({
     widget,
     circuit,
-    arbitraryInputs,
+    inputs,
     allowedGates,
     code,
     previousState,
@@ -945,6 +980,8 @@ const specificOutputWidget = async ({
   finalizeWidget(widget);
 };
 
+// MARK: - interactive widget creation functions
+
 /**
  * visualizeProbabilitiesWidget:
  *   Shows a circuit editor with keepGates=true so the student sees the
@@ -956,15 +993,16 @@ const specificOutputWidget = async ({
  *   circuit: string or Q.Circuit,
  *   allowedGates: string for palette,
  *   code: boolean for code editor
+ *   inputs: string representing input state for qubits, defaults to "0"
  * }
  */
 const visualizeProbabilitiesWidget = ({
   circuit,
   allowedGates = defaultGateSymbols,
   code = false,
+  inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = false;
+  circuit = normalizeCircuit(circuit, inputs);
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -974,7 +1012,7 @@ const visualizeProbabilitiesWidget = ({
     widget,
     circuit,
     keepGates: true,
-    arbitraryInputs,
+    inputs,
     allowedGates,
     code,
   });
