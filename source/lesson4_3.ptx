@@ -36,10 +36,18 @@ Unfortunately, there is a second limitation of quantum measurement.</p>
     </p>
 
 
+
+
+
+
 <p><insert>In quantum systems, the measurement changes the state of the measured qubit.</insert> More specifically,
 if the qubit is in superposition, then the measurement will cause it to lose its superposition, and it will 
-hold the same value as the measured outcome. If we were to consider what this would mean in python, it would
-look like the following: </p>
+hold the same value as the measured outcome. 
+
+
+
+<p>If we were to consider what this would mean in python, it would
+look like the following for the code on the left and two different runs of the code on the right: </p>
 
 <sidebyside widths="50% 25% 25%" valign="top">
     
@@ -50,6 +58,32 @@ look like the following: </p>
 
   <p> Once we print out the variable the first time, every subsequent print statement will print out the same think
   unless more operations are performed on the variable to place it back into superposition.</p>
+
+
+
+<p> We can also apply this to our one qubit system with H gates. Now we have a much more complete
+picture of what was happening:</p>
+<p>  <image source="L4.3-H-gate-state-output.png" width="66%" /> </p>
+
+<p> To really challenge our understanding at this point, let's consider the following circuit and use 
+it to answer a few checkpoint questions:</p>
+
+<p><insert> Ask what the state is leaving the first H gate, then describe the outcome of 
+the first measurement. Then describe what state the qubit is in. Then ask what the state is after the 
+second H gate and what the outcome of the measurement would be. The picture below can be used 
+for the last two questions.</p> 
+
+
+
+<p>  <image source="L4.3-measure-in-h-gate.png" width="66%" /> </p>
+
+
+
+
+
+<p>  <image source="L4.3-measure-in-h-gate-2.png" width="66%" /> </p>
+<p>  <image source="L4.3-summary-1.png" width="66%" /> </p>
+<p>  <image source="L4.3-summary-2.png" width="66%" /> </p>
 
 </section>
 
