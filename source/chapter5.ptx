@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quantum Mathematics</title>
+
+  <introduction>
+    <p>
+      In this chapter, we are going to learn about measurement in quantum computing.
+      Specifically, we have the following learning goals:
+    </p>
+    <ul>
+      <li>What are the limitations of measurement in quantum computing?</li>
+      <li>How does measurement affect quantum states?</li>
+      <li>What does this mean for quantum programming?</li>
+    </ul>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="lesson5_1.ptx" />
+  <xi:include href="lesson5_2.ptx" />
+  <xi:include href="lesson5_3.ptx" />
+ 
+
+</chapter>

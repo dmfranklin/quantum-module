@@ -4,9 +4,16 @@
   <title>Exploring Quantum Operations</title>
 
   <introduction>
-    <p>In this chapter, we are going to learn some new quantum operations - by 
-      using the circuit builder..</p>
+    <p>
+      In this chapter, we are going to use the circuit builder to learn some new quantum operations.
+    </p>
+    <p>
+      Specifically, we will use the circuit builder to learn about three operations that operate
+      well on qubits in the simple states of <m>\ket{0}</m> and <m>\ket{1}</m>: <c>NOT</c>, <c>SWAP</c>, and <c>CNOT</c>.
+    </p>
+    <image source="NOT-SWAP-CNOT.png" width="60%" />
   </introduction>
+
 
   <!-- include sections -->
   <xi:include href="lesson2_1.ptx" />

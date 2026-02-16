@@ -1,14 +1,27 @@
+// Make Q.js available to code running inside the parent page (useful for debugging)
 window.parent.Q = Q;
 
 // MARK: - patch Q.js to fix bugs and add features
 
+/**
+ * patchMethod:
+ *   Dynamically replaces a method on an object by converting its current
+ *   implementation to a string, applying regex-based replacements, then
+ *   reassigning the modified function, preserving property descriptors.
+ *
+ * object:       the object containing the method to patch (e.g., Q.Matrix)
+ * methodName:   the name of the method to patch (string)
+ * replacements: an array of [RegExp_or_string, replacementString] pairs
+ */
 const patchMethod = (object, methodName, replacements) => {
+  // Grab the original function source as text
   const newMethod = eval(
     `(${replacements.reduce(
       (source, [regex, replacement]) => source.replace(regex, replacement),
       object[methodName].toString()
     )})`
   );
+  // Preserve any existing property descriptors on the patched function
   Object.defineProperties(
     newMethod,
     Object.getOwnPropertyDescriptors(object[methodName])
@@ -16,16 +29,24 @@ const patchMethod = (object, methodName, replacements) => {
   object[methodName] = newMethod;
 };
 
+// Fix bug in Q.Matrix.multiplyTensor so it uses matrix1's dimensions (not matrix0's) when computing floor divisions for row/column indices
 patchMethod(Q.Matrix, "multiplyTensor", [
   [
-    // fix bug in tensor product implementation so it works for matrices with different dimensions
+    // In the original implementation, the code did `Math.floor(x / matrix0.columns.length)` and
+    // `Math.floor(y / matrix0.rows.length)`, which is incorrect. For a proper Kronecker product,
+    // those divisions must use matrix1's dimensions. This replacement changes `matrix0.columns.length`
+    // to `matrix1.columns.length` and `matrix0.rows.length` to `matrix1.rows.length` in the index calculations.
     /(?<=matrix0[XY] = Math\.floor\( [xy] \/ matrix)0(?=\.(columns|rows).length \))/g,
     "1",
   ],
 ]);
 
+// Patch Q.Circuit.evaluate to:
+//    a) fix bug that ignored the initial qubit state
+//    b) fix bug causing SWAP gates to not function correctly
+//    c) store the entire circuit matrix instead of just final qubit state
 patchMethod(Q.Circuit, "evaluate", [
-  // fix bug causing initial qubit state to be ignored
+  // a) Replace creation of default state with combining all qubits' row vectors
   [
     /const state = .*\s*state.write\$\( 0, 0, 1 \)/,
     `
@@ -35,28 +56,35 @@ patchMethod(Q.Circuit, "evaluate", [
     `,
   ],
 
-  // fix bug causing SWAP gates to not work
+  // b) Fix the loop bounds so that SWAP gates iterate correctly over target indices
   [
     "for( let j = 0; j < operation.registerIndices.length - 1; j ++ )",
     "for( let j = operation.registerIndices.length - Math.log2( U.getWidth() ); j > 0; j -- )",
   ],
 
-  // store entire circuit matrix instead of just the transformed qubit state
+  // c) When evaluating, create a full identity matrix of size 2^bandwidth rather than just tracking the qubit state
   [
     "}, state )",
     "}, Q.Matrix.createIdentity( Math.pow( 2, circuit.bandwidth )))",
   ],
+  // Also record circuit.outputState by multiplying the full circuit matrix by the initial state
   [
     /(?<=const outcomes = )matrix(?=\.rows\.reduce)/,
     "(circuit.outputState = matrix.multiply( state ))",
   ],
 ]);
+
+// Wrap the original Q.Circuit.evaluate to add pre-flight validation:
+// - Ensure "Control" gates actually have targets connected
+// - Ensure the number of qubits matches the expected gate arity
 Q.Circuit.evaluate = ((origEvaluate) =>
   function (circuit) {
     for (const operation of circuit.operations) {
+      // Disallow a cursor (control) gate with no target
       if (operation.gate.symbol == Q.Gate.CURSOR.symbol) {
         throw new Error("Control must be connected to a target.");
       }
+      // Validate that the registerIndices length matches the gate's expected qubit count
       const expectedLength = Math.log2(operation.gate.matrix.columns.length);
       if (operation.registerIndices.length < expectedLength) {
         throw new Error(
@@ -64,10 +92,11 @@ Q.Circuit.evaluate = ((origEvaluate) =>
         );
       }
     }
+    // If validations pass, call the original evaluate implementation
     origEvaluate(circuit);
   })(Q.Circuit.evaluate);
 
-// fix swap gate appearance
+// Fix swap gate appearance in the transposed-table constructor so it's not treated as controlled
 patchMethod(Q.Circuit, "fromTableTransposed", [
   [
     "circuit.operations[ operationsIndex ].isControlled = operation.gateSymbol != '*'",
@@ -75,113 +104,230 @@ patchMethod(Q.Circuit, "fromTableTransposed", [
   ],
 ]);
 
-// combine control and swap buttons into one button
+// Make row and column labels 0-indexed instead of 1-indexed in the Q.Circuit Editor UI
+patchMethod(Q.Circuit, "Editor", [
+  [
+    "momentsymbolEl.innerText = momentIndex",
+    "momentsymbolEl.innerText = momentIndex - 1",
+  ],
+  [
+    "registersymbolEl.innerText = registerIndex",
+    "registersymbolEl.innerText = registerIndex - 1",
+  ],
+]);
+
+// Combine the "Control" and "Swap" buttons into one toggle button in the Circuit Editor toolbar
 patchMethod(Q.Circuit, "Editor", [
   [
     /controlButton.classList.add\( (.*) \)/,
-    "controlButton.classList.add( $1, 'Q-circuit-toggle-swap' )",
+    "controlButton.classList.add( $1, 'Q-circuit-toggle-swap' )", // add extra class for swap toggle styling
   ],
   [
     /controlButton.setAttribute\( 'title', .* \)/,
-    "controlButton.setAttribute( 'title', 'Create controlled or swap operation' )",
+    "controlButton.setAttribute( 'title', 'Create controlled or swap operation' )", // update tooltip
   ],
-  [/controlButton\.innerText = .*/, "controlButton.innerText = 'C/S'"],
-  ["toolbarEl.appendChild( swapButton )", ""],
+  [
+    /controlButton\.innerText = .*/,
+    "controlButton.innerText = 'C/S'", // change button text to "C/S"
+  ],
+  ["toolbarEl.appendChild( swapButton )", ""], // remove separate swapButton append
 ]);
+
+// Adjust isValidControlCandidate so that it only enables the control/swap toggle if a valid gate symbol is selected
 patchMethod(Q.Circuit.Editor, "isValidControlCandidate", [
   [
     "if( !registerIndicesString ) return status",
     "if( !registerIndicesString ) return status && Math.log2(Q.Gate.findBySymbol(operationEl.getAttribute('gate-symbol')).matrix.columns.length) === 1",
   ],
 ]);
+
+// Only allow swap candidates when the gate-symbol is exactly Q.Gate.SWAP.symbol
 patchMethod(Q.Circuit.Editor, "isValidSwapCandidate", [
   [
     "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.CURSOR.symbol",
     "operationEl.getAttribute( 'gate-symbol' ) === Q.Gate.SWAP.symbol",
   ],
 ]);
+
+// In createSwap, enforce a sorted order of qubit indices so that swap operations are consistent
 patchMethod(Q.Circuit.Editor, "createSwap", [
-  // sort swap qubit indices to enforce consistent ordering
-  ["//  Create the swap operation.", "registerIndices.sort()"],
+  [
+    "//  Create the swap operation.",
+    "registerIndices.sort()",
+  ],
 ]);
+
+// Override selection change behavior to disable the C/S button if neither a valid control nor swap candidate
 Q.Circuit.Editor.onSelectionChanged = function (circuitEl) {
   const controlButtonEl = circuitEl.querySelector(".Q-circuit-toggle-control");
   controlButtonEl.toggleAttribute(
     "Q-disabled",
     !Q.Circuit.Editor.isValidControlCandidate(circuitEl) &&
-      !Q.Circuit.Editor.isValidSwapCandidate(circuitEl)
+    !Q.Circuit.Editor.isValidSwapCandidate(circuitEl)
   );
 };
 
+// Patch the palette creation so that custom gate.unicode symbols (if provided) appear instead of default text
 patchMethod(Q.Circuit.Editor, "createPalette", [
-  // show custom gate symbols in the palette
   [
     "if( symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = symbol",
     "if( symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = gate.unicode ?? symbol",
   ],
 ]);
 
+// Patch the "set" method in the editor UI so that:
+//    a) custom gate.unicode glyphs appear instead of default gate.symbol
+//    b) maintain square shape for swap gates while applying proper CSS classes
 patchMethod(Q.Circuit.Editor, "set", [
-  // show custom gate symbols in the circuit editor
   [
     "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.symbol",
     "if( operation.gate.symbol !== Q.Gate.CURSOR.symbol ) tileEl.innerText = operation.gate.unicode ?? operation.gate.symbol",
   ],
-  // keep swap gate square-shaped
   [
+    // Only mark controlled operations with 'Q-circuit-operation-target'; leave swap as square.
     "else operationEl.classList.add( 'Q-circuit-operation-target' )",
     "else if( operation.isControlled ) operationEl.classList.add( 'Q-circuit-operation-target' )",
   ],
 ]);
 
+// Define custom gate constants with modified names, CSS identifiers, or unicode
 Q.Gate.createConstants(
   "IDENTITY",
   new Q.Gate(
     Object.assign({}, Q.Gate.IDENTITY, {
-      nameCss: undefined,
+      nameCss: undefined, // remove default styling class for IDENTITY
     })
   ),
   "CURSOR",
   new Q.Gate(
     Object.assign({}, Q.Gate.CURSOR, {
       name: "Control",
-      nameCss: "control",
+      nameCss: "control", // apply our custom "control" CSS class
     })
   ),
   "PAULI_X",
   new Q.Gate(
     Object.assign({}, Q.Gate.PAULI_X, {
       name: "Not",
-      unicode: "⨁",
+      unicode: "⨁", // show ⨁ instead of plain "X"
     })
   ),
   "SWAP",
   new Q.Gate(
     Object.assign({}, Q.Gate.SWAP, {
       nameCss: undefined,
-      unicode: "𓏵",
+      unicode: "𓏵", // custom icon for SWAP
     })
   )
 );
 
+// Patch Q.Circuit.prototype.set$ to automatically compute the moment index
+//     (time slot) if not provided, similar to Qiskit's behavior. Also, validate indices.
+patchMethod(Q.Circuit.prototype, "set$", [
+  [
+    "function( gate, momentIndex, registerIndices ){",
+    `function( gate, ...args ){
+      let momentIndex, registerIndices;
+      // If two args are passed and second is array, treat [momentIndex, registerIndices] as tuple
+      if (args.length == 2 && args[1] instanceof Array) {
+        [momentIndex, registerIndices] = args;
+      } else {
+        registerIndices = args;
+      }
+      // Validate individual register indices are within [1..bandwidth] and integral
+      if (registerIndices.some(index => index > this.bandwidth || index < 1 || !Number.isInteger(index))) {
+        throw new Error(\`Invalid register index: \${index}\`);
+      }
+      // Do not allow duplicate indices in the same gate invocation
+      if (new Set(registerIndices).size != registerIndices.length) {
+        throw new Error("Duplicate register indices are not allowed.");
+      }
+      // Auto-compute momentIndex if not provided: find earliest "time slot" with no overlap
+      if (momentIndex == undefined) {
+        momentIndex = 1;
+        for (const operation of this.operations) {
+          if (Math.min(...registerIndices) <= Math.max(...operation.registerIndices) && Math.min(...operation.registerIndices) <= Math.max(...registerIndices)) {
+            // overlapping wires => bump momentIndex
+            momentIndex = Math.max(momentIndex, operation.momentIndex + 1);
+          }
+        }
+      }
+      // Validate that momentIndex is an integer within [1..timewidth]
+      if (momentIndex > this.timewidth || momentIndex < 1 || !Number.isInteger(momentIndex)) {
+        throw new Error(\`Invalid moment index: \${momentIndex}\`);
+      }
+    `,
+  ],
+]);
+
+// Define methods on Q.Circuit.prototype for each gate constant, to be used
+// by students for setting gates in their circuits.
+Object.entries(Q.Gate.constants).forEach(function (entry) {
+  const gateConstantName = entry[0], // e.g., "PAULI_X"
+    gate = entry[1],                 // the actual Q.Gate object
+    offsetIndices = (args) =>
+      args.map((arg) => {
+        if (typeof arg === "number") {
+          return arg + 1; // convert from 0-based to 1-based for Q.js
+        }
+        if (arg instanceof Array) {
+          return offsetIndices(arg);
+        }
+        return arg;
+      }),
+    set$ = function (...args) {
+      // Call the patched set$ method with gate and offset indices
+      this.set$(gate, ...offsetIndices(args));
+      return this;
+    };
+  // Attach multiple method names: NAME, name (lowercase), symbol, symbol lowercase
+  Q.Circuit.prototype[gateConstantName] = set$;
+  Q.Circuit.prototype[gateConstantName.toLowerCase()] = set$;
+  Q.Circuit.prototype[gate.symbol] = set$;
+  Q.Circuit.prototype[gate.symbol.toLowerCase()] = set$;
+});
+
 // MARK: - functions to set up the widget
 
+/**
+ * createCircuitEditor:
+ *   Instantiates a Q.Circuit.Editor UI component inside a <div> wrapper,
+ *   optionally making it editable (if "editable" is true). Also sets initial
+ *   qubit input labels to either "|0⟩" or arbitrary Greek-letter states.
+ *
+ * circuit:         a Q.Circuit instance
+ * editable:        boolean, whether students can modify the circuit
+ * inputs:          string, if provided, then sets qubit starting values; else assign Greek letters |α⟩, |β⟩, ... to inputs
+ *
+ * Returns: the <div> element containing the rendered circuit editor.
+ */
 const createCircuitEditor = (
   circuit,
   editable = true,
-  arbitraryInputs = true
+  inputs = undefined,
 ) => {
   const editor = document.createElement("div");
+  // Render the circuit into this <div>, giving it an HTML id="circuit"
   circuit.setName$("circuit").toDom(editor);
 
+  // Remove any extraneous <p> tags automatically added by Q.js
   editor.querySelectorAll("p").forEach((p) => p.remove());
+  // Lock or unlock the editor based on "editable"
   editor.classList.toggle("Q-circuit-locked", !editable);
+  // Remove the lock icon or toolbar toggle depending on editability
   editor
     .querySelector(editable ? ".Q-circuit-toggle-lock" : ".Q-circuit-toolbar")
     .remove();
 
-  if (arbitraryInputs) {
-    const circuitInputs = editor.querySelectorAll(".Q-circuit-input");
+  // Assign initial input states to each qubit header
+  const circuitInputs = editor.querySelectorAll(".Q-circuit-input");
+  if (inputs && typeof inputs === "string") {
+    // Setup inputs
+    circuitInputs.forEach((input, i) => {
+      input.textContent = `|${inputs.length > 1 ? inputs[i] : inputs[0]}⟩`;
+    });
+  } else {
+    // Use Greek letters α, β, γ, ... for each qubit input label
     const greekAlphabet = "αβγδεζηθικλμνξοπρστυφχψω";
     circuitInputs.forEach((input, i) => {
       input.textContent = `|${greekAlphabet[i]}⟩`;
@@ -191,11 +337,22 @@ const createCircuitEditor = (
   return editor;
 };
 
+/**
+ * stateToText:
+ *   Converts a Q.Matrix "state" object (column vector) to a human-readable
+ *   superposition string, e.g., "(1/√2)|00⟩ + (1/√2)|11⟩".
+ *
+ * state:          a Q.Matrix representing column-vector of amplitudes
+ * roundToDecimal: number of decimal places for floating output
+ *
+ * Returns: string representation of superposition (omitting zero amplitudes).
+ */
 const stateToText = (state, roundToDecimal) => {
-  const bandwidth = Math.log2(state.rows.length);
+  const bandwidth = Math.log2(state.rows.length); // number of qubits
   const superposition = state.rows.map(function (row, i) {
     return {
       amplitude: row[0],
+      // Convert row index to binary string of length "bandwidth"
       state: "|" + parseInt(i, 10).toString(2).padStart(bandwidth, "0") + "⟩",
     };
   });
@@ -203,10 +360,11 @@ const stateToText = (state, roundToDecimal) => {
   for (const { amplitude, state } of superposition) {
     let amplitudeText = amplitude.toText(roundToDecimal, false);
     if (amplitudeText == "0") {
-      continue;
+      continue; // skip zero amplitudes
     }
     let containsSpace = amplitudeText.includes(" ");
     if (text != "") {
+      // If already have a term, prefix with "+" or convert to negative
       let negAmplitudeText = amplitude
         .multiply(-1)
         .toText(roundToDecimal, false);
@@ -217,6 +375,7 @@ const stateToText = (state, roundToDecimal) => {
         text += " + ";
       }
     }
+    // Format coefficient "*|state⟩" or just "|state⟩" if amplitude is ±1
     if (amplitudeText == "1") {
       text += state;
     } else if (amplitudeText == "-1") {
@@ -230,29 +389,49 @@ const stateToText = (state, roundToDecimal) => {
   return text;
 };
 
+/**
+ * createGrader:
+ *   Builds a "grader" UI component that compares a student's circuit to a goal.
+ *   If instantFeedback=true, grading occurs on every change; otherwise, show
+ *   a "Check work" button and mark grader dirty on edits.
+ *
+ * goalCircuit:          Q.Circuit representing the target circuit
+ * studentCircuitEditor: the Q.Circuit.Editor instance for student input
+ * gradingFunction:      (goalCircuit, studentCircuit) => [boolean, feedbackText]
+ * instantFeedback:      boolean, if true run gradingFunction on every change
+ *
+ * Returns: a <div class="grader"> containing feedback (and possibly a button).
+ */
 const createGrader = (
   goalCircuit,
-  studentCircuit,
+  studentCircuitEditor,
   gradingFunction,
   instantFeedback
 ) => {
-  const checkWork = () => {
-    grader.classList.remove("dirty");
-    goalCircuit.evaluate$();
+  // Internal function to compare circuits and display feedback
+  const checkWork = (report = true) => {
+    grader.classList.remove("dirty"); // remove "needs-check" state
+    goalCircuit.evaluate$(); // compute goalCircuit.outputState or other properties
     try {
-      studentCircuit.evaluate$();
+      studentCircuitEditor.circuit.evaluate$(); // evaluate student circuit
     } catch (error) {
+      // If evaluation errors, display error
       feedback.classList.add("wrong");
       feedback.textContent = `Error: ${error.message}`;
       return;
     }
     const [isCorrect, feedbackText] = gradingFunction(
       goalCircuit,
-      studentCircuit
+      studentCircuitEditor.circuit
     );
     feedback.classList.toggle("correct", isCorrect);
     feedback.classList.toggle("wrong", !isCorrect);
     feedback.textContent = feedbackText;
+
+    if (report) {
+      // Report score via SPLICE to Runestone database
+      SPLICE.reportScoreAndState(isCorrect ? 1 : 0, { circuit: studentCircuitEditor.circuit.toText() });
+    }
   };
 
   const grader = document.createElement("div");
@@ -264,6 +443,7 @@ const createGrader = (
   grader.append(feedback);
 
   if (!instantFeedback) {
+    // If not instant feedback, add a "Check work" button
     grader.classList.add("dirty");
     const button = document.createElement("button");
     button.textContent = "Check work";
@@ -272,10 +452,16 @@ const createGrader = (
     grader.append(button);
   }
 
+  // If restoring state, we should check work immediately.
+  if (studentCircuitEditor.circuit.operations.length > 0) {
+    checkWork(false);
+  }
+
+  // Listen for any circuit change events triggered by the editor
   window.addEventListener("Q gui altered circuit", (event) => {
     if (
       event.detail.circuit == goalCircuit ||
-      event.detail.circuit == studentCircuit
+      event.detail.circuit == studentCircuitEditor.circuit
     ) {
       if (instantFeedback) {
         checkWork();
@@ -289,78 +475,288 @@ const createGrader = (
 };
 
 const defaultGateSymbols = "HXYZPTS*";
+
+/**
+ * createPalette:
+ *   Builds a custom gate palette <div> that only includes allowed gates.
+ *   This works by taking Q.Circuit.Editor.createPalette's source, replacing
+ *   the default gateSymbols string with our provided gateSymbols, then
+ *   invoking that modified function in a new <div>.
+ *
+ * gateSymbols: string of characters identifying which gates to include
+ *
+ * Returns: <div class="Q-circuit-palette"> with the filtered gate buttons.
+ */
 const createPalette = (gateSymbols = defaultGateSymbols) => {
+  // Convert the original createPalette function to a string
   const origCreatePalette = Q.Circuit.Editor.createPalette.toString();
+  // Extract the original gateSymbols used in that function
   const origGateSymbols = origCreatePalette.match(/'([^']*)'\s*\.split/)[1];
+  // Replace origGateSymbols with our custom gateSymbols in the source
   const modifiedCreatePalette = eval(
     `(${origCreatePalette.replace(origGateSymbols, gateSymbols)})`
   );
   const palette = document.createElement("div");
   palette.className = "Q-circuit-palette";
-  modifiedCreatePalette(palette);
+  modifiedCreatePalette(palette); // Build the actual buttons inside
   return palette;
 };
 
-const processCircuitInput = (circuit) => {
+/**
+ * createCodeEditor:
+ *   Inserts a code-input component (JavaScript editor) so students can type
+ *   Qiskit-like code to manipulate a circuit. On every input, it attempts to
+ *   parse the code, update the circuit editor, and adjust opacity to signal errors.
+ *
+ * circuitEditor: Q.Circuit.Editor instance whose circuit property is a Q.Circuit
+ *
+ * Returns: <code-input> element with event listeners for live parsing.
+ */
+const createCodeEditor = (circuitEditor) => {
+  const codeEditor = document.createElement("code-input");
+  // Register the syntax-highlighting template for code-input
+  codeInput.registerTemplate(
+    "syntax-highlighted",
+    codeInput.templates.hljs(hljs, [])
+  );
+  codeEditor.setAttribute("language", "js");
+  codeEditor.className = "widget-code";
+  // Placeholder showing example Qiskit-like commands
+  codeEditor.setAttribute(
+    "placeholder",
+    `// Write your circuit code here... for example:
+circuit.x(0); // applies a NOT to qubit 0
+circuit.swap(0, 1); // applies a SWAP to qubits 0 and 1
+circuit.h(0); // applies an H to qubit 0
+circuit.x(0, 1); // applies a CNOT to qubits 0 and 1`
+  );
+  codeEditor.addEventListener("input", () => {
+    let opacity = 1;
+    try {
+      // Create a fresh copy of the student's circuit to parse code into
+      const newCircuit = Q(
+        circuitEditor.circuit.bandwidth,
+        circuitEditor.circuit.timewidth
+      );
+      // Dynamically evaluate the user's code in a function scope
+      new Function("circuit", codeEditor.value)(newCircuit);
+      // Remove all existing gate DOM elements before redrawing
+      circuitEditor
+        .querySelectorAll(
+          ".Q-circuit-operation, .Q-circuit-operation-link-container"
+        )
+        .forEach((operation) => {
+          operation.remove();
+        });
+      // Redraw each operation onto the circuitEditor
+      newCircuit.operations.forEach((operation) =>
+        Q.Circuit.Editor.set(circuitEditor, operation)
+      );
+      circuitEditor.circuit = newCircuit;
+      // Dispatch event so any graders or probability displays update
+      window.dispatchEvent(
+        new CustomEvent("Q gui altered circuit", {
+          detail: { circuit: newCircuit },
+        })
+      );
+    } catch (error) {
+      // If parsing/execution fails, make the circuit board semi-transparent
+      opacity = 0.5;
+    }
+    circuitEditor.querySelector(".Q-circuit-board-container").style.opacity =
+      opacity;
+  });
+  return codeEditor;
+};
+
+/**
+ * updateCircuitInputs:
+ *   Given a circuit and an inputs parameter, updates the circuit's qubits' starting state to the
+ *   given inputs. As of now, there is no clean way to initialize a Q.js circuit with the qubit
+ *   input state.
+ *
+ * Note: does NOT re-evaluate before returning.
+ */
+const updateCircuitInputs = (circuit, inputs = "0") => {
+  const strToQubit = (s) => {
+    // Set all qubits to initialize to inputs
+    switch (s) {
+      case "1":
+        return Q.Qubit.VERTICAL;
+      case "+":
+        return Q.Qubit.DIAGONAL;
+      case "-":
+        return Q.Qubit.ANTI_DIAGONAL;
+      default:
+        return Q.Qubit.HORIZONTAL;
+    }
+  }
+
+  if (typeof inputs === "string") {
+    circuit.qubits = circuit.qubits.map((_, i) => strToQubit(inputs.length === 1 ? inputs[0] : i < inputs.length ? inputs[i] : "0"));
+  }
+};
+
+/**
+ * normalizeCircuit:
+ *   Normalizes a "circuit" parameter which may be either:
+ *   - A string key referring to a predefined circuit from circuits.js
+ *   - A Q.Circuit object or circuit data directly accepted by Q constructor
+ *
+ *   After normalizing the circuit, this function updates the circuit inputs to match the specified
+ *   inputs. The circuit is evaluated before being returned.
+ *
+ * @returns a Q.js circuit
+ */
+const normalizeCircuit = (circuit, inputs = "0") => {
   if (typeof circuit === "string") {
     if (circuits.has(circuit)) {
-      circuit = circuits.get(circuit);
+      circuit = circuits.get(circuit); // Look up from circuits.js Map
     }
-    circuit = Q(circuit);
+    circuit = Q(circuit); // Convert raw data to a Q.Circuit object
   }
+
+  // Update the inputs to match what's requested
+  updateCircuitInputs(circuit, inputs)
+
+  // Pre-compute outputState for grading/visualization
   circuit.evaluate$();
   return circuit;
 };
 
-const finalizeWidget = (widget, studentCircuitEditor) => {
+/**
+ * finalizeWidget:
+ *   Appends the completed widget <div> to document.body, then resizes the
+ *   <iframe> (parent frame) so it wraps exactly around the widget's content.
+ *
+ * widget: <div> containing all interactive elements, to be added to body
+ */
+const finalizeWidget = (widget) => {
   document.body.append(widget);
+  // Remove any fixed width/height attributes on the <iframe> wrapper
   window.frameElement.removeAttribute("width");
   window.frameElement.removeAttribute("height");
+  // Set iframe height to match document height so there is no scroll inside
   window.frameElement.style.height = `${document.documentElement.scrollHeight}px`;
   window.frameElement.style.width = "100%";
 };
 
-const createStudentEditor = (circuit, arbitraryInputs, useOriginal = false) => {
-  return createCircuitEditor(
-    useOriginal ? circuit : Q(circuit.bandwidth, circuit.timewidth),
-    true,
-    arbitraryInputs
+/**
+ * createStudentEditor:
+ *   Builds and appends the student's circuit editor (either a graphical palette
+ *   or a code editor) to the widget. Returns the Q.Circuit.Editor instance.
+ *
+ * widget:          <div> container for the entire widget
+ * circuit:         Q.Circuit instance (goal or initial circuit)
+ * keepGates:       boolean; if false, start student circuit as blank; if true, copy goal gates
+ * inputs:          string; if undefined, arbitrary inputs, else initial qubit states
+ * allowedGates:    string of gate symbols for filtering palette
+ * code:            boolean; if true, use code editor instead of visual palette
+ * previousState:   string; if present, start student circuit with this state. keepGates takes precedence
+ */
+const createStudentEditor = ({
+  widget,
+  circuit,
+  keepGates = false,
+  inputs = undefined,
+  allowedGates = defaultGateSymbols,
+  code = false,
+  previousState,
+}) => {
+  // If keepGates=false, create an empty circuit of same dimensions; else if we have previous state,
+  // create a circuit from that state; else clone the original circuit
+  const studentCircuit = keepGates ? circuit : previousState ? Q(previousState) : Q(circuit.bandwidth, circuit.timewidth);
+  updateCircuitInputs(studentCircuit, inputs);
+
+  const circuitEditor = createCircuitEditor(
+    studentCircuit,
+    !code,
+    inputs
   );
+  // Append either code editor or palette for gate entry
+  widget.append(
+    code ? createCodeEditor(circuitEditor) : createPalette(allowedGates)
+  );
+  widget.append(circuitEditor);
+  return circuitEditor;
 };
 
-// MARK: - widget creation functions
+/**
+ * Fetches the saved state for this widget from the Runestone database.
+ *
+ * @returns circuit in string form if progress was saved, else undefined
+ */
+const getSavedCircuitState = async () => {
+  try {
+    let previousState = await SPLICE.getState();
+    console.log("Restoring saved circuit state.");
+    if (previousState) {
+      previousState = previousState.circuit;
+    }
+    return previousState;
+  } catch (err) {
+    console.log("Could not get saved circuit state:", err);
+    return undefined;
+  }
+}
 
-const identicalCircuitWidget = ({
+// MARK: - exercise-style widget creation functions
+
+/**
+ * identicalCircuitWidget:
+ *   Asks students to recreate a given circuit exactly. Displays:
+ *   1) A read-only "goal" circuit at top
+ *   2) An editable student circuit below
+ *   3) A grader that checks if the non-empty columns match exactly
+ *
+ * options: {
+ *   circuit: string or Q.Circuit (target circuit),
+ *   instantFeedback: boolean,
+ *   allowedGates: string for palette,
+ *   code: boolean for code editor
+ * }
+ */
+const identicalCircuitWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = true;
+  circuit = normalizeCircuit(circuit); // ensure evaluated circuit
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
 
+  // "Given the following circuit..." instructions
   const topInstructions = document.createElement("div");
   topInstructions.className = "instructions";
   topInstructions.textContent = "Given the following circuit...";
 
+  // Render the goalCircuitEditor as read-only
   const goalCircuitEditor = createCircuitEditor(
     circuit,
-    false,
-    arbitraryInputs
+    false
   );
 
+  // "Create the exact same circuit below:" instructions
   const middleInstructions = document.createElement("div");
   middleInstructions.className = "instructions";
   middleInstructions.textContent = "...create the exact same circuit below:";
 
   widget.append(topInstructions, goalCircuitEditor, middleInstructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  // Build the student editor (initially blank circuit)
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    allowedGates,
+    code,
+    previousState,
+  });
 
+  // Helper to extract only non-empty columns (ignore identity columns)
   const getNonEmptyColumns = (circuit) => {
     const rows = circuit
       .toText()
@@ -377,9 +773,10 @@ const identicalCircuitWidget = ({
     return columns.map((column) => column.join("-")).join("\n");
   };
 
+  // Create grader that compares non-empty-column text of goal vs student
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       getNonEmptyColumns(goalCircuit) == getNonEmptyColumns(studentCircuit)
         ? [true, "Great job! The circuits look identical."]
@@ -388,16 +785,26 @@ const identicalCircuitWidget = ({
   );
   widget.append(grader);
 
-  finalizeWidget(widget, studentCircuitEditor);
+  finalizeWidget(widget);
 };
 
-const equivalentCircuitWidget = ({
+/**
+ * equivalentCircuitWidget:
+ *   Asks students to build a circuit that's functionally equivalent to
+ *   the goal but uses fewer gates. Grading logic checks matrix equality and
+ *   gate-count reduction.
+ *
+ * options: same shape as identicalCircuitWidget
+ */
+const equivalentCircuitWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = true;
+  circuit = normalizeCircuit(circuit);
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -409,7 +816,6 @@ const equivalentCircuitWidget = ({
   const goalCircuitEditor = createCircuitEditor(
     circuit,
     false,
-    arbitraryInputs
   );
 
   const middleInstructions = document.createElement("div");
@@ -419,36 +825,52 @@ const equivalentCircuitWidget = ({
 
   widget.append(topInstructions, goalCircuitEditor, middleInstructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    allowedGates,
+    code,
+    previousState
+  });
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
+      // Check matrix equivalence first
       goalCircuit.matrix.isEqualTo(studentCircuit.matrix)
         ? studentCircuit.operations.length < goalCircuit.operations.length
           ? [
-              true,
-              "Great job! You created an equivalent circuit with fewer gates.",
-            ]
+            true,
+            "Great job! You created an equivalent circuit with fewer gates.",
+          ]
           : [false, "The circuits are equivalent, but you used too many gates."]
         : [false, "The circuits are not equivalent. Keep at it!"],
     instantFeedback
   );
   widget.append(grader);
 
-  finalizeWidget(widget, studentCircuitEditor);
+  finalizeWidget(widget);
 };
 
-const matchOutputWidget = ({
+/**
+ * matchOutputWidget:
+ *   Given a goal circuit and its input state, ask students to reproduce the
+ *   same output state with fewer gates. The goalCircuitEditor is read-only, and
+ *   the default input for all qubits is |0⟩ unless specified with inputs.
+ *
+ * options: same as above
+ */
+const matchOutputWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
+  inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = false;
+  circuit = normalizeCircuit(circuit, inputs);
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
@@ -456,7 +878,7 @@ const matchOutputWidget = ({
   const goalCircuitEditor = createCircuitEditor(
     circuit,
     false,
-    arbitraryInputs
+    inputs,
   );
 
   const topInstructions = document.createElement("div");
@@ -472,13 +894,18 @@ const matchOutputWidget = ({
 
   widget.append(topInstructions, goalCircuitEditor, middleInstructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    inputs,
+    allowedGates,
+    code,
+    previousState
+  });
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
         ? studentCircuit.operations.length < goalCircuit.operations.length
@@ -489,20 +916,32 @@ const matchOutputWidget = ({
   );
   widget.append(grader);
 
-  finalizeWidget(widget, studentCircuitEditor);
+  finalizeWidget(widget);
 };
 
-const specificOutputWidget = ({
+/**
+ * specificOutputWidget:
+ *   Given a fixed input state (from circuit.inputState) and a desired target
+ *   output state (circuit.outputState), ask students to build any circuit
+ *   achieving that transformation. There is no goal circuit displayed.
+ *
+ * options: same as above
+ */
+const specificOutputWidget = async ({
   circuit,
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
+  code = false,
+  inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = false;
+  circuit = normalizeCircuit(circuit, inputs);
+
+  const previousState = await getSavedCircuitState();
 
   const widget = document.createElement("div");
   widget.className = "widget";
 
+  // Show instructions containing both input and target states
   const instructions = document.createElement("div");
   instructions.className = "instructions";
   instructions.textContent = `Given the input state ${stateToText(
@@ -513,47 +952,72 @@ const specificOutputWidget = ({
 
   widget.append(instructions);
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(circuit, arbitraryInputs);
-  widget.append(palette, studentCircuitEditor);
+  const studentCircuitEditor = createStudentEditor({
+    widget,
+    circuit,
+    inputs,
+    allowedGates,
+    code,
+    previousState,
+  });
 
   const grader = createGrader(
     circuit,
-    studentCircuitEditor.circuit,
+    studentCircuitEditor,
     (goalCircuit, studentCircuit) =>
       goalCircuit.outputState.isEqualTo(studentCircuit.outputState)
         ? [true, "Great job! Your circuit produces the correct output state."]
         : [
-            false,
-            `Your circuit produces the output state ${stateToText(
-              studentCircuit.outputState
-            )}. Keep at it!`,
-          ],
+          false,
+          `Your circuit produces the output state ${stateToText(
+            studentCircuit.outputState
+          )}. Keep at it!`,
+        ],
     instantFeedback
   );
   widget.append(grader);
 
-  finalizeWidget(widget, studentCircuitEditor);
+  finalizeWidget(widget);
 };
 
+// MARK: - interactive widget creation functions
+
+/**
+ * visualizeProbabilitiesWidget:
+ *   Shows a circuit editor with keepGates=true so the student sees the
+ *   initial complete circuit. Below it is a <samp> that displays the probability
+ *   distribution (studentCircuit.report$()). On every change, recalculate
+ *   and update the probabilities or show an error message.
+ *
+ * options: {
+ *   circuit: string or Q.Circuit,
+ *   allowedGates: string for palette,
+ *   code: boolean for code editor
+ *   inputs: string representing input state for qubits, defaults to "0"
+ * }
+ */
 const visualizeProbabilitiesWidget = ({
   circuit,
   allowedGates = defaultGateSymbols,
+  code = false,
+  inputs = "0",
 }) => {
-  circuit = processCircuitInput(circuit);
-  const arbitraryInputs = false;
+  circuit = normalizeCircuit(circuit, inputs);
 
   const widget = document.createElement("div");
   widget.className = "widget";
 
-  const palette = createPalette(allowedGates);
-  const studentCircuitEditor = createStudentEditor(
+  // Build the student editor pre-populated with all goal gates
+  const studentCircuitEditor = createStudentEditor({
+    widget,
     circuit,
-    arbitraryInputs,
-    true
-  );
-  widget.append(palette, studentCircuitEditor);
+    keepGates: true,
+    inputs,
+    allowedGates,
+    code,
+  });
 
+  // Create a <pre><samp> area to display probability output
   const pre = document.createElement("pre");
   const probDisplay = document.createElement("samp");
   probDisplay.innerText = studentCircuitEditor.circuit.report$();
@@ -561,11 +1025,13 @@ const visualizeProbabilitiesWidget = ({
   pre.append(probDisplay);
   widget.append(pre);
 
+  // On any change to the student circuit, re-evaluate and update probabilities
   window.addEventListener("Q gui altered circuit", (event) => {
     if (event.detail.circuit == studentCircuitEditor.circuit) {
       try {
         studentCircuitEditor.circuit.evaluate$();
       } catch (error) {
+        // If evaluation fails, print error and preserve line count
         probDisplay.innerText =
           `\nError: ${error.message}` +
           "\n".repeat(probDisplay.innerText.split("\n").length - 2);
@@ -575,5 +1041,5 @@ const visualizeProbabilitiesWidget = ({
     }
   });
 
-  finalizeWidget(widget, studentCircuitEditor);
+  finalizeWidget(widget);
 };
