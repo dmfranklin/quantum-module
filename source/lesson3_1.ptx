@@ -1,159 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
 <section xml:id="lesson3_1" xmlns:xi="http://www.w3.org/2001/XInclude">
-
-
-  <title>Exploring Superposition using the H Gate</title>
-  <p>
-    We now introduce a new gate - the Hadamard gate, or H gate. This is a single qubit gate that places a qubit in <i>superposition</i>.
-    We will learn more about superposition as we observe how the H gate operates. Use the widget below to see what the H gate does to  
-    a qubit that starts in the <m>|0\rangle</m> or <m>|1\rangle</m> state.
-  </p>
-  
-  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-    <script>
-      visualizeProbabilitiesWidget({
-        circuit: "Blank 2x6",
-        allowedGates: "XH"
-      });
-    </script>
-  </interactive>
-
-  <exercise label="H_truth_table">
-    <title>H Truth Table</title>
-    <idx>H_truth_table</idx>
-    <statement>
-        <p>Which answer best describes what you observed from the H gate?
-        </p>
-    </statement>
-    <choices randomize="yes">
-     <choice correct="no">
-        <statement><p>It does not have an observable effect.</p></statement>
-        <feedback><p>Look more closely at the bar graphs of the output.</p>
-        </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
-            of measuring 0 or 1.
-        </p></statement>
-        <feedback><p></p>
-        </feedback>
-      </choice>
-      
-    </choices>
-    <hint><p>Make the circuit and look at the bar graph below the circuit. 
-      Construct both input combinations using not gates,  recording the answers 
-      each time.</p></hint>
-  </exercise>
-  <p> 
-    Now that you have the full truth table for H, I suggest adding it onto your page of 
-    notes for future reference. 
+  <title>Superposition</title>
+  <sidebyside widths="75% 25%" valign="top">
+    <p>
+      We now introduce a new gate: the Hadamard gate (also called the <c>H</c> gate).
+      The <c>H</c> gate is a single qubit gate that places a qubit into <term>superposition</term>.
     </p>
-    <p> Now let's explore what you observed - the H gate's output has an equal probability of measuring 0 or 1.
-        This means that it appears to act like a <i>random</i> gate, producing random output. Imagine a random
-        gate that did exactly that, then answer the next question. </p>
+    <image source="L3.1_H-gate.png" width="66%" />
+  </sidebyside>
 
-    <exercise label="Expected_Random">
-      <title>Random Gate Expected Output</title>
-      <idx>randomExpected</idx>
+  <section xml:id="sec-H-gate-behavior">
+    <title>Exploring the <c>H</c> Gate</title>
+    <p>
+      We will use the circuit builder to learn more about superposition as we observe
+      how the <c>H</c> gate operates. Use the circuit builder below to see what the <c>H</c> gate
+      does to a qubit that starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state. That is, 
+      make the following two circuits and observe the outputs:
+    </p>
+<image source="H_Explore.png" width="45%" />
+
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        visualizeProbabilitiesWidget({
+          circuit: "Blank 1x6",
+          allowedGates: "XH"
+        });
+      </script>
+    </interactive>
+
+    <exercise label="H_truth_table_lesson3_1">
+      <title>Hadamard (<c>H</c> gate) Behavior</title>
+      <idx>H_behavior</idx>
       <statement>
-          <p>What should the output be of the following circuit, assuming R is a random gate?
-            (make a new picture - have it be of two random gates on the widget)
-            <datafile label="RandomGateExpectedOutput-image" filename="RandomGateExpectedOutput.png" include-source="yes">
-              <image source="RandomGateExpectedOutput.png" width="66%"/>
-            </datafile> 
-          </p>
+        <p>Select the statement that describes the behavior of the <c>H</c> gate when
+          applied to an input of <m>\ket{0}</m> or <m>\ket{1}</m>.</p>
       </statement>
       <choices randomize="yes">
-                <choice correct="yes">
-          <statement><p>equal chance 
-            of measuring 0 or 1.</p></statement>
-          <feedback><p>Yes!</p>
+        <choice correct="no">
+          <statement>
+            <p>There is no observable effect.</p>
+            <image source="L3.1 H gate_no-effect.png" width="66%" />
+          </statement>
+          <feedback>
+            <p>Hmmm... Look more closely at the bar graphs of the output.</p>
           </feedback>
         </choice>
-        <choice>
-          <statement><p><m>|00\rangle</m> or 
-            <image source="Balls00.png" width="66%"/>
-          
-        </p></statement>
-          <feedback><p>There should be probabilities involved!</p>
-           </feedback>
-        </choice>
-        <choice >
-          <statement><p><m>|01\rangle</m> or 
-            <image source="Balls01.png" width="66%"/>
-          
-        </p></statement>
-          <feedback><p>There should be probabilities involved!</p>
-          </feedback>
-        </choice>
-        <choice>
-          <statement><p><m>|10\rangle</m> or 
-            <image source="Balls10.png" width="66%"/>
-          </p></statement>
-          <feedback><p>There should be probabilities involved!</p>
-          </feedback>
-        </choice>
-        <choice>
-          <statement><p><m>|11\rangle</m> or 
-            <image source="Balls11.png" width="66%"/>
-          </p></statement>
-          <feedback><p>There should be probabilities involved!</p>
+        <choice correct="yes">
+          <statement>
+            <p>The output has an equal chance of measuring 0 or 1.</p>
+            <image source="L3.1 H gate_equally-likely.png" width="66%" />
+          </statement>
+          <feedback>
+            <p>Correct! For an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the output of
+              an <c>H</c> gate will have an equal chance of measuring 0 or 1.</p>
           </feedback>
         </choice>
       </choices>
-      <hint><p>Think about what the output would be after each gate.</p></hint>
+      <hint>
+        <p>Make the circuit and look at the bar graph below the circuit.
+          Construct both input combinations using a <c>NOT</c> gate, recording the answers
+          each time.</p>
+      </hint>
     </exercise>
 
-Now let's look at what happens with an H gate! Use the widget below to check what happens when you start with <m>|0\rangle</m> or <m>|1\rangle</m> 
-and you put two H gates in a row.
+<p> 
+The key point is that when a qubit is in <b>superposition</b>, it does not have a definite value of 0 or 1. In fact,
+it holds <i>both values simultaneously.</i>
+In addition, it has probabilities of being measured as 0 or 1. The <c>H</c> gate creates this superposition by 
+transforming the "basis" states <m>\ket{0}</m> and <m>\ket{1}</m> into equal superpositions of both states.
+</p>
+    <p>
+      Now that you have observed the behavior of the <c>H</c> gate, you may want to write
+      it on a page of notes or take a screenshot for future reference.
+    </p>
+  </section>
 
- <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-    <script>
-      visualizeProbabilitiesWidget({
-        circuit: "Blank 2x6",
-        allowedGates: "XH"
-      });
-    </script>
-  </interactive>     
-   
- <exercise label="Two_H_gates">
-    <title>Two H gates</title>
-    <idx>Two_H_gates</idx>
-    <statement>
-        <p>Which answer best describes what you observed from the H gate?
-        </p>
-    </statement>
-    <choices randomize="yes">
-     <choice correct="yes">
-        <statement><p>It does not have an observable effect - they go back to their original values.</p></statement>
-        <feedback><p>Look more closely at the bar graphs of the output.</p>
-        </feedback>
-      </choice>
-      <choice correct="no">
-        <statement><p>If the input is <m>|0\rangle</m> or <m>|1\rangle</m>, the result will have an equal chance 
-            of measuring 0 or 1.
-        </p></statement>
-        <feedback><p>Make sure you put two H gates right next to each other.</p>
-        </feedback>
-      </choice>
-          <choice correct="no">
-        <statement><p>It has the same effect as a NOT gate</p></statement>
-        <feedback><p>Make sure you put the H gates right next to each other.</p>
-        </feedback>
-      </choice>
 
-    </choices>
-    <hint><p>Use a NOT gate to make the second input 1, then put two H gates on each wire.</p></hint>
-  </exercise>
 
-  <p> By this point, I hope you have a big question in your mind - how is it that they are the same 
-    value after the first H gate (that is, 50/50 probability of measuring 0 vs 1), yet the second gate 
-    makes them go back to their original value? How can it distinguish between the 50/50 coming from 0 and 
-    the 50/50 coming from 1? 
+
+
+<section xml:id="superposition-analogies">
+  <title>Superposition Analogies</title>
+ 
+  <sidebyside widths="75% 25%" valign="top">
+    <p>
+      Optical illusions are a great example of being two things at once. In the image below, some people see
+      an old woman, and some see a young woman. The same person can see both images by shifting their perspective, 
+      but never both at the same time. 
+    </p>
+    <image source="OldYoungWomanIllusion.png" width="66%" />
+  </sidebyside>
+
+
+ <p>
+The phrase "wears many hats" is a good example of an analogy to superposition in our daily lives.
+I hold many roles - I am a professor, colleague, researcher, advisor, mother, sister, friend, musician, etc. At 
+different times, even within the same day, I play different roles when I interact with different people. However,
+I am also simultaneously all of those things.
+</p>
+
+Jen: Make a new picture that is a single person, and they have different roles - professor, mother, friend, etc.
+Me in the middle, a picture with each person around me. The other person has their label as to what they are 
+compared to me (UG student, grad student, professor, mother, daughter, friend) and the arrow from me to them
+is labeled with what I am to them.
+
+<p>Both of these analogies have some similarities to quantum superposition - they hold multiple values, and 
+the value observed depends on the context of the observation. However, they are not perfect analogies. Over the 
+next two chapters, you will gain a much better understanding of the details of superposition in quantum systems.
+</p>
+
+</section>
+
+
+<section xml:id="superposition-onebit-visual-rep">
+  <title>Superposition Details</title>
+
+<p> Before exploring superposition and the H gate further, we need to understand how to represent a 
+state that is in superposition (and therefore has a probability of being measured as 0 or 1). We will start with the visual representation, 
+and then in a later chapter, we will explore the mathematical representation.
+</p>
+ <sidebyside widths="75% 25%" valign="top">
+    <p>
+      First, it is important to understand that the 50/50 outcome of the H gate (when starting with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state)
+       is not the only possible superposition state. A qubit can be in a superposition state with any probabilities of measuring 0 or 1, 
+       as long as the probabilities add up to 100%. For example, a qubit could be in a superposition state where there is a 75% chance of 
+       measuring 0 and a 25% chance of measuring 1, or vice versa.
+
+    </p>
+    <image source="Any_prob_gate.png" width="66%" />
+  </sidebyside>
+
+  <p> So, how do we represent the state of a qubit that is in superposition? The interactive circuit widget uses a bar graph to visually represent the 
+  probabilities of measuring 0 or 1. In order to more easily perform operations, we will represent the state as shown in the image below.
+  <ul><li>
+  There is a line in between each possible outcome.
+  </li><li>
+  The number of instances of the same color represents the probability of that outcome. For example, in the left image below, there is one white and one 
+  black ball, so there is an equal probability of measuring 0 or 1. In the right image, there are three black and one white ball, so there is a 
+  75% chance of measuring 1 (black) and a 25% chance of measuring 0 (white).
+  </li></ul>
+  <image source="VisualSuperposition.png" width="66%" />
   </p>
-  <p> What this means is that our current model is incomplete - there is some other element of quantum state that 
-    we are not yet modeling! It is more complex than merely probability of measuring 0 vs 1. </p>
+
+<exercise label="Visual_rep_superposition_lesson3_1">
+      <title>Superposition Visual Representation</title>
+      <idx>Visual_superposition_rep</idx>
+      <statement>
+        <p>Select the statement that states the probability of measuring <m>\ket{0}</m> (white)  
+        in the following visual representation.</p>
+        <image source="Visual_rep_75_white.png" width="10%" />
+
+      </statement>
+      <choices randomize="no">
+        <choice correct="no">
+          <statement>
+            <p>0%</p>
+            
+          </statement>
+          <feedback>
+            <p>There are white balls in the state, so it can't be 0%.</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>25%</p>
+          </statement>
+          <feedback>
+            <p>There are more white balls than black balls in the visual representation, 
+            so the probability of measuring 0 (white) is greater than 50%.</p>
+          </feedback>
+        </choice>
+                <choice correct="yes">
+          <statement>
+            <p>75%</p>
+          </statement>
+          <feedback>
+            <p>Yes! There are 3 white balls and 1 black ball, so 3/4 are white, 
+            so the probability of measuring 0 (white) is 75%.</p>
+          </feedback>
+        </choice>
+                <choice correct="no">
+          <statement>
+            <p>100%</p>
+          </statement>
+          <feedback>
+            <p>There are black balls in the state, so the probability of measuring black is non-zero, 
+            therefore the probability of measuring white cannot be 100%.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Look at the ratio of white balls to black balls in the visual representation.</p>
+      </hint>
+    </exercise>
+
+</section>
+
 </section>
