@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson3_4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Superposition and Gates</title>
+
+<p>
+Now you need to know how to calculate the outputs of gates when the 
+inputs are in superposition, beyond memorizing that two H gates to into
+superposition and then out again. This requires two pieces of knowledge:
+<ul><li> How to visualize two qubit state</li>
+<li> How to calculate the outcome when inputs are in superposition</li></ul>
+</p>
+
+
+  <section xml:id="sec-two-qubit-visual">
+    <title>Visualizing two-qubit state</title>
+
+    <p> As we learned before, the horizontal line divides between two different
+    possible outcomes. If there is no line, then two different qubits are being
+    represented. In the images below, the left side is a single qubit in 
+    50/50 superposition. The right side is two different qubits, one  
+    <m>\ket{0}</m>  and the other  <m>\ket{1}</m>.</p>
+
+  <sidebyside widths="50% 50%" valign="top">
+  
+    <image source="Visual_Onebit_50_positive.png" width="10%" />
+     <image source="L3-4-twoqubitvisual.png" width="10%" />
+  </sidebyside>
+
+<p><insert>I can't figure out how to make those pictures smaller!!!</insert></p>
+
+</section>
+</section>

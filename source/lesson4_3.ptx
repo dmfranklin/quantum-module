@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson4_3" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Lingering Effects</title>
+
+<p> You might be thinking that the previous limitation was not *too* bad.
+All we need to do to measure the state is to perform 1000 consecutive 
+measurements, and that will extract approximate probabilities of each outcome.
+Unfortunately, there is a second limitation of quantum measurement.</p>
+
+<p> Consider measuring the temperature of a cup of hot chocolate.</p>  
+<sidebyside widths="75% 25%" valign="top">
+    <p>
+     <ul><li><b>Question:</b> What is the temperature of the hot chocolate?</li>
+     <li><b>Device:</b> A thermometer</li>
+        <li><b>Method:</b> Place the thermometer in the hot chocolate and read the value.</li></ul>
+    </p>
+    <image source="hotchocolate.png" width="66%" />
+  </sidebyside>
+
+  <p> What would happen, though, if we chose a different measurement device and method? 
+  Instead, let's imagine measuring the temperature of a cup of hot chocolate by timing how long 
+  it takes for the hot chocolate to melt an ice cube.
+    <ul><li><b>Question:</b> What is the temperature of the hot chocolate?</li>
+         <li><b>Device:</b> A stopwatch</li>
+            <li><b>Method:</b> Place an ice cube in the hot chocolate and time how long it takes to melt.</li></ul>
+</p>
+
+<p><insert>Put in a checkpoint question asking what the effect would be of this measurement method</insert></p>
+
+    <p> This is a very different measurement device and method, but it can still give us information 
+    about the temperature of the hot chocolate. Is there any downside to this method? Does someone still want to 
+    drink the hot chocolate after the ice cube has cooled it down?
+    </p>
+
+
+
+
+
+
+<p><insert>In quantum systems, the measurement changes the state of the measured qubit.</insert> More specifically,
+if the qubit is in superposition, then the measurement will cause it to lose its superposition, and it will 
+hold the same value as the measured outcome. 
+
+
+
+<p>If we were to consider what this would mean in python, it would
+look like the following for the code on the left and two different runs of the code on the right: </p>
+
+<sidebyside widths="50% 25% 25%" valign="top">
+    
+    <image source="4_3_python1.png" width="66%" />
+    <image source="4_3_pyoutput_1.png" width="66%" />
+    <image source="4_3_pyoutput_2.png" width="66%" />
+  </sidebyside>
+
+  <p> Once we print out the variable the first time, every subsequent print statement will print out the same think
+  unless more operations are performed on the variable to place it back into superposition.</p>
+
+
+
+<p> We can also apply this to our one qubit system with H gates. Now we have a much more complete
+picture of what was happening:</p>
+<p>  <image source="L4.3-H-gate-state-output.png" width="66%" /> </p>
+
+<p> To really challenge our understanding at this point, let's consider the following circuit and use 
+it to answer a few checkpoint questions:</p>
+
+<p><insert> Ask what the state is leaving the first H gate, then describe the outcome of 
+the first measurement. Then describe what state the qubit is in. Then ask what the state is after the 
+second H gate and what the outcome of the measurement would be. The picture below can be used 
+for the last two questions.</p> 
+
+
+
+<p>  <image source="L4.3-measure-in-h-gate.png" width="66%" /> </p>
+
+
+
+
+
+<p>  <image source="L4.3-measure-in-h-gate-2.png" width="66%" /> </p>
+<p>  <image source="L4.3-summary-1.png" width="66%" /> </p>
+<p>  <image source="L4.3-summary-2.png" width="66%" /> </p>
+
+</section>
+

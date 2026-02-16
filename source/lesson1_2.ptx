@@ -2,165 +2,183 @@
 
 <section xml:id="lesson1_2" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-    <title>Building Quantum Circuits</title>
-    <introduction>
-    <p>Quantum computing operations harness quantum properties to have outputs that 
-    are not possible with classical computers. For this reason, we represent quantum
-    programs and quantum state differently than in classical computing.</p>
-    
-    <p>In this part of the lesson, we will learn some basic quantum operations that can 
-    be implented by classical computers and introduce
-    a drag-and-drop tool (Q.js) you can use to build build quantum circuits. In future lessons,
-    you will use this tool to explore the behavior of quantum operations that cause properties 
-    not possible with classical computers.</p>
-    </introduction>
+  <title>Building Quantum Circuits</title>
+  <introduction>
+    <p>Quantum computing operations harness quantum properties to have outputs that
+      are not possible with classical computers. For this reason, we represent quantum
+      programs and quantum state differently than in classical computing.</p>
 
-<section xml:id="sec-qubit">
-    <title>Qubit: A quantum bit</title>
-    <p> Grace Hopper invented the compiler, which allowed programmers to often ignore the 1's 
-    and 0's in the machine and use higher level languages. Unfortunately, the unique features
-    of quantum computing reveal themselves on single bits, and algorithms are still designed
-    at the bit level. Therefore, we will operate on single bits, not integers or larger numbers. 
+    <p>In this part of the lesson, we will learn some basic quantum operations that can be
+      implemented by classical computers and introduce a drag-and-drop tool (Q.js) you can use
+      to build build quantum circuits. In future lessons, you will use this tool to explore the
+      behavior of quantum operations that introduce properties not possible with classical
+      computers.</p>
+  </introduction>
+
+  <section xml:id="sec-qubit">
+    <title>Qubit: A Quantum Bit</title>
+    <p>When Grace Hopper invented the compiler, it allowed programmers to often ignore the 1's and
+      0's
+      of machine code and instead use higher level programming languages. Unfortunately, the unique
+      features
+      of quantum computing are revealed at the level of a single bit, and algorithms are still
+      designed
+      at the bit level. For this reason, we will operate on single bits, not integers or larger
+      numbers.
     </p>
-    <p> A quantum bit, or qubit, holds a 0 or 1, just like a classical bit. However, a single
-    qubit also holds other interesting information that we will explore throughout this course. 
-    Today, we will only use the 0 and 1. To go along with the more complex state, the representation
-    uses slightly different syntax. We will begin that now - instead of just writing 0 or 1, we will
-    write |0⟩ and |1⟩. Later, we will learn more about what those symbols mean. 
-    </p>
-    <p> To make it easier to visualize, we will use a white ball for |0⟩ and a black ball for |1⟩.</p>
-    <image source="WhiteBlackBalls.png" width="30%"/>
-</section>
+    <p> A quantum bit, or <term>qubit</term>, holds a 0 or 1, just like a classical bit. However, a
+      single qubit also holds other interesting information that we will explore throughout this
+      course. In this lesson, we will only use the values of 0 and 1. To represent the more complex
+      state that is possible for a qubit, we use a slightly different syntax. Instead of just
+      writing 0 or 1, we will write <m>\ket{0}</m> or <m>\ket{1}</m>. Later, we will learn more
+      about this syntax and what it means. </p>
+    <p> To visualize these states, we will use a white ball: ⚪ for <m>\ket{0}</m> and a black
+      ball: ⚫ for <m>\ket{1}</m>.</p>
+    <image source="WhiteBlackBalls.png" width="25%" />
+  </section>
 
 
-<section xml:id="sec-not">
-    <title>Q Gate #1: NOT</title>
-    <p> Quantum operations are called <em>gates</em>. The simplest operation is the 
-    NOT, or X, gate. From a classical perspective, it toggles the value between 0 and 1.
-    That is, if the input is 0, the output is 1, and vice versa.</p>
-    <image source="NOTgate.png" width="40%"/>
-    
-  <exercise label="Not-Q1">
-    <title>NOT Gate Check #1</title>
-    <idx>not gate 1</idx>
-    <statement>
+  <section xml:id="sec-not">
+    <title>Quantum Operation #1: <c>NOT</c> Gate</title>
+    <p> Quantum operations are called <term>gates</term>. The simplest operation is the <c>NOT</c>
+      gate (also known as the <c>X</c> gate). From a classical perspective, it toggles the value
+      between 0 and 1. That is, if the input is <m>\ket{0}</m>, the output is <m>\ket{1}</m>,
+      and vice versa.</p>
+
+    <image source="NOTgate.png" width="40%" />
+
+    <exercise label="Not-Q1">
+      <title>
+        <c>NOT</c> Gate Check #1
+      </title>
+      <idx>not gate 1</idx>
+      <statement>
         <p>What is the output of this circuit?</p>
-        <image source="NOT_Q1.png" width="66%"/>
-    </statement>
-    <choices randomize="no">
-      <choice correct="yes">
-        <statement><p>◯ |0⟩</p></statement>
-        <feedback><p>Yes! Starting with: ◯ |0⟩; apply the first NOT operation: ⬤ |1⟩; and apply the second NOT operation: ◯ |0⟩</p></feedback>
-      </choice>
-      <choice>
-        <statement><p>⬤ |1⟩</p></statement>
-        <feedback><p>Did you apply the NOT operation two times?</p></feedback>
-      </choice>
-    </choices>
-    <hint><p>Apply the NOT gate twice.</p></hint>
-  </exercise>
+        <image source="NOT_Q1.png" width="66%" />
+      </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement>
+            <p>⚪ <m>\ket{0}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Yes! Starting with: ⚪ <m>\ket{0}</m>; apply the first <c>NOT</c> operation: ⚫ <m>
+                \ket{1}</m>; and apply the second <c>NOT</c> operation: ⚪ <m>\ket{0}</m>
+            </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>⚫ <m>\ket{1}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Did you apply the <c>NOT</c> operation two times?</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Apply the <c>NOT</c> gate twice.</p>
+      </hint>
+    </exercise>
 
- <exercise label="Not-Q2">
-    <title>NOT Gate Check #2</title>
-    <idx>not gate 2</idx>
-    <statement>
+    <exercise label="Not-Q2">
+      <title>
+        <c>NOT</c> Gate Check #2
+      </title>
+      <idx>not gate 2</idx>
+      <statement>
         <p>What is the output of this circuit?</p>
-        <image source="NOT_Q2.png" width="66%"/>
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p>◯ |0⟩</p></statement>
-        <feedback><p>There were only two "eat cookie" operations.</p>
-         </feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>⬤ |1⟩</p></statement>
-        <feedback><p>Yes! Starting with: ⬤ |1⟩; apply the first NOT operation: ◯ |0⟩; and apply the second NOT operation: ⬤ |1⟩</p></feedback>
-      </choice>
-    </choices>
-    <hint><p>Apply the NOT gate twice.</p></hint>
-  </exercise>
+        <image source="NOT_Q2.png" width="66%" />
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement>
+            <p>⚫ <m>\ket{0}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Did you apply the <c>NOT</c> operation two times?</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>⚪ <m>\ket{1}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Yes! Starting with: ⚫ <m>\ket{1}</m>; apply the first <c>NOT</c> operation: ⚪ <m>
+                \ket{0}</m>; and apply the second <c>NOT</c> operation: ⚫ <m>\ket{1}</m>
+            </p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Apply the <c>NOT</c> gate twice.</p>
+      </hint>
+    </exercise>
 
- <exercise label="Not-Q3">
-    <title>NOT Gate Check #3</title>
-    <idx>not gate 3</idx>
-    <statement>
-      <p>What is the output of this circuit?</p>
-      <image source="NOT_Q3.png" width="66%"/>  
-    </statement>
-    <choices randomize="no">
-      <choice correct="yes">
-        <statement><p>◯ |0⟩</p></statement>
-        <feedback><p>Yes! Starting with: ⬤ |1⟩; apply the first NOT operation: ◯ |0⟩; apply the second NOT operation: ⬤ |1⟩; and apply the third NOT operation: ◯ |0⟩</p></feedback>
-      </choice>
-      <choice>
-        <statement><p>⬤ |1⟩</p></statement>
-        <feedback><p>Did you apply the NOT operation three times?</p></feedback>
-      </choice>
-    </choices>
-    <hint><p>Apply the NOT gate three times.</p></hint>
-  </exercise>
-</section>
+    <exercise label="Not-Q3">
+      <title>
+        <c>NOT</c> Gate Check #3
+      </title>
+      <idx>not gate 3</idx>
+      <statement>
+        <p>What is the output of this circuit?</p>
+        <image source="NOT_Q3.png" width="66%" />
+      </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement>
+            <p>⚪ <m>\ket{0}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Yes! Starting with: ⚫ <m>\ket{1}</m>; apply the first <c>NOT</c> operation: ⚪ <m>
+                \ket{0}</m>; apply the second <c>NOT</c> operation: ⚫ <m>\ket{1}</m>; and apply
+              the third <c>NOT</c> operation: ⚪ <m>\ket{0}</m>
+            </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>⚫ <m>\ket{1}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Did you apply the <c>NOT</c> operation three times?</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Apply the <c>NOT</c> gate three times.</p>
+      </hint>
+    </exercise>
+  </section>
 
   <section>
-    <title>Build a Quantum Circuit</title>
-    <p> In this section, we introduce the interactive quantum circuit builder.</p>
-    <p>There are three operations that operate well on qubits in the simple states of |0⟩ and |1⟩: NOT, SWAP, and CNOT</p>
-    <image source="NOT-SWAP-CNOT.png" width="60%"/>
+    <title>Building Quantum Circuits</title>
+    <p>In this section, we introduce the interactive quantum circuit builder. To use the circuit
+      builder, drag the <em>gate tiles</em> from the <em>palette</em> and place them onto the
+      circuit to match the given circuit.</p>
 
-    <p>
-    Below is your first circuit to build using the circuit builder's explore mode. 
-    Drag and drop the pictures of the gates onto the circuit. 
-    In explore mode, every time you make a change, it provides
-    feedback. You can ignore the feedback until you think you are done!!
-    </p>
+    <image source="L1.2-CIRCUIT BUILDER.png" width="75%" />
 
-    <p>
-    The SWAP gate is a two-qubit gate. Create the SWAP gate by dragging , which will be two diamonds in this widget.
-    Place the two diamonds on the two wires in the same column. Click on them so   
-    they are both highlighted, then click on the "S" button to connect them.
-    </p>
-    <image source="L1.2-CREATING MULTI-QUBIT GATES.png" width="100%"/>
-    
-    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <p>For your first circuit, you will use the circuit builder's <em>Explore</em> mode. In <em>
+        Explore</em> mode, you receive feedback every time you make a change. You can ignore the
+      feedback until you think that you are done building the circuit.</p>
+
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
       <script>
         identicalCircuitWidget({
-          circuit: "L1_2_1",
+          circuit: "L1_2_0",
           instantFeedback: true,
-          allowedGates: "XS*"
-        });
-      </script>
-    </interactive>
-
-<p>
-    Now let's try building a circuit with a controlled gate - just like the controlled
-    increment we saw in the math example. Put a spot on one the control wire and the gate on the 
-    target wire. Click on them to make sure they are both highlighted, then click the "C" button 
-    to connect them.
-</p>
-
-  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
-        identicalCircuitWidget({
-          circuit: "L1_2_2",
-          instantFeedback: true,
-          allowedGates: "X*"
-        });
-      </script>
-    </interactive>
-  <p>
-  <insert> I am leaving in this last one because it had a bug when I tried it - it always
-    said I was not correct, even when I completed the circuit.</insert>
-  </p>
-   <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
-        identicalCircuitWidget({
-          circuit: "Phi+",
-          instantFeedback: true,
-          allowedGates: "HX*"
+          allowedGates: "X"
         });
       </script>
     </interactive>
   </section>
-  
+
 </section>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
 <section xml:id="lesson2_2" xmlns:xi="http://www.w3.org/2001/XInclude">
 
- 
+  <title>Exploring the <c>SWAP</c> Gate</title>
 
-  <title>Exploring the SWAP Gate</title>
   <p>
-    In the previous section, you learned how to use the circuit builder to determine 
+    In the previous section, you learned how to use the circuit builder to determine
     the output from a particular set of inputs.
-    Now use the circuit builder to figure out the output when you give a SWAP gate 
-    <m>|10\rangle</m> and <m>|11\rangle</m> so you can build the complete functionality for simple two-qubit 
-    combinations. 
+    Now use the circuit builder to figure out the output when you give a <c>SWAP</c> gate
+    <m>\ket{10}</m> and <m>\ket{11}</m> so you can build the complete functionality for simple two-qubit
+    combinations.
   </p>
 
-  <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
     <script>
       visualizeProbabilitiesWidget({
         circuit: "Blank 2x6",
@@ -25,149 +23,181 @@
   </interactive>
 
   <exercise label="Swap_truth_table">
-    <title>Swap Truth Table</title>
+    <title>
+      <c>SWAP</c> Truth Table
+    </title>
     <idx>Swap_truth_table</idx>
     <statement>
-        <p>Which picture depicts the proper relationship between the four possible input and 
-          output combinations?
-        </p>
+      <p>
+        Select the picture that depicts the correct truth table for the <c>SWAP</c> gate.
+        It should show the proper relationship between the four possible input and output
+        combinations.
+      </p>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
-        <statement><p><datafile label="Swap_truth_table_SWAPgate" filename="SWAPgate.png" include-source="yes">
-          <image source="SWAPgate.png" width="66%"/>
-        </datafile>
-      </p></statement>
-        <feedback><p>Yes! It always trades the two input values <em> but it does not trade their 
-          locations</em>!</p>
-         </feedback>
-      </choice>
-      <choice>
-        <statement><p><datafile label="Swap_truth_table_SWAPgateWrong1" filename="SWAPgateWrong1.png" include-source="yes">
-          <image source="SWAPgateWrong1.png" width="66%"/>
-        </datafile>
-      </p></statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p>
-        </feedback>
-      </choice>
-      <choice >
-        <statement><p><datafile label="Swap_truth_table_SWAPgateWrong2" filename="SWAPgateWrong2.png" include-source="yes">
-          <image source="SWAPgateWrong2.png" width="66%"/>
-        </datafile>
-      </p></statement>
-        <feedback><p>Yes! It traded the <em>values</em> but not locations of the two qubits!</p>
+        <statement>
+          <image source="SWAPgate.png" width="100%" />
+        </statement>
+        <feedback>
+          <p>Yes! It always trades the two input values <em> but it does not trade their
+              locations</em>!</p>
         </feedback>
       </choice>
       <choice>
-        <statement><p><datafile label="Swap_truth_table_SWAPgateWrong3" filename="SWAPgateWrong3.png" include-source="yes">
-          <image source="SWAPgateWrong3.png" width="66%"/>
-        </datafile>
-      </p></statement>
-        <feedback><p>Make sure you hooked up your circuit correctly!</p>
+        <statement>
+          <image source="SWAPgateWrong1.png" width="100%" />
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <image source="SWAPgateWrong2.png" width="100%" />
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <image source="SWAPgateWrong3.png" width="100%" />
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
         </feedback>
       </choice>
     </choices>
-    <hint><p>Make the circuit and look at the bar graph below the circuit. 
-      Try it with <m>|10\rangle</m> and <m>|11\rangle</m> using not gates, then record the answers.</p></hint>
+    <hint>
+      <p>Use the circuit builder above to make the circuit.
+        The bar graph below the circuit can help you to determine the outputs for different inputs.</p>
+      <p>Try it with <m>\ket{10}</m> and <m>\ket{11}</m>.
+        To do this, you need to use a <c>NOT</c> gates to change the input value <m>\ket{0}</m> to <m>\ket{1}</m>.
+        Then, record the answers.</p>
+    </hint>
   </exercise>
 
-<p> 
-Now that you have the full truth table for SWAP, I suggest writing it on a page of 
-notes for future reference. In the following questions, you will be asked to calculate 
-the results of circuits involving NOT and SWAP gates.
-</p>
+  <p>
+    Now that you have the full truth table for <c>SWAP</c>, you may want to write it on a page of
+    notes or take a screenshot for future reference. In the following questions, you will be
+    asked to calculate the results of circuits involving <c>NOT</c> and <c>SWAP</c> gates.
+  </p>
 
-<exercise label="SWAP_Q1">
-  <title>Swap Q1</title>
-  <idx>swap Q1</idx>
-  <statement>
+  <exercise label="SWAP_Q1">
+    <title>
+      <c>SWAP</c> Question #1
+    </title>
+    <idx>swap Q1</idx>
+    <statement>
+      <p>What is the output of the following circuit?</p>
+      <image source="SWAP_Q1.png" width="66%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Write down the circuit and write the state of each qubit after each gate.</p>
+    </hint>
+  </exercise>
+
+  <exercise label="SWAP_Q2">
+    <title>
+      <c>SWAP</c> Question #2
+    </title>
+    <idx>swap Q2</idx>
+    <statement>
       <p>What is the output of the following circuit?
-        <datafile label="SWAP_Q1_image" filename="SWAP_Q1.png" include-source="yes">
-          <image source="SWAP_Q1.png" width="66%"/>
-        </datafile> 
+        <image source="SWAP_Q2.png" width="66%" />
       </p>
-  </statement>
-  <choices randomize="no">
-    <choice>
-      <statement><p><m>|00\rangle</m> or <datafile label="SWAP_Q1_Balls00" filename="Balls00.png" include-source="yes">
-        <image source="Balls00.png" width="66%"/>
-      </datafile>
-    </p></statement>
-      <feedback><p>Yes! The swap had no effect!</p>
-       </feedback>
-    </choice>
-    <choice>
-      <statement><p><m>|01\rangle</m> or <datafile label="SWAP_Q1_Balls01" filename="Balls01.png" include-source="yes">
-        <image source="Balls01.png" width="66%"/>
-      </datafile>
-    </p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-    <choice correct="yes">
-      <statement><p><m>|10\rangle</m> or <datafile label="SWAP_Q1_Balls10" filename="Balls10.png" include-source="yes">
-        <image source="Balls10.png" width="66%"/>
-      </datafile></p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-    <choice>
-      <statement><p><m>|11\rangle</m> or <datafile label="SWAP_Q1_Balls11" filename="Balls11.png" include-source="yes">
-        <image source="Balls11.png" width="66%"/>
-      </datafile></p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-  </choices>
-  <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
-</exercise>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Correct!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
+          </p>
+        </statement>
+        <feedback>
+          <p>Make sure you hooked up your circuit correctly!</p>
+        </feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Write down the circuit and write the state of each qubit after each gate.</p>
+    </hint>
+  </exercise>
 
-<exercise label="SWAP_Q2">
-  <title>Swap Q2</title>
-  <idx>swap Q2</idx>
-  <statement>
-      <p>What is the output of the following circuit?
-        <datafile label="SWAP_Q2_image" filename="SWAP_Q2.png" include-source="yes">
-          <image source="SWAP_Q2.png" width="66%"/>
-        </datafile> 
-      </p>
-  </statement>
-  <choices randomize="no">
-    <choice>
-      <statement><p><m>|00\rangle</m> or <datafile label="SWAP_Q2_Balls00" filename="Balls00.png" include-source="yes">
-        <image source="Balls00.png" width="66%"/>
-      </datafile>
-    </p></statement>
-      <feedback><p>Yes! The swap had no effect!</p>
-       </feedback>
-    </choice>
-    <choice correct="yes">
-      <statement><p><m>|01\rangle</m> or <datafile label="SWAP_Q2_Balls01" filename="Balls01.png" include-source="yes">
-        <image source="Balls01.png" width="66%"/>
-      </datafile>
-    </p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-    <choice>
-      <statement><p><m>|10\rangle</m> or <datafile label="SWAP_Q2_Balls10" filename="Balls10.png" include-source="yes">
-        <image source="Balls10.png" width="66%"/>
-      </datafile></p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-    <choice>
-      <statement><p><m>|11\rangle</m> or <datafile label="SWAP_Q2_Balls11" filename="Balls11.png" include-source="yes">
-        <image source="Balls11.png" width="66%"/>
-      </datafile></p></statement>
-      <feedback><p>Make sure you hooked up your circuit correctly!</p>
-      </feedback>
-    </choice>
-  </choices>
-  <hint><p>Write down the circuit and write the state of each qubit after each gate.</p></hint>
-</exercise>
-
-<!-- 
+  <!--
 <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
   <script>
     specificOutputWidget({
