@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson5_1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Basic Probability</title>
+
+<p>
+Let's begin by reviewing what probabilities about future events really mean. 
+Look at the exercise below to see what you can conclude from a weather forecast.
+</p><p>
+<image source="L5.1-weather-forecast.png" width="66%" /></p>
+
+ <exercise label="L5-1-Forecast-Events">
+      <title>
+        Probability in Forecasts
+      </title>
+      <idx>probability forecast</idx>
+      <statement>
+        <p>Which of the following statements is true based on the weather forecast?</p>
+        
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>It is not going to rain at 11pm.
+            </p>
+          </statement>
+          <feedback>
+            <p>It is very unlikely to rain at 11pm, but it still might rain.
+            </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>It is going to rain at 4am.
+            </p>
+          </statement>
+          <feedback>
+            <p>It might rain at 4a, but it might not rain.</p>
+          </feedback>
+        </choice>
+        <choice  correct="yes">
+          <statement>
+            <p>It is more likely to rain in the morning than in the evening.
+            </p>
+          </statement>
+          <feedback>
+            <p>Yes! However, there is still a possibility that it rains in the evening and not the morning.</p>
+          </feedback>
+        </choice>
+
+      </choices>
+      <hint>
+        <p>Think carefully about what a forecast probability means.</p>
+      </hint>
+    </exercise>
+
+
+<p>
+What it really means is that if we experienced 100,000 days with these identical conditions,
+approximately 40,000 of them would have rain at 4am. However, it does not make a definitive
+statement about what is going to happen today.
+</p>
+
+
+
+<sidebyside widths="50% 50%" valign="top">
+   <p>
+Probability is not:
+<ul><li>Knowledge about the outcome of any individual event</li>
+<li>Confirmed or refuted through a single experiment</li>
+</ul>
+</p>
+  <p>
+Probability is:
+<ul><li>A prediction of the frequency of an outcome of many, many actions
+</li>
+<li>Confirmed or refuted through many, many experiments</li>
+</ul>
+</p>
+  </sidebyside>
+
+<section xml:id="sec-independent-probabilities">
+    <title>Combining Independent Probabilities</title>
+
+
+
+</section>
+
+
+</section>
+

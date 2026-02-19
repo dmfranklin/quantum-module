@@ -5,14 +5,24 @@
 
   <introduction>
     <p>
-      In this chapter, we are going to learn about measurement in quantum computing.
-      Specifically, we have the following learning goals:
+      We have been using the visual representation to build intuition about
+      quantum state and quantum gates. This representation is limited in 
+      two important ways:
     </p>
+    <p>
     <ul>
-      <li>What are the limitations of measurement in quantum computing?</li>
-      <li>How does measurement affect quantum states?</li>
-      <li>What does this mean for quantum programming?</li>
+      <li>It does not fully explain crucial phase behavior.</li>
+      <li>It can only represent simple states with small ratios.</li>
     </ul>
+    </p>
+    <p> In this chapter, we have three learning goals:</p>
+     <p>
+    <ul>
+      <li>The meaning and calculations for independent probabilities</li>
+      <li>Mathematical notation for single and multi-qubit quantum state </li>
+      <li>Mathematical operations to calculate the output of quantum gates (operations)</li>
+    </ul>
+    </p>
   </introduction>
 
   <!-- include sections -->
