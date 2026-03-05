@@ -42,7 +42,7 @@ Unfortunately, there is a second limitation of quantum measurement.</p>
 
 <p><insert>In quantum systems, the measurement changes the state of the measured qubit.</insert> More specifically,
 if the qubit is in superposition, then the measurement will cause it to lose its superposition, and it will 
-hold the same value as the measured outcome. 
+hold the same value as the measured outcome. </p>
 
 
 
@@ -71,7 +71,7 @@ it to answer a few checkpoint questions:</p>
 <p><insert> Ask what the state is leaving the first H gate, then describe the outcome of 
 the first measurement. Then describe what state the qubit is in. Then ask what the state is after the 
 second H gate and what the outcome of the measurement would be. The picture below can be used 
-for the last two questions.</p> 
+for the last two questions.</insert></p> 
 
 
 

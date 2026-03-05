@@ -21,7 +21,7 @@ superposition and then out again. This requires two pieces of knowledge:
     50/50 superposition. The right side is two different qubits, one  
     <m>\ket{0}</m>  and the other  <m>\ket{1}</m>.</p>
 
-  <sidebyside widths="50% 50%" valign="top">
+  <sidebyside widths="20% 20%" valign="top">
   
     <image source="Visual_Onebit_50_positive.png" width="10%" />
      <image source="L3-4-twoqubitvisual.png" width="10%" />
@@ -29,5 +29,11 @@ superposition and then out again. This requires two pieces of knowledge:
 
 <p><insert>I can't figure out how to make those pictures smaller!!!</insert></p>
 
+
 </section>
+ <section xml:id="sec-calc-superposition-visual">
+    <title>Calculating Gates with Superposition Inputs</title>
+
+</section>
+
 </section>
