@@ -141,8 +141,9 @@ and then in a later chapter, we will explore the mathematical representation.
   black ball, so there is an equal probability of measuring 0 or 1. In the right image, there are three black and one white ball, so there is a 
   75% chance of measuring 1 (black) and a 25% chance of measuring 0 (white).
   </li></ul>
-  <image source="VisualSuperposition.png" width="66%" />
   </p>
+  <image source="VisualSuperposition.png" width="66%" />
+  
 
 <exercise label="Visual_rep_superposition_lesson3_1">
       <title>Superposition Visual Representation</title>

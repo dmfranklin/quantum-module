@@ -33,11 +33,11 @@
 
 <p> Now that we have a visual representation of phase, we can have a more complete picture of what the <c>H</c> gate does to a qubit. 
 The <c>H</c> gate creates a superposition of the input state, but it also creates a difference in phase between the two states. 
-This is why the second <c>H</c> gate can reverse the effect of the first <c>H</c> gate - because it flips the phase back to its original state.
+This is why the second <c>H</c> gate can reverse the effect of the first <c>H</c> gate - because the phase is an integral part of the state,
+allowing it to revert to its original state. We will learn the mathematics of this operation later.
 </p>
-<p>
-<image source="Z_Explore_2.png" width="66%" />
-</p>
+<image source="L3.2-H-with-phase.png" width="66%" />
+
 
 <section xml:id="sec-z-gate">
     <title><c>Z</c> Gate</title>
@@ -102,10 +102,12 @@ This is why the second <c>H</c> gate can reverse the effect of the first <c>H</c
 
   <p>
     You might have been surprised by the answer! Because quantum state is more complex than merely
-    the probability of measuring 0 or 1, this method for determining and expressing an operation's
-    functionality is insufficient.
+    the probability of measuring 0 or 1, and superposition is critical to the success of quantum 
+    computing, testing a new data by simply looking at its behavior on a qubit not in superposition 
+    is insufficient.
   </p>
-  <p> Now, use the circuit builder above to create the following circuits and observe the outcomes.
+  <p> This time, we will place the qubit in superposition first.Use the circuit builder above to create the 
+  following circuits and observe the outcomes.
     This will reveal the functionality of the <c>Z</c> gate on a qubit in superposition.
   </p>
   <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="85%" />
@@ -160,7 +162,8 @@ This is why the second <c>H</c> gate can reverse the effect of the first <c>H</c
  <p> This truth table does not seem right - you already observed that there is no observable effect
  when a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state. So why is the truth table
  expressed this way? We have to remember that the truth table is describing the effect of the Z gate on the full quantum state,
- including phase, not just the measurement outcomes. When a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state,
+ including when it is in superposition, not just the measurement outcome of 0 vs 1. 
+ When a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state,
  there is no change in phase, so the effect is not observable. However, when a Z gate is applied to a qubit in superposition, 
  it flips the phase of the states, and the negative sign is always applied to the probability of the <m>\ket{1}</m> state.
  </p><p>

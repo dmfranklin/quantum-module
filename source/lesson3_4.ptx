@@ -5,8 +5,8 @@
 
 <p>
 Now you need to know how to calculate the outputs of gates when the 
-inputs are in superposition, beyond memorizing that two H gates to into
-superposition and then out again. This requires two pieces of knowledge:
+inputs are in superposition, beyond memorizing that two H gates put a qubit into
+superposition and then out again. To calculate the results, we need two pieces of knowledge:
 <ul><li> How to visualize two qubit state</li>
 <li> How to calculate the outcome when inputs are in superposition</li></ul>
 </p>
@@ -15,25 +15,74 @@ superposition and then out again. This requires two pieces of knowledge:
   <section xml:id="sec-two-qubit-visual">
     <title>Visualizing two-qubit state</title>
 
+
     <p> As we learned before, the horizontal line divides between two different
     possible outcomes. If there is no line, then two different qubits are being
     represented. In the images below, the left side is a single qubit in 
-    50/50 superposition. The right side is two different qubits, one  
-    <m>\ket{0}</m>  and the other  <m>\ket{1}</m>.</p>
+    50/50 superposition. The middle depicts two different qubits, one  
+    <m>\ket{0}</m>  and the other  <m>\ket{1}</m>. The right side depicts a two-qubit
+    system with four equally possible outcomes. Each horizontal line divides between 
+    each possibility of the two-qubit measurement outcome.</p>
 
-  <sidebyside widths="20% 20%" valign="top">
+  
+
+
+<sidebyside widths="10% 10% 10%" valign="top">
   
     <image source="Visual_Onebit_50_positive.png" width="10%" />
      <image source="L3-4-twoqubitvisual.png" width="10%" />
+      <image source="L3.4-TwoQubitSuperposition.png" width="10%" />
   </sidebyside>
-
-<p><insert>I can't figure out how to make those pictures smaller!!!</insert></p>
-
+  
+  <p><insert> Put in two checkpoint questions. The first has a visualized state and asks what 
+  it means. The second has a description and asks which visualized state is correct. Play around 
+  with where the horizontal lines are placed.</insert></p>
 
 </section>
  <section xml:id="sec-calc-superposition-visual">
     <title>Calculating Gates with Superposition Inputs</title>
 
-</section>
+<p> To calculate gates in which the qubits are in superposition, there is a simple 
+rule to follow: <insert>Apply the gate separately to each possible outcome, then combine the results.
+Consider the two examples below for the NOT gate. </insert></p>
 
+<sidebyside widths="25% 10% 30%" valign="top">
+  
+    <image source="L3.4-5050-to-NOT.png" width="10%" />
+    <p> </p>
+     <image source="L3.4-7525-to-NOT.png" width="10%" />
+  </sidebyside>
+
+<p>The solutions are as depicted below:</p>
+
+<sidebyside widths="30% 20% 50%" valign="top">
+  
+    <image source="L3.4-5050-NOT-output.png" width="10%" />
+    <p> </p>
+     <image source="L3.4-7525-NOT-output.png" width="10%" />
+  </sidebyside>
+
+</section>
+<section xml:id="sec-simplify-superposition-visual">
+    <title>Simplification Rules for Visualized States</title>
+
+     <sidebyside widths="80% 10%" valign="top">
+  
+    <p> Once you have completed the calculation, just like in algebra, you need
+to inspect the result to see if there are simplifications you can perform. For example, if you have a 
+two-qubit system and the result is like the picture to the right, there are a number of steps you can take 
+to simplify it. 
+</p>
+     
+      <image source="L3.4-Simplify.png" width="10%" />
+  </sidebyside>
+
+  <image source="L3.4-SimplificationRules.png" width="90%" />
+
+<p><insert>Put in two checkpoint questions with single-step simplifications</insert></p>
+
+
+
+
+</section>
 </section>
