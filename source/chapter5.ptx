@@ -6,7 +6,8 @@
   <introduction>
     <p>
       We have been using the visual representation to build intuition about
-      quantum state and quantum gates. This representation is limited in 
+      quantum state and quantum gates - specifically superposition and phase. 
+      This representation is limited in 
       two important ways:
     </p>
     <p>
@@ -15,7 +16,16 @@
       <li>It can only represent simple states with small ratios.</li>
     </ul>
     </p>
-    <p> In this chapter, we have three learning goals:</p>
+      <p> In particular, you know that starting with <m>\ket{0}</m> and applying an <c>H</c> gate
+        places the qubit in positive phase. Likewise, starting with <m>\ket{1}</m> and applying an <c>H</c> gate
+        places the qubit in negative phase. You also know that the <c>Z</c> gate flips the phase. While this is a start,
+        it is not sufficient for calculating the effect of the <c>H</c> and
+        <c>Z</c> gates on more complex states. We first need to have a better understanding of how to calculate
+        probabilities, then use those skills with a mathematical representation to calculate the effects of gates
+        on qubits in states of superposition and
+        phase.
+    </p>
+    <p> In this chapter, we have three major learning goals:</p>
      <p>
     <ul>
       <li>The meaning and calculations for independent probabilities</li>
