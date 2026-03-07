@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<section xml:id="lesson3_3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Probability</title>
+<p> We have now introduced superposition and phase, but we don't have a way of precisely 
+    calculating the effects. You know that starting with <m>|0\rangle</m> and applying an H gate 
+    places the qubit in positive phase. Likewise, starting with <m>|1\rangle</m> and applying an H gate 
+    places the qubit in negative phase. You also know that the Z gate flips the phase. While this is a start, 
+    it is not sufficient for calculating the effect of the H and 
+    Z gates on more complex states. We first need to have a better understanding of how to calculate 
+    probabilities, then use those skills with a mathematical representation to calculate the effects of gates 
+    on qubits in states of superposition and 
+    phase. </p>
+
+    <p> Let's explore a common use of probabilities - how we predict the weather. </p>
+   
+         <exercise label="weather-prediction">
+    <title>Weather Prediction</title>
+    <idx>weather-prediction</idx>
+    <statement>
+      <p>Look at this depiction of the probability of rain each hour of a single day in Chicago. Which 
+        of the following are correct conclusions based on this information?
+      </p>
+      <image source="weather_prediction.png" width="66%"/>  
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>It is more likely to rain at 8am than 8pm.</p></statement>
+        <feedback><p>Yes! We don't know whether it will rain at either time, but it is more likely 
+            at 8am.
+        </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>It is not going to rain at 11pm</p></statement>
+        <feedback><p>While it is very unlikely to rain at 11pm, it still might.</p></feedback>
+      </choice>
+       <choice>
+        <statement><p>It is  going to rain at 4am</p></statement>
+        <feedback><p>While it is very likely to rain at 11pm, it still might not.</p></feedback>
+      </choice>
+    </choices>
+    
+  </exercise>
+
+<p> So, what does probability really mean? Instead of telling you whether or not it is going to  
+    rain, it tells you that if we experienced 100,000 days of exactly the same conditions as  
+    today, 40,000 of those would likely have had rain at 4am. </p>  
+    
+   <p> Probability is not:  
+    <ul>
+        <li>
+            <p>
+               The prediction of a single outcome. 
+            </p>
+        </li>
+                <li>
+            <p>
+               Confirmed or refuted based on the result of a single outcome. 
+            </p>
+        </li>
+    </ul>
+</p> 
+
+       <p> Probability is:  
+    <ul>
+        <li>
+            <p>
+               The prediction of the frequency of an outcome in a set of many, many outcomes. 
+            </p>
+        </li>
+                <li>
+            <p>
+               Confirmed or refuted based on the result of many, many identical experiments. 
+            </p>
+        </li>
+    </ul>
+</p> 
+
+</section>
