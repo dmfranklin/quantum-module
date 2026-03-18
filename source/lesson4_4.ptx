@@ -8,8 +8,8 @@
     
 <p>
 To summarize, let's step through the example you just solved. We want to understand
-the behavior we see when we have insert a measurement in the middle of two H gates.</p>
-<p>  <image source="L4.3-measure-in-h-gate-2.png" width="66%" /> </p>
+the behavior we see when we place a measurement betweeen two H gates.</p>
+<p>  <image source="L4.3-measure-in-h-gate-2.png" width="90%" /> </p>
 
 
 <p> That measurement collapses the superposition after the first H gate, so the 
@@ -18,15 +18,15 @@ The second H gate then places the qubit back into superposition, but the phase i
 The second measurement then collapses the superposition, 
 and the outcome is either <m>\ket{0}</m> or <m>\ket{1}</m> with equal probability.</p>
 
-<p>  <image source="L4.3-summary-2.png" width="66%" /> </p>
+<p>  <image source="L4.3-summary-2.png" width="90%" /> </p>
 
-<p> If there is no measurement in the middle, however, the second H gate receives an input that is in superposition 
+<p> If there is no measurement between the H gates, however, the second H gate receives an input that is in superposition 
 with a 50/50 probability of being <m>\ket{0}</m> or <m>\ket{1}</m> and phase corresponding to whether the initial
 input was black or white. The second H gate then places the qubit back into a state that is either <m>\ket{0}</m> 
 or <m>\ket{1}</m> with 100% probability, depending on the initial input.</p>
 
 
-<p>  <image source="L4.3-summary-1.png" width="66%" /> </p>
+<p>  <image source="L4.3-summary-1.png" width="90%" /> </p>
 
   
 

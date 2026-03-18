@@ -10,25 +10,55 @@ All we need to do to measure the state is to perform 1000 consecutive
 measurements, and that will extract approximate probabilities of each outcome.
 Unfortunately, there is a second limitation of quantum measurement.</p>
 
-<p> Consider measuring the temperature of a cup of hot chocolate.</p>  
-<sidebyside widths="75% 25%" valign="top">
+<sidebyside widths="80% 20%" valign="top">
     <p>
-     <ul><li><b>Question:</b> What is the temperature of the hot chocolate?</li>
-     <li><b>Device:</b> A thermometer</li>
-        <li><b>Method:</b> Place the thermometer in the hot chocolate and read the value.</li></ul>
+    <p> Consider measuring the temperature of a cup of hot chocolate.</p>  
+    <ul>
+        <li><term>Question:</term> What is the temperature of the hot chocolate?</li>
+        <li><term>Device:</term> A thermometer</li>
+        <li><term>Method:</term> Place the thermometer in the hot chocolate and read the value.</li>
+    </ul>
     </p>
-    <image source="hotchocolate.png" width="66%" />
+    <image source="hotchocolate_COLOR.png" width="50%" />
+<!--    <image source="hotchocolate.png" width="66%" />-->
   </sidebyside>
-
-  <p> What would happen, though, if we chose a different measurement device and method? 
+  <p>What would happen if we chose a different measurement device and method?</p>
+  <p>  
   Instead, let's imagine measuring the temperature of a cup of hot chocolate by timing how long 
   it takes for the hot chocolate to melt an ice cube.
-    <ul><li><b>Question:</b> What is the temperature of the hot chocolate?</li>
-         <li><b>Device:</b> A stopwatch</li>
-            <li><b>Method:</b> Place an ice cube in the hot chocolate and time how long it takes to melt.</li></ul>
+    <ul>
+        <li><term>Question:</term> What is the temperature of the hot chocolate?</li>
+        <li><term>Device:</term> A stopwatch</li>
+        <li><term>Method:</term> Place an ice cube in the hot chocolate and time how long it takes to melt.</li>
+    </ul>
 </p>
 
-<p><insert>Put in a checkpoint question asking what the effect would be of this measurement method</insert></p>
+<!--<p><alert><insert>JEN - Put in a checkpoint question asking what the effect would be of this measurement method</insert></alert></p>-->
+
+  <exercise label="L4_3 Measurement Effect">
+    <title>Effects of Measurement</title>
+    <idx>L4_3 Measurement Effect</idx>
+    <statement>
+      <p>What is the effect of this measurement method?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement><p>The temperature of the hot cocoa decreases.</p></statement>
+        <feedback><p>Correct!!</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>There is no effect.</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>The temperature of the hot cocoa increases.</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>>
+    </choices>
+    <hint>
+      <p>Think about how this measurement method differs from the original method (using a thermometer).</p> 
+    </hint>
+  </exercise>
 
     <p> This is a very different measurement device and method, but it can still give us information 
     about the temperature of the hot chocolate. Is there any downside to this method? Does someone still want to 
@@ -47,13 +77,21 @@ hold the same value as the measured outcome. </p>
 
 
 <p>If we were to consider what this would mean in python, it would
-look like the following for the code on the left and two different runs of the code on the right: </p>
+look like the following for the code on the top and two different runs of the code on the bottom: </p>
 
-<sidebyside widths="50% 25% 25%" valign="top">
+<!--<sidebyside widths="50% 25% 25%" valign="top">
     
     <image source="4_3_python1.png" width="66%" />
     <image source="4_3_pyoutput_1.png" width="66%" />
     <image source="4_3_pyoutput_2.png" width="66%" />
+  </sidebyside>-->
+
+  <image source="4_3_python1.png" width="70%" />
+  <sidebyside widths="15% 35% 35% 15%" valign="top">
+    <p> </p>
+    <image source="4_3_pyoutput_1.png" width="66%" />
+    <image source="4_3_pyoutput_2.png" width="66%" />
+    <p> </p>
   </sidebyside>
 
   <p> Once we print out the variable the first time, every subsequent print statement will print out the same think
@@ -67,21 +105,72 @@ picture of what was happening:</p>
 
 
 <p> To really challenge our understanding at this point, let's consider the following circuit and use 
-it to answer a few checkpoint questions:</p>
+it to answer the following questions:</p>
 
-<p>  <image source="L4.3-measure-in-h-gate.png" width="66%" /> </p>
-<p><insert>Swap out this picture to have only one of the choices - starting with black ball, just for kicks</insert></p>
+<p>  <image source="L4.3-measure-in-h-gate-BLACK-labelled.png" width="75%" /> </p>
+<!--<p><insert>Swap out this picture to have only one of the choices - starting with black ball, just for kicks</insert></p>-->
 
-<p><insert> Checkpoint 1: Identify what state the qubit is in after the first H gate but before the measurement.
-<ul><li>Black ball only</li>
+<!--
+<p><insert> Checkpoint 1: 
+<ul>
+<li>Black ball only</li>
 <li>White ball only</li>
 <li> 50% chance of black ball and 50% chance of white ball only (but not in superposition)</li>
 <li> 50/50 superposition of black and white balls, positive phase</li>
 <li> 50/50 superposition of black and white balls, negative phase (answer)</li>
 </ul>
 </insert></p>
+-->
 
+  <exercise label="L4_3 Calculate State A">
+    <title>Calculate State at A</title>
+    <idx>L4_3 Calculate_A</idx>
+    <statement>
+      <p>Describe the state the qubit at A (after the first H gate but before the measurement).</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p>Black ball only </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White ball only</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50% chance of white ball and 50% chance of black ball (but not in superposition)</p>
+            <image source="L4_3_2_C.png" width="50%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p>Correct!!</p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Think about what the output would be after each gate.</p> 
+    </hint>
+  </exercise>
 
+<!--
 <p><insert> Checkpoint 2: Describe the state of the qubit after the first measurement
 <ul><li>Black ball only</li>
 <li>White ball only</li>
@@ -91,9 +180,64 @@ it to answer a few checkpoint questions:</p>
 <li> 50/50 superposition of black and white balls, phase unknown </li>
 </ul>
 </insert></p>
+-->
 
+  <exercise label="L4_3 Calculate State B">
+    <title>Calculate State at B</title>
+    <idx>L4_3_Calculate_B</idx>
+    <statement>
+      <p>Describe the state the qubit at B (after the first measurement).</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p>Black ball only </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White ball only</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p>50% chance of white ball and 50% chance of black ball (but not in superposition)</p>
+            <image source="L4_3_2_C.png" width="50%" />
+        </statement>
+        <feedback><p>Correct!!</p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Think about what the output would be after each gate.</p> 
+    </hint>
+  </exercise>
 
-
+<!--
 <p><insert> Checkpoint 3: Identify the state of the qubit after the second H gate? 
 <ul><li>Black ball only</li>
 <li>White ball only</li>
@@ -102,7 +246,64 @@ it to answer a few checkpoint questions:</p>
 <li> 50/50 superposition of black and white balls, negative phase</li>
 <li> 50/50 superposition of black and white balls, phase unknown (answer)</li>
 </ul></insert></p>
+-->
 
+  <exercise label="L4_3 Calculate State C">
+    <title>Calculate State at C</title>
+    <idx>L4_3_Calculate_C</idx>
+    <statement>
+      <p>Describe the state the qubit at C (after the second H gate).</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p>Black ball only </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White ball only</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50% chance of white ball and 50% chance of black ball (but not in superposition)</p>
+            <image source="L4_3_2_C.png" width="50%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p>Correct!!</p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Think about what the output would be after each gate.</p> 
+    </hint>
+  </exercise>
+
+<!--
 <p><insert> Checkpoint 4: What would be the outcome of the second measurement?
 <ul><li>Black ball only</li>
 <li>White ball only</li>
@@ -111,8 +312,62 @@ it to answer a few checkpoint questions:</p>
 <li> 50/50 superposition of black and white balls, negative phase</li>
 <li> 50/50 superposition of black and white balls, phase unknown </li>
 </ul></insert></p>
+-->
 
-
+  <exercise label="L4_3 Calculate State D">
+    <title>Calculate State at D</title>
+    <idx>L4_3_Calculate_D</idx>
+    <statement>
+      <p>Describe the state the qubit at C (after the second H gate).</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p>Black ball only </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White ball only</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p>50% chance of white ball and 50% chance of black ball (but not in superposition)</p>
+            <image source="L4_3_2_C.png" width="50%" />
+        </statement>
+        <feedback><p>Correct!!</p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p></p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Think about what the output would be after each gate.</p> 
+    </hint>
+  </exercise>
 
 
 
