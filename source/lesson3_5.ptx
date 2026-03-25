@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson3_5" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Problem Set</title>
+
+  <exercise label="HW3_Q1">
+    <title>Question #1</title>
+    <idx>HW3 Q1</idx>
+    <statement>
+      <p>Select the statement that states the probability of measuring 1 or ⚫ in the following visual representation.</p>
+      <image source="L3_5_visualState1.png" width="10%" />
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>Outcome will definitely be <m>\ket{0}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Outcome will definitely be <m>\ket{1}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Equal probabilities of measuring <m>\ket{0}</m> or <m>\ket{1}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Greater probability of measuring <m>\ket{0}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Greater probability of measuring <m>\ket{1}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+  <exercise label="HW3_Q2">
+    <title>Question #2</title>
+    <idx>HW3 Q2</idx>
+    <statement>
+      <p>Calculate the state at A.</p>
+      <image source="L3_5_CalculateStateABC.png" width="90%" />
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+            <p>Black</p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+  <exercise label="HW3_Q3">
+    <title>Question #3</title>
+    <idx>HW3 Q3</idx>
+    <statement>
+      <p>Calculate the state at B.</p>
+      <image source="L3_5_CalculateStateABC.png" width="90%" />
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p>Black </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+  <exercise label="HW3_Q4">
+    <title>Question #4</title>
+    <idx>HW3 Q4</idx>
+    <statement>
+      <p>Calculate the state at C.</p>
+      <image source="L3_5_CalculateStateABC.png" width="90%" />
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+            <p>Black </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+  <exercise label="HW3_Q5">
+    <title>Question #5</title>
+    <idx>HW3 Q5</idx>
+    <statement>
+      <p>What gate should be added to the end of the cicuit to produce an output that is the same as the input?</p>
+      <image source="L3_5_CalculateStateABC.png" width="90%" />
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p><c>Z</c> gate</p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p><c>NOT</c> gate</p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p><c>H</c> gate</p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>No gate is needed.</p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+<exercise label="HW3_Q6">
+    <title>Question #6</title>
+    <idx>HW3 Q6</idx>
+    <statement>
+      <p>Calculate the output of this circuit.</p>
+      <image source="L3_5_1HZHH.png" width="90%" />
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+            <p>Black </p>
+            <image source="L4_3_2_A.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>White</p>
+            <image source="L4_3_2_B.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p>50/50 superposition of white and black, positive phase</p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, negative phase</p>
+            <image source="L4_3_2_E.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p>50/50 superposition of white and black balls, unknown phase</p>
+            <image source="L4_3_2_F.png" width="35%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+<exercise label="HW3_Q7">
+    <title>Question #7</title>
+    <idx>HW3 Q7</idx>
+    <statement>
+      <p>Select the statement(s) that describe two qubits.</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+            <p> </p>
+            <image source="L4_3_2_A.png" width="20%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p> </p>
+            <image source="L4_3_2_D.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p> </p>
+            <image source="L4_3_2_G.png" width="25%" />
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p><m>\ket{10}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+            <p><m>\ket{1}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>      
+      <choice>
+        <statement>
+            <p><m>\ket{0}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p><m>\ket{11}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+            <p><m>\ket{0}</m> and <m>\ket{0}</m></p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+
+
+  <exercise label="HW3-Q8">
+    <title>Question #8</title>
+    <idx>HW3 Q8</idx>
+    <statement>
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        equivalentCircuitWidget({
+          circuit: "L3_5_EquivalentCircuit2",
+          instantFeedback: false,
+          allowedGates: "ZHX"
+        });
+      </script>
+    </interactive>
+    </statement>
+  </exercise>
+
+
+  <exercise label="HW3-Q9">
+    <title>Question #9</title>
+    <idx>HW3 Q9</idx>
+    <statement>
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        equivalentCircuitWidget({
+          circuit: "L3_5_EquivalentCircuit1",
+          instantFeedback: false,
+          allowedGates: "ZHX"
+        });
+      </script>
+    </interactive>
+    </statement>
+  </exercise>
+
+  <!-- Is it possible to suppress this statement from the widget? 
+  "Given the input state |0⟩, create a circuit that produces the output state 0.707|0⟩ - 0.707|1⟩."
+   -->
+  <exercise label="HW3-Q10">
+    <title>Question #10</title>
+    <idx>HW3 Q10</idx>
+    <statement>
+      <p>Given an input state of <m>\ket{1}</m>, create a circuit with an output that matches the visual representation shown below.</p>
+      <image source="Visual_Onebit_50_positive.png" width="10%" />
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        specificOutputWidget({
+          circuit: "L3_5_SpecificOutput",
+          instantFeedback: false,
+          allowedGates: "ZHX",
+          inputs: "1"
+        });
+      </script>
+    </interactive>
+    </statement>
+  </exercise>
+
+
+<!-- SANDBOX CIRCUIT FOR CREATING IMAGES 
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 1x6",
+        allowedGates: "*XSHZ"
+      });
+    </script>
+  </interactive>
+-->
+
+
+</section>

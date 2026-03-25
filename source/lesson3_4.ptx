@@ -5,9 +5,12 @@
 
 <p>
 Now you need to know how to calculate the outputs of gates when the 
-inputs are in superposition, beyond memorizing that two H gates to into
-superposition and then out again. This requires two pieces of knowledge:
-<ul><li> How to visualize two qubit state</li>
+inputs are in superposition, beyond memorizing that two H gates go into
+superposition and then out again. 
+</p>
+<p>
+This requires two pieces of knowledge:
+<ul><li> How to visualize a two qubit state</li>
 <li> How to calculate the outcome when inputs are in superposition</li></ul>
 </p>
 
@@ -15,19 +18,29 @@ superposition and then out again. This requires two pieces of knowledge:
   <section xml:id="sec-two-qubit-visual">
     <title>Visualizing two-qubit state</title>
 
-    <p> As we learned before, the horizontal line divides between two different
-    possible outcomes. If there is no line, then two different qubits are being
-    represented. In the images below, the left side is a single qubit in 
-    50/50 superposition. The right side is two different qubits, one  
-    <m>\ket{0}</m>  and the other  <m>\ket{1}</m>.</p>
+    <p> 
+      As we learned before, the horizontal line divides between two different
+      possible outcomes. If there is no line, then two different qubits are being
+      represented.
+    </p>
+    <image source="VisualRep_one_vs_two_qubits.png" width="40%" />
 
-  <sidebyside widths="50% 50%" valign="top">
-  
-    <image source="Visual_Onebit_50_positive.png" width="10%" />
-     <image source="L3-4-twoqubitvisual.png" width="10%" />
-  </sidebyside>
+    <!--
+    <sidebyside widths="35% 15% 15% 35%" valign="top">
+      <p> </p>
 
-<p><insert>I can't figure out how to make those pictures smaller!!!</insert></p>
+      <image source="Visual_Onebit_50_positive.png" width="10%" />
+      <image source="L3-4-twoqubitvisual.png" width="10%" />
+      <p> </p>
+    </sidebyside>
+    -->
 
-</section>
+    <p> 
+      In the images above, the left side is a single qubit in 
+      50/50 superposition. The right side is two different qubits, one  
+      <m>\ket{0}</m> and the other <m>\ket{1}</m>.
+    </p>
+
+  </section>
+
 </section>

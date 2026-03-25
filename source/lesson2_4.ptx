@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson2_4" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Problem Set</title>
+
+  <exercise label="HW2_Q1">
+    <title>Question #1</title>
+    <idx>HW2 Q1</idx>
+    <statement>
+      <p>What is the state of the two qubits after the NOT gate?</p>
+      <image source="HW2_2qubitsNOT.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
+          </p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
+          </p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
+          </p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
+          </p>
+        </statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q2">
+    <title>Question #2</title>
+    <idx>HW2 Q2</idx>
+    <statement>
+      <p>In the circuit below, which qubit is the control of the CNOT gate?</p>
+      <image source="HW2_4qubitsCNOT.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>Qubit 0 (top qubit)</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Qubit 1</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Qubit 2</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Qubit 3 (bottom qubit)</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q3">
+    <title>Question #3</title>
+    <idx>HW2 Q3</idx>
+    <statement>
+      <p>In the circuit below, which qubit is the target of the CNOT gate?</p>
+      <image source="HW2_4qubitsCNOT.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>Qubit 0 (top qubit)</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Qubit 1</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Qubit 2</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Qubit 3 (bottom qubit)</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q4">
+    <title>Question #4</title>
+    <idx>HW2 Q4</idx>
+    <statement>
+      <p>How do you modify the circuit so the qubits are in the state <m>\ket{10}</m> at the input of the SWAP gate?</p>
+      <image source="HW2_2qubitsSWAP.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>Don't need to do anything.</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Add a NOT gate to qubit 0</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Add a NOT gate to qubit 1</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Add a NOT gate to qubit 0 and qubit 1</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Need to do something else</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q5">
+    <title>Question #5</title>
+    <idx>HW2 Q5</idx>
+    <statement>
+      <p>What is the output state when the input state is <m>\ket{10}</m>?</p>
+      <image source="HW2_2qubitsSWAP.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p><m>\ket{00}</m> or <m>\ket{⚪⚪}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p><m>\ket{10}</m> or <m>\ket{⚫⚪}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>            
+    </choices>
+    <hint><p> </p></hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q6">
+    <title>Question #6</title>
+    <idx>HW2 Q6</idx>
+    <statement>
+      <p>How do you modify the circuit so the qubits are in the state <m>\ket{11}</m> at the output of the SWAP gate?</p>
+      <image source="HW2_2qubitsSWAP.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>Don't need to do anything.</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Add a NOT gate to qubit 0</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Add a NOT gate to qubit 1</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Add a NOT gate to qubit 0 and qubit 1</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Need to do something else</p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p> </p>
+    </hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q7">
+    <title>Question #7</title>
+    <idx>HW2 Q7</idx>
+    <statement>
+      <p>What is the output state when the input state is <m>\ket{10}</m>?</p>
+      <image source="HW2_2qubitsCNOT.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p><m>\ket{00}</m> or <m>\ket{⚪⚪}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p><m>\ket{10}</m> or <m>\ket{⚫⚪}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>            
+    </choices>
+    <hint><p> </p></hint>
+  </exercise>
+
+
+  <exercise label="HW2_Q8">
+    <title>Question #8</title>
+    <idx>HW2 Q8</idx>
+    <statement>
+      <p>Which input state(s) would result in an output that differs from the original input? Select all that apply.</p>
+      <image source="HW2_2qubitsCNOT.png" width="40%" />
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p><m>\ket{00}</m> or <m>\ket{⚪⚪}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice>
+        <statement><p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p><m>\ket{10}</m> or <m>\ket{⚫⚪}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p></statement>
+        <feedback><p> </p></feedback>
+      </choice>            
+    </choices>
+    <hint><p> </p></hint>
+  </exercise>
+
+
+  <exercise label="HW2-Q9">
+    <title>Question #9</title>
+    <idx>HW2 Q9</idx>
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        identicalCircuitWidget({
+          circuit: "L2_4_Identical",
+          instantFeedback: false,
+          allowedGates: "XS*"
+        });
+      </script>
+    </interactive>
+  </exercise>
+
+
+  <exercise label="HW2-Q10">
+    <title>Question #10</title>
+    <idx>HW2 Q10</idx>
+    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        matchOutputWidget({
+          circuit: "L2_4_MatchOutput",
+          instantFeedback: false,
+          allowedGates: "XS*"
+        });
+      </script>
+    </interactive>
+  </exercise>
+
+
+
+<!-- SANDBOX CIRCUIT FOR CREATING IMAGES
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "*XSHZ"
+      });
+    </script>
+  </interactive>
+-->
+
+
+</section>
