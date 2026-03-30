@@ -66,7 +66,9 @@ const loadEverything = async () => {
 const widgetReady = loadEverything();
 
 // Hide the script container div
-document.currentScript.parentElement.style.display = "none";
+// TODO: keep an eye on if this breaks. At the time of writing, there is no "parent container";
+// hiding the parent of the current script hides the entire widget.
+// document.currentScript.parentElement.style.display = "none";
 
 // Watch for child script tags added dynamically to this <interactive> container
 // Once detected, wait for all required resources to finish loading (via widgetReady)
@@ -75,7 +77,7 @@ new MutationObserver((mutationsList) => {
   for (const mutation of mutationsList) {
     if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
       for (const node of mutation.addedNodes) {
-        if (node.parentElement.tagName == "SCRIPT") {
+        if (node?.parentElement?.tagName == "SCRIPT") {
           node.remove(); // Prevent script from executing automatically
           widgetReady.then(() => {
             eval(node.textContent); // Safe to evaluate after dependencies are loaded
