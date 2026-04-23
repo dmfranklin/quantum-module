@@ -29,6 +29,7 @@
      <p>
     <ul>
       <li>The meaning and calculations for independent probabilities</li>
+      <li>What is a mathematical model?</li>
       <li>Mathematical notation for single and multi-qubit quantum state </li>
       <li>Mathematical operations to calculate the output of quantum gates (operations)</li>
     </ul>
@@ -39,6 +40,7 @@
   <xi:include href="lesson5_1.ptx" />
   <xi:include href="lesson5_2.ptx" />
   <xi:include href="lesson5_3.ptx" />
+  <xi:include href="lesson5_4.ptx" />
  
 
 </chapter>

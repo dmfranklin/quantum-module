@@ -6,9 +6,19 @@
     <title>Basic Probability</title>
 
 <p>
-Let's begin by reviewing what probabilities about future events really mean. 
-Look at the exercise below to see what you can conclude from a weather forecast.
-</p><p>
+In this chapter, we'll first review what probability means - and what it doesn't mean. 
+Next, we'll learn how to combine probabilities for independent events. 
+Throughout the chapter, we will explore probability using a common context in which you often encounter probabilities - 
+weather forecasts. We will then apply it to the quantum context, in which we calculate the 
+probability of measuring one, two, or more qubits in a particular state.
+
+</p>
+
+<section xml:id="sec-probability-meaning">
+    <title>What a Probability Means</title>
+What do weather forecasts really mean?
+Look at the exercise below and identify what you can conclude from a weather forecast.
+<p>
 <image source="L5.1-weather-forecast.png" width="66%" /></p>
 
  <exercise label="L5-1-Forecast-Events">
@@ -80,13 +90,61 @@ Probability is:
 </ul>
 </p>
   </sidebyside>
-
+</section>
 <section xml:id="sec-independent-probabilities">
     <title>Combining Independent Probabilities</title>
+<p> Now that we understand what a probability means, we can learn how to combine probabilities for independent events.
+Two events are independent if the outcome of one event does not affect the outcome of the other event. 
+For example, the outcome of a coin flip is independent of the outcome of another coin flip.</p>
 
+<p> Let's say we have two coins, and we flip both of them at the same time. 
+What is the probability that the first coin will be heads?
+What is the probability that the second coin will be heads?</p>
+
+<p> Hopefully, in your head, you are calculating the probability of each coin being heads as 50%.
+We want to take that result and calculate the probability of both coins being heads at the same time.</p>
+<p><image source="L5.1.onecoin.png" width="40%" /></p>
+<p> One way to reason about it is to list out all the possible outcomes of flipping two coins.
+Because each option is equally likely, the probability of each case is 25%. That means that the probability
+of both coins being heads is 25%. Likewise, the probability of both coins being tails is 25%.</p>
+<p> You might notice, though,
+that two of the choices look the same. That is, two choices have one heads and one tails. 
+So the probability that "one coin is heads and the other coin is tails" is 50%, whereas the probability the 
+"first coin is heads and the second coin is tails" is 25%.</p>
+
+<p><image source="L5.1.twocoins.png" width="66%" /></p>
+
+<p> This example was fairly simple because we had equal probabilities for each outcome. Let's go to our
+weather example and look at how to calculate independent probabilities when the probabilities are not equal.</p>
+
+<p> Let's imagine that I am always running late in the morning, I'm groggy, and I'm just a little spacey, so I don't have a  the 
+forecast. It turns out that a particular day has a 50% chance of raining. On any given day, I have a 25% chance of deciding to 
+bring a raincoat, just in case. So I have the following scenario:</p> 
+
+<p><image source="L5.n-probs1.png" width="66%" /></p>
+
+<p> Notice that I drew the pictures based on the ratios - 3/4 chance of not bringing a raincoat, and 1/4 chance of bringing a raincoat 
+resulted in three shirts and one raincoat. This is similar to how we have been depicting superposition probabilities with our 
+visual representation. We can use this to depict all of the possibilities, still repeating possibilities to indicate that they are more likely.
+I'll show the process in two steps.</p>
+
+<p><image source="L5.n-probs2.png" width="66%" /></p>
+<p><image source="L5.n-probs3.png" width="66%" /></p>
+
+<p> We can see from this final picture that the probabiliti of it being raining AND I forget my rain jacket is 3/8. 
+It turns out that we can actually do this with a simple calculation. Given our starting probabilities of .75 forgetting raincoat,
+.25 bringing raincoat, and .5 raining, we can calculate the probability of it raining AND forgetting raincoat as .75 * .5 = .375 = 3/8.</p>
+<p><image source="L5.n-probsmult.png" width="66%" /></p>
+
+<p> Insert a few simple probability questions here</p>
+
+<p> If you want to learn just a little bit more about probabilities in this cartoon fashion, check out our zine at:
+<a href="https://www.epiqc.cs.uchicago.edu/probability">https://www.epiqc.cs.uchicago.edu/probability</a></p>
 
 
 </section>
+
+
 
 
 </section>

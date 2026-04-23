@@ -1,3 +1,128 @@
 <section xml:id="lesson5_2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Quantum State Representations</title>
+   <title>Mathematical Models</title>
+
+<p>
+What is a mathematical model?</p>
+
+<p>
+A mathematical model predicts the behavior of some predictable process, 
+like dividing a pie between a group of people. In order to solve these problems mathematically, we need a few things:</p>
+ <p>
+    <ul>
+      <li>Mathematical symbols to express the parts of the problem.</li>
+      <li>Mathematical operations to follow to calculate the result.</li>
+    </ul>
+    </p>
+
+<p>If those don’t exist, then people invent new symbols and define new operations that properly predict the observed behavior.
+The main point is that the mathematics is derived from observations of the real world, not the other way around. </p>
+
+<section xml:id="fractions_mathematical_model" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <title>Mathematical model for fractions</title>
+
+<p>I'll explain this using a familiar mathematical model - fractions! Consider the following problem:</p>
+
+<p>
+<ul>
+<li>You have a pie to share with three friends. </li>
+<li>You cut it into 4 equal pieces.</li>
+<li>Your friend exclaims, “Just because there are four of us, it doesn’t mean we need to eat the whole pie! I only want half that much!!” </li>
+<li>How much of the pie will you give your friend? </li>
+</ul>
+</p>
+
+<p> You are probably so used to solving problems like this, that you don't think about all the steps that go into solving it with fractions!
+Let's explore those aspects.</p>
+
+<p> Step 1: Representing fractional state:</p>
+
+<p>
+We say “one fourth,” which could translate to “if that were divided into 4 equal-sized parts, then I want one of them.” 
+We also represent this mathematically with the number of parts you want (numerator) placed over the total number of parts 
+(denominator) with a line in between. We can either display it with the numerator above the denominator with a horizontal line in 
+between or a 1 to the left of the 4 with a diagonal line in between. However, you cannot display it 1\4.
+</p>
+<sidebyside widths="15% 25%" valign="top">
+    
+    <image source="L5.0-fractionstate.png" width="66%" />
+    <image source="L5.0-fractionstate2.png" width="66%" />
+</sidebyside>
+
+<p>This allows us to more clearly state the problem:</p>
+
+<p>
+<ul>
+<li>You have a pie to share with three friends. </li>
+<li>You cut it into 4 equal pieces, each 1/4 of the pie.</li>
+<li>Your friend exclaims, “Just because there are four of us, it doesn’t mean we need to eat the whole pie! I only want 1/2 a piece!!” </li>
+<li>How much of the pie will you give your friend? </li>
+</ul>
+</p>
+
+<p> Step 2: Performing opreations:</p>
+
+<p>To multiply fractions, we perform this set of operations:</p>
+
+<p>
+<ul>
+<li>Multiply the numerators. </li>
+<li>Multiply the denominators.</li>
+<li>Simplify if necessary </li>
+</ul>
+</p>
+
+<p><image source="L5.0-fractionmult.png" width="66%" /></p>
+
+<p>Now let’s consider a slightly different question:</p>
+
+<p>
+<ul>
+<li>You brought two pies to a potluck, pecan pie and apple pie. </li>
+<li>Both pies have the same radius, but the pecan pie is much more intense than the apple pie, 
+so you cut smaller pieces; You cut the pecan pie into 10 pieces and the apple pie into 8 pieces. </li>
+<li>It is time to gather your leftovers. The pecan pie has 5 pieces left, and the apple pie has 3 pieces left. </li>
+<li>How much total pie is there left?</li>
+</ul>
+</p>
+
+<p> To solve this, you would perform the following steps:</p>
+<p>
+<ul>
+<li>Express the leftover pecan pie as a fraction: 5/10 </li>
+<li> Simplify the pecan pie fraction to be 1/2 </li>
+<li>Express the leftover apple pie as a fraction: 3/8</li>
+<li>Add the fractions </li>
+</ul>
+</p>
+
+<p>Easy-peasy lemon-squeezy, right? Addition is easier than multiplication, so adding these fractions should be a 
+piece of cake (or pie), right? </p>
+
+<p>To add fractions, we perform this set of operations:</p>
+<p>
+<ul>
+<li>Find the least common denominator. </li>
+<li>Multiply the first numerator by (LCD/1stdenominator)</li>
+<li>Multiply the second numerator by (LCD/2nddenominator)</li>
+<li>Add the numberators and retain the common denominator</li>
+<li>Simplify if necessary </li>
+</ul>
+</p>
+
+<p><image source="L5.0-fractionadd.png" width="66%" /></p>
+
+<p> Need to switch out for the exact problem posed above</p>
+
+<p> I know what you're thinking, "Now you just hold on a cotton-pickin' minute. That didn't seem easier at all!"
+I must agree with you there. The important takeaway here is the following:</p>
+
+<p> (make big somehow) The mathematical representation you use had advantages and disadvantages in terms of readiability vs computation difficulty.
+Fractions are very easy to interpret visually, but they are harder to perform addition. Decimals are sometimes harder to interpret, but addition and 
+multiplication are easier than with fractions.</p>
+
+<p> We are going to see the same tradeoffs in representing quantum state and performing quantum operations. We are going to learn two 
+ways to express state - one that clearly shows the probabilities, and another that corresponds with how to perform operations.</p>
+
+
+</section>
     </section>
