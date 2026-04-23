@@ -114,7 +114,25 @@ piece of cake (or pie), right? </p>
 <p> Need to switch out for the exact problem posed above</p>
 
 <p> I know what you're thinking, "Now you just hold on a cotton-pickin' minute. That didn't seem easier at all!"
-I must agree with you there. The important takeaway here is the following:</p>
+I must agree with you there. How about we look at an alternate representation: Decimals.</p>
+
+
+<p>Notice that if we had expressed these operations as decimals, then the operations would have been performed differently. 
+Consider those two questions again.</p>
+
+<p>
+<ul>
+<li>0.25 * 0.5 = 0.125 (replace this with the picture of writing all of the steps to this starting with one on top of the other)</li>
+<li>0.5 + 0.375 = 0.875 (replace this a picture with the 0.5 and 0.375 above and below)</li>
+</ul>
+</p>
+  
+
+  <p> In this case, addition is easier than multiplication. In fact, multiplication has an addition step!</p>
+ 
+
+
+<p>The important takeaway here is the following:</p>
 
 <p> (make big somehow) The mathematical representation you use had advantages and disadvantages in terms of readiability vs computation difficulty.
 Fractions are very easy to interpret visually, but they are harder to perform addition. Decimals are sometimes harder to interpret, but addition and 
