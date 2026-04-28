@@ -2,12 +2,16 @@
 
 <section xml:id="lesson2_3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exploring the <c>CNOT</c> Gate</title>
-  <p>
+  <sidebyside widths="80% 20%" valign="middle">
+    <p>
     Now we are going to use the same method to explore how the <c>CNOT</c> gate works.
     You will try all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>,
     <m>\ket{10}</m>, and <m>\ket{11}</m>) to determine the relationship between
     inputs and outputs for the <c>CNOT</c> gate.
-  </p>
+    </p>
+    <image source="CNOT.png" width="40%" />
+  </sidebyside>
+
   <section xml:id="lesson2_3_1">
     <title>Creating a <c>CNOT</c> gate</title>
     <sidebyside widths="75% 25%" valign="top">
@@ -23,7 +27,7 @@
       When you are finished, you should see a line connecting the two tiles,
       indicating that you have created a <c>CNOT</c> gate.
       </p>
-      <image source="CNOT.png" width="40%" />
+      <image source="L2.3_CNOT.gif" width="40%" />
     </sidebyside>
 
     <p>

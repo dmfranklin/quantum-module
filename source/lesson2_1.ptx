@@ -2,30 +2,29 @@
 
 <section xml:id="lesson2_1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Using the Circuit Builder to Learn Gates </title>
-
+  <sidebyside widths="80% 20%" valign="middle">
   <p>
     The circuit builder allows us to learn about the behavior of a simple gate by trying
     all of the combinations of inputs. We will use the circuit builder to discover the
     functionality of a new gate, the <c>SWAP</c> gate, which operates on two qubits, but first
     we will learn how to create multi-qubit gates by connecting gate tiles.
   </p>
+  <image source="L2.1_SWAP.png" width="30%" />
+  </sidebyside>
 
   <section xml:id="sec-building-2-qubit-gates">
     <title>Creating a <c>SWAP</c> Gate</title>
-
     <sidebyside widths="75% 25%" valign="middle">
       <p>
-        Use the circuit builder below to make a <c>SWAP</c> gate.
-        To create a <c>SWAP</c> gate, you will need to:
-      <ol>
+      Use the circuit builder below to make a <c>SWAP</c> gate according to the following instructions.
+        <ol>
         <li>Drag two <c>SWAP</c> gate tiles onto the circuit, aligning them vertically.</li>
         <li>Click the number at the top of the column to select them as a group.</li>
         <li>Click the "C/S" button to connect the tiles.</li>
-      </ol>
-      When you are finished, you should see a line connecting the two tiles,
-      indicating that you have created a <c>SWAP</c> gate.
+        </ol>
+      When finished, you'll see a small line connecting the two gate tiles.
       </p>
-      <image source="L2.1_SWAP.png" width="40%" />
+      <image source="L2.1_ConnectingGates-SWAP.gif" width="40%" />
     </sidebyside>
 
     <interactive aspect="9:9" platform="javascript"

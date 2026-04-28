@@ -163,7 +163,9 @@
       builder, drag the <em>gate tiles</em> from the <em>palette</em> and place them onto the
       circuit to match the given circuit.</p>
 
-    <image source="L1.2-CIRCUIT BUILDER.png" width="75%" />
+<!--    <image source="L1.2-CIRCUIT BUILDER.png" width="75%" /> -->
+
+    <image source="L1.2-CIRCUIT-BUILDER.gif" width="50%" />
 
     <p>For your first circuit, you will use the circuit builder's <em>Explore</em> mode. In <em>
         Explore</em> mode, you receive feedback every time you make a change. You can ignore the
