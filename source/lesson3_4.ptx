@@ -23,7 +23,9 @@ This requires two pieces of knowledge:
       possible outcomes. If there is no line, then two different qubits are being
       represented.
     </p>
-    <image source="VisualRep_one_vs_two_qubits.png" width="40%" />
+
+    <!-- <image source="VisualRep_one_vs_two_qubits_OLD.png" width="40%" /> -->
+    <image source="VisualRep_one_vs_two_qubits.png" width="50%" />
 
     <!--
     <sidebyside widths="35% 15% 15% 35%" valign="top">

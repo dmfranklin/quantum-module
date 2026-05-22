@@ -59,14 +59,14 @@
       <choice correct="yes">
         <statement>
             <p>Black</p>
-            <image source="L4_3_2_A.png" width="25%" />
+            <image source="L4_3_2_A.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
       <choice>
         <statement>
             <p>White</p>
-            <image source="L4_3_2_B.png" width="25%" />
+            <image source="L4_3_2_B.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
@@ -108,14 +108,14 @@
       <choice>
         <statement>
             <p>Black </p>
-            <image source="L4_3_2_A.png" width="25%" />
+            <image source="L4_3_2_A.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
       <choice>
         <statement>
             <p>White</p>
-            <image source="L4_3_2_B.png" width="25%" />
+            <image source="L4_3_2_B.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
@@ -157,14 +157,14 @@
       <choice correct="yes">
         <statement>
             <p>Black </p>
-            <image source="L4_3_2_A.png" width="25%" />
+            <image source="L4_3_2_A.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
       <choice>
         <statement>
             <p>White</p>
-            <image source="L4_3_2_B.png" width="25%" />
+            <image source="L4_3_2_B.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
@@ -244,14 +244,14 @@
       <choice>
         <statement>
             <p>Black </p>
-            <image source="L4_3_2_A.png" width="25%" />
+            <image source="L4_3_2_A.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
       <choice>
         <statement>
             <p>White</p>
-            <image source="L4_3_2_B.png" width="25%" />
+            <image source="L4_3_2_B.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
@@ -293,7 +293,7 @@
       <choice>
         <statement>
             <p> </p>
-            <image source="L4_3_2_A.png" width="20%" />
+            <image source="L4_3_2_A.png" width="15%" />
         </statement>
         <feedback><p> </p></feedback>
       </choice>
@@ -383,9 +383,7 @@
     </statement>
   </exercise>
 
-  <!-- Is it possible to suppress this statement from the widget? 
-  "Given the input state |0⟩, create a circuit that produces the output state 0.707|0⟩ - 0.707|1⟩."
-   -->
+
   <exercise label="HW3-Q10">
     <title>Question #10</title>
     <idx>HW3 Q10</idx>
@@ -398,7 +396,8 @@
           circuit: "L3_5_SpecificOutput",
           instantFeedback: false,
           allowedGates: "ZHX",
-          inputs: "1"
+          inputs: "1",
+          hideInstructions: "true"
         });
       </script>
     </interactive>
