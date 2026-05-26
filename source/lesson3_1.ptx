@@ -18,7 +18,7 @@
       does to a qubit that starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state. That is, 
       make the following two circuits and observe the outputs:
     </p>
-<image source="H_Explore.png" width="45%" />
+<image source="H_Explore.png" width="35%" />
 
     <interactive aspect="9:9" platform="javascript"
       source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
@@ -84,9 +84,9 @@ transforming the "basis" states <m>\ket{0}</m> and <m>\ket{1}</m> into equal sup
 <section xml:id="superposition-analogies">
   <title>Superposition Analogies</title>
  
-  <sidebyside widths="75% 25%" valign="top">
+  <sidebyside widths="80% 20%" valign="top">
     <p>
-      Optical illusions are a great example of being two things at once. In the image below, some people see
+      Optical illusions are a great example of being two things at once. In the image on the right, some people see
       an old woman, and some see a young woman. The same person can see both images by shifting their perspective, 
       but never both at the same time. 
     </p>
@@ -100,11 +100,13 @@ I hold many roles - I am a professor, colleague, researcher, advisor, mother, si
 different times, even within the same day, I play different roles when I interact with different people. However,
 I am also simultaneously all of those things.
 </p>
-
-Jen: Make a new picture that is a single person, and they have different roles - professor, mother, friend, etc.
+<image source="L3_1_2_relationship_superpositions.png" width="100%" />
+<!--<alert>
+<p>Jen: Make a new picture that is a single person, and they have different roles - professor, mother, friend, etc.
 Me in the middle, a picture with each person around me. The other person has their label as to what they are 
 compared to me (UG student, grad student, professor, mother, daughter, friend) and the arrow from me to them
-is labeled with what I am to them.
+is labeled with what I am to them.</p>
+</alert>-->
 
 <p>Both of these analogies have some similarities to quantum superposition - they hold multiple values, and 
 the value observed depends on the context of the observation. However, they are not perfect analogies. Over the 
@@ -121,16 +123,13 @@ next two chapters, you will gain a much better understanding of the details of s
 state that is in superposition (and therefore has a probability of being measured as 0 or 1). We will start with the visual representation, 
 and then in a later chapter, we will explore the mathematical representation.
 </p>
- <sidebyside widths="75% 25%" valign="top">
-    <p>
-      First, it is important to understand that the 50/50 outcome of the H gate (when starting with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state)
-       is not the only possible superposition state. A qubit can be in a superposition state with any probabilities of measuring 0 or 1, 
-       as long as the probabilities add up to 100%. For example, a qubit could be in a superposition state where there is a 75% chance of 
-       measuring 0 and a 25% chance of measuring 1, or vice versa.
-
-    </p>
-    <image source="Any_prob_gate.png" width="66%" />
-  </sidebyside>
+<p>
+  First, it is important to understand that the 50/50 outcome of the H gate (when starting with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state)
+  is not the only possible superposition state. A qubit can be in a superposition state with any probabilities of measuring 0 or 1, 
+  as long as the probabilities add up to 100%. For example, a qubit could be in a superposition state where there is a 75% chance of 
+  measuring 0 and a 25% chance of measuring 1, or vice versa.
+</p>
+<image source="Any_prob_gate.png" width="50%" />
 
   <p> So, how do we represent the state of a qubit that is in superposition? The interactive circuit widget uses a bar graph to visually represent the 
   probabilities of measuring 0 or 1. In order to more easily perform operations, we will represent the state as shown in the image below.
@@ -139,7 +138,7 @@ and then in a later chapter, we will explore the mathematical representation.
   </li><li>
   The number of instances of the same color represents the probability of that outcome. For example, in the left image below, there is one white and one 
   black ball, so there is an equal probability of measuring 0 or 1. In the right image, there are three black and one white ball, so there is a 
-  75% chance of measuring 1 (black) and a 25% chance of measuring 0 (white).
+  75% chance of measuring 1 or ⚫ and a 25% chance of measuring 0 or ⚪.
   </li></ul>
   <image source="VisualSuperposition.png" width="66%" />
   </p>
@@ -148,7 +147,7 @@ and then in a later chapter, we will explore the mathematical representation.
       <title>Superposition Visual Representation</title>
       <idx>Visual_superposition_rep</idx>
       <statement>
-        <p>Select the statement that states the probability of measuring <m>\ket{0}</m> (white)  
+        <p>Select the statement that states the probability of measuring 0 or ⚪  
         in the following visual representation.</p>
         <image source="Visual_rep_75_white.png" width="10%" />
 
@@ -169,7 +168,7 @@ and then in a later chapter, we will explore the mathematical representation.
           </statement>
           <feedback>
             <p>There are more white balls than black balls in the visual representation, 
-            so the probability of measuring 0 (white) is greater than 50%.</p>
+            so the probability of measuring 0 or ⚪ is greater than 50%.</p>
           </feedback>
         </choice>
                 <choice correct="yes">
@@ -178,7 +177,7 @@ and then in a later chapter, we will explore the mathematical representation.
           </statement>
           <feedback>
             <p>Yes! There are 3 white balls and 1 black ball, so 3/4 are white, 
-            so the probability of measuring 0 (white) is 75%.</p>
+            so the probability of measuring 0 or ⚪ is 75%.</p>
           </feedback>
         </choice>
                 <choice correct="no">

@@ -8,12 +8,13 @@
 <p> Now consider attempting to measure something more complex, like the current emotion of a baby? </p>
 
 
-<sidebyside widths="75% 25%" valign="top">
+<sidebyside widths="65% 35%" valign="top">
     <p>
-       
-     <ul><li><b>Question:</b> What is the baby feeling right now?</li>
-     <li><b>Device:</b> Your eyes and ears</li>
-        <li><b>Method:</b> Observe the baby's facial expressions and sounds. Smiling or frowning? Giggling / babbling, or screaming?</li></ul>
+     <ul>
+      <li><term>Question:</term> What is the baby feeling right now?</li>
+      <li><term>Device:</term> Your eyes and ears</li>
+      <li><term>Method:</term> Observe the baby's facial expressions and sounds. Smiling or frowning? Giggling and babbling, or screaming?</li>
+    </ul>
     </p>
     <image source="Measure_feelings.png" width="66%" />
   </sidebyside>
@@ -40,14 +41,15 @@ to distinguish between different states, and that level of state is just too sma
 
 <p> What might programming look like in such a circumstance?</p>
 
-<p> Consider storing variables in superposition. Below, we show a variable in superposition and two different
-runs. This is only a hypothetical example - python will not accept this code.</p>
+<p> Consider storing variables in superposition. Below, we show a variable in superposition (top image) and two different
+runs (bottom images). This is only a hypothetical example - python will not accept this code.</p>
 
-<sidebyside widths="50% 25% 25%" valign="top">
-    
-    <image source="4_2_python1.png" width="66%" />
+  <image source="4_2_python1.png" width="70%" />
+  <sidebyside widths="15% 35% 35% 15%" valign="top">
+    <p> </p>
     <image source="4_2_pyoutput_1.png" width="66%" />
     <image source="4_2_pyoutput_2.png" width="66%" />
+    <p> </p>
   </sidebyside>
 
   <p> This example shows a similar limitation. In a quantum system, we would be able to store multiple
