@@ -7,7 +7,7 @@
 
 <p> 2. Given a starting state and a gate, how do you calculate the resulting state? </p>
 
-<section xml:id="quantum gate representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="quantum_gate_representation" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>Quantum Gate Representation</title>
 
 <p>
@@ -25,7 +25,7 @@
 
      </section>
 
-<section xml:id="quantum gate representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="matrix_multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>Matrix Multiplication</title>
 <p><image source="L5.4.matrixmultiply.png" width="30%" /></p>
 <p> Make an animated gif with the above picture showing it appear slowly </p>
@@ -34,8 +34,28 @@
 We know that if we start with the state |0>, we end with the state |1>, and vice versa.
 So let's use that example to practice matrix multiplication. </p>
 
-<p> Step 1: Express the state |0> in vector notation </p>
-<p><image source="L5.4.0vectornotation.png" width="30%" /></p>
+<p><image source="L5.4.NOT0.png" width="30%" /></p>
+
+ <sidebyside widths="60% 40%" valign="top">
+      
+
+      <p> Step 1: Express the state |0> in vector notation </p>
+    <p><image source="L5.4.0vectornotation.png" width="30%" /></p>
+     
+</sidebyside>
+
+
+ <sidebyside widths="60% 40%" valign="top">
+      
+
+      <p> Step 2: Put the NOT matrix to its left. </p>
+    <p><image source="L5.4.not0vectormatrix.png" width="30%" /></p>
+     
+</sidebyside>
+
+
+
+
 
     </section>
 </section>
