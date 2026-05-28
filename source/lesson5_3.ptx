@@ -120,7 +120,6 @@ give the probabilities and answer the state. Through in phase into one of them.<
 
 
 <section xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
-     <title>State Simplification</title>
 
 <p>Just like with fractions, there are multiple ways of expressing the same state. Every time 
 a state is calculated, we then simplify the state into its preferred form. Let's learn a 
@@ -181,7 +180,6 @@ largest - but it is depicted from to bottom.</p>
 
 
 
-<section xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>Vector State Simplification</title>
 
 <p> Generally, the state simplification rules are the same for vectors and for bra-ket notation,
