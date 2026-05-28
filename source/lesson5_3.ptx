@@ -1,5 +1,5 @@
 <section xml:id="lesson5_3" xmlns:xi="http://www.w3.org/2001/XInclude">
-     <title>Single Qubit Quantum State Representations</title>
+     <title> Qubit Quantum State Representations</title>
 
 In this lesson, we will introduce how classical computers store state, followed
 by quantum computers.
@@ -92,11 +92,32 @@ a qubit in a 50/50 superposition of 0 and 1 would have the state: </p>
 <p> If there is negative phase, then it will be placed on the 1 state: </p>
 <p><image source="braket5050neg.png" width="30%" /></p>
 
+
 <p> A few exercises - give a state and answer the probabilities, 
 give the probabilities and answer the state. Through in phase into one of them.</p>
 
+</section>
+
+
+
+<section xml:id="multi-qubit-bra_ket" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>Multi-qubit Bra-ket Notation</title>
+
+    <p> We can also combine two independent qubits into a 2-qubit bra-ket notation.
+    For an individual qubit, it has two possible outcomes: 0 or 1. For a pair of qubits, 
+    we have each combination of possible outcomes - both 0, the first 0 and second 1, the 
+    first 1 and the second 0, or both 0. The tricky part is how to calculate the probability of 
+    those combined events from the single qubit probabilities. This is when our independent 
+    probability calculations come into play - you just multiply the appropriate values together.
+    </p>
+
+    <p><image source="L5.3.1to2qubitsbraket.png" width="30%" /></p>
+
+<p> Put in some questions here with 2 qubits and 3 qubits - can grab from my homeworks.</p>
 
 </section>
+
+
 
 <section xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
      <title>State Simplification</title>
@@ -111,7 +132,7 @@ not the absolute values. However, the purpose of bra-ket notation is to be easil
 tell visually what the probabilities are (and still be able to perform operations). 
 Therefore, we have norms in how we express them.</p>
 
-<p> 1. The order of the states is always in increasing numeric order 
+<p> 1. The order of the outcomes is always in increasing numeric order 
 (starting with all 0’s and ending with all 1’s). Below is a properly formed 
 3-qubit state.  </p>
 
@@ -123,12 +144,70 @@ Therefore, we have norms in how we express them.</p>
 However, none of the answers in this book use this rule because it hides the true probability.
 (make image of: 50/50 vs no terms in front)</p>
 
-<p> The state woith all 0's is never in negative phase 
+<p> 4. The state with all 0's is never in negative phase </p>
 
+<p>
 (make image of something with 00, 11 being negative, 01, 10 being negative ==> 
 state with 00, 11 being positive and 01, 10 being negative)  </p>
 
+<section xml:id="vector_state" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>Vector Quantum Representation</title>
 
+<p>
+The purpose of vector notation is to allow us to calculate the output of quantum gates.
+Vector notation loses some of the explicit information in bra-ket notation - namely, the
+information about what each probability amplitude is tied to. Instead, we have to remember
+the proper order.
+</p>
+
+<p> Bra-ket notation is always sorted by the value in the ket - the sorting order is, 
+from left to right, smallest to largest. Vector notation uses the same order - smallest to 
+largest - but it is depicted from to bottom.</p>
+
+ <p><image source="L5.3.brakettovector.png" width="30%" /></p>
+
+ <p> Here are some examples: </p>
+
+
+ <p><image source="L5.3.brakettovectorexamples.png" width="30%" /></p>
+
+ <p> You have to be careful, though, to express bra-ket notation in the proper order.
+ If the bra-ket order is incorrect, then you might accidentally put the terms in the wrong
+ locations in the vector. </p>
+
+ <p><image source="L5.3.wrongorder.png" width="30%" /></p>
+
+</section>
+
+
+
+<section xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>Vector State Simplification</title>
+
+<p> Generally, the state simplification rules are the same for vectors and for bra-ket notation,
+with one major exception - you can never remove a state! You must retain the 0. </p>
+
+<p> 1. The order of the outcomes is always in increasing numeric order 
+(starting with all 0’s and ending with all 1’s). This is even more important for vector
+notation because we don't explicitly write the outcome. </p>
+
+<p> 2. You may NOT omit any term whose probability is 0. (make this text bright red!!)
+(make image of:   50/50 00 vs 11)
+</p>
+
+<p> 3. If all outcomes are the same probability, people rarely omit the leading term. 
+They do, however, factor out a common fractional component and put that in front of the vector.
+ (make "rarely omit" red text, plus the last sentence)
+</p>
+
+ <p><image source="L5.3.pullfactor.png" width="30%" /></p>
+
+<p> 4. The state with all 0's is never in negative phase </p>
+
+
+
+
+</section>
 
     </section>    
     </section>
