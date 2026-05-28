@@ -1,5 +1,5 @@
 <section xml:id="lesson5_3" xmlns:xi="http://www.w3.org/2001/XInclude">
-     <title>Quantum State Representations</title>
+     <title>Single Qubit Quantum State Representations</title>
 
 In this lesson, we will introduce how classical computers store state, followed
 by quantum computers.
