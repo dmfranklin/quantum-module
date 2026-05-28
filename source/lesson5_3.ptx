@@ -177,6 +177,7 @@ largest - but it is depicted from to bottom.</p>
 
  <p><image source="L5.3.wrongorder.png" width="30%" /></p>
 
+
 </section>
 
 
@@ -192,7 +193,6 @@ with one major exception - you can never remove a state! You must retain the 0. 
 notation because we don't explicitly write the outcome. </p>
 
 <p> 2. You may NOT omit any term whose probability is 0. (make this text bright red!!)
-(make image of:   50/50 00 vs 11)
 </p>
 
 <p> 3. If all outcomes are the same probability, people rarely omit the leading term. 
@@ -203,7 +203,6 @@ They do, however, factor out a common fractional component and put that in front
  <p><image source="L5.3.pullfactor.png" width="30%" /></p>
 
 <p> 4. The state with all 0's is never in negative phase </p>
-
 
 
 

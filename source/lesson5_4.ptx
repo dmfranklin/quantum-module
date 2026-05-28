@@ -1,3 +1,41 @@
 <section xml:id="lesson5_4" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Calculating Single-Qubit Quantum Gate Results</title>
+    <title>Calculating Quantum Gate Results</title>
+
+<p> There are two pieces you need to be able to calculate quantum gates:</p>
+
+<p> 1. How are gates represented? </p>
+
+<p> 2. Given a starting state and a gate, how do you calculate the resulting state? </p>
+
+<section xml:id="quantum gate representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>Quantum Gate Representation</title>
+
+<p>
+     Quantum gates are represented as a matrix, which is a grid of numbers.
+     Quantum gates are always squares - that is, the length is always equal the 
+     width. They are also of pre-determined size. A gate that operates on n bits 
+     has length and width 2^n. That means a 2-qubit gate is a 4x4 matrix, and a 3-qubit 
+     gate is an 8x8 matrix.
+     </p>
+
+     <p> Here are a few gates and their representations. But we can't do anything useful with 
+     them until we learn to calculate with them!!</p>
+
+ <p><image source="L5.4.nothmatrices.png" width="30%" /></p>
+
+     </section>
+
+<section xml:id="quantum gate representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+     <title>Matrix Multiplication</title>
+<p><image source="L5.4.matrixmultiply.png" width="30%" /></p>
+<p> Make an animated gif with the above picture showing it appear slowly </p>
+
+<p> Let's see if we can calculate this on a gate for which we know the output.
+We know that if we start with the state |0>, we end with the state |1>, and vice versa.
+So let's use that example to practice matrix multiplication. </p>
+
+<p> Step 1: Express the state |0> in vector notation </p>
+<p><image source="L5.4.0vectornotation.png" width="30%" /></p>
+
     </section>
+</section>
