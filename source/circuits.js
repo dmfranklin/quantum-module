@@ -98,6 +98,38 @@ const circuits = new Map([
       `,
   ],
   [
+    "L2_4_Identical",
+    `
+        X#0 S#0
+        X#1 S#1
+      `,
+  ],
+  [
+    "L2_4_MatchOutput",
+    `
+        X X#0
+        X X#1
+      `,
+  ], 
+  [
+    "L3_5_SpecificOutput",
+    `
+        X H I I I
+      `,
+  ],  
+  [
+    "L3_5_EquivalentCircuit1",
+    `
+        H H H
+      `,
+  ],
+  [
+    "L3_5_EquivalentCircuit2",
+    `
+        H Z H
+      `,
+  ],
+  [
     "Lab 7 - Exercise 1",
     `
         X-I-I-X#1-S#0-X#1
@@ -109,6 +141,23 @@ const circuits = new Map([
     `
         I I X S#0 I I
         I I I S#1 I I
+      `,
+  ],
+  [
+    "Blank 4x6",
+    `
+        I I I I I I
+        I I I I I I
+        I I I I I I
+        I I I I I I
+      `,
+  ],
+  [
+    "Blank 3x6",
+    `
+        I I I I I I
+        I I I I I I
+        I I I I I I
       `,
   ],
   [

@@ -721,6 +721,7 @@ const identicalCircuitWidget = async ({
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
   code = false,
+  hideInstructions = false,
 }) => {
   circuit = normalizeCircuit(circuit); // ensure evaluated circuit
 
@@ -729,23 +730,25 @@ const identicalCircuitWidget = async ({
   const widget = document.createElement("div");
   widget.className = "widget";
 
-  // "Given the following circuit..." instructions
-  const topInstructions = document.createElement("div");
-  topInstructions.className = "instructions";
-  topInstructions.textContent = "Given the following circuit...";
+  if (!hideInstructions) {
+    // "Given the following circuit..." instructions
+    const topInstructions = document.createElement("div");
+    topInstructions.className = "instructions";
+    topInstructions.textContent = "Given the following circuit...";
 
-  // Render the goalCircuitEditor as read-only
-  const goalCircuitEditor = createCircuitEditor(
-    circuit,
-    false
-  );
+    // Render the goalCircuitEditor as read-only
+    const goalCircuitEditor = createCircuitEditor(
+      circuit,
+      false
+    );
 
-  // "Create the exact same circuit below:" instructions
-  const middleInstructions = document.createElement("div");
-  middleInstructions.className = "instructions";
-  middleInstructions.textContent = "...create the exact same circuit below:";
+    // "Create the exact same circuit below:" instructions
+    const middleInstructions = document.createElement("div");
+    middleInstructions.className = "instructions";
+    middleInstructions.textContent = "...create the exact same circuit below:";
 
-  widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+    widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+  }
 
   // Build the student editor (initially blank circuit)
   const studentCircuitEditor = createStudentEditor({
@@ -801,6 +804,7 @@ const equivalentCircuitWidget = async ({
   instantFeedback = false,
   allowedGates = defaultGateSymbols,
   code = false,
+  hideInstructions = false,
 }) => {
   circuit = normalizeCircuit(circuit);
 
@@ -809,21 +813,23 @@ const equivalentCircuitWidget = async ({
   const widget = document.createElement("div");
   widget.className = "widget";
 
-  const topInstructions = document.createElement("div");
-  topInstructions.className = "instructions";
-  topInstructions.textContent = "Given the following circuit...";
+  if (!hideInstructions) {
+    const topInstructions = document.createElement("div");
+    topInstructions.className = "instructions";
+    topInstructions.textContent = "Given the following circuit...";
 
-  const goalCircuitEditor = createCircuitEditor(
-    circuit,
-    false,
-  );
+    const goalCircuitEditor = createCircuitEditor(
+      circuit,
+      false,
+    );
 
-  const middleInstructions = document.createElement("div");
-  middleInstructions.className = "instructions";
-  middleInstructions.textContent =
-    "...create an equivalent circuit using fewer gates:";
+    const middleInstructions = document.createElement("div");
+    middleInstructions.className = "instructions";
+    middleInstructions.textContent =
+      "...create an equivalent circuit using fewer gates:";
 
-  widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+    widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+  }
 
   const studentCircuitEditor = createStudentEditor({
     widget,
@@ -867,6 +873,7 @@ const matchOutputWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
   inputs = "0",
+  hideInstructions = false,
 }) => {
   circuit = normalizeCircuit(circuit, inputs);
 
@@ -875,24 +882,26 @@ const matchOutputWidget = async ({
   const widget = document.createElement("div");
   widget.className = "widget";
 
-  const goalCircuitEditor = createCircuitEditor(
-    circuit,
-    false,
-    inputs,
-  );
+  if (!hideInstructions) {
+    const goalCircuitEditor = createCircuitEditor(
+      circuit,
+      false,
+      inputs,
+    );
 
-  const topInstructions = document.createElement("div");
-  topInstructions.className = "instructions";
-  topInstructions.textContent = `Given the following circuit and the input state ${stateToText(
-    goalCircuitEditor.circuit.inputState
-  )}...`;
+    const topInstructions = document.createElement("div");
+    topInstructions.className = "instructions";
+    topInstructions.textContent = `Given the following circuit and the input state ${stateToText(
+      goalCircuitEditor.circuit.inputState
+    )}...`;
 
-  const middleInstructions = document.createElement("div");
-  middleInstructions.className = "instructions";
-  middleInstructions.textContent =
-    "...produce the same output state using fewer gates:";
+    const middleInstructions = document.createElement("div");
+    middleInstructions.className = "instructions";
+    middleInstructions.textContent =
+      "...produce the same output state using fewer gates:";
 
-  widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+    widget.append(topInstructions, goalCircuitEditor, middleInstructions);
+  }
 
   const studentCircuitEditor = createStudentEditor({
     widget,
@@ -933,6 +942,7 @@ const specificOutputWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
   inputs = "0",
+  hideInstructions = false,
 }) => {
   circuit = normalizeCircuit(circuit, inputs);
 
@@ -941,16 +951,18 @@ const specificOutputWidget = async ({
   const widget = document.createElement("div");
   widget.className = "widget";
 
-  // Show instructions containing both input and target states
-  const instructions = document.createElement("div");
-  instructions.className = "instructions";
-  instructions.textContent = `Given the input state ${stateToText(
-    circuit.inputState
-  )}, create a circuit that produces the output state ${stateToText(
-    circuit.outputState
-  )}.`;
+  if (!hideInstructions) {
+    // Show instructions containing both input and target states
+    const instructions = document.createElement("div");
+    instructions.className = "instructions";
+    instructions.textContent = `Given the input state ${stateToText(
+      circuit.inputState
+    )}, create a circuit that produces the output state ${stateToText(
+      circuit.outputState
+    )}.`;
 
-  widget.append(instructions);
+    widget.append(instructions);
+  }
 
   const studentCircuitEditor = createStudentEditor({
     widget,
