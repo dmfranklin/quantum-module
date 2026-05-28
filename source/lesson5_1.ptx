@@ -5,13 +5,21 @@
 <section xml:id="lesson5_1" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Basic Probability</title>
 
-<p>
-Let's begin by reviewing what probabilities about future events really mean. 
-Look at the exercise below to see what you can conclude from a weather forecast.
-</p><p>
-<image source="L5.1-weather-forecast.png" width="66%" /></p>
+<p>In this chapter, we'll first review what probability means - and what it doesn't mean. 
+Next, we'll learn how to combine probabilities for independent events.</p> 
 
- <exercise label="L5-1-Forecast-Events">
+<p>Throughout the chapter, we will explore probability using a common context in which you often encounter probabilities - 
+weather forecasts. We will then apply it to the quantum context, in which we calculate the 
+probability of measuring one, two, or more qubits in a particular state.</p>
+
+<section xml:id="sec-probability-meaning">
+  <title>What a Probability Means</title>
+  
+  <p>What do weather forecasts really mean? Look at the weather forecast below and complete the exercise to identify what you can conclude about the forecast.</p>
+ 
+  <image source="L5.1-weather-forecast.png" width="66%" />
+
+  <exercise label="L5-1-Forecast-Events">
       <title>
         Probability in Forecasts
       </title>
@@ -67,7 +75,7 @@ statement about what is going to happen today.
 
 <sidebyside widths="50% 50%" valign="top">
    <p>
-Probability is not:
+Probability is <em>NOT:</em>
 <ul><li>Knowledge about the outcome of any individual event</li>
 <li>Confirmed or refuted through a single experiment</li>
 </ul>
@@ -80,13 +88,93 @@ Probability is:
 </ul>
 </p>
   </sidebyside>
-
+</section>
 <section xml:id="sec-independent-probabilities">
     <title>Combining Independent Probabilities</title>
+<p> Now that we understand what a probability means, we can learn how to combine probabilities for independent events.
+Two events are independent if the outcome of one event does not affect the outcome of the other event. 
+For example, the outcome of a coin flip is independent of the outcome of another coin flip.</p>
 
+<p> Let's say we have two coins, and we flip both of them at the same time:</p>
+<ul>
+  <li>What is the probability that the first coin will be heads?</li>
+  <li>What is the probability that the second coin will be heads?</li>
+</ul>
+
+<p> Hopefully, in your head, you are calculating the probability of each coin being heads as <m>50\%</m>.
+We want to take that result and calculate the probability of both coins being heads at the same time.</p>
+<p><image source="L5.1.onecoin.png" width="40%" /></p>
+<p> One way to reason about it is to list out all the possible outcomes of flipping two coins.
+Because each option is equally likely, the probability of each case is <m>25\%</m>. That means that the probability
+of both coins being heads is <m>25\%</m>. Likewise, the probability of both coins being tails is <m>25\%</m>.</p>
+<p> You might notice, though, that two of the choices look the same. That is, two choices have one heads and one tails. 
+So the probability that "one coin is heads and the other coin is tails" is <m>50\%</m>, whereas the probability the 
+"first coin is heads and the second coin is tails" is <m>25\%</m>.</p>
+
+<p><image source="L5.1.twocoins.png" width="66%" /></p>
+
+<p> This example was fairly simple because we had equal probabilities for each outcome. Let's go back to our
+weather example and look at how to calculate independent probabilities when the probabilities are not equal.</p>
+
+<p> Let's imagine that I am always running late in the morning, I'm groggy, and I'm just a little spacey, so I don't have a chance to look up the 
+forecast. It turns out that a particular day has a <m>50\%</m> chance of raining. On any given day, I have a <m>25\%</m> chance of deciding to 
+bring a raincoat, just in case. So I have the following scenario:</p> 
+
+<p><image source="L5.n-probs1.png" width="50%" /></p>
+
+<p> Notice that I drew the pictures based on the ratios: <m>\frac{3}{4}</m> chance of not bringing a raincoat, and <m>\frac{1}{4}</m> chance of bringing a raincoat 
+is depicted as three shirts and one raincoat. This is similar to how we have been representing superposition probabilities with our 
+visual representation.</p>
+
+<p>We can use this same approach to depict all of the possibilities, still repeating possibilities to indicate that they are more likely.
+I'll show the process in two steps.</p>
+
+<p><image source="L5.n-probs2.png" width="66%" /></p>
+
+<p> We can see from the final picture (below) that the probability that I forget my rain jacket <em>AND</em> it being raining is <m>\frac{3}{8}</m>.</p> 
+<p><image source="L5.n-probs3.png" width="66%" /></p>
+
+
+<p>It turns out that we can actually do this with a simple calculation. Given our starting probabilities of <m>0.75</m> forgetting raincoat,
+<m>0.25</m> bringing raincoat, and <m>0.5</m> raining, we can calculate the probability of it raining <em>AND</em> forgetting raincoat as: <m>0.75 \times 0.5 = 0.375 = \frac{3}{8}.</m></p>
+<p><image source="L5.n-probsmult.png" width="66%" /></p>
+
+ <exercise label="L5.1_Q1">
+    <title>Probability Practice #1</title>
+    <idx>L5.1 Q1</idx>
+    <statement>
+      <p>You roll a six-sided die. What is the probability of rolling a 4?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes"><statement><p><m>\frac{1}{6}</m></p></statement></choice>
+      <choice><statement><p><m>\frac{1}{3}</m></p></statement></choice>
+      <choice><statement><p><m>\frac{1}{2}</m></p></statement></choice>
+      <choice><statement><p><m>\frac{1}{12}</m></p></statement></choice>
+    </choices>
+  </exercise>
+
+ <exercise label="L5.1_Q2">
+    <title>Probability Practice #2</title>
+    <idx>L5.1 Q2</idx>
+    <statement>
+      <p>If you toss three coins, what is the probability of getting exactly two heads?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes"><statement><p><m>\frac{3}{8}</m></p></statement></choice>
+      <choice><statement><p><m>\frac{1}{2}</m></p></statement></choice>
+      <choice><statement><p><m>\frac{1}{4}</m></p></statement></choice>
+      <choice><statement><p><m>\frac{1}{8}</m></p></statement></choice>
+    </choices>
+  </exercise>
+
+
+<p> If you want to learn just a little bit more about probabilities in this cartoon fashion, check out our zine at:
+<url href="https://www.epiqc.cs.uchicago.edu/probability">https://www.epiqc.cs.uchicago.edu/probability</url></p>
 
 
 </section>
+
+
 
 
 </section>
