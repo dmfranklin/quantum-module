@@ -69,10 +69,10 @@ To add a new lesson:
 
 After making changes, rebuild the textbook using `pretext build web` and reload the page in your browser to see the updated content.
 
-Alternatively, you may use a tool like [`watchexec`](https://github.com/watchexec/watchexec?tab=readme-ov-file#install) to automatically rebuild the textbook as you make changes. This way, you'll only need to refresh the page in your browser to see the updated content. `watchexec` should be available on your platform's package manager (e.g. Homebrew). After installing it, run the following command in the project directory to watch for changes in the `source` directory and rebuild the modulle automatically:
+Alternatively, you may use a tool like [`watchexec`](https://github.com/watchexec/watchexec?tab=readme-ov-file#install) to automatically rebuild the textbook as you make changes. This way, you'll only need to refresh the page in your browser to see the updated content. `watchexec` should be available on your platform's package manager (e.g. Homebrew). After installing it, run the following command in the project directory to watch for changes in the `source` directory and rebuild the modulle automatically (the `-o` flag tells `watchexec` to restart the command if a change occurs while it's already building):
 
 ```bash
-watchexec -w source -- pretext build web
+watchexec -w source -o restart -- pretext build web
 ```
 
 ## Integrating Interactive Widgets

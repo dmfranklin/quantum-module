@@ -61,10 +61,11 @@
     </exercise>
 
     <p> The key point is that when a qubit is in <term>superposition</term>, it does not have a
-      definite value of 0 or 1. In fact, it holds <em>both values simultaneously.</em> Instead, it
-      has probabilities of being measured as 0 or 1. The <c>H</c> gate creates this superposition by
-      transforming the <term>basis</term> states <m>\ket{0}</m> and <m>\ket{1}</m> into equal
-      superpositions of both states: i.e., there is an <em>equal</em> chance of measuring 0 or 1. </p>
+      definite value of 0 or 1. In fact, it holds <em>both values simultaneously.</em> Thus, a qubit
+      has <em>probabilities</em> of being measured as 0 or 1. The <c>H</c> gate creates this
+      superposition by transforming what we call the <term>basis</term> states <m>\ket{0}</m> and <m>
+      \ket{1}</m> into equal superpositions of both states: i.e., there is an <em>equal</em> chance
+      of measuring 0 or 1. </p>
     <p> Now that you have observed the behavior of the <c>H</c> gate, you may want to write it on a
       page of notes or take a screenshot for future reference. </p>
   </section>
@@ -140,13 +141,12 @@ is labeled with what I am to them.</p>
           The number of instances of the same color represents the probability of that outcome. For
       example, in the left image below, there is one white and one
           black ball, so there is an equal probability of measuring 0 or 1. In the right image,
-      there are three black and one white ball, so there is a
+          there are three black and one white ball, so there is a
           75% chance of measuring 1 or ⚫ and a 25% chance of measuring 0 or ⚪.
         </li>
       </ul>
-  <image
-        source="VisualSuperposition.png" width="66%" />
     </p>
+    <image source="VisualSuperposition.png" width="66%" />
 
     <exercise label="Visual_rep_superposition_lesson3_1">
       <title>Superposition Visual Representation</title>
