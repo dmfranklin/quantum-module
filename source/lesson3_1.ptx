@@ -66,8 +66,29 @@
       superposition by transforming what we call the <term>basis</term> states <m>\ket{0}</m> and <m>
       \ket{1}</m> into equal superpositions of both states: i.e., there is an <em>equal</em> chance
       of measuring 0 or 1. </p>
+
     <p> Now that you have observed the behavior of the <c>H</c> gate, you may want to write it on a
       page of notes or take a screenshot for future reference. </p>
+  </section>
+
+  <section xml:id="superposition-measurement">
+    <title>State vs. Measurement</title>
+
+    <p>Understanding superposition demonstrates one of the most important aspects of quantum
+      computing: distinguishing between the <em>state</em> of a quantum system and the output we get
+      from <em>making a measurement</em> of the quantum system.</p>
+
+
+    <p>For a basis state like <m>\ket{0}</m>, these are similar: the state is represented by 0, and
+      measuring the state will always result in 0.</p>
+
+    <p> However, for a qubit in superposition, there is a difference: <ul>
+        <li>the <em>state</em> is represented by the probability of measuring 0 or 1, e.g. 50%
+      chance of measuring 0/50% change of measuring 1</li>
+        <li><em>measuring</em> this state will produce a single value of 0 or 1, <em>at
+            random</em>.</li>
+      </ul>
+    </p>
   </section>
 
 
