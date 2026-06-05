@@ -89,6 +89,8 @@
             random</em>.</li>
       </ul>
     </p>
+
+    <p>We'll learn more about measurement in quantum systems in <xref ref="measurement" />.</p>
   </section>
 
 
@@ -162,8 +164,8 @@ is labeled with what I am to them.</p>
           The number of instances of the same color represents the probability of that outcome. For
       example, in the left image below, there is one white and one
           black ball, so there is an equal probability of measuring 0 or 1. In the right image,
-          there are three black and one white ball, so there is a
-          75% chance of measuring 1 or ⚫ and a 25% chance of measuring 0 or ⚪.
+          there is one white ball and three black balls, so there is a
+          25% chance of measuring 0 or ⚪ and a 75% chance of measuring 1 or ⚫.
         </li>
       </ul>
     </p>

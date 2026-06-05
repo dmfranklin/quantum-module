@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="chapter3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="superposition" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Superposition</title>
 
   <introduction>
-    <p>
-      In this chapter, we are going to learn about superposition, which introduces <term>probabilistic gates</term>.
-      Specifically, we have the following learning goals:
-    </p>
+    <p> In this chapter, we are going to learn about superposition, which introduces <term>probabilistic
+      gates</term>. Specifically, we have the following learning goals: </p>
     <ul>
       <li>What is going on with these probabilistic gates?</li>
       <li>How do we represent the probabilistic output <em>visually</em>?</li>

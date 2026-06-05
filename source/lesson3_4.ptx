@@ -3,22 +3,304 @@
 <section xml:id="lesson3_4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Superposition and Gates</title>
 
-<p>
-Now you need to know how to calculate the outputs of gates when the 
-inputs are in superposition, beyond memorizing that two H gates go into
-superposition and then out again. 
+  <p>
+    Now you need to know how to calculate the outputs of gates when the
+    inputs are in superposition, beyond memorizing that two H gates go into
+    superposition and then out again.
 </p>
-<p>
-This requires two pieces of knowledge:
-<ul><li> How to visualize a two qubit state</li>
-<li> How to calculate the outcome when inputs are in superposition</li></ul>
-</p>
+  <p> This requires two pieces of knowledge: <ul>
+      <li> How to visualize a two qubit state</li>
+      <li> How to calculate the outcome when inputs are in superposition</li>
+    </ul>
+  </p>
+
+  <section xml:id="sec-z-gate">
+    <title><c>Z</c> Gate</title>
+
+    <sidebyside widths="85% 15%" valign="top">
+      <p> Now we are going to explore the <c>Z</c> gate, which affects the phase of the qubit. Use
+        the circuit builder to determine how the <c>Z</c> gate affects a qubit that is in the state <m>
+        \ket{0}</m>
+        or <m>\ket{1}</m>. Construct the following two circuits and observe the outputs. </p>
+      <image source="L3.3_Z-gate.png" width="30%" />
+    </sidebyside>
+
+    <image source="Z_Explore.png" width="20%" />
+    <p>Remember that to create an input of <m>\ket{1}</m>, you will need to use a <c>NOT</c> gate.</p>
+
+
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 1x6",
+        allowedGates: "XHZ"
+      });
+    </script>
+    </interactive>
+
+    <exercise label="Z_truth_table_lesson3_3">
+      <title>
+        <c>Z</c> Truth Table </title>
+      <idx>Z_truth_table</idx>
+      <statement>
+        <p>Which answer best describes what you observed from the <c>Z</c> gate? </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>It does not have an observable effect.</p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>If the input is <m>\ket{0}</m> or <m>\ket{1}</m>, the result will have an equal chance of measuring
+              0 or 1. </p>
+          </statement>
+          <feedback>
+            <p>Look more closely at the bar graphs of the output.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Make the circuit and look at the bar graph below the circuit. Construct both input
+          combinations using <c>NOT</c> gates, recording the answers each time.</p>
+      </hint>
+    </exercise>
+
+    <p>
+      You might have been surprised by the answer! Because quantum state is more complex than merely
+      the probability of measuring 0 or 1, this method for determining and expressing an operation's
+      functionality is insufficient.
+    </p>
+    <p> Now, use the circuit builder above to create the following circuits and observe the
+      outcomes. This will reveal the functionality of the <c>Z</c> gate on a qubit in superposition. </p>
+
+    <!--<alert><p>WHICH
+    VERSION OF THESE CIRCUITS IS PREFERRED?
+  I LIKE THIS ONE, B/C 0 AND 1 STATES ARE VERY CLEAR.
+  THE CONVENTION ALSO MATCHES PRIOR LESSONS.
+  ANOTHER OPTION WOULD BE TO INCLUDE BOTH HERE TO REMIND THEM OF THE CONVENTION? (jen)</p></alert>-->
+
+    <image source="Z_Explore_2.png" width="50%" />
+
+    <!--
+  <p><em>(Remember that to create an input of <m>\ket{1}</m>, you will need to use a <c>NOT</c> gate,
+    as shown here:)</em></p>
+  <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="75%" />
+  -->
+
+    <exercise label="Superposition Z">
+      <title>
+        <c>Z</c> Gate Behavior with Superposition </title>
+      <idx>superpositionZ</idx>
+      <statement>
+        <p>What is the effect of the sequence <c>H</c>-<c>Z</c>-<c>H</c> on qubits beginning in <m>
+          \ket{0}</m>
+          or <m>
+            \ket{1}
+          </m>?</p>
+        <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="66%" />
+        <!--<image
+        source="Z_Explore_2.png" width="50%" />-->
+      </statement>
+      <choices randomize="yes">
+        <choice correct="no">
+          <statement>
+            <p>There is an equal chance of measuring 0 or 1.</p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>No observable effect. </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>The same as a <c>NOT</c> gate</p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.</p>
+      </hint>
+    </exercise>
+    <p> Now we see that <c>Z</c> does have a major effect on the system, but <em>only</em> when the
+      qubit is in superposition. The truth table for the <c>Z</c> gate is below. I suggest adding
+      this to your page of notes. </p>
+    <p>
+      <image source="L3.2-Z-gate-truth-table.png" width="30%" />
+    </p>
+    <p> This truth table does not seem right <mdash /> you already observed that there is no
+      observable effect when a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state. So why
+      is the truth table expressed this way? We have to remember that the truth table is describing
+      the effect of the Z gate on the full quantum state, including phase, not just the measurement
+      outcomes. When a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>
+      \ket{1}</m> state, there is no
+      change in phase, so the effect is not observable. However, when a Z gate is applied to a qubit
+      in superposition, it flips the phase of the states, and the negative sign is always applied to
+      the probability of the <m>\ket{1}</m> state. </p>
+    <p>
+      <image source="Z_Gate_Effect_1.png" width="75%" />
+    </p>
+
+    <!--
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XSHZ"
+      });
+    </script>
+  </interactive>
+
+
+  <p>
+    <insert>
+      Insert two circuits for them to calculate the output. Don't do the entanglement gate - just
+      some interesting versions of <c>NOT</c>, <c>SWAP</c>, <c>H</c>, and <c>Z</c> to play with going to
+    the 50/50 state
+      and returning to 0, 1, or the <c>Z</c> gate making it flip. -Diana</insert>
+  </p>
+  -->
+
+    <exercise label="L3_3_3 Calculate Output">
+      <title>
+        Practice calculating the output
+      </title>
+      <idx>L3_3_3_Calculate</idx>
+      <statement>
+        <p>Calculate the output of this circuit.</p>
+        <image source="L3_3_3_Calculate.png" width="75%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="no">
+          <statement>
+            <p>
+              <m>\ket{00}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{01}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\ket{10}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>
+              <m>\ket{11}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.
+          Remember the compressed notation for more than one qubit lists qubit states from top to
+          bottom.</p>
+      </hint>
+    </exercise>
+
+    <exercise label="L3_3_4 Calculate Output">
+      <title>
+        Practice calculating the output
+      </title>
+      <idx>L3_3_4_Calculate</idx>
+      <statement>
+        <p>Calculate the output of this circuit.</p>
+        <image source="L3_3_4_Calculate.png" width="75%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\ket{00}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{01}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{10}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>
+              <m>\ket{11}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.
+          Remember the compressed notation for more than one qubit lists qubit states from top to
+          bottom.</p>
+      </hint>
+    </exercise>
+
+
+  </section>
 
 
   <section xml:id="sec-two-qubit-visual">
     <title>Visualizing two-qubit state</title>
 
-    <p> 
+    <p>
       As we learned before, the horizontal line divides between two different
       possible outcomes. If there is no line, then two different qubits are being
       represented.
@@ -37,12 +319,14 @@ This requires two pieces of knowledge:
     </sidebyside>
     -->
 
-    <p> 
-      In the images above, the left side is a single qubit in 
-      50/50 superposition. The right side is two different qubits, one  
-      <m>\ket{0}</m> and the other <m>\ket{1}</m>.
-    </p>
+    <p> In the images above, the left side is a single qubit in 50/50 superposition. The right side
+      is two different qubits, one <m>\ket{0}</m> and the other <m>\ket{1}</m>. </p>
 
   </section>
+
+  <p>In the diagrams above, you may have noticed that we always placed the <m>-</m> in front of the
+    ⚫, and you may have thought: "Could we put the <m>-</m> in front of the ⚪ instead?". The short
+    answer is: you can definitely do so! However, the standard convention is to place the negative
+    sign in front of the ⚫. With your understanding of global p</p>
 
 </section>
