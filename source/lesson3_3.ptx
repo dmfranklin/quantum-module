@@ -26,10 +26,9 @@
     <image source="NegativePhase.png" width="66%" />
   </sidebyside>
 
-  <!-- <p> We depict this by placing a negative sign in front of the <m>\ket{⚫}</m> or
-  <m>\ket{1}</m>
-    state: <m>-
-      \ket{⚫}</m> or <m>- \ket{1}</m>. </p> -->
+  <p> We depict this by placing a negative sign in front of the <m>⚫</m> outcome in the visual
+    representation, as seen above.</p>
+
   <p> Why are positive and negative signs used to indicate phase? It turns out that to calculate
     the effect of different
     gates, or operations, using the positive and negative signs with existing algebraic rules
@@ -41,10 +40,10 @@
 
   <p> Now that we have a visual representation of phase, we can have a more complete picture of what
     the <c>H</c> gate does to a qubit. The <c>H</c> gate creates a superposition of the input state,
-    but it also creates a difference in phase based on the input state. Additionally, when an <c>H</c>
-    gate acts on an equal superposition state, the state returns to one of the basis states based on
-    the <em>phase</em> of the superposition state. We can see that phase is an integral part of the
-    quantum state: we will learn the mathematics of this operation later. </p>
+    but the resulting phase depends on the input state. Additionally, when an <c>H</c> gate acts on
+    an equal superposition state, the state returns to one of the basis states based on the phase of
+    the superposition state. We can see that phase is an integral part of the quantum state; we will
+    learn the detailed mathematics of this property later. </p>
 
   <image source="L3.2-H-with-phase.png" width="66%" />
 
@@ -56,17 +55,12 @@
 
   <section xml:id="sec-global-phase">
     <title>Global Phase</title>
-    <p>One of the fascinating (and often confusing) properties of phase on a quantum system is that
-      it only has physical meaning <em>when the system is in
-        superposition</em>.</p>
-
-    <p>Let us first consider the hypothetical state <m>- \ket{0}</m>, i.e. the basis state <m>\ket{0}</m> but with
-      negative phase. In the quantum world, this is fundamentally identical to <m>\ket{0}</m>. We refer to
-      this type of phase as <term>global phase</term>, and we can ignore global phase because it has
-      no effect on the measurement of the state. On the other hand, the <m>\ket{-}</m> state has different
-      signs on the ⚪ and ⚫ in superposition. This difference in signs is called <term>relative
-        phase</term>, and this is what matters in quantum states. As a result, when you hear
-      "phase", you can assume that this is referring to <em>relative phase</em>.</p>
+    <p>One of the most important properties of phase on a quantum system is that it only has
+      physical meaning <em>when the system is in
+        superposition</em>. As we saw above, the phase present in a qubit is defined by the <em>difference
+      in signs on the ⚪ and ⚫ outcomes</em>. Thus, if a state is not in superposition (e.g. one of
+      the basis states), the concept of phase is meaningless. This is referred to as <term>global
+      phase</term>, and has no effect on the measurement of the state.</p>
 
     <p> This understanding of global phase gives rise to our first rule for <term>simplifying
         quantum states</term>: a <m>-</m> on the <em>overall</em> quantum state can simply be

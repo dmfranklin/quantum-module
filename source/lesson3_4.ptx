@@ -3,16 +3,48 @@
 <section xml:id="lesson3_4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Superposition and Gates</title>
 
-  <p>
-    Now you need to know how to calculate the outputs of gates when the
-    inputs are in superposition, beyond memorizing that two H gates go into
-    superposition and then out again.
-</p>
-  <p> This requires two pieces of knowledge: <ul>
-      <li> How to visualize a two qubit state</li>
-      <li> How to calculate the outcome when inputs are in superposition</li>
-    </ul>
-  </p>
+  <p> So far, all of our exploration of gate behavior has been with basis states (<m>\ket{0}</m> and <m>\ket{1}</m>).
+    Now, it's time to learn how to calculate the outputs of gates when the inputs are in
+    superposition (beyond memorizing that two H gates go into superposition and then out again!). </p>
+
+  <section xml:id="sec-calc-superposition-visual">
+    <title>Calculating Gates with Superposition Inputs</title>
+
+    <p>To calculate how gates operate on qubits in superposition, there is a simple rule to follow: <em>Apply
+      the gate separately to each possible outcome, then combine the results.</em>
+    </p>
+
+    <p>Let's start by looking at a simple example with a <c>NOT</c> gate.</p>
+
+    <example>
+      <title>Applying NOT on simple superposition state</title>
+      <p>Consider the following, where a state in superposition is acted upon by a <c>NOT</c> gate.</p>
+
+      <image source="L3.4-5050-to-NOT.png" width="30%" />
+
+      <p>To evaluate the action of the <c>NOT</c> gate, we just perform the <c>NOT</c> action on each part
+        of the superposition:</p>
+
+      <image source="L3.4-5050-NOT-output.png" width="30%" />
+    </example>
+
+    <example>
+      <title>Applying NOT on complex superposition state</title>
+
+      <p>Consider the following, where a 75%<ndash />25% superposition state is acted upon by a <c>NOT</c>
+        gate.</p>
+
+      <image source="L3.4-7525-to-NOT.png" width="30%" />
+
+      <p>Once again, to evaluate the action of the <c>NOT</c> gate, we perform the <c>NOT</c> action on
+        each part of the superposition:</p>
+
+      <image source="L3.4-7525-NOT-output.png" width="30%" />
+
+      <p>Note that we rearrange the outcomes as per our convention, placing ⚪ outcomes at the top
+        and ⚫ at the bottom.</p>
+    </example>
+  </section>
 
   <section xml:id="sec-z-gate">
     <title><c>Z</c> Gate</title>
@@ -137,24 +169,47 @@
         <p>Think about what the output would be after each gate.</p>
       </hint>
     </exercise>
+
     <p> Now we see that <c>Z</c> does have a major effect on the system, but <em>only</em> when the
-      qubit is in superposition. The truth table for the <c>Z</c> gate is below. I suggest adding
-      this to your page of notes. </p>
-    <p>
-      <image source="L3.2-Z-gate-truth-table.png" width="30%" />
-    </p>
-    <p> This truth table does not seem right <mdash /> you already observed that there is no
-      observable effect when a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state. So why
+      qubit is in superposition. To get a clearer sense of the effect of the <c>Z</c> gate, let's
+      work backwards and forwards based on our existing understanding of the <c>H</c> and what you
+      observed in the exercise above. <ol>
+        <li>For the first <c>H</c> gate, an equal superposition state is created. The first circuit
+      has positive phase and the second has negative phase.</li>
+        <li>Based on trying out this circuit, we see that the output is ⚫ for the
+          first circuit and ⚪ for the second circuit.</li>
+        <li>Working backwards, we see that the state right before the second <c>H</c> gate is an
+      equal superposition state with negative phase for the first circuit and positive phase for the
+      second circuit.</li>
+      </ol> Putting this all together: </p>
+
+    <image source="Z_Explore_2_Expanded.png" width="75%" />
+
+    <p> Thus, we can see the effect of the <c>Z</c> gate on states in superposition. </p>
+
+    <image source="Z_Gate_Effect_1.png" width="75%" />
+
+    <p> Using the rules for applying gates on superposition states (<xref
+        ref="sec-calc-superposition-visual" />), we can finally deduce the truth table for the <c>Z</c>
+      gate below. I suggest adding this to your page of notes. </p>
+
+    <image source="L3.2-Z-gate-truth-table.png" width="30%" />
+
+    <p> It's important to remember that this truth table is only meaningful when the qubit is in
+      superposition: there is no observable effect when a <c>Z</c> gate is applied to a basis state.
+      So keeping this in mind will be helpful in the future when you are working with more complex
+      superposition states! </p>
+
+    <!-- <p> This truth table does not seem right <mdash /> you already observed that there is no
+      observable effect when a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m>
+    state. So why
       is the truth table expressed this way? We have to remember that the truth table is describing
       the effect of the Z gate on the full quantum state, including phase, not just the measurement
       outcomes. When a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>
       \ket{1}</m> state, there is no
       change in phase, so the effect is not observable. However, when a Z gate is applied to a qubit
       in superposition, it flips the phase of the states, and the negative sign is always applied to
-      the probability of the <m>\ket{1}</m> state. </p>
-    <p>
-      <image source="Z_Gate_Effect_1.png" width="75%" />
-    </p>
+      the probability of the <m>\ket{1}</m> state. </p> -->
 
     <!--
   <interactive aspect="9:9" platform="javascript"
@@ -295,38 +350,5 @@
 
 
   </section>
-
-
-  <section xml:id="sec-two-qubit-visual">
-    <title>Visualizing two-qubit state</title>
-
-    <p>
-      As we learned before, the horizontal line divides between two different
-      possible outcomes. If there is no line, then two different qubits are being
-      represented.
-    </p>
-
-    <!-- <image source="VisualRep_one_vs_two_qubits_OLD.png" width="40%" /> -->
-    <image source="VisualRep_one_vs_two_qubits.png" width="50%" />
-
-    <!--
-    <sidebyside widths="35% 15% 15% 35%" valign="top">
-      <p> </p>
-
-      <image source="Visual_Onebit_50_positive.png" width="10%" />
-      <image source="L3-4-twoqubitvisual.png" width="10%" />
-      <p> </p>
-    </sidebyside>
-    -->
-
-    <p> In the images above, the left side is a single qubit in 50/50 superposition. The right side
-      is two different qubits, one <m>\ket{0}</m> and the other <m>\ket{1}</m>. </p>
-
-  </section>
-
-  <p>In the diagrams above, you may have noticed that we always placed the <m>-</m> in front of the
-    ⚫, and you may have thought: "Could we put the <m>-</m> in front of the ⚪ instead?". The short
-    answer is: you can definitely do so! However, the standard convention is to place the negative
-    sign in front of the ⚫. With your understanding of global p</p>
 
 </section>

@@ -11,9 +11,9 @@
   <section xml:id="sec-H-gate-behavior">
     <title>Exploring the <c>H</c> Gate</title>
     <p> We will use the circuit builder to learn more about superposition as we observe how the <c>H</c>
-      gate operates. Use the circuit builder below to see what the <c>H</c> gate does to a qubit
-      that starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state. That is, make the following two
-      circuits and observe the outputs: </p>
+      gate operates. Use the circuit builder below to see what the <c>H</c> gate does to a qubit that
+      starts in the <m>\ket{0}</m> or <m>\ket{1}</m> state. That is, make the following two circuits and observe
+      the outputs: </p>
     <image source="H_Explore.png" width="35%" />
 
     <interactive aspect="9:9" platform="javascript"
@@ -49,8 +49,8 @@
             <image source="L3.1 H gate_equally-likely.png" width="66%" />
           </statement>
           <feedback>
-            <p>Correct! For an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the output of an <c>H</c>
-              gate will have an equal chance of measuring 0 or 1.</p>
+            <p>Correct! For an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the output of an <c>H</c> gate will have
+              an equal chance of measuring 0 or 1.</p>
           </feedback>
         </choice>
       </choices>
@@ -64,8 +64,9 @@
       definite value of 0 or 1. In fact, it holds <em>both values simultaneously.</em> Thus, a qubit
       has <em>probabilities</em> of being measured as 0 or 1. The <c>H</c> gate creates this
       superposition by transforming what we call the <term>basis</term> states <m>\ket{0}</m> and <m>
-      \ket{1}</m> into equal superpositions of both states: i.e., there is an <em>equal</em> chance
-      of measuring 0 or 1. </p>
+      \ket{1}</m>
+      into equal superpositions of both states: i.e., there is an <em>equal</em> chance of measuring
+      0 or 1. </p>
 
     <p> Now that you have observed the behavior of the <c>H</c> gate, you may want to write it on a
       page of notes or take a screenshot for future reference. </p>
@@ -84,7 +85,7 @@
 
     <p> However, for a qubit in superposition, there is a difference: <ul>
         <li>the <em>state</em> is represented by the probability of measuring 0 or 1, e.g. 50%
-      chance of measuring 0/50% change of measuring 1</li>
+      chance of measuring 0 and 50% change of measuring 1</li>
         <li><em>measuring</em> this state will produce a single value of 0 or 1, <em>at
             random</em>.</li>
       </ul>
@@ -146,11 +147,10 @@ is labeled with what I am to them.</p>
       and then in a later chapter, we will explore the mathematical representation.
 </p>
     <p> First, it is important to understand that the 50/50 outcome of the H gate (when starting
-      with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state) is not the only possible
-      superposition state. A qubit can be in a superposition state with any probabilities of
-      measuring 0 or 1, as long as the probabilities add up to 100%. For example, a qubit could be
-      in a superposition state where there is a 75% chance of measuring 0 and a 25% chance of
-      measuring 1, or vice versa. </p>
+      with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state) is not the only possible superposition state. A
+      qubit can be in a superposition state with any probabilities of measuring 0 or 1, as long as
+      the probabilities add up to 100%. For example, a qubit could be in a superposition state where
+      there is a 75% chance of measuring 0 and a 25% chance of measuring 1, or vice versa. </p>
     <image source="Any_prob_gate.png" width="50%" />
 
     <p> So, how do we represent the state of a qubit that is in superposition? The interactive
@@ -166,6 +166,10 @@ is labeled with what I am to them.</p>
           black ball, so there is an equal probability of measuring 0 or 1. In the right image,
           there is one white ball and three black balls, so there is a
           25% chance of measuring 0 or ⚪ and a 75% chance of measuring 1 or ⚫.
+        </li>
+        <li>
+          The order of each outcome does not matter, so by convention ⚪ outcomes are shown first
+      (toward the top) followed by ⚫ outcomes (toward the bottom).
         </li>
       </ul>
     </p>
