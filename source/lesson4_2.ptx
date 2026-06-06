@@ -1,48 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-
 <section xml:id="lesson4_2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Heisenburg Uncertainty Principle</title>
+  <title>Heisenberg Uncertainty Principle</title>
 
-<p> Now consider attempting to measure something more complex, like the current emotion of a baby? </p>
+  <p> Now consider attempting to measure something more complex, like the current emotion of a baby. </p>
 
 
-<sidebyside widths="65% 35%" valign="top">
+  <sidebyside widths="65% 35%" valign="top">
     <p>
-     <ul>
-      <li><term>Question:</term> What is the baby feeling right now?</li>
-      <li><term>Device:</term> Your eyes and ears</li>
-      <li><term>Method:</term> Observe the baby's facial expressions and sounds. Smiling or frowning? Giggling and babbling, or screaming?</li>
-    </ul>
+      <ul>
+        <li><em>Question:</em> What is the baby feeling right now?</li>
+        <li><em>Device:</em> Your eyes and ears</li>
+        <li><em>Method:</em> Observe the baby's facial expressions and sounds. Smiling or frowning?
+          Giggling and babbling, or screaming?</li>
+      </ul>
     </p>
     <image source="Measure_feelings.png" width="66%" />
   </sidebyside>
 
 
+  <p> Unless you are very experienced at reading babies, this measurement is much more difficult.
+    While the question is clear, the device is not designed for this specific measurement, and the
+    method is more complex.
+    You might be able to make a good guess, but you might also be wrong. </p>
+  <p>
+    <term>There exists no precise way of measuring the emotion of a baby.</term> It is not a
+    question of finding something else <mdash /> there does not currently exist a measurement device
+    that can give you a precise answer to the question of what a baby is feeling.</p>
 
-<p> Unless you are very experienced at reading babies, this measurement is much more difficult. 
-While the question is clear, the device is not designed for this specific measurement, and the method is more complex. 
-You might be able to make a good guess, but you might also be wrong. </p>
-<p> <insert>There exists no precise way of measuring the emotion of a baby.</insert> It is not a question of finding
-something else - there does not currently 
-exist a measurement device that can give you a precise answer to the question of what a baby is feeling.</p>
 
+  <p> Likewise, <term>measurement in quantum systems is limited in what information can be
+      extracted in a single
+      measurement </term>; we are only able to measure one attribute of quantum state. We can choose
+    to measure the value (<m>\ket{0}</m> vs. <m>\ket{1}</m>) or the phase (<m>\ket{+}</m> or <m>\ket{-}</m>). However, we are
+    not able to measure the probabilities stored in the superposition state <mdash /> we merely get
+    a single outcome. </p>
 
-<p> Likewise, <insert>measurement in quantum systems is limited in what information can be extracted in a single 
-measurement </insert>; We are only able to measure one attribute of quantum state. We can choose to measure the number 
-(<m>\ket{0}</m> vs. <m>\ket{1}</m>) or the phase (<m>\ket{+}</m> or <m>\ket{-}</m>). However, we are not able to 
-measure the probabilities stored in the superposition state - we merely get a single outcome. </p>
+  <p> You might be thinking that, eventually, physicists or engineers will build such a precise
+    device. Unfortunately,
+    the Heisenberg Uncertainty Principle states that it is impossible for such a device to exist.
+    Quantum properties are
+    stored in a single atom and represent the smallest particles known to exist. A measurement
+    device needs to be able
+    to distinguish between different states, and that level of state is just too small to
+    distinguish between.</p>
 
-<p> You might be thinking that, eventually, physicists or engineers will build such a precise device. Unfortunately,
-the Heisenburg Uncertainty Principle states that it is impossible for such a device to exist. Quantum properties are 
-stored in a single atom and represent the smallest particles known to exist. A measurement device needs to be able
-to distinguish between different states, and that level of state is just too small to distinguish between.</p>
+  <p> What might programming look like in such a circumstance?</p>
 
-<p> What might programming look like in such a circumstance?</p>
-
-<p> Consider storing variables in superposition. Below, we show a variable in superposition (top image) and two different
-runs (bottom images). This is only a hypothetical example - python will not accept this code.</p>
+  <p> Consider storing variables in superposition. Below, we show a variable in superposition (top
+    image) and two different
+    runs (bottom images). This is only a hypothetical example - python will not accept this code.</p>
 
   <image source="4_2_python1.png" width="70%" />
   <sidebyside widths="15% 35% 35% 15%" valign="top">
@@ -52,11 +60,11 @@ runs (bottom images). This is only a hypothetical example - python will not acce
     <p> </p>
   </sidebyside>
 
-  <p> This example shows a similar limitation. In a quantum system, we would be able to store multiple
-  values in the same variable, but whenever we perform a measurement (such as printing out the value), it 
-  will only print out one of the values.</p>
-  
+  <p> This example shows a similar limitation. In a quantum system, we would be able to store
+    multiple
+    values in the same variable, but whenever we perform a measurement (such as printing out the
+    value), it
+    will only print out one of the values.</p>
 
 
 </section>
-

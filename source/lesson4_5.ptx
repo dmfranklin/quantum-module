@@ -7,13 +7,30 @@
     <title>Question #1</title>
     <idx>HW4 Q1</idx>
     <statement>
-      <p>A classmate is testing if a glass bottle is strong enough to be used for a science experiment. Which device would be used in a destructive test?</p>
+      <p>A classmate is testing if a glass bottle is strong enough to be used for a science
+        experiment. Which device would be used in a destructive test?</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>Hammer</p></statement></choice>
-      <choice><statement><p>Flashlight</p></statement></choice>
-      <choice><statement><p>Scale</p></statement></choice>
-      <choice><statement><p>Thermometer</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>Hammer</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Flashlight</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Scale</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Thermometer</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
@@ -24,10 +41,26 @@
       <p>What method could be used in a non-destructive test to find cracks in a bicycle frame?</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>Spraying a dye on the frame and checking if the color seeps into cracks</p></statement></choice>
-      <choice><statement><p>Hitting the frame with a hammer until it breaks</p></statement></choice>
-      <choice><statement><p>Squeezing the frame in a vice until it bends</p></statement></choice>
-      <choice><statement><p>Melting the frame down and analyzing the metal</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>Spraying a dye on the frame and checking if the color seeps into cracks</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Hitting the frame with a hammer until it breaks</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Squeezing the frame in a vice until it bends</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Melting the frame down and analyzing the metal</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
@@ -35,13 +68,30 @@
     <title>Question #3</title>
     <idx>HW4 Q3</idx>
     <statement>
-      <p>A student is using a tuning fork and listening for changes in sound after gently tapping a ceramic plate. Which of these is the measurement question?</p>
+      <p>A student is using a tuning fork and listening for changes in sound after gently tapping a
+        ceramic plate. Which of these is the measurement question?</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>Is the plate cracked or solid?</p></statement></choice>
-      <choice><statement><p>How old is the plate?</p></statement></choice>
-      <choice><statement><p>What is the color of the plate?</p></statement></choice>
-      <choice><statement><p>How heavy is the plate?</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>Is the plate cracked or solid?</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>How old is the plate?</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>What is the color of the plate?</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>How heavy is the plate?</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
@@ -52,8 +102,16 @@
       <p>Quantum measurements are always as straightforward as measuring the length of a table.</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>False</p></statement></choice>
-      <choice><statement><p>True</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>False</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>True</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
@@ -61,27 +119,62 @@
     <title>Question #5</title>
     <idx>HW4 Q5</idx>
     <statement>
-      <p>A student stretches a rubber band until it snaps. How is this most similar to what happens when we measure a quantum state?</p>
+      <p>A student stretches a rubber band until it snaps. How is this most similar to what happens
+        when we measure a quantum state?</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>Both destroy the original superposition/state and force a definite outcome</p></statement></choice>
-      <choice><statement><p>Both create a new superposition after the test</p></statement></choice>
-      <choice><statement><p>Both always result in a perfectly predictable outcome</p></statement></choice>
-      <choice><statement><p>Both processes leave the original state unchanged</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>Both destroy the original superposition/state and force a definite outcome</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Both create a new superposition after the test</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Both always result in a perfectly predictable outcome</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Both processes leave the original state unchanged</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
-<exercise label="HW4_Q6">
+  <exercise label="HW4_Q6">
     <title>Question #6</title>
     <idx>HW4 Q6</idx>
     <statement>
-      <p>When you cut open an unmarked wrapped present to see what’s inside, how is this like making a quantum measurement?</p>
+      <p>When you cut open an unmarked wrapped present to see what's inside, how is this like making
+        a quantum measurement?</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>Cutting open the present lets you see the precise gift, just as quantum measurement collapses a superposition into a single outcome</p></statement></choice>
-      <choice><statement><p>The present stays both wrapped and unwrapped at the same time</p></statement></choice>
-      <choice><statement><p>The present disappears after you look inside</p></statement></choice>
-      <choice><statement><p>The present is the same as every other gift</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>Cutting open the present lets you see the precise gift, just as quantum measurement
+            collapses a superposition into a single outcome</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>The present stays both wrapped and unwrapped at the same time</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>The present disappears after you look inside</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>The present is the same as every other gift</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
@@ -89,31 +182,60 @@
     <title>Question #7</title>
     <idx>HW4 Q7</idx>
     <statement>
-      <p>What happens if you measure a quantum system midway through a circuit, between two H gates in a circuit?</p>
+      <p>What happens if you measure a quantum system midway through a circuit, between two <c>H</c>
+        gates in a circuit?</p>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>The state is collapsed, and future results become unpredictable</p></statement></choice>
-      <choice><statement><p>The system returns to its initial state</p></statement></choice>
-      <choice><statement><p>The state becomes stronger and more stable, and future results become predictable</p></statement></choice>
-      <choice><statement><p>There is no effect</p></statement></choice>
+      <choice correct="yes">
+        <statement>
+          <p>The state is collapsed, and future results become unpredictable</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>The system returns to its initial state</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>The state becomes stronger and more stable, and future results become predictable</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>There is no effect</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
-<exercise label="HW4_Q8">
+  <exercise label="HW4_Q8">
     <title>Question #8</title>
     <idx>HW4 Q8</idx>
     <statement>
       <p>Which circuit has a 100% probability of measuring <m>\ket{0}</m>?</p>
     </statement>
     <choices randomize="yes">
-      <choice><statement><image source="HW4_0-H-M-H.png" width="75%" /></statement></choice>
-      <choice correct="yes"><statement><image source="HW4_0-H-H-M.png" width="75%" /></statement></choice>
-      <choice><statement><p>Neither of these circuits</p></statement></choice>
+      <choice>
+        <statement>
+          <image source="HW4_0-H-M-H.png" width="75%" />
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <image source="HW4_0-H-H-M.png" width="75%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Neither of these circuits</p>
+        </statement>
+      </choice>
     </choices>
   </exercise>
 
 
-<exercise label="HW4_Q9">
+  <exercise label="HW4_Q9">
     <title>Question #9</title>
     <idx>HW4 Q9</idx>
     <statement>
@@ -122,13 +244,19 @@
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
-        <statement><p>The outcome of the circuit is not predictable.</p></statement>
+        <statement>
+          <p>The outcome of the circuit is not predictable.</p>
+        </statement>
       </choice>
       <choice>
-        <statement><p>The outcome of the circuit is predictable.</p></statement>
+        <statement>
+          <p>The outcome of the circuit is predictable.</p>
+        </statement>
       </choice>
       <choice>
-        <statement><p>Unable to determine</p></statement>
+        <statement>
+          <p>Unable to determine</p>
+        </statement>
       </choice>
     </choices>
   </exercise>

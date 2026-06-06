@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-
 <section xml:id="lesson4_1" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Exploring Measurement</title>
+  <title>Exploring Measurement</title>
 
-<sidebyside widths="65% 35%" valign="top">
-    <p>
-     You might be thinking that we should have been able to easily tell the 
-    difference between the random gate and the H gate by performing more 
-    precise measurement after an H gate. That is, instead of just checking for 
-    <m>\ket{0}</m> or <m>\ket{1}</m>, let's measure the probability and phase at the 
-    same time! 
-    </p>
+  <sidebyside widths="65% 35%" valign="top">
+    <p> You might be thinking that we should have been able to easily tell the difference between
+      the random gate and the <c>H</c> gate by performing more precise measurement after an <c>H</c>
+      gate. That is, instead of just checking for <m>\ket{0}</m> or <m>\ket{1}</m>, let's measure the probability
+      and phase at the same time! </p>
     <image source="H_Explore.png" width="66%" />
   </sidebyside>
 
-<p> To better understand the situation, let's explore measurement in your daily life. 
-  Measurement consists of a <em>question</em>, <em>device</em>, and <em>method</em>.</p>
+  <p> To better understand the situation, let's explore measurement in your daily life. Measurement
+    consists of a <em>question</em>, <em>device</em>, and <em>method</em>.</p>
 
-<sidebyside widths="75% 25%" valign="top">
-    <p>Consider measuring the length of a table:  
-    <ul>
-      <li><term>Question:</term> How long is the table?</li>
-      <li><term>Device:</term> A tape measure</li>
-      <li><term>Method:</term> Place the tape measure along the length of the table and read the value.</li>
-    </ul>
+  <sidebyside widths="75% 25%" valign="top">
+    <p>Consider measuring the length of a table: <ul>
+        <li><em>Question:</em> How long is the table?</li>
+        <li><em>Device:</em> A tape measure</li>
+        <li><em>Method:</em> Place the tape measure along the length of the table and read the
+      value.</li>
+      </ul>
     </p>
     <image source="Measure_table.png" width="66%" />
   </sidebyside>
 
-<p> This is a very straightforward measurement. The question is clear, the device is designed for this specific measurement, 
-and the method is simple. Quantum processes are much more difficult to measure. </p>
+  <p> This is a very straightforward measurement. The question is clear, the device is designed for
+    this specific measurement,
+    and the method is simple. Quantum processes are much more difficult to measure. </p>
 
-<!--<p><insert> Let's insert a question or two here having students identify the question, device, and method for a measurement scenario.
+  <!--<p><insert>
+  Let's insert a question or two here having students identify the question, device, and method for
+  a measurement scenario.
 You can grab from the zines for fun examples. </insert>
 <term>Question:</term>What is the speed of the car?
 <term>Device:</term> A radar gun
@@ -41,12 +40,12 @@ You can grab from the zines for fun examples. </insert>
 </p>
 -->
 
-<sidebyside widths="75% 25%" valign="top">
-    <p>Now, let's consider a police officer measuring the speed of a car. 
-    Use this scenario to answer the next few questions about the question, device, and method.
-    </p>  
+  <sidebyside widths="75% 25%" valign="top">
+    <p>Now, let's consider a police officer measuring the speed of a car.
+      Use this scenario to answer the next few questions about the question, device, and method.
+    </p>
     <image source="Measure_speed.png" width="66%" />
-</sidebyside>
+  </sidebyside>
 
   <exercise label="L4_1 Measurement Question">
     <title>Measurement Question</title>
@@ -56,20 +55,32 @@ You can grab from the zines for fun examples. </insert>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
-        <statement><p>What is the speed of the car?</p></statement>
-        <feedback><p>Correct!!</p></feedback>
+        <statement>
+          <p>What is the speed of the car?</p>
+        </statement>
+        <feedback>
+          <p>Correct!!</p>
+        </feedback>
       </choice>
       <choice>
-        <statement><p>How many cars pass through this intersection?</p></statement>
-        <feedback><p> </p></feedback>
+        <statement>
+          <p>How many cars pass through this intersection?</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
       </choice>
       <choice>
-        <statement><p>Is the car's registration up-to-date?</p></statement>
-        <feedback><p> </p></feedback>
+        <statement>
+          <p>Is the car's registration up-to-date?</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
       </choice>
     </choices>
     <hint>
-      <p>What is the police officer measuring?</p> 
+      <p>What is the police officer measuring?</p>
     </hint>
   </exercise>
 
@@ -81,20 +92,32 @@ You can grab from the zines for fun examples. </insert>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
-        <statement><p>A radar gun</p></statement>
-        <feedback><p>Correct!!</p></feedback>
+        <statement>
+          <p>A radar gun</p>
+        </statement>
+        <feedback>
+          <p>Correct!!</p>
+        </feedback>
       </choice>
       <choice>
-        <statement><p>The police officer's eyes.</p></statement>
-        <feedback><p> </p></feedback>
+        <statement>
+          <p>The police officer's eyes.</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
       </choice>
       <choice>
-        <statement><p>The police officer's mouth.</p></statement>
-        <feedback><p> </p></feedback>
+        <statement>
+          <p>The police officer's mouth.</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
       </choice>
     </choices>
     <hint>
-      <p>Which device would produce an accurate measurement of the car's speed?</p> 
+      <p>Which device would produce an accurate measurement of the car's speed?</p>
     </hint>
   </exercise>
 
@@ -106,22 +129,35 @@ You can grab from the zines for fun examples. </insert>
     </statement>
     <choices randomize="yes">
       <choice correct="yes">
-        <statement><p>The police officer points the radar gun at the car and reads the result.</p></statement>
-        <feedback><p>Correct!!</p></feedback>
+        <statement>
+          <p>The police officer points the radar gun at the car and reads the result.</p>
+        </statement>
+        <feedback>
+          <p>Correct!!</p>
+        </feedback>
       </choice>
       <choice>
-        <statement><p>The police officer observes as the car drives by and draws on prior experience to figure out the car's speed.</p></statement>
-        <feedback><p> </p></feedback>
+        <statement>
+          <p>The police officer observes as the car drives by and draws on prior experience to
+            figure out the car's speed.</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
       </choice>
       <choice>
-        <statement><p>The police officer counts out loud to determine how long it takes for the car to pass from point A to point B.</p></statement>
-        <feedback><p> </p></feedback>
+        <statement>
+          <p>The police officer counts out loud to determine how long it takes for the car to pass
+            from point A to point B.</p>
+        </statement>
+        <feedback>
+          <p> </p>
+        </feedback>
       </choice>
     </choices>
     <hint>
-      <p>Which method would produce an accurate measurement of the car's speed?</p> 
+      <p>Which method would produce an accurate measurement of the car's speed?</p>
     </hint>
   </exercise>
 
 </section>
-
