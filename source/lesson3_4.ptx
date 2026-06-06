@@ -5,7 +5,8 @@
 
   <p> So far, all of our exploration of gate behavior has been with basis states (<m>\ket{0}</m> and <m>\ket{1}</m>).
     Now, it's time to learn how to calculate the outputs of gates when the inputs are in
-    superposition (beyond memorizing that two H gates go into superposition and then out again!). </p>
+    superposition (beyond memorizing that two <c>H</c> gates go into superposition and then out
+    again!). </p>
 
   <section xml:id="sec-calc-superposition-visual">
     <title>Calculating Gates with Superposition Inputs</title>

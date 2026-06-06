@@ -140,17 +140,16 @@ is labeled with what I am to them.</p>
   <section xml:id="superposition-onebit-visual-rep">
     <title>Superposition Details</title>
 
-    <p> Before exploring superposition and the H gate further, we need to understand how to
-      represent a
-      state that is in superposition (and therefore has a probability of being measured as 0 or 1).
-      We will start with the visual representation,
-      and then in a later chapter, we will explore the mathematical representation.
-</p>
-    <p> First, it is important to understand that the 50/50 outcome of the H gate (when starting
-      with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state) is not the only possible superposition state. A
-      qubit can be in a superposition state with any probabilities of measuring 0 or 1, as long as
-      the probabilities add up to 100%. For example, a qubit could be in a superposition state where
-      there is a 75% chance of measuring 0 and a 25% chance of measuring 1, or vice versa. </p>
+    <p> Before exploring superposition and the <c>H</c> gate further, we need to understand how to
+      represent a state that is in superposition (and therefore has a probability of being measured
+      as 0 or 1). We will start with the visual representation, and then in a later chapter, we will
+      explore the mathematical representation. </p>
+    <p> First, it is important to understand that the 50/50 outcome of the <c>H</c> gate (when
+      starting with a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m> state) is not the only possible superposition
+      state. A qubit can be in a superposition state with any probabilities of measuring 0 or 1, as
+      long as the probabilities add up to 100%. For example, a qubit could be in a superposition
+      state where there is a 75% chance of measuring 0 and a 25% chance of measuring 1, or vice
+      versa. </p>
     <image source="Any_prob_gate.png" width="50%" />
 
     <p> So, how do we represent the state of a qubit that is in superposition? The interactive
