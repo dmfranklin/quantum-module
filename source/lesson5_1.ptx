@@ -128,9 +128,9 @@
       are not equal.</p>
 
     <p> Let's imagine that I am always running late in the morning, I'm groggy, and I'm just a
-      little spacey, so I don't have a chance to look up the forecast. It turns out that a
-      particular day has a <m>50\%</m> chance of raining. On any given day, I have a <m>25\%</m> chance of
-      deciding to bring a raincoat, just in case. So I have the following scenario:</p>
+      little spacey, so I don't have a chance to look up the forecast. On any given day, I have a <m>25\%</m>
+      chance of deciding to bring a raincoat, just in case. It turns out that a particular day has a <m>50\%</m>
+      chance of raining. So I have the following scenario:</p>
 
     <p>
       <image source="L5.n-probs1.png" width="50%" />
