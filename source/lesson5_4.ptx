@@ -8,7 +8,7 @@
 
     <p>
       The purpose of vector notation is to allow us to calculate the output of quantum
-      gates.
+      gates in all situations.
       Vector notation loses some of the explicit information in bra-ket notation -
       namely, the
       information about what each probability amplitude is tied to. Instead, we have

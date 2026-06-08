@@ -3,12 +3,13 @@
 <section xml:id="lesson5_3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Quantum State Representation: Bra-Ket</title>
 
+  <p>Let's start our exploration of quantum state representations with bra-ket notation.</p>
 
   <section
     xml:id="bra_ket_state" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Bra-Ket Quantum Representation</title>
 
-    <p> The purpose of <term>Bra-Ket notation</term> is to express the probability of each potential
+    <p> The purpose of <term>bra-ket notation</term> is to express the probability of each potential
       outcome. Therefore, there are two parts: The probability and the outcome.</p>
 
     <p> Bra-ket notation favors ease of calculation over easy readability of the probability,
@@ -41,8 +42,10 @@
         for each</insert>
     </p>
 
-    <p> Put in a question here using heads or tails coins in bra-ket notation and ask what the
-      probability is of each outcome.</p>
+    <p>
+      <insert>Put in a question here using heads or tails coins in bra-ket notation and ask what the
+        probability is of each outcome.</insert>
+    </p>
 
     <exercise label="Bra-Ket Heads and Tails">
       <title>Coin Flip in Bra-Ket Notation</title>
@@ -103,8 +106,8 @@
     <md>\frac{1}{\sqrt{2}}\ket{☀️} + \frac{1}{\sqrt{2}}
       \ket{🌧️}</md>
 
-    <p>75% chance of no raincoat, 25% chance of raincoat:</p>
-    <md>\sqrt{\frac{3}{2}} \ket{👕} + \sqrt{\frac{1}{4}} \ket{🧥}
+    <p>75% chance of no raincoat (👕), 25% chance of raincoat (🧥):</p>
+    <md>\sqrt{\frac{3}{4}} \ket{👕} + \sqrt{\frac{1}{4}} \ket{🧥}
       = \frac{\sqrt{3}}{2} \ket{👕} + \frac{1}{2} \ket{🧥}</md>
 
     <p>Remember: to compute probability amplitudes for bra-ket notation, calculate the <em>square
@@ -118,14 +121,16 @@
     <p> If there is negative phase, then it will be placed on the 1 state: </p>
     <md>\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </md>
 
-    <p> A few exercises - give a state and answer the probabilities,
-      give the probabilities and answer the state. Through in phase into one of them.</p>
+    <p>
+      <insert>A few exercises - give a state and answer the probabilities,
+        give the probabilities and answer the state. Through in phase into one of them.</insert>
+    </p>
 
   </section>
 
   <section
     xml:id="multi-qubit-bra_ket" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Multi-qubit Bra-ket Notation</title>
+    <title>Multi-Qubit Bra-Ket Notation</title>
 
     <p> We can also combine two independent qubits into a 2-qubit bra-ket notation, just like we
       represented two qubits using our visual representation (<xref ref="sec-two-qubit-visual" />).
@@ -148,14 +153,22 @@
       <mrow>(ax + by) (cx + dy) \amp= ac(x^2) + ad(xy) + bc(yx) + bd(y^2)</mrow>
     </md>
 
-    <p>The same rules apply when combining more than two independent qubits.</p>
+    <p>You can also factor out combined qubit states, using the same algebra rules!
+    </p>
+    <md>\ket{00} + \ket{01} = \ket{0} (\ket{0} + \ket{1})</md>
+    <p>However, the order of the individual qubits is highly important, because the order
+      corresponds to each individual qubit in our system. Thus, multiplied terms <em>cannot</em> be
+      reordered as in algebraic expressions.</p>
+    <md>\ket{0} (\ket{0} + \ket{1}) \ne (\ket{0} + \ket{1}) \ket{0}</md>
+    <p>It's important to note that not all multi-qubit states can be factored out into individual
+      qubits, e.g. <m>\ket{00} + \ket{11}</m>. These states have fascinating implications in quantum computing, but
+      we'll dig deeper into these states at a later time.</p>
 
-    <insert>TODO: show factoring example, referencing entanglement in the future</insert>
-
-    <insert> Put in some questions here with 2 qubits and 3 qubits - can grab from my homeworks.</insert>
+    <p>
+      <insert> Put in some questions here with 2 qubits and 3 qubits - can grab from my homeworks.</insert>
+    </p>
 
   </section>
-
 
   <section
     xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -178,14 +191,23 @@
 
       <li>
         <p>You may omit any term whose probability is 0. </p>
-        <md>\frac{1}{\sqrt{2}}\ket{00} + 0\ket{01} + 0\ket{10} + \frac{1}{\sqrt{2}}\ket{11}</md>
+        <md>\frac{1}{\sqrt{2}}\ket{00} + 0\ket{01} + 0\ket{10} + \frac{1}{\sqrt{2}}\ket{11} =
+          \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11}</md>
       </li>
 
       <li>
         <p>The first term in the state (the <term>leading term</term>) is never in negative phase.
-          As we discussed previously ( <xref ref="sec-global-phase" />), global phase has no
-          physical meaning; so if the leading term is negative, you can multiply the whole state by <m>-1</m>
-          .</p>
+          As we discussed previously (<xref ref="sec-global-phase" />), global phase has no physical
+          meaning; so if the leading term is negative, you can multiply the whole state by <m>-1</m>
+          and get an equivalent state.</p>
+        <md>
+          <mrow>\amp-\frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{01} -
+            \frac{1}{\sqrt{2}}\ket{10} +
+            \frac{1}{\sqrt{2}}\ket{11}</mrow>
+          <mrow>= \amp\frac{1}{\sqrt{2}}\ket{00} - \frac{1}{\sqrt{2}}\ket{01} +
+            \frac{1}{\sqrt{2}}\ket{10} -
+            \frac{1}{\sqrt{2}}\ket{11}</mrow>
+        </md>
       </li>
     </ol>
 
@@ -209,5 +231,85 @@
         However, none of the answers in this book use this rule because it hides the true
         probability.</p>
     </note>
+
+    <p>
+      <insert>exercises</insert>
+    </p>
+  </section>
+
+  <section xml:id="bra_ket_gate_operation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Calculating Quantum Gate Results</title>
+    <p>Now that we have a way to represent quantum states, the natural next question is: how do we
+      perform operations on these states? Bra-ket notation is handy to perform simple operations.
+      Let's walk through an example.</p>
+
+    <p>The general rule for applying a gate to a quantum state is to apply its effects to the
+      appropriate qubit in each term of the bra-ket state. Let's first write down the effects of the
+      gates we have looked at in bra-ket notation:</p>
+
+    <paragraphs>
+      <title><c>NOT</c> Gate </title>
+      <p>
+        <m>\ket{0} \xrightarrow{\text{NOT}} \ket{1}, \ket{1} \xrightarrow{\text{NOT}} \ket{0}</m>
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title><c>H</c> Gate </title>
+      <p>
+        <m>\ket{0} \xrightarrow{\text{H}} \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1},
+        \ket{1} \xrightarrow{\text{H}} \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}</m>
+      </p>
+    </paragraphs>
+
+    <p>Now, when applying gates on a bra-ket state, all you need to do is apply this transformation
+      on each term in the expression. Let's start with an example that you already know the result
+      for: applying an <c>H</c> gate on the <m>\ket{+}</m> state. From our earlier discussions, we know that
+      the output of this operation is <m>\ket{0}</m>. Let's use our brand-new mathematical model to verify
+      this behavior! </p>
+
+    <md>
+      <mrow>\ket{+} \amp= \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</mrow>
+      <mrow>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \amp\xrightarrow{\text{H}}
+        \frac{1}{\sqrt{2}} \Big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\Big) +
+        \frac{1}{\sqrt{2}} \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) </mrow>
+      <mrow>\amp= \frac{1}{2} \ket{0} + \frac{1}{2} \ket{1} + \frac{1}{2} \ket{0} - \frac{1}{2}
+        \ket{1} </mrow>
+      <mrow>\amp= \ket{0}</mrow>
+    </md>
+
+    <p>What about two-qubit gates, like <c>SWAP</c> or <c>CNOT</c>?</p>
+
+    <paragraphs>
+      <title><c>SWAP</c> Gate</title>
+      <p> For <c>SWAP</c> gates, swap the values of the two qubits that are being swapped. So in
+        general, <m>\ket{xy} \xrightarrow{\text{SWAP}(1,2)} \ket{yx}</m>.</p>
+    </paragraphs>
+
+    <paragraphs>
+      <title><c>CNOT</c> Gate</title>
+      <p>The <c>CNOT</c> gate is a little tricky. When applying the gate, we need to keep track of which
+        qubit is the <term>control</term>, and which qubit is the <term>target</term>. The general
+        convention to indicate which is which is with an arrow:</p>
+      <md>\text{CNOT}(\text{control} \rightarrow \text{target})</md>
+      <p>If for a given term the <em>
+          control</em> is 1, then we flip the <em>target</em> qubit. Otherwise, the term does not
+        change. For example, if we are applying a <c>CNOT</c> gate where the first qubit is the control
+        and the second qubit is the target:</p>
+      <md>\frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11}
+        \xrightarrow{\text{CNOT}(1 \rightarrow 2)}
+        \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{10}</md>
+
+      <p>In the first term, the control is 0, so this term does not change. In the second term, the
+        control is 1, so we flip the second qubit in the term.</p>
+    </paragraphs>
+
+    <p>
+      <insert>exercises, 2 or 3</insert>
+    </p>
+
+    <p>While bra-ket notation is handy to keep track of probabilities and calculate simple gates,
+      it starts becoming more and more unwieldy with more gates and more complex states. Is there
+      perhaps another mathematical model we can use to help us out?</p>
   </section>
 </section>
