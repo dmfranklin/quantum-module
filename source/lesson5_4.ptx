@@ -1,61 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <section xml:id="lesson5_4" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Calculating Quantum Gate Results</title>
+  <title> Quantum State Representation: Vectors</title>
 
-<p> There are two pieces you need to be able to calculate quantum gates:</p>
+  <section xml:id="vector_state" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Vector Quantum Representation</title>
 
-<p> 1. How are gates represented? </p>
+    <p>
+      The purpose of vector notation is to allow us to calculate the output of quantum
+      gates.
+      Vector notation loses some of the explicit information in bra-ket notation -
+      namely, the
+      information about what each probability amplitude is tied to. Instead, we have
+      to remember
+      the proper order.
+</p>
 
-<p> 2. Given a starting state and a gate, how do you calculate the resulting state? </p>
+    <p> Bra-ket notation is always sorted by the value in the ket - the sorting order is,
+      from left to right, smallest to largest. Vector notation uses the same order - smallest to
+      largest - but it is depicted from to bottom.</p>
 
-<section xml:id="quantum_gate_representation" xmlns:xi="http://www.w3.org/2001/XInclude">
-     <title>Quantum Gate Representation</title>
+    <p>
+      <image source="L5.3.brakettovector.png" width="30%" />
+    </p>
 
-<p>
-     Quantum gates are represented as a matrix, which is a grid of numbers.
-     Quantum gates are always squares - that is, the length is always equal the 
-     width. They are also of pre-determined size. A gate that operates on n bits 
-     has length and width 2^n. That means a 2-qubit gate is a 4x4 matrix, and a 3-qubit 
-     gate is an 8x8 matrix.
-     </p>
-
-     <p> Here are a few gates and their representations. But we can't do anything useful with 
-     them until we learn to calculate with them!!</p>
-
- <p><image source="L5.4.nothmatrices.png" width="30%" /></p>
-
-     </section>
-
-<section xml:id="matrix_multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
-     <title>Matrix Multiplication</title>
-<p><image source="L5.4.matrixmultiply.png" width="30%" /></p>
-<p> Make an animated gif with the above picture showing it appear slowly </p>
-
-<p> Let's see if we can calculate this on a gate for which we know the output.
-We know that if we start with the state |0>, we end with the state |1>, and vice versa.
-So let's use that example to practice matrix multiplication. </p>
-
-<p><image source="L5.4.NOT0.png" width="30%" /></p>
-
- <sidebyside widths="60% 40%" valign="top">
-      
-
-      <p> Step 1: Express the state |0> in vector notation </p>
-    <p><image source="L5.4.0vectornotation.png" width="30%" /></p>
-     
-</sidebyside>
+    <p> Here are some examples: </p>
 
 
- <sidebyside widths="60% 40%" valign="top">
-      
+    <p>
+      <image source="L5.3.brakettovectorexamples.png" width="30%" />
+    </p>
 
-      <p> Step 2: Put the NOT matrix to its left. </p>
-    <p><image source="L5.4.not0vectormatrix.png" width="30%" /></p>
-     
-</sidebyside>
+    <p> You have to be careful, though, to express bra-ket notation in the proper order.
+      If the bra-ket order is incorrect, then you might accidentally put the terms in the
+      wrong
+      locations in the vector. </p>
+
+    <p>
+      <image source="L5.3.wrongorder.png" width="30%" />
+    </p>
+
+    <p> Put 2 question checks here - bra-ket to vector and then back again </p>
+
+  </section>
 
 
+  <section xml:id="vector_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Vector State Simplification</title>
+
+    <p> Generally, the state simplification rules are the same for vectors and for
+      bra-ket notation,
+      with one major exception - you can never remove a state! You must retain the 0. </p>
+
+    <p> 1. The order of the outcomes is always in increasing numeric order
+      (starting with all 0's and ending with all 1's). This is even more important for
+      vector
+      notation because we don't explicitly write the outcome. </p>
+
+    <p> 2. You may NOT omit any term whose probability is 0. (make this text bright
+      red!!)
+      (make images of these two, both bra-ket and vector: |0> and pair it with the
+      state: 50/50 00 vs 11)
+</p>
+
+    <p> 3. If all outcomes are the same probability, people rarely omit the leading term.
+      They do, however, factor out a common fractional component and put that in front of the
+      vector.
+      (make "rarely omit" red text, plus the last sentence)
+</p>
+
+    <p>
+      <image source="L5.3.pullfactor.png" width="30%" />
+    </p>
+
+    <p> 4. The state with all 0's is never in negative phase </p>
+
+    <p> Question check - the state |1>, then the state 50/50 |01>, |10> </p>
 
 
+  </section>
 
-    </section>
+
 </section>

@@ -1,243 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <section xml:id="lesson5_3" xmlns:xi="http://www.w3.org/2001/XInclude">
-     <title> Qubit Quantum State Representations</title> In this lesson, we will introduce how
-     classical computers store state, followed by quantum computers. <section
-          xml:id="classical_state" xmlns:xi="http://www.w3.org/2001/XInclude">
-          <title>Classical State Representations</title>
-
-<p> Everything in a computer is stored as a
-     number.</p> Everything is stored as a number in a variable: The color of the font of this
-     sentence <p>
-               <ul>
-                    <li>Each letter of this sentence (s is 115, S is 83) </li>
-                    <li>The font sizes of different kinds of text (titles vs normal text)</li>
-                    <li>The images included in this online book (lots and lots of numbers indicating
-     the color of each pixel)</li>
-                    <li>Sounds from an audio file </li>
-               </ul>
-          </p>
-
-<p> All of
-     these numbers are stored in binary, which is base 2.</p>
-
-
-<sidebyside widths="50% 50%"
-               valign="top">
-               <p>
-                    <ul>
-                         <li>A binary digit holds a 1 or a 0 (at any given time) </li>
-                         <li>A binary digit is called a bit</li>
-                         <li>4 bits is a nibble, 8 bits is a byte</li>
-                    </ul>
-               </p>
-
-               <image source="L5.1-nibble.png" width="66%" />
-          </sidebyside>
-
-
-     </section>
-
-<section
-          xml:id="bra_ket_state" xmlns:xi="http://www.w3.org/2001/XInclude">
-          <title>Bra-Ket Quantum Representation</title>
-
-          <p> The purpose of Bra-Ket notation is to express the probability of each potential
-     outcome.
-               Therefore, there are two parts: The probability and the outcome.</p>
-
-          <p> Bra-ket notation favors ease of calculation over easy readability of the probability,
-     but it is easier to read than its alternative, vector notation.</p>
-
-          <p> Each outcome is expressed in a "ket" - (replace with math symbols
-               that are more true to the accurate ones).
-          </p>
-
-          <sidebyside widths="50% 50%" valign="top">
-               <p>
-                    In the figure to the right, we are expressing the probabilities
-                    of measuring apples or bananas. The outcome (apple or banana) is
-                    placed inside of the ket, and the probability magnitude
-                    (rather than the probability) is placed as a term just before the ket.
-                    The relationship between probability amplitude and probability is that
-                    the probability = |probability amplitude| squared. (put in math)
-
-               </p>
-
-               <image source="L5.3.braket.png" width="66%" />
-          </sidebyside>
-
-          <p> In this notation, if there is equal probability, or 1/2 probability of each of two
-     outcomes,
-               then it will be: </p>
-
-          <p> picture like the one above with apples and bananas but with the terms 1/rt(2) for each </p>
-
-          <p> Put in a question here using heads or tails coins in bra-ket notation and ask what the
-     probability is of each outcome.</p>
-
-
-          <p> If we want to express two outcomes (such as the raincoat / raining example from
-     before),
-               it would look like the following:</p>
-
-          <p> make a figure using the raincoats and sun/rain and express in bra-ket notation, using
-     the same probabilities as used in the example (25% raincoat/ 75% no raincoat, 50/50 rain or
-     shine)</p>
-
-          <p> In quantum computing, the possible value of each quantum bit (qubit) is 0 or 1. So
-               a qubit in a 50/50 superposition of 0 and 1 would have the state: </p>
-
-          <p>
-               <image source="braket5050pos.png" width="30%" />
-          </p>
-
-          <p> If there is negative phase, then it will be placed on the 1 state: </p>
-          <p>
-               <image source="braket5050neg.png" width="30%" />
-          </p>
-
-
-          <p> A few exercises - give a state and answer the probabilities,
-               give the probabilities and answer the state. Through in phase into one of them.</p>
-
-     </section>
-
-
-
-<section
-          xml:id="multi-qubit-bra_ket" xmlns:xi="http://www.w3.org/2001/XInclude">
-          <title>Multi-qubit Bra-ket Notation</title>
-
-          <p> We can also combine two independent qubits into a 2-qubit bra-ket notation.
-               For an individual qubit, it has two possible outcomes: 0 or 1. For a pair of qubits,
-     we have each combination of possible outcomes - both 0, the first 0 and second 1, the
-               first 1 and the second 0, or both 0. The tricky part is how to calculate the
-     probability of
-               those combined events from the single qubit probabilities. This is when our
-     independent
-               probability calculations come into play - you just multiply the appropriate values
-     together.
-          </p>
-
-          <p>
-               <image source="L5.3.1to2qubitsbraket.png" width="30%" />
-          </p>
-
-          <p> Put in some questions here with 2 qubits and 3 qubits - can grab from my homeworks.</p>
-
-     </section>
-
-
-
-<section
-          xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
-          <title>Bra-Ket State Simplification</title>
-
-          <p>Just like with fractions, there are multiple ways of expressing the same state. Every
-     time
-               a state is calculated, we then simplify the state into its preferred form. Let's
-     learn a
-               few simplification rules!</p>
-
-          <p> The most important rule is that you can multiply all terms by the same number and the
-     resulting state is the same; the comparison of the states is what matters,
-               not the absolute values. However, the purpose of bra-ket notation is to be easily
-     able to
-               tell visually what the probabilities are (and still be able to perform operations).
-     Therefore, we have norms in how we express them.</p>
-
-          <p> 1. The order of the outcomes is always in increasing numeric order
-               (starting with all 0's and ending with all 1's). Below is a properly formed
-               3-qubit state. </p>
-
-          <p> 2. You may omit any term whose probability is 0.
-               (make image of: all four states here ==> 50/50 00 vs 11)
-</p>
-
-          <p> 3. If all outcomes are the same probability some people omit the leading term.
-               However, none of the answers in this book use this rule because it hides the true
-     probability.
-               (make image of: 50/50 vs no terms in front)</p>
-
-          <p> 4. The state with all 0's is never in negative phase </p>
-
-          <p>
-               (make image of something with 00, 11 being negative, 01, 10 being negative ==>
-               state with 00, 11 being positive and 01, 10 being negative) </p>
-
-          <section xml:id="vector_state" xmlns:xi="http://www.w3.org/2001/XInclude">
-               <title>Vector Quantum Representation</title>
-
-               <p>
-                    The purpose of vector notation is to allow us to calculate the output of quantum
-     gates.
-                    Vector notation loses some of the explicit information in bra-ket notation -
-     namely, the
-                    information about what each probability amplitude is tied to. Instead, we have
-     to remember
-                    the proper order.
-</p>
-
-               <p> Bra-ket notation is always sorted by the value in the ket - the sorting order is,
-     from left to right, smallest to largest. Vector notation uses the same order - smallest to
-     largest - but it is depicted from to bottom.</p>
-
-               <p>
-                    <image source="L5.3.brakettovector.png" width="30%" />
-               </p>
-
-               <p> Here are some examples: </p>
-
-
-               <p>
-                    <image source="L5.3.brakettovectorexamples.png" width="30%" />
-               </p>
-
-               <p> You have to be careful, though, to express bra-ket notation in the proper order.
-     If the bra-ket order is incorrect, then you might accidentally put the terms in the wrong
-     locations in the vector. </p>
-
-               <p>
-                    <image source="L5.3.wrongorder.png" width="30%" />
-               </p>
-
-               <p> Put 2 question checks here - bra-ket to vector and then back again </p>
-
-          </section>
-
-
-          <section xml:id="vector_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
-               <title>Vector State Simplification</title>
-
-               <p> Generally, the state simplification rules are the same for vectors and for
-     bra-ket notation,
-                    with one major exception - you can never remove a state! You must retain the 0. </p>
-
-               <p> 1. The order of the outcomes is always in increasing numeric order
-                    (starting with all 0's and ending with all 1's). This is even more important for
-     vector
-                    notation because we don't explicitly write the outcome. </p>
-
-               <p> 2. You may NOT omit any term whose probability is 0. (make this text bright
-     red!!)
-                    (make images of these two, both bra-ket and vector: |0> and pair it with the
-     state: 50/50 00 vs 11)
-</p>
-
-               <p> 3. If all outcomes are the same probability, people rarely omit the leading term.
-     They do, however, factor out a common fractional component and put that in front of the vector.
-     (make "rarely omit" red text, plus the last sentence)
-</p>
-
-               <p>
-                    <image source="L5.3.pullfactor.png" width="30%" />
-               </p>
-
-               <p> 4. The state with all 0's is never in negative phase </p>
-
-               <p> Question check - the state |1>, then the state 50/50 |01>, |10> </p>
-
-
-          </section>
-
-     </section>
+  <title> Quantum State Representation: Bra-Ket</title>
+
+
+  <section
+    xml:id="bra_ket_state" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Bra-Ket Quantum Representation</title>
+
+    <p> The purpose of <term>Bra-Ket notation</term> is to express the probability of each potential
+      outcome. Therefore, there are two parts: The probability and the outcome.</p>
+
+    <p> Bra-ket notation favors ease of calculation over easy readability of the probability,
+      but it is easier to read than its alternative, vector notation.</p>
+
+    <p> Each outcome is expressed in a <term>ket</term>, which you've already seen in this textbook: <m>\ket{0}</m>
+      , <m>\ket{+}</m>, etc. </p>
+
+    <sidebyside widths="50% 50%" valign="top">
+      <p> In the figure to the right, we are expressing the probabilities of measuring apples or
+        bananas. Each term in the expression represents a single outcome and are <em>added
+          together</em>. The outcome (apple or banana) is placed inside of the ket, and the <term>probability
+        amplitude</term> (rather than the probability) is placed just before the ket. </p>
+
+      <image source="L5.3.braket.png" width="66%" />
+    </sidebyside>
+
+    <p> The relationship between probability amplitude and probability is:</p>
+
+    <p>
+      <md>\text{probability} = |\text{probability amplitude}|^2</md>
+    </p>
+
+    <p> In this notation, if there is equal probability, or 1/2 probability of each of two
+      outcomes,
+      then it will be: </p>
+
+    <p>
+      <insert>picture like the one above with apples and bananas but with the terms 1/rt(2)
+        for each</insert>
+    </p>
+
+    <p> Put in a question here using heads or tails coins in bra-ket notation and ask what the
+      probability is of each outcome.</p>
+
+    <exercise label="Bra-Ket Heads and Tails">
+      <title>Coin Flip in Bra-Ket Notation</title>
+      <idx>bra-ket coin flip</idx>
+      <statement>
+        <p>If <m>H</m> is heads and <m>T</m> is tails, what is the probability of getting heads and
+          tails for the following state?</p>
+        <p>
+          <md>\frac{1}{\sqrt{3}} \ket{H} + \frac{2}{\sqrt{3}} \ket{T}</md>
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p><m>\frac{1}{3}</m> chance of heads, <m>\frac{2}{3}</m> chance of tails</p>
+          </statement>
+          <feedback>
+            <p>Yes! By squaring each probability amplitude, you get the probability of
+              getting the corresponding outcome.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p><m>\frac{1}{\sqrt{3}}</m> chance of heads, <m>\frac{2}{\sqrt{3}}</m> chance of tails</p>
+          </statement>
+          <feedback>
+            <p>Remember that the bra-ket notation shows probability amplitudes, not probability.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p><m>\frac{2}{3}</m> chance of heads, <m>\frac{1}{3}</m> chance of tails</p>
+          </statement>
+          <feedback>
+            <p>Make sure you associate the probability with the corresponding outcome.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p><m>\frac{1}{2}</m> chance of heads, <m>\frac{1}{2}</m> chance of tails</p>
+          </statement>
+          <feedback>
+            <p>This is a special coin! Make sure you check probabilities from the bra-ket notation.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Bra-ket notation uses probability amplitudes, which are squared to get probabilities.</p>
+      </hint>
+    </exercise>
+
+
+    <p> We can see that this notation is very flexible to represent all kinds of probabilities. If
+      we want to express outcomes from the raincoat/raining example from (<xref
+        ref="sec-independent-probabilities" />), it would look like the following:</p>
+
+    <p>50% chance of sun, 50% chance of rain:</p>
+    <md>\frac{1}{\sqrt{2}}\ket{☀️} + \frac{1}{\sqrt{2}}
+      \ket{🌧️}</md>
+
+    <p>75% chance of no raincoat, 25% chance of raincoat:</p>
+    <md>\sqrt{\frac{3}{2}} \ket{👕} + \sqrt{\frac{1}{4}} \ket{🧥}
+      = \frac{\sqrt{3}}{2} \ket{👕} + \frac{1}{2} \ket{🧥}</md>
+
+    <p>Remember: to compute probability amplitudes for bra-ket notation, calculate the <em>square
+      root</em> of the probability of each outcome.</p>
+
+    <p> In quantum computing, the possible values for a quantum bit (qubit) are 0 or 1. So
+      a qubit in a 50/50 superposition of 0 and 1 would have the state: </p>
+
+    <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} </md>
+
+    <p> If there is negative phase, then it will be placed on the 1 state: </p>
+    <md>\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </md>
+
+    <p> A few exercises - give a state and answer the probabilities,
+      give the probabilities and answer the state. Through in phase into one of them.</p>
+
+  </section>
+
+  <section
+    xml:id="multi-qubit-bra_ket" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Multi-qubit Bra-ket Notation</title>
+
+    <p> We can also combine two independent qubits into a 2-qubit bra-ket notation, just like we
+      represented two qubits using our visual representation (<xref ref="sec-two-qubit-visual" />).
+      An individual qubit only has two possible outcomes: 0 or 1. For a pair of qubits, we have each
+      combination of possible outcomes: 00, 01, 10, 11. The tricky part is how to calculate the
+      probability of those combined events from the single qubit probabilities. This is when our
+      independent probability calculations come into play <mdash /> you just multiply the
+      appropriate values together. </p>
+
+    <p>
+      <image source="L5.3.1to2qubitsbraket.png" width="60%" />
+    </p>
+
+    <p>This might look familiar: combining independent qubits is analogous to distribution when
+      multiplying two additive terms in algebra!</p>
+
+    <md>
+      <mrow>(a\ket{0} + b\ket{1}) (c\ket{0} + d\ket{1}) \amp= ac\ket{00} + ad\ket{01} + bc\ket{10} +
+        bd\ket{11}</mrow>
+      <mrow>(ax + by) (cx + dy) \amp= ac(x^2) + ad(xy) + bc(yx) + bd(y^2)</mrow>
+    </md>
+
+    <p>The same rules apply when combining more than two independent qubits.</p>
+
+    <insert>TODO: show factoring example, referencing entanglement in the future</insert>
+
+    <insert> Put in some questions here with 2 qubits and 3 qubits - can grab from my homeworks.</insert>
+
+  </section>
+
+
+  <section
+    xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Bra-Ket State Simplification</title>
+
+    <p>Just like with fractions, there are multiple ways of expressing the same state. Every time a
+      state is calculated, we then simplify the state into its preferred form. We saw some similar
+      simplification rules for our visual representation in <xref
+        ref="sec-simplify-superposition-visual" />. Let's learn a few simplification rules for
+      bra-ket notation!</p>
+
+    <ol>
+      <li>
+        <p>The order of the outcomes is always in increasing numeric order
+          (starting with all 0's and ending with all 1's). Below is a properly formed
+          3-qubit state: </p>
+        <md>a\ket{000} + b\ket{001} + c\ket{010} + d\ket{011} + e\ket{100} + f\ket{101} + g\ket{110}
+          + h\ket{111}</md>
+      </li>
+
+      <li>
+        <p>You may omit any term whose probability is 0. </p>
+        <md>\frac{1}{\sqrt{2}}\ket{00} + 0\ket{01} + 0\ket{10} + \frac{1}{\sqrt{2}}\ket{11}</md>
+      </li>
+
+      <li>
+        <p>The first term in the state (the <term>leading term</term>) is never in negative phase.
+          As we discussed previously ( <xref ref="sec-global-phase" />), global phase has no
+          physical meaning; so if the leading term is negative, you can multiply the whole state by <m>-1</m>
+          .</p>
+      </li>
+    </ol>
+
+    <note>
+      <p> One rule that is different from algebraic expressions is that you can multiply all terms
+        by the same number and the resulting state is the same; the <em>comparison</em> of the
+        states is what matters, not the absolute values. However, the purpose of bra-ket notation is
+        to be easily able to tell by looking at it what the probabilities of each outcome are (and
+        still be able to perform operations). Therefore, we prefer to keep bra-ket states <term>
+        normalized</term> .</p>
+
+      <p> To normalize a bra-ket state, we want to ensure that the coefficients of each term
+        represent probability amplitudes. In order to do so, the sum of the squares of each
+        coefficient should add up to 1. This represents the fact that there is a 100% chance of
+        getting any of the outcomes expressed in the state. For example, for a single qubit of the
+        form <m>a\ket{0} + b\ket{1}</m>, <m>a^2 + b^2 = 1</m>.</p>
+    </note>
+
+    <note>
+      <p>If all outcomes are the same probability some people omit the leading term.
+        However, none of the answers in this book use this rule because it hides the true
+        probability.</p>
+    </note>
+  </section>
 </section>

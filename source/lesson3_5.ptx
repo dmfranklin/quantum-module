@@ -15,8 +15,8 @@
         <li>Negative and positive versions of the same state in different possibilities cancel out.</li>
         <li>If all possible outcomes in a superposition state are identical, this is equivalent to
       that outcome without superposition.</li>
-        <li>An overall negative sign on the complete state can be ignored (this is the global state
-      you learned about in <xref ref="sec-global-phase" />!)</li>
+        <li>The overall state can be multiplied by a negative sign without changing the state (this
+      is the global phase you learned about in <xref ref="sec-global-phase" />!)</li>
       </ul>
     </p>
 
@@ -32,10 +32,7 @@
 
     <image source="L3.4-SimplificationRules.png" width="90%" />
 
-    <warning>
-      <title>TODO</title>
-      <p>Put in two checkpoint questions with single-step simplifications</p>
-    </warning>
+    <insert>Put in two checkpoint questions with single-step simplifications</insert>
 
   </section>
 
@@ -71,7 +68,7 @@
     <sidebyside widths="80% 10%" valign="middle">
       <p>
         We can combine these rules for
-        visual representation for a two-qubit state in superposition.</p>
+        visual representation for a two-qubit state in superposition. Here's an example:</p>
       <image source="L3.4-TwoQubitSuperposition.png" width="20%" />
 
     </sidebyside>

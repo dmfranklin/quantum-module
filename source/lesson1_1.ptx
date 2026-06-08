@@ -206,7 +206,7 @@
             <p>11</p>
           </statement>
           <feedback>
-            <p>Did you apply the “Increment” operation?</p>
+            <p>Did you apply the <c>INCREMENT</c> operation?</p>
           </feedback>
         </choice>
       </choices>
