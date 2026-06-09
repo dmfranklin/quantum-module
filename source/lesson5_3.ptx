@@ -211,26 +211,21 @@
       </li>
     </ol>
 
-    <note>
-      <p> One rule that is different from algebraic expressions is that you can multiply all terms
-        by the same number and the resulting state is the same; the <em>comparison</em> of the
-        states is what matters, not the absolute values. However, the purpose of bra-ket notation is
-        to be easily able to tell by looking at it what the probabilities of each outcome are (and
-        still be able to perform operations). Therefore, we prefer to keep bra-ket states <term>
+    <p> One rule that is different from algebraic expressions is that you can multiply all terms by
+      the same number and the resulting state is the same; the <em>comparison</em> of the states is
+      what matters, not the absolute values. However, the purpose of bra-ket notation is to be
+      easily able to tell by looking at it what the probabilities of each outcome are (and still be
+      able to perform operations). Therefore, we prefer to keep bra-ket states <term>
         normalized</term> .</p>
 
-      <p> To normalize a bra-ket state, we want to ensure that the coefficients of each term
-        represent probability amplitudes. In order to do so, the sum of the squares of each
-        coefficient should add up to 1. This represents the fact that there is a 100% chance of
-        getting any of the outcomes expressed in the state. For example, for a single qubit of the
-        form <m>a\ket{0} + b\ket{1}</m>, <m>a^2 + b^2 = 1</m>.</p>
-    </note>
+    <p> To normalize a bra-ket state, we want to ensure that the coefficients of each term represent
+      probability amplitudes. In order to do so, the sum of the squares of each coefficient should
+      add up to 1. This represents the fact that there is a 100% chance of getting any of the
+      outcomes expressed in the state. For example, for a single qubit of the form <m>a\ket{0} + b\ket{1}</m>, <m>a^2 + b^2 = 1</m>.</p>
 
-    <note>
-      <p>If all outcomes are the same probability some people omit the leading term.
-        However, none of the answers in this book use this rule because it hides the true
-        probability.</p>
-    </note>
+    <p>If all outcomes are the same probability some people omit the leading term.
+      However, none of the answers in this book use this rule because it hides the true
+      probability.</p>
 
     <p>
       <insert>exercises</insert>
