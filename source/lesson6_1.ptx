@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson6_1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exploring Phase</title>
+
+  <p>In this section, we'll distinguish between <em>global phase</em> and <em>relative phase</em>,
+    and learn a brand new gate. </p>
+
+  <section xml:id="sec-global-phase">
+    <title>Global Phase</title>
+    <p> Two quantum states are said to only differ in <term>global phase</term> if you can multiply
+      all terms in one state by the <em>same factor</em> to get to the other. For example, the
+      following states only differ in global phase, because you can multiply each term by <m>-1</m> to
+      get from one to the other:</p>
+
+    <md>
+        - \frac{1}{\sqrt{3}} \ket{00} + \frac{1}{\sqrt{3}} \ket{01} - \frac{1}{\sqrt{3}} \ket{11}
+        \leftrightarrow \frac{1}{\sqrt{3}} \ket{00} - \frac{1}{\sqrt{3}} \ket{01} + \frac{1}{\sqrt{3}} \ket{11}
+      </md>
+
+    <p> Surprisingly, there is <em>no effective difference if only the global phase is different</em>.
+      This might feel a little counterintuitive, but in a quantum system, global phase has no
+      physical meaning. We have seen the implication of global phase before (<xref
+        ref="sec-simplify-superposition-visual" />): we simply follow our conventions to use the
+      form where the leading term has a positive sign. </p>
+
+    <note>
+      <p> Global phase always feels a little counterintuitive: how can you just multiply your
+        quantum state with <m>-1</m> without any change in its physical meaning? One way to understand
+        this is that "global phase" is purely an <em>aspect of our mathematical models</em>. While
+        visual representation, bra-ket notation, and vector notation all do a great job of capturing
+        the essence of quantum systems, the way we use negative signs is something that is
+        introduced by the model.</p>
+    </note>
+  </section>
+
+  <section xml:id="sec-relative-phase">
+    <title>Relative Phase</title>
+
+    <p>In contrast to global phase, two quantum states are said to differ in <term>relative phase</term>
+      if you only multiply <em>some</em> of the terms in one state by the same factor to get to the
+      other. For example, the following states differ in relative phase, because only the second
+      term is multiplied by <m>-1</m> to get from one to the other:</p>
+
+    <md>
+        \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
+        \leftrightarrow \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
+      </md>
+
+    <p>A difference in relative phase is a <em>significant difference</em>: the two notations
+      represent completely different quantum states. These two states thus have a physical
+      difference, and we can design an experiment to distinguish the two states.</p>
+
+    <p>
+      <insert>insert question: what kind of experiment can you construct with a measurement
+        at the end to distinguish the two states?</insert>
+    </p>
+
+    <p> With our new understanding of global and relative phase, we can now see why the <c>Z</c> gate
+      only results in a physical effect when the state is in superposition. When the state is a
+      basis state, the input and output of the <c>Z</c> gate only differ in global phase. </p>
+
+    <md>
+      \ket{1} \xrightarrow{\text{Z}} -\ket{1} = \ket{1}
+    </md>
+
+    <p> However, when the state is in superposition, the <c>Z</c> gate introduces a difference in
+      relative phase between the input and the output, since a negative phase is only introduced on
+      the <m>\ket{1}</m> term.</p>
+
+    <md>
+      \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \xrightarrow{\text{Z}}
+      \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
+    </md>
+
+  </section>
+
+  <section xml:id="sec-cz-gate" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>The <c>CZ</c> Gate</title>
+    <sidebyside widths="70% 25%" valign="top">
+      <p> Let's take a look at another two-qubit gate, the controlled-<c>Z</c> or <term><c>CZ</c> gate</term>.
+        Similar to the <c>CNOT</c> gate, the gate is comprised of a <em>
+          control</em> qubit and a <em>target</em> qubit. In this case, if the control is 1, then a <c>Z</c>
+        gate is applied to the target. </p>
+
+      <image source="CZ.png" />
+    </sidebyside>
+
+    <p> Thus, the only basis state where the <c>CZ</c> gate introduces a change in phase is <m>\ket{11}</m>.
+      Note however that the <c>CZ</c> gate can produce interesting results when the inputs are in
+      superposition, just like the <c>Z</c> gate does.</p>
+
+    <!-- <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+        visualizeProbabilitiesWidget({
+          circuit: "Blank 2x6",
+          allowedGates: "Z*XH"
+        });
+      </script>
+    </interactive> -->
+
+  </section>
+</section>

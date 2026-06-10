@@ -134,11 +134,17 @@
 
     <p> We can also combine two independent qubits into a 2-qubit bra-ket notation, just like we
       represented two qubits using our visual representation (<xref ref="sec-two-qubit-visual" />).
-      An individual qubit only has two possible outcomes: 0 or 1. For a pair of qubits, we have each
-      combination of possible outcomes: 00, 01, 10, 11. The tricky part is how to calculate the
-      probability of those combined events from the single qubit probabilities. This is when our
-      independent probability calculations come into play <mdash /> you just multiply the
-      appropriate values together. </p>
+      In our notation, we call this operation a <term>tensor product</term> of the two qubits, using
+      the symbol <m>\otimes</m>. For basis states, we simply combine the two basis states into a single
+      ket, as we have already seen: </p>
+
+    <md> \ket{0} \otimes \ket{1} = \ket{01} </md>
+
+    <p> An individual qubit only has two possible outcomes: 0 or 1. For a pair of qubits, we have
+      each combination of possible outcomes: 00, 01, 10, 11. The tricky part is how to calculate the
+      probability of those combined events from the single qubit probabilities when the individual
+      qubits are in superposition. This is when our independent probability calculations come into
+      play <mdash /> you just multiply the appropriate values together. </p>
 
     <p>
       <image source="L5.3.1to2qubitsbraket.png" width="60%" />
@@ -148,18 +154,18 @@
       multiplying two additive terms in algebra!</p>
 
     <md>
-      <mrow>(a\ket{0} + b\ket{1}) (c\ket{0} + d\ket{1}) \amp= ac\ket{00} + ad\ket{01} + bc\ket{10} +
+      <mrow>(a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) \amp= ac\ket{00} + ad\ket{01} + bc\ket{10} +
         bd\ket{11}</mrow>
       <mrow>(ax + by) (cx + dy) \amp= ac(x^2) + ad(xy) + bc(yx) + bd(y^2)</mrow>
     </md>
 
     <p>You can also factor out combined qubit states, using the same algebra rules!
     </p>
-    <md>\ket{00} + \ket{01} = \ket{0} (\ket{0} + \ket{1})</md>
+    <md>\ket{00} + \ket{01} = \ket{0} \otimes (\ket{0} + \ket{1})</md>
     <p>However, the order of the individual qubits is highly important, because the order
       corresponds to each individual qubit in our system. Thus, multiplied terms <em>cannot</em> be
       reordered as in algebraic expressions.</p>
-    <md>\ket{0} (\ket{0} + \ket{1}) \ne (\ket{0} + \ket{1}) \ket{0}</md>
+    <md>\ket{0} \otimes (\ket{0} + \ket{1}) \ne (\ket{0} + \ket{1}) \otimes \ket{0}</md>
     <p>It's important to note that not all multi-qubit states can be factored out into individual
       qubits, e.g. <m>\ket{00} + \ket{11}</m>. These states have fascinating implications in quantum computing, but
       we'll dig deeper into these states at a later time.</p>
@@ -197,9 +203,9 @@
 
       <li>
         <p>The first term in the state (the <term>leading term</term>) is never in negative phase.
-          As we discussed previously (<xref ref="sec-global-phase" />), global phase has no physical
-          meaning; so if the leading term is negative, you can multiply the whole state by <m>-1</m>
-          and get an equivalent state.</p>
+          If the leading term is negative, you can multiply the whole state by <m>-1</m>, which we
+          have seen previously (<xref ref="sec-simplify-superposition-visual" />) results in an
+          equivalent state.</p>
         <md>
           <mrow>\amp-\frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{01} -
             \frac{1}{\sqrt{2}}\ket{10} +
@@ -263,8 +269,15 @@
       the output of this operation is <m>\ket{0}</m>. Let's use our brand-new mathematical model to verify
       this behavior! </p>
 
+    <p>
+      Let's first remind ourselves how the equal superposition state with positive phase is
+      represented in bra-ket notation:</p>
+
+    <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</md>
+
+    <p>Now, let's apply the <c>H</c> gate to each of the terms in the expression:</p>
+
     <md>
-      <mrow>\ket{+} \amp= \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</mrow>
       <mrow>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \amp\xrightarrow{\text{H}}
         \frac{1}{\sqrt{2}} \Big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\Big) +
         \frac{1}{\sqrt{2}} \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) </mrow>
@@ -277,8 +290,8 @@
 
     <paragraphs>
       <title><c>SWAP</c> Gate</title>
-      <p> For <c>SWAP</c> gates, swap the values of the two qubits that are being swapped. So in
-        general, <m>\ket{xy} \xrightarrow{\text{SWAP}(1,2)} \ket{yx}</m>.</p>
+      <p> For the <c>SWAP</c> gate, swap the values of the two qubits that are being swapped. This looks
+        like <m>\ket{xy} \xrightarrow{\text{SWAP}(1,2)} \ket{yx}</m>.</p>
     </paragraphs>
 
     <paragraphs>
@@ -287,10 +300,10 @@
         qubit is the <term>control</term>, and which qubit is the <term>target</term>. The general
         convention to indicate which is which is with an arrow:</p>
       <md>\text{CNOT}(\text{control} \rightarrow \text{target})</md>
-      <p>If for a given term the <em>
-          control</em> is 1, then we flip the <em>target</em> qubit. Otherwise, the term does not
-        change. For example, if we are applying a <c>CNOT</c> gate where the first qubit is the control
-        and the second qubit is the target:</p>
+      <p>If the <em>
+          control</em> for a given term is 1, then we flip the <em>target</em> qubit in that term.
+        Otherwise, the term does not change. For example, if we are applying a <c>CNOT</c> gate where
+        the first qubit is the control and the second qubit is the target:</p>
       <md>\frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11}
         \xrightarrow{\text{CNOT}(1 \rightarrow 2)}
         \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{10}</md>

@@ -3,10 +3,10 @@
 <section xml:id="lesson5_1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basic Probability</title>
 
-  <p>In this chapter, we'll first review what probability means, and what it doesn't mean.
+  <p>In this section, we'll first review what probability means, and what it doesn't mean.
     Next, we'll learn how to combine probabilities for independent events.</p>
 
-  <p>Throughout the chapter, we will explore probability using a common context in which you often
+  <p>Throughout the section, we will explore probability using a common context in which you often
     encounter probabilities: weather forecasts. We will then apply it to the quantum context, in
     which we calculate the
     probability of measuring one, two, or more qubits in a particular state.</p>

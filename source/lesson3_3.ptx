@@ -53,28 +53,135 @@
     </ul>
   </p>
 
-  <section xml:id="sec-global-phase">
-    <title>Global Phase</title>
-    <p>One of the most important properties of phase on a quantum system is that it only has
-      physical meaning <em>when the system is in
-        superposition</em>. As we saw above, the phase present in a qubit is defined by the <em>difference
-      in signs on the ⚪ and ⚫ outcomes</em>. Thus, if a state is not in superposition (e.g. one of
-      the basis states), the concept of phase is meaningless. This is referred to as <term>global
-      phase</term>, and has no effect on the measurement of the state.</p>
+  <section xml:id="sec-z-gate">
+    <title><c>Z</c> Gate</title>
 
-    <p> This understanding of global phase gives rise to our first rule for <term>simplifying
-        quantum states</term>: a <m>-</m> on the <em>overall</em> quantum state can simply be
-      ignored. For example: <ul>
-        <li>
-          <m>- \ket{0}</m> is equivalent to <m>\ket{0}</m>
-        </li>
-        <li>
-          <m>- \ket{-}</m> is equivalent to <m>\ket{-}</m>
-        </li>
-      </ul> We will continue expanding our
-      simplification rules for phase in superposition states in <xref ref="lesson3_4" />. </p>
+    <sidebyside widths="85% 15%" valign="top">
+      <p> Now we are going to explore the <c>Z</c> gate, which affects the phase of the qubit. Use
+        the circuit builder to determine how the <c>Z</c> gate affects a qubit that is in the state <m>
+        \ket{0}</m>
+        or <m>\ket{1}</m>. Construct the following two circuits and observe the outputs. </p>
+      <image source="L3.3_Z-gate.png" width="30%" />
+    </sidebyside>
+
+    <image source="Z_Explore.png" width="20%" />
+    <p>Remember that to create an input of <m>\ket{1}</m>, you will need to use a <c>NOT</c> gate.</p>
+
+
+    <interactive aspect="9:9" platform="javascript"
+      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+      <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 1x6",
+        allowedGates: "XHZ"
+      });
+    </script>
+    </interactive>
+
+    <exercise label="Z_truth_table_lesson3_3">
+      <title>
+        <c>Z</c> Truth Table </title>
+      <idx>Z truth table</idx>
+      <statement>
+        <p>Which answer best describes what you observed from the <c>Z</c> gate? </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>It does not have an observable effect.</p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>If the input is <m>\ket{0}</m> or <m>\ket{1}</m>, the result will have an equal chance of measuring
+              0 or 1. </p>
+          </statement>
+          <feedback>
+            <p>Look more closely at the bar graphs of the output.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Make the circuit and look at the bar graph below the circuit. Construct both input
+          combinations using <c>NOT</c> gates, recording the answers each time.</p>
+      </hint>
+    </exercise>
+
+    <p>
+      You might have been surprised by the answer! Because quantum state is more complex than merely
+      the probability of measuring 0 or 1, this method for determining and expressing an operation's
+      functionality is insufficient.
+    </p>
+    <p> Now, use the circuit builder above to create the following circuits and observe the
+      outcomes. This will reveal the functionality of the <c>Z</c> gate on a qubit in superposition. </p>
+
+    <!--<alert><p>WHICH
+    VERSION OF THESE CIRCUITS IS PREFERRED?
+  I LIKE THIS ONE, B/C 0 AND 1 STATES ARE VERY CLEAR.
+  THE CONVENTION ALSO MATCHES PRIOR LESSONS.
+  ANOTHER OPTION WOULD BE TO INCLUDE BOTH HERE TO REMIND THEM OF THE CONVENTION? (jen)</p></alert>-->
+
+    <image source="Z_Explore_2.png" width="50%" />
+
+    <!--
+  <p><em>(Remember that to create an input of <m>\ket{1}</m>, you will need to use a <c>NOT</c> gate,
+    as shown here:)</em></p>
+  <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="75%" />
+  -->
+
+    <exercise label="Superposition_Z">
+      <title>
+        <c>Z</c> Gate Behavior with Superposition </title>
+      <idx>Superposition Z</idx>
+      <statement>
+        <p>What is the effect of the sequence <c>H</c>-<c>Z</c>-<c>H</c> on qubits beginning in <m>
+          \ket{0}</m>
+          or <m>
+            \ket{1}
+          </m>?</p>
+        <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="66%" />
+        <!--<image
+        source="Z_Explore_2.png" width="50%" />-->
+      </statement>
+      <choices randomize="yes">
+        <choice correct="no">
+          <statement>
+            <p>There is an equal chance of measuring 0 or 1.</p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>No observable effect. </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>The same as a <c>NOT</c> gate</p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.</p>
+      </hint>
+    </exercise>
+
+    <p> Now we see that <c>Z</c> does have a major effect on the system, but <em>only</em> when the
+      qubit is in superposition. Before we can understand how the <c>Z</c> gate works, let's first
+      understand how gates work on states in superposition.</p>
+
 
   </section>
-
 
 </section>

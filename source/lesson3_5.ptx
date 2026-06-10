@@ -15,24 +15,30 @@
         <li>Negative and positive versions of the same state in different possibilities cancel out.</li>
         <li>If all possible outcomes in a superposition state are identical, this is equivalent to
       that outcome without superposition.</li>
-        <li>The overall state can be multiplied by a negative sign without changing the state (this
-      is the global phase you learned about in <xref ref="sec-global-phase" />!)</li>
+        <li>The overall state can be multiplied by a negative sign without changing the state (we
+      will
+          learn more about this in the future).</li>
       </ul>
     </p>
 
-    <sidebyside widths="80% 10%" valign="top">
+    <sidebyside widths="75% 20%" valign="top">
       <p>
         The best way to see the effect of these rules is with an example. Suppose you have a
-        one-qubit system and the result of applying a series of gates is the picture to the right,
+        one-qubit system and the result of applying a series of gates is the picture to the right;
         we can apply the rules above to simplify it:
       </p>
 
       <image source="L3.4-Simplify.png" width="10%" />
     </sidebyside>
 
+    <p>
+      Here's a step-by-step walkthrough of applying each rule on this state:</p>
+
     <image source="L3.4-SimplificationRules.png" width="90%" />
 
-    <insert>Put in two checkpoint questions with single-step simplifications</insert>
+    <p>
+      <insert>Put in two checkpoint questions with single-step simplifications</insert>
+    </p>
 
   </section>
 
@@ -74,12 +80,12 @@
     </sidebyside>
 
     <p>Some important notes about the state above: <ul>
-        <li>We see that there are four possible outcomes of measuring this 2-qubit quantum state: <m>\ket{00}</m>
-      , <m>\ket{01}</m>, <m>\ket{10}</m>, and <m>\ket{11}</m>. This is the standard convention for the order in which to
-      show each outcome.</li>
+        <li>We see that there are four possible outcomes of measuring this 2-qubit quantum state,
+      divided by horizontal lines: <m>\ket{00}</m> , <m>\ket{01}</m>, <m>\ket{10}</m>, and <m>\ket{11}</m>. This is the standard
+      convention for the order in which to show each outcome.</li>
         <li>The <m>\ket{01}</m> and <m>\ket{11}</m> states have <em>negative phase</em>. While this phase does not
-      have any effect when we measure this state, this phase can be manipulated and have an effect
-      based on gates applied to this state.</li>
+      have any effect when we measure this state, this phase can have an effect based on gates
+      applied to this state.</li>
 
       </ul></p>
 
