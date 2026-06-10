@@ -47,7 +47,7 @@
         probability is of each outcome.</insert>
     </p>
 
-    <exercise label="Bra-Ket Heads and Tails">
+    <exercise label="Bra-Ket_Heads_and_Tails">
       <title>Coin Flip in Bra-Ket Notation</title>
       <idx>bra-ket coin flip</idx>
       <statement>

@@ -35,7 +35,7 @@
   - Put in a checkpoint question asking what the effect would be of this measurement
   method</insert></alert></p>-->
 
-  <exercise label="L4_3 Measurement Effect">
+  <exercise label="L4-3_Measurement_Effect">
     <title>Effects of Measurement</title>
     <idx>L4_3 Measurement Effect</idx>
     <statement>
@@ -139,7 +139,7 @@
 </insert></p>
 -->
 
-  <exercise label="L4_3 Calculate State A">
+  <exercise label="L4-3_Calculate_State_A">
     <title>Calculate State at A</title>
     <idx>L4_3 Calculate_A</idx>
     <statement>
@@ -211,7 +211,7 @@
 </insert></p>
 -->
 
-  <exercise label="L4_3 Calculate State B">
+  <exercise label="L4-3_Calculate_State_B">
     <title>Calculate State at B</title>
     <idx>L4_3_Calculate_B</idx>
     <statement>
@@ -289,7 +289,7 @@
 </ul></insert></p>
 -->
 
-  <exercise label="L4_3 Calculate State C">
+  <exercise label="L4-3_Calculate_State_C">
     <title>Calculate State at C</title>
     <idx>L4_3_Calculate_C</idx>
     <statement>
@@ -368,7 +368,7 @@
 </ul></insert></p>
 -->
 
-  <exercise label="L4_3 Calculate State D">
+  <exercise label="L4-3_Calculate_State_D">
     <title>Calculate State at D</title>
     <idx>L4_3_Calculate_D</idx>
     <statement>

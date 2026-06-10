@@ -47,7 +47,7 @@ You can grab from the zines for fun examples. </insert>
     <image source="Measure_speed.png" width="66%" />
   </sidebyside>
 
-  <exercise label="L4_1 Measurement Question">
+  <exercise label="L4-1_Measurement_Question">
     <title>Measurement Question</title>
     <idx>L4_1 Measurement Question</idx>
     <statement>
@@ -84,7 +84,7 @@ You can grab from the zines for fun examples. </insert>
     </hint>
   </exercise>
 
-  <exercise label="L4_1 Measurement Device">
+  <exercise label="L4-1_Measurement_Device">
     <title>Measurement Device</title>
     <idx>L4_1 Measurement Device</idx>
     <statement>
@@ -121,7 +121,7 @@ You can grab from the zines for fun examples. </insert>
     </hint>
   </exercise>
 
-  <exercise label="L4_1 Measurement Method">
+  <exercise label="L4-1_Measurement_Method">
     <title>Measurement Method</title>
     <idx>L4_1 Measurement Method</idx>
     <statement>

@@ -75,7 +75,7 @@
     <exercise label="Z_truth_table_lesson3_3">
       <title>
         <c>Z</c> Truth Table </title>
-      <idx>Z_truth_table</idx>
+      <idx>Z truth table</idx>
       <statement>
         <p>Which answer best describes what you observed from the <c>Z</c> gate? </p>
       </statement>
@@ -126,10 +126,10 @@
   <image source="Checkpoint3.2-Z-gate-behavior-with-Superposition.png" width="75%" />
   -->
 
-    <exercise label="Superposition Z">
+    <exercise label="Superposition_Z">
       <title>
         <c>Z</c> Gate Behavior with Superposition </title>
-      <idx>superpositionZ</idx>
+      <idx>Superposition Z</idx>
       <statement>
         <p>What is the effect of the sequence <c>H</c>-<c>Z</c>-<c>H</c> on qubits beginning in <m>
           \ket{0}</m>
@@ -233,11 +233,11 @@
   </p>
   -->
 
-    <exercise label="L3_3_3 Calculate Output">
+    <exercise label="L3-3-3_Calculate_Output">
       <title>
         Practice calculating the output
       </title>
-      <idx>L3_3_3_Calculate</idx>
+      <idx>Calculate output 1</idx>
       <statement>
         <p>Calculate the output of this circuit.</p>
         <image source="L3_3_3_Calculate.png" width="75%" />
@@ -291,11 +291,11 @@
       </hint>
     </exercise>
 
-    <exercise label="L3_3_4 Calculate Output">
+    <exercise label="L3-3-4_Calculate_Output">
       <title>
         Practice calculating the output
       </title>
-      <idx>L3_3_4_Calculate</idx>
+      <idx>Calculate output 2</idx>
       <statement>
         <p>Calculate the output of this circuit.</p>
         <image source="L3_3_4_Calculate.png" width="75%" />

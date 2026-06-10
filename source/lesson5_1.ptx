@@ -162,7 +162,7 @@
       <image source="L5.n-probsmult.png" width="66%" />
     </p>
 
-    <exercise label="L5.1_Q1">
+    <exercise label="L5-1_Q1">
       <title>Probability Practice #1</title>
       <idx>L5.1 Q1</idx>
       <statement>
@@ -200,7 +200,7 @@
       </choices>
     </exercise>
 
-    <exercise label="L5.1_Q2">
+    <exercise label="L5-1_Q2">
       <title>Probability Practice #2</title>
       <idx>L5.1 Q2</idx>
       <statement>

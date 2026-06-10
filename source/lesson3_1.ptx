@@ -28,7 +28,7 @@
 
     <exercise label="H_truth_table_lesson3_1">
       <title>Hadamard (<c>H</c> gate) Behavior</title>
-      <idx>H_behavior</idx>
+      <idx>H behavior</idx>
       <statement>
         <p>Select the statement that describes the behavior of the <c>H</c> gate when applied to an
           input of <m>\ket{0}</m> or <m>\ket{1}</m>.</p>
@@ -91,7 +91,7 @@
       </ul>
     </p>
 
-    <p>We'll learn more about measurement in quantum systems in <xref ref="measurement" />.</p>
+    <p>We'll learn more about measurement in quantum systems in <xref ref="C4_Measurement" />.</p>
   </section>
 
 
@@ -176,7 +176,7 @@ is labeled with what I am to them.</p>
 
     <exercise label="Visual_rep_superposition_lesson3_1">
       <title>Superposition Visual Representation</title>
-      <idx>Visual_superposition_rep</idx>
+      <idx>Visual superposition representation</idx>
       <statement>
         <p>Select the statement that states the probability of measuring 0 or ⚪
           in the following visual representation.</p>
