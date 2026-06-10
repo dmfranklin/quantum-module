@@ -169,7 +169,7 @@
       </li>
     </ul>
 
-    <exercise label="Math Operations 1">
+    <exercise label="Math_Operations_1">
       <title>Applying a Math Operation #1</title>
       <idx>math operation 1</idx>
       <statement>
@@ -215,7 +215,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Operations 2">
+    <exercise label="Math_Operations_2">
       <title>Applying a Math Operation #2</title>
       <idx>math operation 2</idx>
       <statement>
@@ -261,7 +261,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Operations 3">
+    <exercise label="Math_Operations_3">
       <title>Applying a Math Operation #3</title>
       <idx>math operation 3</idx>
       <statement>
@@ -332,7 +332,7 @@
       two outputs—and we need to define what both of those outputs are. In both of the gates defined
       above, we will place the result in the target, leaving the other output to match its input. </p>
 
-    <exercise label="Math Operations 4">
+    <exercise label="Math_Operations_4">
       <title>Applying a two-variable Math Operation #1</title>
       <idx>math operation 4</idx>
       <statement>
@@ -388,7 +388,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Operations 5">
+    <exercise label="Math_Operations_5">
       <title>Applying a two-variable Math Operation #2</title>
       <idx>math operation 5</idx>
       <statement>
@@ -459,7 +459,7 @@
     <p>The following circuit would depict that sequence of operations:</p>
     <image source="1-1-2_MathCircuitsSEQ.png" width="100%" />
 
-    <exercise label="Math Circuit 1">
+    <exercise label="Math_Circuit_1">
       <title>Solving a Math Circuit with two inputs #1</title>
       <idx>math circuit 6</idx>
       <statement>
@@ -529,7 +529,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Circuit 2">
+    <exercise label="Math_Circuit_2">
       <title>Solving a Math Circuit with two inputs #2</title>
       <idx>math circuit 7</idx>
       <statement>
