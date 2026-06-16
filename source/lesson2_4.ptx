@@ -16,7 +16,7 @@
 
         circuit1 = QuantumCircuit(1)
         circuit1.x(0)
-        print(circuit1.draw(fold=-1))
+        print(circuit1.draw())
       </code>
     </program>
   </listing>
@@ -62,30 +62,21 @@
         each. </p>
     </statement>
     <program interactive="activecode" language="python3">
-      <code>
+      <preamble>
         from qiskit import QuantumCircuit
 
-        def two_nots():
-          # TODO: Pass in the correct parameter to create a circuit with 2 qubits
-          circuit1 = QuantumCircuit(...)
+        # TODO: Pass in the correct parameter to create a circuit with 2 qubits
+      </preamble>
+      <code>
+        circuit1 = QuantumCircuit(...)
 
-          # TODO: Write code to add a NOT gate to both qubits
+        # TODO: Write code to add a NOT gate to both qubits
 
-          # Draw the circuit
-          print(circuit1.draw())
-          return circuit1
       </code>
-      <tests>
-      from unittest.gui import TestCaseGui
-      from qiskit import QuantumCircuit
-
-      class myTests(TestCaseGui):
-        def testOne(self):
-          output = two_nots()
-
-          self.assertEqual(type(output), QuantumCircuit, msg="Must return a QuantumCircuit")
-          self.assertEqual(output.num_qubits, 2, msg="Circuit must have 2 qubits")
-    </tests>
+      <postamble>
+        # Draw the circuit
+        print(circuit1.draw())
+      </postamble>
     </program>
   </exercise>
 
@@ -107,38 +98,80 @@
     </program>
   </listing>
 
+  <p>The <c>swap(i, j)</c> function is pretty straightforward <mdash /> it just swaps the values of the qubits
+    at indices <c>i</c> and <c>j</c>. Let's look closely at the CNOT gate in Qiskit:</p>
+
+  <program language="python3">
+    circuit2.cx(1, 2)
+  </program>
+
+  <p>First of all, similar to the <c>NOT</c> gate from before, the <c>CNOT</c> gate is called <c>cx</c>,
+    meaning <term>controlled-<c>X</c></term>, in Qiskit. Secondly, the <em>order of parameters</em>
+    for the <c>cx(i, j)</c> function is crucial: the first parameter (<c>i</c>) represents the index of the <em>
+    control</em> qubit, and the second parameter (<c>j</c>) represents the index of the <em>target</em>
+    qubit.</p>
+
   <exercise label="qiskit-exercise-2">
-    <title> Building Circuits with <c>NOT</c> in Qiskit </title>
-    <idx>NOT circuit in Qiskit</idx>
+    <title> Building Circuits with <c>SWAP</c> and <c>CNOT</c> in Qiskit </title>
+    <idx>SWAP and CNOT circuit in Qiskit</idx>
     <statement>
-      <p> Complete the code below to create a circuit with <em>two qubits</em> and a <c>NOT</c> gate on
-        each. </p>
+      <p> Write Python code to create a circuit that looks like the one given below: </p>
+
+      <image source="2-4-exercise.png" width="60%" />
     </statement>
     <program interactive="activecode" language="python3">
-      <code>
+      <preamble>
         from qiskit import QuantumCircuit
+      </preamble>
+      <code>
+        # TODO: Pass in the correct parameter to create a circuit with the appropriate number of qubits
+        circuit1 = QuantumCircuit(...)
 
-        def two_nots():
-          # TODO: Pass in the correct parameter to create a circuit with 2 qubits
-          circuit1 = QuantumCircuit(...)
+        # TODO: Write code to add the appropriate gates
 
-          # TODO: Write code to add a NOT gate to both qubits
 
-          # Draw the circuit
-          print(circuit1.draw())
-          return circuit1
       </code>
-      <tests>
-      from unittest.gui import TestCaseGui
-      from qiskit import QuantumCircuit
-
-      class myTests(TestCaseGui):
-        def testOne(self):
-          output = two_nots()
-
-          self.assertEqual(type(output), QuantumCircuit, msg="Must return a QuantumCircuit")
-          self.assertEqual(output.num_qubits, 2, msg="Circuit must have 2 qubits")
-    </tests>
+      <postamble>
+        circuit1.draw()
+      </postamble>
     </program>
   </exercise>
+
+  <section xml:id="qiskit-measuring" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Measuring Qubits in Qiskit</title>
+    <p> Adding all of our favorite gates is only one part of building meaningful quantum circuits;
+      once we have built our circuit, it only makes sense to <em>measure</em> the result of our
+      circuit. In Qiskit, this is done with the <c>measure_all()</c> function. This measures the state of each of
+      the qubits in our circuit and saves it to <em>classical bits</em> in the circuit <mdash />
+      this is how we can measure our qubits and read their value! Let's check out an example: </p>
+
+    <listing xml:id="qiskit-measure">
+      <title>Measuring in Qiskit</title>
+      <program xml:id="qiskit-measure-program" interactive="activecode" language="python3">
+        <code>
+          from qiskit import QuantumCircuit
+
+          circuit1 = QuantumCircuit(2)
+          circuit1.x(1)
+          circuit1.cx(1, 0)
+          circuit1.cx(0, 1)
+
+          circuit1.measure_all()
+
+          print(circuit1.draw())
+        </code>
+      </program>
+    </listing>
+
+    <p>All right, we've told our quantum circuit to measure our qubits and save the results! If you
+      look closely at the output, we can see that a new <c>meas: 2/</c> double-line is present at the bottom
+      of our circuit. This represents 2 <em>classical bits</em>, which are used to store the result
+      of measuring our qubits. Additionally, after our gates, you should see two boxes with an <c>M</c>
+      in each of them, with a double-line connecting to our classical bits. In quantum circuits, a
+      single line represents quantum information, and a double line represents <em>classical
+      information</em>. Finally, you can see a little <c>0</c> and <c>1</c> near the measurement
+      connection, which indicates the index of the classical bits where the result is stored! We'll
+      explore this more in future chapters. </p>
+  </section>
+
 </section>

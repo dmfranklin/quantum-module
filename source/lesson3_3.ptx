@@ -45,13 +45,23 @@
     the superposition state. We can see that phase is an integral part of the quantum state; we will
     learn the detailed mathematics of this property later. </p>
 
-  <image source="L3.2-H-with-phase.png" width="66%" />
+  <image source="3-3-two-H-gates.png" width="66%" />
 
   <p>For now, let's also introduce special terms for the two superposition states: <ul>
       <li><m>\ket{+}</m> for the state obtained after passing the <m>\ket{0}</m> state through an <c>H</c> gate</li>
       <li><m>\ket{-}</m> for the state obtained after passing the <m>\ket{1}</m> state through an <c>H</c> gate</li>
     </ul>
   </p>
+
+  <exercise label="Phase-vs-Measurement">
+    <title>The Effect of Phase on Measurement</title>
+    <idx>effect of phase on measurement</idx>
+    <statement>
+      <p>Why do you think difference phase (positive vs. negative) doesn't have an effect on the
+        outcome of measuring a qubit in superposition?</p>
+    </statement>
+    <response />
+  </exercise>
 
   <section xml:id="sec-z-gate">
     <title><c>Z</c> Gate</title>

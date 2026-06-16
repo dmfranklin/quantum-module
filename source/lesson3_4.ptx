@@ -108,14 +108,6 @@
     </script>
   </interactive>
 
-
-  <p>
-    <insert>
-      Insert two circuits for them to calculate the output. Don't do the entanglement gate - just
-      some interesting versions of <c>NOT</c>, <c>SWAP</c>, <c>H</c>, and <c>Z</c> to play with going to
-    the 50/50 state
-      and returning to 0, 1, or the <c>Z</c> gate making it flip. -Diana</insert>
-  </p>
   -->
 
     <exercise label="L3-3-3_Calculate_Output">

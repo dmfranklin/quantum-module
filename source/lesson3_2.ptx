@@ -58,7 +58,7 @@
         <choice>
           <statement>
             <p>
-              <m>\ket{0}</m> or <m>\ket{⚪}</m>
+              <m>\ket{0}</m> or <m>⚪</m>
             </p>
           </statement>
           <feedback>
@@ -68,7 +68,7 @@
         <choice>
           <statement>
             <p>
-              <m>\ket{1}</m> or <m>\ket{⚫}</m>
+              <m>\ket{1}</m> or <m>⚫</m>
             </p>
           </statement>
           <feedback>
@@ -105,7 +105,7 @@
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <p>There is no observable effect - the input and output values will be the same.</p>
+            <p>There is no observable effect <mdash /> the input and output values will be the same.</p>
           </statement>
           <feedback>
             <p>Correct!</p>
@@ -113,7 +113,7 @@
         </choice>
         <choice correct="no">
           <statement>
-            <p>There will be an equal chance of measuring 0 or 1 - the same as a single <c>H</c>
+            <p>There will be an equal chance of measuring 0 or 1 <mdash /> the same as a single <c>H</c>
               gate.</p>
           </statement>
           <feedback>
@@ -122,7 +122,7 @@
         </choice>
         <choice correct="no">
           <statement>
-            <p>The effect is the same as a <c>NOT</c> gate - the value is toggled.</p>
+            <p>The effect is the same as a <c>NOT</c> gate <mdash /> the value is toggled.</p>
           </statement>
           <feedback>
             <p>Hmmm.. Make sure you put the <c>H</c> gates right next to each other.</p>

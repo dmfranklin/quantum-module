@@ -41,7 +41,7 @@
             <p>There were only two "eat cookie" operations.</p>
           </feedback>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>
             <p>1 cookie</p>
           </statement>
@@ -49,7 +49,7 @@
             <p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with 1 cookie.</p>
           </feedback>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>2 cookies</p>
           </statement>

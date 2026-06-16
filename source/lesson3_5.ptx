@@ -15,6 +15,9 @@
         <li>Negative and positive versions of the same state in different possibilities cancel out.</li>
         <li>If all possible outcomes in a superposition state are identical, this is equivalent to
       that outcome without superposition.</li>
+        <li>Since the number of balls corresponds to the probability of the outcome, if there is a
+      common factor between the number of each outcome, you can reduce the number of balls as long
+      as the <em>ratio</em> stays the same.</li>
         <li>The overall state can be multiplied by a negative sign without changing the state (we
       will
           learn more about this in the future).</li>
@@ -36,10 +39,47 @@
 
     <image source="L3.4-SimplificationRules.png" width="90%" />
 
-    <p>
-      <insert>Put in two checkpoint questions with single-step simplifications</insert>
-    </p>
-
+    <exercise label="Visual-Rep-Simplification">
+      <title>Simplifying Visual Representation</title>
+      <idx>simplifying visual representation</idx>
+      <statement>
+        <sidebyside widths="60% 10%">
+          <p>After applying the rules for simplifying a quantum superposition state, what does the
+            following
+            state get simplified to?</p>
+          <image source="L3-5-Simplify-Question.png" />
+        </sidebyside>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <image source="L3-5-Simplify-Option1.png" width="10%" />
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <image source="L3-5-Simplify-Option2.png" width="10%" />
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <image source="L3-5-Simplify-Option3.png" width="10%" />
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <image source="L3-5-Simplify-Option4.png" width="10%" />
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          What does it mean for two superposition states to be in superposition with each other?</p>
+        <p>
+          Think about how probabilities, like fractions, can be reduced.
+        </p>
+      </hint>
+    </exercise>
   </section>
 
   <section xml:id="sec-two-qubit-visual">
@@ -89,5 +129,49 @@
 
       </ul></p>
 
+    <p>We can combine our rules for simplifying superposition states with representing two-qubit
+      states:</p>
+
+    <exercise label="Visual-Rep-Simplification-2Qubit">
+      <title>Simplifying 2-Qubit Visual Representation</title>
+      <idx>simplifying 2-qubit visual representation</idx>
+      <statement>
+        <sidebyside widths="60% 10%">
+          <p>What are all of the possible outcomes of measuring the following state?</p>
+          <image source="L3-5-Simplify-2Q.png" width="10%" />
+        </sidebyside>
+      </statement>
+      <choices randomize="no" multiple-correct="yes">
+        <choice>
+          <statement>
+            <p><m>\ket{00}</m> or ⚪⚪</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p><m>\ket{01}</m> or ⚪⚫</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p><m>\ket{10}</m> or ⚫⚪</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p><m>\ket{11}</m> or ⚫⚫</p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          Think about how to combine superposition states that are in superposition with each other.
+        </p>
+        <p>Be careful about distinguishing between superposition (where the balls are separated by a
+          horizontal line) and different qubits (where balls are <em>not</em> separated by a
+          horizontal line).</p>
+        <p>Remember to read qubits top to bottom.</p>
+      </hint>
+    </exercise>
   </section>
 </section>

@@ -16,6 +16,10 @@
       the outputs: </p>
     <image source="H_Explore.png" width="35%" />
 
+    <p>You can use a <c>NOT</c> gate to create a ⚫ or <m>\ket{1}</m> state! Don't worry about adding a
+      "measurement" as in the image above; we can observe the state by looking at the probability
+      bars in the widget.</p>
+
     <interactive aspect="9:9" platform="javascript"
       source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
       <script>
@@ -167,8 +171,9 @@ is labeled with what I am to them.</p>
           25% chance of measuring 0 or ⚪ and a 75% chance of measuring 1 or ⚫.
         </li>
         <li>
-          The order of each outcome does not matter, so by convention ⚪ outcomes are shown first
-      (toward the top) followed by ⚫ outcomes (toward the bottom).
+          The order of in which each outcome is shown does not matter, so by convention ⚪ outcomes
+      are shown first
+          (toward the top) followed by ⚫ outcomes (toward the bottom).
         </li>
       </ul>
     </p>
