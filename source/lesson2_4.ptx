@@ -132,7 +132,7 @@
 
       </code>
       <postamble>
-        circuit1.draw()
+        print(circuit1.draw())
       </postamble>
     </program>
   </exercise>

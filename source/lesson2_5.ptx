@@ -328,7 +328,7 @@
           <p> </p>
         </feedback>
       </choice>
-      <choice correct="yes">
+      <choice>
         <statement>
           <p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p>
         </statement>
@@ -344,7 +344,7 @@
           <p> </p>
         </feedback>
       </choice>
-      <choice>
+      <choice correct="yes">
         <statement>
           <p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p>
         </statement>

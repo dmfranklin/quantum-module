@@ -39,7 +39,8 @@
 
     <image source="L3.4-SimplificationRules.png" width="90%" />
 
-    <exercise label="Visual-Rep-Simplification">
+    <!--<exercise
+    label="Visual-Rep-Simplification">
       <title>Simplifying Visual Representation</title>
       <idx>simplifying visual representation</idx>
       <statement>
@@ -79,7 +80,7 @@
           Think about how probabilities, like fractions, can be reduced.
         </p>
       </hint>
-    </exercise>
+    </exercise>-->
   </section>
 
   <section xml:id="sec-two-qubit-visual">
