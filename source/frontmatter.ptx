@@ -5,35 +5,37 @@
 
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <bibinfo>
-  
+
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
-      <institution>Your institution</institution>
+      <personname>Sarang Joshi, Jen Palmer, Diana Franklin</personname>
+      <department>Department of Computer Science</department>
+      <institution>University of Chicago</institution>
     </author>
     <date>
       <today />
     </date>
 
     <website>
-      <url href="https://pretextbook.org">My Website</url>
+      <url href="https://canonlab.org">CANON Lab</url>
     </website>
 
     <copyright>
-      <year>2020<ndash />2024</year>
-      <holder>You</holder>
-      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+      <year>2020<ndash />2026</year>
+      <holder>CANON Lab, University of Chicago</holder>
+      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+        International License. To view a copy of this license, visit <url
+          href="http://creativecommons.org/licenses/by-sa/4.0/"
+          visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
       </shortlicense>
     </copyright>
-  
+
   </bibinfo>
 
   <titlepage>
-    <titlepage-items/>
+    <titlepage-items />
   </titlepage>
 
   <colophon xml:id="front-colophon">
-    <colophon-items/>
+    <colophon-items />
   </colophon>
 </frontmatter>
-
