@@ -662,9 +662,9 @@
       <p>Voila!</p>
     </example>
 
-    <exercise label="Bra-Ket-Single-Qubit-Gates">
-      <title>Bra-Ket Notation: Applying Single-Qubit Gates</title>
-      <idx>Bra-Ket Notation: Applying Single-Qubit Gates</idx>
+    <exercise label="Bra-Ket-Single-Qubit-Gates-1">
+      <title>Bra-Ket Notation: Applying Single-Qubit Gates 1</title>
+      <idx>bra-ket notation: applying single-qubit gates 1</idx>
       <statement>
         <p>The <c>NOT</c> operator is applied to the initial vector: <m>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>. What will the result be
           in bra-ket notation?</p>
@@ -699,6 +699,45 @@
           <statement>
             <p>
               Cannot be determined
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="Bra-Ket-Single-Qubit-Gates-2">
+      <title>Bra-Ket Notation: Applying Single-Qubit Gates 2</title>
+      <idx>bra-ket notation: applying single-qubit gates 2</idx>
+      <statement>
+        <p>Let's discover the behavior of the <c>Z</c> gate together. Suppose our initial state is <m>a \ket{0} + b \ket{1}</m>.
+          What is the result of applying a <c>Z</c> gate to this state? </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>a \ket{0} - b \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>a \ket{0} + b \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>b \ket{0} - a \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>- a \ket{0} - b \ket{1}</m>
             </p>
           </statement>
         </choice>
