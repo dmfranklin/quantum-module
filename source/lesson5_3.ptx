@@ -19,7 +19,8 @@
       but it is easier to read than its alternative, vector notation.</p>
 
     <p> Each outcome is expressed in a <term>ket</term>, which you've already seen in this textbook: <m>\ket{0}</m>
-      , <m>\ket{+}</m>, etc. </p>
+      , <m>\ket{+}</m>, etc. Often, a general quantum state is described using the Greek letter psi: <m>\ket{\psi}</m>
+      .</p>
 
     <sidebyside widths="50% 50%" valign="top">
       <p> In the figure to the right, we are expressing the probabilities of measuring apples or
@@ -473,9 +474,9 @@
 
       <li>
         <p>The first term in the state (the <term>leading term</term>) is never in negative phase.
-          If the leading term is negative, you can multiply the whole state by <m>-1</m>, which we
-          have seen previously (<xref ref="sec-simplify-superposition-visual" />) results in an
-          equivalent state.</p>
+          If the leading term is negative, you can multiply the whole state by <m>-1</m> and obtain an
+          equivalent state (as we have seen previously in <xref
+            ref="sec-simplify-superposition-visual" />).</p>
         <md>
           <mrow>\amp-\frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{01} -
             \frac{1}{\sqrt{2}}\ket{10} +
@@ -499,9 +500,51 @@
       add up to 1. This represents the fact that there is a 100% chance of getting any of the
       outcomes expressed in the state. For example, for a single qubit of the form <m>a\ket{0} + b\ket{1}</m>, <m>a^2 + b^2 = 1</m>.</p>
 
-    <p>If all outcomes are the same probability some people omit the leading term.
-      However, none of the answers in this book use this rule because it hides the true
-      probability.</p>
+    <exercise label="Bra-Ket-Notation-Valid-States">
+      <title>Bra-Ket Notation: Normalized States</title>
+      <idx>bra-ket notation: normalized states</idx>
+      <statement>
+        <p>
+          Which of the following states are written in valid, normalized bra-ket notation?
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{0} + \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\ket{1010}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{10} \ket{0} + \frac{9}{10} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{10} \ket{0} + \frac{\sqrt{99}}{10} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <note>
+      <p>If all outcomes are the same probability some people omit the leading term.
+        However, none of the answers in this book use this rule because it hides the true
+        probability.</p>
+    </note>
 
     <exercise label="Bra-Ket-Simplification">
       <title>Bra-ket Notation Simplification</title>

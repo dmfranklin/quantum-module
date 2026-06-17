@@ -39,10 +39,202 @@
       <image source="L5.3.wrongorder.png" width="30%" />
     </p>
 
-    <p>
-      <insert>Put 2 question checks here - bra-ket to vector and then back again</insert>
-    </p>
+    <exercise label="Vector-Notation-Exercise-1">
+      <title>Vector Notation Exercise 1</title>
+      <idx>vector notation exercise 1</idx>
+      <statement>
+        <p>What is the correct vector notation for the state <m>\frac{\sqrt{15}}{4} \ket{1} + \frac{1}{4} \ket{0}</m>?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{4}\\\frac{\sqrt{15}}{4}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Cannot be represented</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
 
+    <exercise label="Vector-Notation-Exercise-2">
+      <title>Vector Notation Exercise 2</title>
+      <idx>vector notation exercise 2</idx>
+      <statement>
+        <p>What is the correct bra-ket notation for the following state:</p>
+        <md>\begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix}</md>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{6}} \ket{00} + \frac{1}{\sqrt{3}} \ket{01} + \frac{1}{\sqrt{3}} \ket{10} + \frac{1}{\sqrt{6}} \ket{11} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{6}} \ket{0} + \frac{1}{\sqrt{3}} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{6}} \ket{00} + \frac{1}{\sqrt{6}} \ket{01} + \frac{1}{\sqrt{3}} \ket{10} + \frac{1}{\sqrt{3}} \ket{11} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{00} + \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11} </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          Remember to map the probability amplitudes in the correct order from the vector notation.
+        </p>
+      </hint>
+    </exercise>
+
+    <exercise label="Vector-Notation-Exercise-3">
+      <title>Vector Notation Exercise 3</title>
+      <idx>vector notation exercise 3</idx>
+      <introduction>
+        <p>Consider the following quantum state:</p>
+        <md>\begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix}</md>
+      </introduction>
+      <task>
+        <statement>
+          <p>What is the probability of measuring 0?</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{2}{\sqrt{5}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p><m>\frac{1}{5}</m> or 20%</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p><m>\frac{2}{5}</m> or 40%</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p><m>\frac{4}{5}</m> or 80%</p>
+            </statement>
+          </choice>
+        </choices>
+      </task>
+      <task>
+        <statement>
+          <p>What is the probability of measuring a 1?</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{5}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p><m>\frac{1}{5}</m> or 20%</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p><m>\frac{2}{5}</m> or 40%</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p><m>\frac{4}{5}</m> or 80%</p>
+            </statement>
+          </choice>
+        </choices>
+      </task>
+    </exercise>
+
+    <exercise label="Vector-Notation-Exercise-4">
+      <!-- 228 Gradescope HW2 6.2 -->
+      <title>Vector Notation Exercise 4</title>
+      <idx>vector notation exercise 4</idx>
+      <statement>
+        <p>Consider the following quantum state:</p>
+        <p>
+          <image source="L4_3_2_E.png" width="20%" />
+        </p>
+        <p>What is the proper way to express this state in vector notation?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{\sqrt{2}}\\ - \frac{1}{\sqrt{2}}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}- \frac{1}{2} \\ \frac{1}{2}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix} \frac{1}{2} \\ -\frac{1}{2}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
   </subsection>
 
   <subsection xml:id="sec_vector_multi_qubit" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -59,8 +251,8 @@
     <p> Combining two qubit states into a single two-qubit state involves a new operation on
       vectors. This is called a <term>tensor product</term>. The effect of the operation is
       identical to how we combine states in bra-ket notation, but let's walk through how a tensor
-      product works in the vector world. Let's say we want to combine the two states <m>q_1 = \begin{bmatrix}a\\b\end{bmatrix}</m> and <m>q_2 = \begin{bmatrix}c\\d\end{bmatrix}</m>.
-      In order to do so, we perform the tensor product <m>q_1 \otimes q_2</m>.</p>
+      product works in the vector world. Let's say we want to combine the two states <m>\ket{\psi_1} = \begin{bmatrix}a\\b\end{bmatrix}</m> and <m>\ket{\psi_2} = \begin{bmatrix}c\\d\end{bmatrix}</m>.
+      In order to do so, we perform the tensor product <m>\ket{\psi_1} \otimes \ket{\psi_2}</m>.</p>
 
     <p> Here is how I like to think of performing a tensor product <m>A \otimes B</m>. The idea is to "stuff" a
       copy of the second operand (<m>B</m>) inside each element of <m>A</m>. Then, you multiply each
@@ -79,18 +271,136 @@
       (a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) = ac\ket{00} + ad\ket{01} + bc\ket{10} + bd\ket{11}
     </md>
 
-    <p>
-      <insert>exercise with tensor product</insert>
-    </p>
+    <exercise label="Vector-Notation-Multi-Qubit-Exercise-1">
+      <title>Vector Notation Multi-Qubit Exercise 1</title>
+      <idx>vector notation multi-qubit exercise 1</idx>
+      <statement>
+        <p>Convert the following 2-qubit bra-ket notation into vector notation:</p>
+        <md>\frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11}</md>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{3}{4}\\0\\\frac{1}{4}\\0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{\sqrt{3}}{2}\\0\\\frac{1}{2}\\0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{2}\\0\\\frac{\sqrt{3}}{2}\\0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\\frac{1}{2}\\0\\\frac{\sqrt{3}}{2}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="Vector-Notation-Multi-Qubit-Exercise-2">
+      <title>Vector Notation Multi-Qubit Exercise 2</title>
+      <idx>vector notation multi-qubit exercise 2</idx>
+      <statement>
+        <p>Convert the following 2-qubit vector notation into bra-ket notation:</p>
+        <md>\begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix}</md>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{01} + \frac{1}{\sqrt{2}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{01} + \frac{1}{2} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{00} + \frac{1}{2} \ket{10}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{00} + \frac{1}{\sqrt{2}} \ket{10}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="Vector-Notation-Multi-Qubit-Exercise-3">
+      <title>Vector Notation Multi-Qubit Exercise 3</title>
+      <idx>vector notation multi-qubit exercise 3</idx>
+      <statement>
+        <p>Combine the following single-qubit states into a 2-qubit vector:</p>
+        <md>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix}</md>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\-\frac{1}{\sqrt{2}}\\0\\-\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\0\\-\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0\\-1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          To perform a tensor product, "stuff" copies of the second state into each element in the
+          first state.
+        </p>
+      </hint>
+    </exercise>
   </subsection>
 
   <subsection xml:id="vector_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Vector State Simplification</title>
 
-    <p> Generally, the state simplification rules are the same for vectors and for
-      bra-ket notation,
-      with one major exception: you can never remove a state! You must retain the 0 in the vector. </p>
-
+    <p> Generally, the state simplification rules are the same for vectors and for bra-ket notation,
+      with one major exception: you can <em>never remove a state</em>! You must retain the 0 in the
+      vector. </p>
     <ol>
       <li>
         <p>The order of the outcomes is always in increasing numeric order
@@ -118,16 +428,48 @@
       up to 1, to ensure the probabilities are valid.</p>
 
     <p>If all outcomes are the same probability, you can choose to factor out a common factor and
-      put that in front of the vector for simplicity's sake.
-      (make "rarely omit" red text, plus the last sentence)
-    </p>
+      put that in front of the vector for simplicity's sake. </p>
     <p>
       <image source="L5.3.pullfactor.png" width="70%" />
     </p>
 
-    <p>
-      <insert> Question check - the state |1>, then the state 50/50 |01>, |10> </insert>
-    </p>
+    <exercise label="Vector-Notation-Simplification">
+      <title>Vector Notation Simplification</title>
+      <idx>vector notation simplification</idx>
+      <statement>
+        <p> Choose all vector representations of the state <m>\frac{1}{\sqrt{2}} \ket{10} + \frac{1}{\sqrt{2}} \ket{01}</m>.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\\1\\0\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> \begin{bmatrix}0\\\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}} \begin{bmatrix}1\\0\end{bmatrix} + \frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}} \begin{bmatrix}1\\1\\1\\1\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
   </subsection>
 
   <subsection xml:id="quantum_gate_representation" xmlns:xi="http://www.w3.org/2001/XInclude">
