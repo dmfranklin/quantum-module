@@ -8,231 +8,229 @@
 <p>A mathematical model predicts the behavior of some predictable process</p>
 -->
 
-      <p>
-         What is a mathematical model?</p>
+      <p> A <term>mathematical model</term> is a mathematical representation of a predictable,
+         real-world situation, like dividing a pie between a group of people, that can be used to
+         make predictions and solve problems. </p>
 
-      <p> A <term>mathematical model</term> predicts the behavior of some predictable process, like
-         dividing a pie between a group of people. In order to solve these problems mathematically,
-         we need a few things:</p>
-      <p>
-         <ul>
-            <li>Mathematical symbols to express the parts of the problem.</li>
+      <!-- Rephrased for clarity (below), revert if the original text is preferred. - Jen
+<p>In order to solve these problems mathematically, we need a few things:
+-->
+
+      <p> In order to develop a mathematical model that we can use to solve these problems, we need
+         a few things: <ul>
+            <li> Mathematical symbols to express the parts of the problem.</li>
             <li>Mathematical operations to follow to calculate the result.</li>
          </ul>
       </p>
 
-      <p>If those don't exist, then people invent new symbols and define new operations that
-         properly
-         predict the observed behavior.
-         The main point is that the mathematics is derived from observations of the real world, not
-         the
-         other way around. </p>
+      <!--
+<ul>
+   <li>Mathematical symbols to express the parts of the problem.</li>
+   <li>Mathematical operations to follow to calculate the result.</li>
+</ul>
+-->
 
-      <section xml:id="fractions_mathematical_model" xmlns:xi="http://www.w3.org/2001/XInclude">
-         <title>Mathematical model for fractions</title>
+      <p> If the neccessary symbols and operations don't exist, then people invent new symbols and
+         define new operations that properly predict the observed behavior. The main point is that
+         the mathematics is derived from observations of the real world, not the other way around.
+         I'll explain this using a familiar mathematical model: <em>fractions!</em>
+      </p>
 
-         <p>I'll explain this using a familiar mathematical model: fractions! Consider the following
-            problem:</p>
+      <!--
+</section>
 
-         <p>
-            <ul>
-               <li>You have a pie to share with three friends. </li>
-               <li>You cut it into 4 equal pieces.</li>
-               <li>Your friend exclaims, “Just because there are four of us, it doesn't mean we need
-                  to
-                  eat the whole pie! I only want half that much!!” </li>
-               <li>How much of the pie will you give your friend? </li>
+<section xml:id="fractions_mathematical_model" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Mathematical model for fractions</title>
+
+<p>I'll explain this using a familiar mathematical model - <em>fractions!</em></p>
+-->
+
+      <sidebyside widths="70% 30%" valigns="top middle">
+         <p>Consider the following problem: <ul>
+               <li>You are sharing a pie with three friends.</li>
+               <li>You cut the pie into 4 equal pieces.</li>
+               <li>Your friend exclaims, <em>“Just because there are four of us, it doesn't mean we
+            need to eat the whole pie! I only want half that much!!”</em>
+               </li>
+               <li>How much of the pie will you give to your friend? </li>
             </ul>
          </p>
+         <image source="L5.2_Pie.png" width="50%" />
+      </sidebyside>
+      <p>
+         You are probably so used to solving problems like this in daily life, that you don't think
+         about all the steps
+         that go into solving it with fractions! Let's explore those aspects.
+</p>
+   </section>
 
-         <p> You are probably so used to solving problems like this, that you don't think about all
-            the
-            steps that go into solving it with fractions!
-            Let's explore those aspects.</p>
 
-         <subsection>
-            <title> Representing fractional state</title>
+   <section xml:id="representing_fractional_state" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title> Representing a fractional state </title>
 
-            <p> We say “one fourth,” which could translate to “if that were divided into 4
-               equal-sized parts, then I want one of them.” We also represent this mathematically
-               with the number of parts you want (numerator) placed over the total number of parts
-               (denominator) with a line in between. We can either display it with the numerator
-               above the denominator with a horizontal line in between or a 1 to the left of the 4
-               with a diagonal line in between. However, you cannot display it <m>1 \text{\\} 4</m>. </p>
+      <!--
+<p> <term>Representing a fractional state</term> </p>
+-->
 
-            <p>
-               <md>\frac{1}{4} \text{ or } ¼</md>
-            </p>
+      <p>
+         We might ask for “one fourth” when asking for a piece of pie, and this could be translated
+         to
+         “if the pie were divided into 4 equal-sized parts, then I want one of them.”
+</p>
 
-            <p>This allows us to more clearly state the problem:</p>
+      <p> We can also represent this mathematically with the number of parts you want (numerator)
+         placed over the total number of parts (denominator) with a line in between. We can either
+         display it with the numerator above the denominator with a horizontal line in between or a
+         1 to the left of the 4 with a diagonal line in between. However, you cannot display it as <m>1 \backslash 4</m>
+         . </p>
+      <image source="L5.2_Fractions.png" width="66%" />
 
-            <p>
-               <ul>
-                  <li>You have a pie to share with three friends. </li>
-                  <li>You cut it into 4 equal pieces, each 1/4 of the pie.</li>
-                  <li>Your friend exclaims, “Just because there are four of us, it doesn't mean we
-                     need
-                     to
-                     eat the whole pie! I only want 1/2 a piece!!” </li>
-                  <li>How much of the pie will you give your friend? </li>
-               </ul>
-            </p>
-         </subsection>
+      <!--
+<sidebyside widths="15% 25%" valign="top">
+    <image source="L5.0-fractionstate.png" width="66%" />
+    <image source="L5.0-fractionstate2.png" width="66%" />
+</sidebyside>
+-->
 
-         <subsection>
-            <title>Performing operations</title>
+      <p>The ability to represent fractional states in this way allows us to more clearly state the
+         problem:</p>
 
-            <p>To multiply fractions, we perform this set of operations:</p>
+      <p>
+         <ul>
+            <li>You are sharing a pie with three friends.</li>
+            <li>You cut the pie into 4 equal pieces, each <m>\frac{1}{4}</m> of the pie.</li>
+            <li>Your friend exclaims, <em>“Just because there are four of us, it doesn't mean we
+               need to eat the whole pie! I only want <m>\frac{1}{2}</m> a piece!!” </em>
+            </li>
+            <li>How much of the pie will you give to your friend? </li>
+         </ul>
+      </p>
+      <p>Let's review what is involved in performing operations with fractions.</p>
+   </section>
 
-            <p>
-               <ul>
-                  <li>Multiply the numerators. </li>
-                  <li>Multiply the denominators.</li>
-                  <li>Simplify if necessary.</li>
-               </ul>
-            </p>
+   <section xml:id="multiplying_fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title> Multiplying fractions </title>
 
-            <p>
-               <md>
-               \frac{1}{4} \times \frac{1}{2} = \frac{(1 \times 1)}{(4 \times 2)} = \frac{1}{8}
-            </md>
-            </p>
 
-            <p>Now let's consider a slightly different question:</p>
+      <!-- <p>To multiply fractions, we perform this set of operations:</p> -->
 
-            <p>
-               <ul>
-                  <li>You brought two pies to a potluck, pecan pie and apple pie. </li>
-                  <li>Both pies have the same radius, but the pecan pie is much more intense than
-                     the
-                     apple pie,
-                     so you cut smaller pieces; You cut the pecan pie into 10 pieces and the apple
-                     pie
-                     into 8 pieces. </li>
-                  <li>It is time to gather your leftovers. The pecan pie has 5 pieces left, and the
-                     apple
-                     pie has 3 pieces left. </li>
-                  <li>How much total pie is there left?</li>
-               </ul>
-            </p>
-
-            <p> To solve this, you would perform the following steps:</p>
-            <p>
-               <ul>
-                  <li>Express the leftover pecan pie as a fraction: <m>\frac{5}{10}</m>
-                  </li>
-                  <li> Simplify the pecan pie fraction to be <m>\frac{1}{2}</m>
-                  </li>
-                  <li>Express the leftover apple pie as a fraction: <m>\frac{3}{8}</m></li>
-                  <li>Add the fractions </li>
-               </ul>
-            </p>
-
-            <p>Easy-peasy lemon-squeezy, right? Addition is easier than multiplication, so adding
-               these
-               fractions should be a
-               piece of cake (or pie), right? </p>
-
-            <p>To add fractions, we perform this set of operations:</p>
-            <p>
-               <ul>
-                  <li>Find the least common denominator (<m>\text{LCD}</m>) </li>
-                  <li>Multiply the first numerator by <m>\frac{\text{LCD}}{\text{1st denominator}}</m></li>
-                  <li>Multiply the second numerator by <m>\frac{\text{LCD}}{\text{2nd denominator}}</m></li>
-                  <li>Add the numerators and retain the common denominator</li>
-                  <li>Simplify if necessary </li>
-               </ul>
-            </p>
-
-            <p>
-               <md>
-               \frac{5}{10} + \frac{3}{8} =
-               \frac{1}{2} + \frac{3}{8} =
-               \frac{4}{8} + \frac{3}{8} =
-               \frac{(4 + 3)}{8} =
-               \frac{7}{8}
-            </md>
-            </p>
-
-            <p> I know what you're thinking, "Now you just hold on a <!-- cotton-pickin' --> minute. That didn't seem
-               easier at all!" I must agree with you there. How about we look at an alternate
-               representation: Decimals.</p>
-
-         </subsection>
-      </section>
-
-      <section xml:id="decimals_mathematical_model" xmlns:xi="http://www.w3.org/2001/XInclude">
-         <title>Mathematical model for decimals</title>
-         <p>Notice that if we had expressed these operations as decimals, then the operations would
-            have been performed differently.
-            Consider those two questions again.</p>
-
-         <paragraphs>
-            <title>Multiplication using decimals</title>
-            <p>You cut your pie into 4 pieces, so each piece has size <m>0.25</m>. Your friend only
-               wants half a piece, which is expressed as <m>0.5</m>. Thus to calculate how much of the
-               pie you give your friend, you multiply the two:</p>
-
-            <ol>
-               <li>Multiply the two numbers, ignoring the decimal place</li>
-               <li>Add the number of digits after the decimal in each number, and put the decimal
-                  point
-                  this many digits in from the right</li>
+      <sidebyside widths="45% 55%" valigns="top bottom">
+         <p> To multiply fractions: <ol>
+               <li>Multiply the numerators </li>
+               <li>Multiply the denominators </li>
+               <li>Simplify if necessary </li>
             </ol>
+         </p>
+         <image source="L5.0-fractionmult.png" width="50%" />
+      </sidebyside>
 
-            <p>In our case, this means:</p>
 
-            <ol>
-               <li>
-                  <m>25 \times 5 = 125</m>
-               </li>
-               <li>The total number of decimal places is <m>2 + 1 = 3</m></li>
-               <li>Thus, <m>0.25 \times 0.5 = 0.125</m></li>
-            </ol>
-         </paragraphs>
+      <!-- <image source="L5.0-fractionmult.png" width="50%"/> -->
+      <p>Now let's consider a slightly different question:</p>
 
-         <paragraphs>
-            <title>Addition using decimals</title>
-            <p> We have 5 of the 10 pieces of pecan pie left, which is expressed as <m>0.5</m>. We also
-               have 3 of the 8 pieces of apple pie left, which is expressed as <m>0.375</m>. To calculate
-               how much total pie we have left, we add the two: </p>
+      <p>
+         <ul>
+            <li>You bring two pies to share at a potluck: a pecan pie and an apple pie. </li>
+            <li>Both pies have the same radius, but the pecan pie is much more intense than the
+               apple pie, so you cut smaller pieces;
+               you cut the pecan pie into 10 pieces and the apple pie into 8 pieces.</li>
+            <li>When it's time to gather your leftovers: the pecan pie has 5 pieces left, and the
+               apple pie has 3 pieces left. </li>
+            <li>How much of the total pie is left?</li>
+         </ul>
+      </p>
 
-            <ol>
-               <li>Align the two numbers by their decimal point, adding trailing zeroes after the
-                  decimal if needed</li>
-               <li>Add the two as with regular numbers, and keep the decimal point where it is</li>
-            </ol>
+      <p> To solve this, you would perform the following steps: <ol>
+            <li>Express the leftover pecan pie as a fraction: <m>\frac{5}{10}</m> <em>(5 of 10 pieces remain)</em>
+            </li>
+            <li>Simplify the pecan pie fraction to be <m>\frac{5}{10} = \frac{1}{2}</m>
+            </li>
+            <li>Express the leftover apple pie as a fraction: <m>\frac{3}{8}</m> <em>(3 of 8 pieces remain)</em>
+            </li>
+            <li>Add the fractions</li>
+         </ol>
+      </p>
+      <p>
+         Easy-peasy lemon-squeezy, right? Addition is easier than multiplication,
+         so adding these fractions should be a piece of cake (or pie), right?
+</p>
+   </section>
 
-            <p>In our case, this means:</p>
+   <section xml:id="adding_fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title> Adding fractions </title>
 
-            <ol>
-               <li>
-                  <m>0.5 + 0.375 = 0.500 + 0.375</m>
-               </li>
-               <li>
-                  <m>0.500 + 0.375 = 0.875</m>
-               </li>
-            </ol>
-         </paragraphs>
+      <p>To add fractions, we perform this set of operations: <ol>
+            <li>Find the least common denominator (LCD) </li>
+            <li>
+               <p>Convert the fractions to the LCD: </p>
+               <p> To convert 1st fraction: <m> \: \: 1^{st} \: numerator \times \frac{LCD}{1^{st} \: denominator} </m>
+               </p>
+               <p> To convert 2nd fraction: <m> \: 2^{nd} \: numerator \times \frac{LCD}{2^{nd} \: denominator} </m>
+               </p>
+            </li>
+            <li>Add the numerators (retain the common denominator) </li>
+            <li>Simplify if necessary </li>
+         </ol>
+      </p>
+      <image source="L5.2_Fraction_LCM-Equation2.png" width="90%" />
 
-         <p> In this case, addition is easier than multiplication. In fact, multiplication has an
-            addition step!</p>
-      </section>
+      <p> I know what you're thinking, "Now you just hold on a <!--cotton-pickin'--> minute. That didn't seem easier at
+         all!" I must agree with you there. How about we look at an alternate representation:
+         Decimals. </p>
+   </section>
 
-      <conclusion>
-         <p>The important takeaway here is the following:</p>
+   <section xml:id="working_with_decimals" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title> Working with Decimals </title>
 
-         <p> The mathematical representation you use had advantages and
-            disadvantages in terms of readiability vs computation difficulty.
-            Fractions are very easy to interpret visually, but they are harder to perform addition.
-            Decimals are sometimes harder to interpret, but addition and
-            multiplication are easier than with fractions.</p>
+      <p>
+         Notice that if we had expressed these operations as decimals, then the operations would
+         have been performed differently. Let's look at the problem of addition, but with decimals:
+</p>
 
-         <p> We are going to see the same tradeoffs in representing quantum state and performing
-            quantum operations. We are going to learn two
-            ways to express state: one that clearly shows the probabilities, and another that
-            corresponds with how to perform operations.</p>
-      </conclusion>
+      <!--
+<p>
+<ul>
+   <li><m>0.25 \times 0.5 = 0.125</m> <alert>(replace this with the picture of writing all of the
+      steps to this starting with one on top of the other)</alert></li>
+   <li><m>0.5 + 0.375 = 0.875</m> <alert>(replace this a picture with the 0.5 and 0.375 above and
+      below)</alert></li>
+</ul>
+</p>
+-->
+
+      <image source="L5.2_AddingDecimals.gif" width="75%" />
+
+      <p> In this case, addition is easier than multiplication. In fact, multiplication has an
+         addition step!</p>
+
+      <p>The important takeaway here is the following:</p>
+      <p>
+         The mathematical representation you use has advantages and disadvantages in terms of
+         readiability vs computation difficulty.
+         Fractions are very easy to interpret visually, but they are harder to perform addition.
+         Decimals are sometimes harder to interpret,
+         but addition and multiplication are easier than with fractions.
+</p>
+
+      <!-- original text; playing with formatting - no way to make larger text in PreTeXt.-->
+      <!--
+<p><alert>(MAKE BIG SOMEHOW)</alert></p>
+<p>The important takeaway here is the following:</p>
+<p>The mathematical representation you use has <em>advantages</em> & <em>disadvantages</em> in
+      terms of readiability vs computation difficulty.</p>
+<ul>
+   <li>Fractions are very easy to interpret visually, but they are harder to perform addition.</li>
+   <li>Decimals are sometimes harder to interpret, but addition and multiplication are easier than
+      with fractions.</li>
+</ul>
+-->
+
+      <p> We are going to see the same tradeoffs in representing quantum state and performing
+         quantum operations. We are going to learn two ways to express state <mdash /> one that
+         clearly shows the probabilities, and another that corresponds with how to perform
+         operations.</p>
+
 
    </section>
+
 </section>
