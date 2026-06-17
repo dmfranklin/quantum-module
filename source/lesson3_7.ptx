@@ -489,7 +489,9 @@
       <statement>
         <p>Given an input state of <m>\ket{1}</m>, create a circuit with an output that matches the visual
           representation shown below.</p>
-        <image source="Visual_Onebit_50_positive.png" width="10%" />
+        <p>
+          <image source="Visual_Onebit_50_positive.png" width="10%" />
+        </p>
         <interactive aspect="9:9" platform="javascript"
           source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
           <script>
