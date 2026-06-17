@@ -3,10 +3,13 @@
 <section xml:id="lesson5_4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Quantum State Representation: Vectors</title>
 
-  <p>While bra-ket notation is handy and concise, it has its limitations when it comes to being able
-    to handle every possible complex state and gate sequence.</p>
+  <introduction>
+    <p>While bra-ket notation is handy and concise, it has its limitations when it comes to being
+      able
+      to handle every possible complex state and gate sequence.</p>
+  </introduction>
 
-  <section xml:id="vector_state" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="vector_state" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Vector Quantum Representation</title>
 
     <p> The purpose of vector notation is to allow us to calculate the output of quantum gates in
@@ -40,9 +43,9 @@
       <insert>Put 2 question checks here - bra-ket to vector and then back again</insert>
     </p>
 
-  </section>
+  </subsection>
 
-  <section xml:id="sec_vector_multi_qubit" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="sec_vector_multi_qubit" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Multi-Qubit Vector Notation</title>
 
     <p> Vector notation is highly flexible, so that when you are representing multiple qubits, you
@@ -59,9 +62,9 @@
       product works in the vector world. Let's say we want to combine the two states <m>q_1 = \begin{bmatrix}a\\b\end{bmatrix}</m> and <m>q_2 = \begin{bmatrix}c\\d\end{bmatrix}</m>.
       In order to do so, we perform the tensor product <m>q_1 \otimes q_2</m>.</p>
 
-    <p> Here is how I like to think of performing a tensor product <m>A \otimes B</m>. The idea is to "stuff"
-      the second operand (<m>B</m>) inside each element of <m>A</m>. Then, you multiply each term of <m>B</m>
-      with the element of <m>A</m> that it overlaps, and you get your result! </p>
+    <p> Here is how I like to think of performing a tensor product <m>A \otimes B</m>. The idea is to "stuff" a
+      copy of the second operand (<m>B</m>) inside each element of <m>A</m>. Then, you multiply each
+      term of <m>B</m> with the element of <m>A</m> that it overlaps, and you get your result! </p>
 
     <p>
       <image source="2_Qubit_Tensor_Product.gif" width="50%" />
@@ -79,9 +82,9 @@
     <p>
       <insert>exercise with tensor product</insert>
     </p>
-  </section>
+  </subsection>
 
-  <section xml:id="vector_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="vector_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Vector State Simplification</title>
 
     <p> Generally, the state simplification rules are the same for vectors and for
@@ -125,9 +128,9 @@
     <p>
       <insert> Question check - the state |1>, then the state 50/50 |01>, |10> </insert>
     </p>
-  </section>
+  </subsection>
 
-  <section xml:id="quantum_gate_representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="quantum_gate_representation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Quantum Gate Representation</title>
 
     <p> In vector notation, quantum gates are represented as a <term>matrix</term>, which is a grid
@@ -142,9 +145,9 @@
     <p>
       <image source="L5.4.nothmatrices.png" width="50%" />
     </p>
-  </section>
+  </subsection>
 
-  <section xml:id="matrix_multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="matrix_multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Matrix Multiplication</title>
     <p> To calculate the result of a gate acting on a state, we perform <term>matrix multiplication</term>
       where the matrix representing the gate is multiplied with the vector form of the state. Here
@@ -188,5 +191,5 @@
     <p>
       <insert>H gate exercise</insert>
     </p>
-  </section>
+  </subsection>
 </section>

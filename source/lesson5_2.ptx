@@ -1,7 +1,7 @@
 <section xml:id="lesson5_2" xmlns:xi="http://www.w3.org/2001/XInclude">
    <title>Mathematical Models</title>
 
-   <section xml:id="what_is_a_mathematical_model" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <subsection xml:id="what_is_a_mathematical_model" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>What is a mathematical model?</title>
 
       <!-- Diana's original definition of mathematical models; Jen's expanded suggestion (below).
@@ -62,10 +62,10 @@
          about all the steps
          that go into solving it with fractions! Let's explore those aspects.
 </p>
-   </section>
+   </subsection>
 
 
-   <section xml:id="representing_fractional_state" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <subsection xml:id="representing_fractional_state" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title> Representing a fractional state </title>
 
       <!--
@@ -106,9 +106,9 @@
          </ul>
       </p>
       <p>Let's review what is involved in performing operations with fractions.</p>
-   </section>
+   </subsection>
 
-   <section xml:id="multiplying_fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <subsection xml:id="multiplying_fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title> Multiplying fractions </title>
 
 
@@ -154,9 +154,9 @@
          Easy-peasy lemon-squeezy, right? Addition is easier than multiplication,
          so adding these fractions should be a piece of cake (or pie), right?
 </p>
-   </section>
+   </subsection>
 
-   <section xml:id="adding_fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <subsection xml:id="adding_fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title> Adding fractions </title>
 
       <p>To add fractions, we perform this set of operations: <ol>
@@ -177,9 +177,9 @@
       <p> I know what you're thinking, "Now you just hold on a <!--cotton-pickin'--> minute. That didn't seem easier at
          all!" I must agree with you there. How about we look at an alternate representation:
          Decimals. </p>
-   </section>
+   </subsection>
 
-   <section xml:id="working_with_decimals" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <subsection xml:id="working_with_decimals" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title> Working with Decimals </title>
 
       <p>
@@ -231,6 +231,6 @@
          operations.</p>
 
 
-   </section>
+   </subsection>
 
 </section>

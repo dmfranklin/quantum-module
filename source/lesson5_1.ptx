@@ -3,15 +3,17 @@
 <section xml:id="lesson5_1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basic Probability</title>
 
-  <p>In this section, we'll first review what probability means, and what it doesn't mean.
-    Next, we'll learn how to combine probabilities for independent events.</p>
+  <introduction>
+    <p>In this section, we'll first review what probability means, and what it doesn't mean.
+      Next, we'll learn how to combine probabilities for independent events.</p>
 
-  <p>Throughout the section, we will explore probability using a common context in which you often
-    encounter probabilities: weather forecasts. We will then apply it to the quantum context, in
-    which we calculate the
-    probability of measuring one, two, or more qubits in a particular state.</p>
+    <p>Throughout the section, we will explore probability using a common context in which you often
+      encounter probabilities: weather forecasts. We will then apply it to the quantum context, in
+      which we calculate the
+      probability of measuring one, two, or more qubits in a particular state.</p>
+  </introduction>
 
-  <section xml:id="sec-probability-meaning">
+  <subsection xml:id="sec-probability-meaning">
     <title>What a Probability Means</title>
 
     <p>What do weather forecasts really mean? Look at the weather forecast below and complete the
@@ -87,8 +89,9 @@
         </ul>
       </p>
     </sidebyside>
-  </section>
-  <section xml:id="sec-independent-probabilities">
+  </subsection>
+
+  <subsection xml:id="sec-independent-probabilities">
     <title>Combining Independent Probabilities</title>
     <p> Now that we understand what a probability means, we can learn how to combine probabilities
       for independent events.
@@ -241,10 +244,10 @@
 
     <p> If you want to learn just a little bit more about probabilities in this cartoon fashion,
       check out our zine at: <url href="https://www.epiqc.cs.uchicago.edu/probability">
-      https://www.epiqc.cs.uchicago.edu/probability</url></p>
+      https://www.epiqc.cs.uchicago.edu/probability</url>.</p>
 
 
-  </section>
+  </subsection>
 
 
 </section>

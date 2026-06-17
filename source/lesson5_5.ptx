@@ -1,75 +1,103 @@
 <section xml:id="lesson5_5" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Revisiting Gate Understanding</title>
 
-<p>Learning how to perform the mathematics behind quantum state and operations unlocks 
-two important quantum computing-related skills:</p>
-<ul>
-      <li>Better understanding how operations work when inputs are in superposition</li>
-      <li>Learning the counter-intuitive properties of phase that are key to 
-      critical quantum algorithms</li>
+    <p>Learning how to perform the mathematics behind quantum state and operations unlocks
+        two important quantum computing-related skills:</p>
+    <ul>
+        <li>Better understanding how operations work when inputs are in superposition</li>
+        <li>Learning the counter-intuitive properties of phase that are key to
+            critical quantum algorithms</li>
     </ul>
 
-<p> We will revisit quantum gates now, and we will delve deeper into phase in the next chapter.</p>
+    <p> We will revisit quantum gates now, and we will delve deeper into phase in the next chapter.</p>
 
-<p>
-We first introduced the truth tables for gates in a way analogous to digital computing. 
-We will revisit those same gates now with our eye towards superposition.
-</p><p>
-Instead of using specific inputs, we will generalize to variable inputs. 
-</p><p>
-For a single qubit operation, our starting state will be:
+    <p>
+        We first introduced the truth tables for gates in a way analogous to digital computing.
+        We will revisit those same gates now with our eye towards superposition.
+</p>
+    <p>
+        Instead of using specific inputs, we will generalize to variable inputs.
+</p>
+    <p>
+        For a single qubit operation, our starting state will be:
 </p>
 
 
- <sidebyside widths="30% 10% 30%" valign="top">
-      
-<p><image source="braketab.png" width="30%" /></p>
-      <p> where </p>
-    <p><image source="probabilityab.png" width="30%" /></p>
-     
-</sidebyside>
+    <sidebyside widths="30% 10% 30%" valign="top">
 
-<p> For a two-qubit operation, our starting state will be:</p>
-<sidebyside widths="40% 10% 40%" valign="top">
-      
-<p><image source="braketa0a3.png" width="30%" /></p>
-      <p> where </p>
-    <p><image source="probabilitya0a3.png" width="30%" /></p>
-     
-</sidebyside>
+        <p>
+            <image source="braketab.png" width="30%" />
+        </p>
+        <p> where </p>
+        <p>
+            <image source="probabilityab.png" width="30%" />
+        </p>
 
+    </sidebyside>
 
-<p>There are two approaches to calculating gates with inputs in superposition.</p>
+    <p> For a two-qubit operation, our starting state will be:</p>
+    <sidebyside widths="40% 10% 40%" valign="top">
 
-<p>The first is to calculate by multiplying the state vector and gate matrix.</p>
+        <p>
+            <image source="braketa0a3.png" width="30%" />
+        </p>
+        <p> where </p>
+        <p>
+            <image source="probabilitya0a3.png" width="30%" />
+        </p>
 
-<p><image source="GeneralNOT.png" width="50%" /></p>
-
-<p>The second is to apply the operation to each bit in the ket, then reorganize the result.</p>
-
-<p><image source="GeneralNOT2.png" width="40%" /></p>
-
-<p> Try this yourself with the SWAP gate with the starting state:</p>
-
-<p> Note: Below should be a knowledge check. Just filling in what I can.</p>
-
-<p><image source="braketa0a3.png" width="50%" /></p>
+    </sidebyside>
 
 
-<p> Four choices (second is correct):</p>
-<p><image source="braketa0a3.png" width="50%" /></p>
-<p><image source="braketa0a2a1a3.png" width="50%" /></p>
-<p><image source="braketa3a2a1a0.png" width="50%" /></p>
-<p><image source="braketa1a0a3a2.png" width="50%" /></p>
+    <p>There are two approaches to calculating gates with inputs in superposition.</p>
 
-<p>Knowledge check #2: Now let’s consider the Z gate. We will begin with a starting state of:</p>
-<p><image source="braketab.png" width="30%" /></p>
+    <p>The first is to calculate by multiplying the state vector and gate matrix.</p>
+
+    <p>
+        <image source="GeneralNOT.png" width="50%" />
+    </p>
+
+    <p>The second is to apply the operation to each bit in the ket, then reorganize the result.</p>
+
+    <p>
+        <image source="GeneralNOT2.png" width="40%" />
+    </p>
+
+    <p> Try this yourself with the SWAP gate with the starting state:</p>
+
+    <p> Note: Below should be a knowledge check. Just filling in what I can.</p>
+
+    <p>
+        <image source="braketa0a3.png" width="50%" />
+    </p>
 
 
-<p> Four choices (second is correct):</p>
-<p><image source="braketab.png" width="30%" /></p>
-<p> a - b</p>
-<p>b + a</p>
-<p>b - a</p>
+    <p> Four choices (second is correct):</p>
+    <p>
+        <image source="braketa0a3.png" width="50%" />
+    </p>
+    <p>
+        <image source="braketa0a2a1a3.png" width="50%" />
+    </p>
+    <p>
+        <image source="braketa3a2a1a0.png" width="50%" />
+    </p>
+    <p>
+        <image source="braketa1a0a3a2.png" width="50%" />
+    </p>
+
+    <p>Knowledge check #2: Now let's consider the Z gate. We will begin with a starting state of:</p>
+    <p>
+        <image source="braketab.png" width="30%" />
+    </p>
+
+
+    <p> Four choices (second is correct):</p>
+    <p>
+        <image source="braketab.png" width="30%" />
+    </p>
+    <p> a - b</p>
+    <p>b + a</p>
+    <p>b - a</p>
 
 </section>

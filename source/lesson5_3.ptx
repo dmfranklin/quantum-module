@@ -3,14 +3,17 @@
 <section xml:id="lesson5_3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Quantum State Representation: Bra-Ket</title>
 
-  <p>Let's start our exploration of quantum state representations with bra-ket notation.</p>
+  <introduction>
+    <p>Let's start our exploration of quantum state representations with bra-ket notation.</p>
+  </introduction>
 
-  <section
+  <subsection
     xml:id="bra_ket_state" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Bra-Ket Quantum Representation</title>
 
     <p> The purpose of <term>bra-ket notation</term> is to express the probability of each potential
-      outcome. Therefore, there are two parts: The probability and the outcome.</p>
+      outcome. Therefore, there are two parts to each <term>term</term>: the <em>outcome</em> and
+      its <em>probability</em>.</p>
 
     <p> Bra-ket notation favors ease of calculation over easy readability of the probability,
       but it is easier to read than its alternative, vector notation.</p>
@@ -33,19 +36,13 @@
       <md>\text{probability} = |\text{probability amplitude}|^2</md>
     </p>
 
-    <p> In this notation, if there is equal probability, or 1/2 probability of each of two
-      outcomes,
-      then it will be: </p>
+    <p> In this notation, if there is equal probability, or 1/2 probability of each of two outcomes,
+      then the <em>probability amplitude</em> for each outcome will be <m>\frac{1}{\sqrt{2}}</m>.</p>
 
-    <p>
+    <!--
       <insert>picture like the one above with apples and bananas but with the terms 1/rt(2)
         for each</insert>
-    </p>
-
-    <p>
-      <insert>Put in a question here using heads or tails coins in bra-ket notation and ask what the
-        probability is of each outcome.</insert>
-    </p>
+    </p>-->
 
     <exercise label="Bra-Ket_Heads_and_Tails">
       <title>Coin Flip in Bra-Ket Notation</title>
@@ -99,8 +96,8 @@
 
 
     <p> We can see that this notation is very flexible to represent all kinds of probabilities. If
-      we want to express outcomes from the raincoat/raining example from (<xref
-        ref="sec-independent-probabilities" />), it would look like the following:</p>
+      we want to express outcomes from the raincoat/raining example from <xref
+        ref="sec-independent-probabilities" />, it would look like the following:</p>
 
     <p>50% chance of sun, 50% chance of rain:</p>
     <md>\frac{1}{\sqrt{2}}\ket{☀️} + \frac{1}{\sqrt{2}}
@@ -121,14 +118,204 @@
     <p> If there is negative phase, then it will be placed on the 1 state: </p>
     <md>\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </md>
 
-    <p>
+    <p>This convention is in line with our convention of placing the negative sign on the black ball
+      in visual representation!</p>
+
+    <!--
       <insert>A few exercises - give a state and answer the probabilities,
         give the probabilities and answer the state. Through in phase into one of them.</insert>
-    </p>
+    </p>-->
 
-  </section>
+    <exercise label="Bra-Ket-Exercise-1">
+      <title>Bra-Ket Notation Exercise 1</title>
+      <idx>bra-ket notation exercise 1</idx>
+      <statement>
+        <p>Consider the following quantum state:</p>
+        <p>
+          <md>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</md>
+        </p>
+        <p>What is the probability of measuring a 0?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{4}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{\sqrt{3}}{2}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>Bra-ket notation uses probability amplitudes, which are squared to get probabilities.</p>
+      </hint>
+    </exercise>
 
-  <section
+    <exercise label="Bra-Ket-Exercise-2">
+      <title>Bra-Ket Notation Exercise 2</title>
+      <idx>bra-ket notation exercise 2</idx>
+      <introduction>
+        <p>Bra-ket notation gives us a flexible notation for any sort of superposition state.
+          Consider a weighted dice with the following probabilities of each outcome: <ul>
+            <li>0% chance of <m>\ket{1}</m></li>
+            <li>10% chance of <m>\ket{2}</m></li>
+            <li>15% chance of <m>\ket{3}</m></li>
+            <li>40% chance of <m>\ket{4}</m></li>
+            <li>20% chance of <m>\ket{5}</m></li>
+            <li>15% chance of <m>\ket{6}</m></li>
+          </ul>
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>What would the coefficient of the <m>\ket{3}</m> term be?</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{6}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>\frac{\sqrt{15}}{10}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{15}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{2}}</m>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+        <hint>
+          <p>Bra-ket notation uses probability amplitudes, which are squared to get probabilities.</p>
+        </hint>
+      </task>
+      <task>
+        <statement>
+          <p>What would the coefficient of the <m>\ket{5}</m> term be?</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{6}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{5}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\frac{1}{\sqrt{20}}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>1</m>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+        <hint>
+          <p>Bra-ket notation uses probability amplitudes, which are squared to get probabilities.</p>
+        </hint>
+      </task>
+    </exercise>
+
+    <exercise label="Bra-Ket-Exercise-3">
+      <title>Bra-Ket Notation Exercise 3</title>
+      <idx>bra-ket notation exercise 3</idx>
+      <statement>
+        <p>Consider the following quantum state:</p>
+        <p>
+          <image source="L4_3_2_E.png" width="20%" />
+        </p>
+        <p>What is the proper way to express this state in bra-ket notation?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>-\frac{1}{2}\ket{0} + \frac{1}{2} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2}\ket{0} - \frac{1}{2} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>- \frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+  </subsection>
+
+  <subsection
     xml:id="multi-qubit-bra_ket" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Multi-Qubit Bra-Ket Notation</title>
 
@@ -151,7 +338,7 @@
     </p>
 
     <p>This might look familiar: combining independent qubits is analogous to distribution when
-      multiplying two additive terms in algebra!</p>
+      multiplying two additive terms in algebra! Notice how similar the two expansions below look:</p>
 
     <md>
       <mrow>(a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) \amp= ac\ket{00} + ad\ket{01} + bc\ket{10} +
@@ -170,13 +357,96 @@
       qubits, e.g. <m>\ket{00} + \ket{11}</m>. These states have fascinating implications in quantum computing, but
       we'll dig deeper into these states at a later time.</p>
 
-    <p>
-      <insert> Put in some questions here with 2 qubits and 3 qubits - can grab from my homeworks.</insert>
-    </p>
+    <exercise label="Bra-Ket-Multiple-Qubits-1">
+      <title>Bra-ket Notation with Multiple Qubits Exercise 1</title>
+      <idx>bra-ket notation with multiple qubits exercise 1</idx>
+      <statement>
+        <p>Convert the two independent qubits into 2-qubit bra-ket notation:</p>
+        <p>Qubit 1: <m>\frac{\sqrt{3}}{2} \ket{0} + \frac{1}{2} \ket{1}</m>. Qubit 2: <m>1 \ket{0} + 0 \ket{1} </m></p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{00} + 0 \ket{01} + \frac{\sqrt{3}}{2} \ket{10} + 1\ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{00} + \frac{\sqrt{3}}{2} \ket{01} + 0 \ket{10} + 0 \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0\ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{00} + 0 \ket{01} + \frac{\sqrt{3}}{2} \ket{10} + 0\ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          Follow the same rules you follow to multiply algebraic expressions!
+        </p>
+      </hint>
+    </exercise>
 
-  </section>
+    <exercise label="Bra-Ket-Multiple-Qubits-2">
+      <title>Bra-ket Notation with Multiple Qubits Exercise 2</title>
+      <idx>bra-ket notation with multiple qubits exercise 2</idx>
+      <statement>
+        <p>Convert the two independent qubits into 2-qubit bra-ket notation:</p>
+        <p>Qubit 1: <m>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>. Qubit 2: <m>\ket{0}</m></p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{00} + 0 \ket{01} + \frac{1}{\sqrt{2}} \ket{10} + 0\ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>0 \ket{00} + \frac{1}{\sqrt{2}} \ket{01} + \frac{1}{\sqrt{2}} \ket{10} + 0 \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>0 \ket{00} + \frac{1}{\sqrt{2}} \ket{01} + 0 \ket{10} + \frac{1}{\sqrt{2}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{00} + 0 \ket{01} + \ket{10} + \frac{1}{\sqrt{2}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          Follow the same rules you follow to multiply algebraic expressions!
+        </p>
+      </hint>
+    </exercise>
+  </subsection>
 
-  <section
+  <subsection
     xml:id="bra_ket_state_simplification" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Bra-Ket State Simplification</title>
 
@@ -222,7 +492,7 @@
       what matters, not the absolute values. However, the purpose of bra-ket notation is to be
       easily able to tell by looking at it what the probabilities of each outcome are (and still be
       able to perform operations). Therefore, we prefer to keep bra-ket states <term>
-        normalized</term> .</p>
+        normalized</term>.</p>
 
     <p> To normalize a bra-ket state, we want to ensure that the coefficients of each term represent
       probability amplitudes. In order to do so, the sum of the squares of each coefficient should
@@ -233,51 +503,111 @@
       However, none of the answers in this book use this rule because it hides the true
       probability.</p>
 
-    <p>
-      <insert>exercises</insert>
-    </p>
-  </section>
+    <exercise label="Bra-Ket-Simplification">
+      <title>Bra-ket Notation Simplification</title>
+      <idx>bra-ket notation simplification</idx>
+      <statement>
+        <p>Simplify the following bra-ket notation into the conventional form:</p>
+        <p>
+          <md>-\frac{1}{\sqrt{7}} \ket{00} + 0 \ket{10} + \frac{2}{\sqrt{7}} \ket{11} - \frac{\sqrt{2}}{\sqrt{7}} \ket{01}</md>
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{7}} \ket{00} + \frac{\sqrt{2}}{\sqrt{7}} \ket{01} - \frac{2}{\sqrt{7}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>- \frac{1}{\sqrt{7}} \ket{00} - \frac{\sqrt{2}}{\sqrt{7}} \ket{01} + \frac{2}{\sqrt{7}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{7}} \ket{00} + \frac{\sqrt{2}}{\sqrt{7}} \ket{01} + 0 \ket{10} - \frac{2}{\sqrt{7}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{7}} \ket{00} - \frac{2}{\sqrt{7}} \ket{11} + \frac{\sqrt{2}}{\sqrt{7}} \ket{01}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>
+          Follow the same rules you follow to multiply algebraic expressions!
+        </p>
+      </hint>
+    </exercise>
+  </subsection>
 
-  <section xml:id="bra_ket_gate_operation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="bra_ket_gate_operation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Calculating Quantum Gate Results</title>
     <p>Now that we have a way to represent quantum states, the natural next question is: how do we
       perform operations on these states? Bra-ket notation is handy to perform simple operations.
-      Let's walk through an example.</p>
+    </p>
 
-    <p>The general rule for applying a gate to a quantum state is to apply its effects to the
-      appropriate qubit in each term of the bra-ket state. Let's first write down the effects of the
-      gates we have looked at in bra-ket notation:</p>
+    <p>When we first started looking at gates, we thought of them as operating on 0 and 1. Now,
+      however, with our improved understanding of qubits in superposition, we can think about how
+      gates act on a <em>general</em> quantum state. The general rule for applying a gate to a
+      quantum state is to <em>apply its effects to the
+        appropriate qubit in each term of the bra-ket state</em>. This is the beauty of this
+      notation! </p>
+
+    <p>Let's start with the first gate we learned, acting on a general single-qubit state <m>a_0 \ket{0} + a_1 \ket{1}</m>:</p>
 
     <paragraphs>
       <title><c>NOT</c> Gate </title>
-      <p>
-        <m>\ket{0} \xrightarrow{\text{NOT}} \ket{1}, \ket{1} \xrightarrow{\text{NOT}} \ket{0}</m>
-      </p>
+      <p>The <c>NOT</c> gate changes <m>\ket{0}</m> to <m>\ket{1}</m>, and <m>\ket{1}</m> to <m>\ket{0}</m>.</p>
+      <md>
+        <mrow>a_0 \ket{0} + a_1 \ket{1} \amp \xrightarrow{\text{NOT}} a_0 \ket{1} + a_1 \ket{0}</mrow>
+        <mrow> \amp = a_1 \ket{0} + a_0 \ket{1} </mrow>
+      </md>
     </paragraphs>
+
+    <p>After we apply the gate to each term in the state, we <em>reorganize the terms</em> so that
+      they are in the right order according to our convention.</p>
+
+    <image source="GeneralNOT2.png" width="40%" />
+
+    <p>What about the <c>H</c> gate? We apply our knowledge of how the <c>H</c> gate acts on the basis
+      states, <m>\ket{0}</m> and <m>\ket{1}</m>:</p>
 
     <paragraphs>
       <title><c>H</c> Gate </title>
-      <p>
-        <m>\ket{0} \xrightarrow{\text{H}} \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1},
-        \ket{1} \xrightarrow{\text{H}} \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}</m>
-      </p>
+      <p>The <c>H</c> gate changes <m>\ket{0}</m> to a 50/50 superposition with positive phase, and <m>\ket{1}</m>
+        to a 50/50 superposition with negative phase.</p>
+      <md>
+        <mrow>a_0 \ket{0} + a_1 \ket{1} \amp \xrightarrow{\text{H}} a_0 \Big( \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \Big) + a_1 \Big( \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} \Big)</mrow>
+        <mrow>\amp = \frac{1}{\sqrt{2}} (a_0 + a_1) \ket{0} + \frac{1}{\sqrt{2}} (a_0 - a_1) \ket{1}  </mrow>
+      </md>
     </paragraphs>
 
-    <p>Now, when applying gates on a bra-ket state, all you need to do is apply this transformation
-      on each term in the expression. Let's start with an example that you already know the result
-      for: applying an <c>H</c> gate on the <m>\ket{+}</m> state. From our earlier discussions, we know that
-      the output of this operation is <m>\ket{0}</m>. Let's use our brand-new mathematical model to verify
-      this behavior! </p>
+    <p>How does this look on a specific state?</p>
 
-    <p>
-      Let's first remind ourselves how the equal superposition state with positive phase is
-      represented in bra-ket notation:</p>
+    <example>
+      <title>Applying the <c>H</c> gate to the <m>\ket{+}</m> state</title>
+      <p> From our earlier discussions, we know that the output of this operation is <m>\ket{0}</m>. Let's
+        use our brand-new mathematical model to verify this behavior! </p>
 
-    <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</md>
+      <p>
+        Let's first remind ourselves how the equal superposition state with positive phase is
+        represented in bra-ket notation:</p>
 
-    <p>Now, let's apply the <c>H</c> gate to each of the terms in the expression:</p>
+      <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</md>
 
-    <md>
+      <p>Now, let's apply the <c>H</c> gate to each of the terms in the expression:</p>
+
+      <md>
       <mrow>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \amp\xrightarrow{\text{H}}
         \frac{1}{\sqrt{2}} \Big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\Big) +
         \frac{1}{\sqrt{2}} \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) </mrow>
@@ -286,12 +616,59 @@
       <mrow>\amp= \ket{0}</mrow>
     </md>
 
+      <p>Voila!</p>
+    </example>
+
+    <exercise label="Bra-Ket-Single-Qubit-Gates">
+      <title>Bra-Ket Notation: Applying Single-Qubit Gates</title>
+      <idx>Bra-Ket Notation: Applying Single-Qubit Gates</idx>
+      <statement>
+        <p>The <c>NOT</c> operator is applied to the initial vector: <m>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>. What will the result be
+          in bra-ket notation?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{\sqrt{3}}{2} \ket{0} + \frac{1}{2} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct! While the <c>NOT</c> operator switches the probabilities of the <m>\ket{0}</m> and <m>\ket{1}</m>
+              terms, since they are equal, there is no overall effect.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              Cannot be determined
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
     <p>What about two-qubit gates, like <c>SWAP</c> or <c>CNOT</c>?</p>
 
     <paragraphs>
       <title><c>SWAP</c> Gate</title>
       <p> For the <c>SWAP</c> gate, swap the values of the two qubits that are being swapped. This looks
-        like <m>\ket{xy} \xrightarrow{\text{SWAP}(1,2)} \ket{yx}</m>.</p>
+        like <m>\ket{xy} \xrightarrow{\text{SWAP}(1,2)} \ket{yx}</m>. Here, the <m>(1, 2)</m> indicates that we are swapping the first and second qubits
+        in our state (this will prove useful when your state has more than 2 qubits).</p>
     </paragraphs>
 
     <paragraphs>
@@ -310,14 +687,56 @@
 
       <p>In the first term, the control is 0, so this term does not change. In the second term, the
         control is 1, so we flip the second qubit in the term.</p>
+
+      <p>Once again, after applying your gates, don't forget to <em>reorganize the terms</em> so
+        that they are in the right order according to our convention!</p>
     </paragraphs>
 
-    <p>
-      <insert>exercises, 2 or 3</insert>
-    </p>
+    <exercise label="Bra-Ket-Two-Qubit-Gates">
+      <title>Bra-Ket Notation: Applying Two-Qubit Gates</title>
+      <idx>Bra-Ket Notation: Applying Two-Qubit Gates</idx>
+      <statement>
+        <p>The <c>SWAP</c> operator is applied to the initial vector: <m>a_0 \ket{00} + a_1 \ket{01}+ a_2 \ket{10}+ a_3 \ket{11}</m>. What will the result be
+          in bra-ket notation?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>a_0 \ket{00} + a_1 \ket{01}+ a_2 \ket{10}+ a_3 \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>a_3 \ket{00} + a_2 \ket{01}+ a_1 \ket{10}+ a_0 \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>a_0 \ket{00} + a_2 \ket{01}+ a_1 \ket{10}+ a_3 \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>a_1 \ket{00} + a_0 \ket{01}+ a_3 \ket{10}+ a_2 \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>First apply the <c>SWAP</c> gate as we saw above. Then, reorganize the terms based on our
+          conventional order.</p>
+      </hint>
+    </exercise>
 
     <p>While bra-ket notation is handy to keep track of probabilities and calculate simple gates,
       it starts becoming more and more unwieldy with more gates and more complex states. Is there
       perhaps another mathematical model we can use to help us out?</p>
-  </section>
+  </subsection>
 </section>
