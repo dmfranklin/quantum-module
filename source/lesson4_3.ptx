@@ -372,7 +372,7 @@
     <title>Calculate State at D</title>
     <idx>L4_3_Calculate_D</idx>
     <statement>
-      <p>Describe the state the qubit at C (after the second <c>H</c> gate).</p>
+      <p>Describe the state the qubit at D (after the second <c>H</c> gate).</p>
     </statement>
     <choices randomize="yes">
       <choice>
