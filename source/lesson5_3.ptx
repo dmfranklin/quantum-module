@@ -52,7 +52,7 @@
         <p>If <m>H</m> is heads and <m>T</m> is tails, what is the probability of getting heads and
           tails for the following state?</p>
         <p>
-          <md>\frac{1}{\sqrt{3}} \ket{H} + \frac{2}{\sqrt{3}} \ket{T}</md>
+          <md>\frac{1}{\sqrt{3}} \ket{H} + \frac{\sqrt{2}}{\sqrt{3}} \ket{T}</md>
         </p>
       </statement>
       <choices randomize="yes">
@@ -67,7 +67,7 @@
         </choice>
         <choice>
           <statement>
-            <p><m>\frac{1}{\sqrt{3}}</m> chance of heads, <m>\frac{2}{\sqrt{3}}</m> chance of tails</p>
+            <p><m>\frac{1}{\sqrt{3}}</m> chance of heads, <m>\frac{\sqrt{2}}{\sqrt{3}}</m> chance of tails</p>
           </statement>
           <feedback>
             <p>Remember that the bra-ket notation shows probability amplitudes, not probability.</p>
@@ -116,7 +116,8 @@
 
     <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} </md>
 
-    <p> If there is negative phase, then it will be placed on the 1 state: </p>
+    <p> If there is negative phase, then a negative sign will be placed in front of the <m>\ket{1}</m>
+      state: </p>
     <md>\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </md>
 
     <p>This convention is in line with our convention of placing the negative sign on the black ball
