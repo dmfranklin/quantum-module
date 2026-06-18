@@ -65,7 +65,7 @@
     </md>
 
     <p> However, when the state is in superposition, the <c>Z</c> gate introduces a difference in
-      relative phase between the input and the output, since a negative phase is only introduced on
+      relative phase between the input and the output, since a negative sign is only introduced on
       the <m>\ket{1}</m> term.</p>
 
     <md>

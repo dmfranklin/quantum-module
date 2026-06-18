@@ -18,9 +18,15 @@
     <p> Bra-ket notation favors ease of calculation over easy readability of the probability,
       but it is easier to read than its alternative, vector notation.</p>
 
-    <p> Each outcome is expressed in a <term>ket</term>, which you've already seen in this textbook: <m>\ket{0}</m>
-      , <m>\ket{+}</m>, etc. Often, a general quantum state is described using the Greek letter psi: <m>\ket{\psi}</m>
-      .</p>
+    <p> Each outcome is expressed in a <term>ket</term>, which you've already seen in this textbook: <m>\ket{0}
+    </m>
+      , <m>\ket{+}</m>, etc. Often, a general quantum state is described using the Greek letter psi: <m>\ket{\psi}
+    </m>
+      :</p>
+
+    <md>
+      \ket{\psi} = a \ket{0} + b \ket{1}
+    </md>
 
     <sidebyside widths="50% 50%" valign="top">
       <p> In the figure to the right, we are expressing the probabilities of measuring apples or
@@ -321,6 +327,19 @@
     xml:id="multi-qubit-bra_ket" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Multi-Qubit Bra-Ket Notation</title>
 
+    <p> Now that we've seen how to represent a single qubit state in bra-ket notation, the natural
+      next question is: "How do we represent a two-qubit state?" Luckily for us, bra-ket notation's
+      flexibility comes in handy here. We know that an individual qubit only has two possible
+      outcomes: 0 or 1. For a pair of qubits, however, we have
+      each combination of possible outcomes: 00, 01, 10, 11. Thus, the general bra-ket notation for
+      a 2-qubit state looks like:</p>
+
+    <md>\ket{\psi} = a \ket{00} + b \ket{01} + c \ket{10} + d \ket{11} </md>
+
+    <p>Looking at the state above, we can see that <m>a</m> is the probability amplitude for the
+      outcome <m>00</m>, meaning there is a <m>a^2</m> chance of measuring <m>00</m>. This applies to <m>b</m>
+      , <m>c</m>, and <m>d</m>.</p>
+
     <p> We can also combine two independent qubits into a 2-qubit bra-ket notation, just like we
       represented two qubits using our visual representation (<xref ref="sec-two-qubit-visual" />).
       In our notation, we call this operation a <term>tensor product</term> of the two qubits, using
@@ -329,11 +348,10 @@
 
     <md> \ket{0} \otimes \ket{1} = \ket{01} </md>
 
-    <p> An individual qubit only has two possible outcomes: 0 or 1. For a pair of qubits, we have
-      each combination of possible outcomes: 00, 01, 10, 11. The tricky part is how to calculate the
-      probability of those combined events from the single qubit probabilities when the individual
-      qubits are in superposition. This is when our independent probability calculations come into
-      play <mdash /> you just multiply the appropriate values together. </p>
+    <p> The tricky part is calculating the probability of the combined values from the single qubit
+      probabilities when the individual qubits are in superposition. This is when our independent
+      probability calculations come into play <mdash /> you just multiply the appropriate values
+      together. </p>
 
     <p>
       <image source="L5.3.1to2qubitsbraket.png" width="60%" />
@@ -446,6 +464,24 @@
         </p>
       </hint>
     </exercise>
+
+    <note>
+      <title>A note on phase</title>
+      <p> In 1-qubit notation, we introduced the idea of <em>positive</em> and <em>negative</em>
+        phase, which we represented (by convention) with the sign on the <m>\ket{1}</m> term in the
+        expression. However, in 2-qubit (and higher), we have more than two terms. Thus, when we say
+        that a multi-qubit state has negative phase, we also need to be precise about <em>which term
+        the negative sign
+          is on</em> <mdash /> different placements of the negative sign results in different quantum
+        states. These two states are <em>not equivalent</em>:</p>
+
+      <md>
+        <mrow>\frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} +\frac{1}{2} \ket{11}</mrow>
+        <mrow>\frac{1}{2} \ket{00} + \frac{1}{2} \ket{01} - \frac{1}{2} \ket{10} +\frac{1}{2} \ket{11}</mrow>
+      </md>
+
+      <p>We'll explore phase and equivalent states further in a future chapter.</p>
+    </note>
   </subsection>
 
   <subsection
