@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="C6_Phase_Again" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Phase Again</title>
+
+  <introduction>
+    <p> In this chapter, we will explore some of the interesting behaviors surrounding phase in
+      quantum systems, to better understand how phase impacts quantum states and is used in quantum
+      algorithms.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="lesson6_1.ptx" />
+  <xi:include href="lesson6_2.ptx" />
+
+</chapter>

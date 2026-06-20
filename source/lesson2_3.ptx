@@ -3,12 +3,9 @@
 <section xml:id="lesson2_3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exploring the <c>CNOT</c> Gate</title>
   <sidebyside widths="80% 20%" valign="middle">
-    <p>
-    Now we are going to use the same method to explore how the <c>CNOT</c> gate works.
-    You will try all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>,
-    <m>\ket{10}</m>, and <m>\ket{11}</m>) to determine the relationship between
-    inputs and outputs for the <c>CNOT</c> gate.
-    </p>
+    <p> Now we are going to use the same method to explore how the <c>CNOT</c> gate works. You will try
+      all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, and <m>\ket{11}</m>) to determine the
+      relationship between inputs and outputs for the <c>CNOT</c> gate. </p>
     <image source="CNOT.png" width="40%" />
   </sidebyside>
 
@@ -16,23 +13,18 @@
     <title>Creating a <c>CNOT</c> gate</title>
     <sidebyside widths="75% 25%" valign="top">
 
-      <p>
-        To create a <c>CNOT</c> gate, you will need to:
-      <ol>
-        <li>Drag a spot (⚫) onto the top qubit,</li>
-        <li>Drag a <c>NOT</c> gate tile onto the bottom qubit, aligning it vertically with the spot,</li>
-        <li>Click the number at the top of the column to select them as a group, and</li>
-        <li>Click the "C/S" button to connect the tiles.</li>
-      </ol>
-      When you are finished, you should see a line connecting the two tiles,
-      indicating that you have created a <c>CNOT</c> gate.
-      </p>
+      <p> To create a <c>CNOT</c> gate, you will need to: <ol>
+          <li>Drag a spot (⚫) onto the top qubit,</li>
+          <li>Drag a <c>NOT</c> gate tile onto the bottom qubit, aligning it vertically with the spot,</li>
+          <li>Click the number at the top of the column to select them as a group, and</li>
+          <li>Click the "C/S" button to connect the tiles.</li>
+        </ol> When you are finished,
+        you should see a line connecting the two tiles, indicating that you have created a <c>CNOT</c>
+        gate. </p>
       <image source="L2.3_CNOT.gif" width="40%" />
     </sidebyside>
 
-    <p>
-      Use the circuit builder below to make a <c>CNOT</c> gate.
-    </p>
+    <p> Use the circuit builder below to make a <c>CNOT</c> gate. </p>
 
     <interactive aspect="9:9" platform="javascript"
       source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
@@ -48,15 +40,10 @@
 
   <section xml:id="lesson2_3_2">
     <title>Exploring the <c>CNOT</c> Gate</title>
-    <p>
-      Now let's explore how the <c>CNOT</c> gate works using the same method that you used to explore
-      the <c>SWAP</c> gate. Try all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>,
-      <m>\ket{10}</m>, and <m>\ket{11}</m>) to determine the relationship between inputs
-      and outputs for the <c>CNOT</c> gate.
-    </p>
-    <p>
-      Place the spot (⚫) on the top qubit and the <c>NOT</c> on the bottom qubit.
-    </p>
+    <p> Now let's explore how the <c>CNOT</c> gate works using the same method that you used to explore
+      the <c>SWAP</c> gate. Try all four input combinations (<m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, and <m>\ket{11}</m>) to
+      determine the relationship between inputs and outputs for the <c>CNOT</c> gate. </p>
+    <p> Place the spot (⚫) on the top qubit and the <c>NOT</c> on the bottom qubit. </p>
 
     <interactive aspect="9:9" platform="javascript"
       source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
@@ -70,15 +57,11 @@
 
     <exercise label="CNOT_truth_table">
       <title>
-        <c>CNOT</c> Truth Table
-      </title>
-      <idx>CNOT_truth_table</idx>
+        <c>CNOT</c> Truth Table </title>
+      <idx>CNOT truth table</idx>
       <statement>
-        <p>
-          Select the picture that depicts the correct truth table for the <c>CNOT</c> gate.
-          It should show the proper relationship between the four possible input and output
-          combinations.
-        </p>
+        <p> Select the picture that depicts the correct truth table for the <c>CNOT</c> gate. It should
+          show the proper relationship between the four possible input and output combinations. </p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -86,7 +69,8 @@
             <image source="CNOTgate.png" width="100%" />
           </statement>
           <feedback>
-            <p>Yes! The target qubit, the bottom qubit, toggles if and only if the control, the top qubit, is <m>
+            <p>Yes! The target qubit, the bottom qubit, toggles if and only if the control, the top
+              qubit, is <m>
                 \ket{1}</m>.</p>
           </feedback>
         </choice>
@@ -117,21 +101,18 @@
       </choices>
       <hint>
         <p>Use the circuit builder above to make the circuit.
-          The bar graph below the circuit can help you to determine the outputs for different inputs.</p>
-        <p>Try it with <m>\ket{10}</m> and <m>\ket{11}</m>.
-          To do this, you need to use a <c>NOT</c> gates to change the input value <m>\ket{0}</m> to <m>\ket{1}</m>.
-          Then, record the answers.</p>
+          The bar graph below the circuit can help you to determine the outputs for different
+          inputs.</p>
+        <p>Try it with <m>\ket{10}</m> and <m>\ket{11}</m>. To do this, you need to use a <c>NOT</c> gates to change
+          the input value <m>\ket{0}</m> to <m>\ket{1}</m>. Then, record the answers.</p>
       </hint>
     </exercise>
-    <p>
-      Now that you have the full truth table for <c>CNOT</c>, you may want to write it on a page of
-      notes or take a screenshot for future reference. In the following questions, you will be
-      asked to calculate the results of circuits involving <c>NOT</c>, <c>SWAP</c>, and/or <c>CNOT</c> gates.
-    </p>
+    <p> Now that you have the full truth table for <c>CNOT</c>, you may want to write it on a page of
+      notes or take a screenshot for future reference. In the following questions, you will be asked
+      to calculate the results of circuits involving <c>NOT</c>, <c>SWAP</c>, and/or <c>CNOT</c> gates. </p>
     <exercise label="CNOT_Q1">
       <title>
-        <c>CNOT</c> Question #1
-      </title>
+        <c>CNOT</c> Question #1 </title>
       <idx>cnot Q1</idx>
       <statement>
         <p>What is the output of the following circuit?</p>
@@ -186,8 +167,7 @@
 
     <exercise label="CNOT_Q2">
       <title>
-        <c>CNOT</c> Question #2
-      </title>
+        <c>CNOT</c> Question #2 </title>
       <idx>cnot Q2</idx>
       <statement>
         <p>What is the output of the following circuit?</p>

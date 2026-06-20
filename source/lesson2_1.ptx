@@ -6,7 +6,7 @@
   <p>
     The circuit builder allows us to learn about the behavior of a simple gate by trying
     all of the combinations of inputs. We will use the circuit builder to discover the
-    functionality of a new gate, the <c>SWAP</c> gate, which operates on two qubits, but first
+    functionality of a new gate, the <c>SWAP</c> gate, which operates on two qubits; but first
     we will learn how to create multi-qubit gates by connecting gate tiles.
   </p>
   <image source="L2.1_SWAP.png" width="30%" />

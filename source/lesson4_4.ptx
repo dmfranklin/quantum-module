@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-
 <section xml:id="lesson4_4" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Summary</title>
 
-    
-<p>
-To summarize, let's step through the example you just solved. We want to understand
-the behavior we see when we place a measurement betweeen two H gates.</p>
-<p>  <image source="L4.3-measure-in-h-gate-2.png" width="90%" /> </p>
+
+    <p> To summarize, let's step through the example you just solved. We want to understand the
+        behavior we see when we place a measurement betweeen two <c>H</c> gates.</p>
+    <p>
+        <image source="L4.3-measure-in-h-gate-2.png" width="90%" />
+    </p>
 
 
-<p> That measurement collapses the superposition after the first H gate, so the 
-second H gate is receiving a qubit that is either <m>\ket{0}</m> or <m>\ket{1}</m>, not a qubit in superposition.
-The second H gate then places the qubit back into superposition, but the phase is unknown. 
-The second measurement then collapses the superposition, 
-and the outcome is either <m>\ket{0}</m> or <m>\ket{1}</m> with equal probability.</p>
+    <p> That measurement collapses the superposition after the first <c>H</c> gate, so the second <c>H</c>
+        gate is receiving a qubit that is either <m>\ket{0}</m> or <m>\ket{1}</m>, not a qubit in superposition.
+        The second <c>H</c> gate then places the qubit back into superposition, but the phase is
+        unknown. The second measurement then collapses the superposition, and the outcome is either <m>\ket{0}</m>
+        or <m>\ket{1}</m> with equal probability.</p>
 
-<p>  <image source="L4.3-summary-2.png" width="90%" /> </p>
+    <p>
+        <image source="L4.3-summary-2.png" width="90%" />
+    </p>
 
-<p> If there is no measurement between the H gates, however, the second H gate receives an input that is in superposition 
-with a 50/50 probability of being <m>\ket{0}</m> or <m>\ket{1}</m> and phase corresponding to whether the initial
-input was black or white. The second H gate then places the qubit back into a state that is either <m>\ket{0}</m> 
-or <m>\ket{1}</m> with 100% probability, depending on the initial input.</p>
+    <p> If there is no measurement between the <c>H</c> gates, however, the second <c>H</c> gate
+        receives an input that is in superposition with a 50/50 probability of being <m>\ket{0}</m> or <m>\ket{1}</m>
+        and phase corresponding to whether the initial input was black or white. The second <c>H</c>
+        gate then places the qubit back into a state that is either <m>\ket{0}</m> or <m>\ket{1}</m> with 100%
+        probability, depending on the initial input.</p>
 
 
-<p>  <image source="L4.3-summary-1.png" width="90%" /> </p>
+    <p>
+        <image source="L4.3-summary-1.png" width="90%" />
+    </p>
 
-  
 
 </section>

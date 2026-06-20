@@ -41,7 +41,7 @@
             <p>There were only two "eat cookie" operations.</p>
           </feedback>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>
             <p>1 cookie</p>
           </statement>
@@ -49,7 +49,7 @@
             <p>Yes! Start with 3 cookies, eat 2 cookies, and you are left with 1 cookie.</p>
           </feedback>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>2 cookies</p>
           </statement>
@@ -154,25 +154,22 @@
     <ul>
       <li>
         <p>
-          <c>INCREMENT</c>: Add one to a number.
-        </p>
+          <c>INCREMENT</c>: Add one to a number. </p>
         <image source="1-1-2_MathCircuitsINC.png" width="75%" />
       </li>
       <li>
         <p>
-          <c>DECREMENT</c>: Subtract one from a number.
-        </p>
+          <c>DECREMENT</c>: Subtract one from a number. </p>
         <image source="1-1-2_MathCircuitsDEC.png" width="75%" />
       </li>
       <li>
         <p>
-          <c>NEGATE</c>: Negate a number.
-        </p>
+          <c>NEGATE</c>: Negate a number. </p>
         <image source="1-1-2_MathCircuitsNEGATE.png" width="75%" />
       </li>
     </ul>
 
-    <exercise label="Math Operations 1">
+    <exercise label="Math_Operations_1">
       <title>Applying a Math Operation #1</title>
       <idx>math operation 1</idx>
       <statement>
@@ -193,8 +190,7 @@
             <p>6</p>
           </statement>
           <feedback>
-            <p>There is one <c>INCREMENT</c> operation, but it looks like you applied the <c>
-                DECREMENT</c> operation.</p>
+            <p>There is one <c>INCREMENT</c> operation, but it looks like you applied the <c>DECREMENT</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -202,8 +198,7 @@
             <p>-7</p>
           </statement>
           <feedback>
-            <p>There is one <c>Increment</c> operation, but it looks like you applied the <c>
-                Negate</c> operation.</p>
+            <p>There is one <c>INCREMENT</c> operation, but it looks like you applied the <c>NEGATE</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -211,7 +206,7 @@
             <p>11</p>
           </statement>
           <feedback>
-            <p>Did you apply the “Increment” operation?</p>
+            <p>Did you apply the <c>INCREMENT</c> operation?</p>
           </feedback>
         </choice>
       </choices>
@@ -220,7 +215,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Operations 2">
+    <exercise label="Math_Operations_2">
       <title>Applying a Math Operation #2</title>
       <idx>math operation 2</idx>
       <statement>
@@ -241,8 +236,7 @@
             <p>4</p>
           </statement>
           <feedback>
-            <p>There is one <c>DECREMENT</c> operation, but it looks like you applied the <c>
-                INCREMENT</c> operation.</p>
+            <p>There is one <c>DECREMENT</c> operation, but it looks like you applied the <c>INCREMENT</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -250,8 +244,7 @@
             <p>-3</p>
           </statement>
           <feedback>
-            <p>There is one <c>DECREMENT</c> operation, but it looks like you applied the <c>NEGATE</c>
-              operation.</p>
+            <p>There is one <c>DECREMENT</c> operation, but it looks like you applied the <c>NEGATE</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -268,7 +261,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Operations 3">
+    <exercise label="Math_Operations_3">
       <title>Applying a Math Operation #3</title>
       <idx>math operation 3</idx>
       <statement>
@@ -289,8 +282,7 @@
             <p>12</p>
           </statement>
           <feedback>
-            <p>There is one <c>NEGATE</c> operation, but it looks like you applied the <c>INCREMENT</c>
-              operation.</p>
+            <p>There is one <c>NEGATE</c> operation, but it looks like you applied the <c>INCREMENT</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -298,8 +290,7 @@
             <p>10</p>
           </statement>
           <feedback>
-            <p>There is one <c>NEGATE</c> operation, but it looks like you applied the <c>DECREMENT</c>
-              operation.</p>
+            <p>There is one <c>NEGATE</c> operation, but it looks like you applied the <c>DECREMENT</c> operation.</p>
           </feedback>
         </choice>
         <choice>
@@ -317,35 +308,31 @@
       </hint>
     </exercise>
 
-    <p> We can also define two-variable gates:
-    <ul>
-      <li>
-        <p>
-          <c>ADD</c>: Add two numbers and place the result in the target, indicated by <c>*</c>.
-          The other input is unchanged.
-        </p>
-        <image source="1-1-2_MathCircuitsADD.png" width="75%" />
-      </li>
-      <li>
-        <p>
-          <c>CONTROLLED INCREMENT</c>: Increment the target if and only if the control is odd.
-          The target is indicated by <c>*</c>, the control remains unchanged.
-        </p>
-        <image source="1-1-2_MathCircuitsC-INC.png" width="75%" />
-      </li>
-    </ul>
+    <p> We can also define two-variable gates: <ul>
+        <li>
+          <p>
+            <c>ADD</c>: Add two numbers and place the result in the target, indicated by <c>*</c>. The
+      other input is unchanged. </p>
+          <image source="1-1-2_MathCircuitsADD.png" width="75%" />
+        </li>
+        <li>
+          <p>
+            <c>CONTROLLED INCREMENT</c>: Increment the target if and only if the control is odd. The target is indicated
+      by <c>*</c>, the control remains unchanged. </p>
+          <image source="1-1-2_MathCircuitsC-INC.png" width="75%" />
+        </li>
+      </ul>
     </p>
 
     <p> These two-variable gates bring up a few details that cannot be ignored. First: <em>where
         does the
         result go? </em> There are two inputs. In mathematics, there is only one result; in
-      programming, we specify where the result goes by writing <c>variable = expression</c>. We
-      don't have this functionality in quantum operations. In quantum computing, if there are two
-      inputs, there are two outputs—and we need to define what both of those outputs are. In both of
-      the gates defined above, we will place the result in the target, leaving the other output to
-      match its input. </p>
+      programming, we specify where the result goes by writing <c>variable = expression</c>. We don't have this
+      functionality in quantum operations. In quantum computing, if there are two inputs, there are
+      two outputs—and we need to define what both of those outputs are. In both of the gates defined
+      above, we will place the result in the target, leaving the other output to match its input. </p>
 
-    <exercise label="Math Operations 4">
+    <exercise label="Math_Operations_4">
       <title>Applying a two-variable Math Operation #1</title>
       <idx>math operation 4</idx>
       <statement>
@@ -361,7 +348,8 @@
           </statement>
           <feedback>
             <p>Yes! If you add 5 and 2, the total is 7. The total replaces the original value in <m>
-                x</m>, and the <m>y</m> value remains the same.</p>
+                x</m>,
+              and the <m>y</m> value remains the same.</p>
           </feedback>
         </choice>
         <choice>
@@ -379,8 +367,8 @@
             </p>
           </statement>
           <feedback>
-            <p>The circuit has one <c>ADD</c> operation. The sum of <m>x</m> and <m>y</m> should
-              replace the original <m>x</m> value, and the <m>y</m> value should remain unchanged.</p>
+            <p>The circuit has one <c>ADD</c> operation. The sum of <m>x</m> and <m>y</m> should replace
+              the original <m>x</m> value, and the <m>y</m> value should remain unchanged.</p>
           </feedback>
         </choice>
         <choice>
@@ -395,12 +383,12 @@
         </choice>
       </choices>
       <hint>
-        <p>The <c>ADD</c> operation calculates the sum of <m>x</m> and <m>y</m>. The calculated
-          total is stored in <m>x</m> (replacing its value) and the <m>y</m> value remains the same.</p>
+        <p>The <c>ADD</c> operation calculates the sum of <m>x</m> and <m>y</m>. The calculated total is
+          stored in <m>x</m> (replacing its value) and the <m>y</m> value remains the same.</p>
       </hint>
     </exercise>
 
-    <exercise label="Math Operations 5">
+    <exercise label="Math_Operations_5">
       <title>Applying a two-variable Math Operation #2</title>
       <idx>math operation 5</idx>
       <statement>
@@ -420,40 +408,40 @@
         </choice>
         <choice>
           <statement>
-            <p>x = 10; y = 6</p>
+            <p><m>x = 10</m>; <m>y = 6</m></p>
           </statement>
           <feedback>
-            <p>Looks like you incremented the Target. The <c>CONTROLLED INCREMENT</c> operation only
-              increments the Target value if the Control is odd.</p>
+            <p>Looks like you incremented the Target. The <c>CONTROLLED INCREMENT</c> operation only increments the
+              Target value if the Control is odd.</p>
           </feedback>
         </choice>
         <choice>
           <statement>
-            <p>x = 9; y = 7</p>
+            <p><m>x = 9</m>; <m>y = 7</m></p>
           </statement>
           <feedback>
-            <p>Looks like you incremented the Control. The <c>CONTROLLED INCREMENT</c> operation
-              increments the Target value if the Control is odd.</p>
+            <p>Looks like you incremented the Control. The <c>CONTROLLED INCREMENT</c> operation increments the Target
+              value if the Control is odd.</p>
           </feedback>
         </choice>
         <choice>
           <statement>
-            <p>x = 15; y = 6</p>
+            <p><m>x = 15</m>; <m>y = 6</m></p>
           </statement>
           <feedback>
-            <p>Did you apply the correct operation? There is one <c>CONTROLLED INCREMENT</c>
-              operation in the circuit.</p>
+            <p>Did you apply the correct operation? There is one <c>CONTROLLED INCREMENT</c> operation in the circuit.</p>
           </feedback>
         </choice>
       </choices>
       <hint>
-        <p>The <c>CONTROLLED INCREMENT</c> operation adds 1 to the value of the Target, if the
-          Control value is odd. If the Control is even, then the Target is unchanged.</p>
+        <p>The <c>CONTROLLED INCREMENT</c> operation adds 1 to the value of the Target, if the Control value is odd. If
+          the Control is even, then the Target is unchanged.</p>
       </hint>
     </exercise>
 
     <p>Now, consider two starting variables, <m>x</m> and <m>y</m>. We will start with an input of <m>
-        x=5</m> and <m>y=3</m>. Consider the following sequence of operations:</p>
+        x=5</m>
+      and <m>y=3</m>. Consider the following sequence of operations:</p>
     <ul>
       <li>
         <m>x = x + 1</m>
@@ -471,7 +459,7 @@
     <p>The following circuit would depict that sequence of operations:</p>
     <image source="1-1-2_MathCircuitsSEQ.png" width="100%" />
 
-    <exercise label="Math Circuit 1">
+    <exercise label="Math_Circuit_1">
       <title>Solving a Math Circuit with two inputs #1</title>
       <idx>math circuit 6</idx>
       <statement>
@@ -489,10 +477,10 @@
           <feedback>
             <p>Yes! There are two operations applied to each input:</p>
             <ul>
-              <li>The input (<m>x = 4</m>) is incremented by one (<m>x = 5</m>), and then the value
-                is negated (<m>x = -5</m>).</li>
-              <li>The input (<m>y = 2</m>) is decremented by one (<m>y = 1</m>), and then it is
-                decremented again (<m>y = 0</m>).</li>
+              <li>The input (<m>x = 4</m>) is incremented by one (<m>x = 5</m>), and then the value is negated
+                (<m>x = -5</m>).</li>
+              <li>The input (<m>y = 2</m>) is decremented by one (<m>y = 1</m>), and then it is decremented
+                again (<m>y = 0</m>).</li>
             </ul>
             <p>The resulting outputs are: <m>x = -5</m> and <m>y = 0</m>.</p>
           </feedback>
@@ -541,7 +529,7 @@
       </hint>
     </exercise>
 
-    <exercise label="Math Circuit 2">
+    <exercise label="Math_Circuit_2">
       <title>Solving a Math Circuit with two inputs #2</title>
       <idx>math circuit 7</idx>
       <statement>
@@ -570,9 +558,8 @@
           </statement>
           <feedback>
             <p>Yes!! First, the <m>x</m> variable is decremented. Then, the <m>y</m>-variable is
-              incremented. Next, the sum of <m>x</m> and <m>y</m> is stored in the <m>x</m>
-              variable. Finally, the <m>y</m> variable is negated. The final outputs are: <m>x = 6</m>
-              and <m>y = -6</m>. </p>
+              incremented. Next, the sum of <m>x</m> and <m>y</m> is stored in the <m>x</m> variable.
+              Finally, the <m>y</m> variable is negated. The final outputs are: <m>x = 6</m> and <m>y = -6</m>. </p>
           </feedback>
         </choice>
         <choice>
@@ -582,7 +569,8 @@
           <feedback>
             <p>Not quite. Double check that you applied the correct operations. Did you apply them
               in the correct order, left to right? Did you apply them to the correct variable, <m>
-                x</m> or <m>y</m>?</p>
+                x</m>
+              or <m>y</m>?</p>
           </feedback>
         </choice>
         <choice>
@@ -592,7 +580,8 @@
           <feedback>
             <p>Not quite. Double check that you applied the correct operations. Did you apply them
               in the correct order, left to right? Did you apply them to the correct variable, <m>
-                x</m> or <m>y</m>?</p>
+                x</m>
+              or <m>y</m>?</p>
           </feedback>
         </choice>
         <choice>
@@ -602,7 +591,8 @@
           <feedback>
             <p>Not quite. Double check that you applied the correct operations. Did you apply them
               in the correct order, left to right? Did you apply them to the correct variable, <m>
-                x</m> or <m>y</m>?</p>
+                x</m>
+              or <m>y</m>?</p>
           </feedback>
         </choice>
       </choices>
@@ -626,10 +616,10 @@
             <image source="MathCircuit8a.png" width="75%" />
           </statement>
           <feedback>
-            <p>Yes! Start with <m>x = 3</m> and <m>y = 2</m>; the <c>CONTROLLED INCREMENT</c> has no
-              effect, because the control is even; and finally the sum of <m>x</m> and <m>y</m> is
-              stored in <m>x</m> (<m>
-                y</m> remains unchanged). The result is <m>x = 5</m> and <m>y = 2</m>.</p>
+            <p>Yes! Start with <m>x = 3</m> and <m>y = 2</m>; the <c>CONTROLLED INCREMENT</c> has no effect, because the control
+              is even; and finally the sum of <m>x</m> and <m>y</m> is stored in <m>x</m> (<m>
+                y</m>
+              remains unchanged). The result is <m>x = 5</m> and <m>y = 2</m>.</p>
           </feedback>
         </choice>
         <choice>
@@ -661,8 +651,8 @@
         <p>Look at where the (target) says to place the addition result.</p>
       </hint>
       <hint>
-        <p>Remember that the <c>CONTROLLED INCREMENT</c> operation increments the target if—and only
-          if—the control is <em>odd</em>.</p>
+        <p>Remember that the <c>CONTROLLED INCREMENT</c> operation increments the target if—and only if—the control is <em>
+          odd</em>.</p>
       </hint>
     </exercise>
 
@@ -702,10 +692,11 @@
             <image source="MathCircuit8d.png" width="75%" />
           </statement>
           <feedback>
-            <p>Yes! Start with <m>x = 6</m> and <m>y = 1</m>; the <c>ADD</c> operation stores the
-              sum of <m>x</m> and <m>
+            <p>Yes! Start with <m>x = 6</m> and <m>y = 1</m>; the <c>ADD</c> operation stores the sum of <m>x</m>
+              and <m>
                 y</m> in <m>x</m> (<m>y</m> remains unchanged); and finally the <c>CONTROLLED
-                INCREMENT</c> adds 1 to <m>x</m>, because the control is odd.</p>
+                INCREMENT</c> adds 1 to <m>x</m>,
+              because the control is odd.</p>
           </feedback>
         </choice>
       </choices>
@@ -713,8 +704,8 @@
         <p>Look at where the (target) says to place the addition result.</p>
       </hint>
       <hint>
-        <p>Remember that the <c>CONTROLLED INCREMENT</c> operation, increments the target if—and
-          only if—the control is <em>odd</em>.</p>
+        <p>Remember that the <c>CONTROLLED INCREMENT</c> operation, increments the target if—and only if—the control is <em>
+          odd</em>.</p>
       </hint>
     </exercise>
   </section>
@@ -732,7 +723,7 @@
     </li>
     <li>
       <p>The left to right convention depicts the <em>order operations are applied, not physical
-          movement</em>.</p>
+        movement</em>.</p>
     </li>
     <li>
       <p>Multiple operations may be depicted in the same circuit.</p>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson6_2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Phase Kickback</title>
+
+  <section xml:id="sec-phase-kickback" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Phase Kickback</title>
+
+    <p> In our earlier exploration of the <c>CNOT</c> gate (from <xref ref="lesson2_3_1" />), we saw
+      that when a <c>CNOT</c> gate is applied, it appears that only the <em>target qubit</em>'s state
+      might change (depending on the value of the control qubit). What happens when phase is thrown
+      in the mix? Let's explore together... </p>
+
+    <p> Let's start by setting up a two-qubit system in the <m>\ket{01}</m> state, and applying an <c>H</c>
+      gate to each. We know from our knowledge of the <c>H</c> gate that this will give us two qubits
+      in superposition, one with positive phase and one with negative. </p>
+
+    <p>
+      <image source="6-2-Phase-Kickback-1.png" width="60%" />
+    </p>
+
+    <p>Since the <c>H</c> gates are acting independently on each qubit, we can separately perform the
+      operation on each qubit:</p>
+
+    <md>\ket{01} = \ket{0} \otimes \ket{1} \xrightarrow{\text{H}(1), \text{H}(2)}
+        (\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}) \otimes (\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1})
+    </md>
+
+    <p>Let's simplify this state by distributing the terms:</p>
+    <md>
+        = \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11}
+    </md>
+
+    <p>Now, we apply a <c>CNOT</c> gate to this state. How does this affect our state? Remember, to
+      apply a gate to a bra-ket state, we apply the gate to each individual term:</p>
+
+    <p>
+      <image source="6-2-Phase-Kickback-2.png" width="70%" />
+    </p>
+
+    <md>
+    \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11}
+    \xrightarrow{\text{CNOT}(1 \rightarrow 2)}
+    \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{11} - \frac{1}{2} \ket{10}
+    </md>
+
+    <p>Since only the third and fourth terms have a 1 in the control, the second qubit in each of
+      those terms is flipped. Now let's follow our bra-ket convention to reorder the terms to be in
+      increasing order of <m>00</m>, <m>01</m>, <m>10</m>, <m>11</m>:</p>
+
+    <md>
+      \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} - \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11}
+    </md>
+
+    <p>We're almost there! It's hard to interpret this state in its 2-qubit form, so let's try to
+      separate this state into two 1-qubit expressions. We start by factoring our common factors
+      from the terms. From the first two terms:</p>
+
+    <md>
+        \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} = \frac{1}{\sqrt{2}} \ket{0} \otimes \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big)
+    </md>
+
+    <p>
+      And from the last two terms:</p>
+
+    <md>
+      - \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11} = - \frac{1}{\sqrt{2}} \ket{1} \otimes
+      \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big)
+    </md>
+
+    <p>If you look closely, you'll see that the second qubit in each of those terms are identical <mdash />
+      they're both in equal superposition with negative phase! This means we can factor it out:</p>
+
+    <md>
+        <mrow>
+          \amp\frac{1}{\sqrt{2}} \ket{0} \otimes \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) - \frac{1}{\sqrt{2}} \ket{1} \otimes \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big)
+        </mrow>
+        <mrow>
+        = \amp\Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) \otimes \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big)
+        </mrow>
+    </md>
+
+    <p> Woah... the output of the <c>CNOT</c> is two qubits in equal superposition, but <em>both</em>
+      have negative phase now! </p>
+
+    <p>
+      <image source="6-2-Phase-Kickback-3.png" width="70%" />
+    </p>
+
+    <p> Specifically, we see the following behavior for the <c>CNOT</c> gate:</p>
+
+    <md>
+        \ket{+} \otimes \ket{-} \xrightarrow{\text{CNOT}(1 \rightarrow 2)} \ket{-} \otimes \ket{-}
+      </md>
+
+    <p> We see that in this scenario, the <em>target qubit's phase</em> is being "kicked back" to
+      the control, even though we expect the <c>CNOT</c> gate to only affect the target, when phase is
+      involved, the <em>control's</em> state changes. This phenomenon is called <term>phase kickback</term>,
+      and this is an extremely useful and versatile tool that is used in quantum computing
+      algorithms.</p>
+
+    <p>Here's how phase kickback looks in visual representation:</p>
+
+    <p>
+      <image source="6-2-Phase-Kickback-Visual-Rep.png" width="90%" />
+    </p>
+  </section>
+
+</section>

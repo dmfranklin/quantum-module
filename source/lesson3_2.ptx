@@ -1,61 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-
 <section xml:id="lesson3_2" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Randomness</title>
+  <title>Randomness</title>
 
-<p>Before delving into the behavior we observed from the <c>H</c> gate, we need to 
-clarify what we mean by <term>randomness</term> in the context of quantum mechanics.
-</p>
-<p>
-In everyday language, <term>random</term> often implies a lack of pattern or predictability. 
-We might use the word random in a few ways, with slightly different meanings:
-</p>
-<p>
-<ul><li><alert>That was such a random comment!</alert> <em>I found that comment completely unexpected!</em></li>
-<li><alert>The number was drawn at random.</alert> <em>Each number was equally likely to be drawn.</em></li>
-<li><alert>Quantum measurements have random outcomes!</alert> <em>The specific outcome is  unpredictable.</em>
-However, it does <alert>not</alert> mean that each outcome is equally likely. In quantum systems, we can 
-have different probabilities for different outcomes, and those probabilities can be known. Random
-merely specifies that the outcome of one specific measurement cannot be known - even if the 
-probabilities are 99.9999999% for the first and 0.0000001% for the other.
-</li></ul>
-</p>  
+  <p>Before delving into the behavior we observed from the <c>H</c> gate, we need to clarify what we
+    mean by <term>randomness</term> in the context of quantum mechanics. </p>
+  <p> In everyday language, <term>random</term> often implies a lack of pattern or predictability.
+    We might use the word random in a few ways, with slightly different meanings: </p>
+  <p>
+    <ul>
+      <li>"That was such a random comment!" means <em>"I found that comment completely unexpected!"</em></li>
+      <li>"The number was drawn at random." means <em>"Each number was equally likely to be drawn."</em></li>
+    </ul>
+    When we say "Quantum measurements have random outcomes!", we mean <em>"The specific outcome is
+    unpredictable."</em> However, it does <alert>not</alert> mean that each outcome is equally
+    likely. In quantum systems, we can have different probabilities for different outcomes, and
+    those probabilities can be known. Random merely specifies that the outcome of one specific
+    measurement cannot be known <mdash /> even if the probabilities are 99.9999999% for the first
+    and 0.0000001% for the other. </p>
 
-
-
-
-
-<section xml:id="sec-randomExpected">
+  <section xml:id="sec-randomExpected">
     <title><c>H</c> Gate vs Random Gate</title>
 
-      <p>
-        Let's explore what you observed about the <c>H</c> gate: its output has an equal probability of
-        measuring 0 or 1. 
-      </p>
-      <p>
-        From only this information, you might make a few deductions:
-        <ul>
-          <li>
-          Given an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the outcome is entirely unpredictable.
-          </li><li>
-          It does not matter whether you input <m> \ket{0}</m> or <m>\ket{1}</m>, the end 
-          state is the same either way.
-          </li>   
-        </ul>
-      </p>
+    <p> Let's explore what you observed about the <c>H</c> gate: its output has an equal probability
+      of measuring 0 or 1. </p>
+    <p> From only this information, you might make a few deductions: <ul>
+        <li> Given an input of <m>\ket{0}</m> or <m>\ket{1}</m>, the outcome is entirely unpredictable. </li>
+        <li> It does not matter whether you input <m> \ket{0}</m> or <m>\ket{1}</m>, the end state is the same
+      either way. </li>
+      </ul>
+    </p>
 
     <sidebyside widths="85% 15%" valign="top">
-      <p>Imagine a random gate, <c>R</c>, that does exactly that, then answer the next question.</p>
+      <p>Imagine a <term>random gate</term>, <c>R</c>, that does exactly that, then answer the next
+        question.</p>
       <image source="L3.1.2-RandomGate.png" width="66%" />
     </sidebyside>
 
     <exercise label="Expected_Random">
       <title>Random Gate Expected Output</title>
-      <idx>randomExpected</idx>
+      <idx>Random expected output</idx>
       <statement>
-        <p>What should the output be of the following circuit, assuming <c>R</c> is a <term>random gate</term>?</p>
+        <p>What should the output be of the following circuit, assuming <c>R</c> is a <term>random
+          gate</term>?</p>
         <image source="L3.1.2-RandomGate-ExpectedOutput.png" width="66%" />
       </statement>
       <choices randomize="yes">
@@ -70,7 +58,7 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
         <choice>
           <statement>
             <p>
-              <m>\ket{0}</m> or <m>\ket{⚪}</m>
+              <m>\ket{0}</m> or <m>⚪</m>
             </p>
           </statement>
           <feedback>
@@ -80,7 +68,7 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
         <choice>
           <statement>
             <p>
-              <m>\ket{1}</m> or <m>\ket{⚫}</m>
+              <m>\ket{1}</m> or <m>⚫</m>
             </p>
           </statement>
           <feedback>
@@ -93,11 +81,8 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
       </hint>
     </exercise>
 
-    <p>
-      Now let's look at what happens with an <c>H</c> gate! Use the circuit builder to check
-      what happens when you start with <m>\ket{0}</m> or <m>\ket{1}</m> in a
-      circuit with two <c>H</c> gates.
-    </p>
+    <p> Now let's look at what happens with an <c>H</c> gate! Use the circuit builder to check what
+      happens when you start with <m>\ket{0}</m> or <m>\ket{1}</m> in a circuit with two <c>H</c> gates. </p>
 
     <interactive aspect="9:9" platform="javascript"
       source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
@@ -111,18 +96,16 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
 
     <exercise label="Two_H_gates">
       <title>Behavior of two <c>H</c> gates</title>
-      <idx>Two_H_gates</idx>
+      <idx>Two H gates</idx>
       <statement>
-        <p>
-          Which answer best describes what you observed from the circuit with two <c>H</c> gates
-          when you start with an input of <m>\ket{0}</m> or <m>\ket{1}</m>?
-        </p>
+        <p> Which answer best describes what you observed from the circuit with two <c>H</c> gates
+          when you start with an input of <m>\ket{0}</m> or <m>\ket{1}</m>? </p>
         <image source="Checkpoint3_1_2-Behavior-of-Two-H-gates.png" width="66%" />
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <p>There is no observable effect - the input and output values will be the same.</p>
+            <p>There is no observable effect <mdash /> the input and output values will be the same.</p>
           </statement>
           <feedback>
             <p>Correct!</p>
@@ -130,7 +113,8 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
         </choice>
         <choice correct="no">
           <statement>
-            <p>There will be an equal chance of measuring 0 or 1 - the same as a single <c>H</c> gate.</p>
+            <p>There will be an equal chance of measuring 0 or 1 <mdash /> the same as a single <c>H</c>
+              gate.</p>
           </statement>
           <feedback>
             <p>Hmmm.. Make sure you put two <c>H</c> gates right next to each other.</p>
@@ -138,7 +122,7 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
         </choice>
         <choice correct="no">
           <statement>
-            <p>The effect is the same as a <c>NOT</c> gate - the value is toggled.</p>
+            <p>The effect is the same as a <c>NOT</c> gate <mdash /> the value is toggled.</p>
           </statement>
           <feedback>
             <p>Hmmm.. Make sure you put the <c>H</c> gates right next to each other.</p>
@@ -147,8 +131,8 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
 
       </choices>
       <hint>
-        <p>Use a <c>NOT</c> gate to make the second input <m>\ket{1}</m>, then put two <c>H</c> gates on each wire.
-        </p>
+        <p>Use a <c>NOT</c> gate to make the second input <m>\ket{1}</m>, then put two <c>H</c> gates on each
+          wire. </p>
       </hint>
     </exercise>
 
@@ -160,14 +144,10 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
       yet a second <c>H</c> gate outputs the original value?
     </li>
 -->
-      <li>
-        If there is a 50/50 chance of measuring 0 or 1 after the first <c>H</c> gate,
-        then how is the original input value ALWAYS returned after the second <c>H</c> gate?
-      </li>
-      <li>
-        How is a 50/50 probability coming from an input of <m>\ket{0}</m> distinguished
-        from a 50/50 probability coming from an input of <m>\ket{1}</m>?
-      </li>
+      <li> If there is a 50/50 chance of measuring 0 or 1 after the first <c>H</c> gate, then how is
+        the original input value <em>ALWAYS</em> returned after the second <c>H</c> gate? </li>
+      <li> How is a 50/50 probability coming from an input of <m>\ket{0}</m> distinguished from a 50/50
+        probability coming from an input of <m>\ket{1}</m>? </li>
       <!--
     <li>
       How is it that they are the same value after the first <c>H</c> gate (that is, 50/50 probability
@@ -178,11 +158,9 @@ probabilities are 99.9999999% for the first and 0.0000001% for the other.
     </li>
 -->
     </ul>
-    <p>
-      This means that our current model of <c>H</c> gate behavior is incomplete—there is some other
-      element of quantum state that we are not yet modeling! It is more complex and holds
-      more information than merely the probabilities of measuring 0 vs 1.
-    </p>
+    <p> This means that our current model of quantum state as a qubit is incomplete<mdash />there is
+      some other element that we are not yet modeling! It is more complex and holds more information
+      than merely the probabilities of measuring 0 vs 1. </p>
   </section>
 
 

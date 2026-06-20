@@ -3,46 +3,227 @@
 <section xml:id="lesson3_4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Superposition and Gates</title>
 
-<p>
-Now you need to know how to calculate the outputs of gates when the 
-inputs are in superposition, beyond memorizing that two H gates go into
-superposition and then out again. 
-</p>
-<p>
-This requires two pieces of knowledge:
-<ul><li> How to visualize a two qubit state</li>
-<li> How to calculate the outcome when inputs are in superposition</li></ul>
-</p>
+  <p> So far, all of our exploration of gate behavior has been with basis states (<m>\ket{0}</m> and <m>\ket{1}</m>).
+    Now, it's time to learn how to calculate the outputs of gates when the inputs are in
+    superposition (beyond memorizing that two <c>H</c> gates go into superposition and then out
+    again!). </p>
 
+  <section xml:id="sec-calc-superposition-visual">
+    <title>Calculating Gates with Superposition Inputs</title>
 
-  <section xml:id="sec-two-qubit-visual">
-    <title>Visualizing two-qubit state</title>
-
-    <p> 
-      As we learned before, the horizontal line divides between two different
-      possible outcomes. If there is no line, then two different qubits are being
-      represented.
+    <p>To calculate how gates operate on qubits in superposition, there is a simple rule to follow: <em>Apply
+      the gate separately to each possible outcome, then combine the results.</em>
     </p>
 
-    <!-- <image source="VisualRep_one_vs_two_qubits_OLD.png" width="40%" /> -->
-    <image source="VisualRep_one_vs_two_qubits.png" width="50%" />
+    <p>Let's start by looking at a simple example with a <c>NOT</c> gate.</p>
 
-    <!--
-    <sidebyside widths="35% 15% 15% 35%" valign="top">
-      <p> </p>
+    <example>
+      <title>Applying NOT on simple superposition state</title>
+      <p>Consider the following, where a state in superposition is acted upon by a <c>NOT</c> gate.</p>
 
-      <image source="Visual_Onebit_50_positive.png" width="10%" />
-      <image source="L3-4-twoqubitvisual.png" width="10%" />
-      <p> </p>
-    </sidebyside>
-    -->
+      <image source="L3.4-5050-to-NOT.png" width="30%" />
 
-    <p> 
-      In the images above, the left side is a single qubit in 
-      50/50 superposition. The right side is two different qubits, one  
-      <m>\ket{0}</m> and the other <m>\ket{1}</m>.
-    </p>
+      <p>To evaluate the action of the <c>NOT</c> gate, we just perform the <c>NOT</c> action on each part
+        of the superposition:</p>
 
+      <image source="L3.4-5050-NOT-output.png" width="30%" />
+    </example>
+
+    <example>
+      <title>Applying NOT on complex superposition state</title>
+
+      <p>Consider the following, where a 75%<ndash />25% superposition state is acted upon by a <c>NOT</c>
+        gate.</p>
+
+      <image source="L3.4-7525-to-NOT.png" width="30%" />
+
+      <p>Once again, to evaluate the action of the <c>NOT</c> gate, we perform the <c>NOT</c> action on
+        each part of the superposition:</p>
+
+      <image source="L3.4-7525-NOT-output.png" width="30%" />
+
+      <p>Note that we rearrange the outcomes as per our convention, placing ⚪ outcomes at the top
+        and ⚫ at the bottom.</p>
+    </example>
   </section>
 
+  <section xml:id="sec-z-gate-revisited">
+    <title><c>Z</c> Gate Revisited</title>
+
+    <p>Now that we know how to apply gates to superposition states, let's revisit our example from <xref
+        ref="sec-z-gate" />. </p>
+
+    <p>
+      <image source="Z_Explore_2.png" width="50%" />
+    </p>
+
+    <p> To get a clearer sense of the effect of the <c>Z</c> gate, let's work backwards and forwards
+      based on our existing understanding of the <c>H</c> and what you observed in the exercise
+      above. <ol>
+        <li>After the first <c>H</c> gate, an equal superposition state is created. The first circuit
+      has positive phase and the second has negative phase.</li>
+        <li>Based on the results of this circuit, we see that the output is ⚫ for the
+          first circuit and ⚪ for the second circuit.</li>
+        <li>Working backwards, we see that the state right before the second <c>H</c> gate must be an
+      equal superposition state with negative phase for the first circuit and positive phase for the
+      second circuit.</li>
+      </ol> Putting this all together: </p>
+
+    <image source="Z_Explore_2_Expanded.png" width="75%" />
+
+    <p> Thus, we can see the effect of the <c>Z</c> gate on states in superposition. </p>
+
+    <image source="Z_Gate_Effect_1.png" width="75%" />
+
+    <p> Using the rules for applying gates on superposition states (<xref
+        ref="sec-calc-superposition-visual" />), we can finally deduce the truth table for the <c>Z</c>
+      gate below. I suggest adding this to your page of notes. </p>
+
+    <image source="L3.2-Z-gate-truth-table.png" width="30%" />
+
+    <p> It's important to remember that this truth table is only meaningful when the qubit is in
+      superposition: there is no observable effect when a <c>Z</c> gate is applied to a basis state.
+      So keeping this in mind will be helpful in the future when you are working with more complex
+      superposition states! </p>
+
+    <!-- <p> This truth table does not seem right <mdash /> you already observed that there is no
+      observable effect when a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>\ket{1}</m>
+    state. So why
+      is the truth table expressed this way? We have to remember that the truth table is describing
+      the effect of the Z gate on the full quantum state, including phase, not just the measurement
+      outcomes. When a Z gate is applied to a qubit in the <m>\ket{0}</m> or <m>
+      \ket{1}</m> state, there is no
+      change in phase, so the effect is not observable. However, when a Z gate is applied to a qubit
+      in superposition, it flips the phase of the states, and the negative sign is always applied to
+      the probability of the <m>\ket{1}</m> state. </p> -->
+
+    <!--
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 2x6",
+        allowedGates: "XSHZ"
+      });
+    </script>
+  </interactive>
+
+  -->
+
+    <exercise label="L3-3-3_Calculate_Output">
+      <title>
+        Practice calculating the output
+      </title>
+      <idx>Calculate output 1</idx>
+      <statement>
+        <p>Calculate the output of this circuit.</p>
+        <image source="L3_3_3_Calculate.png" width="75%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="no">
+          <statement>
+            <p>
+              <m>\ket{00}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{01}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\ket{10}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>
+              <m>\ket{11}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.
+          Remember the compressed notation for more than one qubit lists qubit states from top to
+          bottom.</p>
+      </hint>
+    </exercise>
+
+    <exercise label="L3-3-4_Calculate_Output">
+      <title>
+        Practice calculating the output
+      </title>
+      <idx>Calculate output 2</idx>
+      <statement>
+        <p>Calculate the output of this circuit.</p>
+        <image source="L3_3_4_Calculate.png" width="75%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\ket{00}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p>Correct!</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{01}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{10}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+        <choice correct="no">
+          <statement>
+            <p>
+              <m>\ket{11}</m>
+            </p>
+          </statement>
+          <feedback>
+            <p> </p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p>Think about what the output would be after each gate.
+          Remember the compressed notation for more than one qubit lists qubit states from top to
+          bottom.</p>
+      </hint>
+    </exercise>
+  </section>
 </section>

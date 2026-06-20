@@ -1,317 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="lesson2_4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Writing Quantum Programs with Qiskit</title>
+  <p> So far, we have been exploring quantum circuits by hand, and using the circuit builder. Now,
+    let's take a look at how we can build simple circuits using <term>Qiskit</term> (pronounced
+    "kiss-kit"), a popular quantum programming library and toolkit from IBM. </p>
 
-  <title>Problem Set</title>
+  <p>Let's start with the simplest circuit: a <c>NOT</c> gate.</p>
 
-  <exercise label="HW2_Q1">
-    <title>Question #1</title>
-    <idx>HW2 Q1</idx>
+  <listing xml:id="not-gate">
+    <title><c>NOT</c> Gate in Qiskit</title>
+    <program xml:id="not-gate-program" interactive="activecode" language="python3">
+      <code>
+        from qiskit import QuantumCircuit
+
+        circuit1 = QuantumCircuit(1)
+        circuit1.x(0)
+        print(circuit1.draw())
+      </code>
+    </program>
+  </listing>
+
+  <p>And that's it! Let's walk through this code line by line to understand it properly. We start by
+    importing the <c>QuantumCircuit</c> class from the <c>qiskit</c> library: </p>
+
+  <program language="python3">
+    <code>
+      from qiskit import QuantumCircuit
+    </code>
+  </program>
+
+  <p>Next, we initialize a new circuit with 1 qubit by passing <c>1</c> as a parameter to the
+    constructor, and call it <c>circuit1</c>:</p>
+  <program language="python3">
+    <code>
+      circuit1 = QuantumCircuit(1)
+    </code>
+  </program>
+
+  <p>Now, we add a <c>NOT</c> gate, using the <c>.x()</c> function. The <c>NOT</c> gate is also known as an <c>X</c>
+    gate, which is why this is the name of the function. By passing the parameter <c>0</c> we specify
+    that we want to add the <c>NOT</c> gate to the 0th qubit (qubits are 0-indexed!):</p>
+  <program language="python3">
+    <code>
+      circuit1.x(0)
+    </code>
+  </program>
+
+  <p>Finally, we draw the circuit:</p>
+  <program language="python3">
+    <code>
+      print(circuit1.draw())
+    </code>
+  </program>
+
+  <exercise label="qiskit-exercise-1">
+    <title> Building Circuits with <c>NOT</c> in Qiskit </title>
+    <idx>NOT circuit in Qiskit</idx>
     <statement>
-      <p>What is the state of the two qubits after the NOT gate?</p>
-      <image source="HW2_2qubitsNOT.png" width="40%" />
+      <p> Complete the code below to create a circuit with <em>two qubits</em> and a <c>NOT</c> gate on
+        each. </p>
     </statement>
-    <choices randomize="no">
-      <choice>
-        <statement>
-          <p>
-            <m>\ket{00}</m> or <m>\ket{⚪⚪}</m>
-          </p>
-        </statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement>
-          <p>
-            <m>\ket{01}</m> or <m>\ket{⚪⚫}</m>
-          </p>
-        </statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement>
-          <p>
-            <m>\ket{10}</m> or <m>\ket{⚫⚪}</m>
-          </p>
-        </statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement>
-          <p>
-            <m>\ket{11}</m> or <m>\ket{⚫⚫}</m>
-          </p>
-        </statement>
-        <feedback><p> </p></feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p> </p>
-    </hint>
+    <program interactive="activecode" language="python3">
+      <preamble>
+        from qiskit import QuantumCircuit
+
+        # TODO: Pass in the correct parameter to create a circuit with 2 qubits
+      </preamble>
+      <code>
+        circuit1 = QuantumCircuit(...)
+
+        # TODO: Write code to add a NOT gate to both qubits
+
+      </code>
+      <postamble>
+        # Draw the circuit
+        print(circuit1.draw())
+      </postamble>
+    </program>
   </exercise>
 
+  <p> We can now include the 2-qubit gates we've learned, <c>SWAP</c> and <c>CNOT</c>:</p>
 
-  <exercise label="HW2_Q2">
-    <title>Question #2</title>
-    <idx>HW2 Q2</idx>
+  <listing xml:id="swap-and-cnot-gates">
+    <title><c>SWAP</c> and <c>CNOT</c> Gate in Qiskit</title>
+    <program xml:id="swap-and-cnot-gates-program" interactive="activecode" language="python3">
+      <code>
+        from qiskit import QuantumCircuit
+
+        circuit2 = QuantumCircuit(3)
+        circuit2.x(0)
+        circuit2.swap(0, 1)
+        circuit2.cx(1, 2)
+
+        print(circuit2.draw())
+      </code>
+    </program>
+  </listing>
+
+  <p>The <c>swap(i, j)</c> function is pretty straightforward <mdash /> it just swaps the values of the qubits
+    at indices <c>i</c> and <c>j</c>. Let's look closely at the CNOT gate in Qiskit:</p>
+
+  <program language="python3">
+    circuit2.cx(1, 2)
+  </program>
+
+  <p>First of all, similar to the <c>NOT</c> gate from before, the <c>CNOT</c> gate is called <c>cx</c>,
+    meaning <term>controlled-<c>X</c></term>, in Qiskit. Secondly, the <em>order of parameters</em>
+    for the <c>cx(i, j)</c> function is crucial: the first parameter (<c>i</c>) represents the index of the <em>
+    control</em> qubit, and the second parameter (<c>j</c>) represents the index of the <em>target</em>
+    qubit.</p>
+
+  <exercise label="qiskit-exercise-2">
+    <title> Building Circuits with <c>SWAP</c> and <c>CNOT</c> in Qiskit </title>
+    <idx>SWAP and CNOT circuit in Qiskit</idx>
     <statement>
-      <p>In the circuit below, which qubit is the control of the CNOT gate?</p>
-      <image source="HW2_4qubitsCNOT.png" width="40%" />
+      <p> Write Python code to create a circuit that looks like the one given below: </p>
+
+      <image source="2-4-exercise.png" width="60%" />
     </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p>Qubit 0 (top qubit)</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>Qubit 1</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Qubit 2</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Qubit 3 (bottom qubit)</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p> </p>
-    </hint>
+    <program interactive="activecode" language="python3">
+      <preamble>
+        from qiskit import QuantumCircuit
+      </preamble>
+      <code>
+        # TODO: Pass in the correct parameter to create a circuit with the appropriate number of qubits
+        circuit1 = QuantumCircuit(...)
+
+        # TODO: Write code to add the appropriate gates
+
+
+      </code>
+      <postamble>
+        print(circuit1.draw())
+      </postamble>
+    </program>
   </exercise>
 
+  <section xml:id="qiskit-measuring" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Measuring Qubits in Qiskit</title>
+    <p> Adding all of our favorite gates is only one part of building meaningful quantum circuits;
+      once we have built our circuit, it only makes sense to <em>measure</em> the result of our
+      circuit. In Qiskit, this is done with the <c>measure_all()</c> function. This measures the state of each of
+      the qubits in our circuit and saves it to <em>classical bits</em> in the circuit <mdash />
+      this is how we can measure our qubits and read their value! Let's check out an example: </p>
 
-  <exercise label="HW2_Q3">
-    <title>Question #3</title>
-    <idx>HW2 Q3</idx>
-    <statement>
-      <p>In the circuit below, which qubit is the target of the CNOT gate?</p>
-      <image source="HW2_4qubitsCNOT.png" width="40%" />
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p>Qubit 0 (top qubit)</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Qubit 1</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>Qubit 2</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Qubit 3 (bottom qubit)</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p> </p>
-    </hint>
-  </exercise>
+    <listing xml:id="qiskit-measure">
+      <title>Measuring in Qiskit</title>
+      <program xml:id="qiskit-measure-program" interactive="activecode" language="python3">
+        <code>
+          from qiskit import QuantumCircuit
 
+          circuit1 = QuantumCircuit(2)
+          circuit1.x(1)
+          circuit1.cx(1, 0)
+          circuit1.cx(0, 1)
 
-  <exercise label="HW2_Q4">
-    <title>Question #4</title>
-    <idx>HW2 Q4</idx>
-    <statement>
-      <p>How do you modify the circuit so the qubits are in the state <m>\ket{10}</m> at the input of the SWAP gate?</p>
-      <image source="HW2_2qubitsSWAP.png" width="40%" />
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p>Don't need to do anything.</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>Add a NOT gate to qubit 0</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Add a NOT gate to qubit 1</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Add a NOT gate to qubit 0 and qubit 1</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Need to do something else</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p> </p>
-    </hint>
-  </exercise>
+          circuit1.measure_all()
 
+          print(circuit1.draw())
+        </code>
+      </program>
+    </listing>
 
-  <exercise label="HW2_Q5">
-    <title>Question #5</title>
-    <idx>HW2 Q5</idx>
-    <statement>
-      <p>What is the output state when the input state is <m>\ket{10}</m>?</p>
-      <image source="HW2_2qubitsSWAP.png" width="40%" />
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p><m>\ket{00}</m> or <m>\ket{⚪⚪}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p><m>\ket{10}</m> or <m>\ket{⚫⚪}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>            
-    </choices>
-    <hint><p> </p></hint>
-  </exercise>
-
-
-  <exercise label="HW2_Q6">
-    <title>Question #6</title>
-    <idx>HW2 Q6</idx>
-    <statement>
-      <p>How do you modify the circuit so the qubits are in the state <m>\ket{11}</m> at the output of the SWAP gate?</p>
-      <image source="HW2_2qubitsSWAP.png" width="40%" />
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p>Don't need to do anything.</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Add a NOT gate to qubit 0</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Add a NOT gate to qubit 1</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>Add a NOT gate to qubit 0 and qubit 1</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p>Need to do something else</p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-    </choices>
-    <hint>
-      <p> </p>
-    </hint>
-  </exercise>
-
-
-  <exercise label="HW2_Q7">
-    <title>Question #7</title>
-    <idx>HW2 Q7</idx>
-    <statement>
-      <p>What is the output state when the input state is <m>\ket{10}</m>?</p>
-      <image source="HW2_2qubitsCNOT.png" width="40%" />
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p><m>\ket{00}</m> or <m>\ket{⚪⚪}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p><m>\ket{10}</m> or <m>\ket{⚫⚪}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>            
-    </choices>
-    <hint><p> </p></hint>
-  </exercise>
-
-
-  <exercise label="HW2_Q8">
-    <title>Question #8</title>
-    <idx>HW2 Q8</idx>
-    <statement>
-      <p>Which input state(s) would result in an output that differs from the original input? Select all that apply.</p>
-      <image source="HW2_2qubitsCNOT.png" width="40%" />
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p><m>\ket{00}</m> or <m>\ket{⚪⚪}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice>
-        <statement><p><m>\ket{01}</m> or <m>\ket{⚪⚫}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p><m>\ket{10}</m> or <m>\ket{⚫⚪}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p><m>\ket{11}</m> or <m>\ket{⚫⚫}</m></p></statement>
-        <feedback><p> </p></feedback>
-      </choice>            
-    </choices>
-    <hint><p> </p></hint>
-  </exercise>
-
-
-  <exercise label="HW2-Q9">
-    <title>Question #9</title>
-    <idx>HW2 Q9</idx>
-    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
-        identicalCircuitWidget({
-          circuit: "L2_4_Identical",
-          instantFeedback: false,
-          allowedGates: "XS*"
-        });
-      </script>
-    </interactive>
-  </exercise>
-
-
-  <exercise label="HW2-Q10">
-    <title>Question #10</title>
-    <idx>HW2 Q10</idx>
-    <interactive aspect="9:9" platform="javascript" source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
-        matchOutputWidget({
-          circuit: "L2_4_MatchOutput",
-          instantFeedback: false,
-          allowedGates: "XS*"
-        });
-      </script>
-    </interactive>
-  </exercise>
-
-
-
-<!-- SANDBOX CIRCUIT FOR CREATING IMAGES
-  <interactive aspect="9:9" platform="javascript"
-    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-    <script>
-      visualizeProbabilitiesWidget({
-        circuit: "Blank 2x6",
-        allowedGates: "*XSHZ"
-      });
-    </script>
-  </interactive>
--->
-
+    <p>All right, we've told our quantum circuit to measure our qubits and save the results! If you
+      look closely at the output, we can see that a new <c>meas: 2/</c> double-line is present at the bottom
+      of our circuit. This represents 2 <em>classical bits</em>, which are used to store the result
+      of measuring our qubits. Additionally, after our gates, you should see two boxes with an <c>M</c>
+      in each of them, with a double-line connecting to our classical bits. In quantum circuits, a
+      single line represents quantum information, and a double line represents <em>classical
+      information</em>. Finally, you can see a little <c>0</c> and <c>1</c> near the measurement
+      connection, which indicates the index of the classical bits where the result is stored! We'll
+      explore this more in future chapters. </p>
+  </section>
 
 </section>
