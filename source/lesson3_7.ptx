@@ -54,9 +54,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
   <exercise label="HW3_Q2">
@@ -113,9 +110,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
   <exercise label="HW3_Q3">
@@ -172,9 +166,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
   <exercise label="HW3_Q4">
@@ -231,9 +222,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
   <exercise label="HW3_Q5">
@@ -278,9 +266,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
   <exercise label="HW3_Q6">
@@ -337,9 +322,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
 
@@ -426,9 +408,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p> </p>
-    </hint>
   </exercise>
 
 
