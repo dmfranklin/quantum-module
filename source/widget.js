@@ -399,6 +399,9 @@ const stateToText = (state, roundToDecimal) => {
  * studentCircuitEditor: the Q.Circuit.Editor instance for student input
  * gradingFunction:      (goalCircuit, studentCircuit) => [boolean, feedbackText]
  * instantFeedback:      boolean, if true run gradingFunction on every change
+ * hideFeedback:         boolean, if true then all feedback is hidden from the user and the value
+ *                       of instantFeedback is ignored (hideFeedback = true means instantFeedback
+ *                       is overridden to true)
  *
  * Returns: a <div class="grader"> containing feedback (and possibly a button).
  */
@@ -406,8 +409,15 @@ const createGrader = (
   goalCircuit,
   studentCircuitEditor,
   gradingFunction,
-  instantFeedback
+  instantFeedback,
+  hideFeedback
 ) => {
+  // If the user requested us to hide the circuit, then the only option is instantly calculating
+  // the state of the circuit
+  if (hideFeedback) {
+    instantFeedback = true;
+  }
+
   // Internal function to compare circuits and display feedback
   const checkWork = (report = true) => {
     grader.classList.remove("dirty"); // remove "needs-check" state
@@ -424,9 +434,12 @@ const createGrader = (
       goalCircuit,
       studentCircuitEditor.circuit
     );
-    feedback.classList.toggle("correct", isCorrect);
-    feedback.classList.toggle("wrong", !isCorrect);
-    feedback.textContent = feedbackText;
+
+    if (!hideFeedback) {
+      feedback.classList.toggle("correct", isCorrect);
+      feedback.classList.toggle("wrong", !isCorrect);
+      feedback.textContent = feedbackText;
+    }
 
     if (report) {
       // Report score via SPLICE to Runestone database
@@ -437,10 +450,13 @@ const createGrader = (
   const grader = document.createElement("div");
   grader.className = "grader";
 
-  const feedback = document.createElement("div");
-  feedback.textContent = "Feedback will appear here.";
-  feedback.className = "feedback";
-  grader.append(feedback);
+  let feedback;
+  if (!hideFeedback) {
+    feedback = document.createElement("div");
+    feedback.textContent = "Feedback will appear here.";
+    feedback.className = "feedback";
+    grader.append(feedback);
+  }
 
   if (!instantFeedback) {
     // If not instant feedback, add a "Check work" button
@@ -722,6 +738,7 @@ const identicalCircuitWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
   hideInstructions = false,
+  hideFeedback = false,
 }) => {
   circuit = normalizeCircuit(circuit); // ensure evaluated circuit
 
@@ -784,7 +801,8 @@ const identicalCircuitWidget = async ({
       getNonEmptyColumns(goalCircuit) == getNonEmptyColumns(studentCircuit)
         ? [true, "Great job! The circuits look identical."]
         : [false, "The circuits look different. Keep at it!"],
-    instantFeedback
+    instantFeedback,
+    hideFeedback
   );
   widget.append(grader);
 
@@ -805,6 +823,7 @@ const equivalentCircuitWidget = async ({
   allowedGates = defaultGateSymbols,
   code = false,
   hideInstructions = false,
+  hideFeedback = false,
 }) => {
   circuit = normalizeCircuit(circuit);
 
@@ -852,7 +871,8 @@ const equivalentCircuitWidget = async ({
           ]
           : [false, "The circuits are equivalent, but you used too many gates."]
         : [false, "The circuits are not equivalent. Keep at it!"],
-    instantFeedback
+    instantFeedback,
+    hideFeedback,
   );
   widget.append(grader);
 
@@ -874,6 +894,7 @@ const matchOutputWidget = async ({
   code = false,
   inputs = "0",
   hideInstructions = false,
+  hideFeedback = false
 }) => {
   circuit = normalizeCircuit(circuit, inputs);
 
@@ -921,7 +942,8 @@ const matchOutputWidget = async ({
           ? [true, "Great job! The output states match."]
           : [false, "The output states match, but you used too many gates."]
         : [false, "The output states do not match. Keep at it!"],
-    instantFeedback
+    instantFeedback,
+    hideFeedback
   );
   widget.append(grader);
 
@@ -943,6 +965,7 @@ const specificOutputWidget = async ({
   code = false,
   inputs = "0",
   hideInstructions = false,
+  hideFeedback = false
 }) => {
   circuit = normalizeCircuit(circuit, inputs);
 
@@ -985,7 +1008,8 @@ const specificOutputWidget = async ({
             studentCircuit.outputState
           )}. Keep at it!`,
         ],
-    instantFeedback
+    instantFeedback,
+    hideFeedback
   );
   widget.append(grader);
 
