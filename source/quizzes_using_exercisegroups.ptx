@@ -3,7 +3,8 @@
 <appendix xml:id="quizzes" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quizzes</title>
 
-  <exercises xml:id="Quiz1" label="Quiz1" time-limit="1800" results="no" feedback="no">
+  <!-- didn't work: time-limit="1800" pause="yes" results="no" feedback="no" -->
+  <exercises xml:id="Quiz1" label="Quiz1">
     <title>Quiz 1</title>
     <exercise label="Quiz1_1">
       <statement>
@@ -157,182 +158,178 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Quiz1_6_a">
-      <statement>
+    <exercisegroup xml:id="Quiz1_6_thru_9">
+      <title>Probability</title>
+      <introduction>
         <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
           die.</p>
         <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
           truncate) the result.</p>
-        <p>Sandra needs to move her piece 4 spaces to win the game. She must roll exactly 4 to win
-          in
-          this round.</p>
-        <p>What is the probability that Sandra will roll a 4 and win?</p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Quiz1_6_b">
-      <statement>
-        <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
-          die.</p>
-        <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
-          truncate) the result.</p>
-        <p>Sandra needs to move her piece 4 spaces to win the game. She must roll exactly 4 to win
-          in
-          this round.</p>
-        <p>What is the probability that Sandra will not roll a 4?</p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Quiz1_7_a">
-      <statement>
-        <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
-          die.</p>
-        <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
-          truncate) the result.</p>
-        <p>If Ayesha rolls exactly 6, she has to go back to the start of the game.</p>
-        <p>What is the probability that Ayesha will roll a 6 and have to go back to the start?</p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Quiz1_7_b">
-      <statement>
-        <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
-          die.</p>
-        <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
-          truncate) the result.</p>
-        <p>If Ayesha rolls exactly 6, she has to go back to the start of the game.</p>
-        <p>What is the probability that Ayesha will not roll a 6?</p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Quiz1_8_a">
-      <statement>
-        <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
-          die.</p>
-        <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
-          truncate) the result.</p>
-        <p>What is the probability that Sandra will not win and Ayesha will go back to the start
-          of the game?</p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Quiz1_8_b">
-      <statement>
-        <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
-          die.</p>
-        <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
-          truncate) the result.</p>
-        <p>What is the probability that Sandra will win and Ayesha will not go back to the start
-          of the game?</p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Quiz1_9">
-      <statement>
-        <p>Sandra and Ayesha are playing a board game. They are playing with one standard 6-sided
-          die.</p>
+      </introduction>
+      <exercise label="Quiz1_6">
+        <introduction>
+          <p>Sandra needs to move her piece 4 spaces to win the game. She must roll exactly 4 to win
+            in
+            this round.</p>
+        </introduction>
+        <task>
+          <statement>
+            <p>What is the probability that Sandra will roll a 4 and win?</p>
+          </statement>
+          <response />
+        </task>
+        <task>
+          <statement>
+            <p>What is the probability that Sandra will not roll a 4?</p>
+          </statement>
+          <response />
+        </task>
+      </exercise>
+      <exercise label="Quiz1_7">
+        <introduction>
+          <p>If Ayesha rolls exactly 6, she has to go back to the start of the game.</p>
+        </introduction>
+        <task>
+          <statement>
+            <p>What is the probability that Ayesha will roll a 6 and have to go back to the start?</p>
+          </statement>
+          <response />
+        </task>
+        <task>
+          <statement>
+            <p>What is the probability that Ayesha will not roll a 6?</p>
+          </statement>
+          <response />
+        </task>
+      </exercise>
+      <exercise label="Quiz1_8">
+        <task>
+          <statement>
+            <p>What is the probability that Sandra will not win and Ayesha will go back to the start
+              of the game?</p>
+          </statement>
+          <response />
+        </task>
+        <task>
+          <statement>
+            <p>What is the probability that Sandra will win and Ayesha will not go back to the start
+              of the game?</p>
+          </statement>
+          <response />
+        </task>
+      </exercise>
+      <exercise label="Quiz1_9">
+        <statement>
+          <p>
+            What is the most likely outcome of this round?</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>Sandra wins, Ayesha goes back to the start</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Sandra does not win, Ayesha goes back to the start</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Sandra wins, Ayesha does not go back to the start</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>Sandra does not win, Ayesha does not go back to the start</p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup xml:id="Quiz1_10_thru_12">
+      <title>Superposition</title>
+      <introduction>
         <p>
-          What is the most likely outcome of this round?</p>
-      </statement>
-      <choices randomize="yes">
-        <choice>
-          <statement>
-            <p>Sandra wins, Ayesha goes back to the start</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Sandra does not win, Ayesha goes back to the start</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Sandra wins, Ayesha does not go back to the start</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>Sandra does not win, Ayesha does not go back to the start</p>
-          </statement>
-        </choice>
-      </choices>
-    </exercise>
-    <exercise label="Quiz1_10">
-      <statement>
-        <p>A qubit is a superposition of how many values?</p>
-      </statement>
-      <choices>
-        <choice>
-          <statement>
-            <p>0</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>1</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>2</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>unknown until measurement occurs</p>
-          </statement>
-        </choice>
-      </choices>
-    </exercise>
-    <exercise label="Quiz1_11">
-      <statement>
-        <p>What information is held in the quantum state?</p>
-      </statement>
-      <choices>
-        <choice>
-          <statement>
-            <p>each possible outcome after measurement</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>phase</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>the probability of measuring one outcome over another</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>all of the above</p>
-          </statement>
-        </choice>
-      </choices>
-    </exercise>
-    <exercise label="Quiz1_12">
-      <statement>
-        <p>Select all possible values of a qubit after measurement.</p>
-      </statement>
-      <choices>
-        <choice correct="yes">
-          <statement>
-            <p>0</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>1</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>a superposition of <m>\ket{0}</m> or <m>\ket{1}</m></p>
-          </statement>
-        </choice>
-      </choices>
-    </exercise>
+          Note: All questions about measurement are measuring 0 vs 1, as shown in class.</p>
+      </introduction>
+      <exercise label="Quiz1_10">
+        <statement>
+          <p>A qubit is a superposition of how many values?</p>
+        </statement>
+        <choices>
+          <choice>
+            <statement>
+              <p>0</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>1</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>2</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>unknown until measurement occurs</p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+      <exercise label="Quiz1_11">
+        <statement>
+          <p>What information is held in the quantum state?</p>
+        </statement>
+        <choices>
+          <choice>
+            <statement>
+              <p>each possible outcome after measurement</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>phase</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>the probability of measuring one outcome over another</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>all of the above</p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+      <exercise label="Quiz1_12">
+        <statement>
+          <p>Select all possible values of a qubit after measurement.</p>
+        </statement>
+        <choices>
+          <choice correct="yes">
+            <statement>
+              <p>0</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>1</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>a superposition of <m>\ket{0}</m> or <m>\ket{1}</m></p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+    </exercisegroup>
     <exercise label="Quiz1_13">
       <statement correct="yes">
         <p>Phase is only relevant in quantum states that are in superposition.</p>
@@ -506,38 +503,33 @@
       </program>
     </exercise>
     <exercise label="Quiz1_19">
-      <statement>
-        <p>What can the following sequence of gates be simplified to?</p>
-        <p>
-          <image source="Quiz1_19.png" width="80%" />
-        </p>
-      </statement>
-      <choices randomize="yes">
-        <choice correct="yes">
-          <statement>
-            <p>one <c>SWAP</c></p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>one <c>CNOT</c> with the control on the upper qubit and the target on the lower qubit</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>one <c>NOT</c> on each qubit</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>one <c>NOT</c> on the upper qubit</p>
-          </statement>
-        </choice>
-      </choices>
-      <hint>
-        <p> Go through possible starting states (like <m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, <m>\ket{11}</m>) and see
-          what the result of running the given gates on each state is. </p>
-      </hint>
+      <dynamic>
+        <statement>
+          <p>Please follow the instructions in the widget below.</p>
+          <interactive
+            aspect="9:9"
+            platform="javascript"
+            source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+            <script>
+              equivalentCircuitWidget({
+                circuit: `
+                    H   X   H
+                    X#0 X#1 X#0
+                    X#1 X#0 X#1
+                `,
+                instantFeedback: true,
+                allowedGates: "X*SHZ",
+                hideFeedback: true
+              });
+            </script>
+          </interactive>
+        </statement>
+      </dynamic>
+      <static>
+        <statement>
+          <p>Match circuits.</p>
+        </statement>
+      </static>
     </exercise>
     <exercise label="Quiz1_20">
       <statement>
