@@ -75,7 +75,7 @@ const circuits = new Map([
         X X
         X I
       `,
-  ],  
+  ],
   [
     "L2_1_0",
     `
@@ -110,13 +110,13 @@ const circuits = new Map([
         X X#0
         X X#1
       `,
-  ], 
+  ],
   [
     "L3_5_SpecificOutput",
     `
         X H I I I
       `,
-  ],  
+  ],
   [
     "L3_5_EquivalentCircuit1",
     `
@@ -172,11 +172,19 @@ const circuits = new Map([
     `
         I I I I I I
       `,
-  ],  [
+  ], [
     "Phi+",
     `
         H X#0 I I I I
         I X#1 I I I I
       `,
   ],
+  [
+    "Quiz1_19",
+    `
+        H   X   H
+        X#0 X#1 X#0
+        X#1 X#0 X#1
+    `
+  ]
 ]);
