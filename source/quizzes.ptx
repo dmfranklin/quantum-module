@@ -3,9 +3,8 @@
 <appendix xml:id="quizzes" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quizzes</title>
 
-  <!-- time-limit="1800" pause="yes" results="no" feedback="no" -->
-
-  <exercises xml:id="Quiz1">
+  <!-- didn't work: time-limit="1800" pause="yes" results="no" feedback="no" -->
+  <exercises xml:id="Quiz1" label="Quiz1">
     <title>Quiz 1</title>
     <exercise label="Quiz1_1">
       <statement>
@@ -513,8 +512,12 @@
             source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
             <script>
               equivalentCircuitWidget({
-                circuit: "Quiz1_19",
-                instantFeedback: false,
+                circuit: `
+                    H   X   H
+                    X#0 X#1 X#0
+                    X#1 X#0 X#1
+                `,
+                instantFeedback: true,
                 allowedGates: "X*SHZ",
                 hideFeedback: true
               });

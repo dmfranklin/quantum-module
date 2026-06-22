@@ -179,12 +179,4 @@ const circuits = new Map([
         I X#1 I I I I
       `,
   ],
-  [
-    "Quiz1_19",
-    `
-        H   X   H
-        X#0 X#1 X#0
-        X#1 X#0 X#1
-    `
-  ]
 ]);
