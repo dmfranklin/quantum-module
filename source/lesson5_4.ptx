@@ -17,11 +17,11 @@
       namely, the information about what each probability amplitude is tied to. Instead, we have to
       remember the proper order. </p>
 
-    <sidebyside widths="60% 35%" valign="top">
+    <sidebyside widths="55% 5% 40%" valign="top">
       <p> Bra-ket notation is always sorted by the value in the ket (i.e. the outcome) <mdash /> the
         sorting order is, from left to right, smallest to largest. Vector notation uses the same
         order<mdash />smallest to largest<mdash />but it is depicted from top to bottom.</p>
-
+      <p>  </p>
       <image source="L5.3.brakettovector.png" />
     </sidebyside>
 
@@ -496,10 +496,7 @@
       is how to perform matrix multiplication:</p>
 
     <p>
-      <image source="L5.4.matrixmultiply.png" width="70%" />
-    </p>
-    <p>
-      <insert> Make an animated gif with the above picture showing it appear slowly </insert>
+      <image source="L5.4.matrixmultiply.gif" width="90%" />
     </p>
 
     <p> Let's see if we can calculate this on a gate for which we know the output. We know that if
