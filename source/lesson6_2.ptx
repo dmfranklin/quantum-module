@@ -22,13 +22,14 @@
     <p>Since the <c>H</c> gates are acting independently on each qubit, we can separately perform the
       operation on each qubit:</p>
 
-    <md>\ket{01} = \ket{0} \otimes \ket{1} \xrightarrow{\text{H}(1), \text{H}(2)}
-        (\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}) \otimes (\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1})
+    <md>
+      <mrow> \ket{01} = \ket{0} \otimes \ket{1} \xrightarrow{\text{H}(1), \text{H}(2)}
+        (\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}) \otimes (\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}) </mrow>
     </md>
 
     <p>Let's simplify this state by distributing the terms:</p>
     <md>
-        = \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11}
+       <mrow> = \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11} </mrow>
     </md>
 
     <p>Now, we apply a <c>CNOT</c> gate to this state. How does this affect our state? Remember, to
@@ -38,10 +39,12 @@
       <image source="6-2-Phase-Kickback-2.png" width="70%" />
     </p>
 
-    <md>
+    <md> 
+    <mrow>
     \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11}
     \xrightarrow{\text{CNOT}(1 \rightarrow 2)}
     \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{11} - \frac{1}{2} \ket{10}
+    </mrow> 
     </md>
 
     <p>Since only the third and fourth terms have a 1 in the control, the second qubit in each of
@@ -49,7 +52,7 @@
       increasing order of <m>00</m>, <m>01</m>, <m>10</m>, <m>11</m>:</p>
 
     <md>
-      \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} - \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11}
+      <mrow> \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} - \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11} </mrow>
     </md>
 
     <p>We're almost there! It's hard to interpret this state in its 2-qubit form, so let's try to
@@ -57,15 +60,15 @@
       from the terms. From the first two terms:</p>
 
     <md>
-        \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} = \frac{1}{\sqrt{2}} \ket{0} \otimes \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big)
+        <mrow> \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} = \frac{1}{\sqrt{2}} \ket{0} \otimes \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) </mrow>
     </md>
 
     <p>
       And from the last two terms:</p>
 
     <md>
-      - \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11} = - \frac{1}{\sqrt{2}} \ket{1} \otimes
-      \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big)
+      <mrow> - \frac{1}{2} \ket{10} + \frac{1}{2} \ket{11} = - \frac{1}{\sqrt{2}} \ket{1} \otimes
+      \Big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\Big) </mrow> 
     </md>
 
     <p>If you look closely, you'll see that the second qubit in each of those terms are identical <mdash />
@@ -90,8 +93,8 @@
     <p> Specifically, we see the following behavior for the <c>CNOT</c> gate:</p>
 
     <md>
-        \ket{+} \otimes \ket{-} \xrightarrow{\text{CNOT}(1 \rightarrow 2)} \ket{-} \otimes \ket{-}
-      </md>
+        <mrow> \ket{+} \otimes \ket{-} \xrightarrow{\text{CNOT}(1 \rightarrow 2)} \ket{-} \otimes \ket{-} </mrow>
+    </md>
 
     <p> We see that in this scenario, the <em>target qubit's phase</em> is being "kicked back" to
       the control, even though we expect the <c>CNOT</c> gate to only affect the target, when phase is

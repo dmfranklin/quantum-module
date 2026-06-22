@@ -14,8 +14,8 @@
       get from one to the other:</p>
 
     <md>
-        - \frac{1}{\sqrt{3}} \ket{00} + \frac{1}{\sqrt{3}} \ket{01} - \frac{1}{\sqrt{3}} \ket{11}
-        \leftrightarrow \frac{1}{\sqrt{3}} \ket{00} - \frac{1}{\sqrt{3}} \ket{01} + \frac{1}{\sqrt{3}} \ket{11}
+        <mrow> - \frac{1}{\sqrt{3}} \ket{00} + \frac{1}{\sqrt{3}} \ket{01} - \frac{1}{\sqrt{3}} \ket{11}
+        \leftrightarrow \frac{1}{\sqrt{3}} \ket{00} - \frac{1}{\sqrt{3}} \ket{01} + \frac{1}{\sqrt{3}} \ket{11} </mrow>
       </md>
 
     <p> Surprisingly, there is <em>no effective difference if only the global phase is different</em>.
@@ -43,9 +43,11 @@
       term is multiplied by <m>-1</m> to get from one to the other:</p>
 
     <md>
-        \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
-        \leftrightarrow \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
-      </md>
+        <mrow> 
+          \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
+          \leftrightarrow \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} 
+        </mrow>
+    </md>
 
     <p>A difference in relative phase is a <em>significant difference</em>: the two notations
       represent completely different quantum states. These two states thus have a physical
@@ -61,7 +63,7 @@
       basis state, the input and output of the <c>Z</c> gate only differ in global phase. </p>
 
     <md>
-      \ket{1} \xrightarrow{\text{Z}} -\ket{1} = \ket{1}
+      <mrow> \ket{1} \xrightarrow{\text{Z}} -\ket{1} = \ket{1} </mrow>
     </md>
 
     <p> However, when the state is in superposition, the <c>Z</c> gate introduces a difference in
@@ -69,8 +71,8 @@
       the <m>\ket{1}</m> term.</p>
 
     <md>
-      \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \xrightarrow{\text{Z}}
-      \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
+      <mrow> \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \xrightarrow{\text{Z}}
+      \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </mrow>
     </md>
 
   </section>
