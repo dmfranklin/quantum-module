@@ -80,7 +80,7 @@
       <idx>vector notation exercise 2</idx>
       <statement>
         <p>What is the correct bra-ket notation for the following state:</p>
-        <md>\begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix}</md>
+        <md> <mrow> \begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix} </mrow> </md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -124,7 +124,7 @@
       <idx>vector notation exercise 3</idx>
       <introduction>
         <p>Consider the following quantum state:</p>
-        <md>\begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix}</md>
+        <md> <mrow> \begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix} </mrow> </md>
       </introduction>
       <task>
         <statement>
@@ -245,7 +245,7 @@
       example, for two-qubit systems, you would have a vector with 4 elements, corresponding to <m>00</m>
       , <m>01</m>, <m>10</m>, and <m>11</m>. So, a state of the form <m>a\ket{00} + b\ket{01} + c\ket{10} + d\ket{11}</m> would be transformed to: </p>
     <md>
-      \begin{bmatrix}a\\b\\c\\d\end{bmatrix}
+      <mrow> \begin{bmatrix}a\\b\\c\\d\end{bmatrix} </mrow>
     </md>
 
     <p> Combining two qubit states into a single two-qubit state involves a new operation on
@@ -263,12 +263,12 @@
     </p>
 
     <md>
-      \begin{bmatrix}a\\b\end{bmatrix} \otimes \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}ac\\ad\\bc\\bd\end{bmatrix}
+      <mrow> \begin{bmatrix}a\\b\end{bmatrix} \otimes \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}ac\\ad\\bc\\bd\end{bmatrix} </mrow>
     </md>
 
     <p>We can see that this is equivalent to the calculation using bra-ket notation:</p>
     <md>
-      (a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) = ac\ket{00} + ad\ket{01} + bc\ket{10} + bd\ket{11}
+      <mrow> (a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) = ac\ket{00} + ad\ket{01} + bc\ket{10} + bd\ket{11} </mrow>
     </md>
 
     <exercise label="Vector-Notation-Multi-Qubit-Exercise-1">
@@ -276,7 +276,7 @@
       <idx>vector notation multi-qubit exercise 1</idx>
       <statement>
         <p>Convert the following 2-qubit bra-ket notation into vector notation:</p>
-        <md>\frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11}</md>
+        <md> <mrow> \frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11} </mrow> </md>
       </statement>
       <choices randomize="yes">
         <choice>
@@ -315,7 +315,7 @@
       <idx>vector notation multi-qubit exercise 2</idx>
       <statement>
         <p>Convert the following 2-qubit vector notation into bra-ket notation:</p>
-        <md>\begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix}</md>
+        <md> <mrow> \begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix} </mrow> </md>
       </statement>
       <choices randomize="yes">
         <choice>
@@ -354,7 +354,7 @@
       <idx>vector notation multi-qubit exercise 3</idx>
       <statement>
         <p>Combine the following single-qubit states into a 2-qubit vector:</p>
-        <md>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix}</md>
+        <md> <mrow> \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix} </mrow> </md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -513,7 +513,7 @@
     <p>In order to perform this operation, we multiply the gate's matrix form with the vector state.</p>
 
     <md>
-      \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix}
+      <mrow> \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix} </mrow>
     </md>
 
     <p>Now, we follow the rules above of matrix multiplication:</p>
