@@ -25,7 +25,7 @@
       :</p>
 
     <md>
-      \ket{\psi} = a \ket{0} + b \ket{1}
+      <mrow> \ket{\psi} = a \ket{0} + b \ket{1} </mrow>
     </md>
 
     <sidebyside widths="50% 50%" valign="top">
@@ -40,7 +40,7 @@
     <p> The relationship between probability amplitude and probability is:</p>
 
     <p>
-      <md>\text{probability} = |\text{probability amplitude}|^2</md>
+      <md> <mrow> \text{probability} = |\text{probability amplitude}|^2 </mrow> </md>
     </p>
 
     <p> In this notation, if there is equal probability, or 1/2 probability of each of two outcomes,
@@ -58,7 +58,7 @@
         <p>If <m>H</m> is heads and <m>T</m> is tails, what is the probability of getting heads and
           tails for the following state?</p>
         <p>
-          <md>\frac{1}{\sqrt{3}} \ket{H} + \frac{\sqrt{2}}{\sqrt{3}} \ket{T}</md>
+          <md> <mrow> \frac{1}{\sqrt{3}} \ket{H} + \frac{\sqrt{2}}{\sqrt{3}} \ket{T} </mrow> </md>
         </p>
       </statement>
       <choices randomize="yes">
@@ -107,12 +107,12 @@
         ref="sec-independent-probabilities" />, it would look like the following:</p>
 
     <p>50% chance of sun, 50% chance of rain:</p>
-    <md>\frac{1}{\sqrt{2}}\ket{☀️} + \frac{1}{\sqrt{2}}
-      \ket{🌧️}</md>
+    <md> <mrow> \frac{1}{\sqrt{2}}\ket{☀️} + \frac{1}{\sqrt{2}}
+      \ket{🌧️} </mrow> </md>
 
     <p>75% chance of no raincoat (👕), 25% chance of raincoat (🧥):</p>
-    <md>\sqrt{\frac{3}{4}} \ket{👕} + \sqrt{\frac{1}{4}} \ket{🧥}
-      = \frac{\sqrt{3}}{2} \ket{👕} + \frac{1}{2} \ket{🧥}</md>
+    <md> <mrow> \sqrt{\frac{3}{4}} \ket{👕} + \sqrt{\frac{1}{4}} \ket{🧥}
+      = \frac{\sqrt{3}}{2} \ket{👕} + \frac{1}{2} \ket{🧥}</mrow> </md>
 
     <p>Remember: to compute probability amplitudes for bra-ket notation, calculate the <em>square
       root</em> of the probability of each outcome.</p>
@@ -120,11 +120,11 @@
     <p> In quantum computing, the possible values for a quantum bit (qubit) are 0 or 1. So
       a qubit in a 50/50 superposition of 0 and 1 would have the state: </p>
 
-    <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} </md>
+    <md> <mrow> \ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} </mrow> </md>
 
     <p> If there is negative phase, then a negative sign will be placed in front of the <m>\ket{1}</m>
       state: </p>
-    <md>\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </md>
+    <md> <mrow> \ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </mrow> </md>
 
     <p>This convention is in line with our convention of placing the negative sign on the black ball
       in visual representation!</p>
@@ -140,7 +140,7 @@
       <statement>
         <p>Consider the following quantum state:</p>
         <p>
-          <md>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</md>
+          <md> <mrow> \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1} </mrow> </md>
         </p>
         <p>What is the probability of measuring a 0?</p>
       </statement>
@@ -334,7 +334,7 @@
       each combination of possible outcomes: 00, 01, 10, 11. Thus, the general bra-ket notation for
       a 2-qubit state looks like:</p>
 
-    <md>\ket{\psi} = a \ket{00} + b \ket{01} + c \ket{10} + d \ket{11} </md>
+    <md> <mrow> \ket{\psi} = a \ket{00} + b \ket{01} + c \ket{10} + d \ket{11} </mrow> </md>
 
     <p>Looking at the state above, we can see that <m>a</m> is the probability amplitude for the
       outcome <m>00</m>, meaning there is a <m>a^2</m> chance of measuring <m>00</m>. This applies to <m>b</m>
@@ -346,7 +346,7 @@
       the symbol <m>\otimes</m>. For basis states, we simply combine the two basis states into a single
       ket, as we have already seen: </p>
 
-    <md> \ket{0} \otimes \ket{1} = \ket{01} </md>
+    <md> <mrow> \ket{0} \otimes \ket{1} = \ket{01} </mrow> </md>
 
     <p> The tricky part is calculating the probability of the combined values from the single qubit
       probabilities when the individual qubits are in superposition. This is when our independent
@@ -368,11 +368,11 @@
 
     <p>You can also factor out combined qubit states, using the same algebra rules!
     </p>
-    <md>\ket{00} + \ket{01} = \ket{0} \otimes (\ket{0} + \ket{1})</md>
+    <md> <mrow> \ket{00} + \ket{01} = \ket{0} \otimes (\ket{0} + \ket{1}) </mrow> </md>
     <p>However, the order of the individual qubits is highly important, because the order
       corresponds to each individual qubit in our system. Thus, multiplied terms <em>cannot</em> be
       reordered as in algebraic expressions.</p>
-    <md>\ket{0} \otimes (\ket{0} + \ket{1}) \ne (\ket{0} + \ket{1}) \otimes \ket{0}</md>
+    <md> <mrow> \ket{0} \otimes (\ket{0} + \ket{1}) \ne (\ket{0} + \ket{1}) \otimes \ket{0} </mrow> </md>
     <p>It's important to note that not all multi-qubit states can be factored out into individual
       qubits, e.g. <m>\ket{00} + \ket{11}</m>. These states have fascinating implications in quantum computing, but
       we'll dig deeper into these states at a later time.</p>
@@ -499,14 +499,14 @@
         <p>The order of the outcomes is always in increasing numeric order
           (starting with all 0's and ending with all 1's). Below is a properly formed
           3-qubit state: </p>
-        <md>a\ket{000} + b\ket{001} + c\ket{010} + d\ket{011} + e\ket{100} + f\ket{101} + g\ket{110}
-          + h\ket{111}</md>
+        <md> <mrow> a\ket{000} + b\ket{001} + c\ket{010} + d\ket{011} + e\ket{100} + f\ket{101} + g\ket{110}
+          + h\ket{111} </mrow> </md>
       </li>
 
       <li>
         <p>You may omit any term whose probability is 0. </p>
-        <md>\frac{1}{\sqrt{2}}\ket{00} + 0\ket{01} + 0\ket{10} + \frac{1}{\sqrt{2}}\ket{11} =
-          \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11}</md>
+        <md> <mrow> \frac{1}{\sqrt{2}}\ket{00} + 0\ket{01} + 0\ket{10} + \frac{1}{\sqrt{2}}\ket{11} =
+          \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11} </mrow> </md>
       </li>
 
       <li>
@@ -589,7 +589,7 @@
       <statement>
         <p>Simplify the following bra-ket notation into the conventional form:</p>
         <p>
-          <md>-\frac{1}{\sqrt{7}} \ket{00} + 0 \ket{10} + \frac{2}{\sqrt{7}} \ket{11} - \frac{\sqrt{2}}{\sqrt{7}} \ket{01}</md>
+          <md> <mrow> -\frac{1}{\sqrt{7}} \ket{00} + 0 \ket{10} + \frac{2}{\sqrt{7}} \ket{11} - \frac{\sqrt{2}}{\sqrt{7}} \ket{01} </mrow> </md>
         </p>
       </statement>
       <choices randomize="yes">
@@ -683,7 +683,7 @@
         Let's first remind ourselves how the equal superposition state with positive phase is
         represented in bra-ket notation:</p>
 
-      <md>\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</md>
+      <md> <mrow> \ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} </mrow> </md>
 
       <p>Now, let's apply the <c>H</c> gate to each of the terms in the expression:</p>
 
@@ -795,14 +795,14 @@
       <p>The <c>CNOT</c> gate is a little tricky. When applying the gate, we need to keep track of which
         qubit is the <term>control</term>, and which qubit is the <term>target</term>. The general
         convention to indicate which is which is with an arrow:</p>
-      <md>\text{CNOT}(\text{control} \rightarrow \text{target})</md>
+      <md> <mrow> \text{CNOT}(\text{control} \rightarrow \text{target}) </mrow> </md>
       <p>If the <em>
           control</em> for a given term is 1, then we flip the <em>target</em> qubit in that term.
         Otherwise, the term does not change. For example, if we are applying a <c>CNOT</c> gate where
         the first qubit is the control and the second qubit is the target:</p>
-      <md>\frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11}
+      <md> <mrow> \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{11}
         \xrightarrow{\text{CNOT}(1 \rightarrow 2)}
-        \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{10}</md>
+        \frac{1}{\sqrt{2}}\ket{00} + \frac{1}{\sqrt{2}}\ket{10} </mrow> </md>
 
       <p>In the first term, the control is 0, so this term does not change. In the second term, the
         control is 1, so we flip the second qubit in the term.</p>
