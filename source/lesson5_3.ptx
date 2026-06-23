@@ -826,14 +826,14 @@
             </p>
           </statement>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>
               <m>a_3 \ket{00} + a_2 \ket{01}+ a_1 \ket{10}+ a_0 \ket{11}</m>
             </p>
           </statement>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>
             <p>
               <m>a_0 \ket{00} + a_2 \ket{01}+ a_1 \ket{10}+ a_3 \ket{11}</m>

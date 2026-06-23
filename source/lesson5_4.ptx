@@ -21,7 +21,7 @@
       <p> Bra-ket notation is always sorted by the value in the ket (i.e. the outcome) <mdash /> the
         sorting order is, from left to right, smallest to largest. Vector notation uses the same
         order<mdash />smallest to largest<mdash />but it is depicted from top to bottom.</p>
-      <p>  </p>
+      <p> </p>
       <image source="L5.3.brakettovector.png" />
     </sidebyside>
 
@@ -403,10 +403,9 @@
       vector. </p>
     <ol>
       <li>
-        <p>The order of the outcomes is always in increasing numeric order
-          (starting with all 0's and ending with all 1's). This is even more important for
-          vector notation because we don't explicitly write the outcome for each entry in the
-          vector. </p>
+        <p>The order of the outcomes is <em>always</em> in increasing numeric order (starting with
+          all 0's and ending with all 1's). This is even more important for vector notation because
+          we don't explicitly write the outcome for each entry in the vector. </p>
       </li>
 
       <li>
@@ -424,8 +423,8 @@
       </li>
     </ol>
 
-    <p>Just like in bra-ket notation, the sum of the squares of each entry in the vector should add
-      up to 1, to ensure the probabilities are valid.</p>
+    <p>Just like in bra-ket notation, the sum of the squares of each entry in the vector (which is
+      the <em>probability amplitude</em>) should add up to 1, to ensure the probabilities are valid.</p>
 
     <p>If all outcomes are the same probability, you can choose to factor out a common factor and
       put that in front of the vector for simplicity's sake. </p>
@@ -518,7 +517,7 @@
     <md>
       <mrow>
         \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix}
-        \amp= \begin{bmatrix}0 \times 1 + 1 \times 0 \\ 1 \times 1 + 0 \times 0\end{bmatrix}
+        \amp= \begin{bmatrix}(0 \times 1) + (1 \times 0) \\ (1 \times 1) + (0 \times 0)\end{bmatrix}
       </mrow>
       <mrow>
         \amp= \begin{bmatrix}0\\1\end{bmatrix}
@@ -527,8 +526,173 @@
 
     <p>Voilà! Applying a <c>NOT</c> gate on the <m>\ket{0}</m> state leads to <m>\ket{1}</m>!</p>
 
-    <p>
-      <insert>H gate exercise</insert>
-    </p>
+    <exercise label="Applying-Gate-H">
+      <title>Applying a Gate in Vector Notation: <c>H</c></title>
+      <idx>applying a gate in vector notation h</idx>
+      <introduction>
+        <p> In this exercise we will work through applying the <c>H</c> gate on the <m>\ket{1}</m> state.
+          Below is the matrix representation for the <c>H</c> gate: </p>
+        <md>\begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}</md>
+      </introduction>
+      <task>
+        <title><m>\ket{1}</m> in vector notation</title>
+        <statement>
+          <p>Let's start by expressing our starting state in vector notation. What is the vector
+            notation for <m>\ket{1}</m>? </p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>\begin{bmatrix}0\\1\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\begin{bmatrix}1\\0\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\begin{bmatrix}1\\1\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </task>
+      <task>
+        <title>Order of multiplication</title>
+        <statement>
+          <p> Now that we have our matrix representation for the <c>H</c> gate and the vector
+            representation for our starting state <m>\ket{1}</m>, the next step is to set up the
+            multiplication. What is the correct order to compute the resulting state from applying
+            the gate on the state? </p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>\begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}
+            \begin{bmatrix}0\\1\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>
+            \begin{bmatrix}0\\1\end{bmatrix}
+          \begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>The order does not matter</p>
+            </statement>
+          </choice>
+        </choices>
+      </task>
+      <task>
+        <introduction>
+          <p>
+            Now, let's perform the matrix multiplication. We need to compute the two entries in our
+            resulting vector.
+          </p>
+        </introduction>
+        <task>
+          <title>Upper entry of resulting vector</title>
+          <statement>
+            <p> What is the value of the <em>upper</em> entry in the resulting vector? </p>
+          </statement>
+          <choices randomize="yes">
+            <choice correct="yes">
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 1 = \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 1 + - \frac{1}{\sqrt{2}} \times 1 = 0</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + - \frac{1}{\sqrt{2}} \times 1 = - \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 0 = 0</m>
+                </p>
+              </statement>
+            </choice>
+          </choices>
+        </task>
+        <task>
+          <title>Lower entry of resulting vector</title>
+          <statement>
+            <p> What is the value of the <em>lower</em> entry in the resulting vector? </p>
+          </statement>
+          <choices randomize="yes">
+            <choice correct="yes">
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + - \frac{1}{\sqrt{2}} \times 1 = - \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 1 + - \frac{1}{\sqrt{2}} \times 1 = 0</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 1 = \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 0 = 0</m>
+                </p>
+              </statement>
+            </choice>
+          </choices>
+        </task>
+      </task>
+      <conclusion>
+        <p>Thus, we see that the result of our matrix multiplication is:</p>
+        <md>
+          \begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}
+            \begin{bmatrix}0\\1\end{bmatrix} =
+            \begin{bmatrix}\frac{1}{\sqrt{2}}\\- \frac{1}{\sqrt{2}}\end{bmatrix}
+        </md>
+        <p>We confirmed that applying the <c>H</c> gate to the <m>\ket{1}</m> state gives us <m>\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}</m>!</p>
+      </conclusion>
+    </exercise>
   </subsection>
 </section>
