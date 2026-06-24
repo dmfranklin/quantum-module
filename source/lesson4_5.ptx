@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="lesson4_5" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Problem Set</title>
+<title>Problem Set</title>
 
+<exercises>
   <exercise label="HW4_Q1">
     <title>Question #1</title>
     <idx>HW4 Q1</idx>
@@ -260,5 +261,6 @@
       </choice>
     </choices>
   </exercise>
+</exercises>
 
 </section>
