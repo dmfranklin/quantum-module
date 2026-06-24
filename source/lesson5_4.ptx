@@ -80,7 +80,7 @@
       <idx>vector notation exercise 2</idx>
       <statement>
         <p>What is the correct bra-ket notation for the following state:</p>
-        <md> <mrow> \begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix} </mrow> </md>
+        <md>  \begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix} </md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -124,7 +124,7 @@
       <idx>vector notation exercise 3</idx>
       <introduction>
         <p>Consider the following quantum state:</p>
-        <md> <mrow> \begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix} </mrow> </md>
+        <md>  \begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix} </md>
       </introduction>
       <task>
         <statement>
@@ -276,7 +276,7 @@
       <idx>vector notation multi-qubit exercise 1</idx>
       <statement>
         <p>Convert the following 2-qubit bra-ket notation into vector notation:</p>
-        <md> <mrow> \frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11} </mrow> </md>
+        <md>  \frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11} </md>
       </statement>
       <choices randomize="yes">
         <choice>
@@ -315,7 +315,7 @@
       <idx>vector notation multi-qubit exercise 2</idx>
       <statement>
         <p>Convert the following 2-qubit vector notation into bra-ket notation:</p>
-        <md> <mrow> \begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix} </mrow> </md>
+        <md>  \begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix} </md>
       </statement>
       <choices randomize="yes">
         <choice>
@@ -354,7 +354,7 @@
       <idx>vector notation multi-qubit exercise 3</idx>
       <statement>
         <p>Combine the following single-qubit states into a 2-qubit vector:</p>
-        <md> <mrow> \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix} </mrow> </md>
+        <md>  \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix} </md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -489,7 +489,7 @@
   </subsection>
 
   <subsection xml:id="matrix_multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Matrix Multiplication</title>
+    <title>Matrix Multiplication to Apply Gates</title>
     <p> To calculate the result of a gate acting on a state, we perform <term>matrix multiplication</term>
       where the matrix representing the gate is multiplied with the vector form of the state. Here
       is how to perform matrix multiplication:</p>
