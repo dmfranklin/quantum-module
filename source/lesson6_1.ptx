@@ -53,10 +53,69 @@
       represent completely different quantum states. These two states thus have a physical
       difference, and we can design an experiment to distinguish the two states.</p>
 
+<!--
     <p>
       <insert>insert question: what kind of experiment can you construct with a measurement
         at the end to distinguish the two states?</insert>
     </p>
+-->
+
+    <exercise label="L6_1_1_Checkpoint">
+      <title>Design an Experiment</title>
+      <idx>L6_1_1_checkpoint</idx>
+      <statement>
+          <p>
+            What experiment can you construct to distinguish between these two states?
+            <md>
+                <mrow>|\psi_1\rangle = \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle </mrow>
+                <mrow>|\psi_2\rangle = \frac{1}{\sqrt{2}}|0\rangle - \frac{1}{\sqrt{2}}|1\rangle </mrow>
+            </md>            
+          </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement><p> First apply a <c>H</c> gate, then perform a measurement </p></statement>
+          <feedback>
+            <p><em>Correct!</em> Applying a <c>H</c> gate before measurement transforms the two states into 
+              <m>|0\rangle</m> and <m>|1\rangle</m>, making them distinguishable:
+              <md>   
+                <mrow> 
+                  |\psi_1\rangle \xrightarrow{\text{H}} \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) = |0\rangle \text{, while } 
+                  |\psi_1\rangle \xrightarrow{\text{H}} \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) = |1\rangle 
+                </mrow>\text{.}
+              </md>
+              Thus, performing a measurement will tell you which state you started with.
+            </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p> Measure the qubit </p></statement>
+          <feedback>
+            <p> This approach won’t work. Measurement of both states will yield <m>|0\rangle</m> and <m>|1\rangle</m> 
+              with equal probability, so they cannot be distinguished this way. </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p> First apply an <c>NOT</c> gate, then perform a measurement measure </p></statement>
+          <feedback>
+            <p> A <c>NOT</c> gate flips <m>|0\rangle</m> and <m>|1\rangle</m>; it does not reveal the difference in relative phase between these states. </p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p> No experiment can distinguish these two states </p></statement>
+          <feedback>
+            <p> This is incorrect. An <c>H</c> gate before measurement transforms the two states into distinguishable outcomes, 
+            so they <em>can</em> be told apart with the right experiment. </p>
+          </feedback>
+        </choice>
+      </choices>
+      <hint>
+        <p> 
+          Think about how the <c>H</c> gate transforms <m>|+\rangle</m> and <m>|-\rangle</m> states before measurement. 
+          How does this help you distinguish between them? 
+        </p>
+      </hint>
+    </exercise>
 
     <p> With our new understanding of global and relative phase, we can now see why the <c>Z</c> gate
       only results in a physical effect when the state is in superposition. When the state is a
@@ -81,7 +140,7 @@
     <title>The <c>CZ</c> Gate</title>
     <sidebyside widths="70% 25%" valign="top">
       <p> Let's take a look at another two-qubit gate, the controlled-<c>Z</c> or <term><c>CZ</c> gate</term>.
-        Similar to the <c>CNOT</c> gate, the gate is comprised of a <em>
+        Similar to the <c>CNOT</c> gate, the <c>CZ</c> gate is comprised of a <em>
           control</em> qubit and a <em>target</em> qubit. In this case, if the control is 1, then a <c>Z</c>
         gate is applied to the target. </p>
 
