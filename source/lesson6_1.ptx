@@ -3,10 +3,12 @@
 <section xml:id="lesson6_1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exploring Phase</title>
 
-  <p>In this section, we'll distinguish between <em>global phase</em> and <em>relative phase</em>,
-    and learn a brand new gate. </p>
+  <introduction>
+    <p>In this section, we'll distinguish between <em>global phase</em> and <em>relative phase</em>,
+      and learn a brand new gate. </p>
+  </introduction>
 
-  <section xml:id="sec-global-phase">
+  <subsection xml:id="sec-global-phase">
     <title>Global Phase</title>
     <p> Two quantum states are said to only differ in <term>global phase</term> if you can multiply
       all terms in one state by the <em>same factor</em> to get to the other. For example, the
@@ -32,9 +34,9 @@
         the essence of quantum systems, the way we use negative signs is something that is
         introduced by the model.</p>
     </note>
-  </section>
+  </subsection>
 
-  <section xml:id="sec-relative-phase">
+  <subsection xml:id="sec-relative-phase">
     <title>Relative Phase</title>
 
     <p>In contrast to global phase, two quantum states are said to differ in <term>relative phase</term>
@@ -43,9 +45,9 @@
       term is multiplied by <m>-1</m> to get from one to the other:</p>
 
     <md>
-        <mrow> 
+        <mrow>
           \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
-          \leftrightarrow \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} 
+          \leftrightarrow \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
         </mrow>
     </md>
 
@@ -75,9 +77,9 @@
       \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1} </mrow>
     </md>
 
-  </section>
+  </subsection>
 
-  <section xml:id="sec-cz-gate" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="sec-cz-gate" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>The <c>CZ</c> Gate</title>
     <sidebyside widths="70% 25%" valign="top">
       <p> Let's take a look at another two-qubit gate, the controlled-<c>Z</c> or <term><c>CZ</c> gate</term>.
@@ -102,5 +104,5 @@
       </script>
     </interactive> -->
 
-  </section>
+  </subsection>
 </section>
