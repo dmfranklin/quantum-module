@@ -633,6 +633,7 @@
       </choices>
     </exercise>
     <exercise label="Quiz2_17">
+      <title>BONUS QUESTION</title>
       <dynamic>
         <statement>
           <interactive aspect="9:9" platform="javascript"
