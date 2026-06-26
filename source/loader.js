@@ -56,8 +56,8 @@ const loadEverything = async () => {
     // Deployed module (e.g., hosted on Runestone)
     await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/splice.js");
     await loadCSS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css");
-    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.js");
-    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/circuits.js");
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module@Quiz_2/source/widget.js");
+    await loadJS("https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module@Quiz_2/source/circuits.js");
   }
 
 };
