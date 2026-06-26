@@ -86,5 +86,139 @@
         </choice>
       </choices>
     </exercise>
+    <exercise label="Quiz2_3">
+      <statement>
+        <p>In which of the following states is there a higher chance to measure a 0</p>
+      </statement>
+      <md>
+          <mrow>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</mrow>
+          <mrow>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</mrow>
+        </md>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>The chance is equal in both states.</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_4">
+      <statement>
+        <p>
+          Select all valid states among the following:
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>0.5\ket{0} + 0.5\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>0.9\ket{0} + 0.1\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{2}\ket{0} + \frac{\sqrt{3}}{2}\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{2} \begin{bmatrix}1 \\ \sqrt{3}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0.25 \\ 0.75\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_5">
+      <statement>
+        <p>Your professor thinks he is really funny, and tries to make your class fun by making
+          jokes
+          in the middle of lectures. Unfortunately, he is not always funny, and only makes you laugh
+          60% of the time.</p>
+        <p>Describe how you would represent the probabilistic event above in bra-ket notation.
+          Define the two outcomes using kets, and write out an expression that captures the
+          probabilities of each outcome occurring.</p>
+        <p>You can copy the symbols for a ket here: |0⟩</p>
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Quiz2_6">
+      <statement>
+        <p>Select the correct, normalized bra-ket notation for the following state.</p>
+        <p>A two-qubit state with a 35% chance of measuring <m>00</m>, a 15% chance of measuring <m>01</m>,
+          and an equal chance of measuring <m>10</m> or <m>11</m>, with a negative phase on the <m>\ket{00}</m>
+          term.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{10} \big(\sqrt{35} \ket{00} - \sqrt{15} \ket{01} - \sqrt{25} \ket{10} - \sqrt{25} \ket{11}\big)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{10} \big(- \sqrt{35} \ket{00} + \sqrt{15} \ket{01} + \sqrt{25} \ket{10} + \sqrt{25} \ket{11}\big)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{10} \big(35 \ket{00} - 15 \ket{01} - 25 \ket{10} - 25 \ket{11}\big)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{10} \big(\sqrt{35} \ket{00} - \sqrt{15} \ket{01} - \sqrt{35} \ket{10} - \sqrt{15} \ket{11}\big)</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_7">
+      <statement>
+        <p>Express the following as a combined, 4-qubit state in bra-ket notation:</p>
+        <md>
+          <mrow>\ket{\psi_0} \amp = \frac{1}{2} \ket{00} + \frac{1}{2} \ket{10} - \frac{\sqrt{2}}{2} \ket{11} </mrow>
+          <mrow>\ket{\psi_1} \amp = \frac{1}{2} \ket{01} + \frac{\sqrt{3}}{2} \ket{11} </mrow>
+        </md>
+      </statement>
+    </exercise>
   </exercises>
 </section>
