@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- time-limit="1800" results="no" feedback="no" -->
-
 <section xml:id="sec_quiz2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quiz 2</title>
-  <exercises xml:id="Quiz2" label="Quiz2">
+  <exercises xml:id="Quiz2" label="Quiz2" time-limit="60" results="no" feedback="no">
     <title>Quiz 2</title>
     <exercise label="Quiz2_1">
       <statement>
@@ -88,7 +86,7 @@
     </exercise>
     <exercise label="Quiz2_3">
       <statement>
-        <p>In which of the following states is there a higher chance to measure a 0</p>
+        <p>In which of the following states is there a higher chance to measure a 0?</p>
       </statement>
       <md>
           <mrow>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</mrow>
@@ -263,21 +261,21 @@
             </p>
           </statement>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>
               <m>\big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big)</m>
             </p>
           </statement>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>
               <m>\big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big)</m>
             </p>
           </statement>
         </choice>
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>
               <m>\big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big)</m>
@@ -632,7 +630,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Quiz2_17">
+    <!-- <exercise label="Quiz2_17">
       <title>BONUS QUESTION</title>
       <dynamic>
         <statement>
@@ -651,9 +649,10 @@
       </dynamic>
       <static>
         <statement>
-          <p>Draw a circuit that converts the <m>\ket{10}</m> state into the <m>\frac{1}{2} \big(\ket{00} - \ket{01} - \ket{10} + \ket{11} \big)</m> state. </p>
+          <p>Draw a circuit that converts the <m>\ket{10}</m> state into the <m>\frac{1}{2} \big(\ket{00} -
+    \ket{01} - \ket{10} + \ket{11} \big)</m> state. </p>
         </statement>
       </static>
-    </exercise>
+    </exercise> -->
   </exercises>
 </section>
