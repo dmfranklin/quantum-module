@@ -87,11 +87,11 @@
     <exercise label="Quiz2_3">
       <statement>
         <p>In which of the following states is there a higher chance to measure a 0?</p>
-      </statement>
-      <md>
+        <md>
           <mrow>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</mrow>
           <mrow>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</mrow>
         </md>
+      </statement>
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
