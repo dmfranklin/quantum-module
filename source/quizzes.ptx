@@ -4,4 +4,5 @@
   <title>Quizzes</title>
 
   <xi:include href="quiz1.ptx" />
+  <xi:include href="quiz2.ptx" />
 </chapter>
