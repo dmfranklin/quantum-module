@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- time-limit="1800" results="no" feedback="no" -->
+
+<exercises xml:id="Quiz2" label="Quiz2">
+  <title>Quiz 2</title>
+  <exercise label="Quiz2_1">
+    <statement>
+      <p>What is the probability of measuring 0 in the following state?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\frac{4}{5}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{1}{\sqrt{5}}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{2}{\sqrt{5}}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{1}{5}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{2}{5}</m>
+          </p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz2_2">
+    <statement>
+      <p>What is the probability of measuring 0 in the <em>first qubit</em> in the following state?</p>
+      <md>\frac{1}{\sqrt{9}} \ket{00} - \frac{2}{\sqrt{9}} \ket{01} + \frac{\sqrt{3}}{\sqrt{9}} \ket{10} + \frac{1}{\sqrt{9}} \ket{11}</md>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\frac{5}{9}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{1}{9}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{1}{\sqrt{9}}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\frac{3}{\sqrt{9}}</m>
+          </p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+</exercises>
