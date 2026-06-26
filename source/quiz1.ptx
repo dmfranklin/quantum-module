@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- time-limit="1800" results="no" feedback="no" -->
+
+<exercises xml:id="Quiz1" label="Quiz1">
+  <title>Quiz 1</title>
+  <exercise label="Quiz1_1">
+    <statement>
+      <p>In quantum circuits, what is represented moving from left to right?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>Order of operations</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Space</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Order of importance</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Different qubits</p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_2">
+    <statement>
+      <p>
+        What are some of the fundamental limitations of quantum computing that make it
+        difficult
+        to
+        build large-scale quantum computers? (specify at least 2)
+      </p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_3">
+    <introduction>
+      <p> For each of the statements below, indicate whether it is true or false.</p>
+    </introduction>
+    <task>
+      <statement correct="yes">
+        <p>
+          Quantum computers are expected to replace classical computers for only some
+          applications.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement correct="no">
+        <p>
+          Quantum computers and classical computers solve problems in the same way.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement correct="yes">
+        <p>
+          Quantum computers are expected to solve optimization problems faster than
+          classical
+          computers.
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement correct="yes">
+        <p>
+          Quantum computers are expected to be able to "break" classical encryption
+          schemes. By
+          "break",
+          we mean that the data will no longer be secure because it can be decrypted.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+  <exercise label="Quiz1_4">
+    <statement>
+      <p>What is the state at the end of the quantum circuit below, starting with the state <m>\ket{10}</m>
+        ?</p>
+      <p>
+        <image source="Quiz1_4.png" width="85%" />
+      </p>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{00}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\ket{01}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{10}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{11}</m>
+          </p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_5">
+    <statement>
+      <p>What is the state at the end of the quantum circuit below, starting with the state <m>\ket{110}</m>
+        ?</p>
+      <p>
+        <image source="Quiz1_5.png" width="85%" />
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\ket{001}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{110}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{101}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{111}</m>
+          </p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise xml:id="Quiz1_6_a" label="Quiz1_6_a">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
+        truncate) the result.</p>
+      <p>Sandra needs to move her piece 4 spaces to win the game. She must roll exactly 4 to
+        win
+        in
+        this round.</p>
+      <p>What is the probability that Sandra will roll a 4 and win?</p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_6_b">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
+        truncate) the result.</p>
+      <p>Sandra needs to move her piece 4 spaces to win the game. She must roll exactly 4 to
+        win
+        in
+        this round.</p>
+      <p>What is the probability that Sandra will not roll a 4?</p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_7_a">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
+        truncate) the result.</p>
+      <p>If Ayesha rolls exactly 6, she has to go back to the start of the game.</p>
+      <p>What is the probability that Ayesha will roll a 6 and have to go back to the start?</p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_7_b">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
+        truncate) the result.</p>
+      <p>If Ayesha rolls exactly 6, she has to go back to the start of the game.</p>
+      <p>What is the probability that Ayesha will not roll a 6?</p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_8_a">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
+        truncate) the result.</p>
+      <p>What is the probability that Sandra will not win and Ayesha will go back to the start
+        of the game?</p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_8_b">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>For the following questions, enter your answer in <c>0.XXX</c> form. Round (rather than
+        truncate) the result.</p>
+      <p>What is the probability that Sandra will win and Ayesha will not go back to the start
+        of the game?</p>
+    </statement>
+    <response />
+  </exercise>
+  <exercise label="Quiz1_9">
+    <statement>
+      <p>Sandra and Ayesha are playing a board game. They are playing with one standard
+        6-sided
+        die.</p>
+      <p>
+        What is the most likely outcome of this round?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>Sandra wins, Ayesha goes back to the start</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Sandra does not win, Ayesha goes back to the start</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Sandra wins, Ayesha does not go back to the start</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Sandra does not win, Ayesha does not go back to the start</p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_10">
+    <statement>
+      <p>A qubit is a superposition of how many values?</p>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>0</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>1</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>2</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>unknown until measurement occurs</p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_11">
+    <statement>
+      <p>What information is held in the quantum state?</p>
+    </statement>
+    <choices>
+      <choice>
+        <statement>
+          <p>each possible outcome after measurement</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>phase</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>the probability of measuring one outcome over another</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>all of the above</p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_12">
+    <statement>
+      <p>Select all possible values of a qubit after measurement.</p>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement>
+          <p>0</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>1</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>a superposition of <m>\ket{0}</m> or <m>\ket{1}</m></p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_13">
+    <statement correct="yes">
+      <p>Phase is only relevant in quantum states that are in superposition.</p>
+    </statement>
+  </exercise>
+  <exercise label="Quiz1_14">
+    <statement>
+      <p>Suppose you have a qubit in the <m>\ket{1}</m> state, and you apply a <c>Z</c> gate to the state.
+        What is the resulting state?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{1}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>-\ket{1}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{0}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Equal superposition of <m>\ket{0}</m> and <m>\ket{1}</m> with negative phase</p>
+        </statement>
+      </choice>
+    </choices>
+    <hint>
+      <p>Think about simplifying our description of the state!</p>
+    </hint>
+  </exercise>
+  <exercise label="Quiz1_15">
+    <statement>
+      <p> Simplify the following visual representation:</p>
+      <p>
+        <image source="Quiz1_15.png" width="20%" />
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>White</p>
+          <image source="L4_3_2_B.png" width="15%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Black</p>
+          <image source="L4_3_2_A.png" width="15%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Equal superposition of white and black, positive phase</p>
+          <image source="L4_3_2_D.png" width="15%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Equal superposition of white and black, negative phase</p>
+          <image source="L4_3_2_E.png" width="15%" />
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_16">
+    <statement>
+      <p>Express the following visual representation as a 2-qubit state:</p>
+      <p>
+        <image source="Quiz1_16.png" width="15%" />
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <image source="Quiz1_16_A.png" width="15%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <image source="Quiz1_16_B.png" width="15%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <image source="Quiz1_16_C.png" width="15%" />
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <image source="Quiz1_16_D.png" width="15%" />
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+  <exercise label="Quiz1_17">
+    <statement>
+      <p>What is the state at the end of the quantum circuit below, starting with the state <m>\ket{101}</m>
+        ?</p>
+      <p>
+        <image source="Quiz1_17.png" width="85%" />
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m>\ket{111}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            <m>\ket{101}</m>
+          </p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>50% chance of <m>\ket{001}</m> and <m>\ket{101}</m></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>50% chance of <m>\ket{101}</m> and <m>\ket{111}</m></p>
+        </statement>
+      </choice>
+    </choices>
+    <hint>
+      <statement>
+        <p>Try expressing the starting state in visual representation, and then trace
+          through the circuit, one gate at a time.</p>
+      </statement>
+    </hint>
+  </exercise>
+  <exercise label="Quiz1_18">
+    <statement>
+      <p> Write code using Qiskit to build the following circuit:</p>
+      <p>
+        <image source="Quiz1_18.png" width="85%" />
+      </p>
+    </statement>
+    <program interactive="activecode" language="python3">
+      <preamble>
+    from qiskit import QuantumCircuit
+
+    # TODO: Pass in the correct parameter to create a circuit with 2 qubits
+    </preamble>
+      <code>
+    circuit = QuantumCircuit(...)
+
+    # TODO: Write code to create the appropriate circuit
+
+    </code>
+      <postamble>
+    # Draw the circuit
+    print(circuit.draw())
+    </postamble>
+    </program>
+  </exercise>
+  <exercise label="Quiz1_19">
+    <statement>
+      <p>What can the following sequence of gates be simplified to?</p>
+      <p>
+        <image source="Quiz1_19.png" width="80%" />
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>one <c>SWAP</c></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>one <c>CNOT</c> with the control on the upper qubit and the target on the lower qubit</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>one <c>NOT</c> on each qubit</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>one <c>NOT</c> on the upper qubit</p>
+        </statement>
+      </choice>
+    </choices>
+    <hint>
+      <p> Go through possible starting states (like <m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, <m>\ket{11}</m>) and see what
+        the result of running the given gates on each state is. </p>
+    </hint>
+  </exercise>
+  <exercise label="Quiz1_20">
+    <statement>
+      <p>
+        Select all that is true about quantum measurements:
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>Measurement can affect the state being measured</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Multiple subsequent measurements of a quantum state in superposition will
+            result in
+            the
+            same value</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>If you know the superposition state of a quantum state, you can accurately
+            predict a
+            measurement made on it</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>It is possible in all cases to construct a measurement to completely measure
+            both a
+            state's superposition and phase</p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+</exercises>
