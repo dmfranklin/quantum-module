@@ -635,7 +635,7 @@
       <dynamic>
         <statement>
           <interactive aspect="9:9" platform="javascript"
-            source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module@Quiz_2/source/loader.js">
+            source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
             <script>
               specificOutputWidget({
                 circuit: "Quiz2_17_SpecificOutput",
