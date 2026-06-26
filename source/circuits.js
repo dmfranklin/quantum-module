@@ -181,8 +181,8 @@ const circuits = new Map([
   ], [
     "Quiz2_17_SpecificOutput",
     `
-        I H
-        X H
+        I H I I I I
+        X H I I I I
     `
   ]
 ]);
