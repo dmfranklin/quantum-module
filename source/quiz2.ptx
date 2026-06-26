@@ -213,12 +213,446 @@
     </exercise>
     <exercise label="Quiz2_7">
       <statement>
-        <p>Express the following as a combined, 4-qubit state in bra-ket notation:</p>
+        <p>Express the following as a combined bra-ket state:</p>
         <md>
           <mrow>\ket{\psi_0} \amp = \frac{1}{2} \ket{00} + \frac{1}{2} \ket{10} - \frac{\sqrt{2}}{2} \ket{11} </mrow>
           <mrow>\ket{\psi_1} \amp = \frac{1}{2} \ket{01} + \frac{\sqrt{3}}{2} \ket{11} </mrow>
         </md>
       </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{4}\ket{0001} + \frac{\sqrt{3}}{4}\ket{0011} + \frac{1}{4}\ket{1001} + \frac{\sqrt{3}}{4} \ket{1011} - \frac{\sqrt{2}}{4} \ket{1101} - \frac{\sqrt{6}}{4} \ket{1111}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{\sqrt{3}}{4}\ket{0001} + \frac{\sqrt{2}}{4}\ket{0011} + \frac{\sqrt{3}}{4}\ket{1001} + \frac{\sqrt{2}}{4} \ket{1011} - \frac{1}{4} \ket{1101} - \frac{\sqrt{6}}{4} \ket{1111}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2} \ket{00} + \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} + \frac{\sqrt{3} - \sqrt{2}}{2} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2}\ket{0001} + \frac{\sqrt{3}}{2}\ket{0011} + \frac{1}{2}\ket{1001} + \frac{\sqrt{3}}{2} \ket{1011} - \frac{\sqrt{2}}{2} \ket{1101} - \frac{\sqrt{6}}{2} \ket{1111}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_8">
+      <statement>
+        <p>Factor out the following state into a tensor product of two 1-qubit states:</p>
+        <md>\frac{1}{2} \big( \ket{00} - \ket{01} + \ket{10} - \ket{11} \big) </md>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\big)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big) \otimes \big(\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}\big)</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_9">
+      <statement>
+        <p> Calculate the result of the following circuit in bra-ket on the starting state <m>\frac{1}{\sqrt{6}} \ket{00} + \frac{\sqrt{3}}{\sqrt{6}} \ket{10} - \frac{\sqrt{2}}{\sqrt{6}} \ket{11}</m>:</p>
+        <image source="Quiz2_9.png" width="30%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{\sqrt{3} - \sqrt{2}}{\sqrt{12}} \ket{00} + \frac{\sqrt{3} + \sqrt{2}}{\sqrt{12}} \ket{01}  + \frac{1}{\sqrt{12}} \ket{10} + \frac{1}{\sqrt{12}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{6}} \ket{00} + \frac{\sqrt{3}}{\sqrt{6}} \ket{10} - \frac{\sqrt{2}}{\sqrt{6}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{6}} \ket{10} + \frac{\sqrt{3}}{\sqrt{6}} \ket{00} - \frac{\sqrt{2}}{\sqrt{6}} \ket{01}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{\sqrt{2}}{\sqrt{12}} \ket{00} - \frac{1 + \sqrt{3}}{\sqrt{12}} \ket{01} - \frac{\sqrt{2}}{\sqrt{12}} \ket{10} - \frac{1 - \sqrt{3}}{\sqrt{12}} \ket{11}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_10">
+      <statement>
+        <p>
+          How do you represent the following state in normalized vector notation?</p>
+        <md>\frac{1}{\sqrt{7}} \ket{01} - \frac{\sqrt{3}}{\sqrt{7}} \ket{00} + \frac{\sqrt{3}}{\sqrt{7}} \ket{11}</md>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{7}} \begin{bmatrix}\sqrt{3} \\ -1 \\ 0 \\ -\sqrt{3}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{7} \begin{bmatrix}3 \\ -1 \\ 0 \\ -3\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{7}} \begin{bmatrix}1 \\ -\sqrt{3} \\ \sqrt{3} \\ 0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>- \frac{1}{\sqrt{7}} \begin{bmatrix}-\sqrt{3} \\ 1 \\ 0 \\ \sqrt{3}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_11">
+      <statement>
+        <p>How would you represent the following state in vector notation?</p>
+        <p>A three-qubit state with a 36% chance of measuring <m>001</m> and a 54% chance of measuring <m>110</m>,
+          with positive phase.</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{10} \begin{bmatrix}0\\ 6 \\ 0\\0\\0\\0\\ \sqrt{54} \\0 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{100} \begin{bmatrix}0\\ 36 \\ 0\\0\\0\\0\\54\\0 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{10} \begin{bmatrix}6 \\ \sqrt{54} \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{10} \begin{bmatrix}6 \\ 0 \\ \sqrt{54}\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_12">
+      <statement>
+        <p>Combine the following two states into a single state:</p>
+        <md>
+          <mrow>\ket{\psi_0} = \begin{bmatrix} \frac{1}{\sqrt{13}} \\ \frac{-\sqrt{4}}{\sqrt{13}} \\ \frac{\sqrt{7}}{\sqrt{13}} \\ \frac{1}{\sqrt{13}} \end{bmatrix} </mrow>
+          <mrow>\ket{\psi_1} = \frac{1}{\sqrt{5}} \begin{bmatrix} \sqrt{2} \\ \sqrt{3} \end{bmatrix} </mrow>
+        </md>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{5}\sqrt{13}} \begin{bmatrix} \sqrt{2} \\ \sqrt{3} \\ -\sqrt{8} \\ -\sqrt{12} \\ \sqrt{14} \\ \sqrt{21} \\ \sqrt{2} \\ \sqrt{3} \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{5}\sqrt{13}} \begin{bmatrix} \sqrt{2} \\ -\sqrt{8} \\ \sqrt{14} \\ \sqrt{2} \\ \sqrt{3} \\ -\sqrt{12} \\ \sqrt{21} \\ \sqrt{3} \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{5}\sqrt{13}} \begin{bmatrix} \sqrt{2} \\ -\sqrt{8} \\ \sqrt{21} \\ \sqrt{3} \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{65} \begin{bmatrix} 2 \\ 3 \\ -8 \\ -12 \\ 14 \\ 21 \\ 2 \\ 3 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_13">
+      <statement>
+        <p>Apply the following gate to the starting state <m>\ket{\psi} = \frac{1}{\sqrt{3}} (\ket{00} - \ket{01} - \ket{10})</m> in <em>vector notation</em>.</p>
+        <image source="Quiz2_13.png" width="35%" />
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{3}} \begin{bmatrix} 1 \\ 0 \\ -1 \\ -1 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{3}} \begin{bmatrix} 1 \\ -1 \\ -1 \\ 0 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{3}} \begin{bmatrix} 1 \\ -1 \\ 0 \\ -1 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{3}} \begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_14">
+      <statement>
+        <p>Write a single expression that expresses the following circuit as a single matrix <m>M</m>,
+          such that if we compute <m>M \ket{\psi}</m> we would get the resulting quantum state.</p>
+        <image source="Quiz2_14.png" width="60%" />
+        <p>You can copy the symbol for the tensor product here: ⊗. You can use * for matrix
+          multiplication.</p>
+        <p>
+          <em>Hint: the vertical lines are not the only way to group matrices together vertically.</em>
+        </p>
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Quiz2_15">
+      <statement>
+        <p>What is the result of applying each of the following gates to the input state <m>a\ket{00} + b\ket{01} + c\ket{10} + d\ket{11}</m>?
+          Assume that this is the starting state for each gate below.</p>
+      </statement>
+      <matches>
+        <match>
+          <premise>
+            <p><c>NOT</c> on left qubit</p>
+          </premise>
+          <response>
+            <m>c\ket{00} + d\ket{01} + a\ket{10} + b\ket{11}</m>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p><c>Z</c> on right qubit</p>
+          </premise>
+          <response>
+            <m>a\ket{00} - b\ket{01} + c\ket{10} - d\ket{11}</m>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <c>SWAP</c>
+            </p>
+          </premise>
+          <response>
+            <m>a\ket{00} + c\ket{01} + b\ket{10} + d\ket{11}</m>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p><c>CNOT</c> with left qubit as control</p>
+          </premise>
+          <response>
+            <m>a\ket{00} + b\ket{01} + d\ket{10} + c\ket{11}</m>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p><c>H</c> on left qubit</p>
+          </premise>
+          <response>
+            <m>\frac{a+c}{\sqrt{2}}\ket{00} + \frac{b+d}{\sqrt{2}}\ket{01} + \frac{a-c}{\sqrt{2}}\ket{10} + \frac{b-d}{\sqrt{2}}\ket{11}</m>
+          </response>
+        </match>
+      </matches>
+    </exercise>
+    <exercise label="Quiz2_16">
+      <statement>
+        <p>Suppose we have a mystery 2-qubit gate, <c>U</c>, and we are trying to derive its matrix
+          form. We know how it acts on our basis states:</p>
+        <table>
+          <title>Mystery Matrix Inputs/Outputs</title>
+          <tabular halign="center">
+            <row header="yes">
+              <cell>Input</cell>
+              <cell>Output</cell>
+            </row>
+            <row>
+              <cell>
+                <m>\ket{00}</m>
+              </cell>
+              <cell>
+                <m>\ket{11}</m>
+              </cell>
+            </row>
+            <row>
+              <cell>
+                <m>\ket{01}</m>
+              </cell>
+              <cell>
+                <m>\ket{00}</m>
+              </cell>
+            </row>
+            <row>
+              <cell>
+                <m>\ket{10}</m>
+              </cell>
+              <cell>
+                <m>\ket{01}</m>
+              </cell>
+            </row>
+            <row>
+              <cell>
+                <m>\ket{11}</m>
+              </cell>
+              <cell>
+                <m>\ket{10}</m>
+              </cell>
+            </row>
+          </tabular>
+        </table>
+        <p>Which of the following matrices is the correct representation of this gate?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\begin{bmatrix}
+        0\amp 1\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 0\\
+        0\amp 0\amp 0\amp 1\\
+        1\amp 0\amp 0\amp 0\\
+        \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}
+        0\amp 0\amp 0\amp 1\\
+        1\amp 0\amp 0\amp 0\\
+        0\amp 1\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 0\\
+        \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}
+        1\amp 0\amp 0\amp 0\\
+        0\amp 1\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 0\\
+        0\amp 0\amp 0\amp 1\\
+        \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}
+        0\amp 1\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 0\\
+        1\amp 0\amp 0\amp 0\\
+        0\amp 0\amp 0\amp 1\\
+        \end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Quiz2_17">
+      <dynamic>
+        <statement>
+          <interactive aspect="9:9" platform="javascript"
+            source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+            <script>
+              specificOutputWidget({
+                circuit: "Quiz2_17_SpecificOutput",
+                allowedGates: "X*HZS",
+                inputs: "10",
+                hideFeedback: true,
+              });
+            </script>
+          </interactive>
+        </statement>
+      </dynamic>
+      <static>
+        <statement>
+          <p>Draw a circuit that converts the <m>\ket{10}</m> state into the <m>\frac{1}{2} \big(\ket{00} - \ket{01} - \ket{10} + \ket{11} \big)</m> state. </p>
+        </statement>
+      </static>
     </exercise>
   </exercises>
 </section>
