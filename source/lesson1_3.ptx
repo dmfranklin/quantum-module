@@ -4,7 +4,7 @@
 
 
   <title>Problem Set</title>
-
+  <exercises>
     <exercise label="HW1-Q1"> 
       <title>Question 1</title>
       <idx>question 1</idx>
@@ -184,5 +184,6 @@
         </script>
       </interactive>
     </exercise>
+  </exercises>
 
 </section>

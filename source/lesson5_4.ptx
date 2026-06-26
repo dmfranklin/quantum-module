@@ -17,11 +17,11 @@
       namely, the information about what each probability amplitude is tied to. Instead, we have to
       remember the proper order. </p>
 
-    <sidebyside widths="60% 35%" valign="top">
+    <sidebyside widths="55% 5% 40%" valign="top">
       <p> Bra-ket notation is always sorted by the value in the ket (i.e. the outcome) <mdash /> the
         sorting order is, from left to right, smallest to largest. Vector notation uses the same
         order<mdash />smallest to largest<mdash />but it is depicted from top to bottom.</p>
-
+      <p> </p>
       <image source="L5.3.brakettovector.png" />
     </sidebyside>
 
@@ -80,7 +80,7 @@
       <idx>vector notation exercise 2</idx>
       <statement>
         <p>What is the correct bra-ket notation for the following state:</p>
-        <md>\begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix}</md>
+        <md>  \begin{bmatrix}\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{6}}\end{bmatrix} </md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -124,7 +124,7 @@
       <idx>vector notation exercise 3</idx>
       <introduction>
         <p>Consider the following quantum state:</p>
-        <md>\begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix}</md>
+        <md>  \begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix} </md>
       </introduction>
       <task>
         <statement>
@@ -245,7 +245,7 @@
       example, for two-qubit systems, you would have a vector with 4 elements, corresponding to <m>00</m>
       , <m>01</m>, <m>10</m>, and <m>11</m>. So, a state of the form <m>a\ket{00} + b\ket{01} + c\ket{10} + d\ket{11}</m> would be transformed to: </p>
     <md>
-      \begin{bmatrix}a\\b\\c\\d\end{bmatrix}
+      <mrow> \begin{bmatrix}a\\b\\c\\d\end{bmatrix} </mrow>
     </md>
 
     <p> Combining two qubit states into a single two-qubit state involves a new operation on
@@ -263,12 +263,12 @@
     </p>
 
     <md>
-      \begin{bmatrix}a\\b\end{bmatrix} \otimes \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}ac\\ad\\bc\\bd\end{bmatrix}
+      <mrow> \begin{bmatrix}a\\b\end{bmatrix} \otimes \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}ac\\ad\\bc\\bd\end{bmatrix} </mrow>
     </md>
 
     <p>We can see that this is equivalent to the calculation using bra-ket notation:</p>
     <md>
-      (a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) = ac\ket{00} + ad\ket{01} + bc\ket{10} + bd\ket{11}
+      <mrow> (a\ket{0} + b\ket{1}) \otimes (c\ket{0} + d\ket{1}) = ac\ket{00} + ad\ket{01} + bc\ket{10} + bd\ket{11} </mrow>
     </md>
 
     <exercise label="Vector-Notation-Multi-Qubit-Exercise-1">
@@ -276,7 +276,7 @@
       <idx>vector notation multi-qubit exercise 1</idx>
       <statement>
         <p>Convert the following 2-qubit bra-ket notation into vector notation:</p>
-        <md>\frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11}</md>
+        <md>  \frac{\sqrt{3}}{2} \ket{00} + 0 \ket{01} + \frac{1}{2} \ket{10} + 0 \ket{11} </md>
       </statement>
       <choices randomize="yes">
         <choice>
@@ -315,7 +315,7 @@
       <idx>vector notation multi-qubit exercise 2</idx>
       <statement>
         <p>Convert the following 2-qubit vector notation into bra-ket notation:</p>
-        <md>\begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix}</md>
+        <md>  \begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\\frac{1}{\sqrt{2}}\\0\end{bmatrix} </md>
       </statement>
       <choices randomize="yes">
         <choice>
@@ -354,7 +354,7 @@
       <idx>vector notation multi-qubit exercise 3</idx>
       <statement>
         <p>Combine the following single-qubit states into a 2-qubit vector:</p>
-        <md>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix}</md>
+        <md>  \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix} \otimes \begin{bmatrix}0\\-1\end{bmatrix} </md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -403,10 +403,9 @@
       vector. </p>
     <ol>
       <li>
-        <p>The order of the outcomes is always in increasing numeric order
-          (starting with all 0's and ending with all 1's). This is even more important for
-          vector notation because we don't explicitly write the outcome for each entry in the
-          vector. </p>
+        <p>The order of the outcomes is <em>always</em> in increasing numeric order (starting with
+          all 0's and ending with all 1's). This is even more important for vector notation because
+          we don't explicitly write the outcome for each entry in the vector. </p>
       </li>
 
       <li>
@@ -424,8 +423,8 @@
       </li>
     </ol>
 
-    <p>Just like in bra-ket notation, the sum of the squares of each entry in the vector should add
-      up to 1, to ensure the probabilities are valid.</p>
+    <p>Just like in bra-ket notation, the sum of the squares of each entry in the vector (which is
+      the <em>probability amplitude</em>) should add up to 1, to ensure the probabilities are valid.</p>
 
     <p>If all outcomes are the same probability, you can choose to factor out a common factor and
       put that in front of the vector for simplicity's sake. </p>
@@ -490,16 +489,13 @@
   </subsection>
 
   <subsection xml:id="matrix_multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Matrix Multiplication</title>
+    <title>Matrix Multiplication to Apply Gates</title>
     <p> To calculate the result of a gate acting on a state, we perform <term>matrix multiplication</term>
       where the matrix representing the gate is multiplied with the vector form of the state. Here
       is how to perform matrix multiplication:</p>
 
     <p>
-      <image source="L5.4.matrixmultiply.png" width="70%" />
-    </p>
-    <p>
-      <insert> Make an animated gif with the above picture showing it appear slowly </insert>
+      <image source="L5.4.matrixmultiply.gif" width="90%" />
     </p>
 
     <p> Let's see if we can calculate this on a gate for which we know the output. We know that if
@@ -513,7 +509,7 @@
     <p>In order to perform this operation, we multiply the gate's matrix form with the vector state.</p>
 
     <md>
-      \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix}
+      <mrow> \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix} </mrow>
     </md>
 
     <p>Now, we follow the rules above of matrix multiplication:</p>
@@ -521,7 +517,7 @@
     <md>
       <mrow>
         \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix}
-        \amp= \begin{bmatrix}0 \times 1 + 1 \times 0 \\ 1 \times 1 + 0 \times 0\end{bmatrix}
+        \amp= \begin{bmatrix}(0 \times 1) + (1 \times 0) \\ (1 \times 1) + (0 \times 0)\end{bmatrix}
       </mrow>
       <mrow>
         \amp= \begin{bmatrix}0\\1\end{bmatrix}
@@ -530,8 +526,269 @@
 
     <p>Voilà! Applying a <c>NOT</c> gate on the <m>\ket{0}</m> state leads to <m>\ket{1}</m>!</p>
 
-    <p>
-      <insert>H gate exercise</insert>
-    </p>
+    <exercise label="Applying-Gate-H">
+      <title>Applying a Gate in Vector Notation: <c>H</c></title>
+      <idx>applying a gate in vector notation h</idx>
+      <introduction>
+        <p> In this exercise we will work through applying the <c>H</c> gate on the <m>\ket{1}</m> state.
+          Below is the matrix representation for the <c>H</c> gate: </p>
+        <md>\begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}</md>
+      </introduction>
+      <task>
+        <title><m>\ket{1}</m> in vector notation</title>
+        <statement>
+          <p>Let's start by expressing our starting state in vector notation. What is the vector
+            notation for <m>\ket{1}</m>? </p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>\begin{bmatrix}0\\1\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\begin{bmatrix}1\\0\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\begin{bmatrix}1\\1\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </task>
+      <task>
+        <title>Order of multiplication</title>
+        <statement>
+          <p> Now that we have our matrix representation for the <c>H</c> gate and the vector
+            representation for our starting state <m>\ket{1}</m>, the next step is to set up the
+            multiplication. What is the correct order to compute the resulting state from applying
+            the gate on the state? </p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>\begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}
+            \begin{bmatrix}0\\1\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>
+            \begin{bmatrix}0\\1\end{bmatrix}
+          \begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>The order does not matter</p>
+            </statement>
+          </choice>
+        </choices>
+      </task>
+      <task>
+        <introduction>
+          <p>
+            Now, let's perform the matrix multiplication. We need to compute the two entries in our
+            resulting vector.
+          </p>
+        </introduction>
+        <task>
+          <title>Upper entry of resulting vector</title>
+          <statement>
+            <p> What is the value of the <em>upper</em> entry in the resulting vector? </p>
+          </statement>
+          <choices randomize="yes">
+            <choice correct="yes">
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 1 = \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 1 + - \frac{1}{\sqrt{2}} \times 1 = 0</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + - \frac{1}{\sqrt{2}} \times 1 = - \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 0 = 0</m>
+                </p>
+              </statement>
+            </choice>
+          </choices>
+        </task>
+        <task>
+          <title>Lower entry of resulting vector</title>
+          <statement>
+            <p> What is the value of the <em>lower</em> entry in the resulting vector? </p>
+          </statement>
+          <choices randomize="yes">
+            <choice correct="yes">
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + - \frac{1}{\sqrt{2}} \times 1 = - \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 1 + - \frac{1}{\sqrt{2}} \times 1 = 0</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 1 = \frac{1}{\sqrt{2}}</m>
+                </p>
+              </statement>
+            </choice>
+            <choice>
+              <statement>
+                <p>
+                  <m>\frac{1}{\sqrt{2}} \times 0 + \frac{1}{\sqrt{2}} \times 0 = 0</m>
+                </p>
+              </statement>
+            </choice>
+          </choices>
+        </task>
+      </task>
+      <conclusion>
+        <p>Thus, we see that the result of our matrix multiplication is:</p>
+        <md>
+          \begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}
+            \begin{bmatrix}0\\1\end{bmatrix} =
+            \begin{bmatrix}\frac{1}{\sqrt{2}}\\- \frac{1}{\sqrt{2}}\end{bmatrix}
+        </md>
+        <p>We confirmed that applying the <c>H</c> gate to the <m>\ket{1}</m> state gives us <m>\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}</m>!</p>
+      </conclusion>
+    </exercise>
+
+    <p>Now that we have some practice working with matrix multiplication, let's try to derive the
+      matrix representation of the <c>Z</c> gate.</p>
+
+    <example xml:id="example-derive-z-matrix">
+      <title>Deriving the Matrix Representation of <c>Z</c></title>
+      <p> Our overall approach to derive the matrix representation of the <c>Z</c> gate is going to
+        be based on what we already know about its behavior. As we have seen before, the following
+        is the behavior of <c>Z</c> on our basis states: </p>
+      <md>
+        <mrow>Z \ket{0} \amp = \ket{0}</mrow>
+        <mrow>Z \ket{1} \amp = -\ket{1}</mrow>
+      </md>
+
+      <p>How can we derive the matrix representation of <c>Z</c> here? Let's start by just looking at
+        the first equation above, knowing that <m>\ket{0} = \begin{bmatrix}1\\0\end{bmatrix}</m>, and filling in what we know.</p>
+
+      <md>Z \begin{bmatrix}1\\0\end{bmatrix} = \begin{bmatrix}1\\0\end{bmatrix}</md>
+
+      <p>Now, since the <c>Z</c> gate is a 1-qubit gate, we know that it must be 2 rows and 2 columns
+        (i.e. a <m>2 \times 2</m> matrix). Our goal is to fill it out, like so:</p>
+
+      <md>Z = \begin{bmatrix}a \amp b \\ c \amp d\end{bmatrix}</md>
+
+      <p>Now we can plug this into our first equation:</p>
+
+      <md>\begin{bmatrix}a \amp b \\ c \amp d\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix} = \begin{bmatrix}1\\0\end{bmatrix}</md>
+
+      <p>Let's perform matrix multiplication on the left hand side of this equation:</p>
+
+      <md>
+        <mrow>\begin{bmatrix}a \times 1 + b \times 0 \\ c \times 1 + d \times 0\end{bmatrix} \amp = \begin{bmatrix}1\\0\end{bmatrix}</mrow>
+        <mrow>\Rightarrow \begin{bmatrix}a\\ c\end{bmatrix} \amp = \begin{bmatrix}1\\0\end{bmatrix}</mrow>
+      </md>
+
+      <p>Now we can just compare entries in the vectors on either side of the equation!</p>
+
+      <md>
+        \Rightarrow a = 1, c = 0
+      </md>
+
+      <p>Okay, we now know two of the four numbers in the <c>Z</c> gate! Let's repeat the same
+        process by walking through its action on the <m>\ket{1}</m> state: </p>
+
+      <md>
+        <mrow>Z \ket{1} \amp = -\ket{1}</mrow>
+        <mrow>\Rightarrow \begin{bmatrix}a \amp b \\ c \amp d\end{bmatrix}\begin{bmatrix}0\\1\end{bmatrix} \amp = \begin{bmatrix}0\\-1\end{bmatrix}</mrow>
+        <mrow>\Rightarrow \begin{bmatrix}a \times 0 + b \times 1 \\ c \times 0 + d \times 1\end{bmatrix} \amp = \begin{bmatrix}0\\-1\end{bmatrix}</mrow>
+        <mrow>\Rightarrow \begin{bmatrix}b \\ d\end{bmatrix} \amp = \begin{bmatrix}0\\-1\end{bmatrix}</mrow>
+      </md>
+
+      <p>Once again, we compare entries to get the values of <m>b</m> and <m>d</m>:</p>
+
+      <md>
+        \Rightarrow b = 0, d = -1
+      </md>
+
+      <p> Through both of these equations, we have discovered all four entries of our matrix! Thus,
+        we can conclude that the <c>Z</c> gate is represented by the matrix: </p>
+
+      <md>Z = \begin{bmatrix}1 \amp 0 \\ 0 \amp -1\end{bmatrix}</md>
+    </example>
+  </subsection>
+
+  <subsection xml:id="gates_as_matrices_intuition" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Gates as Matrices: Intuition</title>
+    <p>So far, we have explored how to express multi-qubit states in vector notation and how to
+      represent 1-qubit gates in matrix form. Let's look a little closer at these gates to gain a
+      little intuition
+      about them.</p>
+
+    <p> Let's start by looking at the <c>NOT</c> gate. We know that applying a <c>NOT</c> gate to a
+      general qubit of the form <m>a\ket{0} + b\ket{1}</m> results in <m>b\ket{0} + a\ket{1}</m>. How does this look in vector notation?</p>
+
+    <md>\begin{bmatrix}0 \amp 1 \\ 1 \amp 0\end{bmatrix} \begin{bmatrix}1 \\ 0\end{bmatrix} = \begin{bmatrix}0 \\ 1\end{bmatrix}</md>
+
+    <p> If we look closely at the first row of our matrix multiplication:</p>
+
+    <md>0 \times a + 1 \times b = b</md>
+
+    <p>we can see that this is effectively "<em>selecting</em>" the second term in our input vector
+      and placing it in the first row of our output vector. We can interpret the first row of the <c>NOT</c>
+      gate, <m>\begin{bmatrix}0 \amp 1\end{bmatrix}</m> as: "Pick whatever is in the second row of the input vector and set it as the
+      first row of the output vector".</p>
+
+    <p>Similarly, the second row of our matrix multiplication:</p>
+
+    <md>1 \times a + 0 \times b</md>
+
+    <p>is "<em>selecting</em>" the first term in our input vector and placing it in the second row
+      of our output vector! Thus, the overall result of the <c>NOT</c> gate is to swap the probability
+      amplitudes of the 0 (the first row) and 1 (the second row) outcomes!</p>
+
+    <p> At this point, I encourage you to go back to our other 1-qubit gates and get a feel for
+      how their matrix representations give you an intuition for how the input vector turns into
+      the output vector.</p>
   </subsection>
 </section>

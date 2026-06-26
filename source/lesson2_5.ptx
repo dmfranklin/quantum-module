@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="lesson2_5" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Problem Set</title>
 
-  <title>Problem Set</title>
-
+<exercises>
   <exercise label="HW2_Q1">
     <title>Question #1</title>
     <idx>HW2 Q1</idx>
@@ -437,19 +437,6 @@
       </script>
     </interactive>
   </exercise>
-
-
-  <!-- SANDBOX CIRCUIT FOR CREATING IMAGES
-  <interactive aspect="9:9" platform="javascript"
-    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-    <script>
-      visualizeProbabilitiesWidget({
-        circuit: "Blank 2x6",
-        allowedGates: "*XSHZ"
-      });
-    </script>
-  </interactive>
--->
-
+</exercises>
 
 </section>

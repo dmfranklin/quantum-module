@@ -3,7 +3,7 @@
 <section xml:id="lesson6_2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Phase Kickback</title>
 
-  <section xml:id="sec-phase-kickback" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <subsection xml:id="sec-phase-kickback" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Phase Kickback</title>
 
     <p> In our earlier exploration of the <c>CNOT</c> gate (from <xref ref="lesson2_3_1" />), we saw
@@ -22,13 +22,14 @@
     <p>Since the <c>H</c> gates are acting independently on each qubit, we can separately perform the
       operation on each qubit:</p>
 
-    <md>\ket{01} = \ket{0} \otimes \ket{1} \xrightarrow{\text{H}(1), \text{H}(2)}
+    <md>
+      \ket{01} = \ket{0} \otimes \ket{1} \xrightarrow{\text{H}(1), \text{H}(2)}
         (\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}) \otimes (\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1})
     </md>
 
     <p>Let's simplify this state by distributing the terms:</p>
     <md>
-        = \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11}
+       = \frac{1}{2} \ket{00} - \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{11}
     </md>
 
     <p>Now, we apply a <c>CNOT</c> gate to this state. How does this affect our state? Remember, to
@@ -91,7 +92,7 @@
 
     <md>
         \ket{+} \otimes \ket{-} \xrightarrow{\text{CNOT}(1 \rightarrow 2)} \ket{-} \otimes \ket{-}
-      </md>
+    </md>
 
     <p> We see that in this scenario, the <em>target qubit's phase</em> is being "kicked back" to
       the control, even though we expect the <c>CNOT</c> gate to only affect the target, when phase is
@@ -104,6 +105,6 @@
     <p>
       <image source="6-2-Phase-Kickback-Visual-Rep.png" width="90%" />
     </p>
-  </section>
+  </subsection>
 
 </section>

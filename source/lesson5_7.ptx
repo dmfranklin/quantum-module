@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson5_7" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Problem Set</title>
+
+  <exercises>
+    <exercise label="HW5_Q1">
+      <title>Question #1</title>
+      <idx>HW5 Q1</idx>
+      <statement>
+        <p>Which of the following best describes basic probability?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>The ratio of desired outcomes to total possible outcomes</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>The number of possible outcomes</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>The time taken for an event to occur</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>The outcome that happens most often</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q2">
+      <title>Question #2</title>
+      <idx>HW5 Q2</idx>
+      <statement>
+        <p>If the chance of rain tomorrow is <m>30\%</m> and the chance that the temperature will be
+          above 80°F is <m>50\%</m>, what is the probability that it will rain and be above 80°F
+          tomorrow (assuming the events are independent)?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>15\%</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>80\%</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>30\%</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>50\%</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q3">
+      <title>Question #3</title>
+      <idx>HW5 Q3</idx>
+      <statement>
+        <p>Which is usually <em>easier for calculations</em> but sometimes harder to <em>interpret
+          visually?</em></p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>Decimals</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Fractions </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Pie charts </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Percentages </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q4">
+      <title>Question #4</title>
+      <idx>HW5 Q4</idx>
+      <statement> You bring two pies to a party: one pie is cut into 8 pieces (3 pieces are left),
+        the other pie is cut into 10 pieces (5 pieces are left). What is the <em>total</em> fraction
+        of pie left? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> \frac{3}{8} + \frac{5}{10} = \frac{29}{40} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{3}{8} + \frac{5}{10} = \frac{4}{5} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{3}{8} + \frac{5}{10} = \frac{19}{18} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{3}{8} + \frac{5}{10} = \frac{8}{18} </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+      <!--
+    <solution>
+      <p>
+        \frac{5}{10} = \frac{1}{2}$, the least common denominator (LCD) is $40$. So, $\frac{3}{8} =
+      \frac{15}{40}$ and $\frac{5}{10} = \frac{20}{40}$, total $= \frac{15}{40} + \frac{20}{40} =
+      \frac{35}{40}$. (B) is the correct answer as written.
+      </p>
+    </solution>
+    -->
+    </exercise>
+
+    <exercise label="HW5_Q5">
+      <title>Question #5</title>
+      <idx>HW5 Q5</idx>
+      <statement> Which of the following is the correct bra-ket notation for a qubit in the state "<m>1</m>
+        "?
+    </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> |1\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |0\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |-\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |+\rangle </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q6">
+      <title>Question #6</title>
+      <idx>HW5 Q6</idx>
+      <statement> Which bra-ket expression represents a qubit in an equal superposition of <m>|0\rangle</m>
+        and <m>|1\rangle</m>? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}}(|0\rangle+|1\rangle) </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |0\rangle + |1\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |0\rangle - |1\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{1}{2}(|0\rangle+|1\rangle) </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q7">
+      <title>Question #7</title>
+      <idx>HW5 Q7</idx>
+      <statement> Given the state <m>|\psi\rangle = \sqrt{0.8} |0\rangle + \sqrt{0.2} |1\rangle</m>, what is the probability of measuring <m>|1\rangle</m> ? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> 0.2 </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> 0.4 </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> 0.8 </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> 1 </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q8">
+      <title>Question #8</title>
+      <idx>HW5 HW5_Q8</idx>
+      <statement> Which notation shows a two-qubit state where the first qubit is <m>|0\rangle</m> and the
+        second is <m>|1\rangle</m>? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> |01\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |10\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |00\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> |11\rangle </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q9">
+      <title>Question #9</title>
+      <idx>HW5 Q9</idx>
+      <statement> What is the correct vector notation for the state <m> \frac{1}{2} |0\rangle + \frac{\sqrt{3}}{2} |1\rangle</m>? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> \begin{bmatrix}\frac{1}{2}\\\frac{\sqrt{3}}{2}\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \begin{bmatrix}\frac{\sqrt{3}}{2}\\\frac{1}{2}\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \begin{bmatrix}1\\\sqrt{3}\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \begin{bmatrix}0\\1\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q10">
+      <title>Question #10</title>
+      <idx>HW5 Q10</idx>
+      <statement> Consider the quantum state <m> \begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix} </m>. What is the probability of measuring <m>|0\rangle</m>? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> 80\% </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> 20\% </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> 40\% </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> 100\% </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q11">
+      <title>Question #11</title>
+      <idx>HW5 Q11</idx>
+      <statement> Which vector correctly represents the state <m> \frac{1}{\sqrt{2}} |01\rangle + \frac{1}{\sqrt{2}} |10\rangle</m>? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\\1\\0\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}1\\1\\0\\0\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}0\\0\\1\\1\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}1\\0\\1\\0\end{bmatrix} </m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW5_Q12">
+      <title>Question #12</title>
+      <idx>HW5 Q12</idx>
+      <statement> Apply the <c>NOT</c> gate <m>\begin{bmatrix}0\amp1\\1\amp0\end{bmatrix}</m> to the state <m>\begin{bmatrix}1\\0\end{bmatrix}</m>. What is the resulting vector? </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}1\\0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}1\\1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\\0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+  </exercises>
+</section>

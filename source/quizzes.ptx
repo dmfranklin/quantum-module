@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="quizzes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quizzes</title>
+
+  <xi:include href="quiz1.ptx" />
+  <xi:include href="quiz2.ptx" />
+</chapter>

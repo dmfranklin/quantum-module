@@ -106,9 +106,9 @@
   </program>
 
   <p>First of all, similar to the <c>NOT</c> gate from before, the <c>CNOT</c> gate is called <c>cx</c>,
-    meaning <term>controlled-<c>X</c></term>, in Qiskit. Secondly, the <em>order of parameters</em>
-    for the <c>cx(i, j)</c> function is crucial: the first parameter (<c>i</c>) represents the index of the <em>
-    control</em> qubit, and the second parameter (<c>j</c>) represents the index of the <em>target</em>
+    meaning <term>controlled-X</term>, in Qiskit. Secondly, the <em>order of parameters</em> for the <c>cx(i, j)</c>
+    function is crucial: the first parameter (<c>i</c>) represents the index of the <em>
+      control</em> qubit, and the second parameter (<c>j</c>) represents the index of the <em>target</em>
     qubit.</p>
 
   <exercise label="qiskit-exercise-2">

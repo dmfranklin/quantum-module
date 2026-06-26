@@ -19,6 +19,9 @@
     <xi:include href="./chapter6.ptx" />
     <xi:include href="./chapter7.ptx" />
 
+    <!-- Include quizzes -->
+    <xi:include href="./quizzes.ptx" />
+
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
 
