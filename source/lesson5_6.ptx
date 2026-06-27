@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson5_6" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title> Quantum State Representation in Qiskit </title>
+
+  <introduction>
+    <p> Armed with our understanding of the mathematical representation, let's see how Qiskit
+      represents quantum states, and how we can better understand how quantum operations are
+      represented and executed in Qiskit.
+    </p>
+  </introduction>
+
+  <subsection xml:id="sec_qiskit_state_representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>How Qiskit Represents Quantum States</title>
+    <p> Qiskit stores a quantum state using a type of object called a <c>Statevector</c>. The easiest way to
+      create a <c>Statevector</c> is using the <c>Statevector.from_label()</c> method. If you pass this function <c>"0"</c>, it will
+      create the <m>\ket{0} = \begin{bmatrix}1\\0\end{bmatrix}</m> state, and if you pass it <c>"1"</c>, it will create the <m>\ket{1} = \begin{bmatrix}0\\1\end{bmatrix}</m> state. </p>
+
+    <cd>
+      from qiskit.quantum_info import Statevector
+
+      # Create the zero state
+      state0 = Statevector.from_label("0")
+    </cd>
+
+    <p>Once we've created the <c>Statevector</c>, how can we display it? Qiskit lets you display a <c>Statevector</c> in <em>vector
+      notation</em> using the <c>array_to_latex()</c> function.</p>
+
+    <listing xml:id="statevector_from_label">
+      <title>Initializing a <c>Statevector</c> using a label</title>
+      <program xml:id="statevector_from_label_program" interactive="activecode" language="python3">
+        <code>
+          from qiskit.quantum_info import Statevector
+
+          # Create the zero state
+          state0 = Statevector.from_label("0")
+
+          # Display the state
+          array_to_latex(state0)
+        </code>
+      </program>
+    </listing>
+
+  </subsection>
+</section>

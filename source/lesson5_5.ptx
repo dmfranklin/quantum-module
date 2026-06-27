@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson5_5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title> Combining Gates in Vector Notation </title>
+
+  <subsection xml:id="sec_qops_in_parallel" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Combining Quantum Operations in Parallel</title>
+    <p> Let's consider the following scenario. Suppose we have a 2-qubit state, but we only want to
+      apply a gate to one of the qubits. Or, what if we want to apply two separate 1-qubit gates to
+      the two qubits. How would we do so, in a general way? As far as we know, a 2-qubit state
+      (represented by a <m>4 \times 1</m> vector) needs a 2-qubit gate (represented by a <m>4 \times 4</m> matrix) to
+      operate on it. What can we do here? </p>
+
+    <p> As it turns out, vector notation gives us an incredibly convenient way of handling this
+      case: combining quantum operations that occur in parallel. If you recall, the method we used
+      to <term>tensor product</term> on the two states. Thanks to the magic of vector notation, the
+      process to combine quantum operations involve performing the tensor product of the two
+      operations! </p>
+
+    <p>
+      <term>More to come soon...</term>
+    </p>
+
+    <!-- Let's walk through what this looks like, step by step. </p>
+
+    <p>
+      Let's say we</p>
+
+    <p>
+      <insert>TODO finish this whole lesson lol.</insert>
+    </p>
+
+    <p> A good rule of thumb here is to think of the tensor product as the mechanism to combine
+      elements in a quantum circuit <em>vertically</em>: two qubits that sit vertically next to each
+      other, or two quantum operations that sit vertically next to each other in our circuit
+      diagram. </p> -->
+  </subsection>
+
+  <subsection xml:id="sec_qops_in_series" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Combining Quantum Operations in Series</title>
+
+    <p>Vector notation gives us another powerful tool: we can combine gates in series in a circuit.
+      We use matrix multiplication to combine operations!</p>
+
+    <p>
+      <term>More to come soon...</term>
+    </p>
+  </subsection>
+</section>

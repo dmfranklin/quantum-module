@@ -791,4 +791,60 @@
       how their matrix representations give you an intuition for how the input vector turns into
       the output vector.</p>
   </subsection>
+
+  <subsection xml:id="multi_qubit_gates" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>2-Qubit Gates</title>
+
+    <p>This intuition about how matrix rows "select" elements from the input row will be our guiding
+      approach to deriving our 2-qubit gates, <c>SWAP</c> and <c>CNOT</c>.</p>
+
+    <paragraphs>
+      <title>Matrix representation of <c>SWAP</c></title>
+      <p> Our goal here is to try to derive the <c>SWAP</c> gate by looking at how it affects a sample
+        2-qubit state. This time, let's consider a general 2-qubit state, i.e. <m>a\ket{00} + b\ket{01} + c\ket{10} + d\ket{11}</m>. Using our
+        knowledge of the <c>SWAP</c> gate swapping the first and second qubits in the state, we know
+        that the probability amplitude of the <m>\ket{01}</m> becomes the probability amplitude of <m>\ket{10}</m>.
+        Additionally, the probability amplitude of the <m>\ket{10}</m> becomes the probability amplitude of <m>\ket{01}</m>.
+        The probability amplitudes of <m>\ket{00}</m> and <m>\ket{11}</m> don't change, because <c>SWAP</c> has no
+        impact on these states. What does this look like in vector notation? </p>
+
+      <md>
+        \begin{bmatrix}a\\b\\c\\d\end{bmatrix} \xrightarrow{\text{SWAP}} \begin{bmatrix}a\\c\\b\\d\end{bmatrix}
+      </md>
+
+      <p> Let's now apply our intuition about how matrix rows can "select" certain values from the
+        vector the matrix is multiplied with.
+      </p>
+
+      <ul>
+        <li>The first row of our vector is unchanged; so the first row of the <c>SWAP</c> gate should
+          have a 1 in the 1st column.</li>
+        <li>The second row of our vector "<em>selects</em>" the <em>third</em> row of our input
+          vector; so the second row of the gate should have a 1 in the <em>3rd</em> column.</li>
+        <li>Similarly, the third row of our vector "<em>selects</em>" the <em>second</em> row of our
+          input vector; so the third row of the gate should have a 1 in the <em>2nd</em> column.</li>
+        <li>Finally, the fourth row of our vector is unchanged; so the fourth row has a 1 in the 4th
+          column.</li>
+      </ul>
+
+      <p>Putting this together...</p>
+
+      <md>
+        \text{SWAP} = \begin{bmatrix}1 \amp 0 \amp 0 \amp 0\\0 \amp 0 \amp 1 \amp 0\\0 \amp 1 \amp 0 \amp 0\\0 \amp 0 \amp 0 \amp 1\end{bmatrix}
+      </md>
+
+      <p>Congratulations! You just discovered the matrix representation of your first 2-qubit gate!</p>
+    </paragraphs>
+
+    <p>
+      <insert>practice applying the SWAP gate on an arbitrary vector</insert>
+    </p>
+
+    <p>
+      <insert>CNOT 1 to 2, walk-through exercise plus note about controlled-U view</insert>
+    </p>
+    <p>
+      <insert>CNOT 2 to 1: just give it</insert>
+    </p>
+  </subsection>
 </section>
