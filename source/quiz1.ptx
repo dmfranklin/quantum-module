@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- time-limit="1800" results="no" feedback="no" -->
-
 <section xml:id="sec_quiz1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title> Quiz 1</title>
   <exercises xml:id="Quiz1" label="Quiz1">

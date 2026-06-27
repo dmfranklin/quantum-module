@@ -11,10 +11,26 @@
         <p>Which property distinguishes a change in global phase of a quantum state?</p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> All amplitudes are multiplied by the same factor </p></statement></choice>
-        <choice><statement><p> Only one basis amplitude is changed </p></statement></choice>
-        <choice><statement><p> The state’s probabilities change </p></statement></choice>
-        <choice><statement><p> The measurement outcomes change </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> All amplitudes are multiplied by the same factor </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Only one basis amplitude is changed </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> The state's probabilities change </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> The measurement outcomes change </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -22,11 +38,20 @@
       <title>Question #2</title>
       <idx>HW6 Q2</idx>
       <statement>
-        <p>True or False: Two quantum states that differ only by a global phase have identical physical meaning and measurement outcomes.</p>
+        <p>True or False: Two quantum states that differ only by a global phase have identical
+          physical meaning and measurement outcomes.</p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p>True</p></statement></choice>
-        <choice><statement><p>False</p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p>True</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>False</p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -37,10 +62,34 @@
         <p>Which pair of states differ by a relative phase?</p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> <m>\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</m> and <m>\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)</m> </p></statement></choice>
-        <choice><statement><p> <m>|0\rangle</m> and <m>-|0\rangle</m> </p></statement></choice>
-        <choice><statement><p> <m>|1\rangle</m> and <m>|0\rangle</m> </p></statement></choice>
-        <choice><statement><p> <m>\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</m> and <m>|1\rangle</m> </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</m> and <m>\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|0\rangle</m> and <m>-|0\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|1\rangle</m> and <m>|0\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</m> and <m>|1\rangle</m>
+            </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -51,10 +100,28 @@
         <p> What happens when the Z gate acts on <m>|1\rangle</m>? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> Multiplies <m>|1\rangle</m> and <m>-1</m> (global phase) </p></statement></choice>
-        <choice><statement><p>Produces <m>|0\rangle</m> </p></statement></choice>
-        <choice><statement><p>Multiplies <m>|1\rangle</m> by <m>i</m> </p></statement></choice>
-        <choice><statement><p>Leaves <m>|1\rangle</m> unchanged</p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> Multiplies <m>|1\rangle</m> and <m>-1</m> (global phase) </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Produces <m>|0\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Multiplies <m>|1\rangle</m> by <m>i</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Leaves <m>|1\rangle</m> unchanged</p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -65,10 +132,34 @@
         <p>What is the output when the Z gate acts on <m>\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</m> ?</p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p><m> \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) </m></p></statement></choice>
-        <choice><statement><p><m> \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) </m></p></statement></choice>
-        <choice><statement><p><m>|1\rangle</m></p></statement></choice>
-        <choice><statement><p><m>|0\rangle</m></p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m> \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|1\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|0\rangle</m>
+            </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -79,10 +170,27 @@
         <p>When does the <c>CZ</c> gate introduce a phase change? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> Only when both qubits are <m>|1\rangle</m> </p></statement></choice>
-        <choice><statement><p>Only when both qubits are <m>|0\rangle</m></p></statement></choice>
-        <choice><statement><p>For any superposition input</p></statement></choice>
-        <choice><statement><p>For all basis states</p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> Only when both qubits are <m>|1\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Only when both qubits are <m>|0\rangle</m></p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>For any superposition input</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>For all basis states</p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -93,10 +201,26 @@
         <p> What is phase kickback in quantum computing? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> The target qubit’s phase is transferred to the control </p></statement></choice>
-        <choice><statement><p> The control qubit’s state is unchanged by controlled gates </p></statement></choice>
-        <choice><statement><p>A qubit’s amplitude becomes zero </p></statement></choice>
-        <choice><statement><p> The NOT gate changes both qubits </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> The target qubit's phase is transferred to the control </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> The control qubit's state is unchanged by controlled gates </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>A qubit's amplitude becomes zero </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> The NOT gate changes both qubits </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -104,13 +228,30 @@
       <title>Question #8</title>
       <idx>HW6 Q8</idx>
       <statement>
-        <p> Which sequence produces phase kickback in a two-qubit system with initial state <m>|01\rangle</m> ? </p>
+        <p> Which sequence produces phase kickback in a two-qubit system with initial state <m>|01\rangle</m>
+          ? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> Apply H gates to both qubits, then CNOT </p></statement></choice>
-        <choice><statement><p> Apply X gates to both qubits </p></statement></choice>
-        <choice><statement><p> Apply CNOT only </p></statement></choice>
-        <choice><statement><p> Apply Z gate to first qubit </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> Apply H gates to both qubits, then CNOT </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Apply X gates to both qubits </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Apply CNOT only </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Apply Z gate to first qubit </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -121,10 +262,34 @@
         <p> After applying Hadamard gates to <m>|0\rangle\otimes|1\rangle</m>, which bra-ket state results? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p><m>\frac{1}{2}|00\rangle - \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle - \frac{1}{2}|11\rangle </m></p></statement></choice>
-        <choice><statement><p><m>\frac{1}{2}|00\rangle + \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle + \frac{1}{2}|11\rangle</m></p></statement></choice>
-        <choice><statement><p><m>|01\rangle</m></p></statement></choice>
-        <choice><statement><p><m>|00\rangle</m></p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{2}|00\rangle - \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle - \frac{1}{2}|11\rangle </m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{2}|00\rangle + \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle + \frac{1}{2}|11\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|01\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>|00\rangle</m>
+            </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -132,13 +297,31 @@
       <title>Question #10</title>
       <idx>HW6 Q10</idx>
       <statement>
-        <p> What does the CNOT gate do to the state <m> \frac{1}{2}|00\rangle - \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle - \frac{1}{2}|11\rangle </m> </p>
+        <p> What does the CNOT gate (with the first qubit as the control and the second qubit as the
+          target) do to the state <m> \frac{1}{2}|00\rangle - \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle - \frac{1}{2}|11\rangle </m>? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> It flips the second qubit only when the first is <m>|1\rangle</m> </p></statement></choice>
-        <choice><statement><p> It swaps the qubits </p></statement></choice>
-        <choice><statement><p> It introduces a relative phase kickback </p></statement></choice>
-        <choice><statement><p> It removes all negative signs </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> It flips the second qubit only when the first is <m>|1\rangle</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> It swaps the qubits </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> It flips the phase on the second qubit </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> It removes all negative signs </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -146,13 +329,30 @@
       <title>Question #11</title>
       <idx>HW6 Q11</idx>
       <statement>
-        <p> After applying Hadamard and CNOT gates to a two-qubit system. What do you observe when factoring the resulting state? </p>
+        <p> After applying Hadamard and CNOT gates to a two-qubit system. What do you observe when
+          factoring the resulting state? </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> Both qubits are in equal superposition with negative phase </p></statement></choice>
-        <choice><statement><p> The second qubit is always zero </p></statement></choice>
-        <choice><statement><p> Both amplitudes become negative </p></statement></choice>
-        <choice><statement><p> States revert to original </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> Both qubits are in equal superposition with negative phase </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> The second qubit is always zero </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Both amplitudes become negative </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> States revert to original </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -160,17 +360,23 @@
       <title>Question #12</title>
       <idx>HW6 Q12</idx>
       <statement>
-        <p> 
-          Do the following states differ by global phase or relative phase?
-          <md> 
-            <mrow>|\psi_1\rangle = |0\rangle</mrow> 
-            <mrow>|\psi_2\rangle = -|0\rangle</mrow> 
+        <p> Do the following states differ by global phase or relative phase? <md>
+            <mrow>|\psi_1\rangle = |0\rangle</mrow>
+            <mrow>|\psi_2\rangle = -|0\rangle</mrow>
           </md>
         </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> Global phase </p></statement></choice>
-        <choice><statement><p> Relative phase </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> Global phase </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Relative phase </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
@@ -178,19 +384,25 @@
       <title>Question #13</title>
       <idx>HW6 Q13</idx>
       <statement>
-        <p> 
-          Do the following states differ by global phase or relative phase?
-          <md> 
-            <mrow>|\phi_1\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</mrow> 
-            <mrow>|\phi_2\rangle = \frac{1}{\sqrt{2}}(-|0\rangle + |1\rangle)</mrow> 
+        <p> Do the following states differ by global phase or relative phase? <md>
+            <mrow>|\phi_1\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)</mrow>
+            <mrow>|\phi_2\rangle = \frac{1}{\sqrt{2}}(-|0\rangle + |1\rangle)</mrow>
           </md>
         </p>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes"><statement><p> Relative phase </p></statement></choice>
-        <choice><statement><p> Global phase </p></statement></choice>
+        <choice correct="yes">
+          <statement>
+            <p> Relative phase </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Global phase </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
 
-</exercises>
+  </exercises>
 </section>

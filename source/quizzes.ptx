@@ -3,6 +3,12 @@
 <chapter xml:id="quizzes" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quizzes</title>
 
+  <!-- To make the following timed quizzes, add the following attributes to the <exercises> element:
+    - time-limit="1800"
+    - results="no"
+    - feedback="no"
+  -->
+
   <xi:include href="quiz1.ptx" />
   <xi:include href="quiz2.ptx" />
 </chapter>

@@ -133,7 +133,7 @@ tell visually what the probabilities are (and still be able to perform operation
 Therefore, we have norms in how we express them.</p>
 
 <p> 1. The order of the outcomes is always in increasing numeric order 
-(starting with all 0’s and ending with all 1’s). Below is a properly formed 
+(starting with all 0's and ending with all 1's). Below is a properly formed 
 3-qubit state.  </p>
 
 <p> 2. You may omit any term whose probability is 0.
@@ -190,7 +190,7 @@ largest - but it is depicted from to bottom.</p>
 with one major exception - you can never remove a state! You must retain the 0. </p>
 
 <p> 1. The order of the outcomes is always in increasing numeric order 
-(starting with all 0’s and ending with all 1’s). This is even more important for vector
+(starting with all 0's and ending with all 1's). This is even more important for vector
 notation because we don't explicitly write the outcome. </p>
 
 <p> 2. You may NOT omit any term whose probability is 0. (make this text bright red!!)

@@ -2,7 +2,7 @@
 
 <section xml:id="sec_quiz2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quiz 2</title>
-  <exercises xml:id="Quiz2" label="Quiz2" time-limit="60" results="no" feedback="no">
+  <exercises xml:id="Quiz2" label="Quiz2">
     <title>Quiz 2</title>
     <exercise label="Quiz2_1">
       <statement>
@@ -360,35 +360,35 @@
     <exercise label="Quiz2_11">
       <statement>
         <p>How would you represent the following state in vector notation?</p>
-        <p>A three-qubit state with a 36% chance of measuring <m>001</m> and a 54% chance of measuring <m>110</m>,
+        <p>A three-qubit state with a 36% chance of measuring <m>001</m> and a 64% chance of measuring <m>110</m>,
           with positive phase.</p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>
-              <m>\frac{1}{10} \begin{bmatrix}0\\ 6 \\ 0\\0\\0\\0\\ \sqrt{54} \\0 \end{bmatrix}</m>
+              <m>\frac{1}{10} \begin{bmatrix}0\\ 6 \\ 0\\0\\0\\0\\ 8 \\0 \end{bmatrix}</m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m>\frac{1}{100} \begin{bmatrix}0\\ 36 \\ 0\\0\\0\\0\\54\\0 \end{bmatrix}</m>
+              <m>\frac{1}{100} \begin{bmatrix}0\\ 36 \\ 0\\0\\0\\0\\64\\0 \end{bmatrix}</m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m>\frac{1}{10} \begin{bmatrix}6 \\ \sqrt{54} \end{bmatrix}</m>
+              <m>\frac{1}{10} \begin{bmatrix}6 \\ 8 \end{bmatrix}</m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m>\frac{1}{10} \begin{bmatrix}6 \\ 0 \\ \sqrt{54}\end{bmatrix}</m>
+              <m>\frac{1}{10} \begin{bmatrix}6 \\ 0 \\ 8\end{bmatrix}</m>
             </p>
           </statement>
         </choice>

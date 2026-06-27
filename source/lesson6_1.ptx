@@ -93,7 +93,7 @@
         <choice>
           <statement><p> Measure the qubit </p></statement>
           <feedback>
-            <p> This approach won’t work. Measurement of both states will yield <m>|0\rangle</m> and <m>|1\rangle</m> 
+            <p> This approach won't work. Measurement of both states will yield <m>|0\rangle</m> and <m>|1\rangle</m> 
               with equal probability, so they cannot be distinguished this way. </p>
           </feedback>
         </choice>
