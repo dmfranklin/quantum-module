@@ -9,4 +9,18 @@
 
     </p>
 
+    <p>
+        <insert>Conceptual understanding of entanglement</insert>
+    </p>
+    <p>
+        <insert>Conceptual Implications of entanglement: the two qubits are tied together. What if
+            we measure one? We know the other one!</insert>
+    </p>
+    <p>
+        <insert>Mathematical: how to entangle two qubits</insert>
+    </p>
+    <p>
+        <insert>Show canonical circuit to entangle, same vs. different entangle</insert>
+    </p>
+
 </section>
