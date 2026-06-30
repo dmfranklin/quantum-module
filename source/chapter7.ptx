@@ -13,6 +13,17 @@
       along with instructions and explanations and run your code directly (much like this
       textbook!). At various points in the notebook, you will be prompted to return to the textbook
       to answer questions relating to what you have learned. </p>
+
+    <p> For each section, follow these steps for the first time: <ul>
+        <li>Open the link at the top of the section.</li>
+        <li>Ensure you are signed in with your University email.</li>
+        <li>Click on the button that says "Open with Google Colaboratory..." in the top-right
+      corner.</li>
+        <li>Once the notebook opens in Google Colab, click on the "Copy to Drive" button in the top
+      toolbar.</li>
+      </ul> Once you follow these steps, you will have a copy of this notebook
+      saved in your Google Drive. You can now just open that up instead of going to the link at the
+      top of each section. </p>
   </introduction>
 
   <!-- include sections -->

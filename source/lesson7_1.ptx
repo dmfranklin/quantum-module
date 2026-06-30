@@ -6,8 +6,22 @@
   <introduction>
     <p>Here is the link for this section's Jupyter notebook:</p>
     <p>
-      <url href="" visual="colab.google.com">Quantum States in Qiskit</url>
+      <url href="https://drive.google.com/file/d/1MiTkjORU8wleMHMmYLL7iJRUrMbl-vZk/view?usp=sharing"
+        visual="colab.google.com">Quantum States in Qiskit</url>
     </p>
+    <p> As a reminder, follow these steps: <ul>
+        <li>Open the link at the top of the section.</li>
+        <li>Ensure
+          you are signed in with your University email.</li>
+        <li>Click on the button that says "Open with
+          Google Colaboratory..." in the top-right
+          corner.</li>
+        <li>Once the notebook opens in Google Colab, click on the "Copy to Drive" button
+          in the top
+          toolbar.</li>
+      </ul> Once you follow these steps, you will have a copy of this
+      notebook saved in your Google Drive. You can now just open that up instead of going to the
+      link at the top of each section. </p>
   </introduction>
 
   <exercises>
@@ -113,6 +127,7 @@
         </choices>
       </exercise>
     </exercisegroup>
+
     <exercisegroup>
       <title>Quantum States and Operations</title>
 
@@ -242,7 +257,7 @@
         <title>Question #15</title>
         <idx>HW7.1 Q15</idx>
         <statement>
-          <p>Write teh code to initialize the qubit to the following state:</p>
+          <p>Write the code to initialize the qubit to the following state:</p>
           <md>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</md>
         </statement>
         <response />
