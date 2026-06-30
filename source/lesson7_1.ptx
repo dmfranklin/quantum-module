@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson7_1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quantum States in Qiskit</title>
+
+  <introduction>
+    <p>Here is the link for this section's Jupyter notebook:</p>
+    <p>
+      <url href="" visual="colab.google.com">Quantum States in Qiskit</url>
+    </p>
+  </introduction>
+
+  <exercises>
+    <exercisegroup>
+      <title>How Qiskit Represents Quantum States</title>
+      <exercise label="HW7-1_Q1">
+        <title>Question #1</title>
+        <idx>HW7.1 Q1</idx>
+        <statement>
+          <p>Identify the line of code that displays the state in <em>vector notation</em>.</p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <c>array_to_latex(state0, prefix="\\text{state0} = ")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>state0 = Statevector.from_label("0")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>state0.draw("latex")</c>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise label="HW7-1_Q2">
+        <title>Question #2</title>
+        <idx>HW7.1 Q2</idx>
+        <statement>
+          <p>Identify the line of code that displays the state in <em>bra-ket notation</em>.</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>
+                <c>array_to_latex(state0, prefix="\\text{state0} = ")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>state0 = Statevector.from_label("0")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>
+                <c>state0.draw("latex")</c>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise label="HW7-1_Q3">
+        <title>Question #3</title>
+        <idx>HW7.1 Q3</idx>
+        <statement>
+          <p>Select all that will set the state to <m>\ket{1}</m>:</p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <c>state0 = Statevector.from_label("1")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>state0 = Statevector.from_label("0")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>
+                <c>state0 = Statevector([0, 1])</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>state0 = Statevector([1, 0])</c>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <title>Quantum States and Operations</title>
+
+      <exercise label="HW7-1_Q4">
+        <title>Question #4</title>
+        <idx>HW7.1 Q4</idx>
+        <statement>
+          <p>Write the code that creates a <em>1-qubit circuit</em> called <c>circuitH</c>.</p>
+        </statement>
+        <response />
+        <hint>
+          <p>Your line of code will begin: <c>circuitH = </c></p>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-1_Q5">
+        <title>Question #5</title>
+        <idx>HW7.1 Q5</idx>
+        <statement>
+          <p>Write the code that places the <em>H gate</em> in the circuit.</p>
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-1_Q6">
+        <title>Question #6</title>
+        <idx>HW7.1 Q6</idx>
+        <statement>
+          <p>Write the code that <em>visualizes</em> the circuit.</p>
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-1_Q7">
+        <title>Question #7</title>
+        <idx>HW7.1 Q7</idx>
+        <statement>
+          <p>Write the code that creates the initial qubit <em>in the <m>1</m> state</em>.</p>
+        </statement>
+        <response />
+        <hint>
+          <p>Your code will look like: <c>state = Statevector.from_label(...)</c></p>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-1_Q8">
+        <title>Question #8</title>
+        <idx>HW7.1 Q8</idx>
+        <statement>
+          <p>Write the code to <em>run the circuit on the qubit</em>.</p>
+        </statement>
+        <response />
+        <hint>
+          <p>Your line of code will begin with: <c>state2 = </c></p>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-1_Q9">
+        <title>Question #9</title>
+        <idx>HW7.1 Q9</idx>
+        <statement>
+          <p>Write the code that <em>displays the output state in bra-ket notation</em>.</p>
+        </statement>
+        <response />
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <title>Peeking Inside a Quantum Circuit</title>
+
+      <exercise label="HW7-1_Q10">
+        <title>Question #10</title>
+        <idx>HW7.1 Q10</idx>
+        <statement>
+          <p>We want to create and run the following circuit and print out the state after each
+            gate: </p>
+          <image source="HW7-1_Q10-14.png" width="50%" />
+          <p>First, write the code that creates the 1-qubit circuit.</p>
+        </statement>
+        <response />
+        <hint>
+          <p>Your line of code will begin: <c>circuitXHX = </c></p>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-1_Q11">
+        <title>Question #11</title>
+        <idx>HW7.1 Q11</idx>
+        <statement>
+          <p>Write a line of code that places the <em>first X gate</em> in the circuit.</p>
+          <image source="HW7-1_Q10-14.png" width="50%" />
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-1_Q12">
+        <title>Question #12</title>
+        <idx>HW7.1 Q12</idx>
+        <statement>
+          <p>Write a line of code that places the <em>H gate</em> in the circuit.</p>
+          <image source="HW7-1_Q10-14.png" width="50%" />
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-1_Q13">
+        <title>Question #13</title>
+        <idx>HW7.1 Q13</idx>
+        <statement>
+          <p>Write a line of code that places the <em>second X gate</em> in the circuit.</p>
+          <image source="HW7-1_Q10-14.png" width="50%" />
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-1_Q14">
+        <title>Question #14</title>
+        <idx>HW7.1 Q14</idx>
+        <statement>
+          <p>Write a line of code that <em>visualizes the circuit</em>.</p>
+          <image source="HW7-1_Q10-14.png" width="50%" />
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-1_Q15">
+        <title>Question #15</title>
+        <idx>HW7.1 Q15</idx>
+        <statement>
+          <p>Write teh code to initialize the qubit to the following state:</p>
+          <md>\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</md>
+        </statement>
+        <response />
+        <hint>
+          <p>Your line of code will begin: <c>state0 = </c></p>
+        </hint>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+</section>

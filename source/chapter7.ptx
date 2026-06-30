@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="C7_Qiskit_Continued" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Qiskit Continued</title>
+
+  <introduction>
+    <p> In this chapter, we will explore more of Qiskit's functionality, and learn about how to
+      represent quantum states, apply quantum gates, and perform multi-qubit operations. To do so,
+      we're going to switch over to using a new third-party tool, <term>Google Colab</term>. </p>
+
+    <p>In each of the sections in this chapter, you will see a Google Drive link to a <term>
+        Jupyter notebook</term>. This is an interactive Python environment where you can follow
+      along with instructions and explanations and run your code directly (much like this
+      textbook!). At various points in the notebook, you will be prompted to return to the textbook
+      to answer questions relating to what you have learned. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="lesson7_1.ptx" />
+  <!-- <xi:include href="lesson7_2.ptx" /> -->
+  <!-- <xi:include href="lesson7_3.ptx" /> -->
+
+</chapter>
