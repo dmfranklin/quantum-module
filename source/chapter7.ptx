@@ -18,7 +18,7 @@
         <li>Open the link at the top of the section.</li>
         <li>Ensure you are signed in with your University email.</li>
         <li>Click on the button that says "Open with Google Colaboratory..." in the top-right
-      corner.</li>
+          corner.</li>
         <li>Once the notebook opens in Google Colab, click on the "Copy to Drive" button in the top
       toolbar.</li>
       </ul> Once you follow these steps, you will have a copy of this notebook
@@ -28,7 +28,7 @@
 
   <!-- include sections -->
   <xi:include href="lesson7_1.ptx" />
-  <!-- <xi:include href="lesson7_2.ptx" /> -->
+  <xi:include href="lesson7_2.ptx" />
   <!-- <xi:include href="lesson7_3.ptx" /> -->
 
 </chapter>
