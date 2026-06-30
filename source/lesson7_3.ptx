@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson7_3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Two-Qubit Operations in Qiskit</title>
+
+  <introduction>
+    <p>Here is the link for this section's Jupyter notebook:</p>
+    <p>
+      <url
+        href="https://drive.google.com/file/d/1EotlZXOB9LzyCNPO-0U6HN8MN58SFe49/view?usp=sharing"
+        visual="colab.google.com">Two-Qubit Operations in Qiskit</url>
+    </p>
+    <p> As a reminder, follow these steps: <ul>
+        <li>Open the link at the top of the section.</li>
+        <li>Ensure
+          you are signed in with your University email.</li>
+        <li>Click on the button that says "Open with
+          Google Colaboratory..." in the top-right
+          corner.</li>
+        <li>Once the notebook opens in Google Colab, click on the "Copy to Drive" button
+          in the top
+          toolbar.</li>
+      </ul> Once you follow these steps, you will have a copy of this
+      notebook saved in your Google Drive. You can now just open that up instead of going to the
+      link at the top of each section. </p>
+  </introduction>
+
+  <exercises>
+    <exercisegroup>
+      <title>How to do Matrix Multiplication</title>
+      <exercise label="HW7-2_Q1">
+        <title>Question #1</title>
+        <idx>HW7.2 Q1</idx>
+        <statement>
+          <p>From the example: What is the <em>first</em> element of the result vector?</p>
+          <md>2 \cdot 3 + (-5) \cdot (-2) =</md>
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-2_Q2">
+        <title>Question #2</title>
+        <idx>HW7.2 Q2</idx>
+        <statement>
+          <p>From the example: What is the <em>second</em> element of the result vector?</p>
+          <md>(-1) \cdot 3 + 4 \cdot (-2) =</md>
+        </statement>
+        <response />
+      </exercise>
+
+      <exercise label="HW7-2_Q3">
+        <title>Question #3</title>
+        <idx>HW7.2 Q3</idx>
+        <statement>
+          <p>We want to multiply the following matrix and vector. Which of the following computes
+            the <em>first</em> element of the <em>result vector</em>?</p>
+          <md>
+              \begin{bmatrix}2\amp 0 \\ 5 \amp 3\end{bmatrix}
+              \begin{bmatrix}-1 \\ 7 \end{bmatrix}
+            </md>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>2 \cdot (-1) + 0 \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>5 \cdot (-1) + 3 \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>2 \cdot 0 + (-1) \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>2 \cdot (-1) + 5 \cdot (-1)</m>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise label="HW7-2_Q4">
+        <title>Question #4</title>
+        <idx>HW7.2 Q4</idx>
+        <statement>
+          <p>We want to multiply the following matrix and vector. Which of the following computes
+            the <em>second</em> element of the <em>result vector</em>?</p>
+          <md>
+              \begin{bmatrix}2\amp 0 \\ 5 \amp 3\end{bmatrix}
+              \begin{bmatrix}-1 \\ 7 \end{bmatrix}
+            </md>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <m>5 \cdot (-1) + 3 \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>2 \cdot 0 + (-1) \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>5 \cdot 3 + (-1) \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <m>3 \cdot 7</m>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <title>How to do Matrix Multiplication in Qiskit</title>
+
+      <exercise label="HW7-2_Q5">
+        <title>Question #5</title>
+        <idx>HW7.2 Q5</idx>
+        <statement>
+          <p>
+            What class represents matrices in Qiskit?
+          </p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <c>Operator</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>Grid</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>Matrix</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>Matrices</c>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise label="HW7-2_Q6">
+        <title>Question #6</title>
+        <idx>HW7.2 Q6</idx>
+        <statement>
+          <p>Identify the line of code that displays matrix <m>A</m> created in Qiskit by <c>Operator()</c>.</p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>
+                <c>array_to_latex(A, prefix="\\text{A} = ")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>A.draw("latex")</c>
+              </p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>
+                <c>A.from_label("draw")</c>
+              </p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise label="HW7-2_Q7">
+        <title>Question #7</title>
+        <idx>HW7.2 Q7</idx>
+        <statement>
+          <p>Write a line of Qiskit code that multiplies the matrix <m>A</m> and the vector <m>x</m>
+            and assigns the result to <m>y</m>.</p>
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p> Your line of code will begin: <c>y = </c>
+            </p>
+          </statement>
+        </hint>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <title>Matrix Multiplication <mdash /> <c>NOT</c> Gate</title>
+
+      <exercise label="HW7-2_Q8">
+        <title>Question 8</title>
+        <idx>HW7.2 Q8</idx>
+        <statement>
+          <p>
+            <em>One-qubit quantum gates</em> are represented by </p>
+        </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>2x2 matrices</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>1-dimensional vectors</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>2-dimensional vectors</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>1x1 matrices</p>
+            </statement>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise label="HW7-2_Q9">
+        <title>Question 9</title>
+        <idx>HW7.2 Q9</idx>
+        <statement>
+          <p>Write a line of Qiskit code that creates the matrix for the <c>NOT</c> gate as an <c>Operator</c>
+            object.</p>
+          <image source="HW7-2_Q9-11.png" width="45%" />
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p>Your line of code will begin: <c>X = </c></p>
+          </statement>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-2_Q10">
+        <title>Question 10</title>
+        <idx>HW7.2 Q10</idx>
+        <statement>
+          <p>Write a line of Qiskit code that creates the initial state <m>[\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}]</m>.</p>
+          <image source="HW7-2_Q9-11.png" width="45%" />
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p>Your line of code will begin: <c>initial_state = </c></p>
+          </statement>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-2_Q11">
+        <title>Question 11</title>
+        <idx>HW7.2 Q11</idx>
+        <statement>
+          <p>Write a line of Qiskit code that computes the <c>result_state</c>.</p>
+          <image source="HW7-2_Q9-11.png" width="45%" />
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p>Your line of code will begin: <c>result_state = </c></p>
+          </statement>
+        </hint>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <title>Matrix Multiplication <mdash /> <c>H</c> Gate</title>
+
+      <exercise label="HW7-2_Q12">
+        <title>Question 12</title>
+        <idx>H7.2 Q12</idx>
+        <statement>
+          <p>Write a line of Qiskit code that creates the matrix for the <em>H gate</em> as an <c>Operator</c>
+            object.</p>
+          <image source="HW7-2_Q12-14.png" width="45%" />
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p>Your line of code will begin: <c>H = </c></p>
+          </statement>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-2_Q13">
+        <title>Question 13</title>
+        <idx>H7.2 Q13</idx>
+        <statement>
+          <p>Write a line of Qiskit code that creates the <em>initial state</em>.</p>
+          <image source="HW7-2_Q12-14.png" width="45%" />
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p>Your line of code will begin: <c>initial_state = </c></p>
+          </statement>
+        </hint>
+      </exercise>
+
+      <exercise label="HW7-2_Q14">
+        <title>Question 14</title>
+        <idx>H7.2 Q14</idx>
+        <statement>
+          <p>Write a line of Qiskit code that computes the <em>resulting state</em>.</p>
+          <image source="HW7-2_Q12-14.png" width="45%" />
+        </statement>
+        <response />
+        <hint>
+          <statement>
+            <p>Your line of code will begin: <c>result_state = </c></p>
+          </statement>
+        </hint>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+</section>
