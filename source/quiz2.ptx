@@ -93,14 +93,14 @@
         </md>
       </statement>
       <choices randomize="yes">
-        <choice correct="yes">
+        <choice>
           <statement>
             <p>
               <m>\frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}</m>
             </p>
           </statement>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>
             <p>
               <m> \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}</m>

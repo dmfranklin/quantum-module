@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="C9_Oracle_Algorithms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Oracle Algorithms</title>
+
+  <introduction>
+    <p> In this chapter, we learned about oracle algorithms and how quantum computers have an
+      advantage in executing oracle-based algorithms.</p>
+  </introduction>
+
+  <!-- include sections -->
+  <!-- <xi:include href="lesson7_1.ptx" /> -->
+  <!-- <xi:include href="lesson7_2.ptx" /> -->
+  <!-- <xi:include href="lesson7_3.ptx" /> -->
+
+</chapter>

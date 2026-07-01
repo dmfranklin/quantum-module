@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="C8_Entanglement_Teleportation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Entanglement, No-Cloning, and Teleportation</title>
+
+  <introduction>
+    <p> In this chapter, we learned about entanglement, the no-cloning theorem of QIS, and quantum
+      teleportation. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="problem_set8.ptx" />
+  <!-- <xi:include href="lesson7_1.ptx" /> -->
+  <!-- <xi:include href="lesson7_2.ptx" /> -->
+  <!-- <xi:include href="lesson7_3.ptx" /> -->
+
+</chapter>

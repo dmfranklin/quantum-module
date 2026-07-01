@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="problemset9" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Problem Set</title>
+
+  <exercises>
+    <exercise label="HW9_Q1">
+      <title>Question #1</title>
+      <idx>HW9 Q1</idx>
+      <statement>
+        <p>Bop it:</p>
+        <p>
+          There is an electronic device with a button to press, handle to twist, and handle to pull.
+          The device says either “Press it”, “Twist it”, or “Pull it.” After each command, the
+          player has a certain amount of time to perform the action. If they perform the wrong
+          action or do not do any action in the allotted time, they lose. As the game progresses, it
+          goes faster, allowing less and less time for the action. The goal is to play for as long
+          as possible.</p>
+        <p>Is this an oracle game?</p>
+      </statement>
+      <choices>
+        <choice>
+          <statement>
+            <p> Yes </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p> No </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q2">
+      <title>Question #2</title>
+      <idx>HW9 Q2</idx>
+      <statement>
+        <p>Think of a Number...</p>
+        <p>One person (the thinker) thinks of a number between 0 and 100. The guesser attempts to
+          guess the number. Each time they guess, the thinker answers either, “Higher”, “Lower”, or
+          “You got it!” based on whether the answer they are thinking of is higher, lower, or equal
+          to the guessed number. This continues until the guesser guesses the correct number. The
+          goal is to guess the number in the fewest tries.</p>
+        <p>Is this an oracle game?</p>
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p> Yes </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> No </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q3">
+      <title>Question #3</title>
+      <idx>HW9 Q3</idx>
+      <statement>
+        <p>What is the output of the following circuit?</p>
+        <image source="HW9_Q3.png" width="50%" />
+      </statement>
+      <choices>
+        <choice>
+          <statement>
+            <p>A</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>B</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>C</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>D</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>E</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>F</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q4">
+      <title>Question #4</title>
+      <idx>HW9 Q4</idx>
+      <statement>
+        <p> The key(s) to performance for Bernstein-Vazirani is/are:</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p> Placing values in superposition so all guesses were tested simultaneously </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p> Placing values in superposition so the CNOT received inputs in superposition </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Phase Kick-Back</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Interference</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q5">
+      <title>Question #5</title>
+      <idx>HW9 Q5</idx>
+      <statement>
+        <p>The secret code is <m>101</m>. For this query, choose the correct output.</p>
+        <image source="HW9_Q5.png" width="40%" />
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>a</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>b</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>c</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>d</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q6">
+      <title>Question #6</title>
+      <idx>HW9 Q6</idx>
+      <statement>
+        <p>The secret code is <m>101</m>. For this query, choose the correct output.</p>
+        <image source="HW9_Q6.png" width="40%" />
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>a</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>b</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>c</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>d</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q7">
+      <title>Question #7</title>
+      <idx>HW9 Q7</idx>
+      <statement>
+        <p> In order to implement the Bernstein-Vazirani algorithm, what about this quantum circuit
+          should be changed? </p>
+        <image source="HW9_Q7.png" width="35%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>All four qubits should be put through H gates before the BernVaz oracle. </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> Two of the qubits, q1 and q2, should be prepared by being passed through NOT gates
+              before the BernVaz oracle.</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>The H gates should be moved from after the oracle to before the oracle.</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p> No change is necessary; it correctly implements the Bernstein-Vazirani algorithm. </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q8">
+      <title>Question #8</title>
+      <idx>HW9 Q8</idx>
+      <statement>
+        <p> Suppose I have a BernVaz oracle with 4 input bits and 1 output bit. How many times do I
+          need to run the BernVaz oracle if I am limited to using <em>classical bits</em> and the
+          best classical approach? </p>
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>4</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>3</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>2</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>1</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise label="HW9_Q9">
+      <title>Question #9</title>
+      <idx>HW9 Q9</idx>
+      <statement>
+        <p> Suppose I have a BernVaz oracle with 4 input bits and 1 output bit. How many times do I
+          need to run the BernVaz oracle if I use <em>qubits</em> and our quantum algorithm? </p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>4</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>3</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>2</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>1</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+
+  </exercises>
+</section>
