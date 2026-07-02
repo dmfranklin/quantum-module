@@ -23,6 +23,10 @@
 
     <!-- Include quizzes -->
     <xi:include href="./quizzes.ptx" />
+    <xi:include href="./final.ptx" />
+
+    <!-- Include circuit explorer -->
+    <xi:include href="./circuit_explorer.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

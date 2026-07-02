@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix>
+  <title>Circuit Explorer</title>
+  <idx>circuit explorer</idx>
+
+  <interactive aspect="9:9" platform="javascript"
+    source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+    <script>
+      visualizeProbabilitiesWidget({
+        circuit: "Blank 4x6",
+      });
+    </script>
+  </interactive>
+</appendix>
