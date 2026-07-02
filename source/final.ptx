@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="final" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="final" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Final</title>
 
   <!--
@@ -9,17 +9,17 @@
   - feedback="no"
   -->
 
-  <exercises xml:id="Final" label="Final">
+  <exercises xml:id="Final" label="Final" time-limit="120" results="no" feedback="no">
     <title>Final</title>
-    <exercise label="Final_1">
+    <exercise label="Final_01">
       <statement>
         <p>In classical computing, we have an <c>AND</c> gate, comprising of two inputs and an output.
           The <c>AND</c> gate outputs a 1 if and only if <em>both</em> inputs are 1.</p>
-        <p>Why can this gate <em>not</em> be implemented in quantum computing?</p>
+        <p>Why can this gate <em>not</em> be directly implemented as-is in quantum computing?</p>
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_2">
+    <exercise label="Final_02">
       <statement>
         <p> Consider the following circuit, starting in the state <m>\ket{\psi}</m>: </p>
         <image source="Final_2.png" width="50%" />
@@ -28,7 +28,7 @@
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_3">
+    <exercise label="Final_03">
       <statement>
         <p> Select the correct visual representation for a 2-qubit state that has a 20% chance of
           being measured as <m>00</m>, a 40% chance of being measured as <m>11</m>, a 20% chance of
@@ -66,7 +66,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_4">
+    <exercise label="Final_04">
       <statement>
         <p>Select the option that describes the combined 2-qubit state at A.</p>
         <p>
@@ -101,7 +101,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_5">
+    <exercise label="Final_05">
       <statement>
         <p>Select the option that describes the combined 2-qubit state at B.</p>
         <p>
@@ -136,13 +136,13 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_6">
+    <exercise label="Final_06">
       <statement correct="no">
         <p>If a state is in superposition with only 2 possible outcomes, it must be a one-qubit
           state.</p>
       </statement>
     </exercise>
-    <exercise label="Final_7">
+    <exercise label="Final_07">
       <statement>
         <p>Suppose you have an apparatus that can create single-qubit states in unknown (but
           consistent) superposition, always with positive phase. You also have the ability to
@@ -152,7 +152,7 @@
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_8">
+    <exercise label="Final_08">
       <statement>
         <p>Select all states which are equivalent to the state <m>\frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}}\ket{1}</m>:</p>
       </statement>
@@ -187,7 +187,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_9">
+    <exercise label="Final_09">
       <statement>
         <p>Over the next few questions, we will analyze the following circuit:</p>
         <image source="Final_9_and_beyond.png" width="75%" />
@@ -262,14 +262,14 @@
         <choice>
           <statement>
             <p>
-              <m>\Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big)</m>
+              <m>\Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big)</m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m>\Big( \frac{1}{2} \big( \ket{00} - \ket{01} + \ket{10} - \ket{11} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big)</m>
+              <m>\Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big)</m>
             </p>
           </statement>
         </choice>
@@ -309,15 +309,16 @@
             </p>
           </statement>
         </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}1\\0\\0\\0\\0\\0\\0\\1\end{bmatrix} \rightarrow \begin{bmatrix}1\\0\\0\\0\\0\\0\\-1\\0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
       </choices>
     </exercise>
     <exercise label="Final_18">
-      <statement>
-        <p> Draw a compact circuit that transforms the input <m>\ket{10}</m> into the output <m>\frac{1}{2} \Big(\ket{00} - \ket{01} - \ket{10} + \ket{11}\Big)</m></p>
-      </statement>
-      <response />
-    </exercise>
-    <exercise label="Final_19">
       <statement>
         <p>Consider the two-qubit state <m>\frac{1}{\sqrt{6}} \ket{11} + \frac{\sqrt{2}}{\sqrt{6}} \ket{10} + \frac{\sqrt{3}}{\sqrt{6}} \ket{00}</m>. Suppose we <em>measure the first qubit</em>, and we
           get a measurement result of 1. What is the probability of measuring a 0 in the second
@@ -350,7 +351,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_20">
+    <exercise label="Final_19">
       <statement correct="no">
         <p>
           The following two circuits are exactly equivalent for all inputs:
@@ -364,7 +365,7 @@
         </sidebyside>
       </statement>
     </exercise>
-    <exercise label="Final_21">
+    <exercise label="Final_20">
       <statement>
         <p>
           Represent the following circuit as a single matrix:
@@ -409,7 +410,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_22">
+    <exercise label="Final_21">
       <statement>
         <p>
           For this C-Z (Controlled-Z) gate, which of the following are possible correct start and
@@ -442,7 +443,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_23">
+    <exercise label="Final_22">
       <statement>
         <p>You are setting up a phase kickback circuit, starting with the state <m>\ket{11}</m>. Drag the
           vector notation expression from the left to the expression at the checkpoint on the right.</p>
@@ -519,7 +520,7 @@
         </match>
       </matches>
     </exercise>
-    <exercise label="Final_24">
+    <exercise label="Final_23">
       <statement>
         <p>Indicate if the following state is entangled. If it is not, write the individual qubit
           states in 1-qubit bra-ket notation.</p>
@@ -528,7 +529,7 @@
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_25">
+    <exercise label="Final_24">
       <statement>
         <p>Indicate if the following state is entangled. If it is not, write the individual qubit
           states in 1-qubit bra-ket notation.</p>
@@ -537,7 +538,7 @@
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_26">
+    <exercise label="Final_25">
       <statement>
         <p>Indicate if the following state is entangled. If it is not, write the individual qubit
           states in 1-qubit bra-ket notation.</p>
@@ -546,7 +547,7 @@
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_27">
+    <exercise label="Final_26">
       <statement>
         <p>Indicate if the following state is entangled. If it is not, write the individual qubit
           states in 1-qubit bra-ket notation.</p>
@@ -555,7 +556,7 @@
       </statement>
       <response />
     </exercise>
-    <exercise label="Final_28">
+    <exercise label="Final_27">
       <statement>
         <p>Using the standard quantum teleportation circuit, Alice teleports a qubit <m>\ket{\psi}</m> to Bob.
           During the protocol, Bob receives two bits from Alice: <m>b_1b_0 = 00</m>. When he logged these
@@ -596,13 +597,13 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_29">
+    <exercise label="Final_28">
       <statement correct="no">
         <p>Once they have been distributed, you can reuse the same entangled pair of qubits for
           multiple teleportation procedures without bringing them back together again.</p>
       </statement>
     </exercise>
-    <exercise label="Final_30">
+    <exercise label="Final_29">
       <statement>
         <p>What will the dimensions be of the overall matrix for the Bernstein-Vazirani oracle
           pictured below?</p>
@@ -658,7 +659,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_31">
+    <exercise label="Final_30">
       <statement>
         <p>
           What is the secret code for the Bernstein-Vazirani oracle pictured below?
@@ -703,7 +704,7 @@
         </choice>
       </choices>
     </exercise>
-    <exercise label="Final_32">
+    <exercise label="Final_31">
       <statement>
         <p>For these gates in parallel, which expression(s) could you use to determine the overall
           matrix for the circuit? Select all that apply.</p>
@@ -732,42 +733,53 @@
         </choice>
       </choices>
     </exercise>
+    <exercise label="Final_32">
+      <statement>
+        <p>For the circuit given below, write code in Qiskit to build a circuit with these gates.</p>
+        <p>You do not have to include the lines to import anything.</p>
+        <image source="Final_33.png" width="55%" />
+      </statement>
+      <response />
+    </exercise>
     <exercise label="Final_33">
       <statement>
-        <p>For the circuit given below, write code in Qiskit to build a circuit with these gates.
-          You
-          do not have to
-          include the lines to import anything.</p>
+        <p>For the circuit you defined above, write a line of code in Qiskit to evolve the state <m>\ket{010}</m>
+          through the circuit.</p>
+        <p>You do not have to include the lines to import anything.</p>
         <image source="Final_33.png" width="55%" />
       </statement>
       <response />
     </exercise>
     <exercise label="Final_34">
       <statement>
-        <p>For the circuit you defined above, write a line of code in Qiskit to evolve the state <m>\ket{010}</m>
-          through the circuit.</p>
-        <image source="Final_33.png" width="55%" />
+        <p>For the circuit given below, write code in Qiskit to calculate a single <c>Operator</c> that
+          represents its operation.</p>
+        <p>You do not have to include the lines to import anything.</p>
+        <image source="Final_35.png" width="55%" />
       </statement>
       <response />
     </exercise>
     <exercise label="Final_35">
       <statement>
-        <p>For the circuit given below, write code in Qiskit to calculate a single <c>Operator</c> that
-          represents its operation. You do not have to include the lines to import anything.</p>
-        <image source="Final_35.png" width="55%" />
+        <p> On a piece of paper, draw a compact circuit that transforms the input <m>\ket{10}</m> into the
+          output <m>\frac{1}{2} \Big(\ket{00} - \ket{01} - \ket{10} + \ket{11}\Big)</m>. To be eligible for partial credit, you must indicate your thinking (e.g.
+          intermediate states, rationale, etc.). In the box below, write down how many gates you
+          used to build your circuit. </p>
+        <p><term>At the top of the paper, be sure to write down your full name and UChicago ID (the
+          part of your email that goes before <c>@uchicago.edu</c>).</term> Make sure you label the answer as
+          "Problem 35". </p>
       </statement>
       <response />
     </exercise>
     <exercise label="Final_36">
       <statement>
-        <p>On a piece of paper, draw a circuit that starts in the state <m>\ket{00000}</m> and results in the
-          state: <m>\frac{1}{\sqrt{2}} \ket{10010} + \ket{11001}</m>. To be eligible for partial credit, you must indicate your thinking (e.g.
-          intermediate states, rationale, etc.)</p>
-        <p>At the top of the paper, be sure to write down your full name and UChicago ID (the part
-          of your email that goes before <c>@uchicago.edu</c>). In the box below, write down how many gates you
-          used to build your circuit. </p>
+        <p>On the same piece of paper as above, draw a circuit that starts in the state <m>\ket{00000}</m> and
+          results in the state: <m>\frac{1}{\sqrt{2}} \ket{10010} + \ket{11001}</m>. To be eligible for partial credit, you must indicate your
+          thinking (e.g. intermediate states, rationale, etc.). In the box below, write down how
+          many gates you used to build your circuit. </p>
+        <p>Make sure you label the answer as "Problem 36". </p>
       </statement>
       <response />
     </exercise>
   </exercises>
-</chapter>
+</section>

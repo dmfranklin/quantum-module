@@ -4,11 +4,12 @@
   <title>Quizzes</title>
 
   <!-- To make the following timed quizzes, add the following attributes to the <exercises> element:
-    - time-limit="1800"
+    - time-limit="1800" (minutes)
     - results="no"
     - feedback="no"
   -->
 
   <xi:include href="quiz1.ptx" />
   <xi:include href="quiz2.ptx" />
+  <xi:include href="final.ptx" />
 </chapter>
