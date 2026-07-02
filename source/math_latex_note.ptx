@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <p>
-    <p>Note: you can use these symbols to express kets: |0⟩. You can express square roots (<m>\sqrt{2}</m>)
+    <p>Note: you can copy these symbols to express kets: |0⟩. You can express square roots (<m>\sqrt{2}</m>)
         as <c>sqrt(2)</c>. </p>
     <p>Note: if you are familiar with LaTeX, you can use dollar signs ($) to write math using LaTeX.
         You can use <c>\rangle</c> for the angled bracket at the end of kets (⟩) and <c>\sqrt{...}</c> for square

@@ -359,9 +359,201 @@
           <em>Hint: calculate the overall matrices for each circuit and compare.</em>
         </p>
         <sidebyside widths="40% 40%" valign="middle">
-          <image />
+          <image source="Final_20_1.png" />
+          <image source="Final_20_2.png" />
         </sidebyside>
       </statement>
+    </exercise>
+    <exercise label="Final_21">
+      <statement>
+        <p>
+          Represent the following circuit as a single matrix:
+        </p>
+        <image source="Final_21.png" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}0\amp 1\amp 0\amp 1\\0\amp -1\amp 0\amp 1\\-1\amp 0\amp 1\amp 0\\1\amp 0\amp 1\amp 0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}0\amp 1\amp 0\amp 1\\0\amp -1\amp 0\amp 1\\-1\amp 0\amp 1\amp 0\\1\amp 0\amp 1\amp 0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}0\amp 0\amp -1\amp 1\\1\amp -1\amp 0\amp 0\\0\amp 0\amp 1\amp 1\\1\amp 1\amp 0\amp 0\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}0\amp 0\amp 1\amp 1\\-1\amp -1\amp 0\amp 0\\-1\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp -1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}0\amp 1\amp 0\amp 1\\-1\amp 0\amp 1\amp 0\\-1\amp 0\amp -1\amp 0\\0\amp 1\amp 0\amp -1\end{bmatrix}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Final_22">
+      <statement>
+        <p>
+          For this C-Z (Controlled-Z) gate, which of the following are possible correct start and
+          end states? Choose all that apply. Remember from class that phase behavior is best
+          understood through matrices. These are not meant to be viewed as independent black and
+          white balls, but as different possibilities of a superposition system.
+        </p>
+        <image source="Final_22.png" />
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement>
+            <p>A</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>B</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>C</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>D</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Final_23">
+      <statement>
+        <p>You are setting up a phase kickback circuit, starting with the state <m>\ket{11}</m>. Drag the
+          vector notation expression from the left to the expression at the checkpoint on the right.</p>
+        <p>Note: Not all expressions on the left are correct!</p>
+      </statement>
+      <matches>
+        <match>
+          <premise>
+            <p>
+              <m>\begin{bmatrix}0\\0\\0\\1\end{bmatrix}</m>
+            </p>
+          </premise>
+          <response>
+            <p>Starting state</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\frac{1}{2} \begin{bmatrix}1\\-1\\-1\\1\end{bmatrix}</m>
+            </p>
+          </premise>
+          <response>
+            <p>After initial superposition</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\frac{1}{2} \begin{bmatrix}1\\-1\\1\\-1\end{bmatrix}</m>
+            </p>
+          </premise>
+          <response>
+            <p>After phase kickback</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\begin{bmatrix}0\\1\\0\\0\end{bmatrix}</m>
+            </p>
+          </premise>
+          <response>
+            <p>Ending state</p>
+          </response>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\begin{bmatrix}1\\0\\0\\0\end{bmatrix}</m>
+            </p>
+          </premise>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\begin{bmatrix}0\\0\\1\\0\end{bmatrix}</m>
+            </p>
+          </premise>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\frac{1}{2} \begin{bmatrix}1\\1\\1\\1\end{bmatrix}</m>
+            </p>
+          </premise>
+        </match>
+        <match>
+          <premise>
+            <p>
+              <m>\frac{1}{2} \begin{bmatrix}1\\1\\-1\\-1\end{bmatrix}</m>
+            </p>
+          </premise>
+        </match>
+      </matches>
+    </exercise>
+    <exercise label="Final_24">
+      <statement>
+        <p>Indicate if the following state is entangled. If it is not, write the individual qubit
+          states in 1-qubit bra-ket notation.</p>
+        <xi:include href="math_latex_note.ptx" />
+        <md>\frac{1}{\sqrt{2}} (\ket{10} - \ket{11})</md>
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Final_25">
+      <statement>
+        <p>Indicate if the following state is entangled. If it is not, write the individual qubit
+          states in 1-qubit bra-ket notation.</p>
+        <xi:include href="math_latex_note.ptx" />
+        <md>\frac{1}{\sqrt{2}} (\ket{10} + \ket{01})</md>
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Final_26">
+      <statement>
+        <p>Indicate if the following state is entangled. If it is not, write the individual qubit
+          states in 1-qubit bra-ket notation.</p>
+        <xi:include href="math_latex_note.ptx" />
+        <md>\frac{1}{2} (\ket{001} - \ket{011} + \ket{101} - \ket{111})</md>
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Final_27">
+      <statement>
+        <p>Indicate if the following state is entangled. If it is not, write the individual qubit
+          states in 1-qubit bra-ket notation.</p>
+        <xi:include href="math_latex_note.ptx" />
+        <md>\frac{1}{\sqrt{6}} \ket{00} + \frac{1}{\sqrt{3}} \ket{01} + \frac{1}{\sqrt{6}} \ket{10} + \frac{1}{\sqrt{3}} \ket{11}</md>
+      </statement>
+      <response />
     </exercise>
   </exercises>
 </chapter>
