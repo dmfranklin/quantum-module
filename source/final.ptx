@@ -555,5 +555,219 @@
       </statement>
       <response />
     </exercise>
+    <exercise label="Final_28">
+      <statement>
+        <p>Using the standard quantum teleportation circuit, Alice teleports a qubit <m>\ket{\psi}</m> to Bob.
+          During the protocol, Bob receives two bits from Alice: <m>b_1b_0 = 00</m>. When he logged these
+          values into his computer, however, he made a mistake and accidentally flipped the bits to <m>b_1b_0 = 11</m>.
+          With this incorrect information, Bob performs his normal correction procedures in an
+          attempt to recover <m>\ket{\psi}</m>.</p>
+        <p>The teleported qubit was intended to have the value of <m>\ket{\psi} = a\ket{0} + b\ket{1}</m>. What is the value of <m>\ket{\psi'}</m>,
+          the qubit Bob now has after the possibly incorrect correction procedures were implemented?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{\psi'} = a\ket{0} + b\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{\psi'} = b\ket{0} + a\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>\ket{\psi'} = a\ket{0} - b\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>\ket{\psi'} = b\ket{0} - a\ket{1}</m>
+            </p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Final_29">
+      <statement correct="no">
+        <p>Once they have been distributed, you can reuse the same entangled pair of qubits for
+          multiple teleportation procedures without bringing them back together again.</p>
+      </statement>
+    </exercise>
+    <exercise label="Final_30">
+      <statement>
+        <p>What will the dimensions be of the overall matrix for the Bernstein-Vazirani oracle
+          pictured below?</p>
+        <image source="Final_30_31.png" width="35%" />
+      </statement>
+      <choices>
+        <choice>
+          <statement>
+            <p>
+              <m>2 \times 2</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>4 \times 4</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>5 \times 5</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>8 \times 8</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>
+              <m>16 \times 16</m>
+            </p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>
+              <m>32 \times 32</m>
+            </p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Cannot be determined</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Final_31">
+      <statement>
+        <p>
+          What is the secret code for the Bernstein-Vazirani oracle pictured below?
+        </p>
+        <image source="Final_30_31.png" width="35%" />
+      </statement>
+      <choices randomize="yes">
+        <choice correct="yes">
+          <statement>
+            <p>1001</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>1000</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>1010</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>1100</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>10011</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>11001</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Cannot be determined</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Final_32">
+      <statement>
+        <p>For these gates in parallel, which expression(s) could you use to determine the overall
+          matrix for the circuit? Select all that apply.</p>
+        <image source="Final_32.png" width="60%" />
+      </statement>
+      <choices>
+        <choice>
+          <statement>
+            <p>a</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>b</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>c</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>d</p>
+          </statement>
+        </choice>
+      </choices>
+    </exercise>
+    <exercise label="Final_33">
+      <statement>
+        <p>For the circuit given below, write code in Qiskit to build a circuit with these gates.
+          You
+          do not have to
+          include the lines to import anything.</p>
+        <image source="Final_33.png" width="55%" />
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Final_34">
+      <statement>
+        <p>For the circuit you defined above, write a line of code in Qiskit to evolve the state <m>\ket{010}</m>
+          through the circuit.</p>
+        <image source="Final_33.png" width="55%" />
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Final_35">
+      <statement>
+        <p>For the circuit given below, write code in Qiskit to calculate a single <c>Operator</c> that
+          represents its operation. You do not have to include the lines to import anything.</p>
+        <image source="Final_35.png" width="55%" />
+      </statement>
+      <response />
+    </exercise>
+    <exercise label="Final_36">
+      <statement>
+        <p>On a piece of paper, draw a circuit that starts in the state <m>\ket{00000}</m> and results in the
+          state: <m>\frac{1}{\sqrt{2}} \ket{10010} + \ket{11001}</m>. To be eligible for partial credit, you must indicate your thinking (e.g.
+          intermediate states, rationale, etc.)</p>
+        <p>At the top of the paper, be sure to write down your full name and UChicago ID (the part
+          of your email that goes before <c>@uchicago.edu</c>). In the box below, write down how many gates you
+          used to build your circuit. </p>
+      </statement>
+      <response />
+    </exercise>
   </exercises>
 </chapter>
