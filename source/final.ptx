@@ -15,7 +15,7 @@
       <statement>
         <p>In classical computing, we have an <c>AND</c> gate, comprising of two inputs and an output.
           The <c>AND</c> gate outputs a 1 if and only if <em>both</em> inputs are 1.</p>
-        <p>Why can this gate not be implemented in quantum computing?</p>
+        <p>Why can this gate <em>not</em> be implemented in quantum computing?</p>
       </statement>
       <response />
     </exercise>
@@ -158,24 +158,32 @@
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
-          <p>
-            <m>- \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}}\ket{1}</m>
-          </p>
+          <statement>
+            <p>
+              <m>- \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}}\ket{1}</m>
+            </p>
+          </statement>
         </choice>
         <choice correct="yes">
-          <p>
-            <m>\frac{1}{\sqrt{2}} \begin{bmatrix}1 \\ -1\end{bmatrix}</m>
-          </p>
+          <statement>
+            <p>
+              <m>\frac{1}{\sqrt{2}} \begin{bmatrix}1 \\ -1\end{bmatrix}</m>
+            </p>
+          </statement>
         </choice>
         <choice>
-          <p>
-            <m>\begin{bmatrix}1 \\ 1\end{bmatrix}</m>
-          </p>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}1 \\ 1\end{bmatrix}</m>
+            </p>
+          </statement>
         </choice>
         <choice>
-          <p>
-            <m>\begin{bmatrix}\frac{1}{\sqrt{2}} \\ 0 \\ 0 \\ -\frac{1}{\sqrt{2}}\end{bmatrix}</m>
-          </p>
+          <statement>
+            <p>
+              <m>\begin{bmatrix}\frac{1}{\sqrt{2}} \\ 0 \\ 0 \\ -\frac{1}{\sqrt{2}}\end{bmatrix}</m>
+            </p>
+          </statement>
         </choice>
       </choices>
     </exercise>
@@ -185,332 +193,175 @@
         <image source="Final_9_and_beyond.png" width="75%" />
         <p>First, let us express our starting qubit states, <m>a\ket{0} + b\ket{1}</m> and <m>c\ket{0} + d\ket{1}</m> as a two-qubit state
           in bra-ket notation.</p>
-        <p>Note: you can copy these symbols to express kets: |0⟩</p>
-        <p>Note: if you are familiar with LaTeX, you can use dollar signs ($) to write math using
-          LaTeX. You can use <c>\rangle</c> for the angled bracket at the end of kets. Using LaTeX is
-          absolutely not a requirement!</p>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
       <response />
     </exercise>
     <exercise label="Final_10">
       <statement>
-        <p>A qubit is a superposition of how many values?</p>
+        <image source="Final_9_and_beyond.png" width="75%" />
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint A</em> in the circuit above.</p>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
-      <choices>
-        <choice>
-          <statement>
-            <p>0</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>1</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>2</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>unknown until measurement occurs</p>
-          </statement>
-        </choice>
-      </choices>
+      <response />
     </exercise>
     <exercise label="Final_11">
       <statement>
-        <p>What information is held in the quantum state?</p>
+        <image source="Final_9_and_beyond.png" width="75%" />
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint B</em> in the circuit above.</p>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
-      <choices>
-        <choice>
-          <statement>
-            <p>each possible outcome after measurement</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>phase</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>the probability of measuring one outcome over another</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>all of the above</p>
-          </statement>
-        </choice>
-      </choices>
+      <response />
     </exercise>
     <exercise label="Final_12">
       <statement>
-        <p>Select all possible values of a qubit after measurement.</p>
+        <image source="Final_9_and_beyond.png" width="75%" />
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint C</em> in the circuit above.</p>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
-      <choices>
-        <choice correct="yes">
-          <statement>
-            <p>0</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>1</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>a superposition of <m>\ket{0}</m> or <m>\ket{1}</m></p>
-          </statement>
-        </choice>
-      </choices>
+      <response />
     </exercise>
     <exercise label="Final_13">
-      <statement correct="yes">
-        <p>Phase is only relevant in quantum states that are in superposition.</p>
+      <statement>
+        <image source="Final_9_and_beyond.png" width="75%" />
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint D</em> in the circuit above.</p>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
+      <response />
     </exercise>
     <exercise label="Final_14">
       <statement>
-        <p>Suppose you have a qubit in the <m>\ket{1}</m> state, and you apply a <c>Z</c> gate to the state.
-          What is the resulting state?</p>
+        <image source="Final_9_and_beyond.png" width="75%" />
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint E</em> in the circuit above.</p>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
-      <choices randomize="yes">
-        <choice>
-          <statement>
-            <p>
-              <m>\ket{1}</m>
-            </p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>
-              <m>-\ket{1}</m>
-            </p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>
-              <m>\ket{0}</m>
-            </p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Equal superposition of <m>\ket{0}</m> and <m>\ket{1}</m> with negative phase</p>
-          </statement>
-        </choice>
-      </choices>
-      <hint>
-        <p>Think about simplifying our description of the state!</p>
-      </hint>
+      <response />
     </exercise>
     <exercise label="Final_15">
       <statement>
-        <p> Simplify the following visual representation:</p>
-        <p>
-          <image source="Final_15.png" width="20%" />
-        </p>
+        <p>Combine the following states into a single 4-qubit state:</p>
+        <md>\ket{\psi_0} = \frac{1}{\sqrt{2}} \ket{00} - \frac{1}{\sqrt{2}} \ket{10}</md>
+        <md>\ket{\psi_1} = \frac{\sqrt{2}}{\sqrt{5}} \ket{01} + \frac{\sqrt{2}}{\sqrt{5}} \ket{10} - \frac{1}{\sqrt{5}} \ket{11}</md>
+        <xi:include href="math_latex_note.ptx" />
       </statement>
-      <choices randomize="yes">
-        <choice correct="yes">
-          <statement>
-            <p>White</p>
-            <image source="L4_3_2_B.png" width="15%" />
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Black</p>
-            <image source="L4_3_2_A.png" width="15%" />
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Equal superposition of white and black, positive phase</p>
-            <image source="L4_3_2_D.png" width="15%" />
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Equal superposition of white and black, negative phase</p>
-            <image source="L4_3_2_E.png" width="15%" />
-          </statement>
-        </choice>
-      </choices>
+      <response />
     </exercise>
     <exercise label="Final_16">
       <statement>
-        <p>Express the following visual representation as a 2-qubit state:</p>
-        <p>
-          <image source="Final_16.png" width="15%" />
-        </p>
+        <p>Factor the following 3-qubit state into three separate 1-qubit states:</p>
+        <md>\frac{1}{\sqrt{8}} \Big( \ket{000} - \ket{001} - \ket{010} + \ket{011} + \ket{100} - \ket{101} - \ket{110} + \ket{111} \Big)</md>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <image source="Final_16_A.png" width="15%" />
+            <p>
+              <m>\Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big)</m>
+            </p>
           </statement>
         </choice>
         <choice>
           <statement>
-            <image source="Final_16_B.png" width="15%" />
+            <p>
+              <m>\Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} + \ket{1} \big) \Big)</m>
+            </p>
           </statement>
         </choice>
         <choice>
           <statement>
-            <image source="Final_16_C.png" width="15%" />
+            <p>
+              <m>\Big( \frac{1}{2} \big( \ket{00} - \ket{01} + \ket{10} - \ket{11} \big) \Big) \otimes \Big( \frac{1}{\sqrt{2}} \big( \ket{0} - \ket{1} \big) \Big)</m>
+            </p>
           </statement>
         </choice>
         <choice>
           <statement>
-            <image source="Final_16_D.png" width="15%" />
+            <p>
+              <m>\frac{1}{\sqrt{2}} \ket{000} - \frac{1}{\sqrt{2}} \ket{111}</m>
+            </p>
           </statement>
         </choice>
       </choices>
     </exercise>
     <exercise label="Final_17">
       <statement>
-        <p>What is the state at the end of the quantum circuit below, starting with the state <m>\ket{101}</m>
-          ?</p>
-        <p>
-          <image source="Final_17.png" width="85%" />
-        </p>
+        <p>For each of the following, select the transformation if it represents a <em>global phase
+          change</em>.</p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
             <p>
-              <m>\ket{111}</m>
+              <m>\ket{111} \rightarrow -\ket{111}</m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m>\ket{101}</m>
+              <m>\frac{1}{\sqrt{2}} (\ket{00} + \ket{11}) \rightarrow \frac{1}{\sqrt{2}} (\ket{00} - \ket{11})</m>
             </p>
           </statement>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>
-            <p>50% chance of <m>\ket{001}</m> and <m>\ket{101}</m></p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>50% chance of <m>\ket{101}</m> and <m>\ket{111}</m></p>
+            <p>
+              <m>\frac{1}{2} (\ket{00} - \ket{01} - \ket{10} + \ket{11}) \rightarrow -\frac{1}{2} \ket{11} + \frac{1}{2} \ket{01} + \frac{1}{2} \ket{10} - \frac{1}{2} \ket{00}</m>
+            </p>
           </statement>
         </choice>
       </choices>
-      <hint>
-        <statement>
-          <p>Try expressing the starting state in visual representation, and then trace
-            through the circuit, one gate at a time.</p>
-        </statement>
-      </hint>
     </exercise>
     <exercise label="Final_18">
       <statement>
-        <p> Write code using Qiskit to build the following circuit:</p>
-        <p>
-          <image source="Final_18.png" width="85%" />
-        </p>
+        <p> Draw a compact circuit that transforms the input <m>\ket{10}</m> into the output <m>\frac{1}{2} \Big(\ket{00} - \ket{01} - \ket{10} + \ket{11}\Big)</m></p>
       </statement>
-      <program interactive="activecode" language="python3">
-        <preamble>
-  from qiskit import QuantumCircuit
-
-  # TODO: Pass in the correct parameter to create a circuit with 2 qubits
-  </preamble>
-        <code>
-  circuit = QuantumCircuit(...)
-
-  # TODO: Write code to create the appropriate circuit
-
-  </code>
-        <postamble>
-  # Draw the circuit
-  print(circuit.draw())
-  </postamble>
-      </program>
+      <response />
     </exercise>
     <exercise label="Final_19">
       <statement>
-        <p>What can the following sequence of gates be simplified to?</p>
+        <p>Consider the two-qubit state <m>\frac{1}{\sqrt{6}} \ket{11} + \frac{\sqrt{2}}{\sqrt{6}} \ket{10} + \frac{\sqrt{3}}{\sqrt{6}} \ket{00}</m>. Suppose we <em>measure the first qubit</em>, and we
+          get a measurement result of 1. What is the probability of measuring a 0 in the second
+          state?</p>
         <p>
-          <image source="Final_19.png" width="80%" />
+          <em>Hint: first write down what the state transforms to after measuring the first (left)
+            qubit as a 1. What do the new probability amplitudes become?</em>
         </p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
           <statement>
-            <p>one <c>SWAP</c></p>
+            <p>66.666%</p>
           </statement>
         </choice>
         <choice>
           <statement>
-            <p>one <c>CNOT</c> with the control on the upper qubit and the target on the lower qubit</p>
+            <p>100%</p>
           </statement>
         </choice>
         <choice>
           <statement>
-            <p>one <c>NOT</c> on each qubit</p>
+            <p>0%</p>
           </statement>
         </choice>
         <choice>
           <statement>
-            <p>one <c>NOT</c> on the upper qubit</p>
+            <p>33.333%</p>
           </statement>
         </choice>
       </choices>
-      <hint>
-        <p> Go through possible starting states (like <m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, <m>\ket{11}</m>) and see
-          what the result of running the given gates on each state is. </p>
-      </hint>
     </exercise>
     <exercise label="Final_20">
-      <statement>
+      <statement correct="no">
         <p>
-          Select all that is true about quantum measurements:
+          The following two circuits are exactly equivalent for all inputs:
         </p>
+        <p>
+          <em>Hint: calculate the overall matrices for each circuit and compare.</em>
+        </p>
+        <sidebyside widths="40% 40%" valign="middle">
+          <image />
+        </sidebyside>
       </statement>
-      <choices randomize="yes">
-        <choice correct="yes">
-          <statement>
-            <p>Measurement can affect the state being measured</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>Multiple subsequent measurements of a quantum state in superposition will
-              result in
-              the
-              same value</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>If you know the superposition state of a quantum state, you can
-              accurately
-              predict a
-              measurement made on it</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>It is possible in all cases to construct a measurement to completely
-              measure
-              both a
-              state's superposition and phase</p>
-          </statement>
-        </choice>
-      </choices>
     </exercise>
   </exercises>
 </chapter>
