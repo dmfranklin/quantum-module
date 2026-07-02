@@ -9,8 +9,6 @@
   </introduction>
 
   <!-- include sections -->
-  <!-- <xi:include href="lesson7_1.ptx" /> -->
-  <!-- <xi:include href="lesson7_2.ptx" /> -->
-  <!-- <xi:include href="lesson7_3.ptx" /> -->
+  <xi:include href="problem_set9.ptx" />
 
 </chapter>

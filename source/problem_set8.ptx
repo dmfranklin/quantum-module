@@ -116,28 +116,28 @@
         <choice correct="yes">
           <statement>
             <p>
-              <m> \ket{\Phi}^+ = \frac{1}{\sqrt{2}} (\ket{00} + \ket{11}) = \frac{1}{\sqrt{2}} \begin{bmatrix}1\\0\\0\\1\end{bmatrix} </m>
+              <m> \ket{\Phi^+} = \frac{1}{\sqrt{2}} (\ket{00} + \ket{11}) = \frac{1}{\sqrt{2}} \begin{bmatrix}1\\0\\0\\1\end{bmatrix} </m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m> \ket{\Phi}^- = \frac{1}{\sqrt{2}} (\ket{00} - \ket{11}) = \frac{1}{\sqrt{2}} \begin{bmatrix}1\\0\\0\\-1\end{bmatrix} </m>
+              <m> \ket{\Phi^-} = \frac{1}{\sqrt{2}} (\ket{00} - \ket{11}) = \frac{1}{\sqrt{2}} \begin{bmatrix}1\\0\\0\\-1\end{bmatrix} </m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m> \ket{\Psi}^+ = \frac{1}{\sqrt{2}} (\ket{01} + \ket{10}) = \frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\\1\\0\end{bmatrix} </m>
+              <m> \ket{\Psi^+} = \frac{1}{\sqrt{2}} (\ket{01} + \ket{10}) = \frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\\1\\0\end{bmatrix} </m>
             </p>
           </statement>
         </choice>
         <choice>
           <statement>
             <p>
-              <m> \ket{\Psi}^- = \frac{1}{\sqrt{2}} (\ket{01} - \ket{10}) = \frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\\-1\\0\end{bmatrix} </m>
+              <m> \ket{\Psi^-} = \frac{1}{\sqrt{2}} (\ket{01} - \ket{10}) = \frac{1}{\sqrt{2}} \begin{bmatrix}0\\1\\-1\\0\end{bmatrix} </m>
             </p>
           </statement>
         </choice>

@@ -10,8 +10,5 @@
 
   <!-- include sections -->
   <xi:include href="problem_set8.ptx" />
-  <!-- <xi:include href="lesson7_1.ptx" /> -->
-  <!-- <xi:include href="lesson7_2.ptx" /> -->
-  <!-- <xi:include href="lesson7_3.ptx" /> -->
 
 </chapter>
