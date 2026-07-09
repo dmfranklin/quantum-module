@@ -200,7 +200,8 @@
     <exercise label="Final_10">
       <statement>
         <image source="Final_9_and_beyond.png" width="75%" />
-        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint A</em> in the circuit above.</p>
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint A</em> in the circuit above.
+          Combine all terms in the expression by outcome.</p>
         <xi:include href="math_latex_note.ptx" />
       </statement>
       <response />
@@ -208,7 +209,8 @@
     <exercise label="Final_11">
       <statement>
         <image source="Final_9_and_beyond.png" width="75%" />
-        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint B</em> in the circuit above.</p>
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint B</em> in the circuit above.
+          Combine all terms in the expression by outcome.</p>
         <xi:include href="math_latex_note.ptx" />
       </statement>
       <response />
@@ -216,7 +218,8 @@
     <exercise label="Final_12">
       <statement>
         <image source="Final_9_and_beyond.png" width="75%" />
-        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint C</em> in the circuit above.</p>
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint C</em> in the circuit above.
+          Combine all terms in the expression by outcome.</p>
         <xi:include href="math_latex_note.ptx" />
       </statement>
       <response />
@@ -224,7 +227,8 @@
     <exercise label="Final_13">
       <statement>
         <image source="Final_9_and_beyond.png" width="75%" />
-        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint D</em> in the circuit above.</p>
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint D</em> in the circuit above.
+          Combine all terms in the expression by outcome.</p>
         <xi:include href="math_latex_note.ptx" />
       </statement>
       <response />
@@ -232,7 +236,8 @@
     <exercise label="Final_14">
       <statement>
         <image source="Final_9_and_beyond.png" width="75%" />
-        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint E</em> in the circuit above.</p>
+        <p>Calculate the 2-qubit bra-ket state at <em>checkpoint E</em> in the circuit above.
+          Combine all terms in the expression by outcome.</p>
         <xi:include href="math_latex_note.ptx" />
       </statement>
       <response />
@@ -743,7 +748,7 @@
     </exercise>
     <exercise label="Final_33">
       <statement>
-        <p>For the circuit you defined above, write a line of code in Qiskit to evolve the state <m>\ket{010}</m>
+        <p>For the circuit you defined above, write code in Qiskit to evolve the state <m>\ket{010}</m>
           through the circuit.</p>
         <p>You do not have to include the lines to import anything.</p>
         <image source="Final_33.png" width="55%" />
