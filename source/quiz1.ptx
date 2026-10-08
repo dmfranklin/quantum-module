@@ -46,7 +46,7 @@
       <introduction>
         <p> For each of the statements below, indicate whether it is true or false.</p>
       </introduction>
-      <task>
+      <task label="Quiz1_3-pt1">
         <statement correct="yes">
           <p>
             Quantum computers are expected to replace classical computers for only some
@@ -54,14 +54,14 @@
           </p>
         </statement>
       </task>
-      <task>
+      <task label="Quiz1_3-pt2">
         <statement correct="no">
           <p>
             Quantum computers and classical computers solve problems in the same way.
           </p>
         </statement>
       </task>
-      <task>
+      <task label="Quiz1_3-pt3">
         <statement correct="yes">
           <p>
             Quantum computers are expected to solve optimization problems faster than
@@ -70,7 +70,7 @@
           </p>
         </statement>
       </task>
-      <task>
+      <task label="Quiz1_3-pt4">
         <statement correct="yes">
           <p>
             Quantum computers are expected to be able to "break" classical encryption

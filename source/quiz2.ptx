@@ -487,7 +487,7 @@
         <p>What is the result of applying each of the following gates to the input state <m>a\ket{00} + b\ket{01} + c\ket{10} + d\ket{11}</m>?
           Assume that this is the starting state for each gate below.</p>
       </statement>
-      <matches>
+      <cardsort>
         <match>
           <premise>
             <p><c>NOT</c> on left qubit</p>
@@ -530,7 +530,7 @@
             <m>\frac{a+c}{\sqrt{2}}\ket{00} + \frac{b+d}{\sqrt{2}}\ket{01} + \frac{a-c}{\sqrt{2}}\ket{10} + \frac{b-d}{\sqrt{2}}\ket{11}</m>
           </response>
         </match>
-      </matches>
+      </cardsort>
     </exercise>
     <exercise label="Quiz2_16">
       <statement>

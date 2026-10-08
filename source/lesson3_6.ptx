@@ -8,7 +8,7 @@
 
   <listing xml:id="h-z-gates">
     <title><c>H</c> and <c>Z</c> Gates in Qiskit</title>
-    <program xml:id="h-z-gate-program" interactive="activecode" language="python3">
+    <program label="h-z-gate-program" interactive="activecode" language="python3">
       <code>
           from qiskit import QuantumCircuit
 
@@ -32,7 +32,7 @@
 
   <listing xml:id="superposition-measurement-qiskit">
     <title>Measuring Superposition States in Qiskit</title>
-    <program xml:id="superposition-measurement-qiskit-program" interactive="activecode"
+    <program label="superposition-measurement-qiskit-program" interactive="activecode"
       language="python3">
       from qiskit import QuantumCircuit
 
