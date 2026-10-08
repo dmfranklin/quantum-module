@@ -45,8 +45,8 @@ const loadEverything = async () => {
   await loadJS(`https://cdn.jsdelivr.net/gh/stewdio/q.js@${qCommitHash}/build/q.js`);
 
   // Load the custom quantum widget code, styles, and SPLICE protocol implementation
-  // Use local paths for development, CDN for production
-  if (["localhost", "127.0.0.1"].includes(window.location.hostname)) {
+  // Use PreTeXt local development port local for development, CDN for production/Runestone development
+  if (window.location.port === "8128") {
     // Local development
     await loadJS("../../../source/splice.js");
     await loadCSS("../../../source/widget.css");
