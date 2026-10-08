@@ -36,7 +36,7 @@ if (!("SPLICE" in window)) {
       window.parent.postMessage({
         message_id,
         subject: "SPLICE.getState",
-      });
+      }, "*");
 
       // This converts the disparate `postMessage`/`handleMessage` architecture into a Promise
       // approach. We save the `resolve` function in our `callbacks` dictionary so that when we
@@ -62,7 +62,7 @@ if (!("SPLICE" in window)) {
         subject: "SPLICE.reportScoreAndState",
         score: score,
         state: state,
-      });
+      }, "*");
     },
   };
 }

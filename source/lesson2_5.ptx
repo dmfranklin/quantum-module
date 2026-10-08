@@ -406,36 +406,56 @@
     </hint>
   </exercise>
 
-
   <exercise label="HW2-Q9">
     <title>Question #9</title>
     <idx>HW2 Q9</idx>
-    <interactive aspect="9:9" platform="javascript"
-      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
+      <dynamic>
+        <statement>
+          <interactive aspect="9:9" platform="javascript"
+            source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+            <script>
         identicalCircuitWidget({
           circuit: "L2_4_Identical",
           instantFeedback: false,
           allowedGates: "XS*"
         });
-      </script>
-    </interactive>
+        </script>
+          </interactive>
+        </statement>
+      </dynamic>
+      <static>
+        <statement>
+          <p>
+            Construct an identical circuit.
+          </p>
+        </statement>
+      </static>
   </exercise>
-
 
   <exercise label="HW2-Q10">
     <title>Question #10</title>
     <idx>HW2 Q10</idx>
-    <interactive aspect="9:9" platform="javascript"
-      source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
-      <script>
-        matchOutputWidget({
-          circuit: "L2_4_MatchOutput",
-          instantFeedback: false,
-          allowedGates: "XS*"
-        });
-      </script>
-    </interactive>
+      <dynamic>
+        <statement>
+          <interactive aspect="9:9" platform="javascript"
+            source="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/loader.js">
+            <script>
+              matchOutputWidget({
+                circuit: "L2_4_MatchOutput",
+                instantFeedback: false,
+                allowedGates: "XS*"
+              });
+            </script>
+          </interactive>
+        </statement>
+      </dynamic>
+      <static>
+        <statement>
+          <p>
+            Create a circuit with matching output.
+          </p>
+        </statement>
+      </static>
   </exercise>
 </exercises>
 

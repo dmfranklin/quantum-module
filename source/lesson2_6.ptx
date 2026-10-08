@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="lesson2_6" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Sarang testing ground</title>
+
+<exercises>
+  <exercise label="Sarang-Test">
+    <title>Sarang Test</title>
+      <dynamic>
+        <statement>
+          <interactive
+            label="Sarang-Test-Interactive"
+            iframe="http://localhost:9999/myiframe.html"
+            width="100%" />
+        </statement>
+      </dynamic>
+      <static>
+        <statement>
+          <p>
+            Create a circuit with matching output.
+          </p>
+        </statement>
+      </static>
+  </exercise>
+</exercises>
+
+</section>

@@ -1,6 +1,3 @@
-// Make Q.js available to code running inside the parent page (useful for debugging)
-window.parent.Q = Q;
-
 // MARK: - patch Q.js to fix bugs and add features
 
 /**
@@ -649,12 +646,25 @@ const normalizeCircuit = (circuit, inputs = "0") => {
  */
 const finalizeWidget = (widget) => {
   document.body.append(widget);
-  // Remove any fixed width/height attributes on the <iframe> wrapper
-  window.frameElement.removeAttribute("width");
-  window.frameElement.removeAttribute("height");
-  // Set iframe height to match document height so there is no scroll inside
-  window.frameElement.style.height = `${document.documentElement.scrollHeight}px`;
-  window.frameElement.style.width = "100%";
+  const height = document.documentElement.scrollHeight;
+  // 30px padding, 2px border
+  const width = document.documentElement.scrollWidth - 32;
+  let sameOrigin = false;
+  try {
+    sameOrigin = !!window.frameElement;
+  } catch (e) {}
+  if (sameOrigin) {
+    // Same-origin iframe: we can modify the <iframe> element directly
+    window.frameElement.removeAttribute("width");
+    window.frameElement.removeAttribute("height");
+    // Set iframe height to match document height so there is no scroll inside
+    window.frameElement.style.height = `${height}px`;
+    window.frameElement.style.width = "100%";
+  } else if (window.parent !== window) {
+    // Cross-origin iframe: frameElement is null, so ask the host page to resize us instead
+    // (SPLICE/LTI convention)
+    window.parent.postMessage({ subject: "lti.frameResize", height, width }, "*");
+  }
 };
 
 /**

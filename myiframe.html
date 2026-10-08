@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+
+  <!-- Load the code-input component used to allow Qiskit-style circuit entry -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.3/code-input.min.js"></script>
+
+  <!-- Load Q.js core library and its stylesheets (pinned at f7ef0f8cc92f91344c1c5aba6bfe2c8d106d83f8) -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/stewdio/q.js@f7ef0f8cc92f91344c1c5aba6bfe2c8d106d83f8/build/q.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/stewdio/q.js@f7ef0f8cc92f91344c1c5aba6bfe2c8d106d83f8/assets/documentation.css" />
+  <script src="https://cdn.jsdelivr.net/gh/stewdio/q.js@f7ef0f8cc92f91344c1c5aba6bfe2c8d106d83f8/build/q.js"></script>
+
+  <!-- Load the custom quantum widget code, styles, and SPLICE protocol implementation -->
+  <!-- // Use PreTeXt local development port local for development, CDN for production/Runestone development
+  if (window.location.port === "8128") {
+    // Local development
+    await loadJS("../../../source/splice.js");
+    await loadCSS("../../../source/widget.css");
+    await loadJS("../../../source/widget.js");
+    await loadJS("../../../source/circuits.js");
+  } else {
+    // Deployed module (e.g., hosted on Runestone) -->
+  <script src="http://localhost:9999/source/splice.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css" />
+  <script src="http://localhost:9999/source/widget.js"></script>
+  <script src="http://localhost:9999/source/circuits.js"></script>
+
+  <title>Identical circuit: Phi+</title>
+</head>
+
+<body>
+  <div id="widget"></div>
+  <script>
+    window.addEventListener('load', () => {
+      identicalCircuitWidget({
+        circuit: "Phi+",
+        instantFeedback: true,
+        allowedGates: "HX*"
+      });
+    });
+  </script>
+</body>
+
+</html>
