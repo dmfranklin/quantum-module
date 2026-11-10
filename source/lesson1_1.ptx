@@ -4,14 +4,16 @@
   <title>
     Reading Circuits
   </title>
-  <p>
-    Quantum operations are visualized in what are called "circuits."
-    Quantum circuits provide a visual representation of the order of operations.
-    Let's first see what some some familiar operations might look
-    like if visualized like a circuit!
-  </p>
+  <introduction>
+    <p>
+      Quantum operations are visualized in what are called "circuits."
+      Quantum circuits provide a visual representation of the order of operations.
+      Let's first see what some some familiar operations might look
+      like if visualized like a circuit!
+    </p>
+  </introduction>
 
-  <section xml:id="sec-cookiecircuits">
+  <subsection xml:id="sec-cookiecircuits">
     <title>Cookie Circuits</title>
     <p> In this picture, we begin with a plate of 4 cookies (the <term>input</term>). We have one
       operation, "eat one cookie". After the operation is applied, we are left with 3 cookies. There
@@ -144,9 +146,9 @@
         <p>Operations are read left to right</p>
       </hint>
     </exercise>
-  </section>
+  </subsection>
 
-  <section xml:id="sec-mathcircuits">
+  <subsection xml:id="sec-mathcircuits">
     <title>Math Circuits</title>
     <introduction>
       <p>Now let's consider how we would depict mathematical operations:</p>
@@ -708,25 +710,27 @@
           odd</em>.</p>
       </hint>
     </exercise>
-  </section>
+  </subsection>
 
-  <p> Summary:</p>
-  <ul>
-    <li>
-      <p>A single operation can involve multiple items.</p>
-    </li>
-    <li>
-      <p>Circuits depict the order of operations.</p>
-    </li>
-    <li>
-      <p>The order of operations goes from left to right.</p>
-    </li>
-    <li>
-      <p>The left to right convention depicts the <em>order operations are applied, not physical
-        movement</em>.</p>
-    </li>
-    <li>
-      <p>Multiple operations may be depicted in the same circuit.</p>
-    </li>
-  </ul>
+  <conclusion>
+    <p> Summary:</p>
+    <ul>
+      <li>
+        <p>A single operation can involve multiple items.</p>
+      </li>
+      <li>
+        <p>Circuits depict the order of operations.</p>
+      </li>
+      <li>
+        <p>The order of operations goes from left to right.</p>
+      </li>
+      <li>
+        <p>The left to right convention depicts the <em>order operations are applied, not physical
+          movement</em>.</p>
+      </li>
+      <li>
+        <p>Multiple operations may be depicted in the same circuit.</p>
+      </li>
+    </ul>
+  </conclusion>
 </section>
