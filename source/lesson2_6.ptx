@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="lesson2_6" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Sarang testing ground</title>
+  <title>Sarang testing ground</title>
 
-<exercises>
-  <exercise label="Sarang-Test">
-    <title>Sarang Test</title>
+  <exercises>
+    <exercise label="Sarang-Test">
+      <title>Sarang Test</title>
       <dynamic>
         <statement>
           <interactive
             label="Sarang-Test-Interactive"
-            iframe="http://localhost:9999/myiframe.html"
+            iframe="http://localhost:9999/widget.html?widget=identicalCircuitWidget&amp;circuit=Phi%2B&amp;instantFeedback=true&amp;allowedGates=HX*"
             width="100%" />
         </statement>
       </dynamic>
@@ -21,7 +21,7 @@
           </p>
         </statement>
       </static>
-  </exercise>
-</exercises>
+    </exercise>
+  </exercises>
 
 </section>

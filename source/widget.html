@@ -30,22 +30,45 @@
   } else {
     // Deployed module (e.g., hosted on Runestone) -->
   <script src="http://localhost:9999/source/splice.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dmfranklin/quantum-module/source/widget.css" />
+  <link rel="stylesheet" href="https://localhost:9999/source/widget.css" />
   <script src="http://localhost:9999/source/widget.js"></script>
   <script src="http://localhost:9999/source/circuits.js"></script>
 
-  <title>Identical circuit: Phi+</title>
+  <title>Circuit Builder</title>
 </head>
 
 <body>
   <div id="widget"></div>
   <script>
+    // Usage: widget.html?widget=identicalCircuitWidget&circuit=Phi%2B&instantFeedback=true&allowedGates=HX*
+    // `widget` selects the function; every other parameter is passed to it as a property of its
+    // options object. Note that "+" must be encoded as %2B (a bare "+" decodes to a space).
     window.addEventListener('load', () => {
-      identicalCircuitWidget({
-        circuit: "Phi+",
-        instantFeedback: true,
-        allowedGates: "HX*"
-      });
+      // Top-level `const`s in widget.js are not properties of `window`, so we list them explicitly.
+      // This also acts as a whitelist so the URL can't invoke arbitrary functions.
+      const widgets = {
+        identicalCircuitWidget,
+        equivalentCircuitWidget,
+        matchOutputWidget,
+        specificOutputWidget,
+        visualizeProbabilitiesWidget,
+      };
+
+      const { widget: name, ...options } = Object.fromEntries(
+        new URLSearchParams(window.location.search)
+      );
+      if (!(name in widgets)) {
+        document.body.textContent = `Unknown widget: ${name}`;
+        return;
+      }
+
+      // Query values are always strings; convert booleans and numbers back
+      for (const [key, value] of Object.entries(options)) {
+        if (value === "true" || value === "false") options[key] = value === "true";
+        else if (value !== "" && !isNaN(value)) options[key] = Number(value);
+      }
+
+      widgets[name](options);
     });
   </script>
 </body>
