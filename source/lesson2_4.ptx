@@ -10,7 +10,7 @@
 
   <listing xml:id="not-gate">
     <title><c>NOT</c> Gate in Qiskit</title>
-    <program xml:id="not-gate-program" interactive="activecode" language="python3">
+    <program label="not-gate-program" interactive="activecode" language="python3">
       <code>
         from qiskit import QuantumCircuit
 
@@ -84,7 +84,7 @@
 
   <listing xml:id="swap-and-cnot-gates">
     <title><c>SWAP</c> and <c>CNOT</c> Gate in Qiskit</title>
-    <program xml:id="swap-and-cnot-gates-program" interactive="activecode" language="python3">
+    <program label="swap-and-cnot-gates-program" interactive="activecode" language="python3">
       <code>
         from qiskit import QuantumCircuit
 
@@ -147,7 +147,7 @@
 
     <listing xml:id="qiskit-measure">
       <title>Measuring in Qiskit</title>
-      <program xml:id="qiskit-measure-program" interactive="activecode" language="python3">
+      <program label="qiskit-measure-program" interactive="activecode" language="python3">
         <code>
           from qiskit import QuantumCircuit
 
