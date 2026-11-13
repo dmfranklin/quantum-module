@@ -32,10 +32,10 @@ To build and view the textbook locally, follow these steps:
       & .venv/Scripts/Activate.ps1
       ```
 
-4. Install PreTeXt:
+4. Install the requirements:
 
    ```bash
-   pip install pretext
+   pip install -r requirements.txt
    ```
 
 5. Build the textbook for the web:

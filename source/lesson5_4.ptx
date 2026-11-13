@@ -126,7 +126,7 @@
         <p>Consider the following quantum state:</p>
         <md>  \begin{bmatrix}\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\end{bmatrix} </md>
       </introduction>
-      <task>
+      <task label="Vector-Notation-Exercise-3-pt1">
         <statement>
           <p>What is the probability of measuring 0?</p>
         </statement>
@@ -155,7 +155,7 @@
           </choice>
         </choices>
       </task>
-      <task>
+      <task label="Vector-Notation-Exercise-3-pt2">
         <statement>
           <p>What is the probability of measuring a 1?</p>
         </statement>
@@ -534,7 +534,7 @@
           Below is the matrix representation for the <c>H</c> gate: </p>
         <md>\begin{bmatrix}\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}}\end{bmatrix}</md>
       </introduction>
-      <task>
+      <task label="Applying-Gate-H-pt1">
         <title><m>\ket{1}</m> in vector notation</title>
         <statement>
           <p>Let's start by expressing our starting state in vector notation. What is the vector
@@ -571,7 +571,7 @@
           </choice>
         </choices>
       </task>
-      <task>
+      <task label="Applying-Gate-H-pt2">
         <title>Order of multiplication</title>
         <statement>
           <p> Now that we have our matrix representation for the <c>H</c> gate and the vector
@@ -604,14 +604,14 @@
           </choice>
         </choices>
       </task>
-      <task>
+      <task label="Applying-Gate-H-pt3">
         <introduction>
           <p>
             Now, let's perform the matrix multiplication. We need to compute the two entries in our
             resulting vector.
           </p>
         </introduction>
-        <task>
+        <task label="Applying-Gate-H-pt3-pt1">
           <title>Upper entry of resulting vector</title>
           <statement>
             <p> What is the value of the <em>upper</em> entry in the resulting vector? </p>
@@ -647,7 +647,7 @@
             </choice>
           </choices>
         </task>
-        <task>
+        <task label="Applying-Gate-H-pt3-pt2">
           <title>Lower entry of resulting vector</title>
           <statement>
             <p> What is the value of the <em>lower</em> entry in the resulting vector? </p>

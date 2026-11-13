@@ -194,7 +194,7 @@
           </ul>
         </p>
       </introduction>
-      <task>
+      <task label="Bra-Ket-Exercise-2-pt1">
         <statement>
           <p>What would the coefficient of the <m>\ket{3}</m> term be?</p>
         </statement>
@@ -232,7 +232,7 @@
           <p>Bra-ket notation uses probability amplitudes, which are squared to get probabilities.</p>
         </hint>
       </task>
-      <task>
+      <task label="Bra-Ket-Exercise-2-pt2">
         <statement>
           <p>What would the coefficient of the <m>\ket{5}</m> term be?</p>
         </statement>

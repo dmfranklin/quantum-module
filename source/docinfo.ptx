@@ -36,5 +36,8 @@
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
 
+  <!-- Paths to folders containing external assets and generated assets -->
+  <!-- relative to your main source file.                               -->
+  <directories external="../assets" generated="../generated-assets" />
 
 </docinfo>
